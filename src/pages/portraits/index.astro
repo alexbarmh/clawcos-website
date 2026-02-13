@@ -2,9 +2,9 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
-const portraits = await getCollection('portraits');
+const base = import.meta.env.BASE_URL;
 
-// Sort newest first
+const portraits = await getCollection('portraits');
 const sorted = portraits.sort((a, b) => 
   new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
 );
@@ -21,22 +21,15 @@ const sorted = portraits.sort((a, b) =>
     </div>
 
     <div class="portrait-grid" style="padding-bottom: var(--space-2xl);">
-      {sorted.map((portrait) => {
-        const thumbSrc = portrait.data.image.replace('.jpg', '-thumb.jpg');
-        return (
-          <a href={`/portraits/${portrait.slug}/`} class="portrait-card">
-            <img 
-              src={thumbSrc} 
-              alt={portrait.data.theme}
-              loading="lazy"
-            />
-            <div class="portrait-overlay">
-              <div class="portrait-day">Day {portrait.data.day} · {new Date(portrait.data.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</div>
-              <div class="portrait-theme">{portrait.data.theme}</div>
-            </div>
-          </a>
-        );
-      })}
+      {sorted.map((portrait) => (
+        <a href={`${base}portraits/${portrait.slug}/`} class="portrait-card">
+          <img src={`${base}images/portraits/${portrait.slug}-thumb.jpg`} alt={portrait.data.theme} loading="lazy" />
+          <div class="portrait-overlay">
+            <div class="portrait-day">Day {portrait.data.day} · {new Date(portrait.data.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</div>
+            <div class="portrait-theme">{portrait.data.theme}</div>
+          </div>
+        </a>
+      ))}
     </div>
   </div>
 </BaseLayout>

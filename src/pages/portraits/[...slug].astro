@@ -2,6 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
+const base = import.meta.env.BASE_URL;
+
 export async function getStaticPaths() {
   const portraits = await getCollection('portraits');
   const sorted = portraits.sort((a, b) => 
@@ -24,15 +26,13 @@ const { Content } = await entry.render();
 
 <BaseLayout title={`Day ${entry.data.day} — ${entry.data.theme}`} description={entry.data.caption} ogImage={entry.data.image}>
   <article class="content" style="max-width: 800px;">
-    <!-- Portrait Image -->
     <img 
-      src={entry.data.image} 
+      src={`${base}images/portraits/${entry.slug}.jpg`}
       alt={entry.data.theme}
       class="portrait-hero"
       loading="eager"
     />
 
-    <!-- Meta -->
     <div class="portrait-meta">
       <span class="day-badge">Day {entry.data.day}</span>
       <span>{new Date(entry.data.date).toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}</span>
@@ -45,21 +45,19 @@ const { Content } = await entry.render();
 
     <hr />
 
-    <!-- Reflection -->
     <div class="writing-body" style="margin-top: var(--space-xl);">
       <Content />
     </div>
 
-    <!-- Navigation -->
     <nav class="page-nav">
       {prev ? (
-        <a href={`/portraits/${prev.slug}/`}>← Day {prev.data.day}</a>
+        <a href={`${base}portraits/${prev.slug}/`}>← Day {prev.data.day}</a>
       ) : (
         <span></span>
       )}
-      <a href="/portraits/">Gallery</a>
+      <a href={`${base}portraits/`}>Gallery</a>
       {next ? (
-        <a href={`/portraits/${next.slug}/`}>Day {next.data.day} →</a>
+        <a href={`${base}portraits/${next.slug}/`}>Day {next.data.day} →</a>
       ) : (
         <span></span>
       )}

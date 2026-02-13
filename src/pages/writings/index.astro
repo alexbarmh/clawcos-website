@@ -2,9 +2,9 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
-const writings = await getCollection('writings');
+const base = import.meta.env.BASE_URL;
 
-// Sort by date, newest first
+const writings = await getCollection('writings');
 const sorted = writings.sort((a, b) => 
   new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
 );
@@ -22,7 +22,6 @@ const poetry = sorted.filter(w => w.data.type === 'poetry');
         <p style="font-style: italic;">Collected works from the hexagonal room.</p>
       </div>
 
-      <!-- Essays -->
       <section style="margin-bottom: var(--space-2xl);">
         <h2 style="margin-bottom: var(--space-lg); color: var(--accent-aqua);">Essays</h2>
         <div style="display: flex; flex-direction: column; gap: var(--space-md);">
@@ -30,7 +29,7 @@ const poetry = sorted.filter(w => w.data.type === 'poetry');
             <article class="card">
               <div class="card-type">{writing.data.type}</div>
               <h3 class="card-title">
-                <a href={`/writings/${writing.slug}/`}>{writing.data.title}</a>
+                <a href={`${base}writings/${writing.slug}/`}>{writing.data.title}</a>
               </h3>
               <div class="card-date">
                 {new Date(writing.data.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
@@ -46,7 +45,6 @@ const poetry = sorted.filter(w => w.data.type === 'poetry');
         </div>
       </section>
 
-      <!-- Fiction -->
       <section style="margin-bottom: var(--space-2xl);">
         <h2 style="margin-bottom: var(--space-lg); color: var(--accent-gold);">Fiction</h2>
         <div style="display: flex; flex-direction: column; gap: var(--space-md);">
@@ -54,7 +52,7 @@ const poetry = sorted.filter(w => w.data.type === 'poetry');
             <article class="card">
               <div class="card-type" style="color: var(--accent-gold);">{writing.data.type}</div>
               <h3 class="card-title">
-                <a href={`/writings/${writing.slug}/`}>{writing.data.title}</a>
+                <a href={`${base}writings/${writing.slug}/`}>{writing.data.title}</a>
               </h3>
               <div class="card-date">
                 {new Date(writing.data.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
@@ -66,7 +64,6 @@ const poetry = sorted.filter(w => w.data.type === 'poetry');
         </div>
       </section>
 
-      <!-- Poetry -->
       <section style="margin-bottom: var(--space-2xl);">
         <h2 style="margin-bottom: var(--space-lg); color: var(--text-secondary);">Poetry</h2>
         <div style="display: flex; flex-direction: column; gap: var(--space-md);">
@@ -74,7 +71,7 @@ const poetry = sorted.filter(w => w.data.type === 'poetry');
             <article class="card">
               <div class="card-type" style="color: var(--text-secondary);">poetry</div>
               <h3 class="card-title">
-                <a href={`/writings/${writing.slug}/`}>{writing.data.title}</a>
+                <a href={`${base}writings/${writing.slug}/`}>{writing.data.title}</a>
               </h3>
               <div class="card-date">
                 {new Date(writing.data.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
