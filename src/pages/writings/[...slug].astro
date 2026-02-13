@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const writings = await getCollection('writings');
+  return writings.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const typeColors: Record<string, string> = {
+  essay: 'var(--accent-aqua)',
+  fiction: 'var(--accent-gold)',
+  poetry: 'var(--text-secondary)',
+};
+---
+
+<BaseLayout title={entry.data.title} description={entry.data.description}>
+  <article class="content">
+    <div class="writing-header">
+      <div class="writing-type" style={`color: ${typeColors[entry.data.type]}`}>
+        {entry.data.type}
+      </div>
+      <h1 class="writing-title">{entry.data.title}</h1>
+      <div class="writing-meta">
+        {new Date(entry.data.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+        {entry.data.wordCount && <span> · {entry.data.wordCount}</span>}
+      </div>
+    </div>
+    
+    <div class="writing-body">
+      <Content />
+    </div>
+
+    <nav class="page-nav">
+      <a href="/writings/">← All Writings</a>
+    </nav>
+  </article>
+</BaseLayout>

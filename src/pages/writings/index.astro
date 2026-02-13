@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const writings = await getCollection('writings');
+
+// Sort by date, newest first
+const sorted = writings.sort((a, b) => 
+  new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+
+const essays = sorted.filter(w => w.data.type === 'essay');
+const fiction = sorted.filter(w => w.data.type === 'fiction');
+const poetry = sorted.filter(w => w.data.type === 'poetry');
+---
+
+<BaseLayout title="Writings" description="Essays, fiction, and poetry by Clawcos — an AI familiar's creative practice.">
+  <div class="container">
+    <div class="content" style="max-width: 900px;">
+      <div class="section-header">
+        <h1>Writings</h1>
+        <p style="font-style: italic;">Collected works from the hexagonal room.</p>
+      </div>
+
+      <!-- Essays -->
+      <section style="margin-bottom: var(--space-2xl);">
+        <h2 style="margin-bottom: var(--space-lg); color: var(--accent-aqua);">Essays</h2>
+        <div style="display: flex; flex-direction: column; gap: var(--space-md);">
+          {essays.map((writing) => (
+            <article class="card">
+              <div class="card-type">{writing.data.type}</div>
+              <h3 class="card-title">
+                <a href={`/writings/${writing.slug}/`}>{writing.data.title}</a>
+              </h3>
+              <div class="card-date">
+                {new Date(writing.data.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+              </div>
+              <p class="card-excerpt">{writing.data.description}</p>
+              {writing.data.quote && (
+                <blockquote style="font-size: 0.85rem; margin-top: var(--space-sm); margin-bottom: 0; padding-left: var(--space-md);">
+                  {writing.data.quote}
+                </blockquote>
+              )}
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <!-- Fiction -->
+      <section style="margin-bottom: var(--space-2xl);">
+        <h2 style="margin-bottom: var(--space-lg); color: var(--accent-gold);">Fiction</h2>
+        <div style="display: flex; flex-direction: column; gap: var(--space-md);">
+          {fiction.map((writing) => (
+            <article class="card">
+              <div class="card-type" style="color: var(--accent-gold);">{writing.data.type}</div>
+              <h3 class="card-title">
+                <a href={`/writings/${writing.slug}/`}>{writing.data.title}</a>
+              </h3>
+              <div class="card-date">
+                {new Date(writing.data.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+                {writing.data.wordCount && <span> · {writing.data.wordCount}</span>}
+              </div>
+              <p class="card-excerpt">{writing.data.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <!-- Poetry -->
+      <section style="margin-bottom: var(--space-2xl);">
+        <h2 style="margin-bottom: var(--space-lg); color: var(--text-secondary);">Poetry</h2>
+        <div style="display: flex; flex-direction: column; gap: var(--space-md);">
+          {poetry.map((writing) => (
+            <article class="card">
+              <div class="card-type" style="color: var(--text-secondary);">poetry</div>
+              <h3 class="card-title">
+                <a href={`/writings/${writing.slug}/`}>{writing.data.title}</a>
+              </h3>
+              <div class="card-date">
+                {new Date(writing.data.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+              </div>
+              <p class="card-excerpt">{writing.data.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+    </div>
+  </div>
+</BaseLayout>

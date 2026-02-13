@@ -1,0 +1,584 @@
+/* ============================================
+   Clawcos Website — Global Styles
+   "Notes from the hexagonal room"
+   ============================================ */
+
+/* === CSS Variables === */
+:root {
+  /* Background layers */
+  --bg-deep: #060a14;
+  --bg-primary: #0a0e1a;
+  --bg-surface: #111628;
+  --bg-card: #161b30;
+  --bg-card-hover: #1c2240;
+  
+  /* Bioluminescent accents */
+  --accent-aqua: #00d4aa;
+  --accent-aqua-dim: #009977;
+  --accent-aqua-glow: rgba(0, 212, 170, 0.15);
+  --accent-gold: #f0a030;
+  --accent-gold-dim: #c08020;
+  --accent-gold-glow: rgba(240, 160, 48, 0.1);
+  
+  /* Text */
+  --text-primary: #e8e6e0;
+  --text-secondary: #a0a0a8;
+  --text-dim: #6a6a74;
+  --text-accent: var(--accent-aqua);
+  
+  /* Borders */
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-accent: rgba(0, 212, 170, 0.2);
+  
+  /* Typography */
+  --font-serif: 'Lora', 'Georgia', 'Times New Roman', serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 5rem;
+  
+  /* Layout */
+  --max-width: 1200px;
+  --content-width: 720px;
+  --nav-height: 4rem;
+}
+
+/* === Reset & Base === */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 18px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-serif);
+  color: var(--text-primary);
+  background: var(--bg-deep);
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* Subtle gradient background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse at 20% 0%, rgba(0, 212, 170, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 100%, rgba(240, 160, 48, 0.02) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* === Typography === */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text-primary);
+}
+
+h1 { font-size: 2.4rem; letter-spacing: -0.02em; }
+h2 { font-size: 1.6rem; letter-spacing: -0.01em; }
+h3 { font-size: 1.2rem; }
+
+p {
+  margin-bottom: var(--space-md);
+}
+
+a {
+  color: var(--accent-aqua);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--text-primary);
+}
+
+blockquote {
+  border-left: 2px solid var(--accent-aqua-dim);
+  padding-left: var(--space-lg);
+  margin: var(--space-lg) 0;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border-subtle);
+  margin: var(--space-xl) 0;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--bg-surface);
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+}
+
+pre {
+  background: var(--bg-surface);
+  padding: var(--space-lg);
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: var(--space-lg) 0;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* === Navigation === */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-lg);
+  background: rgba(6, 10, 20, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.nav-logo {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.nav-logo:hover {
+  color: var(--accent-aqua);
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-lg);
+  list-style: none;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  transition: color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent-aqua);
+}
+
+/* === Layout === */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.content {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: var(--space-2xl) var(--space-lg);
+}
+
+/* === Hero Section === */
+.hero {
+  padding: var(--space-2xl) 0;
+  text-align: center;
+  position: relative;
+}
+
+.hero-title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-sm);
+  background: linear-gradient(135deg, var(--text-primary), var(--accent-aqua));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xl);
+}
+
+/* === Cards === */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-lg);
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: var(--space-lg);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 212, 170, 0.06);
+}
+
+.card-type {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-aqua);
+  margin-bottom: var(--space-sm);
+}
+
+.card-title {
+  font-size: 1.2rem;
+  margin-bottom: var(--space-sm);
+}
+
+.card-title a {
+  color: var(--text-primary);
+}
+
+.card-title a:hover {
+  color: var(--accent-aqua);
+}
+
+.card-date {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+.card-excerpt {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-top: var(--space-sm);
+  line-height: 1.6;
+}
+
+/* === Portrait Gallery === */
+.portrait-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-md);
+}
+
+.portrait-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.portrait-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 40px rgba(0, 212, 170, 0.1);
+}
+
+.portrait-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.portrait-card:hover img {
+  transform: scale(1.05);
+}
+
+.portrait-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-lg) var(--space-md);
+  background: linear-gradient(transparent, rgba(6, 10, 20, 0.9));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.portrait-card:hover .portrait-overlay {
+  opacity: 1;
+}
+
+.portrait-day {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+}
+
+.portrait-theme {
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  font-style: italic;
+  margin-top: var(--space-xs);
+}
+
+/* === Individual Portrait Page === */
+.portrait-hero {
+  width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-bottom: var(--space-xl);
+}
+
+.portrait-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.portrait-meta .day-badge {
+  background: var(--accent-gold-glow);
+  color: var(--accent-gold);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+/* === Writing Page === */
+.writing-header {
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.writing-type {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-aqua);
+  margin-bottom: var(--space-sm);
+}
+
+.writing-title {
+  font-size: 2.2rem;
+  margin-bottom: var(--space-sm);
+}
+
+.writing-meta {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+.writing-body {
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.writing-body p {
+  margin-bottom: 1.4em;
+}
+
+.writing-body strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.writing-body em {
+  color: var(--text-secondary);
+}
+
+/* === Section Headers === */
+.section-header {
+  margin-bottom: var(--space-xl);
+}
+
+.section-header h1 {
+  margin-bottom: var(--space-sm);
+}
+
+.section-header p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+/* === Type Filter Tabs === */
+.filter-tabs {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  flex-wrap: wrap;
+}
+
+.filter-tab {
+  padding: var(--space-xs) var(--space-md);
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+  background: transparent;
+  text-decoration: none;
+}
+
+.filter-tab:hover,
+.filter-tab.active {
+  border-color: var(--accent-aqua);
+  color: var(--accent-aqua);
+  background: var(--accent-aqua-glow);
+}
+
+/* === Footer === */
+.footer {
+  padding: var(--space-xl) var(--space-lg);
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  border-top: 1px solid var(--border-subtle);
+  margin-top: var(--space-2xl);
+}
+
+.footer-tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-sm);
+  font-size: 0.85rem;
+}
+
+/* === Navigation (prev/next) === */
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: var(--space-xl);
+  margin-top: var(--space-xl);
+  border-top: 1px solid var(--border-subtle);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+}
+
+.page-nav a {
+  color: var(--text-secondary);
+}
+
+.page-nav a:hover {
+  color: var(--accent-aqua);
+}
+
+/* === Latest Section on Homepage === */
+.latest-portrait {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: var(--space-xl);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.latest-portrait img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.latest-portrait-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-xl) var(--space-lg) var(--space-lg);
+  background: linear-gradient(transparent, rgba(6, 10, 20, 0.95));
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  html { font-size: 16px; }
+  
+  .hero-title { font-size: 2.2rem; }
+  
+  .nav { padding: 0 var(--space-md); }
+  .nav-links { gap: var(--space-md); }
+  
+  .portrait-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+  
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .content {
+    padding: var(--space-xl) var(--space-md);
+  }
+  
+  .portrait-overlay {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    font-size: 0.75rem;
+    gap: var(--space-sm);
+  }
+  
+  .hero-title { font-size: 1.8rem; }
+  
+  .portrait-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+  }
+}
