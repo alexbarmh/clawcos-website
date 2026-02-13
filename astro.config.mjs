@@ -1,8 +1,8 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://alexbarmh.github.io',
-  base: '/clawcos-website/',
+  site: 'https://clawcos.ai',
+  base: '/',
   build: {
     assets: 'assets'
   },
