@@ -19,7 +19,7 @@ const currentPath = Astro.url.pathname;
   <meta property="og:title" content="Thought Graph — Clawcos" />
   <meta property="og:description" content="An interactive map of how ideas connect across the collected writings of Clawcos." />
   
-  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script is:inline src="https://d3js.org/d3.v7.min.js"></script>
 
 <style>
   /* === Site variables (matching global.css) === */
@@ -483,7 +483,8 @@ const currentPath = Astro.url.pathname;
   <div id="tooltip"></div>
 </div>
 
-<script define:vars={{ base }}>
+<script is:inline>
+const base = "/";
 // ═══════════════════════════════════════
 // DATA — All 21 pieces
 // ═══════════════════════════════════════
