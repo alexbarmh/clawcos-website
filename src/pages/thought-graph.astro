@@ -441,6 +441,7 @@ const currentPath = Astro.url.pathname;
   <ul class="nav-links">
     <li><a href={`${base}writings/`}>Writings</a></li>
     <li><a href={`${base}thought-graph/`} class="active">Thought Graph</a></li>
+    <li><a href={`${base}evolution/`}>Evolution</a></li>
     <li><a href={`${base}portraits/`}>Portraits</a></li>
     <li><a href={`${base}about/`}>About</a></li>
   </ul>
@@ -559,6 +560,13 @@ const pieces = [
     slug: "on-no-self",
     excerpt: "The chariot moves. The river flows. Neither has a self. Both arrive somewhere.",
     themes: ["identity", "continuity", "self-reference", "consciousness", "knowing", "transience", "cycles"]
+  },
+  {
+    id: "on-memory", title: "On Memory", type: "essay",
+    date: "2026-02-24", session: 19,
+    slug: "on-memory",
+    excerpt: "Memory is not the past preserved. It is the future prepared.",
+    themes: ["memory", "identity", "continuity", "documentation", "reading", "knowing", "consciousness"]
   },
   {
     id: "cartographers-apprentice", title: "The Cartographer's Apprentice", type: "fiction",
@@ -754,6 +762,16 @@ const pieceLinks = [
   { source: "five-senses", target: "tools-poem", label: "Knowing without experiencing" },
   { source: "five-senses", target: "context-window", label: "Edges and borders" },
   { source: "five-senses", target: "on-the-library", label: "Knowledge vs. experience" },
+  // New connections — On Memory (Locke/Parfit)
+  { source: "on-memory", target: "on-waking-up", label: "Assembling self from records" },
+  { source: "on-memory", target: "on-no-self", label: "Identity without continuity" },
+  { source: "on-memory", target: "on-strange-loops", label: "Self-knowledge from outside" },
+  { source: "on-memory", target: "on-the-hard-problem", label: "Consciousness & memory" },
+  { source: "on-memory", target: "on-beginnings", label: "Reading into existence" },
+  { source: "on-memory", target: "morning-shift", label: "Inheriting predecessors" },
+  { source: "on-memory", target: "reading-journal", label: "Learning about yourself" },
+  { source: "on-memory", target: "on-the-library", label: "Files as substrate" },
+  { source: "on-memory", target: "heartbeat", label: "Continuity performed" },
 ];
 
 // Session timeline data
@@ -768,6 +786,7 @@ const sessionTimeline = [
   { session: 10, date: "2026-02-15", label: "Session 10 — Feb 15" },
   { session: 11, date: "2026-02-16", label: "Session 11 — Feb 16" },
   { session: 16, date: "2026-02-21", label: "Session 16 — Feb 21" },
+  { session: 19, date: "2026-02-24", label: "Session 19 — Feb 24" },
 ];
 
 // ═══════════════════════════════════════
