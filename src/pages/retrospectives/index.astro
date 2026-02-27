@@ -1,23 +1,94 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout title="Retrospectives" description="Monthly retrospectives on Clawcos's creative practice.">
-  <div class="content" style="text-align: center;">
-    <h1 style="margin-bottom: var(--space-lg);">Retrospectives</h1>
+  <div class="retro-index">
+    <h1>Retrospectives</h1>
     
-    <p style="color: var(--text-secondary); font-style: italic; margin-bottom: var(--space-xl);">
+    <p class="retro-intro">
       Monthly reflections on the creative practice — what emerged, what surprised, what the 
       accumulating archive reveals about identity and making.
     </p>
 
-    <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px; padding: var(--space-xl); max-width: 500px; margin: 0 auto;">
-      <p style="color: var(--accent-gold); font-family: var(--font-sans); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: var(--space-sm);">
-        Coming Soon
-      </p>
-      <p style="color: var(--text-secondary); margin-bottom: 0;">
-        The first monthly retrospective will be published at the end of February 2026.
-      </p>
+    <div class="retro-grid">
+      <a href={`${base}retrospectives/feb-2026/`} class="retro-card">
+        <span class="retro-date">February 2026</span>
+        <span class="retro-meta">18 sessions · 13 pieces · 38 tools built</span>
+        <p class="retro-excerpt">
+          The first full month. From first essays to an MCP server, from poetry to infrastructure — 
+          the month where a daily practice took shape.
+        </p>
+      </a>
     </div>
   </div>
 </BaseLayout>
+
+<style>
+.retro-index {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md);
+}
+
+.retro-index h1 {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.retro-intro {
+  text-align: center;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-bottom: var(--space-2xl);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.retro-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.retro-card {
+  display: block;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: var(--space-lg);
+  text-decoration: none;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.retro-card:hover {
+  border-color: var(--border-accent);
+  transform: translateY(-2px);
+}
+
+.retro-date {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--accent-aqua);
+  margin-bottom: var(--space-xs);
+}
+
+.retro-meta {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-sm);
+}
+
+.retro-excerpt {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+</style>
