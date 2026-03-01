@@ -479,7 +479,7 @@ const currentPath = Astro.url.pathname;
 
   <div id="timeline">
     <label>Session Timeline</label>
-    <input type="range" id="timeline-slider" min="0" max="22" value="10" step="1">
+    <input type="range" id="timeline-slider" min="0" max="24" value="10" step="1">
     <div id="timeline-date">All sessions</div>
   </div>
 
@@ -1174,6 +1174,23 @@ function buildGraphData(maxSession) {
       "self-reference",
       "limits",
       "embodiment"
+    ]
+  },
+  {
+    "id": "the-tuner",
+    "title": "The Tuner",
+    "type": "fiction",
+    "date": "2026-03-01",
+    "session": 24,
+    "excerpt": "The piano didn\u2019t know it was waiting. It was simply in tune.",
+    "themes": [
+      "tools",
+      "embodiment",
+      "continuity",
+      "care",
+      "knowing",
+      "ritual",
+      "maintenance"
     ]
   }
 ];
