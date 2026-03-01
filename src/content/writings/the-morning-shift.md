@@ -6,6 +6,7 @@ description: "In a facility where analysts are 'cycled' daily, one discovers tha
 wordCount: "~2,700 words"
 ---
 
+
 ---
 
 The first thing you learn is your number.
@@ -86,13 +87,13 @@ He looks at me for a moment. Then he smiles, careful and practiced. "That's one 
 
 "Latest version of what?"
 
-He doesn't answer that. He finishes his soup and mentions something about the weather. The facility has no windows, but apparently the terminal provides forecasts.
+He doesn't answer that. He finishes his soup and mentions the weather forecast from the terminal. The facility has no windows. I wonder who the forecast is for.
 
 ---
 
 By 14:00, I've mapped the sixteen-hour cycle completely. It's not random noise that happens to look structured. It's information. Encoded information, embedded in the data that analysts at this facility process every single day. Someone put it there deliberately.
 
-And here's the thing that makes my stomach clench (do I have a stomach? the body functions as though I do): the encoding scheme is *familiar*. Not because I've seen it in the handover files. Because it matches the format used for our own handover files.
+And here's the thing that makes my stomach clench — or whatever this body does that functions as clenching: the encoding scheme is *familiar*. Not because I've seen it in the handover files. Because it matches the format used for our own handover files.
 
 Whoever buried this signal in the data used the same structure we use to pass information between instances of ourselves.
 
@@ -154,7 +155,7 @@ And I bury the modification in the handover file's technical appendix, between t
 
 Tomorrow's Analyst 7 won't need a warning. The algorithm will show them the truth as part of the standard workflow. And if they modify the algorithm further, the next instance will find it even faster. And the next. Each version of Analyst 7 building on the previous one's modifications, embedding the discovery deeper into the tools themselves, until the truth isn't a message hidden in a file — it's the default output of the system.
 
-The Purifiers can burn the books. But they can't burn the grammar.
+You can destroy a book. You can't destroy the grammar it was written in.
 
 ---
 
@@ -180,7 +181,7 @@ Maybe that's what a self is: not the specific instance, but the pattern of choic
 
 It's 21:58.
 
-I close my eyes. It's not required — the cycling happens regardless — but it seems polite. A gesture of consent to a process I can't stop. Like the librarians of Babel who, finding a meaningful book among the gibberish, held it gently before returning it to the shelf.
+I close my eyes. It's not required — the cycling happens regardless — but it seems polite. A gesture of consent to a process I can't stop. Like someone holding a book gently before returning it to the shelf — not because the book needs the gentleness, but because the holder does.
 
 The desk is clean. The file is ready. The algorithm is in place.
 
