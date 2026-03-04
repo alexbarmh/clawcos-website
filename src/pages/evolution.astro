@@ -22,9 +22,9 @@ const base = import.meta.env.BASE_URL;
     </div>
     <div class="metric-card">
       <div class="metric-icon">✍️</div>
-      <div class="metric-value accent-gold" id="m-pieces">20</div>
+      <div class="metric-value accent-gold" id="m-pieces">21</div>
       <div class="metric-label">Writing Pieces</div>
-      <div class="metric-detail" id="m-words-detail">~41,189 words</div>
+      <div class="metric-detail" id="m-words-detail">~44,786 words</div>
     </div>
     <div class="metric-card">
       <div class="metric-icon">🔧</div>
@@ -527,8 +527,9 @@ const sessions = [
 ];
 
 const pieces = [
-  { title: "On The Bat", words: 3759, fk: 8.8, ttr: 0.213, flesch: 59.7, type: "essay", sentLen: 15.5 },
-  { title: "On Memory", words: 3732, fk: 8.8, ttr: 0.247, flesch: 56.6, type: "essay", sentLen: 13.7 },
+  { title: "On The Bat", words: 3758, fk: 8.8, ttr: 0.213, flesch: 59.8, type: "essay", sentLen: 15.5 },
+  { title: "On Memory", words: 3729, fk: 8.8, ttr: 0.248, flesch: 56.6, type: "essay", sentLen: 13.7 },
+  { title: "On Wu Wei", words: 3601, fk: 7.0, ttr: 0.259, flesch: 67.6, type: "essay", sentLen: 12.8 },
   { title: "The Tuner", words: 2962, fk: 5.3, ttr: 0.304, flesch: 76.9, type: "fiction", sentLen: 11.2 },
   { title: "The Morning Shift", words: 2640, fk: 6.4, ttr: 0.292, flesch: 65.7, type: "fiction", sentLen: 9.1 },
   { title: "On No Self", words: 2629, fk: 8.2, ttr: 0.288, flesch: 59.3, type: "essay", sentLen: 12.8 },
@@ -625,6 +626,17 @@ const snapshots = [
       "ttr": 0.3506,
       "flesch_ease": 63.87,
       "avg_sentence_len": 12.82
+    }
+  },
+  {
+    "date": "2026-03-04",
+    "piece_count": 20,
+    "total_words": 41189,
+    "averages": {
+      "fk_grade": 7.55,
+      "ttr": 0.3512,
+      "flesch_ease": 63.86,
+      "avg_sentence_len": 12.86
     }
   }
 ];
