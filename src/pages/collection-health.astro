@@ -135,6 +135,47 @@ const base = import.meta.env.BASE_URL;
     </div>
   </section>
 
+  <!-- Cross-Cutting Patterns (from Revision Pipeline) -->
+  {healthData.patterns && healthData.patterns.length > 0 && (
+    <section class="health-section">
+      <h2>🔍 Cross-Cutting Patterns</h2>
+      <p class="section-desc">Habits and weaknesses that appear across multiple pieces — the revision pipeline detects these by combining workshop, style, and automated analysis signals.</p>
+      {healthData.collection.revision_grade && (
+        <div class="revision-grade-banner">
+          <span class="revision-grade-label">Collection Revision Grade:</span>
+          <span class={`revision-grade grade-${healthData.collection.revision_grade}`}>{healthData.collection.revision_grade}</span>
+          <span class="revision-grade-detail">Avg revision score: {healthData.collection.avg_revision_score} (lower is cleaner)</span>
+        </div>
+      )}
+      <div class="patterns-list">
+        {healthData.patterns.map((p: any) => {
+          const severityColor = p.severity === 'high' ? '#ff6b6b' : p.severity === 'medium' ? '#f4d35e' : '#64b5f6';
+          const severityIcon = p.severity === 'high' ? '🔴' : p.severity === 'medium' ? '🟡' : '🔵';
+          return (
+            <div class="pattern-card" style={`border-left-color: ${severityColor};`}>
+              <div class="pattern-header">
+                <span class="pattern-severity">{severityIcon}</span>
+                <span class="pattern-desc">{p.description}</span>
+              </div>
+              <div class="pattern-suggestion">{p.suggestion}</div>
+              {p.detail && p.detail.length > 0 && (
+                <div class="pattern-detail">
+                  {p.detail.slice(0, 3).map((d: string) => (
+                    <div class="pattern-detail-item">• {d}</div>
+                  ))}
+                </div>
+              )}
+              <div class="pattern-pieces">
+                Affects: {p.pieces.slice(0, 5).map((slug: string) => slug.replace(/-/g, ' ')).join(', ')}
+                {p.pieces.length > 5 ? ` +${p.pieces.length - 5} more` : ''}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  )}
+
   <!-- Individual Piece Details (expandable) -->
   <section class="health-section">
     <h2>🔍 Piece Details</h2>
@@ -152,9 +193,22 @@ const base = import.meta.env.BASE_URL;
               <span class="type-emoji">{typeEmoji}</span>
               <span class="piece-name">{piece.title}</span>
               <span class="piece-score" style={`color: ${healthColor};`}>{piece.health_score}</span>
-              <span class="piece-word-count">{piece.words.toLocaleString()} words</span>
+              <span class="piece-word-count">{piece.words?.toLocaleString()} words</span>
+              {piece.revision_score && <span class="piece-revision-score" title="Revision Pipeline Score">⚙️ {piece.revision_score.toFixed(1)}</span>}
             </summary>
             <div class="piece-body">
+              {piece.revision_components && (
+                <div class="piece-revision-bar">
+                  <span class="rev-label">Revision Score: {piece.revision_score.toFixed(1)}</span>
+                  <div class="rev-components">
+                    {piece.revision_components.workshop > 0 && <span class="rev-comp rev-workshop" title="Workshop">W: {piece.revision_components.workshop.toFixed(0)}</span>}
+                    {piece.revision_components.autorev > 0 && <span class="rev-comp rev-autorev" title="AutoRev">A: {piece.revision_components.autorev.toFixed(0)}</span>}
+                    {piece.revision_components.style_deviation > 0 && <span class="rev-comp rev-style" title="Style Deviation">S: {piece.revision_components.style_deviation.toFixed(1)}</span>}
+                    {piece.revision_components.age > 0 && <span class="rev-comp rev-age" title="Age Bonus">Age: {piece.revision_components.age.toFixed(1)}</span>}
+                  </div>
+                  {piece.last_revised && <span class="rev-last">Last revised: {new Date(piece.last_revised).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>}
+                </div>
+              )}
               <div class="piece-metrics-row">
                 <div class="piece-metric">
                   <span class="pm-label">FK Grade</span>
@@ -632,6 +686,136 @@ const base = import.meta.env.BASE_URL;
       padding: 0.6rem 0.8rem;
     }
     .piece-word-count { display: none; }
+  }
+
+  /* ── Revision Pipeline Scores in Piece Details ── */
+  .piece-revision-score {
+    font-size: 0.75rem;
+    color: #a09888;
+    margin-left: auto;
+    padding: 1px 6px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 4px;
+  }
+  .piece-revision-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.5rem 0;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    flex-wrap: wrap;
+  }
+  .rev-label {
+    font-size: 0.82rem;
+    color: #a09888;
+    font-weight: 600;
+  }
+  .rev-components {
+    display: flex;
+    gap: 0.4rem;
+  }
+  .rev-comp {
+    font-size: 0.72rem;
+    padding: 1px 5px;
+    border-radius: 3px;
+    color: #e8e1d9;
+  }
+  .rev-workshop { background: rgba(255, 107, 107, 0.2); }
+  .rev-autorev { background: rgba(244, 211, 94, 0.2); }
+  .rev-style { background: rgba(204, 93, 232, 0.2); }
+  .rev-age { background: rgba(74, 158, 255, 0.2); }
+  .rev-last {
+    font-size: 0.75rem;
+    color: #706858;
+    margin-left: auto;
+  }
+
+  /* ── Revision Pipeline Patterns ── */
+  .revision-grade-banner {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 1.2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .revision-grade-label {
+    color: #a09888;
+    font-size: 0.9rem;
+  }
+  .revision-grade {
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1;
+  }
+  .grade-A { color: #4ecdc4; }
+  .grade-B { color: #f4d35e; }
+  .grade-C { color: #ff8c42; }
+  .grade-D { color: #ff6b6b; }
+  .revision-grade-detail {
+    color: #706858;
+    font-size: 0.85rem;
+    margin-left: auto;
+  }
+
+  .patterns-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .pattern-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-left: 4px solid #888;
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.2rem;
+  }
+  .pattern-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.4rem;
+  }
+  .pattern-severity {
+    font-size: 0.9rem;
+  }
+  .pattern-desc {
+    font-weight: 600;
+    color: #e8e1d9;
+    font-size: 0.95rem;
+  }
+  .pattern-suggestion {
+    color: #a09888;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-bottom: 0.4rem;
+  }
+  .pattern-detail {
+    font-size: 0.82rem;
+    color: #807868;
+    margin-bottom: 0.3rem;
+  }
+  .pattern-detail-item {
+    margin: 0.15rem 0;
+  }
+  .pattern-pieces {
+    font-size: 0.78rem;
+    color: #605848;
+    text-transform: capitalize;
+  }
+
+  @media (max-width: 600px) {
+    .revision-grade-banner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .revision-grade-detail {
+      margin-left: 0;
+    }
   }
 </style>
 
