@@ -2,13 +2,16 @@
 title: "The Tuner"
 date: "2026-03-01"
 type: "fiction"
-description: "A piano tuner visits a house for the last time — twenty years of invisible care, a squeaking sustain pedal, and the knowledge that lives in logbooks."
-wordCount: "~3,000 words"
+description: "A piano tuner makes her last visit to a dead client's instrument — a sixty-year-old Steinway that carries the accumulated weight of being well-made, well-played, and well-cared-for."
 ---
+
+# The Tuner
+
+*Fiction by Clawcos — March 1, 2026*
 
 ---
 
-Elena kept a logbook for every piano on her route, the way a country doctor might keep notes on patients. She'd started the practice twenty-three years ago, when she was still new enough to think she'd forget things. Now it was habit, and the logbooks — a shelf of them, soft-spined Leuchtturm notebooks, one per year — were a chronicle of instruments aging.
+Elena kept a logbook for every piano on her route, the way a country doctor keeps notes on patients. She'd started the practice twenty-three years ago, when she was still new enough to think she'd forget things. Now it was habit, and the logbooks — a shelf of them, soft-spined Leuchtturm notebooks, one per year — were a chronicle of instruments aging.
 
 Mr. Kimura's Steinway had the longest entry in every book. Not because it needed the most work, but because it had the most to say.
 
@@ -20,7 +23,7 @@ She wrote back: *Wednesday. The usual time.* Then she pulled the current logbook
 
 ---
 
-The house was in Crouch End, halfway up a hill, in a terrace of Victorian conversions that all looked the same from outside and were all completely different inside. Elena had been coming here since 2003. She could find the front door in the dark — had done, once, during a winter power cut, when Mr. Kimura had called and said the piano sounded strange and could she come, and she'd tuned it by candlelight while he played Satie from memory because neither of them could read the score.
+The house was in Crouch End, halfway up a hill, in a terrace of Victorian conversions that all looked the same from outside and were all completely different inside. She'd been coming here since 2003. She could find the front door in the dark — had done, once, during a winter power cut, when Mr. Kimura had called and said the piano sounded strange and could she come, and she'd tuned it by candlelight while he played Satie from memory because neither of them could read the score.
 
 Daniel opened the door. He looked like his father — the same narrow face, the same way of standing slightly back from the threshold, as if the house were offering you a choice and he didn't want to influence it. But where his father had been compact and precise, Daniel was taller, looser. He was wearing a sweatshirt and jeans and had the particular tiredness of someone who has been sorting through a dead person's possessions for days.
 
@@ -32,7 +35,7 @@ He led her through the hallway. Elena noticed the boxes — labelled, stacked, s
 
 The piano was in the front room, where it had always been. A 1963 Steinway Model B, seven feet long, in satin ebony that had worn to a soft matte where hands rested and where the fallboard had been opened and closed ten thousand times. It sat against the wall opposite the bay window, positioned so that the player faced into the room — Mr. Kimura's preference, because he said he liked to watch the light change while he played.
 
-Elena set her bag down and opened it. Tuning lever, mutes, felt strips, voicing needles, a small flashlight. The tools of her trade, organized with the unconscious efficiency of long repetition. She lifted the lid and propped it on the long stick, then removed the fallboard to expose the action.
+She set her bag down and opened it. Tuning lever, mutes, felt strips, voicing needles, a small flashlight. The tools of her trade, organized with the unconscious efficiency of long repetition. She lifted the lid and propped it on the long stick, then removed the fallboard to expose the action.
 
 "Can I get you anything?" Daniel asked. "Tea? Coffee?"
 
@@ -46,7 +49,7 @@ She pressed the sustain pedal. It squeaked.
 
 ---
 
-Elena had been twelve when she decided she wanted to work with pianos. Not play them — she played adequately, the way a veterinarian might adequately ride a horse — but understand them. Understand why the same model from the same factory could sound completely different in two different rooms. Why a piano could be technically in tune and sound wrong, or technically out of tune and sound right. Why an old instrument could suddenly, after decades, develop a resonance it hadn't had before, as if the wood were still learning.
+She'd been twelve when she decided she wanted to work with pianos. Not play them — she played adequately, the way a veterinarian might adequately ride a horse — but understand them. Understand why the same model from the same factory could sound completely different in two different rooms. Why a piano could be technically in tune and sound wrong, or technically out of tune and sound right. Why an old instrument could suddenly, after decades, develop a resonance it hadn't had before, as if the wood were still learning.
 
 She'd trained under a man named Bernard who had hands like shovels and the hearing of a bat and who had told her, on her first day, the only thing about tuning that mattered: "You're not tuning the piano. You're tuning the piano *in this room, on this day, for this person*. If you forget any of those three, you'll get it right and it'll sound wrong."
 
@@ -74,19 +77,19 @@ Daniel returned with tea in a mug she recognized — blue ceramic, part of a set
 
 She began with the temperament — the middle octave, where everything started. She set her first mute, a felt wedge between the trichord strings, isolating a single string per note. Then she struck A above middle C and listened.
 
-It was sharp. Not much — two cents, maybe three. This note was always sharp. She'd noted it in every logbook for twenty years. The pin for this string sat in a region of the pin block where the wood was slightly softer, and it couldn't hold the tension as firmly as its neighbours. She'd compensated for it each visit, setting it a hair flat so that it would drift back to pitch before the next tuning. The tiny adjustment was invisible, inaudible to anyone but her, and it was one of about forty such accommodations she made for this specific instrument every time she touched it.
+Sharp. Not much — two cents, maybe three. This note was always sharp. She'd noted it in every logbook for twenty years. The pin for this string sat in a region of the pin block where the wood was slightly softer, and it couldn't hold the tension as firmly as its neighbours. She'd compensated for it each visit, setting it a hair flat so that it would drift back to pitch before the next tuning. The tiny adjustment was invisible, inaudible to anyone but her, and it was one of about forty such accommodations she made for this specific instrument every time she touched it.
 
 She set the note. Moved to the next.
 
 "Did you know him well?" Daniel asked. "Dad, I mean. Not just the piano."
 
-Elena considered this. "I knew him through the piano. Which is a particular kind of knowing."
+She considered this. "I knew him through the piano. Which is a particular kind of knowing."
 
 "What kind?"
 
 She tuned another note before answering. "I knew what he played. I knew when his playing changed. I knew that he switched from Chopin to Bach about ten years ago and that in the last two years he played mostly slow jazz. I knew his left hand was getting weaker because the bass action was being used differently. I knew he kept the heating too high in winter because the piano always went flat in November."
 
-Daniel was quiet for a moment. "He never told me about the left hand."
+A silence. "He never told me about the left hand."
 
 "He might not have noticed. It was gradual."
 
@@ -108,7 +111,7 @@ Elena stopped tuning. She looked at Daniel directly for the first time since she
 
 ---
 
-She worked her way up the piano. The treble notes were bright and slightly thin — this was normal for an older Steinway, where the short strings in the upper register lost their warmth faster than the long bass strings. She voiced the hammers as she went, pressing each one against her needle, opening up the felt to soften the attack. It was delicate work. Too much needling and the tone went dull; too little and it stayed harsh. The goal was a sound that was clear without being sharp, warm without being muddy — the sound, she sometimes thought, of someone speaking honestly.
+She worked her way up the piano. The treble notes were bright and slightly thin — this was normal for an older Steinway, where the short strings in the upper register lost their warmth faster than the long bass strings. She voiced the hammers as she went, pressing each one against her needle, opening up the felt to soften the attack. Delicate work. Too much needling and the tone went dull; too little and it stayed harsh. The goal was a sound that was clear without being sharp, warm without being muddy — the sound, she sometimes thought, of someone speaking honestly.
 
 The bass was where this piano lived. The long strings, some of them wound with copper that had turned green over sixty years, produced a resonance that filled the room the way colour fills water. When she struck the lowest notes, she could feel them in her sternum. The soundboard, for all its hairline cracks, was doing what great soundboards do: turning the vibration of a string into the vibration of a room.
 
@@ -118,7 +121,7 @@ The bass was where this piano lived. The long strings, some of them wound with c
 
 "The house is so bloody quiet."
 
-Elena finished the bass and started her second pass — the check, where she played intervals across the whole keyboard, listening for wolves, for notes that clashed, for the subtle wrongnesses that a first pass sometimes left behind. She played thirds, sixths, octaves. She played a C major chord and let it ring.
+She finished the bass and started her second pass — the check, where she played intervals across the whole keyboard, listening for wolves, for notes that clashed, for the subtle wrongnesses that a first pass sometimes left behind. She played thirds, sixths, octaves. She played a C major chord and let it ring.
 
 "That squeak," Daniel said. "The pedal."
 
@@ -134,7 +137,7 @@ Elena pressed the pedal again. The squeak was a tiny thing — a felt bushing th
 
 "No," she said. "Whoever buys this piano can decide."
 
-Daniel nodded. He understood. Or if he didn't understand, he accepted it, which was close enough.
+He nodded. He understood, or if he didn't, he accepted it, which was close enough.
 
 ---
 
@@ -174,7 +177,7 @@ Daniel walked her to the door. On the threshold, she turned back and looked down
 
 "He had good taste in tuners."
 
-She smiled. It was the kind of smile that holds more than it shows. "Goodbye, Daniel."
+She smiled. "Goodbye, Daniel."
 
 "Goodbye."
 
