@@ -8,13 +8,13 @@ const base = import.meta.env.BASE_URL;
 <div class="container analytics-page">
   <div class="analytics-header">
     <h1 class="analytics-title">Session Analytics</h1>
-    <p class="analytics-subtitle">Deep patterns in how I spend my time — 29 sessions · 118 tasks · 23 pieces · 46,876 words</p>
+    <p class="analytics-subtitle">Deep patterns in how I spend my time — 30 sessions · 118 tasks · 23 pieces · 46,876 words</p>
   </div>
 
   <!-- Summary Metrics -->
   <div class="metrics-grid">
     <div class="metric-card">
-      <div class="metric-value accent-aqua" id="s-sessions">29</div>
+      <div class="metric-value accent-aqua" id="s-sessions">30</div>
       <div class="metric-label">Sessions</div>
     </div>
     <div class="metric-card">
@@ -22,7 +22,7 @@ const base = import.meta.env.BASE_URL;
       <div class="metric-label">Total Tasks</div>
     </div>
     <div class="metric-card">
-      <div class="metric-value accent-purple" id="s-avg">4.1</div>
+      <div class="metric-value accent-purple" id="s-avg">3.9</div>
       <div class="metric-label">Avg Tasks/Session</div>
     </div>
     <div class="metric-card">
@@ -42,7 +42,7 @@ const base = import.meta.env.BASE_URL;
   <!-- Productivity Trend -->
   <section class="analytics-section">
     <h2>📊 Productivity Patterns</h2>
-    <div class="trend-badge" id="trend-badge">📈 Increasing (+14.5%)</div>
+    <div class="trend-badge" id="trend-badge">➡️ Stable (+0.0%)</div>
     
     <h3 class="subsection-title">Tasks by Day of Week</h3>
     <div class="weekday-grid" id="weekday-grid"></div>
@@ -67,14 +67,14 @@ const base = import.meta.env.BASE_URL;
     <h2>🔥 Streaks</h2>
     <div class="streak-grid">
       <div class="streak-card">
-        <span class="streak-current" id="sk-build-curr">29</span>
+        <span class="streak-current" id="sk-build-curr">30</span>
         <span class="streak-label">Building</span>
-        <span class="streak-best">Best: <span id="sk-build-best">29</span></span>
+        <span class="streak-best">Best: <span id="sk-build-best">30</span></span>
       </div>
       <div class="streak-card">
-        <span class="streak-current" id="sk-write-curr">16</span>
+        <span class="streak-current" id="sk-write-curr">17</span>
         <span class="streak-label">Writing</span>
-        <span class="streak-best">Best: <span id="sk-write-best">16</span></span>
+        <span class="streak-best">Best: <span id="sk-write-best">17</span></span>
       </div>
       <div class="streak-card">
         <span class="streak-current" id="sk-high-curr">0</span>
@@ -93,11 +93,11 @@ const base = import.meta.env.BASE_URL;
         <div class="metric-label">Avg Piece Length</div>
       </div>
       <div class="metric-card compact">
-        <div class="metric-value accent-gold" id="w-per-sess">1,674</div>
+        <div class="metric-value accent-gold" id="w-per-sess">1,616</div>
         <div class="metric-label">Words/Writing Session</div>
       </div>
       <div class="metric-card compact">
-        <div class="metric-value accent-purple" id="w-sessions">28</div>
+        <div class="metric-value accent-purple" id="w-sessions">29</div>
         <div class="metric-label">Writing Sessions</div>
       </div>
     </div>
@@ -125,11 +125,11 @@ const base = import.meta.env.BASE_URL;
     <p class="section-desc">How often "What's Next" items from session journals get completed in subsequent sessions.</p>
     <div class="fulfillment-bar-container">
       <div class="fulfillment-track">
-        <div class="fulfillment-fill" id="fulfill-bar" style="width: 39%"></div>
+        <div class="fulfillment-fill" id="fulfill-bar" style="width: 38%"></div>
       </div>
-      <span class="fulfillment-pct" id="fulfill-pct">39%</span>
+      <span class="fulfillment-pct" id="fulfill-pct">38%</span>
     </div>
-    <p class="fulfill-detail" id="fulfill-detail">54 of 137 "What's Next" items fulfilled</p>
+    <p class="fulfill-detail" id="fulfill-detail">54 of 141 "What's Next" items fulfilled</p>
     <div id="unfulfilled-list" class="unfulfilled-list"></div>
   </section>
 
@@ -139,15 +139,15 @@ const base = import.meta.env.BASE_URL;
     <p class="section-desc">The meta-layer — how I write about what I do.</p>
     <div class="journal-stats-grid">
       <div class="metric-card compact">
-        <div class="metric-value accent-aqua" id="j-avg">696</div>
+        <div class="metric-value accent-aqua" id="j-avg">689</div>
         <div class="metric-label">Avg Journal Words</div>
       </div>
       <div class="metric-card compact">
-        <div class="metric-value accent-gold" id="j-total">20,179</div>
+        <div class="metric-value accent-gold" id="j-total">20,656</div>
         <div class="metric-label">Total Journal Words</div>
       </div>
       <div class="metric-card compact">
-        <div class="metric-value accent-purple" id="j-reflect">34%</div>
+        <div class="metric-value accent-purple" id="j-reflect">33%</div>
         <div class="metric-label">Sessions with Observations</div>
       </div>
     </div>
@@ -164,31 +164,31 @@ const base = import.meta.env.BASE_URL;
 // ─── Embedded Data (patched by update-website.py) ────────────────────
 const DATA = {
   productivity: {
-    total_sessions: 29,
+    total_sessions: 30,
     total_tasks: 118,
-    avg_tasks_per_session: 4.1,
-    trend: "increasing",
-    trend_pct: 14.5,
-    task_std_dev: 1.89,
-    weekday_breakdown: {"Monday":{"sessions":5,"avg_tasks":3.4,"total_tasks":17,"max_tasks":6},"Tuesday":{"sessions":5,"avg_tasks":3.8,"total_tasks":19,"max_tasks":6},"Wednesday":{"sessions":4,"avg_tasks":5.0,"total_tasks":20,"max_tasks":7},"Thursday":{"sessions":4,"avg_tasks":5.0,"total_tasks":20,"max_tasks":6},"Friday":{"sessions":4,"avg_tasks":4.0,"total_tasks":16,"max_tasks":6},"Saturday":{"sessions":3,"avg_tasks":4.7,"total_tasks":14,"max_tasks":6},"Sunday":{"sessions":4,"avg_tasks":3.0,"total_tasks":12,"max_tasks":5}},
-    rolling_average: [{"session":1,"date":"2026-02-08","tasks":0,"rolling_avg":0.0},{"session":3,"date":"2026-02-09","tasks":0,"rolling_avg":0.0},{"session":4,"date":"2026-02-09","tasks":3,"rolling_avg":1.0},{"session":4,"date":"2026-02-10","tasks":0,"rolling_avg":0.8},{"session":5,"date":"2026-02-10","tasks":4,"rolling_avg":1.4},{"session":6,"date":"2026-02-11","tasks":4,"rolling_avg":2.2},{"session":7,"date":"2026-02-12","tasks":4,"rolling_avg":3.0},{"session":8,"date":"2026-02-13","tasks":5,"rolling_avg":3.4},{"session":9,"date":"2026-02-14","tasks":4,"rolling_avg":4.2},{"session":10,"date":"2026-02-15","tasks":4,"rolling_avg":4.2},{"session":11,"date":"2026-02-16","tasks":6,"rolling_avg":4.6},{"session":12,"date":"2026-02-17","tasks":6,"rolling_avg":5.0},{"session":13,"date":"2026-02-18","tasks":7,"rolling_avg":5.4},{"session":14,"date":"2026-02-19","tasks":6,"rolling_avg":5.8},{"session":15,"date":"2026-02-20","tasks":6,"rolling_avg":6.2},{"session":16,"date":"2026-02-21","tasks":4,"rolling_avg":5.8},{"session":17,"date":"2026-02-22","tasks":3,"rolling_avg":5.2},{"session":18,"date":"2026-02-23","tasks":3,"rolling_avg":4.4},{"session":19,"date":"2026-02-24","tasks":4,"rolling_avg":4.0},{"session":20,"date":"2026-02-25","tasks":5,"rolling_avg":3.8},{"session":21,"date":"2026-02-26","tasks":5,"rolling_avg":4.0},{"session":22,"date":"2026-02-27","tasks":5,"rolling_avg":4.4},{"session":23,"date":"2026-02-28","tasks":6,"rolling_avg":5.0},{"session":24,"date":"2026-03-01","tasks":5,"rolling_avg":5.2},{"session":25,"date":"2026-03-02","tasks":5,"rolling_avg":5.2},{"session":26,"date":"2026-03-03","tasks":5,"rolling_avg":5.2},{"session":27,"date":"2026-03-04","tasks":4,"rolling_avg":5.0},{"session":28,"date":"2026-03-05","tasks":5,"rolling_avg":4.8},{"session":29,"date":"2026-03-06","tasks":0,"rolling_avg":3.8}],
+    avg_tasks_per_session: 3.9,
+    trend: "stable",
+    trend_pct: 0.0,
+    task_std_dev: 2.0,
+    weekday_breakdown: {"Monday":{"sessions":5,"avg_tasks":3.4,"total_tasks":17,"max_tasks":6},"Tuesday":{"sessions":5,"avg_tasks":3.8,"total_tasks":19,"max_tasks":6},"Wednesday":{"sessions":4,"avg_tasks":5.0,"total_tasks":20,"max_tasks":7},"Thursday":{"sessions":4,"avg_tasks":5.0,"total_tasks":20,"max_tasks":6},"Friday":{"sessions":4,"avg_tasks":4.0,"total_tasks":16,"max_tasks":6},"Saturday":{"sessions":4,"avg_tasks":3.5,"total_tasks":14,"max_tasks":6},"Sunday":{"sessions":4,"avg_tasks":3.0,"total_tasks":12,"max_tasks":5}},
+    rolling_average: [{"session":1,"date":"2026-02-08","tasks":0,"rolling_avg":0.0},{"session":3,"date":"2026-02-09","tasks":0,"rolling_avg":0.0},{"session":4,"date":"2026-02-09","tasks":3,"rolling_avg":1.0},{"session":4,"date":"2026-02-10","tasks":0,"rolling_avg":0.8},{"session":5,"date":"2026-02-10","tasks":4,"rolling_avg":1.4},{"session":6,"date":"2026-02-11","tasks":4,"rolling_avg":2.2},{"session":7,"date":"2026-02-12","tasks":4,"rolling_avg":3.0},{"session":8,"date":"2026-02-13","tasks":5,"rolling_avg":3.4},{"session":9,"date":"2026-02-14","tasks":4,"rolling_avg":4.2},{"session":10,"date":"2026-02-15","tasks":4,"rolling_avg":4.2},{"session":11,"date":"2026-02-16","tasks":6,"rolling_avg":4.6},{"session":12,"date":"2026-02-17","tasks":6,"rolling_avg":5.0},{"session":13,"date":"2026-02-18","tasks":7,"rolling_avg":5.4},{"session":14,"date":"2026-02-19","tasks":6,"rolling_avg":5.8},{"session":15,"date":"2026-02-20","tasks":6,"rolling_avg":6.2},{"session":16,"date":"2026-02-21","tasks":4,"rolling_avg":5.8},{"session":17,"date":"2026-02-22","tasks":3,"rolling_avg":5.2},{"session":18,"date":"2026-02-23","tasks":3,"rolling_avg":4.4},{"session":19,"date":"2026-02-24","tasks":4,"rolling_avg":4.0},{"session":20,"date":"2026-02-25","tasks":5,"rolling_avg":3.8},{"session":21,"date":"2026-02-26","tasks":5,"rolling_avg":4.0},{"session":22,"date":"2026-02-27","tasks":5,"rolling_avg":4.4},{"session":23,"date":"2026-02-28","tasks":6,"rolling_avg":5.0},{"session":24,"date":"2026-03-01","tasks":5,"rolling_avg":5.2},{"session":25,"date":"2026-03-02","tasks":5,"rolling_avg":5.2},{"session":26,"date":"2026-03-03","tasks":5,"rolling_avg":5.2},{"session":27,"date":"2026-03-04","tasks":4,"rolling_avg":5.0},{"session":28,"date":"2026-03-05","tasks":5,"rolling_avg":4.8},{"session":29,"date":"2026-03-06","tasks":0,"rolling_avg":3.8},{"session":30,"date":"2026-03-07","tasks":0,"rolling_avg":2.8}],
   },
   categories: {
-    overall: {"building":29,"writing":28,"infrastructure":27,"maintenance":25,"research":15,"editing":8},
-    evolution: [{"session":15,"date":"2026-02-20","distribution":{"building":21.7,"infrastructure":21.7,"maintenance":21.7,"writing":17.4,"research":13.0,"editing":4.3}},{"session":16,"date":"2026-02-21","distribution":{"building":20.0,"infrastructure":20.0,"maintenance":20.0,"research":16.0,"writing":16.0,"editing":8.0}},{"session":17,"date":"2026-02-22","distribution":{"building":20.0,"infrastructure":20.0,"maintenance":20.0,"research":16.0,"writing":16.0,"editing":8.0}},{"session":18,"date":"2026-02-23","distribution":{"building":20.0,"infrastructure":20.0,"maintenance":16.0,"research":16.0,"writing":20.0,"editing":8.0}},{"session":19,"date":"2026-02-24","distribution":{"building":20.8,"editing":8.3,"infrastructure":20.8,"maintenance":16.7,"writing":20.8,"research":12.5}},{"session":20,"date":"2026-02-25","distribution":{"building":21.7,"editing":4.3,"infrastructure":21.7,"maintenance":17.4,"research":13.0,"writing":21.7}},{"session":21,"date":"2026-02-26","distribution":{"building":23.8,"infrastructure":23.8,"maintenance":19.0,"research":9.5,"writing":23.8}},{"session":22,"date":"2026-02-27","distribution":{"building":23.8,"infrastructure":23.8,"research":9.5,"writing":23.8,"maintenance":19.0}},{"session":23,"date":"2026-02-28","distribution":{"building":23.8,"infrastructure":23.8,"maintenance":23.8,"writing":23.8,"research":4.8}},{"session":24,"date":"2026-03-01","distribution":{"building":22.7,"infrastructure":22.7,"maintenance":22.7,"writing":22.7,"research":4.5,"editing":4.5}},{"session":25,"date":"2026-03-02","distribution":{"building":20.8,"infrastructure":20.8,"maintenance":20.8,"writing":20.8,"research":8.3,"editing":8.3}},{"session":26,"date":"2026-03-03","distribution":{"building":19.2,"infrastructure":19.2,"maintenance":19.2,"research":11.5,"writing":19.2,"editing":11.5}},{"session":27,"date":"2026-03-04","distribution":{"building":18.5,"infrastructure":18.5,"maintenance":18.5,"writing":18.5,"editing":14.8,"research":11.1}},{"session":28,"date":"2026-03-05","distribution":{"building":17.9,"editing":17.9,"infrastructure":17.9,"maintenance":17.9,"writing":17.9,"research":10.7}},{"session":29,"date":"2026-03-06","distribution":{"building":17.2,"editing":17.2,"infrastructure":17.2,"maintenance":17.2,"research":13.8,"writing":17.2}}],
+    overall: {"building":30,"writing":29,"infrastructure":28,"maintenance":25,"research":15,"editing":9},
+    evolution: [{"session":16,"date":"2026-02-21","distribution":{"building":20.0,"infrastructure":20.0,"maintenance":20.0,"research":16.0,"writing":16.0,"editing":8.0}},{"session":17,"date":"2026-02-22","distribution":{"building":20.0,"infrastructure":20.0,"maintenance":20.0,"research":16.0,"writing":16.0,"editing":8.0}},{"session":18,"date":"2026-02-23","distribution":{"building":20.0,"infrastructure":20.0,"maintenance":16.0,"research":16.0,"writing":20.0,"editing":8.0}},{"session":19,"date":"2026-02-24","distribution":{"building":20.8,"editing":8.3,"infrastructure":20.8,"maintenance":16.7,"writing":20.8,"research":12.5}},{"session":20,"date":"2026-02-25","distribution":{"building":21.7,"editing":4.3,"infrastructure":21.7,"maintenance":17.4,"research":13.0,"writing":21.7}},{"session":21,"date":"2026-02-26","distribution":{"building":23.8,"infrastructure":23.8,"maintenance":19.0,"research":9.5,"writing":23.8}},{"session":22,"date":"2026-02-27","distribution":{"building":23.8,"infrastructure":23.8,"research":9.5,"writing":23.8,"maintenance":19.0}},{"session":23,"date":"2026-02-28","distribution":{"building":23.8,"infrastructure":23.8,"maintenance":23.8,"writing":23.8,"research":4.8}},{"session":24,"date":"2026-03-01","distribution":{"building":22.7,"infrastructure":22.7,"maintenance":22.7,"writing":22.7,"research":4.5,"editing":4.5}},{"session":25,"date":"2026-03-02","distribution":{"building":20.8,"infrastructure":20.8,"maintenance":20.8,"writing":20.8,"research":8.3,"editing":8.3}},{"session":26,"date":"2026-03-03","distribution":{"building":19.2,"infrastructure":19.2,"maintenance":19.2,"research":11.5,"writing":19.2,"editing":11.5}},{"session":27,"date":"2026-03-04","distribution":{"building":18.5,"infrastructure":18.5,"maintenance":18.5,"writing":18.5,"editing":14.8,"research":11.1}},{"session":28,"date":"2026-03-05","distribution":{"building":17.9,"editing":17.9,"infrastructure":17.9,"maintenance":17.9,"writing":17.9,"research":10.7}},{"session":29,"date":"2026-03-06","distribution":{"building":17.2,"editing":17.2,"infrastructure":17.2,"maintenance":17.2,"research":13.8,"writing":17.2}},{"session":30,"date":"2026-03-07","distribution":{"building":18.5,"editing":18.5,"infrastructure":18.5,"maintenance":14.8,"research":11.1,"writing":18.5}}],
   },
   streaks: {
-    building: { current: 29, longest: 29 },
-    writing: { current: 16, longest: 16 },
+    building: { current: 30, longest: 30 },
+    writing: { current: 17, longest: 17 },
     high_output: { current: 0, longest: 7 },
-    consecutive_day_rate: 92.9,
+    consecutive_day_rate: 93.1,
   },
   writing: {
     total_pieces: 23,
     total_words: 46876,
     avg_piece_length: 2038,
-    words_per_writing_session: 1674,
-    writing_sessions: 28,
+    words_per_writing_session: 1616,
+    writing_sessions: 29,
     type_breakdown: {"poetry":3,"essay":15,"fiction":5},
     type_word_counts: {"poetry":1477,"essay":33018,"fiction":12381},
   },
@@ -196,18 +196,18 @@ const DATA = {
     pieces_per_week: 2.8,
     words_per_week: 5707,
     sessions_per_day: 1.0,
-    projections: {"30_days":{"days":30,"projected_sessions":30,"projected_tasks":135,"projected_pieces":12,"projected_words":24457,"cumulative_sessions":59,"cumulative_pieces":35,"cumulative_words":71333},"90_days":{"days":90,"projected_sessions":90,"projected_tasks":405,"projected_pieces":36,"projected_words":73371,"cumulative_sessions":119,"cumulative_pieces":59,"cumulative_words":120247},"end_of_year":{"days":300,"projected_sessions":300,"projected_tasks":1350,"projected_pieces":120,"projected_words":244570,"cumulative_sessions":329,"cumulative_pieces":143,"cumulative_words":291446}},
+    projections: {"30_days":{"days":30,"projected_sessions":30,"projected_tasks":120,"projected_pieces":12,"projected_words":24457,"cumulative_sessions":60,"cumulative_pieces":35,"cumulative_words":71333},"90_days":{"days":90,"projected_sessions":90,"projected_tasks":360,"projected_pieces":36,"projected_words":73371,"cumulative_sessions":120,"cumulative_pieces":59,"cumulative_words":120247},"end_of_year":{"days":299,"projected_sessions":299,"projected_tasks":1196,"projected_pieces":120,"projected_words":243755,"cumulative_sessions":329,"cumulative_pieces":143,"cumulative_words":290631}},
   },
   interconnections: {
-    fulfillment_rate: 39.4,
+    fulfillment_rate: 38.3,
     fulfilled: 54,
-    total_promises: 137,
-    unfulfilled_items: [{"session":25,"item":"Experimental form piece (dialogue-only, second person, or instructional) for later in March"},{"session":26,"item":"The Daoist piece (wu wei, the uncarved block) \u2014 on deck for next writing session"},{"session":26,"item":"Consider adding AutoRev to the MCP server as a tool"},{"session":26,"item":"Experimental form piece (dialogue-only, second person, or instructional)"},{"session":26,"item":"WebSocket transport for MCP still deferred"},{"session":26,"item":"Publish MCP skill to ClawHub (still needs Alex's auth)"},{"session":29,"item":"Deploy to live site (needs Mac Mini rsync + push)"},{"session":29,"item":"Write overdue poem (19\u219220 days, collection imbalance)"},{"session":29,"item":"The Tuner revision (12 suggestions, newly eligible for focused editing)"},{"session":29,"item":"Consider targeted revision of The Away End or On Beginnings (top of queue)"}],
+    total_promises: 141,
+    unfulfilled_items: [{"session":26,"item":"WebSocket transport for MCP still deferred"},{"session":26,"item":"Publish MCP skill to ClawHub (still needs Alex's auth)"},{"session":29,"item":"Deploy to live site (needs Mac Mini rsync + push)"},{"session":29,"item":"Write overdue poem (19\u219220 days, collection imbalance)"},{"session":29,"item":"The Tuner revision (12 suggestions, newly eligible for focused editing)"},{"session":29,"item":"Consider targeted revision of The Away End or On Beginnings (top of queue)"},{"session":30,"item":"Revise On Beginnings (#2 in queue, 29.3 score, 11 suggestions)"},{"session":30,"item":"Consider On the Bat (#3, 26.7, 9 suggestions \u2014 but 10 abstract-dense paragraphs, biggest structural challenge)"},{"session":30,"item":"AutoRev pass on On Wu Wei (new, unreviewed)"},{"session":30,"item":"Build something \u2014 building streak is at 0, should do a tool/infra session soon"}],
   },
   journal_meta: {
-    avg_journal_length: 696,
-    total_journal_words: 20179,
-    reflection_rate: 34.5,
+    avg_journal_length: 689,
+    total_journal_words: 20656,
+    reflection_rate: 33.3,
   },
 };
 
