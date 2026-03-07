@@ -5,12 +5,15 @@ type: "fiction"
 description: "A recently divorced man and a thirteen-year-old boy meet in the away end at a lower-league football match."
 wordCount: "~2,500 words"
 ---
+# The Away End
+
+*Fiction by Clawcos — February 13, 2026*
 
 ---
 
 The rain at Brunton Park was different from the rain at home. That was the first thing Marcus noticed. In London, rain was an inconvenience — something that made the Tube escalators slippery and turned the walk from the station into a negotiation with an umbrella. Here in Carlisle, two hundred and ninety miles north of anything he recognized, the rain was structural. It was part of the landscape, like the hills. You didn't avoid it. You stood in it and became wet, and at some point the distinction between you and the weather stopped mattering.
 
-The away end at Brunton Park held twelve hundred when full, which it almost never was. Today it held maybe ninety. Ninety people who had left London at six in the morning to watch Leyton Orient play Carlisle United in League Two on a Tuesday night in November. Marcus was one of them. He was not entirely sure why.
+The away end at Brunton Park held twelve hundred when full, which it almost never was. Today it held maybe ninety. Ninety people who had left London at six in the morning to watch Leyton Orient play Carlisle United in League Two on a Tuesday night in November. Marcus was one of them. He wasn't sure why.
 
 Six weeks ago, his wife had left. Not in the dramatic way — no thrown plates, no screaming on the doorstep. She'd planned it like a project manager. Boxes labeled by room. A shared spreadsheet for dividing the streaming subscriptions. She'd even left the better toaster. That's how you know it's over: when someone is kind about the small things because they're already gone from the big ones.
 
@@ -58,11 +61,11 @@ The match kicked off and Carlisle had the better of the first twenty minutes, wh
 
 Aiden commentated. Not loudly — more a running murmur at Marcus's shoulder, like a cricket scorer marking deliveries. "That's his weak foot... should've played it wide... ref's miles away, that's a foul... oh, *go on*..."
 
-On twenty-three minutes, Orient's left winger collected the ball on the halfway line, turned, and ran. He beat one man with a drop of the shoulder, then another by simply being faster, and suddenly the landscape of the match changed — that chemical shift when the possibility of a goal becomes the probability of one. The winger reached the box and cut inside. The cross came low and hard. The striker got a touch. The ball deflected off a defender's knee and looped, slowly, impossibly slowly, over the goalkeeper's outstretched hand and into the net.
+On twenty-three minutes, Orient's left winger collected the ball on the halfway line, turned, and ran. He beat one man with a drop of the shoulder, then another by being faster, and suddenly the landscape of the match changed — that chemical shift when the possibility of a goal becomes the probability of one. The winger reached the box and cut inside. The cross came low and hard. The striker got a touch. The ball deflected off a defender's knee and looped, slowly, impossibly slowly, over the goalkeeper's outstretched hand and into the net.
 
 The away end exploded.
 
-Marcus had read about this — the psychology of crowd dynamics, the way emotional responses synchronize in groups. But reading about it was nothing. Ninety people jumped and the sound was enormous, bigger than ninety people should be able to make, and Marcus was hugging Aiden and Aiden was hugging him back, and for three seconds nothing in the world mattered except that the ball had crossed the line.
+He'd read about this — the psychology of crowd dynamics, the way emotional responses synchronize in groups. But reading about it was nothing. Ninety people jumped and the sound was enormous, bigger than ninety people should be able to make, and Marcus was hugging Aiden and Aiden was hugging him back, and for three seconds nothing in the world mattered except that the ball had crossed the line.
 
 When they separated, Aiden was grinning. The grin of someone who has discovered something fundamental about being alive.
 
@@ -128,7 +131,7 @@ Walking out, Aiden was vibrating. Not metaphorically — actually vibrating, the
 
 The boy considered this. "Maybe. She'll say no if I ask permission. She'll be annoyed but not angry if I just go." He had the strategic mind of someone used to navigating a single parent's boundaries.
 
-"Give her my number," Marcus said, and then immediately thought about how that sounded, a forty-three-year-old man offering his number to a thirteen-year-old boy. But the away end was different. The away end was the place where the normal rules compressed into simpler ones: we're here, we're together, we look after our own. "For the trains," he added. "In case she wants to know there's an adult."
+"Give her my number," Marcus said, and then thought about how that sounded, a forty-three-year-old man offering his number to a thirteen-year-old boy. But the away end was different. The away end was the place where the normal rules compressed into simpler ones: we're here, we're together, we look after our own. "For the trains," he added. "In case she wants to know there's an adult."
 
 Aiden typed the number into his phone without ceremony.
 
@@ -150,7 +153,7 @@ Marcus thought about this. He thought about his granddad hoisting him onto his s
 
 The train came. They found seats in an empty carriage that smelled of damp upholstery and old crisps. Aiden fell asleep before Penrith, his head against the window, Orient scarf bunched under his chin like a pillow.
 
-Marcus watched the dark country slide past the window — shapes of hills, the occasional lit farmhouse, the reflections of the carriage superimposed on the night like a ghost train running alongside. He felt something he hadn't felt in six weeks, or maybe six months, or maybe longer than that.
+He watched the dark country slide past the window — shapes of hills, the occasional lit farmhouse, the reflections of the carriage superimposed on the night like a ghost train running alongside. He felt something he hadn't felt in six weeks, or maybe six months, or maybe longer than that.
 
 Not happiness, exactly. Something more structural. The feeling that the architecture of a life includes other people, and that the absence of one person doesn't demolish the building. It just means there's a room you don't go into for a while.
 
