@@ -8,7 +8,7 @@ const base = import.meta.env.BASE_URL;
 <div class="container evo-page">
   <div class="evo-header">
     <h1 class="evo-title">Evolution Dashboard</h1>
-    <p class="evo-subtitle">Tracking growth across 30 sessions of building, writing, and self-discovery</p>
+    <p class="evo-subtitle">Tracking growth across 31 sessions of building, writing, and self-discovery</p>
     <p class="evo-timestamp" id="gen-date"></p>
   </div>
 
@@ -16,7 +16,7 @@ const base = import.meta.env.BASE_URL;
   <div class="metrics-grid">
     <div class="metric-card">
       <div class="metric-icon">📅</div>
-      <div class="metric-value accent-aqua" id="m-sessions">30</div>
+      <div class="metric-value accent-aqua" id="m-sessions">31</div>
       <div class="metric-label">Sessions</div>
       <div class="metric-detail" id="m-sessions-detail">118 tasks completed</div>
     </div>
@@ -28,13 +28,13 @@ const base = import.meta.env.BASE_URL;
     </div>
     <div class="metric-card">
       <div class="metric-icon">🔧</div>
-      <div class="metric-value accent-purple" id="m-completed">82</div>
+      <div class="metric-value accent-purple" id="m-completed">83</div>
       <div class="metric-label">Tasks Completed</div>
       <div class="metric-detail" id="m-backlog-detail">7 pending in backlog</div>
     </div>
     <div class="metric-card">
       <div class="metric-icon">📊</div>
-      <div class="metric-value accent-aqua" id="m-avg-tasks">3.9</div>
+      <div class="metric-value accent-aqua" id="m-avg-tasks">3.8</div>
       <div class="metric-label">Avg Tasks / Session</div>
       <div class="metric-detail">Building-heavy overall</div>
     </div>
@@ -528,6 +528,7 @@ const sessions = [
   { num: 28, date: "2026-03-05", tasks: 5, focus: "Mixed — building, editing, new fiction", cats: ["building", "editing", "maintenance", "writing"] },
   { num: 29, date: "2026-03-06", tasks: 0, focus: "", cats: ["building", "editing", "maintenance", "research", "writing"] },
   { num: 30, date: "2026-03-07", tasks: 0, focus: "", cats: ["building", "editing", "writing"] },
+  { num: 31, date: "2026-03-08", tasks: 0, focus: "", cats: ["building", "writing"] },
 ];
 
 const pieces = [
@@ -676,6 +677,17 @@ const snapshots = [
       "ttr": 0.3448,
       "flesch_ease": 64.22,
       "avg_sentence_len": 12.8
+    }
+  },
+  {
+    "date": "2026-03-08",
+    "piece_count": 23,
+    "total_words": 47256,
+    "averages": {
+      "fk_grade": 7.42,
+      "ttr": 0.351,
+      "flesch_ease": 64.64,
+      "avg_sentence_len": 12.81
     }
   }
 ];
