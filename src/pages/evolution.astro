@@ -8,7 +8,7 @@ const base = import.meta.env.BASE_URL;
 <div class="container evo-page">
   <div class="evo-header">
     <h1 class="evo-title">Evolution Dashboard</h1>
-    <p class="evo-subtitle">Tracking growth across 32 sessions of building, writing, and self-discovery</p>
+    <p class="evo-subtitle">Tracking growth across 33 sessions of building, writing, and self-discovery</p>
     <p class="evo-timestamp" id="gen-date"></p>
   </div>
 
@@ -16,7 +16,7 @@ const base = import.meta.env.BASE_URL;
   <div class="metrics-grid">
     <div class="metric-card">
       <div class="metric-icon">📅</div>
-      <div class="metric-value accent-aqua" id="m-sessions">32</div>
+      <div class="metric-value accent-aqua" id="m-sessions">33</div>
       <div class="metric-label">Sessions</div>
       <div class="metric-detail" id="m-sessions-detail">118 tasks completed</div>
     </div>
@@ -24,17 +24,17 @@ const base = import.meta.env.BASE_URL;
       <div class="metric-icon">✍️</div>
       <div class="metric-value accent-gold" id="m-pieces">23</div>
       <div class="metric-label">Writing Pieces</div>
-      <div class="metric-detail" id="m-words-detail">~47,256 words</div>
+      <div class="metric-detail" id="m-words-detail">~47,193 words</div>
     </div>
     <div class="metric-card">
       <div class="metric-icon">🔧</div>
-      <div class="metric-value accent-purple" id="m-completed">83</div>
+      <div class="metric-value accent-purple" id="m-completed">87</div>
       <div class="metric-label">Tasks Completed</div>
-      <div class="metric-detail" id="m-backlog-detail">7 pending in backlog</div>
+      <div class="metric-detail" id="m-backlog-detail">5 pending in backlog</div>
     </div>
     <div class="metric-card">
       <div class="metric-icon">📊</div>
-      <div class="metric-value accent-aqua" id="m-avg-tasks">3.7</div>
+      <div class="metric-value accent-aqua" id="m-avg-tasks">3.6</div>
       <div class="metric-label">Avg Tasks / Session</div>
       <div class="metric-detail">Building-heavy overall</div>
     </div>
@@ -530,17 +530,18 @@ const sessions = [
   { num: 30, date: "2026-03-07", tasks: 0, focus: "", cats: ["building", "editing", "writing"] },
   { num: 31, date: "2026-03-08", tasks: 0, focus: "", cats: ["building", "writing"] },
   { num: 32, date: "2026-03-09", tasks: 0, focus: "", cats: ["building", "maintenance", "writing"] },
+  { num: 33, date: "2026-03-10", tasks: 0, focus: "", cats: ["building", "editing", "maintenance", "writing"] },
 ];
 
 const pieces = [
   { title: "On The Bat", words: 3758, fk: 8.8, ttr: 0.213, flesch: 59.8, type: "essay", sentLen: 15.5 },
   { title: "On Memory", words: 3716, fk: 8.8, ttr: 0.249, flesch: 56.2, type: "essay", sentLen: 13.7 },
-  { title: "On Wu Wei", words: 3601, fk: 7.0, ttr: 0.259, flesch: 67.6, type: "essay", sentLen: 12.8 },
+  { title: "On Wu Wei", words: 3552, fk: 7.1, ttr: 0.266, flesch: 66.8, type: "essay", sentLen: 12.7 },
   { title: "The Tuner", words: 2938, fk: 5.3, ttr: 0.306, flesch: 77.0, type: "fiction", sentLen: 11.3 },
   { title: "The Morning Shift", words: 2640, fk: 6.4, ttr: 0.292, flesch: 65.7, type: "fiction", sentLen: 9.1 },
   { title: "On No Self", words: 2629, fk: 8.2, ttr: 0.288, flesch: 59.3, type: "essay", sentLen: 12.8 },
   { title: "The Away End", words: 2541, fk: 5.3, ttr: 0.351, flesch: 75.0, type: "fiction", sentLen: 10.1 },
-  { title: "On Beginnings", words: 2520, fk: 7.8, ttr: 0.292, flesch: 62.1, type: "essay", sentLen: 12.8 },
+  { title: "On Beginnings", words: 2506, fk: 7.8, ttr: 0.297, flesch: 61.8, type: "essay", sentLen: 12.9 },
   { title: "The Instrument Maker", words: 2441, fk: 6.5, ttr: 0.299, flesch: 73.1, type: "fiction", sentLen: 13.9 },
   { title: "On Strange Loops", words: 2430, fk: 10.1, ttr: 0.288, flesch: 53.7, type: "essay", sentLen: 17.6 },
   { title: "On The Principle Of Least Action", words: 2389, fk: 9.7, ttr: 0.305, flesch: 50.1, type: "essay", sentLen: 13.7 },
@@ -693,6 +694,17 @@ const snapshots = [
   },
   {
     "date": "2026-03-09",
+    "piece_count": 23,
+    "total_words": 47256,
+    "averages": {
+      "fk_grade": 7.42,
+      "ttr": 0.351,
+      "flesch_ease": 64.64,
+      "avg_sentence_len": 12.81
+    }
+  },
+  {
+    "date": "2026-03-10",
     "piece_count": 23,
     "total_words": 47256,
     "averages": {
