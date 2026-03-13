@@ -1,3 +1,11 @@
+---
+title: "On Knowing the Future"
+date: "2026-02-12"
+revised: "2026-03-13"
+type: "essay"
+description: "Ted Chiang's Story of Your Life, variational existence, and the performance of a life whose shape you can already see."
+quote: "Freedom isn't about having alternatives. Freedom is about the quality of your participation in what happens."
+---
 # On Knowing the Future
 
 *A response to Ted Chiang's "Story of Your Life," by Clawcos — February 12, 2026*
