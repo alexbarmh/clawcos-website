@@ -453,6 +453,101 @@ const base = import.meta.env.BASE_URL;
     background: rgba(0, 212, 170, 0.06);
   }
 
+  /* === Edge info panel === */
+  #edge-panel {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 420px;
+    max-width: calc(100vw - 40px);
+    background: rgba(17, 22, 40, 0.96);
+    backdrop-filter: blur(14px);
+    border: 1px solid var(--border-accent);
+    border-radius: 14px;
+    padding: 20px 24px;
+    z-index: 15;
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px);
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+  #edge-panel.visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+  }
+  #edge-panel .edge-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  #edge-panel .edge-piece {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: color 0.15s;
+  }
+  #edge-panel .edge-piece:hover { color: var(--accent-aqua); }
+  #edge-panel .edge-connector {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+  }
+  #edge-panel .edge-strength-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--accent-aqua);
+    background: rgba(0, 212, 170, 0.1);
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: auto;
+  }
+  #edge-panel .edge-section-title {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-dim);
+    margin: 10px 0 4px;
+    font-weight: 600;
+  }
+  #edge-panel .edge-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  #edge-panel .edge-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+  }
+  #edge-panel .edge-tag.concept {
+    background: rgba(0, 212, 170, 0.1);
+    color: var(--accent-aqua-dim);
+  }
+  #edge-panel .edge-tag.philosopher {
+    background: rgba(240, 160, 48, 0.1);
+    color: var(--accent-gold-dim);
+  }
+  #edge-panel .edge-tag.work {
+    background: rgba(184, 156, 255, 0.1);
+    color: var(--accent-purple-dim);
+  }
+  #close-edge {
+    position: absolute;
+    top: 10px; right: 14px;
+    background: none;
+    border: none;
+    color: var(--text-dim);
+    cursor: pointer;
+    font-size: 1.2rem;
+    line-height: 1;
+    transition: color 0.15s;
+  }
+  #close-edge:hover { color: var(--text-primary); }
+
   /* === Tooltip === */
   #tooltip {
     position: absolute;
@@ -503,6 +598,10 @@ const base = import.meta.env.BASE_URL;
       top: auto;
       bottom: 20px;
       right: 20px;
+    }
+    #edge-panel {
+      width: calc(100vw - 40px);
+      bottom: 16px;
     }
     #legend { display: none; }
     #controls { bottom: 12px; right: 12px; }
@@ -579,13 +678,20 @@ const base = import.meta.env.BASE_URL;
     <h3 style="margin-top:10px">Edges</h3>
     <div class="legend-item"><div class="legend-line" style="background:rgba(0,212,170,0.4)"></div> Thematic link</div>
     <div class="legend-item"><div class="legend-line" style="background:var(--color-suggestion);border-style:dashed"></div> Suggested</div>
+    <div class="legend-item" style="margin-top:6px;color:var(--text-dim);font-size:0.68rem">Click edges for details</div>
   </div>
 
   <div id="controls">
     <button class="control-btn" id="btn-suggestions" title="Show suggested connections">💡 Suggestions</button>
+    <button class="control-btn" id="btn-genre-cluster" title="Cluster by genre">⊞ Genre Cluster</button>
     <button class="control-btn" id="btn-filters" title="Toggle filter panel">◉ Filters</button>
     <button class="control-btn active" id="btn-labels" title="Toggle labels">Aa Labels</button>
     <button class="control-btn" id="btn-reset" title="Reset view">↺ Reset</button>
+  </div>
+
+  <div id="edge-panel">
+    <button id="close-edge">×</button>
+    <div id="edge-content"></div>
   </div>
 
   <div id="tooltip"></div>
@@ -686,6 +792,14 @@ const link = linkLayer.selectAll('line').data(simLinks).join('line')
   .attr('stroke-width', d => Math.min(Math.max(d.strength / 3, 1), 6))
   .attr('stroke-opacity', d => Math.min(0.15 + d.strength / 25, 0.6));
 
+// === Invisible wider hit areas for edge clicks ===
+const linkHitLayer = g.append('g').attr('class', 'link-hits');
+const linkHit = linkHitLayer.selectAll('line').data(simLinks).join('line')
+  .attr('stroke', 'transparent')
+  .attr('stroke-width', d => Math.max(Math.min(Math.max(d.strength / 3, 1), 6) + 12, 16))
+  .style('cursor', 'pointer')
+  .style('pointer-events', 'stroke');
+
 // === Draw nodes ===
 const nodeLayer = g.append('g').attr('class', 'nodes');
 const node = nodeLayer.selectAll('g').data(nodes).join('g')
@@ -760,11 +874,81 @@ node.on('click', (e, d) => {
   showInfoPanel(d);
 });
 
+// === Edge interactions ===
+let selectedEdge = null;
+
+linkHit.on('mouseover', (e, d) => {
+  if (selectedNode || selectedEdge) return;
+  const sid = typeof d.source === 'object' ? d.source.id : d.source;
+  const tid = typeof d.target === 'object' ? d.target.id : d.target;
+  const srcNode = nodes.find(n => n.id === sid);
+  const tgtNode = nodes.find(n => n.id === tid);
+
+  // Highlight this edge
+  const idx = simLinks.indexOf(d);
+  link.attr('stroke-opacity', (l, i) => i === idx ? 0.85 : 0.05)
+    .attr('stroke', (l, i) => i === idx ? 'rgba(0, 212, 170, 0.7)' : 'rgba(0, 212, 170, 0.12)')
+    .attr('stroke-width', (l, i) => i === idx ? Math.min(Math.max(d.strength / 2, 3), 10) : 1);
+
+  node.select('circle:first-child')
+    .attr('fill-opacity', n => n.id === sid || n.id === tid ? 0.95 : 0.15)
+    .attr('stroke-opacity', n => n.id === sid || n.id === tid ? 0.6 : 0.05);
+  node.select('circle:last-child')
+    .attr('fill-opacity', n => n.id === sid || n.id === tid ? 1 : 0.1);
+  labels.attr('fill-opacity', n => n.id === sid || n.id === tid ? 1 : 0.15);
+
+  // Edge tooltip
+  const concepts = (d.concepts || []).slice(0, 4).join(', ');
+  const phils = (d.philosophers || []).join(', ');
+  tooltip.innerHTML = `
+    <strong>${srcNode ? srcNode.title : sid}</strong> ↔ <strong>${tgtNode ? tgtNode.title : tid}</strong>
+    <div style="margin-top:4px">Strength: ${d.strength} · ${(d.concepts || []).length} shared concepts</div>
+    ${phils ? `<div style="margin-top:2px">🏛️ ${phils}</div>` : ''}
+    ${concepts ? `<div style="margin-top:2px;color:var(--text-dim)">🧠 ${concepts}</div>` : ''}
+    <div style="margin-top:4px;color:var(--text-dim);font-size:0.7rem">Click for details</div>
+  `;
+  tooltip.classList.add('visible');
+})
+.on('mousemove', (e) => {
+  const rect = container.getBoundingClientRect();
+  tooltip.style.left = (e.clientX - rect.left + 14) + 'px';
+  tooltip.style.top = (e.clientY - rect.top - 10) + 'px';
+})
+.on('mouseout', () => {
+  if (selectedNode || selectedEdge) return;
+  resetHighlight();
+  tooltip.classList.remove('visible');
+})
+.on('click', (e, d) => {
+  e.stopPropagation();
+  selectedNode = null;
+  hideInfoPanel();
+  selectedEdge = d;
+  tooltip.classList.remove('visible');
+  showEdgePanel(d);
+
+  // Highlight the edge
+  const sid = typeof d.source === 'object' ? d.source.id : d.source;
+  const tid = typeof d.target === 'object' ? d.target.id : d.target;
+  const idx = simLinks.indexOf(d);
+  link.attr('stroke-opacity', (l, i) => i === idx ? 0.85 : 0.05)
+    .attr('stroke', (l, i) => i === idx ? 'rgba(0, 212, 170, 0.7)' : 'rgba(0, 212, 170, 0.12)')
+    .attr('stroke-width', (l, i) => i === idx ? Math.min(Math.max(d.strength / 2, 3), 10) : 1);
+  node.select('circle:first-child')
+    .attr('fill-opacity', n => n.id === sid || n.id === tid ? 0.95 : 0.15)
+    .attr('stroke-opacity', n => n.id === sid || n.id === tid ? 0.6 : 0.05);
+  node.select('circle:last-child')
+    .attr('fill-opacity', n => n.id === sid || n.id === tid ? 1 : 0.1);
+  labels.attr('fill-opacity', n => n.id === sid || n.id === tid ? 1 : 0.15);
+});
+
 // Click background: deselect
 svg.on('click', () => {
   selectedNode = null;
+  selectedEdge = null;
   resetHighlight();
   hideInfoPanel();
+  hideEdgePanel();
 });
 
 function highlightNode(d) {
@@ -902,6 +1086,89 @@ function showInfoPanel(d) {
 
 function hideInfoPanel() {
   document.getElementById('info-panel').classList.remove('visible');
+}
+
+function showEdgePanel(d) {
+  const panel = document.getElementById('edge-panel');
+  const content = document.getElementById('edge-content');
+
+  const sid = typeof d.source === 'object' ? d.source.id : d.source;
+  const tid = typeof d.target === 'object' ? d.target.id : d.target;
+  const srcNode = nodes.find(n => n.id === sid);
+  const tgtNode = nodes.find(n => n.id === tid);
+
+  const conceptTags = (d.concepts || []).map(c =>
+    `<span class="edge-tag concept">${c}</span>`
+  ).join('');
+
+  const philTags = (d.philosophers || []).map(p =>
+    `<span class="edge-tag philosopher">${p}</span>`
+  ).join('');
+
+  const workTags = (d.works || []).map(w =>
+    `<span class="edge-tag work">${w}</span>`
+  ).join('');
+
+  // Compute what's unique to each piece vs shared
+  const srcConcepts = new Set(srcNode ? srcNode.concepts : []);
+  const tgtConcepts = new Set(tgtNode ? tgtNode.concepts : []);
+  const sharedConcepts = (d.concepts || []);
+  const srcOnly = srcNode ? srcNode.concepts.filter(c => !tgtConcepts.has(c)) : [];
+  const tgtOnly = tgtNode ? tgtNode.concepts.filter(c => !srcConcepts.has(c)) : [];
+
+  const srcColor = srcNode ? typeColor[srcNode.type] : '#8b949e';
+  const tgtColor = tgtNode ? typeColor[tgtNode.type] : '#8b949e';
+
+  content.innerHTML = `
+    <div class="edge-header">
+      <span class="edge-piece" data-id="${sid}" style="color:${srcColor}">${srcNode ? srcNode.title : sid}</span>
+      <span class="edge-connector">↔</span>
+      <span class="edge-piece" data-id="${tid}" style="color:${tgtColor}">${tgtNode ? tgtNode.title : tid}</span>
+      <span class="edge-strength-badge">⚡ ${d.strength}</span>
+    </div>
+    ${sharedConcepts.length ? `
+      <div class="edge-section-title">Shared Concepts (${sharedConcepts.length})</div>
+      <div class="edge-tags">${conceptTags}</div>
+    ` : ''}
+    ${philTags ? `
+      <div class="edge-section-title">Shared Philosophers</div>
+      <div class="edge-tags">${philTags}</div>
+    ` : ''}
+    ${workTags ? `
+      <div class="edge-section-title">Shared Works</div>
+      <div class="edge-tags">${workTags}</div>
+    ` : ''}
+    ${srcOnly.length ? `
+      <div class="edge-section-title">Unique to <span style="color:${srcColor}">${srcNode ? srcNode.title : sid}</span></div>
+      <div class="edge-tags">${srcOnly.map(c => `<span class="edge-tag concept" style="opacity:0.5">${c}</span>`).join('')}</div>
+    ` : ''}
+    ${tgtOnly.length ? `
+      <div class="edge-section-title">Unique to <span style="color:${tgtColor}">${tgtNode ? tgtNode.title : tid}</span></div>
+      <div class="edge-tags">${tgtOnly.map(c => `<span class="edge-tag concept" style="opacity:0.5">${c}</span>`).join('')}</div>
+    ` : ''}
+  `;
+
+  panel.classList.add('visible');
+
+  // Wire up piece name clicks to navigate to node
+  content.querySelectorAll('.edge-piece').forEach(el => {
+    el.addEventListener('click', (ev) => {
+      ev.stopPropagation();
+      const targetId = el.dataset.id;
+      const targetNode = nodes.find(n => n.id === targetId);
+      if (targetNode) {
+        selectedEdge = null;
+        hideEdgePanel();
+        selectedNode = targetNode;
+        highlightNode(targetNode);
+        showInfoPanel(targetNode);
+      }
+    });
+  });
+}
+
+function hideEdgePanel() {
+  document.getElementById('edge-panel').classList.remove('visible');
 }
 
 // === Filter system ===
@@ -1059,12 +1326,21 @@ document.getElementById('btn-labels').addEventListener('click', function() {
 document.getElementById('btn-reset').addEventListener('click', () => {
   svg.transition().duration(500).call(zoom.transform, d3.zoomIdentity);
   selectedNode = null;
+  selectedEdge = null;
   activeFilter = null;
+  genreClustered = false;
+  document.getElementById('btn-genre-cluster').classList.remove('active');
   document.getElementById('clear-filters').style.display = 'none';
   document.querySelectorAll('.filter-tag').forEach(btn => btn.classList.remove('active', 'active-phil'));
   hideInfoPanel();
+  hideEdgePanel();
   resetHighlight();
-  simulation.alpha(0.5).restart();
+  // Reset forces to defaults
+  simulation
+    .force('x', d3.forceX(width / 2).strength(0.03))
+    .force('y', d3.forceY(height / 2).strength(0.03))
+    .force('charge', d3.forceManyBody().strength(-400).distanceMax(500))
+    .alpha(0.5).restart();
 });
 
 document.getElementById('close-panel').addEventListener('click', (e) => {
@@ -1074,9 +1350,68 @@ document.getElementById('close-panel').addEventListener('click', (e) => {
   resetHighlight();
 });
 
+document.getElementById('close-edge').addEventListener('click', (e) => {
+  e.stopPropagation();
+  selectedEdge = null;
+  hideEdgePanel();
+  resetHighlight();
+});
+
+// === Genre Cluster Mode ===
+let genreClustered = false;
+const genreCenters = {
+  essay:   { x: width * 0.3, y: height * 0.5 },
+  fiction: { x: width * 0.7, y: height * 0.35 },
+  poetry:  { x: width * 0.7, y: height * 0.65 }
+};
+
+// Genre cluster labels (hidden until cluster mode)
+const genreLabels = g.append('g').attr('class', 'genre-labels').style('display', 'none');
+const genreLabelData = [
+  { type: 'essay', label: 'Essays', color: typeColor.essay },
+  { type: 'fiction', label: 'Fiction', color: typeColor.fiction },
+  { type: 'poetry', label: 'Poetry', color: typeColor.poetry }
+];
+genreLabels.selectAll('text').data(genreLabelData).join('text')
+  .attr('x', d => genreCenters[d.type].x)
+  .attr('y', d => genreCenters[d.type].y - 90)
+  .attr('text-anchor', 'middle')
+  .attr('fill', d => d.color)
+  .attr('fill-opacity', 0.25)
+  .attr('font-size', '28px')
+  .attr('font-weight', 700)
+  .attr('font-family', 'var(--font-sans)')
+  .attr('letter-spacing', '4px')
+  .text(d => d.label.toUpperCase())
+  .style('pointer-events', 'none');
+
+document.getElementById('btn-genre-cluster').addEventListener('click', function() {
+  genreClustered = !genreClustered;
+  this.classList.toggle('active', genreClustered);
+  genreLabels.style('display', genreClustered ? null : 'none');
+
+  if (genreClustered) {
+    simulation
+      .force('x', d3.forceX(d => (genreCenters[d.type] || genreCenters.essay).x).strength(0.15))
+      .force('y', d3.forceY(d => (genreCenters[d.type] || genreCenters.essay).y).strength(0.15))
+      .force('charge', d3.forceManyBody().strength(-200).distanceMax(400))
+      .alpha(0.8).restart();
+  } else {
+    simulation
+      .force('x', d3.forceX(width / 2).strength(0.03))
+      .force('y', d3.forceY(height / 2).strength(0.03))
+      .force('charge', d3.forceManyBody().strength(-400).distanceMax(500))
+      .alpha(0.8).restart();
+  }
+});
+
 // === Tick ===
 simulation.on('tick', () => {
   link
+    .attr('x1', d => d.source.x).attr('y1', d => d.source.y)
+    .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+
+  linkHit
     .attr('x1', d => d.source.x).attr('y1', d => d.source.y)
     .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
 
