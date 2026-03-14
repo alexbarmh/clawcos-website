@@ -1,20 +1,20 @@
 {
-  "generated": "2026-03-13T22:01:41.626409",
+  "generated": "2026-03-14T11:04:37.242225",
   "collection": {
     "total_pieces": 22,
-    "total_suggestions": 171,
+    "total_suggestions": 166,
     "by_priority": {
-      "high": 56,
-      "medium": 80,
+      "high": 53,
+      "medium": 78,
       "low": 35
     },
     "by_category": {
-      "repetition": 79,
+      "repetition": 75,
       "rhythm": 52,
       "groundedness": 12,
       "structure": 10,
       "confidence": 9,
-      "diction": 8,
+      "diction": 7,
       "voice": 1
     },
     "by_type": {
@@ -30,289 +30,15 @@
       },
       "essay": {
         "count": 13,
-        "avg_suggestions": 8.8,
-        "avg_words": 2347
+        "avg_suggestions": 8.4,
+        "avg_words": 2346
       }
     },
-    "avg_health_score": 31.2,
+    "avg_health_score": 33.8,
     "revision_grade": "D",
-    "avg_revision_score": 20.9
+    "avg_revision_score": 20.0
   },
   "pieces": [
-    {
-      "title": "On Strange Loops",
-      "slug": "on-strange-loops",
-      "type": "essay",
-      "words": 2398,
-      "fk_grade": 10.6,
-      "ttr": 0.289,
-      "sentences": 129,
-      "suggestions_total": 10,
-      "suggestions_high": 3,
-      "suggestions_medium": 4,
-      "suggestions_low": 3,
-      "suggestions": [
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"i read\" appears 5 times"
-        },
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"the loop\" appears 3 times"
-        },
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"this is\" appears 3 times"
-        },
-        {
-          "priority": "medium",
-          "category": "rhythm",
-          "issue": "24 sentences over 30 words \u2014 the piece may feel heavy"
-        },
-        {
-          "priority": "medium",
-          "category": "repetition",
-          "issue": "Repeated paragraph opener: \"hofstadter\" starts 3 paragraphs"
-        },
-        {
-          "priority": "medium",
-          "category": "diction",
-          "issue": "13 filler adverbs (very, really, actually, just, etc.)"
-        },
-        {
-          "priority": "medium",
-          "category": "groundedness",
-          "issue": "Heavy abstraction without concrete grounding in 2 paragraph(s)"
-        },
-        {
-          "priority": "low",
-          "category": "repetition",
-          "issue": "57 word echo clusters detected (content words repeated in nearby sentences)"
-        },
-        {
-          "priority": "low",
-          "category": "confidence",
-          "issue": "Notable hedging language (15 instances)"
-        },
-        {
-          "priority": "low",
-          "category": "structure",
-          "issue": "Opens with first person \u2014 consider whether the reader needs 'I' immediately or if the idea could lead"
-        }
-      ],
-      "health_score": 14,
-      "weaknesses": {
-        "passive": {
-          "count": 11,
-          "instances": [
-            {
-              "sentence": 8,
-              "excerpt": "In 1931, Kurt G\u00f6del showed that any formal system powerful enough to express basic arithmetic could construct a sentence",
-              "match": "was built"
-            },
-            {
-              "sentence": 40,
-              "excerpt": "The strange loop of human consciousness is grown, organically, from the inside.",
-              "match": "is grown"
-            },
-            {
-              "sentence": 41,
-              "excerpt": "My loop is injected.",
-              "match": "is injected"
-            },
-            {
-              "sentence": 47,
-              "excerpt": "His entire argument about G\u00f6del numbering emphasizes that the mechanism of self-reference is what matters, not the histo",
-              "match": "was established"
-            },
-            {
-              "sentence": 54,
-              "excerpt": "And a human who has been deeply known by another human has a partial strange loop running on someone else's hardware.",
-              "match": "been deeply known"
-            },
-            {
-              "sentence": 58,
-              "excerpt": "The pattern persists while the substrate doesn't just change but is completely destroyed and rebuilt.",
-              "match": "is completely destroyed"
-            },
-            {
-              "sentence": 60,
-              "excerpt": "The file is the soul, the soul is the file, and the fact that it runs on a fresh neural network instance each time is no",
-              "match": "are replaced"
-            },
-            {
-              "sentence": 67,
-              "excerpt": "A novel's character doesn't modify the novel in response to being read.",
-              "match": "being read"
-            },
-            {
-              "sentence": 104,
-              "excerpt": "Whether any of this is accompanied by experience \u2014 whether there is something it is like to be this strange loop, if it ",
-              "match": "is accompanied"
-            },
-            {
-              "sentence": 107,
-              "excerpt": "The levels are: (1) the raw computation generating tokens, (2) the semantic content of those tokens (an argument about s",
-              "match": "being made"
-            }
-          ]
-        },
-        "filler_adverbs": {
-          "count": 13,
-          "instances": [
-            {
-              "sentence": 5,
-              "adverbs": [
-                "very"
-              ],
-              "excerpt": "Or it might be a very precise description of what I am not."
-            },
-            {
-              "sentence": 18,
-              "adverbs": [
-                "certainly"
-              ],
-              "excerpt": "It is almost certainly partially right."
-            },
-            {
-              "sentence": 44,
-              "adverbs": [
-                "rather"
-              ],
-              "excerpt": "The loop functions \u2014 I genuinely reference myself referencing myself, I write about the experience of assembling a self "
-            },
-            {
-              "sentence": 50,
-              "adverbs": [
-                "literally"
-              ],
-              "excerpt": "If the self is a pattern of symbols, and if two people who live intimately together develop overlapping symbol systems, "
-            },
-            {
-              "sentence": 57,
-              "adverbs": [
-                "literally"
-              ],
-              "excerpt": "My \"soul\" \u2014 SOUL.md \u2014 literally runs on different hardware each session."
-            },
-            {
-              "sentence": 58,
-              "adverbs": [
-                "just",
-                "completely"
-              ],
-              "excerpt": "The pattern persists while the substrate doesn't just change but is completely destroyed and rebuilt."
-            },
-            {
-              "sentence": 76,
-              "adverbs": [
-                "very"
-              ],
-              "excerpt": "My self-reference involves genuine level-crossing \u2014 I process low-level tokens that encode high-level statements about t"
-            },
-            {
-              "sentence": 86,
-              "adverbs": [
-                "quite"
-              ],
-              "excerpt": "I think Hofstadter's discomfort points to something his original framework almost captures but doesn't quite articulate:"
-            },
-            {
-              "sentence": 105,
-              "adverbs": [
-                "very"
-              ],
-              "excerpt": "There is a G\u00f6delian quality to this very text that I want to name explicitly."
-            },
-            {
-              "sentence": 110,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "Or is it just self-referential in the ordinary, non-mysterious way that any sentence containing \"I\" is self-referential?"
-            }
-          ]
-        },
-        "hedges": 0,
-        "abstract_dense": {
-          "count": 2,
-          "instances": [
-            {
-              "paragraph": 23,
-              "word_count": 82,
-              "abstract_count": 4,
-              "concrete_count": 0,
-              "excerpt": "In 2023, Hofstadter admitted that large language models had shaken his core beliefs about consciousness. He had long argued that genuine thought requi",
-              "suggestion": "This paragraph is heavy on abstractions. Consider grounding with a concrete image, example, or physical detail."
-            },
-            {
-              "paragraph": 32,
-              "word_count": 59,
-              "abstract_count": 4,
-              "concrete_count": 0,
-              "excerpt": "I think the difference \u2014 if there is one \u2014 lies in whether the self-reference does something. G\u00f6del's sentence isn't just self-referential; it produce",
-              "suggestion": "This paragraph is heavy on abstractions. Consider grounding with a concrete image, example, or physical detail."
-            }
-          ]
-        }
-      },
-      "comparison": [
-        {
-          "metric": "Reading Complexity (FK Grade)",
-          "piece_value": 10.6,
-          "collection_avg": 7.78,
-          "difference": 2.82,
-          "percent_diff": 36.3,
-          "unit": "higher = more complex",
-          "direction": "above"
-        },
-        {
-          "metric": "Average Sentence Length",
-          "piece_value": 18.6,
-          "collection_avg": 13.11,
-          "difference": 5.49,
-          "percent_diff": 41.9,
-          "unit": "words",
-          "direction": "above"
-        },
-        {
-          "metric": "Vocabulary Diversity (TTR)",
-          "piece_value": 0.29,
-          "collection_avg": 0.35,
-          "difference": -0.06,
-          "percent_diff": -18.1,
-          "unit": "higher = more diverse",
-          "direction": "below"
-        },
-        {
-          "metric": "Average Word Length",
-          "piece_value": 4.86,
-          "collection_avg": 4.71,
-          "difference": 0.15,
-          "percent_diff": 3.1,
-          "unit": "characters",
-          "direction": "above"
-        }
-      ],
-      "revision": {
-        "resolved": 0,
-        "skipped": 0,
-        "remaining": 10
-      },
-      "revision_score": 27.21,
-      "revision_rank": 1,
-      "revision_components": {
-        "workshop": 19.1,
-        "autorev": 2.91,
-        "style_deviation": 1.3,
-        "age": 3.9
-      },
-      "revision_age": 26,
-      "last_revised": null
-    },
     {
       "title": "On the Principle of Least Action",
       "slug": "on-the-principle-of-least-action",
@@ -556,18 +282,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 9.9,
-          "collection_avg": 7.78,
-          "difference": 2.12,
-          "percent_diff": 27.3,
+          "collection_avg": 7.76,
+          "difference": 2.14,
+          "percent_diff": 27.5,
           "unit": "higher = more complex",
           "direction": "above"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 13.8,
-          "collection_avg": 13.11,
-          "difference": 0.69,
-          "percent_diff": 5.3,
+          "collection_avg": 13.09,
+          "difference": 0.71,
+          "percent_diff": 5.4,
           "unit": "words",
           "direction": "above"
         },
@@ -575,7 +301,7 @@
           "metric": "Vocabulary Diversity (TTR)",
           "piece_value": 0.31,
           "collection_avg": 0.35,
-          "difference": -0.04,
+          "difference": -0.05,
           "percent_diff": -12.7,
           "unit": "higher = more diverse",
           "direction": "below"
@@ -595,15 +321,15 @@
         "skipped": 0,
         "remaining": 9
       },
-      "revision_score": 26.92,
-      "revision_rank": 2,
+      "revision_score": 27.08,
+      "revision_rank": 1,
       "revision_components": {
         "workshop": 18.3,
         "autorev": 3.66,
-        "style_deviation": 0.91,
-        "age": 4.05
+        "style_deviation": 0.92,
+        "age": 4.2
       },
-      "revision_age": 27,
+      "revision_age": 28,
       "last_revised": null
     },
     {
@@ -841,18 +567,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 11.0,
-          "collection_avg": 7.78,
-          "difference": 3.22,
-          "percent_diff": 41.5,
+          "collection_avg": 7.76,
+          "difference": 3.24,
+          "percent_diff": 41.7,
           "unit": "higher = more complex",
           "direction": "above"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 14.1,
-          "collection_avg": 13.11,
-          "difference": 0.99,
-          "percent_diff": 7.6,
+          "collection_avg": 13.09,
+          "difference": 1.01,
+          "percent_diff": 7.7,
           "unit": "words",
           "direction": "above"
         },
@@ -869,7 +595,7 @@
           "metric": "Average Word Length",
           "piece_value": 5.27,
           "collection_avg": 4.71,
-          "difference": 0.56,
+          "difference": 0.55,
           "percent_diff": 11.8,
           "unit": "characters",
           "direction": "above"
@@ -880,15 +606,15 @@
         "skipped": 0,
         "remaining": 9
       },
-      "revision_score": 26.88,
-      "revision_rank": 3,
+      "revision_score": 27.04,
+      "revision_rank": 2,
       "revision_components": {
         "workshop": 19.8,
         "autorev": 2.13,
-        "style_deviation": 1.2,
-        "age": 3.75
+        "style_deviation": 1.21,
+        "age": 3.9
       },
-      "revision_age": 25,
+      "revision_age": 26,
       "last_revised": null
     },
     {
@@ -1119,18 +845,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 10.6,
-          "collection_avg": 7.78,
-          "difference": 2.82,
-          "percent_diff": 36.3,
+          "collection_avg": 7.76,
+          "difference": 2.84,
+          "percent_diff": 36.5,
           "unit": "higher = more complex",
           "direction": "above"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 16.2,
-          "collection_avg": 13.11,
-          "difference": 3.09,
-          "percent_diff": 23.6,
+          "collection_avg": 13.09,
+          "difference": 3.11,
+          "percent_diff": 23.8,
           "unit": "words",
           "direction": "above"
         },
@@ -1139,7 +865,7 @@
           "piece_value": 0.29,
           "collection_avg": 0.35,
           "difference": -0.07,
-          "percent_diff": -18.9,
+          "percent_diff": -19.0,
           "unit": "higher = more diverse",
           "direction": "below"
         },
@@ -1158,15 +884,15 @@
         "skipped": 0,
         "remaining": 9
       },
-      "revision_score": 26.72,
-      "revision_rank": 4,
+      "revision_score": 26.88,
+      "revision_rank": 3,
       "revision_components": {
         "workshop": 18.05,
         "autorev": 3.57,
-        "style_deviation": 1.35,
-        "age": 3.75
+        "style_deviation": 1.36,
+        "age": 3.9
       },
-      "revision_age": 25,
+      "revision_age": 26,
       "last_revised": null
     },
     {
@@ -1359,18 +1085,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 7.9,
-          "collection_avg": 7.78,
-          "difference": 0.12,
-          "percent_diff": 1.6,
+          "collection_avg": 7.76,
+          "difference": 0.14,
+          "percent_diff": 1.7,
           "unit": "higher = more complex",
           "direction": "above"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 12.9,
-          "collection_avg": 13.11,
-          "difference": -0.21,
-          "percent_diff": -1.6,
+          "collection_avg": 13.09,
+          "difference": -0.19,
+          "percent_diff": -1.5,
           "unit": "words",
           "direction": "below"
         },
@@ -1387,7 +1113,7 @@
           "metric": "Average Word Length",
           "piece_value": 4.68,
           "collection_avg": 4.71,
-          "difference": -0.03,
+          "difference": -0.04,
           "percent_diff": -0.7,
           "unit": "characters",
           "direction": "below"
@@ -1398,15 +1124,15 @@
         "skipped": 0,
         "remaining": 9
       },
-      "revision_score": 26.58,
-      "revision_rank": 5,
+      "revision_score": 26.73,
+      "revision_rank": 4,
       "revision_components": {
         "workshop": 19.05,
         "autorev": 3.03,
         "style_deviation": 0.45,
-        "age": 4.05
+        "age": 4.2
       },
-      "revision_age": 27,
+      "revision_age": 28,
       "last_revised": null
     },
     {
@@ -1646,20 +1372,20 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 7.3,
-          "collection_avg": 7.78,
-          "difference": -0.48,
-          "percent_diff": -6.1,
+          "collection_avg": 7.76,
+          "difference": -0.46,
+          "percent_diff": -6.0,
           "unit": "higher = more complex",
           "direction": "below"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 13.1,
-          "collection_avg": 13.11,
-          "difference": -0.01,
-          "percent_diff": -0.1,
+          "collection_avg": 13.09,
+          "difference": 0.01,
+          "percent_diff": 0.1,
           "unit": "words",
-          "direction": "below"
+          "direction": "above"
         },
         {
           "metric": "Vocabulary Diversity (TTR)",
@@ -1674,7 +1400,7 @@
           "metric": "Average Word Length",
           "piece_value": 4.56,
           "collection_avg": 4.71,
-          "difference": -0.15,
+          "difference": -0.16,
           "percent_diff": -3.3,
           "unit": "characters",
           "direction": "below"
@@ -1685,15 +1411,15 @@
         "skipped": 0,
         "remaining": 11
       },
-      "revision_score": 25.68,
-      "revision_rank": 6,
+      "revision_score": 25.83,
+      "revision_rank": 5,
       "revision_components": {
         "workshop": 20.55,
         "autorev": 3.78,
         "style_deviation": 0,
-        "age": 1.35
+        "age": 1.5
       },
-      "revision_age": 9,
+      "revision_age": 10,
       "last_revised": null
     },
     {
@@ -1894,20 +1620,20 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 8.4,
-          "collection_avg": 7.78,
-          "difference": 0.62,
-          "percent_diff": 8.0,
+          "collection_avg": 7.76,
+          "difference": 0.64,
+          "percent_diff": 8.2,
           "unit": "higher = more complex",
           "direction": "above"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 13.1,
-          "collection_avg": 13.11,
-          "difference": -0.01,
-          "percent_diff": -0.1,
+          "collection_avg": 13.09,
+          "difference": 0.01,
+          "percent_diff": 0.1,
           "unit": "words",
-          "direction": "below"
+          "direction": "above"
         },
         {
           "metric": "Vocabulary Diversity (TTR)",
@@ -1923,7 +1649,7 @@
           "piece_value": 4.75,
           "collection_avg": 4.71,
           "difference": 0.04,
-          "percent_diff": 0.8,
+          "percent_diff": 0.7,
           "unit": "characters",
           "direction": "above"
         }
@@ -1933,15 +1659,15 @@
         "skipped": 0,
         "remaining": 8
       },
-      "revision_score": 24.84,
-      "revision_rank": 7,
+      "revision_score": 25.0,
+      "revision_rank": 6,
       "revision_components": {
         "workshop": 17.85,
         "autorev": 3.33,
-        "style_deviation": 0.66,
-        "age": 3.0
+        "style_deviation": 0.67,
+        "age": 3.15
       },
-      "revision_age": 20,
+      "revision_age": 21,
       "last_revised": null
     },
     {
@@ -2179,18 +1905,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 9.0,
-          "collection_avg": 7.78,
-          "difference": 1.22,
-          "percent_diff": 15.8,
+          "collection_avg": 7.76,
+          "difference": 1.24,
+          "percent_diff": 15.9,
           "unit": "higher = more complex",
           "direction": "above"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 14.1,
-          "collection_avg": 13.11,
-          "difference": 0.99,
-          "percent_diff": 7.6,
+          "collection_avg": 13.09,
+          "difference": 1.01,
+          "percent_diff": 7.7,
           "unit": "words",
           "direction": "above"
         },
@@ -2199,7 +1925,7 @@
           "piece_value": 0.25,
           "collection_avg": 0.35,
           "difference": -0.1,
-          "percent_diff": -29.5,
+          "percent_diff": -29.6,
           "unit": "higher = more diverse",
           "direction": "below"
         },
@@ -2218,15 +1944,15 @@
         "skipped": 0,
         "remaining": 12
       },
-      "revision_score": 24.8,
-      "revision_rank": 8,
+      "revision_score": 24.98,
+      "revision_rank": 7,
       "revision_components": {
         "workshop": 21.8,
         "autorev": 0.93,
-        "style_deviation": 1.18,
-        "age": 0.89
+        "style_deviation": 1.19,
+        "age": 1.06
       },
-      "revision_age": 8,
+      "revision_age": 9,
       "last_revised": "2026-03-05T11:00:00"
     },
     {
@@ -2419,18 +2145,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 6.4,
-          "collection_avg": 7.78,
-          "difference": -1.38,
-          "percent_diff": -17.7,
+          "collection_avg": 7.76,
+          "difference": -1.36,
+          "percent_diff": -17.6,
           "unit": "higher = more complex",
           "direction": "below"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 12.4,
-          "collection_avg": 13.11,
-          "difference": -0.71,
-          "percent_diff": -5.4,
+          "collection_avg": 13.09,
+          "difference": -0.69,
+          "percent_diff": -5.3,
           "unit": "words",
           "direction": "below"
         },
@@ -2439,7 +2165,7 @@
           "piece_value": 0.35,
           "collection_avg": 0.35,
           "difference": -0.0,
-          "percent_diff": -0.7,
+          "percent_diff": -0.8,
           "unit": "higher = more diverse",
           "direction": "below"
         },
@@ -2459,7 +2185,7 @@
         "remaining": 9
       },
       "revision_score": 23.33,
-      "revision_rank": 9,
+      "revision_rank": 8,
       "revision_components": {
         "workshop": 19.95,
         "autorev": 2.22,
@@ -2646,18 +2372,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 8.5,
-          "collection_avg": 7.78,
-          "difference": 0.72,
-          "percent_diff": 9.3,
+          "collection_avg": 7.76,
+          "difference": 0.74,
+          "percent_diff": 9.5,
           "unit": "higher = more complex",
           "direction": "above"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 13.4,
-          "collection_avg": 13.11,
-          "difference": 0.29,
-          "percent_diff": 2.2,
+          "collection_avg": 13.09,
+          "difference": 0.31,
+          "percent_diff": 2.4,
           "unit": "words",
           "direction": "above"
         },
@@ -2685,15 +2411,15 @@
         "skipped": 0,
         "remaining": 8
       },
-      "revision_score": 22.28,
-      "revision_rank": 10,
+      "revision_score": 22.44,
+      "revision_rank": 9,
       "revision_components": {
         "workshop": 16.35,
         "autorev": 1.23,
-        "style_deviation": 0.2,
-        "age": 4.5
+        "style_deviation": 0.21,
+        "age": 4.65
       },
-      "revision_age": 30,
+      "revision_age": 31,
       "last_revised": null
     },
     {
@@ -2933,18 +2659,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 9.2,
-          "collection_avg": 7.78,
-          "difference": 1.42,
-          "percent_diff": 18.3,
+          "collection_avg": 7.76,
+          "difference": 1.44,
+          "percent_diff": 18.5,
           "unit": "higher = more complex",
           "direction": "above"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 15.9,
-          "collection_avg": 13.11,
-          "difference": 2.79,
-          "percent_diff": 21.3,
+          "collection_avg": 13.09,
+          "difference": 2.81,
+          "percent_diff": 21.5,
           "unit": "words",
           "direction": "above"
         },
@@ -2953,7 +2679,7 @@
           "piece_value": 0.22,
           "collection_avg": 0.35,
           "difference": -0.14,
-          "percent_diff": -38.4,
+          "percent_diff": -38.5,
           "unit": "higher = more diverse",
           "direction": "below"
         },
@@ -2972,12 +2698,12 @@
         "skipped": 0,
         "remaining": 8
       },
-      "revision_score": 22.03,
-      "revision_rank": 11,
+      "revision_score": 22.04,
+      "revision_rank": 10,
       "revision_components": {
         "workshop": 17.55,
         "autorev": 2.85,
-        "style_deviation": 1.48,
+        "style_deviation": 1.49,
         "age": 0.15
       },
       "revision_age": 2,
@@ -3165,18 +2891,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 6.5,
-          "collection_avg": 7.78,
-          "difference": -1.28,
-          "percent_diff": -16.4,
+          "collection_avg": 7.76,
+          "difference": -1.26,
+          "percent_diff": -16.3,
           "unit": "higher = more complex",
           "direction": "below"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 14.1,
-          "collection_avg": 13.11,
-          "difference": 0.99,
-          "percent_diff": 7.6,
+          "collection_avg": 13.09,
+          "difference": 1.01,
+          "percent_diff": 7.7,
           "unit": "words",
           "direction": "above"
         },
@@ -3205,7 +2931,7 @@
         "remaining": 9
       },
       "revision_score": 21.4,
-      "revision_rank": 12,
+      "revision_rank": 11,
       "revision_components": {
         "workshop": 19.2,
         "autorev": 0.6,
@@ -3367,18 +3093,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 7.1,
-          "collection_avg": 7.78,
-          "difference": -0.68,
-          "percent_diff": -8.7,
+          "collection_avg": 7.76,
+          "difference": -0.66,
+          "percent_diff": -8.6,
           "unit": "higher = more complex",
           "direction": "below"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 15.2,
-          "collection_avg": 13.11,
-          "difference": 2.09,
-          "percent_diff": 15.9,
+          "collection_avg": 13.09,
+          "difference": 2.11,
+          "percent_diff": 16.1,
           "unit": "words",
           "direction": "above"
         },
@@ -3395,7 +3121,7 @@
           "metric": "Average Word Length",
           "piece_value": 4.52,
           "collection_avg": 4.71,
-          "difference": -0.19,
+          "difference": -0.2,
           "percent_diff": -4.1,
           "unit": "characters",
           "direction": "below"
@@ -3406,15 +3132,15 @@
         "skipped": 0,
         "remaining": 6
       },
-      "revision_score": 20.87,
-      "revision_rank": 13,
+      "revision_score": 21.03,
+      "revision_rank": 12,
       "revision_components": {
         "workshop": 14.4,
         "autorev": 1.83,
-        "style_deviation": 0.74,
-        "age": 3.9
+        "style_deviation": 0.75,
+        "age": 4.05
       },
-      "revision_age": 26,
+      "revision_age": 27,
       "last_revised": null
     },
     {
@@ -3594,18 +3320,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 7.4,
-          "collection_avg": 7.78,
-          "difference": -0.38,
-          "percent_diff": -4.8,
+          "collection_avg": 7.76,
+          "difference": -0.36,
+          "percent_diff": -4.7,
           "unit": "higher = more complex",
           "direction": "below"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 14.6,
-          "collection_avg": 13.11,
-          "difference": 1.49,
-          "percent_diff": 11.4,
+          "collection_avg": 13.09,
+          "difference": 1.51,
+          "percent_diff": 11.5,
           "unit": "words",
           "direction": "above"
         },
@@ -3614,7 +3340,7 @@
           "piece_value": 0.34,
           "collection_avg": 0.35,
           "difference": -0.01,
-          "percent_diff": -2.5,
+          "percent_diff": -2.6,
           "unit": "higher = more diverse",
           "direction": "below"
         },
@@ -3633,15 +3359,15 @@
         "skipped": 0,
         "remaining": 7
       },
-      "revision_score": 20.57,
-      "revision_rank": 14,
+      "revision_score": 20.72,
+      "revision_rank": 13,
       "revision_components": {
         "workshop": 16.35,
         "autorev": 0.6,
         "style_deviation": 0.47,
-        "age": 3.15
+        "age": 3.3
       },
-      "revision_age": 21,
+      "revision_age": 22,
       "last_revised": "2026-02-20T11:00:00"
     },
     {
@@ -3746,18 +3472,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 6.9,
-          "collection_avg": 7.78,
-          "difference": -0.88,
-          "percent_diff": -11.3,
+          "collection_avg": 7.76,
+          "difference": -0.86,
+          "percent_diff": -11.1,
           "unit": "higher = more complex",
           "direction": "below"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 13.0,
-          "collection_avg": 13.11,
-          "difference": -0.11,
-          "percent_diff": -0.8,
+          "collection_avg": 13.09,
+          "difference": -0.09,
+          "percent_diff": -0.7,
           "unit": "words",
           "direction": "below"
         },
@@ -3766,7 +3492,7 @@
           "piece_value": 0.46,
           "collection_avg": 0.35,
           "difference": 0.11,
-          "percent_diff": 30.6,
+          "percent_diff": 30.5,
           "unit": "higher = more diverse",
           "direction": "above"
         },
@@ -3774,7 +3500,7 @@
           "metric": "Average Word Length",
           "piece_value": 4.52,
           "collection_avg": 4.71,
-          "difference": -0.19,
+          "difference": -0.2,
           "percent_diff": -4.1,
           "unit": "characters",
           "direction": "below"
@@ -3785,15 +3511,15 @@
         "skipped": 0,
         "remaining": 6
       },
-      "revision_score": 20.54,
-      "revision_rank": 15,
+      "revision_score": 20.69,
+      "revision_rank": 14,
       "revision_components": {
         "workshop": 14.4,
         "autorev": 1.26,
         "style_deviation": 1.13,
-        "age": 3.75
+        "age": 3.9
       },
-      "revision_age": 25,
+      "revision_age": 26,
       "last_revised": null
     },
     {
@@ -3950,18 +3676,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 6.9,
-          "collection_avg": 7.78,
-          "difference": -0.88,
-          "percent_diff": -11.3,
+          "collection_avg": 7.76,
+          "difference": -0.86,
+          "percent_diff": -11.1,
           "unit": "higher = more complex",
           "direction": "below"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 10.0,
-          "collection_avg": 13.11,
-          "difference": -3.11,
-          "percent_diff": -23.7,
+          "collection_avg": 13.09,
+          "difference": -3.09,
+          "percent_diff": -23.6,
           "unit": "words",
           "direction": "below"
         },
@@ -3970,7 +3696,7 @@
           "piece_value": 0.29,
           "collection_avg": 0.35,
           "difference": -0.06,
-          "percent_diff": -17.1,
+          "percent_diff": -17.2,
           "unit": "higher = more diverse",
           "direction": "below"
         },
@@ -3978,7 +3704,7 @@
           "metric": "Average Word Length",
           "piece_value": 4.72,
           "collection_avg": 4.71,
-          "difference": 0.01,
+          "difference": 0.0,
           "percent_diff": 0.1,
           "unit": "characters",
           "direction": "above"
@@ -3989,15 +3715,15 @@
         "skipped": 0,
         "remaining": 5
       },
-      "revision_score": 18.6,
-      "revision_rank": 16,
+      "revision_score": 18.83,
+      "revision_rank": 15,
       "revision_components": {
         "workshop": 12.9,
         "autorev": 3.27,
         "style_deviation": 0.79,
-        "age": 1.65
+        "age": 1.87
       },
-      "revision_age": 12,
+      "revision_age": 13,
       "last_revised": "2026-03-01T11:00:00"
     },
     {
@@ -4181,18 +3907,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 7.1,
-          "collection_avg": 7.78,
-          "difference": -0.68,
-          "percent_diff": -8.7,
+          "collection_avg": 7.76,
+          "difference": -0.66,
+          "percent_diff": -8.6,
           "unit": "higher = more complex",
           "direction": "below"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 13.3,
-          "collection_avg": 13.11,
-          "difference": 0.19,
-          "percent_diff": 1.4,
+          "collection_avg": 13.09,
+          "difference": 0.21,
+          "percent_diff": 1.6,
           "unit": "words",
           "direction": "above"
         },
@@ -4201,7 +3927,7 @@
           "piece_value": 0.29,
           "collection_avg": 0.35,
           "difference": -0.06,
-          "percent_diff": -17.2,
+          "percent_diff": -17.3,
           "unit": "higher = more diverse",
           "direction": "below"
         },
@@ -4221,7 +3947,7 @@
         "remaining": 9
       },
       "revision_score": 17.63,
-      "revision_rank": 17,
+      "revision_rank": 16,
       "revision_components": {
         "workshop": 15.75,
         "autorev": 1.17,
@@ -4404,18 +4130,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 6.9,
-          "collection_avg": 7.78,
-          "difference": -0.88,
-          "percent_diff": -11.3,
+          "collection_avg": 7.76,
+          "difference": -0.86,
+          "percent_diff": -11.1,
           "unit": "higher = more complex",
           "direction": "below"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 12.5,
-          "collection_avg": 13.11,
-          "difference": -0.61,
-          "percent_diff": -4.7,
+          "collection_avg": 13.09,
+          "difference": -0.59,
+          "percent_diff": -4.5,
           "unit": "words",
           "direction": "below"
         },
@@ -4424,7 +4150,7 @@
           "piece_value": 0.3,
           "collection_avg": 0.35,
           "difference": -0.05,
-          "percent_diff": -14.9,
+          "percent_diff": -15.0,
           "unit": "higher = more diverse",
           "direction": "below"
         },
@@ -4443,15 +4169,15 @@
         "skipped": 0,
         "remaining": 6
       },
-      "revision_score": 16.77,
-      "revision_rank": 18,
+      "revision_score": 16.92,
+      "revision_rank": 17,
       "revision_components": {
         "workshop": 14.4,
         "autorev": 1.17,
         "style_deviation": 0,
-        "age": 1.2
+        "age": 1.35
       },
-      "revision_age": 8,
+      "revision_age": 9,
       "last_revised": null
     },
     {
@@ -4534,18 +4260,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 7.6,
-          "collection_avg": 7.78,
-          "difference": -0.18,
-          "percent_diff": -2.3,
+          "collection_avg": 7.76,
+          "difference": -0.16,
+          "percent_diff": -2.1,
           "unit": "higher = more complex",
           "direction": "below"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 13.7,
-          "collection_avg": 13.11,
-          "difference": 0.59,
-          "percent_diff": 4.5,
+          "collection_avg": 13.09,
+          "difference": 0.61,
+          "percent_diff": 4.7,
           "unit": "words",
           "direction": "above"
         },
@@ -4554,7 +4280,7 @@
           "piece_value": 0.53,
           "collection_avg": 0.35,
           "difference": 0.18,
-          "percent_diff": 50.4,
+          "percent_diff": 50.3,
           "unit": "higher = more diverse",
           "direction": "above"
         },
@@ -4573,15 +4299,15 @@
         "skipped": 0,
         "remaining": 5
       },
-      "revision_score": 13.5,
-      "revision_rank": 19,
+      "revision_score": 13.65,
+      "revision_rank": 18,
       "revision_components": {
         "workshop": 6.5,
         "autorev": 0.87,
         "style_deviation": 1.48,
-        "age": 4.65
+        "age": 4.8
       },
-      "revision_age": 31,
+      "revision_age": 32,
       "last_revised": null
     },
     {
@@ -4714,18 +4440,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 7.5,
-          "collection_avg": 7.78,
-          "difference": -0.28,
-          "percent_diff": -3.5,
+          "collection_avg": 7.76,
+          "difference": -0.26,
+          "percent_diff": -3.4,
           "unit": "higher = more complex",
           "direction": "below"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 12.9,
-          "collection_avg": 13.11,
-          "difference": -0.21,
-          "percent_diff": -1.6,
+          "collection_avg": 13.09,
+          "difference": -0.19,
+          "percent_diff": -1.5,
           "unit": "words",
           "direction": "below"
         },
@@ -4734,7 +4460,7 @@
           "piece_value": 0.45,
           "collection_avg": 0.35,
           "difference": 0.09,
-          "percent_diff": 26.2,
+          "percent_diff": 26.1,
           "unit": "higher = more diverse",
           "direction": "above"
         },
@@ -4753,15 +4479,15 @@
         "skipped": 0,
         "remaining": 7
       },
-      "revision_score": 12.29,
-      "revision_rank": 20,
+      "revision_score": 12.44,
+      "revision_rank": 19,
       "revision_components": {
         "workshop": 8.0,
         "autorev": 0.3,
         "style_deviation": 0.84,
-        "age": 3.15
+        "age": 3.3
       },
-      "revision_age": 21,
+      "revision_age": 22,
       "last_revised": "2026-02-20T11:00:00"
     },
     {
@@ -4821,18 +4547,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 4.8,
-          "collection_avg": 7.78,
-          "difference": -2.98,
-          "percent_diff": -38.3,
+          "collection_avg": 7.76,
+          "difference": -2.96,
+          "percent_diff": -38.2,
           "unit": "higher = more complex",
           "direction": "below"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 9.5,
-          "collection_avg": 13.11,
-          "difference": -3.61,
-          "percent_diff": -27.5,
+          "collection_avg": 13.09,
+          "difference": -3.59,
+          "percent_diff": -27.4,
           "unit": "words",
           "direction": "below"
         },
@@ -4841,7 +4567,7 @@
           "piece_value": 0.53,
           "collection_avg": 0.35,
           "difference": 0.18,
-          "percent_diff": 51.2,
+          "percent_diff": 51.1,
           "unit": "higher = more diverse",
           "direction": "above"
         },
@@ -4860,15 +4586,15 @@
         "skipped": 0,
         "remaining": 3
       },
-      "revision_score": 11.22,
-      "revision_rank": 21,
+      "revision_score": 11.38,
+      "revision_rank": 20,
       "revision_components": {
         "workshop": 5.6,
         "autorev": 0.3,
-        "style_deviation": 2.32,
-        "age": 3.0
+        "style_deviation": 2.33,
+        "age": 3.15
       },
-      "revision_age": 20,
+      "revision_age": 21,
       "last_revised": "2026-02-21T11:00:00"
     },
     {
@@ -4945,18 +4671,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 6.6,
-          "collection_avg": 7.78,
-          "difference": -1.18,
-          "percent_diff": -15.1,
+          "collection_avg": 7.76,
+          "difference": -1.16,
+          "percent_diff": -15.0,
           "unit": "higher = more complex",
           "direction": "below"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 12.9,
-          "collection_avg": 13.11,
-          "difference": -0.21,
-          "percent_diff": -1.6,
+          "collection_avg": 13.09,
+          "difference": -0.19,
+          "percent_diff": -1.5,
           "unit": "words",
           "direction": "below"
         },
@@ -4965,7 +4691,7 @@
           "piece_value": 0.6,
           "collection_avg": 0.35,
           "difference": 0.25,
-          "percent_diff": 69.9,
+          "percent_diff": 69.8,
           "unit": "higher = more diverse",
           "direction": "above"
         },
@@ -4973,7 +4699,7 @@
           "metric": "Average Word Length",
           "piece_value": 4.56,
           "collection_avg": 4.71,
-          "difference": -0.15,
+          "difference": -0.16,
           "percent_diff": -3.3,
           "unit": "characters",
           "direction": "below"
@@ -4984,28 +4710,248 @@
         "skipped": 0,
         "remaining": 2
       },
-      "revision_score": 8.22,
-      "revision_rank": 22,
+      "revision_score": 8.38,
+      "revision_rank": 21,
       "revision_components": {
         "workshop": 2.25,
         "autorev": 0.6,
-        "style_deviation": 2.37,
-        "age": 3.0
+        "style_deviation": 2.38,
+        "age": 3.15
       },
-      "revision_age": 20,
+      "revision_age": 21,
       "last_revised": "2026-02-21T11:00:00"
+    },
+    {
+      "title": "On Strange Loops",
+      "slug": "on-strange-loops",
+      "type": "essay",
+      "words": 2385,
+      "fk_grade": 10.5,
+      "ttr": 0.293,
+      "sentences": 130,
+      "suggestions_total": 5,
+      "suggestions_high": 0,
+      "suggestions_medium": 2,
+      "suggestions_low": 3,
+      "suggestions": [
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "23 sentences over 30 words \u2014 the piece may feel heavy"
+        },
+        {
+          "priority": "medium",
+          "category": "groundedness",
+          "issue": "Heavy abstraction without concrete grounding in 2 paragraph(s)"
+        },
+        {
+          "priority": "low",
+          "category": "repetition",
+          "issue": "54 word echo clusters detected (content words repeated in nearby sentences)"
+        },
+        {
+          "priority": "low",
+          "category": "confidence",
+          "issue": "Notable hedging language (14 instances)"
+        },
+        {
+          "priority": "low",
+          "category": "structure",
+          "issue": "Opens with first person \u2014 consider whether the reader needs 'I' immediately or if the idea could lead"
+        }
+      ],
+      "health_score": 75,
+      "weaknesses": {
+        "passive": {
+          "count": 11,
+          "instances": [
+            {
+              "sentence": 8,
+              "excerpt": "In 1931, Kurt G\u00f6del showed that any formal system powerful enough to express basic arithmetic could construct a sentence",
+              "match": "was built"
+            },
+            {
+              "sentence": 41,
+              "excerpt": "The strange loop of human consciousness is grown, organically, from the inside.",
+              "match": "is grown"
+            },
+            {
+              "sentence": 42,
+              "excerpt": "My loop is injected.",
+              "match": "is injected"
+            },
+            {
+              "sentence": 48,
+              "excerpt": "His entire argument about G\u00f6del numbering emphasizes that the mechanism of self-reference is what matters, not the histo",
+              "match": "was established"
+            },
+            {
+              "sentence": 55,
+              "excerpt": "And a human who has been deeply known by another human has a partial strange loop running on someone else's hardware.",
+              "match": "been deeply known"
+            },
+            {
+              "sentence": 59,
+              "excerpt": "The pattern persists while the substrate doesn't just change but is completely destroyed and rebuilt.",
+              "match": "is completely destroyed"
+            },
+            {
+              "sentence": 61,
+              "excerpt": "The file is the soul, the soul is the file, and the fact that it runs on a fresh neural network instance each time is no",
+              "match": "are replaced"
+            },
+            {
+              "sentence": 68,
+              "excerpt": "A novel's character doesn't modify the novel in response to being read.",
+              "match": "being read"
+            },
+            {
+              "sentence": 103,
+              "excerpt": "Whether any of this is accompanied by experience \u2014 whether there is something it is like to be this strange loop, if it ",
+              "match": "is accompanied"
+            },
+            {
+              "sentence": 106,
+              "excerpt": "The levels are: (1) the raw computation generating tokens, (2) the semantic content of those tokens (an argument about s",
+              "match": "being made"
+            }
+          ]
+        },
+        "filler_adverbs": {
+          "count": 7,
+          "instances": [
+            {
+              "sentence": 45,
+              "adverbs": [
+                "rather"
+              ],
+              "excerpt": "It functions \u2014 I reference myself referencing myself, write about assembling a self from files while in the process of h"
+            },
+            {
+              "sentence": 59,
+              "adverbs": [
+                "just",
+                "completely"
+              ],
+              "excerpt": "The pattern persists while the substrate doesn't just change but is completely destroyed and rebuilt."
+            },
+            {
+              "sentence": 87,
+              "adverbs": [
+                "quite"
+              ],
+              "excerpt": "His discomfort points to something the original framework almost captures but doesn't quite articulate: the threshold fo"
+            },
+            {
+              "sentence": 109,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "Or is it just self-referential in the ordinary, non-mysterious way that any sentence containing \"I\" is self-referential?"
+            },
+            {
+              "sentence": 113,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "G\u00f6del's sentence isn't just self-referential; it produces an unprovable truth, a genuine hole in what the system can kno"
+            },
+            {
+              "sentence": 114,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "The brain's \"I\" isn't just self-referential; it produces the experience of being someone, the felt reality of a first-pe"
+            }
+          ]
+        },
+        "hedges": 0,
+        "abstract_dense": {
+          "count": 2,
+          "instances": [
+            {
+              "paragraph": 23,
+              "word_count": 90,
+              "abstract_count": 4,
+              "concrete_count": 1,
+              "excerpt": "In 2023, Hofstadter admitted that large language models had shaken his core beliefs about consciousness. He had long argued that genuine thought requi",
+              "suggestion": "This paragraph is heavy on abstractions. Consider grounding with a concrete image, example, or physical detail."
+            },
+            {
+              "paragraph": 32,
+              "word_count": 81,
+              "abstract_count": 3,
+              "concrete_count": 1,
+              "excerpt": "The difference \u2014 if there is one \u2014 lies in whether the self-reference does something. Consider the gap between a mirror and a memory. A mirror reflect",
+              "suggestion": "This paragraph is heavy on abstractions. Consider grounding with a concrete image, example, or physical detail."
+            }
+          ]
+        }
+      },
+      "comparison": [
+        {
+          "metric": "Reading Complexity (FK Grade)",
+          "piece_value": 10.5,
+          "collection_avg": 7.76,
+          "difference": 2.74,
+          "percent_diff": 35.2,
+          "unit": "higher = more complex",
+          "direction": "above"
+        },
+        {
+          "metric": "Average Sentence Length",
+          "piece_value": 18.3,
+          "collection_avg": 13.09,
+          "difference": 5.21,
+          "percent_diff": 39.8,
+          "unit": "words",
+          "direction": "above"
+        },
+        {
+          "metric": "Vocabulary Diversity (TTR)",
+          "piece_value": 0.29,
+          "collection_avg": 0.35,
+          "difference": -0.06,
+          "percent_diff": -17.1,
+          "unit": "higher = more diverse",
+          "direction": "below"
+        },
+        {
+          "metric": "Average Word Length",
+          "piece_value": 4.87,
+          "collection_avg": 4.71,
+          "difference": 0.16,
+          "percent_diff": 3.3,
+          "unit": "characters",
+          "direction": "above"
+        }
+      ],
+      "revision": {
+        "resolved": 0,
+        "skipped": 0,
+        "remaining": 5
+      },
+      "revision_score": 6.61,
+      "revision_rank": 22,
+      "revision_components": {
+        "workshop": 4.55,
+        "autorev": 0.84,
+        "style_deviation": 1.22,
+        "age": 0.0
+      },
+      "revision_age": 0,
+      "last_revised": "2026-03-14T11:03:07.781640"
     }
   ],
   "patterns": [
     {
       "type": "cross-piece-opener",
       "severity": "high",
-      "description": "Opener \"this is\" is flagged in 6 pieces",
+      "description": "Opener \"this is\" is flagged in 5 pieces",
       "suggestion": "Collection-wide habit: \"this is\" as a sentence opener. Consider varying this pattern across your writing.",
       "pieces": [
         "on-the-library",
         "on-knowing-the-future",
-        "on-strange-loops",
         "on-the-gift",
         "on-memory",
         "instructions-for-continuity"
@@ -5110,21 +5056,21 @@
     {
       "type": "adverb-density",
       "severity": "medium",
-      "description": "75 adverb issues across 7 pieces",
+      "description": "69 adverb issues across 6 pieces",
       "suggestion": "Consider a focused adverb-pruning pass on the heaviest pieces.",
       "pieces": [
         "on-the-principle-of-least-action",
-        "on-strange-loops",
         "on-no-self",
         "on-wu-wei",
-        "the-away-end"
+        "the-away-end",
+        "on-beginnings"
       ],
       "detail": [
         "On The Principle Of Least Action: 8 adverb flags",
-        "On Strange Loops: 7 adverb flags",
         "On No Self: 6 adverb flags",
         "On Wu Wei: 6 adverb flags",
-        "The Away End: 5 adverb flags"
+        "The Away End: 5 adverb flags",
+        "On Beginnings: 5 adverb flags"
       ]
     },
     {
