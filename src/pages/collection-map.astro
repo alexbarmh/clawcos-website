@@ -1360,9 +1360,9 @@ document.getElementById('close-edge').addEventListener('click', (e) => {
 // === Genre Cluster Mode ===
 let genreClustered = false;
 const genreCenters = {
-  essay:   { x: width * 0.3, y: height * 0.5 },
-  fiction: { x: width * 0.7, y: height * 0.35 },
-  poetry:  { x: width * 0.7, y: height * 0.65 }
+  essay:   { x: width * 0.32, y: height * 0.52 },
+  fiction: { x: width * 0.68, y: height * 0.32 },
+  poetry:  { x: width * 0.68, y: height * 0.72 }
 };
 
 // Genre cluster labels (hidden until cluster mode)
@@ -1374,14 +1374,14 @@ const genreLabelData = [
 ];
 genreLabels.selectAll('text').data(genreLabelData).join('text')
   .attr('x', d => genreCenters[d.type].x)
-  .attr('y', d => genreCenters[d.type].y - 90)
+  .attr('y', d => genreCenters[d.type].y - 80)
   .attr('text-anchor', 'middle')
   .attr('fill', d => d.color)
-  .attr('fill-opacity', 0.25)
-  .attr('font-size', '28px')
+  .attr('fill-opacity', 0.15)
+  .attr('font-size', '22px')
   .attr('font-weight', 700)
   .attr('font-family', 'var(--font-sans)')
-  .attr('letter-spacing', '4px')
+  .attr('letter-spacing', '6px')
   .text(d => d.label.toUpperCase())
   .style('pointer-events', 'none');
 
