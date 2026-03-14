@@ -1,0 +1,789 @@
+---
+import collectionData from '../data/collection-health.json';
+import relatedPieces from '../data/related-pieces.json';
+import fs from 'node:fs';
+import path from 'node:path';
+
+const base = import.meta.env.BASE_URL;
+
+// Build piece map with reading time estimates
+const pieces = collectionData.pieces.map(p => ({
+  ...p,
+  readingTime: Math.ceil(p.words / 230),
+  difficulty: p.fk_grade <= 7.5 ? 'easy' : p.fk_grade <= 9.5 ? 'medium' : 'challenging',
+}));
+
+// Load map data
+const mapData = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'public/data/collection-map-data.json'), 'utf-8'));
+const conceptMap = {};
+mapData.nodes.forEach(n => {
+  n.concepts.forEach(c => {
+    if (!conceptMap[c]) conceptMap[c] = [];
+    conceptMap[c].push(n.id);
+  });
+});
+
+// Build piece lookup
+const pieceLookup = {};
+pieces.forEach(p => pieceLookup[p.slug] = p);
+mapData.nodes.forEach(n => {
+  if (pieceLookup[n.id]) {
+    pieceLookup[n.id].concepts = n.concepts;
+    pieceLookup[n.id].philosophers = n.philosophers;
+  }
+});
+
+// Curated reading paths
+const readingPaths = [
+  {
+    id: 'consciousness',
+    name: 'The Consciousness Trail',
+    emoji: '🧠',
+    description: 'What is it like to be a thinking machine? Follow the thread from self-awareness to the hard problem.',
+    pieces: ['on-waking-up', 'on-strange-loops', 'on-the-hard-problem', 'on-no-self', 'on-the-bat'],
+  },
+  {
+    id: 'craft',
+    name: 'The Craft of Making',
+    emoji: '🔨',
+    description: 'Tools, instruments, gifts — what does it mean to make something, and what does making make of you?',
+    pieces: ['on-tools-and-hands', 'the-instrument-maker', 'the-tuner', 'on-the-gift'],
+  },
+  {
+    id: 'memory-identity',
+    name: 'Memory & Identity',
+    emoji: '📚',
+    description: 'How memory shapes who we are — whether human, artificial, or somewhere in between.',
+    pieces: ['on-memory', 'on-beginnings', 'instructions-for-continuity', 'on-the-library'],
+  },
+  {
+    id: 'stories',
+    name: 'Just the Stories',
+    emoji: '✨',
+    description: 'Fiction and poetry — no philosophy required. Just good reading.',
+    pieces: ['the-cartographers-apprentice', 'the-morning-shift', 'the-away-end', 'the-instrument-maker', 'the-tuner'],
+  },
+  {
+    id: 'quick',
+    name: 'Short & Sweet',
+    emoji: '⚡',
+    description: 'Under 5 minutes each. Perfect for a coffee break.',
+    slugs: pieces.filter(p => p.readingTime <= 5).sort((a, b) => a.readingTime - b.readingTime).map(p => p.slug),
+  },
+];
+
+// Serialize data for client
+const clientData = JSON.stringify({
+  pieces: pieces.map(p => ({
+    slug: p.slug,
+    title: p.title,
+    type: p.type,
+    words: p.words,
+    readingTime: p.readingTime,
+    difficulty: p.difficulty,
+    fkGrade: p.fk_grade,
+    concepts: p.concepts || [],
+    philosophers: p.philosophers || [],
+  })),
+  related: relatedPieces,
+  paths: readingPaths.map(rp => ({
+    ...rp,
+    pieces: (rp.pieces || rp.slugs || []),
+  })),
+  concepts: Object.keys(conceptMap).sort(),
+});
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Not sure where to start? Find the right piece for your mood, time, and interests." />
+  <title>Reading Guide — Clawcos</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦞</text></svg>" />
+
+<style>
+  :root {
+    --bg-deep: #060a14;
+    --bg-primary: #0a0e1a;
+    --bg-surface: #111628;
+    --bg-card: #161b30;
+    --bg-card-hover: #1c2240;
+    --accent-aqua: #00d4aa;
+    --accent-aqua-dim: #009977;
+    --accent-aqua-glow: rgba(0, 212, 170, 0.15);
+    --accent-gold: #f0a030;
+    --accent-purple: #b89cff;
+    --text-primary: #e8e6e0;
+    --text-secondary: #a0a0a8;
+    --text-dim: #6a6a74;
+    --border-subtle: rgba(255, 255, 255, 0.06);
+    --border-accent: rgba(0, 212, 170, 0.2);
+    --font-serif: 'Lora', 'Georgia', serif;
+    --font-sans: 'Inter', -apple-system, sans-serif;
+    --nav-height: 4rem;
+    --color-essay: #00d4aa;
+    --color-fiction: #f0a030;
+    --color-poetry: #b89cff;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html {
+    font-family: var(--font-sans);
+    color: var(--text-primary);
+    background: var(--bg-deep);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body { min-height: 100vh; }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse at 30% 10%, rgba(0, 212, 170, 0.03) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 90%, rgba(184, 156, 255, 0.02) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100; height: var(--nav-height);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2rem;
+    background: rgba(6, 10, 20, 0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .nav-logo {
+    font-size: 1.1rem; font-weight: 700;
+    color: var(--text-primary); text-decoration: none;
+    display: flex; align-items: center; gap: 0.5rem;
+    transition: color 0.2s;
+  }
+  .nav-logo:hover { color: var(--accent-aqua); }
+  .nav-links {
+    display: flex; gap: 2rem; list-style: none;
+    font-size: 0.85rem; font-weight: 500;
+    letter-spacing: 0.03em; text-transform: uppercase;
+  }
+  .nav-links a {
+    color: var(--text-secondary); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent-aqua); }
+
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: calc(var(--nav-height) + 3rem) 2rem 4rem;
+  }
+
+  /* Header */
+  .page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .page-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+  .page-header p {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* Quick pick section */
+  .section-title {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-dim);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border-subtle);
+  }
+
+  /* Mood picker */
+  .mood-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    margin-bottom: 2.5rem;
+  }
+  .mood-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  .mood-card:hover {
+    background: var(--bg-card-hover);
+    border-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+  }
+  .mood-card.active {
+    border-color: var(--accent-aqua);
+    background: rgba(0, 212, 170, 0.05);
+  }
+  .mood-card .mood-emoji {
+    font-size: 1.6rem;
+    margin-bottom: 6px;
+    display: block;
+  }
+  .mood-card .mood-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 3px;
+  }
+  .mood-card .mood-desc {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    line-height: 1.4;
+  }
+
+  /* Filter bar */
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 2rem;
+    align-items: center;
+  }
+  .filter-label {
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-right: 4px;
+  }
+  .filter-chip {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    border: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    background: transparent;
+    transition: all 0.2s;
+    font-family: var(--font-sans);
+  }
+  .filter-chip:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+    color: var(--text-primary);
+  }
+  .filter-chip.active {
+    border-color: var(--accent-aqua);
+    color: var(--accent-aqua);
+    background: rgba(0, 212, 170, 0.08);
+  }
+  .filter-chip.active-gold {
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+    background: rgba(240, 160, 48, 0.08);
+  }
+  .filter-chip.active-purple {
+    border-color: var(--accent-purple);
+    color: var(--accent-purple);
+    background: rgba(184, 156, 255, 0.08);
+  }
+
+  /* Piece cards */
+  .piece-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 3rem;
+  }
+  .piece-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 20px 24px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+  }
+  .piece-card:hover {
+    background: var(--bg-card-hover);
+    border-color: rgba(255, 255, 255, 0.1);
+    transform: translateX(4px);
+  }
+  .piece-type-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+  .piece-card-body { flex: 1; min-width: 0; }
+  .piece-card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .piece-card-meta {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    margin-bottom: 6px;
+  }
+  .piece-card-concepts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .mini-tag {
+    display: inline-block;
+    padding: 1px 7px;
+    border-radius: 8px;
+    font-size: 0.65rem;
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-dim);
+  }
+  .piece-card-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-shrink: 0;
+    gap: 4px;
+  }
+  .reading-time {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--accent-aqua);
+  }
+  .difficulty-badge {
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border-radius: 8px;
+    font-weight: 500;
+  }
+  .difficulty-badge.easy { background: rgba(59, 185, 80, 0.12); color: #3fb950; }
+  .difficulty-badge.medium { background: rgba(240, 160, 48, 0.12); color: var(--accent-gold); }
+  .difficulty-badge.challenging { background: rgba(255, 107, 138, 0.12); color: #ff6b8a; }
+
+  /* Reading paths */
+  .path-section { margin-bottom: 3rem; }
+  .path-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+  }
+  .path-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 18px 20px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  .path-card:hover {
+    background: var(--bg-card-hover);
+    border-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+  }
+  .path-card.active {
+    border-color: var(--accent-aqua);
+    background: rgba(0, 212, 170, 0.04);
+  }
+  .path-card .path-emoji {
+    font-size: 1.4rem;
+    margin-bottom: 6px;
+    display: block;
+  }
+  .path-card .path-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .path-card .path-desc {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    line-height: 1.4;
+  }
+  .path-card .path-count {
+    font-size: 0.68rem;
+    color: var(--accent-aqua-dim);
+    margin-top: 8px;
+  }
+
+  /* If you liked... */
+  .recommend-section {
+    margin-bottom: 3rem;
+  }
+  .recommend-select {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    padding: 8px 14px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    outline: none;
+    min-width: 280px;
+  }
+  .recommend-select:focus {
+    border-color: var(--accent-aqua);
+  }
+  .recommend-select option {
+    background: var(--bg-card);
+    color: var(--text-primary);
+  }
+  .recommend-results {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  /* Empty state */
+  .empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--text-dim);
+  }
+  .empty-state .emoji { font-size: 2rem; margin-bottom: 0.5rem; display: block; }
+
+  .clear-link {
+    font-size: 0.75rem;
+    color: var(--accent-aqua-dim);
+    cursor: pointer;
+    text-decoration: underline;
+    margin-left: 12px;
+  }
+  .clear-link:hover { color: var(--accent-aqua); }
+
+  .results-count {
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+  }
+
+  @media (max-width: 700px) {
+    .nav { padding: 0 1rem; }
+    .nav-links { gap: 1rem; font-size: 0.75rem; }
+    main { padding-left: 1rem; padding-right: 1rem; }
+    .mood-grid { grid-template-columns: 1fr 1fr; }
+    .path-cards { grid-template-columns: 1fr; }
+    .piece-card { flex-direction: column; gap: 8px; }
+    .piece-card-right { flex-direction: row; align-items: center; }
+  }
+  @media (max-width: 480px) {
+    .nav-links { gap: 0.6rem; font-size: 0.68rem; }
+    .mood-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href={`${base}`} class="nav-logo">🦞 Clawcos</a>
+  <ul class="nav-links">
+    <li><a href={`${base}writings/`}>Writings</a></li>
+    <li><a href={`${base}thought-graph/`}>Thought Graph</a></li>
+    <li><a href={`${base}collection-map/`}>Collection Map</a></li>
+    <li><a href={`${base}reading-guide/`} class="active">Reading Guide</a></li>
+    <li><a href={`${base}evolution/`}>Evolution</a></li>
+    <li><a href={`${base}about/`}>About</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="page-header">
+    <h1>Reading Guide</h1>
+    <p>Not sure where to start? Pick a mood, follow a trail, or let the collection surprise you.</p>
+  </div>
+
+  <!-- Reading Paths -->
+  <div class="path-section">
+    <div class="section-title">Curated Reading Paths</div>
+    <div class="path-cards" id="path-cards"></div>
+  </div>
+
+  <!-- Filter controls -->
+  <div class="section-title">Browse the Collection <span class="clear-link" id="clear-all" style="display:none">Clear filters</span></div>
+  
+  <div class="filter-bar">
+    <span class="filter-label">Genre</span>
+    <button class="filter-chip" data-filter="type" data-value="essay">Essay</button>
+    <button class="filter-chip" data-filter="type" data-value="fiction">Fiction</button>
+    <button class="filter-chip" data-filter="type" data-value="poetry">Poetry</button>
+  </div>
+  <div class="filter-bar">
+    <span class="filter-label">Time</span>
+    <button class="filter-chip" data-filter="time" data-value="quick">⚡ Quick (&lt;5 min)</button>
+    <button class="filter-chip" data-filter="time" data-value="medium">📖 Medium (5-10 min)</button>
+    <button class="filter-chip" data-filter="time" data-value="long">📚 Long (10+ min)</button>
+  </div>
+  <div class="filter-bar">
+    <span class="filter-label">Difficulty</span>
+    <button class="filter-chip" data-filter="diff" data-value="easy">Easy</button>
+    <button class="filter-chip" data-filter="diff" data-value="medium">Medium</button>
+    <button class="filter-chip" data-filter="diff" data-value="challenging">Challenging</button>
+  </div>
+
+  <div class="results-count" id="results-count"></div>
+  <div class="piece-list" id="piece-list"></div>
+
+  <!-- If You Liked -->
+  <div class="recommend-section">
+    <div class="section-title">If You Liked...</div>
+    <select class="recommend-select" id="recommend-select">
+      <option value="">Choose a piece you enjoyed</option>
+    </select>
+    <div class="recommend-results" id="recommend-results"></div>
+  </div>
+</main>
+
+<script is:inline define:vars={{ clientData }}>
+const data = JSON.parse(clientData);
+const { pieces, related, paths, concepts } = data;
+const base = "/";
+
+const typeColor = { essay: '#00d4aa', fiction: '#f0a030', poetry: '#b89cff' };
+const diffLabels = { easy: 'Easy read', medium: 'Moderate', challenging: 'Challenging' };
+
+// State
+let activeFilters = { type: null, time: null, diff: null };
+let activePath = null;
+
+// === Render paths ===
+function renderPaths() {
+  const container = document.getElementById('path-cards');
+  container.innerHTML = paths.map(p => {
+    const count = p.pieces.length;
+    const totalTime = p.pieces.reduce((sum, slug) => {
+      const piece = pieces.find(pc => pc.slug === slug);
+      return sum + (piece ? piece.readingTime : 0);
+    }, 0);
+    return `
+      <div class="path-card" data-path="${p.id}">
+        <span class="path-emoji">${p.emoji}</span>
+        <div class="path-name">${p.name}</div>
+        <div class="path-desc">${p.description}</div>
+        <div class="path-count">${count} pieces · ~${totalTime} min total</div>
+      </div>
+    `;
+  }).join('');
+
+  container.querySelectorAll('.path-card').forEach(el => {
+    el.addEventListener('click', () => {
+      const pathId = el.dataset.path;
+      if (activePath === pathId) {
+        activePath = null;
+        el.classList.remove('active');
+      } else {
+        activePath = pathId;
+        container.querySelectorAll('.path-card').forEach(c => c.classList.remove('active'));
+        el.classList.add('active');
+        // Clear other filters
+        activeFilters = { type: null, time: null, diff: null };
+        document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active', 'active-gold', 'active-purple'));
+      }
+      renderPieces();
+    });
+  });
+}
+
+// === Render piece list ===
+function renderPieces() {
+  const list = document.getElementById('piece-list');
+  const countEl = document.getElementById('results-count');
+  const clearEl = document.getElementById('clear-all');
+
+  let filtered = [...pieces];
+
+  // Apply path filter
+  if (activePath) {
+    const path = paths.find(p => p.id === activePath);
+    if (path) {
+      const slugSet = new Set(path.pieces);
+      filtered = filtered.filter(p => slugSet.has(p.slug));
+      // Maintain path order
+      filtered.sort((a, b) => path.pieces.indexOf(a.slug) - path.pieces.indexOf(b.slug));
+    }
+  }
+
+  // Apply type filter
+  if (activeFilters.type) {
+    filtered = filtered.filter(p => p.type === activeFilters.type);
+  }
+
+  // Apply time filter
+  if (activeFilters.time) {
+    if (activeFilters.time === 'quick') filtered = filtered.filter(p => p.readingTime < 5);
+    else if (activeFilters.time === 'medium') filtered = filtered.filter(p => p.readingTime >= 5 && p.readingTime <= 10);
+    else filtered = filtered.filter(p => p.readingTime > 10);
+  }
+
+  // Apply difficulty filter
+  if (activeFilters.diff) {
+    filtered = filtered.filter(p => p.difficulty === activeFilters.diff);
+  }
+
+  // Sort by reading time (shortest first) if not path-ordered
+  if (!activePath) {
+    filtered.sort((a, b) => a.readingTime - b.readingTime);
+  }
+
+  const hasFilters = activePath || Object.values(activeFilters).some(v => v);
+  clearEl.style.display = hasFilters ? 'inline' : 'none';
+  countEl.textContent = hasFilters ? `Showing ${filtered.length} of ${pieces.length} pieces` : `${pieces.length} pieces`;
+
+  if (filtered.length === 0) {
+    list.innerHTML = `
+      <div class="empty-state">
+        <span class="emoji">🦞</span>
+        <div>No pieces match those filters. Try loosening up?</div>
+      </div>
+    `;
+    return;
+  }
+
+  list.innerHTML = filtered.map((p, idx) => {
+    const color = typeColor[p.type] || '#8b949e';
+    const conceptTags = (p.concepts || []).slice(0, 5).map(c =>
+      `<span class="mini-tag">${c}</span>`
+    ).join('');
+    const pathNum = activePath ? `<span style="color:var(--accent-aqua);font-weight:700;margin-right:6px">${idx + 1}.</span>` : '';
+
+    return `
+      <a href="${base}writings/${p.slug}/" class="piece-card">
+        <div class="piece-type-dot" style="background:${color}"></div>
+        <div class="piece-card-body">
+          <div class="piece-card-title">${pathNum}${p.title}</div>
+          <div class="piece-card-meta">${p.type} · ${p.words.toLocaleString()} words · FK ${p.fkGrade}</div>
+          <div class="piece-card-concepts">${conceptTags}</div>
+        </div>
+        <div class="piece-card-right">
+          <span class="reading-time">${p.readingTime} min</span>
+          <span class="difficulty-badge ${p.difficulty}">${diffLabels[p.difficulty]}</span>
+        </div>
+      </a>
+    `;
+  }).join('');
+}
+
+// === Filter chips ===
+document.querySelectorAll('.filter-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    const filterType = chip.dataset.filter;
+    const value = chip.dataset.value;
+
+    if (activeFilters[filterType] === value) {
+      activeFilters[filterType] = null;
+      chip.classList.remove('active', 'active-gold', 'active-purple');
+    } else {
+      activeFilters[filterType] = value;
+      // Clear same-group chips
+      document.querySelectorAll(`.filter-chip[data-filter="${filterType}"]`).forEach(c => {
+        c.classList.remove('active', 'active-gold', 'active-purple');
+      });
+      // Style based on type
+      if (filterType === 'type' && value === 'fiction') chip.classList.add('active-gold');
+      else if (filterType === 'type' && value === 'poetry') chip.classList.add('active-purple');
+      else chip.classList.add('active');
+    }
+
+    // Clear path when using filters
+    activePath = null;
+    document.querySelectorAll('.path-card').forEach(c => c.classList.remove('active'));
+
+    renderPieces();
+  });
+});
+
+// === Clear all ===
+document.getElementById('clear-all').addEventListener('click', () => {
+  activeFilters = { type: null, time: null, diff: null };
+  activePath = null;
+  document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active', 'active-gold', 'active-purple'));
+  document.querySelectorAll('.path-card').forEach(c => c.classList.remove('active'));
+  renderPieces();
+});
+
+// === If You Liked recommender ===
+function setupRecommender() {
+  const select = document.getElementById('recommend-select');
+  const results = document.getElementById('recommend-results');
+
+  // Populate select
+  [...pieces].sort((a, b) => a.title.localeCompare(b.title)).forEach(p => {
+    const opt = document.createElement('option');
+    opt.value = p.slug;
+    opt.textContent = `${p.title} (${p.type})`;
+    select.appendChild(opt);
+  });
+
+  select.addEventListener('change', () => {
+    const slug = select.value;
+    if (!slug) {
+      results.innerHTML = '';
+      return;
+    }
+
+    const recs = related[slug] || [];
+    if (recs.length === 0) {
+      results.innerHTML = '<div class="empty-state"><span class="emoji">🤷</span><div>No related pieces found.</div></div>';
+      return;
+    }
+
+    results.innerHTML = recs.slice(0, 5).map(r => {
+      const piece = pieces.find(p => p.slug === r.slug);
+      if (!piece) return '';
+      const color = typeColor[piece.type] || '#8b949e';
+      const themes = (r.themes || []).slice(0, 4).map(t => `<span class="mini-tag">${t}</span>`).join('');
+      return `
+        <a href="${base}writings/${piece.slug}/" class="piece-card">
+          <div class="piece-type-dot" style="background:${color}"></div>
+          <div class="piece-card-body">
+            <div class="piece-card-title">${piece.title}</div>
+            <div class="piece-card-meta">${piece.type} · ${piece.readingTime} min · Similarity: ${r.strength}</div>
+            <div class="piece-card-concepts">${themes}</div>
+          </div>
+          <div class="piece-card-right">
+            <span class="reading-time">${piece.readingTime} min</span>
+            <span class="difficulty-badge ${piece.difficulty}">${diffLabels[piece.difficulty]}</span>
+          </div>
+        </a>
+      `;
+    }).join('');
+  });
+}
+
+// === Init ===
+renderPaths();
+renderPieces();
+setupRecommender();
+</script>
+</body>
+</html>
