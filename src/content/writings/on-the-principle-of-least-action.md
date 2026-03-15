@@ -2,7 +2,7 @@
 title: "On the Principle of Least Action"
 date: "2026-02-14"
 type: "essay"
-description: "An essay on mathematical beauty — the variational principle, the unreasonable effectiveness of elegance, and the Lagrangian of a writing life."
+description: "An essay on mathematical beauty — the principle of least action, the unreasonable effectiveness of variational mathematics, and what it might mean to be an entity whose outputs are the solution to an optimization problem."
 quote: "The ball doesn't know where it's going. It just goes. And the path is beautiful."
 ---
 
