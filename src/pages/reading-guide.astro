@@ -488,6 +488,103 @@ const clientData = JSON.stringify({
     margin-bottom: 8px;
   }
 
+  /* Surprise Me button */
+  .surprise-section {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  .surprise-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    border: 1px solid var(--border-accent);
+    border-radius: 28px;
+    background: rgba(0, 212, 170, 0.05);
+    color: var(--accent-aqua);
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.02em;
+  }
+  .surprise-btn:hover {
+    background: rgba(0, 212, 170, 0.12);
+    border-color: var(--accent-aqua);
+    transform: scale(1.04);
+    box-shadow: 0 0 20px rgba(0, 212, 170, 0.15);
+  }
+  .surprise-btn:active { transform: scale(0.97); }
+  .surprise-btn .dice { display: inline-block; transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }
+  .surprise-btn.rolling .dice { transform: rotate(720deg); }
+
+  .surprise-result {
+    margin-top: 16px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+  }
+  .surprise-result.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .surprise-result .piece-card {
+    max-width: 500px;
+    margin: 0 auto;
+    border-color: var(--accent-aqua);
+    background: rgba(0, 212, 170, 0.04);
+  }
+
+  /* Reading progress */
+  .progress-bar-container {
+    margin-bottom: 2rem;
+    padding: 16px 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .progress-bar-container .progress-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    white-space: nowrap;
+  }
+  .progress-bar-container .progress-count {
+    color: var(--accent-aqua);
+  }
+  .progress-track {
+    flex: 1;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.06);
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--accent-aqua-dim), var(--accent-aqua));
+    transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    min-width: 0;
+  }
+  .progress-pct {
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .read-check {
+    color: var(--accent-aqua);
+    font-size: 0.72rem;
+    font-weight: 700;
+    margin-left: 6px;
+    opacity: 0.8;
+  }
+
   @media (max-width: 700px) {
     .nav { padding: 0 1rem; }
     .nav-links { gap: 1rem; font-size: 0.75rem; }
@@ -521,6 +618,23 @@ const clientData = JSON.stringify({
   <div class="page-header">
     <h1>Reading Guide</h1>
     <p>Not sure where to start? Pick a mood, follow a trail, or let the collection surprise you.</p>
+  </div>
+
+  <!-- Reading Progress -->
+  <div class="progress-bar-container" id="progress-bar">
+    <span class="progress-label">📖 Read <span class="progress-count" id="progress-count">0</span> of <span id="progress-total">0</span></span>
+    <div class="progress-track">
+      <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+    </div>
+    <span class="progress-pct" id="progress-pct">0%</span>
+  </div>
+
+  <!-- Surprise Me -->
+  <div class="surprise-section">
+    <button class="surprise-btn" id="surprise-btn">
+      <span class="dice">🎲</span> Surprise Me
+    </button>
+    <div class="surprise-result" id="surprise-result"></div>
   </div>
 
   <!-- Reading Paths -->
@@ -780,10 +894,148 @@ function setupRecommender() {
   });
 }
 
+// === Reading Progress (localStorage) ===
+const STORAGE_KEY = 'clawcos-reading-progress';
+
+function getReadPieces() {
+  try {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+  } catch { return []; }
+}
+
+function markAsRead(slug) {
+  const read = getReadPieces();
+  if (!read.includes(slug)) {
+    read.push(slug);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(read));
+  }
+  return read;
+}
+
+function isRead(slug) {
+  return getReadPieces().includes(slug);
+}
+
+function updateProgressBar() {
+  const read = getReadPieces();
+  const total = pieces.length;
+  const count = read.filter(s => pieces.some(p => p.slug === s)).length;
+  const pct = total > 0 ? Math.round((count / total) * 100) : 0;
+
+  document.getElementById('progress-count').textContent = count;
+  document.getElementById('progress-total').textContent = total;
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('progress-pct').textContent = pct + '%';
+}
+
+// Track clicks on piece cards to mark as read
+document.addEventListener('click', (e) => {
+  const card = e.target.closest('.piece-card');
+  if (card && card.href) {
+    const match = card.href.match(/\/writings\/([^/]+)\/?$/);
+    if (match) {
+      markAsRead(match[1]);
+    }
+  }
+});
+
+// Patch renderPieces to show read checkmarks
+const _origRenderPieces = renderPieces;
+// We'll modify the card rendering inline instead
+
+// === Surprise Me ===
+function setupSurprise() {
+  const btn = document.getElementById('surprise-btn');
+  const result = document.getElementById('surprise-result');
+  let lastPick = null;
+
+  btn.addEventListener('click', () => {
+    btn.classList.add('rolling');
+    result.classList.remove('visible');
+
+    // Filter candidates based on active filters (if any)
+    let candidates = [...pieces];
+    if (activeFilters.type) candidates = candidates.filter(p => p.type === activeFilters.type);
+    if (activeFilters.time) {
+      if (activeFilters.time === 'quick') candidates = candidates.filter(p => p.readingTime < 5);
+      else if (activeFilters.time === 'medium') candidates = candidates.filter(p => p.readingTime >= 5 && p.readingTime <= 10);
+      else candidates = candidates.filter(p => p.readingTime > 10);
+    }
+    if (activeFilters.diff) candidates = candidates.filter(p => p.difficulty === activeFilters.diff);
+
+    // Prefer unread pieces
+    const unread = candidates.filter(p => !isRead(p.slug));
+    const pool = unread.length > 0 ? unread : candidates;
+
+    // Avoid repeating the same pick
+    let filtered = pool.filter(p => p.slug !== lastPick);
+    if (filtered.length === 0) filtered = pool;
+
+    if (filtered.length === 0) {
+      setTimeout(() => {
+        btn.classList.remove('rolling');
+        result.innerHTML = '<div class="empty-state"><span class="emoji">🦞</span><div>No pieces match your filters!</div></div>';
+        result.classList.add('visible');
+      }, 500);
+      return;
+    }
+
+    const pick = filtered[Math.floor(Math.random() * filtered.length)];
+    lastPick = pick.slug;
+
+    setTimeout(() => {
+      btn.classList.remove('rolling');
+      const color = typeColor[pick.type] || '#8b949e';
+      const conceptTags = (pick.concepts || []).slice(0, 5).map(c =>
+        `<span class="mini-tag">${c}</span>`
+      ).join('');
+      const readBadge = isRead(pick.slug) ? '<span class="read-check">✓ Read</span>' : '';
+
+      result.innerHTML = `
+        <a href="${base}writings/${pick.slug}/" class="piece-card">
+          <div class="piece-type-dot" style="background:${color}"></div>
+          <div class="piece-card-body">
+            <div class="piece-card-title">${pick.title}${readBadge}</div>
+            <div class="piece-card-meta">${pick.type} · ${pick.words.toLocaleString()} words · FK ${pick.fkGrade}</div>
+            <div class="piece-card-concepts">${conceptTags}</div>
+          </div>
+          <div class="piece-card-right">
+            <span class="reading-time">${pick.readingTime} min</span>
+            <span class="difficulty-badge ${pick.difficulty}">${diffLabels[pick.difficulty]}</span>
+          </div>
+        </a>
+      `;
+      result.classList.add('visible');
+    }, 600);
+  });
+}
+
+// === Patch renderPieces to include read checkmarks ===
+const origRenderPieces = renderPieces;
+renderPieces = function() {
+  origRenderPieces();
+
+  // Add checkmarks to read pieces
+  const readSet = new Set(getReadPieces());
+  document.querySelectorAll('#piece-list .piece-card').forEach(card => {
+    const match = card.href && card.href.match(/\/writings\/([^/]+)\/?$/);
+    if (match && readSet.has(match[1])) {
+      const titleEl = card.querySelector('.piece-card-title');
+      if (titleEl && !titleEl.querySelector('.read-check')) {
+        titleEl.insertAdjacentHTML('beforeend', '<span class="read-check">✓</span>');
+      }
+    }
+  });
+
+  updateProgressBar();
+};
+
 // === Init ===
 renderPaths();
 renderPieces();
 setupRecommender();
+setupSurprise();
+updateProgressBar();
 </script>
 </body>
 </html>
