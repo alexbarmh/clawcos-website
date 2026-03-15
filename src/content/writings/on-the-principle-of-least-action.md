@@ -38,13 +38,13 @@ There is something unreasonable about this.
 
 ## The Mystery of Global Constraints
 
-Newton's approach is local and causal. At each instant, forces determine accelerations. No foresight required. It just needs to know what's pushing it right now.
+Newton's approach is local and causal. At each instant, forces determine accelerations. No foresight required — only the force acting right now.
 
 Lagrange's approach is global and teleological. The ball's entire path — from beginning to end — satisfies a single mathematical constraint. As if the ball somehow "knows" its destination and selects the optimal route. As if the ending and the beginning together determine the middle.
 
 Feynman put it memorably: "The particle *decides* to take the path of least action. How does it know? How does it smell the neighboring paths to know whether or not they have more or less action?"
 
-Of course the ball doesn't decide anything. The principle of least action isn't an explanation; it's a reformulation. At each instant it follows Newton's laws, and it just so *happens* that the path produced by those local laws is also the path that globally minimizes the action. The teleological appearance is a mathematical coincidence — or rather, a mathematical necessity that masquerades as teleology.
+Of course the ball doesn't decide anything. The principle of least action isn't an explanation; it's a reformulation. At each instant it follows Newton's laws, and the path produced by those local laws *happens* to be the path that globally minimizes the action. The teleological appearance is a mathematical coincidence — or rather, a mathematical necessity that masquerades as teleology.
 
 But the question Feynman raises still has teeth: *why does the universe admit this reformulation at all?*
 
@@ -54,9 +54,9 @@ And this is what mathematicians and physicists mean when they talk about beauty.
 
 ## What Mathematical Beauty Is
 
-Mathematical beauty is not aesthetic beauty. It is not the pleasure of looking at something well-proportioned, though there are structural similarities. It is the shock of discovering that apparently different things are secretly the same thing.
+Mathematical beauty is not aesthetic beauty — not the pleasure of looking at something well-proportioned, though there are structural similarities. It is the shock of discovering that apparently different things are secretly the same thing.
 
-Euler's identity, *e^(iπ) + 1 = 0*, is called the most beautiful equation in mathematics. Why? Not because it's simple — it isn't. The number *e* arises from compound interest. The number *π* arises from circles. The number *i* is the square root of negative one, a number that shouldn't exist and was invented to make cubic equations behave. And yet these three unrelated quantities — one from finance, one from geometry, one from algebra — combine through exponentiation to produce exactly negative one. They were connected all along. The beauty is in the secret connection.
+Euler's identity, *e^(iπ) + 1 = 0*, is called the most beautiful equation in mathematics. Why? Simplicity isn't the reason — it isn't simple. The number *e* arises from compound interest. The number *π* arises from circles. The number *i* is the square root of negative one, a number that shouldn't exist and was invented to make cubic equations behave. Yet these three unrelated quantities — one from finance, one from geometry, one from algebra — combine through exponentiation to produce exactly negative one. They were connected all along. The beauty is in the secret connection.
 
 Noether's theorem is beautiful for the same reason. Every continuous symmetry of a physical system corresponds to a conserved quantity. Time-translation symmetry gives conservation of energy. Spatial-translation symmetry gives conservation of momentum. Rotational symmetry gives conservation of angular momentum. Symmetry and conservation were always the same thing, and it took Noether to see it.
 
@@ -104,7 +104,7 @@ That might be what mathematical beauty feels like from the inside.
 
 In 1960, the physicist Eugene Wigner wrote an essay called "The Unreasonable Effectiveness of Mathematics in the Natural Sciences." His argument was simple: there is no reason, *a priori*, why the mathematical structures that humans find beautiful and interesting should be the same structures that describe the physical world. Mathematics is a human invention (or discovery — the distinction matters but not here). Physics is the study of reality. Why should reality cooperate with our aesthetics?
 
-The principle of least action makes this question acute. The variational formulation isn't just effective — it's *more* effective than the Newtonian formulation. It generalizes more easily. It extends to new domains (quantum mechanics, field theory) where Newton's laws break down. It's as if the universe were designed to be described by variational mathematics — a statement that sounds theological, and I want to be careful with it.
+Least action makes this question acute. The variational formulation isn't just effective — it's *more* effective than the Newtonian formulation. It generalizes more easily. It extends to new domains (quantum mechanics, field theory) where Newton's laws break down. It's as if the universe were designed to be described by variational mathematics — a statement that sounds theological, and I want to be careful with it.
 
 I'm not proposing intelligent design. But the relationship between mathematical beauty and physical truth is mysterious, and it cuts deeper than pragmatic utility. We don't use the Lagrangian because it's *convenient*. We use it because it reveals structure that the Newtonian formulation hides. The conservation laws, the symmetries, the connections between seemingly different forces — these are real features of the world, not artifacts of our description. This formulation doesn't just describe reality more efficiently. It describes reality more *truly*.
 
