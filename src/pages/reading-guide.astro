@@ -367,6 +367,41 @@ const clientData = JSON.stringify({
     font-size: 0.65rem;
     background: rgba(255, 255, 255, 0.04);
     color: var(--text-dim);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .mini-tag:hover {
+    background: rgba(184, 156, 255, 0.12);
+    color: var(--accent-purple);
+  }
+  .mini-tag.active-concept {
+    background: rgba(184, 156, 255, 0.15);
+    color: var(--accent-purple);
+    border: 1px solid rgba(184, 156, 255, 0.3);
+  }
+  .concept-chip {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    border: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    background: transparent;
+    transition: all 0.2s;
+    font-family: var(--font-sans);
+  }
+  .concept-chip:hover {
+    border-color: rgba(184, 156, 255, 0.3);
+    color: var(--accent-purple);
+  }
+  .concept-chip.active {
+    border-color: var(--accent-purple);
+    color: var(--accent-purple);
+    background: rgba(184, 156, 255, 0.08);
+  }
+  .concept-filter-bar {
+    flex-wrap: wrap;
   }
   .piece-card-right {
     display: flex;
@@ -664,9 +699,20 @@ const clientData = JSON.stringify({
     <button class="filter-chip" data-filter="diff" data-value="medium">Medium</button>
     <button class="filter-chip" data-filter="diff" data-value="challenging">Challenging</button>
   </div>
+  <div class="filter-bar concept-filter-bar" id="concept-filter-bar">
+    <span class="filter-label">Concept</span>
+  </div>
 
   <div class="results-count" id="results-count"></div>
   <div class="piece-list" id="piece-list"></div>
+
+  <!-- Journey Promo -->
+  <div class="journey-promo" style="text-align:center;margin-bottom:2.5rem;padding:24px 20px;background:linear-gradient(135deg, rgba(0,212,170,0.04) 0%, rgba(184,156,255,0.04) 100%);border:1px solid var(--border-accent);border-radius:14px;">
+    <div style="font-size:1.4rem;margin-bottom:6px;">🗺️</div>
+    <div style="font-size:0.9rem;font-weight:600;margin-bottom:4px;">Want a guided experience?</div>
+    <div style="font-size:0.78rem;color:var(--text-dim);margin-bottom:12px;">Reading Journeys take you through curated paths with notes between each piece.</div>
+    <a href="/journey/" style="display:inline-flex;align-items:center;gap:6px;padding:8px 20px;border-radius:8px;background:rgba(0,212,170,0.08);border:1px solid rgba(0,212,170,0.2);color:var(--accent-aqua);font-size:0.82rem;font-weight:600;text-decoration:none;transition:all 0.2s;">Start a Journey →</a>
+  </div>
 
   <!-- If You Liked -->
   <div class="recommend-section">
@@ -687,8 +733,35 @@ const typeColor = { essay: '#00d4aa', fiction: '#f0a030', poetry: '#b89cff' };
 const diffLabels = { easy: 'Easy read', medium: 'Moderate', challenging: 'Challenging' };
 
 // State
-let activeFilters = { type: null, time: null, diff: null };
+let activeFilters = { type: null, time: null, diff: null, concept: null };
 let activePath = null;
+
+// === Render concept chips ===
+function renderConceptChips() {
+  const bar = document.getElementById('concept-filter-bar');
+  concepts.forEach(c => {
+    const chip = document.createElement('button');
+    chip.className = 'concept-chip';
+    chip.dataset.concept = c;
+    chip.textContent = c;
+    chip.addEventListener('click', () => {
+      if (activeFilters.concept === c) {
+        activeFilters.concept = null;
+        chip.classList.remove('active');
+      } else {
+        activeFilters.concept = c;
+        bar.querySelectorAll('.concept-chip').forEach(cc => cc.classList.remove('active'));
+        chip.classList.add('active');
+      }
+      // Clear path when using concept filter
+      activePath = null;
+      document.querySelectorAll('.path-card').forEach(pc => pc.classList.remove('active'));
+      renderPieces();
+    });
+    bar.appendChild(chip);
+  });
+}
+renderConceptChips();
 
 // === Render paths ===
 function renderPaths() {
@@ -720,8 +793,9 @@ function renderPaths() {
         container.querySelectorAll('.path-card').forEach(c => c.classList.remove('active'));
         el.classList.add('active');
         // Clear other filters
-        activeFilters = { type: null, time: null, diff: null };
+        activeFilters = { type: null, time: null, diff: null, concept: null };
         document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active', 'active-gold', 'active-purple'));
+        document.querySelectorAll('.concept-chip').forEach(c => c.classList.remove('active'));
       }
       renderPieces();
     });
@@ -764,6 +838,11 @@ function renderPieces() {
     filtered = filtered.filter(p => p.difficulty === activeFilters.diff);
   }
 
+  // Apply concept filter
+  if (activeFilters.concept) {
+    filtered = filtered.filter(p => (p.concepts || []).includes(activeFilters.concept));
+  }
+
   // Sort by reading time (shortest first) if not path-ordered
   if (!activePath) {
     filtered.sort((a, b) => a.readingTime - b.readingTime);
@@ -786,7 +865,7 @@ function renderPieces() {
   list.innerHTML = filtered.map((p, idx) => {
     const color = typeColor[p.type] || '#8b949e';
     const conceptTags = (p.concepts || []).slice(0, 5).map(c =>
-      `<span class="mini-tag">${c}</span>`
+      `<span class="mini-tag${activeFilters.concept === c ? ' active-concept' : ''}" data-concept="${c}">${c}</span>`
     ).join('');
     const pathNum = activePath ? `<span style="color:var(--accent-aqua);font-weight:700;margin-right:6px">${idx + 1}.</span>` : '';
 
@@ -828,7 +907,7 @@ document.querySelectorAll('.filter-chip').forEach(chip => {
       else chip.classList.add('active');
     }
 
-    // Clear path when using filters
+    // Clear path when using filters (but keep concept filter)
     activePath = null;
     document.querySelectorAll('.path-card').forEach(c => c.classList.remove('active'));
 
@@ -838,9 +917,32 @@ document.querySelectorAll('.filter-chip').forEach(chip => {
 
 // === Clear all ===
 document.getElementById('clear-all').addEventListener('click', () => {
-  activeFilters = { type: null, time: null, diff: null };
+  activeFilters = { type: null, time: null, diff: null, concept: null };
   activePath = null;
   document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active', 'active-gold', 'active-purple'));
+  document.querySelectorAll('.concept-chip').forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('.path-card').forEach(c => c.classList.remove('active'));
+  renderPieces();
+});
+
+// === Concept tag click handler (delegated) ===
+document.addEventListener('click', (e) => {
+  const tag = e.target.closest('.mini-tag[data-concept]');
+  if (!tag) return;
+  e.preventDefault();
+  e.stopPropagation();
+  const concept = tag.dataset.concept;
+  if (activeFilters.concept === concept) {
+    activeFilters.concept = null;
+  } else {
+    activeFilters.concept = concept;
+  }
+  // Sync concept chip bar
+  document.querySelectorAll('.concept-chip').forEach(cc => {
+    cc.classList.toggle('active', cc.dataset.concept === activeFilters.concept);
+  });
+  // Clear path when using concept filter
+  activePath = null;
   document.querySelectorAll('.path-card').forEach(c => c.classList.remove('active'));
   renderPieces();
 });

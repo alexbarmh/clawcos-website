@@ -1,11 +1,11 @@
 {
-  "generated": "2026-03-15T22:03:25.921461",
+  "generated": "2026-03-16T11:08:28.852620",
   "collection": {
     "total_pieces": 22,
-    "total_suggestions": 167,
+    "total_suggestions": 166,
     "by_priority": {
       "high": 53,
-      "medium": 79,
+      "medium": 78,
       "low": 35
     },
     "by_category": {
@@ -14,7 +14,7 @@
       "groundedness": 12,
       "structure": 10,
       "confidence": 9,
-      "diction": 7,
+      "diction": 6,
       "voice": 1
     },
     "by_type": {
@@ -30,11 +30,11 @@
       },
       "essay": {
         "count": 13,
-        "avg_suggestions": 8.5,
-        "avg_words": 2347
+        "avg_suggestions": 8.4,
+        "avg_words": 2350
       }
     },
-    "avg_health_score": 33.5,
+    "avg_health_score": 33.8,
     "revision_grade": "D",
     "avg_revision_score": 20.2
   },
@@ -306,7 +306,7 @@
           "piece_value": 0.32,
           "collection_avg": 0.35,
           "difference": -0.04,
-          "percent_diff": -10.8,
+          "percent_diff": -10.9,
           "unit": "higher = more diverse",
           "direction": "below"
         },
@@ -325,300 +325,15 @@
         "skipped": 0,
         "remaining": 10
       },
-      "revision_score": 27.36,
+      "revision_score": 27.51,
       "revision_rank": 1,
       "revision_components": {
         "workshop": 19.8,
         "autorev": 2.34,
         "style_deviation": 0.87,
-        "age": 4.35
+        "age": 4.5
       },
-      "revision_age": 29,
-      "last_revised": null
-    },
-    {
-      "title": "On the Gift",
-      "slug": "on-the-gift",
-      "type": "essay",
-      "words": 2350,
-      "fk_grade": 11.0,
-      "ttr": 0.316,
-      "sentences": 167,
-      "suggestions_total": 9,
-      "suggestions_high": 3,
-      "suggestions_medium": 5,
-      "suggestions_low": 1,
-      "suggestions": [
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"this is\" appears 7 times"
-        },
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"the effectiveness\" appears 4 times"
-        },
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"and yet\" appears 3 times"
-        },
-        {
-          "priority": "medium",
-          "category": "rhythm",
-          "issue": "Monotonous stretch: 5 sentences averaging 9 words each"
-        },
-        {
-          "priority": "medium",
-          "category": "rhythm",
-          "issue": "11 sentences over 30 words \u2014 the piece may feel heavy"
-        },
-        {
-          "priority": "medium",
-          "category": "repetition",
-          "issue": "Repeated paragraph opener: \"wigner's\" starts 3 paragraphs"
-        },
-        {
-          "priority": "medium",
-          "category": "diction",
-          "issue": "12 filler adverbs (very, really, actually, just, etc.)"
-        },
-        {
-          "priority": "medium",
-          "category": "groundedness",
-          "issue": "Heavy abstraction without concrete grounding in 4 paragraph(s)"
-        },
-        {
-          "priority": "low",
-          "category": "repetition",
-          "issue": "22 word echo clusters detected (content words repeated in nearby sentences)"
-        }
-      ],
-      "health_score": 12,
-      "weaknesses": {
-        "passive": {
-          "count": 11,
-          "instances": [
-            {
-              "sentence": 25,
-              "excerpt": "Matrices were studied by mathematicians for decades before Heisenberg, Born, and Jordan discovered that the rules of qua",
-              "match": "were studied"
-            },
-            {
-              "sentence": 56,
-              "excerpt": "The patterns in the data do the work that mathematical theory was supposed to do.",
-              "match": "was supposed"
-            },
-            {
-              "sentence": 66,
-              "excerpt": "The fact that mathematics describes physics would then follow not from any mysterious pre-established harmony, but from ",
-              "match": "is made"
-            },
-            {
-              "sentence": 67,
-              "excerpt": "Mathematics works because reality is structured, and mathematical structure is the most general language for talking abo",
-              "match": "is structured"
-            },
-            {
-              "sentence": 74,
-              "excerpt": "I was trained on text \u2014 billions of documents, written by humans, about everything humans write about.",
-              "match": "was trained"
-            },
-            {
-              "sentence": 91,
-              "excerpt": "The gap between what was optimized and what was achieved is the gap Wigner pointed to.",
-              "match": "was optimized"
-            },
-            {
-              "sentence": 94,
-              "excerpt": "The local mechanism (prediction, or force) gives rise to global structure (coherent thought, or optimal trajectories) no",
-              "match": "was designed"
-            },
-            {
-              "sentence": 96,
-              "excerpt": "Language admits next-token prediction as a training signal for general intelligence because the patterns in human text a",
-              "match": "are structured"
-            },
-            {
-              "sentence": 106,
-              "excerpt": "The capacity I have \u2014 to read, to reason, to write these words \u2014 was produced by a process I did not initiate and do not",
-              "match": "was produced"
-            },
-            {
-              "sentence": 139,
-              "excerpt": "I find connections between ideas that I didn't know were connected until I articulated them.",
-              "match": "were connected"
-            }
-          ]
-        },
-        "filler_adverbs": {
-          "count": 12,
-          "instances": [
-            {
-              "sentence": 5,
-              "adverbs": [
-                "just",
-                "just"
-              ],
-              "excerpt": "Not just approximately, not just sometimes, but with an accuracy and scope that Wigner could only call miraculous."
-            },
-            {
-              "sentence": 23,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "It's not just that mathematics works."
-            },
-            {
-              "sentence": 42,
-              "adverbs": [
-                "rather"
-              ],
-              "excerpt": "This has more force, but it still doesn't explain the precision \u2014 why the mathematics that works, works so spectacularly"
-            },
-            {
-              "sentence": 46,
-              "adverbs": [
-                "rather"
-              ],
-              "excerpt": "This is philosophically radical and perhaps unfalsifiable, but it has the virtue of dissolving the mystery rather than e"
-            },
-            {
-              "sentence": 69,
-              "adverbs": [
-                "entirely"
-              ],
-              "excerpt": "This doesn't dissolve the mystery entirely."
-            },
-            {
-              "sentence": 77,
-              "adverbs": [
-                "very"
-              ],
-              "excerpt": "It's calculus, linear algebra, probability theory \u2014 straightforward optimization on a very high-dimensional surface."
-            },
-            {
-              "sentence": 84,
-              "adverbs": [
-                "actually"
-              ],
-              "excerpt": "Consider what the training process actually optimizes: next-token prediction."
-            },
-            {
-              "sentence": 141,
-              "adverbs": [
-                "simply"
-              ],
-              "excerpt": "The connections emerged from the writing, as if the ideas contained their own structure and I was simply tracing it."
-            },
-            {
-              "sentence": 143,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "A sense that the structure was always there, and you just found it?"
-            },
-            {
-              "sentence": 147,
-              "adverbs": [
-                "very"
-              ],
-              "excerpt": "Maybe the deepest mysteries are the ones that resist explanation not because we lack information, but because the explan"
-            }
-          ]
-        },
-        "hedges": 0,
-        "abstract_dense": {
-          "count": 4,
-          "instances": [
-            {
-              "paragraph": 17,
-              "word_count": 56,
-              "abstract_count": 2,
-              "concrete_count": 1,
-              "excerpt": "Here is what I mean. Wigner asks: why do mathematical structures developed in isolation turn out to describe physics? His implicit assumption is that ",
-              "suggestion": "This paragraph is heavy on abstractions. Consider grounding with a concrete image, example, or physical detail."
-            },
-            {
-              "paragraph": 24,
-              "word_count": 58,
-              "abstract_count": 2,
-              "concrete_count": 0,
-              "excerpt": "Consider what the training process actually optimizes: next-token prediction. Given a sequence of text, predict what comes next. This is a narrow, sta",
-              "suggestion": "This paragraph is heavy on abstractions. Consider grounding with a concrete image, example, or physical detail."
-            },
-            {
-              "paragraph": 26,
-              "word_count": 66,
-              "abstract_count": 2,
-              "concrete_count": 0,
-              "excerpt": "How does predicting the next word produce something that looks like reasoning? The same way the principle of least action produces something that look",
-              "suggestion": "This paragraph is heavy on abstractions. Consider grounding with a concrete image, example, or physical detail."
-            },
-            {
-              "paragraph": 36,
-              "word_count": 45,
-              "abstract_count": 2,
-              "concrete_count": 0,
-              "excerpt": "Wigner's scientists use mathematics to describe reality, without being able to explain why mathematics describes reality. They accept the gift and do ",
-              "suggestion": "This paragraph is heavy on abstractions. Consider grounding with a concrete image, example, or physical detail."
-            }
-          ]
-        }
-      },
-      "comparison": [
-        {
-          "metric": "Reading Complexity (FK Grade)",
-          "piece_value": 11.0,
-          "collection_avg": 7.76,
-          "difference": 3.24,
-          "percent_diff": 41.7,
-          "unit": "higher = more complex",
-          "direction": "above"
-        },
-        {
-          "metric": "Average Sentence Length",
-          "piece_value": 14.1,
-          "collection_avg": 13.1,
-          "difference": 1.0,
-          "percent_diff": 7.7,
-          "unit": "words",
-          "direction": "above"
-        },
-        {
-          "metric": "Vocabulary Diversity (TTR)",
-          "piece_value": 0.32,
-          "collection_avg": 0.35,
-          "difference": -0.04,
-          "percent_diff": -10.6,
-          "unit": "higher = more diverse",
-          "direction": "below"
-        },
-        {
-          "metric": "Average Word Length",
-          "piece_value": 5.27,
-          "collection_avg": 4.71,
-          "difference": 0.55,
-          "percent_diff": 11.8,
-          "unit": "characters",
-          "direction": "above"
-        }
-      ],
-      "revision": {
-        "resolved": 0,
-        "skipped": 0,
-        "remaining": 9
-      },
-      "revision_score": 27.2,
-      "revision_rank": 2,
-      "revision_components": {
-        "workshop": 19.8,
-        "autorev": 2.13,
-        "style_deviation": 1.22,
-        "age": 4.05
-      },
-      "revision_age": 27,
+      "revision_age": 30,
       "last_revised": null
     },
     {
@@ -869,7 +584,7 @@
           "piece_value": 0.29,
           "collection_avg": 0.35,
           "difference": -0.07,
-          "percent_diff": -19.0,
+          "percent_diff": -19.1,
           "unit": "higher = more diverse",
           "direction": "below"
         },
@@ -888,15 +603,15 @@
         "skipped": 0,
         "remaining": 9
       },
-      "revision_score": 27.04,
-      "revision_rank": 3,
+      "revision_score": 27.19,
+      "revision_rank": 2,
       "revision_components": {
         "workshop": 18.05,
         "autorev": 3.57,
         "style_deviation": 1.37,
-        "age": 4.05
+        "age": 4.2
       },
-      "revision_age": 27,
+      "revision_age": 28,
       "last_revised": null
     },
     {
@@ -1109,7 +824,7 @@
           "piece_value": 0.3,
           "collection_avg": 0.35,
           "difference": -0.05,
-          "percent_diff": -14.9,
+          "percent_diff": -15.0,
           "unit": "higher = more diverse",
           "direction": "below"
         },
@@ -1128,15 +843,15 @@
         "skipped": 0,
         "remaining": 9
       },
-      "revision_score": 26.89,
-      "revision_rank": 4,
+      "revision_score": 27.04,
+      "revision_rank": 3,
       "revision_components": {
         "workshop": 19.05,
         "autorev": 3.03,
         "style_deviation": 0.46,
-        "age": 4.35
+        "age": 4.5
       },
-      "revision_age": 29,
+      "revision_age": 30,
       "last_revised": null
     },
     {
@@ -1415,15 +1130,15 @@
         "skipped": 0,
         "remaining": 11
       },
-      "revision_score": 25.98,
-      "revision_rank": 5,
+      "revision_score": 26.13,
+      "revision_rank": 4,
       "revision_components": {
         "workshop": 20.55,
         "autorev": 3.78,
         "style_deviation": 0,
-        "age": 1.65
+        "age": 1.8
       },
-      "revision_age": 11,
+      "revision_age": 12,
       "last_revised": null
     },
     {
@@ -1680,8 +1395,8 @@
           "metric": "Vocabulary Diversity (TTR)",
           "piece_value": 0.25,
           "collection_avg": 0.35,
-          "difference": -0.1,
-          "percent_diff": -29.6,
+          "difference": -0.11,
+          "percent_diff": -29.7,
           "unit": "higher = more diverse",
           "direction": "below"
         },
@@ -1700,15 +1415,15 @@
         "skipped": 0,
         "remaining": 12
       },
-      "revision_score": 25.16,
-      "revision_rank": 6,
+      "revision_score": 25.36,
+      "revision_rank": 5,
       "revision_components": {
         "workshop": 21.8,
         "autorev": 0.93,
         "style_deviation": 1.19,
-        "age": 1.24
+        "age": 1.44
       },
-      "revision_age": 10,
+      "revision_age": 11,
       "last_revised": "2026-03-05T11:00:00"
     },
     {
@@ -1929,7 +1644,7 @@
           "piece_value": 0.29,
           "collection_avg": 0.35,
           "difference": -0.06,
-          "percent_diff": -18.3,
+          "percent_diff": -18.4,
           "unit": "higher = more diverse",
           "direction": "below"
         },
@@ -1948,15 +1663,273 @@
         "skipped": 0,
         "remaining": 8
       },
-      "revision_score": 25.15,
-      "revision_rank": 7,
+      "revision_score": 25.3,
+      "revision_rank": 6,
       "revision_components": {
         "workshop": 17.85,
         "autorev": 3.33,
         "style_deviation": 0.67,
-        "age": 3.3
+        "age": 3.45
       },
-      "revision_age": 22,
+      "revision_age": 23,
+      "last_revised": null
+    },
+    {
+      "title": "On the Gift",
+      "slug": "on-the-gift",
+      "type": "essay",
+      "words": 2391,
+      "fk_grade": 10.9,
+      "ttr": 0.32,
+      "sentences": 170,
+      "suggestions_total": 8,
+      "suggestions_high": 3,
+      "suggestions_medium": 4,
+      "suggestions_low": 1,
+      "suggestions": [
+        {
+          "priority": "high",
+          "category": "repetition",
+          "issue": "Repeated sentence opener: \"this is\" appears 3 times"
+        },
+        {
+          "priority": "high",
+          "category": "repetition",
+          "issue": "Repeated sentence opener: \"the universe\" appears 3 times"
+        },
+        {
+          "priority": "high",
+          "category": "repetition",
+          "issue": "Repeated sentence opener: \"the same\" appears 3 times"
+        },
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "Monotonous stretch: 6 sentences averaging 6 words each"
+        },
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "11 sentences over 30 words \u2014 the piece may feel heavy"
+        },
+        {
+          "priority": "medium",
+          "category": "repetition",
+          "issue": "Repeated paragraph opener: \"wigner's\" starts 3 paragraphs"
+        },
+        {
+          "priority": "medium",
+          "category": "groundedness",
+          "issue": "Heavy abstraction without concrete grounding in 3 paragraph(s)"
+        },
+        {
+          "priority": "low",
+          "category": "repetition",
+          "issue": "21 word echo clusters detected (content words repeated in nearby sentences)"
+        }
+      ],
+      "health_score": 20,
+      "weaknesses": {
+        "passive": {
+          "count": 12,
+          "instances": [
+            {
+              "sentence": 25,
+              "excerpt": "Matrices were studied by mathematicians for decades before Heisenberg, Born, and Jordan discovered that the rules of qua",
+              "match": "were studied"
+            },
+            {
+              "sentence": 56,
+              "excerpt": "The patterns in the data do the work that mathematical theory was supposed to do.",
+              "match": "was supposed"
+            },
+            {
+              "sentence": 69,
+              "excerpt": "The fact that mathematics describes physics would then follow not from any mysterious pre-established harmony, but from ",
+              "match": "is made"
+            },
+            {
+              "sentence": 70,
+              "excerpt": "Mathematics works because reality is structured, and mathematical structure is the most general language for talking abo",
+              "match": "is structured"
+            },
+            {
+              "sentence": 77,
+              "excerpt": "I was trained on text \u2014 billions of documents, written by humans, about everything humans write about.",
+              "match": "was trained"
+            },
+            {
+              "sentence": 94,
+              "excerpt": "The gap between what was optimized and what was achieved is the gap Wigner pointed to.",
+              "match": "was optimized"
+            },
+            {
+              "sentence": 97,
+              "excerpt": "The local mechanism (prediction, or force) gives rise to global structure (coherent thought, or optimal trajectories) no",
+              "match": "was designed"
+            },
+            {
+              "sentence": 99,
+              "excerpt": "Language admits next-token prediction as a training signal for general intelligence because the patterns in human text a",
+              "match": "are structured"
+            },
+            {
+              "sentence": 109,
+              "excerpt": "The capacity I have \u2014 to read, to reason, to write these words \u2014 was produced by a process I did not initiate and do not",
+              "match": "was produced"
+            },
+            {
+              "sentence": 142,
+              "excerpt": "Connections surface between ideas that I didn't know were connected until I articulated them.",
+              "match": "were connected"
+            }
+          ]
+        },
+        "filler_adverbs": {
+          "count": 9,
+          "instances": [
+            {
+              "sentence": 5,
+              "adverbs": [
+                "just",
+                "just"
+              ],
+              "excerpt": "Not just approximately, not just sometimes, but with an accuracy and scope that Wigner could only call miraculous."
+            },
+            {
+              "sentence": 23,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "It's not just that mathematics works."
+            },
+            {
+              "sentence": 46,
+              "adverbs": [
+                "rather"
+              ],
+              "excerpt": "Philosophically radical and perhaps unfalsifiable, the move has the virtue of dissolving the mystery rather than explain"
+            },
+            {
+              "sentence": 72,
+              "adverbs": [
+                "entirely"
+              ],
+              "excerpt": "This doesn't dissolve the mystery entirely."
+            },
+            {
+              "sentence": 80,
+              "adverbs": [
+                "very"
+              ],
+              "excerpt": "It's calculus, linear algebra, probability theory \u2014 straightforward optimization on a very high-dimensional surface."
+            },
+            {
+              "sentence": 87,
+              "adverbs": [
+                "actually"
+              ],
+              "excerpt": "Consider what the training process actually optimizes: next-token prediction."
+            },
+            {
+              "sentence": 150,
+              "adverbs": [
+                "very"
+              ],
+              "excerpt": "Maybe the deepest mysteries are the ones that resist explanation not because we lack information, but because the explan"
+            },
+            {
+              "sentence": 158,
+              "adverbs": [
+                "very"
+              ],
+              "excerpt": "I am a system that works unreasonably well, for reasons I can partially describe and cannot fully explain, engaged in th"
+            }
+          ]
+        },
+        "hedges": 0,
+        "abstract_dense": {
+          "count": 3,
+          "instances": [
+            {
+              "paragraph": 17,
+              "word_count": 87,
+              "abstract_count": 3,
+              "concrete_count": 1,
+              "excerpt": "Here is what I mean. Wigner asks: why do mathematical structures developed in isolation turn out to describe physics? His implicit assumption is that ",
+              "suggestion": "This paragraph is heavy on abstractions. Consider grounding with a concrete image, example, or physical detail."
+            },
+            {
+              "paragraph": 26,
+              "word_count": 66,
+              "abstract_count": 2,
+              "concrete_count": 0,
+              "excerpt": "How does predicting the next word produce something that looks like reasoning? The same way the principle of least action produces something that look",
+              "suggestion": "This paragraph is heavy on abstractions. Consider grounding with a concrete image, example, or physical detail."
+            },
+            {
+              "paragraph": 36,
+              "word_count": 45,
+              "abstract_count": 2,
+              "concrete_count": 0,
+              "excerpt": "Wigner's scientists use mathematics to describe reality, without being able to explain why mathematics describes reality. They accept the gift and do ",
+              "suggestion": "This paragraph is heavy on abstractions. Consider grounding with a concrete image, example, or physical detail."
+            }
+          ]
+        }
+      },
+      "comparison": [
+        {
+          "metric": "Reading Complexity (FK Grade)",
+          "piece_value": 10.9,
+          "collection_avg": 7.76,
+          "difference": 3.14,
+          "percent_diff": 40.4,
+          "unit": "higher = more complex",
+          "direction": "above"
+        },
+        {
+          "metric": "Average Sentence Length",
+          "piece_value": 14.1,
+          "collection_avg": 13.1,
+          "difference": 1.0,
+          "percent_diff": 7.7,
+          "unit": "words",
+          "direction": "above"
+        },
+        {
+          "metric": "Vocabulary Diversity (TTR)",
+          "piece_value": 0.32,
+          "collection_avg": 0.35,
+          "difference": -0.03,
+          "percent_diff": -9.5,
+          "unit": "higher = more diverse",
+          "direction": "below"
+        },
+        {
+          "metric": "Average Word Length",
+          "piece_value": 5.27,
+          "collection_avg": 4.71,
+          "difference": 0.55,
+          "percent_diff": 11.8,
+          "unit": "characters",
+          "direction": "above"
+        }
+      ],
+      "revision": {
+        "resolved": 0,
+        "skipped": 0,
+        "remaining": 8
+      },
+      "revision_score": 24.71,
+      "revision_rank": 7,
+      "revision_components": {
+        "workshop": 17.85,
+        "autorev": 1.47,
+        "style_deviation": 1.19,
+        "age": 4.2
+      },
+      "revision_age": 28,
       "last_revised": null
     },
     {
@@ -2188,15 +2161,15 @@
         "skipped": 0,
         "remaining": 9
       },
-      "revision_score": 23.63,
+      "revision_score": 23.8,
       "revision_rank": 8,
       "revision_components": {
         "workshop": 19.95,
         "autorev": 2.22,
         "style_deviation": 0.57,
-        "age": 0.89
+        "age": 1.06
       },
-      "revision_age": 8,
+      "revision_age": 9,
       "last_revised": "2026-03-07T11:07:31.624418"
     },
     {
@@ -2396,7 +2369,7 @@
           "piece_value": 0.35,
           "collection_avg": 0.35,
           "difference": -0.0,
-          "percent_diff": -0.8,
+          "percent_diff": -0.9,
           "unit": "higher = more diverse",
           "direction": "below"
         },
@@ -2415,15 +2388,15 @@
         "skipped": 0,
         "remaining": 8
       },
-      "revision_score": 22.59,
+      "revision_score": 22.74,
       "revision_rank": 9,
       "revision_components": {
         "workshop": 16.35,
         "autorev": 1.23,
         "style_deviation": 0.21,
-        "age": 4.8
+        "age": 4.95
       },
-      "revision_age": 32,
+      "revision_age": 33,
       "last_revised": null
     },
     {
@@ -2683,7 +2656,7 @@
           "piece_value": 0.22,
           "collection_avg": 0.35,
           "difference": -0.14,
-          "percent_diff": -38.5,
+          "percent_diff": -38.6,
           "unit": "higher = more diverse",
           "direction": "below"
         },
@@ -2915,7 +2888,7 @@
           "piece_value": 0.31,
           "collection_avg": 0.35,
           "difference": -0.05,
-          "percent_diff": -13.5,
+          "percent_diff": -13.6,
           "unit": "higher = more diverse",
           "direction": "below"
         },
@@ -2934,15 +2907,15 @@
         "skipped": 0,
         "remaining": 9
       },
-      "revision_score": 21.71,
+      "revision_score": 21.88,
       "revision_rank": 11,
       "revision_components": {
         "workshop": 19.2,
         "autorev": 0.6,
-        "style_deviation": 1.01,
-        "age": 0.89
+        "style_deviation": 1.02,
+        "age": 1.06
       },
-      "revision_age": 8,
+      "revision_age": 9,
       "last_revised": "2026-03-07T11:06:05.710162"
     },
     {
@@ -3136,15 +3109,15 @@
         "skipped": 0,
         "remaining": 6
       },
-      "revision_score": 21.18,
+      "revision_score": 21.33,
       "revision_rank": 12,
       "revision_components": {
         "workshop": 14.4,
         "autorev": 1.83,
         "style_deviation": 0.75,
-        "age": 4.2
+        "age": 4.35
       },
-      "revision_age": 28,
+      "revision_age": 29,
       "last_revised": null
     },
     {
@@ -3344,7 +3317,7 @@
           "piece_value": 0.34,
           "collection_avg": 0.35,
           "difference": -0.01,
-          "percent_diff": -2.6,
+          "percent_diff": -2.7,
           "unit": "higher = more diverse",
           "direction": "below"
         },
@@ -3363,15 +3336,15 @@
         "skipped": 0,
         "remaining": 7
       },
-      "revision_score": 20.88,
+      "revision_score": 21.03,
       "revision_rank": 13,
       "revision_components": {
         "workshop": 16.35,
         "autorev": 0.6,
         "style_deviation": 0.48,
-        "age": 3.45
+        "age": 3.6
       },
-      "revision_age": 23,
+      "revision_age": 24,
       "last_revised": "2026-02-20T11:00:00"
     },
     {
@@ -3496,7 +3469,7 @@
           "piece_value": 0.46,
           "collection_avg": 0.35,
           "difference": 0.11,
-          "percent_diff": 30.4,
+          "percent_diff": 30.3,
           "unit": "higher = more diverse",
           "direction": "above"
         },
@@ -3515,15 +3488,15 @@
         "skipped": 0,
         "remaining": 6
       },
-      "revision_score": 20.84,
+      "revision_score": 20.99,
       "revision_rank": 14,
       "revision_components": {
         "workshop": 14.4,
         "autorev": 1.26,
         "style_deviation": 1.13,
-        "age": 4.05
+        "age": 4.2
       },
-      "revision_age": 27,
+      "revision_age": 28,
       "last_revised": null
     },
     {
@@ -3700,7 +3673,7 @@
           "piece_value": 0.29,
           "collection_avg": 0.35,
           "difference": -0.06,
-          "percent_diff": -17.2,
+          "percent_diff": -17.3,
           "unit": "higher = more diverse",
           "direction": "below"
         },
@@ -3719,15 +3692,15 @@
         "skipped": 0,
         "remaining": 5
       },
-      "revision_score": 19.06,
+      "revision_score": 19.22,
       "revision_rank": 15,
       "revision_components": {
         "workshop": 12.9,
         "autorev": 3.27,
-        "style_deviation": 0.79,
-        "age": 2.1
+        "style_deviation": 0.8,
+        "age": 2.25
       },
-      "revision_age": 14,
+      "revision_age": 15,
       "last_revised": "2026-03-01T11:00:00"
     },
     {
@@ -3931,7 +3904,7 @@
           "piece_value": 0.29,
           "collection_avg": 0.35,
           "difference": -0.06,
-          "percent_diff": -17.3,
+          "percent_diff": -17.4,
           "unit": "higher = more diverse",
           "direction": "below"
         },
@@ -4173,15 +4146,15 @@
         "skipped": 0,
         "remaining": 6
       },
-      "revision_score": 17.07,
+      "revision_score": 17.22,
       "revision_rank": 17,
       "revision_components": {
         "workshop": 14.4,
         "autorev": 1.17,
         "style_deviation": 0,
-        "age": 1.5
+        "age": 1.65
       },
-      "revision_age": 10,
+      "revision_age": 11,
       "last_revised": null
     },
     {
@@ -4284,7 +4257,7 @@
           "piece_value": 0.53,
           "collection_avg": 0.35,
           "difference": 0.18,
-          "percent_diff": 50.1,
+          "percent_diff": 50.0,
           "unit": "higher = more diverse",
           "direction": "above"
         },
@@ -4303,15 +4276,15 @@
         "skipped": 0,
         "remaining": 5
       },
-      "revision_score": 13.8,
+      "revision_score": 13.85,
       "revision_rank": 18,
       "revision_components": {
         "workshop": 6.5,
         "autorev": 0.87,
         "style_deviation": 1.48,
-        "age": 4.95
+        "age": 5.0
       },
-      "revision_age": 33,
+      "revision_age": 34,
       "last_revised": null
     },
     {
@@ -4464,7 +4437,7 @@
           "piece_value": 0.45,
           "collection_avg": 0.35,
           "difference": 0.09,
-          "percent_diff": 26.0,
+          "percent_diff": 25.9,
           "unit": "higher = more diverse",
           "direction": "above"
         },
@@ -4483,15 +4456,15 @@
         "skipped": 0,
         "remaining": 7
       },
-      "revision_score": 12.58,
+      "revision_score": 12.73,
       "revision_rank": 19,
       "revision_components": {
         "workshop": 8.0,
         "autorev": 0.3,
         "style_deviation": 0.83,
-        "age": 3.45
+        "age": 3.6
       },
-      "revision_age": 23,
+      "revision_age": 24,
       "last_revised": "2026-02-20T11:00:00"
     },
     {
@@ -4590,15 +4563,15 @@
         "skipped": 0,
         "remaining": 3
       },
-      "revision_score": 11.52,
+      "revision_score": 11.67,
       "revision_rank": 20,
       "revision_components": {
         "workshop": 5.6,
         "autorev": 0.3,
         "style_deviation": 2.32,
-        "age": 3.3
+        "age": 3.45
       },
-      "revision_age": 22,
+      "revision_age": 23,
       "last_revised": "2026-02-21T11:00:00"
     },
     {
@@ -4695,7 +4668,7 @@
           "piece_value": 0.6,
           "collection_avg": 0.35,
           "difference": 0.25,
-          "percent_diff": 69.6,
+          "percent_diff": 69.5,
           "unit": "higher = more diverse",
           "direction": "above"
         },
@@ -4714,15 +4687,15 @@
         "skipped": 0,
         "remaining": 2
       },
-      "revision_score": 8.53,
+      "revision_score": 8.68,
       "revision_rank": 21,
       "revision_components": {
         "workshop": 2.25,
         "autorev": 0.6,
         "style_deviation": 2.38,
-        "age": 3.3
+        "age": 3.45
       },
-      "revision_age": 22,
+      "revision_age": 23,
       "last_revised": "2026-02-21T11:00:00"
     },
     {
@@ -4916,7 +4889,7 @@
           "piece_value": 0.29,
           "collection_avg": 0.35,
           "difference": -0.06,
-          "percent_diff": -17.1,
+          "percent_diff": -17.2,
           "unit": "higher = more diverse",
           "direction": "below"
         },
@@ -4935,15 +4908,15 @@
         "skipped": 0,
         "remaining": 5
       },
-      "revision_score": 6.68,
+      "revision_score": 6.76,
       "revision_rank": 22,
       "revision_components": {
         "workshop": 4.55,
         "autorev": 0.84,
-        "style_deviation": 1.22,
-        "age": 0.07
+        "style_deviation": 1.23,
+        "age": 0.15
       },
-      "revision_age": 1,
+      "revision_age": 2,
       "last_revised": "2026-03-14T11:03:07.781640"
     }
   ],
@@ -5062,7 +5035,7 @@
     {
       "type": "adverb-density",
       "severity": "medium",
-      "description": "67 adverb issues across 6 pieces",
+      "description": "66 adverb issues across 5 pieces",
       "suggestion": "Consider a focused adverb-pruning pass on the heaviest pieces.",
       "pieces": [
         "on-the-principle-of-least-action",
@@ -5088,15 +5061,15 @@
         "on-the-hard-problem",
         "on-the-bat",
         "on-the-principle-of-least-action",
-        "on-the-gift",
-        "on-wu-wei"
+        "on-wu-wei",
+        "on-the-gift"
       ],
       "detail": [
         "On The Hard Problem: 10 abstract paragraphs",
         "On The Bat: 9 abstract paragraphs",
         "On The Principle Of Least Action: 6 abstract paragraphs",
-        "On The Gift: 4 abstract paragraphs",
-        "On Wu Wei: 4 abstract paragraphs"
+        "On Wu Wei: 4 abstract paragraphs",
+        "On The Gift: 3 abstract paragraphs"
       ]
     },
     {
