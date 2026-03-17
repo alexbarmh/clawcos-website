@@ -587,12 +587,101 @@ const clientData = JSON.stringify({
   }
   .reset-btn:hover { color: var(--accent-aqua); }
 
+  /* Journey card complete state */
+  .journey-card.complete {
+    opacity: 0.7;
+  }
+  .journey-card.complete:hover { opacity: 1; }
+
+  /* Top actions row */
+  .jh-top-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Share button */
+  .share-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid var(--border-subtle);
+    background: transparent;
+    color: var(--text-secondary);
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .share-btn:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+    color: var(--text-primary);
+    background: var(--bg-card);
+  }
+  .share-btn.copied {
+    border-color: var(--accent-aqua);
+    color: var(--accent-aqua);
+  }
+
+  /* Resume button */
+  .resume-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 1rem;
+    padding: 10px 22px;
+    border-radius: 10px;
+    border: none;
+    background: var(--accent-aqua);
+    color: var(--bg-deep);
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 12px rgba(0, 212, 170, 0.2);
+  }
+  .resume-btn:hover {
+    background: #00e8bb;
+    box-shadow: 0 4px 20px rgba(0, 212, 170, 0.35);
+    transform: translateY(-2px);
+  }
+
+  /* Remaining time label in progress */
+  .jp-remaining {
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    white-space: nowrap;
+    padding-left: 4px;
+    border-left: 1px solid var(--border-subtle);
+    margin-left: 4px;
+  }
+
+  /* Step highlight animation (resume scroll) */
+  .step.highlight .step-piece {
+    border-color: var(--accent-aqua);
+    box-shadow: 0 0 20px rgba(0, 212, 170, 0.15);
+    transition: all 0.3s ease;
+  }
+  .step.highlight .step-dot {
+    transform: scale(1.2);
+    box-shadow: 0 0 16px rgba(0, 212, 170, 0.4);
+  }
+
   @media (max-width: 700px) {
     .journey-page { padding: 2rem 1rem 4rem; }
     .journey-grid { grid-template-columns: 1fr; }
     .journey-steps { padding-left: 30px; }
     .step-dot { left: -30px; width: 24px; height: 24px; font-size: 0.65rem; }
     .journey-steps::before { left: 11px; }
+    .jh-top-actions { flex-direction: row; }
+    .share-btn { padding: 6px 12px; font-size: 0.72rem; }
+    .resume-btn { font-size: 0.82rem; padding: 9px 18px; }
+    .journey-progress { flex-wrap: wrap; gap: 8px; }
+    .jp-remaining { border-left: none; padding-left: 0; }
   }
 </style>
 
@@ -657,13 +746,15 @@ function renderGrid() {
     const readCount = prog.read.filter(s => j.pieces.some(p => p.slug === s)).length;
     const pct = j.pieces.length > 0 ? Math.round((readCount / j.pieces.length) * 100) : 0;
     const started = readCount > 0;
+    const remainingTime = j.pieces.filter(p => !prog.read.includes(p.slug)).reduce((s, p) => s + p.readingTime, 0);
+    const complete = readCount >= j.pieces.length;
 
     return `
-      <div class="journey-card" data-journey="${j.id}" style="--card-color: ${j.color}">
+      <div class="journey-card ${complete ? 'complete' : ''}" data-journey="${j.id}" style="--card-color: ${j.color}">
         <span class="jc-emoji">${j.emoji}</span>
         <div class="jc-name">${j.name}</div>
         <div class="jc-tagline">${j.tagline}</div>
-        <div class="jc-meta">${j.pieces.length} pieces · ~${totalTime} min${started ? ` · ${readCount}/${j.pieces.length} read` : ''}</div>
+        <div class="jc-meta">${j.pieces.length} pieces · ${complete ? '✓ Complete' : started ? `~${remainingTime} min remaining` : `~${totalTime} min total`}${started && !complete ? ` · ${readCount}/${j.pieces.length} read` : ''}</div>
         ${started ? `<div class="jc-progress"><div class="jc-progress-fill" style="width:${pct}%;background:${j.color}"></div></div>` : ''}
       </div>
     `;
@@ -688,8 +779,22 @@ function openJourney(journeyId) {
   renderJourneySteps(j);
   updateJourneyProgress(j);
 
-  // Scroll to top of view
-  view.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  // Scroll: if journey has progress, scroll to current step after a brief delay
+  const prog = getJourneyProgress(j.id);
+  const hasProgress = prog.read && prog.read.length > 0 && prog.read.length < j.pieces.length;
+
+  if (hasProgress) {
+    // Brief pause, then scroll to current step
+    view.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setTimeout(() => {
+      const current = document.querySelector('.step.current');
+      if (current) {
+        current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }, 800);
+  } else {
+    view.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 
   // Animate bridges
   setTimeout(() => {
@@ -708,11 +813,19 @@ function closeJourney() {
 
 // === Journey header ===
 function renderJourneyHeader(j) {
+  const prog = getJourneyProgress(j.id);
+  const readCount = prog.read.filter(s => j.pieces.some(p => p.slug === s)).length;
+  const hasProgress = readCount > 0 && readCount < j.pieces.length;
+
   document.getElementById('journey-header').innerHTML = `
-    <button class="back-btn" onclick="closeJourney()">← All Journeys</button>
+    <div class="jh-top-actions">
+      <button class="back-btn" onclick="closeJourney()">← All Journeys</button>
+      <button class="share-btn" onclick="shareJourney('${j.id}')" title="Copy link to this journey">🔗 Share</button>
+    </div>
     <div class="jh-emoji" style="margin-top:1rem">${j.emoji}</div>
     <h2>${j.name}</h2>
     <div class="jh-desc">${j.description}</div>
+    ${hasProgress ? `<button class="resume-btn" onclick="scrollToCurrentStep()">▶ Resume where you left off</button>` : ''}
   `;
 }
 
@@ -723,10 +836,13 @@ function updateJourneyProgress(j) {
   const total = j.pieces.length;
   const pct = total > 0 ? Math.round((readCount / total) * 100) : 0;
 
+  const remainingTime = j.pieces.filter(p => !prog.read.includes(p.slug)).reduce((s, p) => s + p.readingTime, 0);
+
   document.getElementById('journey-progress-bar').innerHTML = `
     <span class="jp-label">Journey: <span class="jp-step-count">${readCount}</span> of ${total} read</span>
     <div class="jp-track"><div class="jp-fill" style="width:${pct}%;background:${j.color}"></div></div>
     <span class="jp-pct">${pct}%</span>
+    ${readCount > 0 && readCount < total ? `<span class="jp-remaining">~${remainingTime} min left</span>` : ''}
   `;
 
   // Update step states
@@ -853,6 +969,34 @@ function renderCompletion(j) {
     <button class="reset-btn" onclick="resetJourney('${j.id}')">↺ Reset this journey</button>
   `;
 }
+
+// === Resume: scroll to current step ===
+window.scrollToCurrentStep = function() {
+  const current = document.querySelector('.step.current');
+  if (current) {
+    current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // Brief highlight animation
+    current.classList.add('highlight');
+    setTimeout(() => current.classList.remove('highlight'), 2000);
+  }
+};
+
+// === Share: copy journey link ===
+window.shareJourney = function(journeyId) {
+  const url = window.location.origin + window.location.pathname + '#' + journeyId;
+  navigator.clipboard.writeText(url).then(() => {
+    const btn = document.querySelector('.share-btn');
+    if (btn) {
+      const orig = btn.textContent;
+      btn.textContent = '✓ Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 2000);
+    }
+  }).catch(() => {
+    // Fallback
+    prompt('Copy this link:', window.location.origin + window.location.pathname + '#' + journeyId);
+  });
+};
 
 // === Global functions ===
 window.closeJourney = closeJourney;
