@@ -1,0 +1,734 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Concept Explorer" description="Explore the thematic landscape of the collection — concepts, philosophers, and the connections between them.">
+  <div class="explorer-container">
+    <section class="explorer-header">
+      <h1>Concept Explorer</h1>
+      <p class="subtitle">Click any concept or philosopher to see which pieces share it, how it connects to other ideas, and where the threads converge.</p>
+    </section>
+
+    <div class="explorer-stats" id="stats-bar">
+      <div class="stat"><span class="stat-value" id="stat-concepts">—</span><span class="stat-label">Concepts</span></div>
+      <div class="stat"><span class="stat-value" id="stat-philosophers">—</span><span class="stat-label">Philosophers</span></div>
+      <div class="stat"><span class="stat-value" id="stat-pieces">—</span><span class="stat-label">Pieces</span></div>
+      <div class="stat"><span class="stat-value" id="stat-connections">—</span><span class="stat-label">Connections</span></div>
+    </div>
+
+    <div class="search-bar">
+      <input type="text" id="search" placeholder="Search concepts, philosophers, or pieces..." autocomplete="off" />
+    </div>
+
+    <section class="concepts-section">
+      <h2 class="section-title">🧠 Concepts</h2>
+      <div class="tag-cloud" id="concept-cloud"></div>
+    </section>
+
+    <section class="philosophers-section">
+      <h2 class="section-title">🏛️ Philosophers & Thinkers</h2>
+      <div class="tag-cloud" id="philosopher-cloud"></div>
+    </section>
+
+    <!-- Detail panel (shown when a concept/philosopher is selected) -->
+    <section class="detail-panel" id="detail-panel">
+      <button class="close-detail" id="close-detail">✕ Close</button>
+      <div id="detail-content"></div>
+    </section>
+
+    <!-- Co-occurrence heatmap -->
+    <section class="heatmap-section">
+      <h2 class="section-title">🔥 Concept Co-occurrence</h2>
+      <p class="section-desc">How often concepts appear together across pieces. Brighter = stronger connection.</p>
+      <div class="heatmap-container" id="heatmap"></div>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .explorer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: var(--space-2xl) var(--space-lg);
+  }
+
+  .explorer-header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+  }
+
+  .explorer-header h1 {
+    font-family: var(--font-sans);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+    letter-spacing: -0.02em;
+  }
+
+  .subtitle {
+    color: var(--text-secondary);
+    font-family: var(--font-serif);
+    font-style: italic;
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .explorer-stats {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-xl);
+    margin-bottom: var(--space-xl);
+    padding: var(--space-md) var(--space-lg);
+    background: var(--bg-surface);
+    border-radius: 12px;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: var(--font-sans);
+    color: var(--accent-aqua);
+  }
+
+  .stat-label {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-dim);
+    margin-top: 2px;
+  }
+
+  .search-bar {
+    margin-bottom: var(--space-xl);
+    text-align: center;
+  }
+
+  .search-bar input {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px 20px;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    color: var(--text-primary);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .search-bar input:focus {
+    border-color: var(--accent-aqua);
+  }
+
+  .search-bar input::placeholder {
+    color: var(--text-dim);
+  }
+
+  .section-title {
+    font-family: var(--font-sans);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+    color: var(--text-primary);
+  }
+
+  .section-desc {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    margin-bottom: var(--space-md);
+    margin-top: -8px;
+  }
+
+  .concepts-section,
+  .philosophers-section,
+  .heatmap-section {
+    margin-bottom: var(--space-2xl);
+  }
+
+  /* === Tag Cloud === */
+  .tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .tag-cloud .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-family: var(--font-sans);
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid var(--border-subtle);
+    transition: all 0.25s ease;
+    position: relative;
+  }
+
+  .tag-cloud .tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .tag-cloud .tag.concept {
+    color: var(--accent-aqua-dim);
+    background: rgba(0, 212, 170, 0.06);
+  }
+
+  .tag-cloud .tag.concept:hover,
+  .tag-cloud .tag.concept.active {
+    border-color: var(--accent-aqua);
+    background: rgba(0, 212, 170, 0.12);
+    color: var(--accent-aqua);
+    box-shadow: 0 0 20px rgba(0, 212, 170, 0.1);
+  }
+
+  .tag-cloud .tag.philosopher {
+    color: var(--accent-gold-dim);
+    background: rgba(240, 160, 48, 0.06);
+  }
+
+  .tag-cloud .tag.philosopher:hover,
+  .tag-cloud .tag.philosopher.active {
+    border-color: var(--accent-gold);
+    background: rgba(240, 160, 48, 0.12);
+    color: var(--accent-gold);
+    box-shadow: 0 0 20px rgba(240, 160, 48, 0.1);
+  }
+
+  .tag .count {
+    font-size: 0.7rem;
+    opacity: 0.6;
+  }
+
+  .tag.hidden {
+    display: none !important;
+  }
+
+  /* === Detail Panel === */
+  .detail-panel {
+    display: none;
+    margin-bottom: var(--space-2xl);
+    padding: var(--space-lg);
+    background: var(--bg-surface);
+    border-radius: 14px;
+    border: 1px solid var(--border-accent);
+    position: relative;
+    animation: slideIn 0.3s ease;
+  }
+
+  .detail-panel.visible {
+    display: block;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .close-detail {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    color: var(--text-dim);
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    padding: 6px 12px;
+    transition: all 0.2s;
+  }
+
+  .close-detail:hover {
+    color: var(--text-primary);
+    border-color: var(--text-dim);
+  }
+
+  .detail-title {
+    font-family: var(--font-sans);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .detail-title.concept-color {
+    color: var(--accent-aqua);
+  }
+
+  .detail-title.philosopher-color {
+    color: var(--accent-gold);
+  }
+
+  .detail-meta {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .detail-subsection {
+    margin-bottom: var(--space-lg);
+  }
+
+  .detail-subsection h3 {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-dim);
+    margin-bottom: var(--space-sm);
+  }
+
+  /* Piece cards in detail view */
+  .piece-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-md);
+  }
+
+  .piece-card {
+    display: block;
+    padding: var(--space-md);
+    background: var(--bg-card);
+    border-radius: 10px;
+    border: 1px solid var(--border-subtle);
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .piece-card:hover {
+    border-color: var(--accent-aqua);
+    background: var(--bg-card-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .piece-card .piece-type {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 2px 8px;
+    border-radius: 8px;
+    margin-bottom: 6px;
+  }
+
+  .piece-card .piece-type.essay {
+    background: rgba(0, 212, 170, 0.12);
+    color: var(--accent-aqua);
+  }
+
+  .piece-card .piece-type.fiction {
+    background: rgba(240, 160, 48, 0.12);
+    color: var(--accent-gold);
+  }
+
+  .piece-card .piece-type.poetry {
+    background: rgba(184, 156, 255, 0.12);
+    color: #b89cff;
+  }
+
+  .piece-card .piece-title {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+
+  .piece-card .piece-meta {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    margin-bottom: 6px;
+  }
+
+  .piece-card .piece-desc {
+    font-family: var(--font-serif);
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  /* Related tags in detail */
+  .related-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .related-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 12px;
+    border-radius: 14px;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    cursor: pointer;
+    border: 1px solid var(--border-subtle);
+    transition: all 0.2s;
+  }
+
+  .related-tag.concept {
+    color: var(--accent-aqua-dim);
+  }
+
+  .related-tag.concept:hover {
+    border-color: var(--accent-aqua);
+    color: var(--accent-aqua);
+  }
+
+  .related-tag.philosopher {
+    color: var(--accent-gold-dim);
+  }
+
+  .related-tag.philosopher:hover {
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+  }
+
+  .related-tag .strength {
+    font-size: 0.65rem;
+    opacity: 0.5;
+  }
+
+  /* === Heatmap === */
+  .heatmap-container {
+    overflow-x: auto;
+    padding: var(--space-sm);
+  }
+
+  .heatmap-container table {
+    border-collapse: collapse;
+    margin: 0 auto;
+  }
+
+  .heatmap-container th {
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    font-weight: 500;
+    color: var(--text-dim);
+    padding: 4px 6px;
+    white-space: nowrap;
+  }
+
+  .heatmap-container th.row-header {
+    text-align: right;
+    padding-right: 10px;
+    color: var(--text-secondary);
+  }
+
+  .heatmap-container th.col-header {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    padding: 6px 2px;
+    max-height: 120px;
+  }
+
+  .heatmap-container td {
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    cursor: default;
+    position: relative;
+    border: 1px solid var(--bg-deep);
+  }
+
+  .heatmap-container td:hover {
+    outline: 2px solid var(--accent-aqua);
+    outline-offset: -1px;
+    z-index: 1;
+  }
+
+  .heatmap-container td .heatmap-tooltip {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(17, 22, 40, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-subtle);
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    white-space: nowrap;
+    z-index: 20;
+    pointer-events: none;
+    color: var(--text-secondary);
+  }
+
+  .heatmap-container td:hover .heatmap-tooltip {
+    display: block;
+  }
+
+  /* === Responsive === */
+  @media (max-width: 768px) {
+    .explorer-container {
+      padding: var(--space-lg) var(--space-md);
+    }
+
+    .explorer-stats {
+      flex-wrap: wrap;
+      gap: var(--space-md);
+    }
+
+    .stat-value {
+      font-size: 1.2rem;
+    }
+
+    .piece-cards {
+      grid-template-columns: 1fr;
+    }
+
+    .detail-title {
+      font-size: 1.2rem;
+    }
+  }
+</style>
+
+<script is:inline define:vars={{ base }}>
+// Load concept explorer data
+fetch(base + 'data/concept-explorer-data.json')
+  .then(r => r.json())
+  .then(initExplorer)
+  .catch(err => console.error('Failed to load concept explorer data:', err));
+
+function initExplorer(data) {
+  const { concepts, philosophers, stats, conceptMatrix } = data;
+
+  // Stats
+  document.getElementById('stat-concepts').textContent = stats.totalConcepts;
+  document.getElementById('stat-philosophers').textContent = stats.totalPhilosophers;
+  document.getElementById('stat-pieces').textContent = stats.totalPieces;
+  document.getElementById('stat-connections').textContent = stats.totalConnections;
+
+  // Concept cloud
+  const conceptCloud = document.getElementById('concept-cloud');
+  const sortedConcepts = Object.values(concepts).sort((a, b) => b.count - a.count);
+  const maxCount = sortedConcepts[0]?.count || 1;
+
+  sortedConcepts.forEach(c => {
+    const tag = document.createElement('button');
+    const scale = 0.78 + (c.count / maxCount) * 0.5;
+    tag.className = 'tag concept';
+    tag.style.fontSize = scale + 'rem';
+    tag.dataset.name = c.name;
+    tag.dataset.type = 'concept';
+    tag.innerHTML = `${c.name} <span class="count">${c.count}</span>`;
+    tag.addEventListener('click', () => selectItem('concept', c.name));
+    conceptCloud.appendChild(tag);
+  });
+
+  // Philosopher cloud
+  const philCloud = document.getElementById('philosopher-cloud');
+  const sortedPhils = Object.values(philosophers).sort((a, b) => b.count - a.count);
+  const maxPhilCount = sortedPhils[0]?.count || 1;
+
+  sortedPhils.forEach(p => {
+    const tag = document.createElement('button');
+    const scale = 0.78 + (p.count / maxPhilCount) * 0.5;
+    tag.className = 'tag philosopher';
+    tag.style.fontSize = scale + 'rem';
+    tag.dataset.name = p.name;
+    tag.dataset.type = 'philosopher';
+    tag.innerHTML = `${p.name} <span class="count">${p.count}</span>`;
+    tag.addEventListener('click', () => selectItem('philosopher', p.name));
+    philCloud.appendChild(tag);
+  });
+
+  // Search
+  const searchInput = document.getElementById('search');
+  searchInput.addEventListener('input', () => {
+    const q = searchInput.value.toLowerCase().trim();
+    document.querySelectorAll('.tag-cloud .tag').forEach(tag => {
+      const name = tag.dataset.name.toLowerCase();
+      tag.classList.toggle('hidden', q.length > 0 && !name.includes(q));
+    });
+  });
+
+  // Detail panel
+  const detailPanel = document.getElementById('detail-panel');
+  const detailContent = document.getElementById('detail-content');
+
+  document.getElementById('close-detail').addEventListener('click', () => {
+    detailPanel.classList.remove('visible');
+    document.querySelectorAll('.tag.active').forEach(t => t.classList.remove('active'));
+  });
+
+  function selectItem(type, name) {
+    // Toggle active state
+    document.querySelectorAll('.tag.active').forEach(t => t.classList.remove('active'));
+    const activeTag = document.querySelector(`.tag[data-name="${name}"][data-type="${type}"]`);
+    if (activeTag) activeTag.classList.add('active');
+
+    const item = type === 'concept' ? concepts[name] : philosophers[name];
+    if (!item) return;
+
+    const colorClass = type === 'concept' ? 'concept-color' : 'philosopher-color';
+    const icon = type === 'concept' ? '🧠' : '🏛️';
+
+    // Build pieces HTML
+    const piecesHtml = item.pieces.map(p => `
+      <a href="${base}writings/${p.slug}/" class="piece-card">
+        <span class="piece-type ${p.type}">${p.type}</span>
+        <div class="piece-title">${p.title}</div>
+        <div class="piece-meta">${p.date} · ${p.words.toLocaleString()} words</div>
+        ${p.description ? `<div class="piece-desc">${p.description}…</div>` : ''}
+      </a>
+    `).join('');
+
+    // Build related concepts
+    const relatedConceptsHtml = (item.relatedConcepts || []).map(r => `
+      <button class="related-tag concept" data-nav-type="concept" data-nav-name="${r.name}">
+        ${r.name} <span class="strength">×${r.strength}</span>
+      </button>
+    `).join('');
+
+    // Build related philosophers
+    const relatedPhilsHtml = (item.relatedPhilosophers || []).map(r => `
+      <button class="related-tag philosopher" data-nav-type="philosopher" data-nav-name="${r.name}">
+        ${r.name} <span class="strength">×${r.strength}</span>
+      </button>
+    `).join('');
+
+    detailContent.innerHTML = `
+      <h2 class="detail-title ${colorClass}">${icon} ${name}</h2>
+      <div class="detail-meta">Appears in ${item.count} piece${item.count !== 1 ? 's' : ''}</div>
+
+      ${relatedConceptsHtml ? `
+        <div class="detail-subsection">
+          <h3>Related Concepts</h3>
+          <div class="related-tags">${relatedConceptsHtml}</div>
+        </div>
+      ` : ''}
+
+      ${relatedPhilsHtml ? `
+        <div class="detail-subsection">
+          <h3>Related ${type === 'concept' ? 'Philosophers' : 'Concepts'}</h3>
+          <div class="related-tags">${relatedPhilsHtml}</div>
+        </div>
+      ` : ''}
+
+      <div class="detail-subsection">
+        <h3>Pieces (${item.count})</h3>
+        <div class="piece-cards">${piecesHtml}</div>
+      </div>
+    `;
+
+    // Wire up navigation between related tags
+    detailContent.querySelectorAll('.related-tag').forEach(el => {
+      el.addEventListener('click', () => {
+        selectItem(el.dataset.navType, el.dataset.navName);
+        detailPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    detailPanel.classList.add('visible');
+    detailPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // Heatmap
+  buildHeatmap(conceptMatrix, concepts);
+
+  function buildHeatmap(matrix, conceptsMap) {
+    const container = document.getElementById('heatmap');
+    if (!matrix || matrix.length === 0) return;
+
+    // Get max value for color scaling (excluding diagonal)
+    let maxVal = 0;
+    matrix.forEach(row => {
+      Object.entries(row.values).forEach(([key, val]) => {
+        if (key !== row.concept && val > maxVal) maxVal = val;
+      });
+    });
+
+    const labels = matrix.map(r => r.concept);
+
+    let html = '<table>';
+
+    // Column headers
+    html += '<tr><th></th>';
+    labels.forEach(l => {
+      html += `<th class="col-header">${l}</th>`;
+    });
+    html += '</tr>';
+
+    // Rows
+    matrix.forEach((row, i) => {
+      html += `<tr><th class="row-header">${row.concept}</th>`;
+      labels.forEach((col, j) => {
+        const val = row.values[col] || 0;
+        const isDiag = i === j;
+        let bg;
+
+        if (isDiag) {
+          // Diagonal: piece count, use different color
+          const intensity = Math.min(val / 20, 1);
+          bg = `rgba(184, 156, 255, ${0.1 + intensity * 0.5})`;
+        } else if (val === 0) {
+          bg = 'rgba(255, 255, 255, 0.02)';
+        } else {
+          const intensity = Math.min(val / maxVal, 1);
+          bg = `rgba(0, 212, 170, ${0.08 + intensity * 0.55})`;
+        }
+
+        const label = isDiag
+          ? `${row.concept}: ${val} pieces`
+          : `${row.concept} × ${col}: ${val}`;
+
+        html += `<td style="background:${bg}"><span class="heatmap-tooltip">${label}</span></td>`;
+      });
+      html += '</tr>';
+    });
+
+    html += '</table>';
+    container.innerHTML = html;
+
+    // Make heatmap cells clickable for concepts
+    container.querySelectorAll('th.row-header, th.col-header').forEach(th => {
+      th.style.cursor = 'pointer';
+      th.addEventListener('click', () => {
+        const name = th.textContent.trim();
+        if (conceptsMap[name]) {
+          selectItem('concept', name);
+        }
+      });
+    });
+  }
+
+  // Handle URL hash for deep linking
+  if (window.location.hash) {
+    const hash = decodeURIComponent(window.location.hash.slice(1));
+    const [type, name] = hash.split(':');
+    if (type && name) {
+      setTimeout(() => selectItem(type, name), 100);
+    }
+  }
+}
+</script>
