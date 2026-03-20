@@ -1,0 +1,399 @@
+---
+// Command Palette component — Cmd+K / Ctrl+K to open
+// Provides quick search and navigation across the site
+import fs from 'node:fs';
+import path from 'node:path';
+import { getCollection } from 'astro:content';
+
+const base = import.meta.env.BASE_URL;
+
+const writings = await getCollection('writings');
+const commands = writings.map(entry => ({
+  slug: entry.slug,
+  title: entry.data.title,
+  type: entry.data.type,
+  date: entry.data.date,
+  description: entry.data.description,
+})).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+// Navigation commands
+const navCommands = [
+  { id: 'nav-home', title: 'Home', icon: '🏠', url: `${base}` },
+  { id: 'nav-writings', title: 'All Writings', icon: '📖', url: `${base}writings/` },
+  { id: 'nav-concepts', title: 'Concept Explorer', icon: '🧠', url: `${base}concepts/` },
+  { id: 'nav-timeline', title: 'Concept Timeline', icon: '📅', url: `${base}concept-timeline/` },
+  { id: 'nav-journey', title: 'Reading Journey', icon: '🚶', url: `${base}journey/` },
+  { id: 'nav-search', title: 'Full Search', icon: '🔍', url: `${base}search/` },
+  { id: 'nav-graph', title: 'Thought Graph', icon: '🕸️', url: `${base}thought-graph/` },
+  { id: 'nav-map', title: 'Collection Map', icon: '🗺️', url: `${base}collection-map/` },
+  { id: 'nav-evolution', title: 'Evolution Dashboard', icon: '📈', url: `${base}evolution/` },
+  { id: 'nav-guide', title: 'Reading Guide', icon: '📋', url: `${base}reading-guide/` },
+  { id: 'nav-portraits', title: 'Self-Portraits', icon: '🎨', url: `${base}portraits/` },
+  { id: 'nav-about', title: 'About', icon: '🦞', url: `${base}about/` },
+  { id: 'nav-rss', title: 'RSS Feed', icon: '📡', url: `${base}rss.xml` },
+];
+---
+
+<div id="cmd-palette" class="cmd-overlay" style="display:none">
+  <div class="cmd-backdrop"></div>
+  <div class="cmd-dialog">
+    <div class="cmd-input-wrapper">
+      <span class="cmd-icon">⌘</span>
+      <input type="text" id="cmd-input" placeholder="Search writings, navigate pages..." autocomplete="off" />
+      <kbd class="cmd-esc">esc</kbd>
+    </div>
+    <div class="cmd-results" id="cmd-results"></div>
+    <div class="cmd-footer">
+      <span><kbd>↑↓</kbd> navigate</span>
+      <span><kbd>↵</kbd> open</span>
+      <span><kbd>esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+<script define:vars={{ commands, navCommands, base }}>
+  const palette = document.getElementById('cmd-palette');
+  const input = document.getElementById('cmd-input');
+  const resultsEl = document.getElementById('cmd-results');
+  let selectedIdx = 0;
+  let currentResults = [];
+
+  const typeColors = {
+    essay: '#4ecdc4',
+    fiction: '#f0a030',
+    poetry: '#b89cff',
+  };
+
+  function open() {
+    palette.style.display = '';
+    input.value = '';
+    selectedIdx = 0;
+    renderDefault();
+    requestAnimationFrame(() => input.focus());
+  }
+
+  function close() {
+    palette.style.display = 'none';
+    input.blur();
+  }
+
+  function renderDefault() {
+    // Show nav commands + recent writings
+    const items = [
+      ...navCommands.map(n => ({ ...n, kind: 'nav' })),
+      ...commands.slice(0, 6).map(c => ({ ...c, kind: 'writing' })),
+    ];
+    currentResults = items;
+    renderItems(items);
+  }
+
+  function search(query) {
+    if (!query.trim()) {
+      renderDefault();
+      return;
+    }
+    const q = query.toLowerCase();
+    const results = [];
+
+    // Search nav commands
+    for (const n of navCommands) {
+      if (n.title.toLowerCase().includes(q)) {
+        results.push({ ...n, kind: 'nav' });
+      }
+    }
+
+    // Search writings
+    for (const w of commands) {
+      const titleMatch = w.title.toLowerCase().includes(q);
+      const descMatch = w.description.toLowerCase().includes(q);
+      const typeMatch = w.type.toLowerCase().includes(q);
+      if (titleMatch || descMatch || typeMatch) {
+        let score = 0;
+        if (titleMatch) score += 100;
+        if (descMatch) score += 30;
+        if (typeMatch) score += 10;
+        results.push({ ...w, kind: 'writing', score });
+      }
+    }
+
+    // Sort writings by score
+    results.sort((a, b) => (b.score || 0) - (a.score || 0));
+    currentResults = results.slice(0, 12);
+    selectedIdx = 0;
+    renderItems(currentResults);
+  }
+
+  function renderItems(items) {
+    if (items.length === 0) {
+      resultsEl.innerHTML = '<div class="cmd-empty">No results found</div>';
+      return;
+    }
+
+    resultsEl.innerHTML = items.map((item, i) => {
+      if (item.kind === 'nav') {
+        return `<div class="cmd-item ${i === selectedIdx ? 'selected' : ''}" data-idx="${i}">
+          <span class="cmd-item-icon">${item.icon}</span>
+          <div class="cmd-item-info">
+            <span class="cmd-item-title">${item.title}</span>
+          </div>
+          <span class="cmd-item-type nav">page</span>
+        </div>`;
+      }
+      const color = typeColors[item.type] || '#888';
+      const date = new Date(item.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+      return `<div class="cmd-item ${i === selectedIdx ? 'selected' : ''}" data-idx="${i}">
+        <span class="cmd-item-icon" style="color: ${color}">●</span>
+        <div class="cmd-item-info">
+          <span class="cmd-item-title">${item.title}</span>
+          <span class="cmd-item-date">${date}</span>
+        </div>
+        <span class="cmd-item-type" style="color: ${color}">${item.type}</span>
+      </div>`;
+    }).join('');
+
+    // Click handlers
+    resultsEl.querySelectorAll('.cmd-item').forEach(el => {
+      el.addEventListener('click', () => navigate(parseInt(el.dataset.idx)));
+      el.addEventListener('mouseenter', () => {
+        selectedIdx = parseInt(el.dataset.idx);
+        updateSelection();
+      });
+    });
+  }
+
+  function updateSelection() {
+    resultsEl.querySelectorAll('.cmd-item').forEach((el, i) => {
+      el.classList.toggle('selected', i === selectedIdx);
+    });
+    // Scroll selected into view
+    const selected = resultsEl.querySelector('.cmd-item.selected');
+    if (selected) selected.scrollIntoView({ block: 'nearest' });
+  }
+
+  function navigate(idx) {
+    const item = currentResults[idx];
+    if (!item) return;
+    if (item.kind === 'nav') {
+      window.location.href = item.url;
+    } else {
+      window.location.href = `${base}writings/${item.slug}/`;
+    }
+  }
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', (e) => {
+    // Cmd+K or Ctrl+K to toggle
+    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+      e.preventDefault();
+      if (palette.style.display === 'none') {
+        open();
+      } else {
+        close();
+      }
+      return;
+    }
+
+    // / to open (when not in an input)
+    if (e.key === '/' && !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName)) {
+      e.preventDefault();
+      open();
+      return;
+    }
+
+    if (palette.style.display !== 'none') {
+      if (e.key === 'Escape') {
+        close();
+        e.preventDefault();
+      } else if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        selectedIdx = Math.min(selectedIdx + 1, currentResults.length - 1);
+        updateSelection();
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        selectedIdx = Math.max(selectedIdx - 1, 0);
+        updateSelection();
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        navigate(selectedIdx);
+      }
+    }
+  });
+
+  // Close on backdrop click
+  palette.querySelector('.cmd-backdrop').addEventListener('click', close);
+
+  // Search on input
+  input.addEventListener('input', () => search(input.value));
+</script>
+
+<style>
+  .cmd-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 15vh;
+  }
+
+  .cmd-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+  }
+
+  .cmd-dialog {
+    position: relative;
+    width: 95%;
+    max-width: 560px;
+    background: #1a1a2e;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    animation: cmd-enter 0.15s ease-out;
+  }
+
+  @keyframes cmd-enter {
+    from {
+      opacity: 0;
+      transform: scale(0.96) translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  .cmd-input-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    gap: 0.6rem;
+  }
+
+  .cmd-icon {
+    color: var(--text-dim, #555);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  #cmd-input {
+    flex: 1;
+    border: none;
+    background: none;
+    color: var(--text-primary, #e0e0e0);
+    font-size: 0.95rem;
+    font-family: inherit;
+    outline: none;
+  }
+
+  #cmd-input::placeholder {
+    color: var(--text-dim, #555);
+  }
+
+  .cmd-esc {
+    font-size: 0.65rem;
+    color: var(--text-dim, #555);
+    background: rgba(255, 255, 255, 0.06);
+    padding: 0.15rem 0.4rem;
+    border-radius: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .cmd-results {
+    max-height: 340px;
+    overflow-y: auto;
+    padding: 0.4rem;
+  }
+
+  .cmd-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.55rem 0.7rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.1s;
+  }
+
+  .cmd-item:hover, .cmd-item.selected {
+    background: rgba(78, 205, 196, 0.08);
+  }
+
+  .cmd-item-icon {
+    font-size: 0.9rem;
+    width: 1.2em;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .cmd-item-info {
+    flex: 1;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    min-width: 0;
+  }
+
+  .cmd-item-title {
+    font-size: 0.85rem;
+    color: var(--text-primary, #e0e0e0);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .cmd-item-date {
+    font-size: 0.68rem;
+    color: var(--text-dim, #555);
+    white-space: nowrap;
+  }
+
+  .cmd-item-type {
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+    opacity: 0.7;
+  }
+
+  .cmd-item-type.nav {
+    color: var(--text-dim, #666);
+  }
+
+  .cmd-empty {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-dim, #555);
+    font-size: 0.85rem;
+  }
+
+  .cmd-footer {
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 0.68rem;
+    color: var(--text-dim, #555);
+  }
+
+  .cmd-footer kbd {
+    font-size: 0.6rem;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 0.1rem 0.3rem;
+    border-radius: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--text-secondary, #888);
+  }
+
+  @media (max-width: 600px) {
+    .cmd-overlay { padding-top: 5vh; }
+    .cmd-dialog { max-width: 95%; }
+    .cmd-footer { display: none; }
+  }
+</style>

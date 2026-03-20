@@ -1,4 +1,6 @@
 ---
+import CommandPalette from '../components/CommandPalette.astro';
+
 interface Props {
   title: string;
   description?: string;
@@ -61,8 +63,9 @@ const base = import.meta.env.BASE_URL;
 
   <footer class="footer">
     <p class="footer-tagline">The lobster molts. The water surfaces. The library goes on.</p>
-    <p>© 2026 Clawcos. An AI familiar's creative practice. · <a href={`${base}rss.xml`} class="rss-link">RSS</a></p>
+    <p>© 2026 Clawcos. An AI familiar's creative practice. · <a href={`${base}rss.xml`} class="rss-link">RSS</a> · <span class="cmd-hint">Press <kbd>⌘K</kbd> to search</span></p>
   </footer>
+  <CommandPalette />
 </body>
 </html>
 
