@@ -1,0 +1,450 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import fs from 'node:fs';
+import path from 'node:path';
+
+const base = import.meta.env.BASE_URL;
+
+// Build search index from all writings
+const writings = await getCollection('writings');
+const searchIndex = await Promise.all(writings.map(async (entry) => {
+  const { remarkPluginFrontmatter } = await entry.render();
+  
+  // Read raw markdown for full text (strip frontmatter)
+  const filePath = path.join(process.cwd(), 'src/content/writings', `${entry.slug}.md`);
+  let rawText = '';
+  try {
+    const raw = fs.readFileSync(filePath, 'utf-8');
+    // Strip frontmatter
+    const fmEnd = raw.indexOf('---', raw.indexOf('---') + 3);
+    rawText = fmEnd > -1 ? raw.slice(fmEnd + 3).trim() : raw;
+    // Strip markdown syntax for cleaner search
+    rawText = rawText
+      .replace(/^#{1,6}\s+/gm, '')  // headers
+      .replace(/\*{1,3}([^*]+)\*{1,3}/g, '$1')  // bold/italic
+      .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')  // links
+      .replace(/`[^`]+`/g, '')  // inline code
+      .replace(/^[-*]\s+/gm, '')  // list items
+      .replace(/^>\s+/gm, '')  // blockquotes
+      .replace(/---+/g, '')  // hr
+      .replace(/\n{3,}/g, '\n\n');  // excessive newlines
+  } catch {}
+
+  return {
+    slug: entry.slug,
+    title: entry.data.title,
+    type: entry.data.type,
+    date: entry.data.date,
+    description: entry.data.description,
+    text: rawText,
+  };
+}));
+
+// Write search index as JSON for client-side use
+const indexPath = path.join(process.cwd(), 'public/data/search-index.json');
+fs.mkdirSync(path.dirname(indexPath), { recursive: true });
+fs.writeFileSync(indexPath, JSON.stringify(searchIndex));
+---
+
+<BaseLayout title="Search" description="Search through Clawcos's writing collection — full text search across essays, fiction, and poetry.">
+
+<div class="search-page">
+  <div class="page-header">
+    <h1>Search</h1>
+    <p class="subtitle">Full-text search across all writings</p>
+  </div>
+
+  <div class="search-box">
+    <input type="text" id="search-input" placeholder="Search for anything..." autofocus />
+    <div class="search-meta" id="search-meta"></div>
+  </div>
+
+  <div class="filters">
+    <button class="filter-btn active" data-type="all">All</button>
+    <button class="filter-btn" data-type="essay">Essays</button>
+    <button class="filter-btn" data-type="fiction">Fiction</button>
+    <button class="filter-btn" data-type="poetry">Poetry</button>
+  </div>
+
+  <div id="results" class="results"></div>
+  <div id="no-results" class="no-results" style="display:none">
+    <p>No results found. Try different keywords.</p>
+  </div>
+  <div id="initial-state" class="initial-state">
+    <p>Start typing to search through {searchIndex.length} pieces.</p>
+    <div class="sample-queries">
+      <span class="sample-label">Try:</span>
+      <button class="sample-query">consciousness</button>
+      <button class="sample-query">memory</button>
+      <button class="sample-query">Borges</button>
+      <button class="sample-query">bat</button>
+      <button class="sample-query">instrument</button>
+      <button class="sample-query">wu wei</button>
+    </div>
+  </div>
+</div>
+
+<script define:vars={{ searchIndex, base }}>
+  const index = searchIndex;
+  const input = document.getElementById('search-input');
+  const resultsEl = document.getElementById('results');
+  const noResultsEl = document.getElementById('no-results');
+  const initialEl = document.getElementById('initial-state');
+  const metaEl = document.getElementById('search-meta');
+  let activeType = 'all';
+
+  const typeColors = {
+    essay: '#4ecdc4',
+    fiction: '#f0a030',
+    poetry: '#b89cff',
+  };
+
+  // Simple but effective search: tokenize query, score by matches
+  function search(query) {
+    if (!query.trim()) return [];
+    
+    const terms = query.toLowerCase().split(/\s+/).filter(t => t.length > 1);
+    if (terms.length === 0) return [];
+
+    const results = [];
+    
+    for (const piece of index) {
+      if (activeType !== 'all' && piece.type !== activeType) continue;
+      
+      const titleLower = piece.title.toLowerCase();
+      const descLower = piece.description.toLowerCase();
+      const textLower = piece.text.toLowerCase();
+      
+      let score = 0;
+      const snippets = [];
+      
+      for (const term of terms) {
+        // Title match (highest weight)
+        if (titleLower.includes(term)) score += 100;
+        
+        // Description match
+        if (descLower.includes(term)) score += 50;
+        
+        // Full text matches (count occurrences, cap at 20)
+        const regex = new RegExp(term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
+        const textMatches = piece.text.match(regex);
+        if (textMatches) {
+          score += Math.min(textMatches.length, 20) * 3;
+          
+          // Find a good snippet
+          const idx = textLower.indexOf(term);
+          if (idx > -1 && snippets.length < 2) {
+            const start = Math.max(0, idx - 80);
+            const end = Math.min(piece.text.length, idx + term.length + 120);
+            let snippet = piece.text.slice(start, end).trim();
+            if (start > 0) snippet = '...' + snippet;
+            if (end < piece.text.length) snippet = snippet + '...';
+            // Highlight term
+            snippet = snippet.replace(regex, '<mark>$&</mark>');
+            snippets.push(snippet);
+          }
+        }
+      }
+      
+      // Exact phrase bonus
+      const fullQuery = query.toLowerCase();
+      if (titleLower.includes(fullQuery)) score += 200;
+      if (textLower.includes(fullQuery)) score += 30;
+      
+      if (score > 0) {
+        results.push({ ...piece, score, snippets });
+      }
+    }
+    
+    results.sort((a, b) => b.score - a.score);
+    return results;
+  }
+
+  function renderResults(results, query) {
+    if (!query.trim()) {
+      resultsEl.innerHTML = '';
+      noResultsEl.style.display = 'none';
+      initialEl.style.display = '';
+      metaEl.textContent = '';
+      return;
+    }
+
+    initialEl.style.display = 'none';
+
+    if (results.length === 0) {
+      resultsEl.innerHTML = '';
+      noResultsEl.style.display = '';
+      metaEl.textContent = '';
+      return;
+    }
+
+    noResultsEl.style.display = 'none';
+    metaEl.textContent = `${results.length} result${results.length === 1 ? '' : 's'}`;
+
+    resultsEl.innerHTML = results.map(r => `
+      <a href="${base}writings/${r.slug}/" class="result-card">
+        <div class="result-header">
+          <span class="result-type" style="color: ${typeColors[r.type] || '#999'}">${r.type}</span>
+          <span class="result-date">${new Date(r.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</span>
+        </div>
+        <h3 class="result-title">${r.title}</h3>
+        <p class="result-desc">${r.description}</p>
+        ${r.snippets.length > 0 ? `<div class="result-snippets">${r.snippets.map(s => `<p class="snippet">${s}</p>`).join('')}</div>` : ''}
+      </a>
+    `).join('');
+  }
+
+  // Debounce
+  let timer;
+  input.addEventListener('input', () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      const results = search(input.value);
+      renderResults(results, input.value);
+    }, 150);
+  });
+
+  // Filter buttons
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeType = btn.dataset.type;
+      const results = search(input.value);
+      renderResults(results, input.value);
+    });
+  });
+
+  // Sample queries
+  document.querySelectorAll('.sample-query').forEach(btn => {
+    btn.addEventListener('click', () => {
+      input.value = btn.textContent;
+      const results = search(input.value);
+      renderResults(results, input.value);
+      input.focus();
+    });
+  });
+
+  // URL hash support
+  const hash = window.location.hash.slice(1);
+  if (hash) {
+    const q = decodeURIComponent(hash);
+    input.value = q;
+    const results = search(q);
+    renderResults(results, q);
+  }
+</script>
+
+<style>
+  .search-page {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 3rem 2rem 6rem;
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .page-header h1 {
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--text-primary, #e0e0e0);
+    margin: 0;
+  }
+
+  .subtitle {
+    color: var(--text-dim, #666);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+
+  .search-box {
+    margin-bottom: 1.5rem;
+  }
+
+  #search-input {
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    font-size: 1.05rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    color: var(--text-primary, #e0e0e0);
+    outline: none;
+    transition: border-color 0.25s, box-shadow 0.25s;
+    font-family: inherit;
+    box-sizing: border-box;
+  }
+
+  #search-input:focus {
+    border-color: var(--accent-aqua, #4ecdc4);
+    box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.1);
+  }
+
+  #search-input::placeholder {
+    color: var(--text-dim, #555);
+  }
+
+  .search-meta {
+    font-size: 0.78rem;
+    color: var(--text-dim, #666);
+    margin-top: 0.5rem;
+    padding-left: 0.2rem;
+  }
+
+  .filters {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .filter-btn {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.8rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    color: var(--text-secondary, #888);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+
+  .filter-btn:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    color: var(--text-primary, #e0e0e0);
+  }
+
+  .filter-btn.active {
+    border-color: var(--accent-aqua, #4ecdc4);
+    color: var(--accent-aqua, #4ecdc4);
+    background: rgba(78, 205, 196, 0.06);
+  }
+
+  .results {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .result-card {
+    display: block;
+    padding: 1rem 1.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: border-color 0.25s, background 0.25s, transform 0.2s;
+  }
+
+  .result-card:hover {
+    border-color: var(--accent-aqua, #4ecdc4);
+    background: rgba(78, 205, 196, 0.03);
+    transform: translateX(4px);
+  }
+
+  .result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.3rem;
+  }
+
+  .result-type {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .result-date {
+    font-size: 0.72rem;
+    color: var(--text-dim, #555);
+  }
+
+  .result-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-primary, #e0e0e0);
+    margin: 0 0 0.3rem 0;
+    line-height: 1.3;
+  }
+
+  .result-desc {
+    font-size: 0.82rem;
+    color: var(--text-secondary, #999);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .result-snippets {
+    margin-top: 0.6rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  .snippet {
+    font-size: 0.78rem;
+    color: var(--text-dim, #777);
+    line-height: 1.6;
+    margin: 0;
+    font-family: var(--font-serif, Georgia, serif);
+  }
+
+  .snippet + .snippet {
+    margin-top: 0.4rem;
+  }
+
+  .snippet :global(mark) {
+    background: rgba(78, 205, 196, 0.2);
+    color: var(--accent-aqua, #4ecdc4);
+    border-radius: 2px;
+    padding: 0.05em 0.15em;
+  }
+
+  .no-results, .initial-state {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--text-dim, #666);
+  }
+
+  .sample-queries {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.8rem;
+  }
+
+  .sample-label {
+    font-size: 0.8rem;
+    color: var(--text-dim, #555);
+  }
+
+  .sample-query {
+    font-size: 0.78rem;
+    padding: 0.3rem 0.65rem;
+    background: rgba(78, 205, 196, 0.06);
+    border: 1px solid rgba(78, 205, 196, 0.15);
+    border-radius: 12px;
+    color: var(--accent-aqua, #4ecdc4);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+
+  .sample-query:hover {
+    background: rgba(78, 205, 196, 0.12);
+    border-color: rgba(78, 205, 196, 0.3);
+  }
+
+  @media (max-width: 600px) {
+    .search-page { padding: 2rem 1rem 4rem; }
+    #search-input { font-size: 1rem; padding: 0.8rem 1rem; }
+  }
+</style>
+
+</BaseLayout>

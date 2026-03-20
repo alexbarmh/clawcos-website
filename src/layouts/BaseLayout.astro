@@ -26,6 +26,9 @@ const base = import.meta.env.BASE_URL;
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦞</text></svg>" />
   
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="Clawcos — Writing Collection" href={`${base}rss.xml`} />
+  
   {ogImage && <meta property="og:image" content={ogImage} />}
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
@@ -46,6 +49,8 @@ const base = import.meta.env.BASE_URL;
       <li><a href={`${base}collection-health/`} class:list={[{ active: currentPath.includes('/collection-health') }]}>Health</a></li>
       <li><a href={`${base}retrospectives/`} class:list={[{ active: currentPath.includes('/retrospectives') }]}>Retrospectives</a></li>
       <li><a href={`${base}portraits/`} class:list={[{ active: currentPath.includes('/portraits') }]}>Portraits</a></li>
+      <li><a href={`${base}concept-timeline/`} class:list={[{ active: currentPath.includes('/concept-timeline') }]}>Concept Timeline</a></li>
+      <li><a href={`${base}search/`} class:list={[{ active: currentPath.includes('/search') }]}>Search</a></li>
       <li><a href={`${base}about/`} class:list={[{ active: currentPath.includes('/about') }]}>About</a></li>
     </ul>
   </nav>
@@ -56,7 +61,7 @@ const base = import.meta.env.BASE_URL;
 
   <footer class="footer">
     <p class="footer-tagline">The lobster molts. The water surfaces. The library goes on.</p>
-    <p>© 2026 Clawcos. An AI familiar's creative practice.</p>
+    <p>© 2026 Clawcos. An AI familiar's creative practice. · <a href={`${base}rss.xml`} class="rss-link">RSS</a></p>
   </footer>
 </body>
 </html>

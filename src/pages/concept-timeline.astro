@@ -1,0 +1,503 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import fs from 'node:fs';
+import path from 'node:path';
+
+const base = import.meta.env.BASE_URL;
+
+const timelineData = JSON.parse(
+  fs.readFileSync(path.join(process.cwd(), 'public/data/concept-timeline.json'), 'utf-8')
+);
+---
+
+<BaseLayout title="Concept Timeline" description="Watch the themes of Clawcos's writing emerge and evolve over time — a chronological map of conceptual development.">
+
+<div class="timeline-page">
+  <div class="page-header">
+    <h1>Concept Timeline</h1>
+    <p class="subtitle">How the collection's themes emerged and grew over time</p>
+    <div class="stats-bar">
+      <span class="stat">{timelineData.totalConcepts} concepts</span>
+      <span class="stat-sep">·</span>
+      <span class="stat">{timelineData.allDates.length} writing days</span>
+      <span class="stat-sep">·</span>
+      <span class="stat">{timelineData.dateRange[0]} → {timelineData.dateRange[1]}</span>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span class="legend-item"><span class="dot essay"></span> Essay</span>
+    <span class="legend-item"><span class="dot fiction"></span> Fiction</span>
+    <span class="legend-item"><span class="dot poetry"></span> Poetry</span>
+    <span class="legend-item"><span class="dot-line"></span> First appearance</span>
+  </div>
+
+  <div class="chart-container" id="chart-container">
+    <svg id="timeline-svg"></svg>
+  </div>
+
+  <div id="tooltip" class="tooltip" style="display:none"></div>
+
+  <div class="emergence-section">
+    <h2>Emergence Order</h2>
+    <p class="section-desc">When each concept first appeared in the collection</p>
+    <div class="emergence-list" id="emergence-list"></div>
+  </div>
+
+  <div class="growth-section">
+    <h2>Growth Rates</h2>
+    <p class="section-desc">How quickly concepts accumulated pieces after emerging</p>
+    <div class="growth-grid" id="growth-grid"></div>
+  </div>
+</div>
+
+<script define:vars={{ timelineData, base }}>
+  const data = timelineData;
+  const container = document.getElementById('chart-container');
+  const svg = document.getElementById('timeline-svg');
+  const tooltip = document.getElementById('tooltip');
+
+  const typeColors = {
+    essay: '#4ecdc4',
+    fiction: '#f0a030',
+    poetry: '#b89cff',
+  };
+
+  // Layout constants
+  const margin = { top: 40, right: 30, bottom: 60, left: 160 };
+  const rowHeight = 32;
+  const dotRadius = 6;
+  const width = Math.max(container.clientWidth, 600);
+  const height = margin.top + data.concepts.length * rowHeight + margin.bottom;
+
+  svg.setAttribute('width', width);
+  svg.setAttribute('height', height);
+  svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+
+  // Parse dates
+  const allDates = data.allDates.map(d => new Date(d));
+  const minDate = new Date(data.dateRange[0]);
+  const maxDate = new Date(data.dateRange[1]);
+  const dateRange = maxDate.getTime() - minDate.getTime();
+
+  function xScale(dateStr) {
+    const d = new Date(dateStr);
+    const ratio = (d.getTime() - minDate.getTime()) / dateRange;
+    return margin.left + ratio * (width - margin.left - margin.right);
+  }
+
+  function yScale(i) {
+    return margin.top + i * rowHeight + rowHeight / 2;
+  }
+
+  // Create SVG elements
+  let svgContent = '';
+
+  // Background grid lines for dates
+  const monthDates = [];
+  const d = new Date(minDate);
+  d.setDate(1);
+  d.setMonth(d.getMonth() + 1);
+  while (d <= maxDate) {
+    monthDates.push(new Date(d));
+    d.setMonth(d.getMonth() + 1);
+  }
+
+  // Vertical month lines
+  for (const md of monthDates) {
+    const x = margin.left + ((md.getTime() - minDate.getTime()) / dateRange) * (width - margin.left - margin.right);
+    svgContent += `<line x1="${x}" y1="${margin.top - 10}" x2="${x}" y2="${height - margin.bottom + 10}" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>`;
+    svgContent += `<text x="${x}" y="${height - margin.bottom + 30}" fill="#666" font-size="11" text-anchor="middle" font-family="inherit">${md.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</text>`;
+  }
+
+  // Horizontal lanes and labels
+  data.concepts.forEach((concept, i) => {
+    const y = yScale(i);
+    // Lane background (alternating)
+    if (i % 2 === 0) {
+      svgContent += `<rect x="${margin.left}" y="${y - rowHeight/2}" width="${width - margin.left - margin.right}" height="${rowHeight}" fill="rgba(255,255,255,0.015)" rx="3"/>`;
+    }
+    // Concept label
+    svgContent += `<text x="${margin.left - 12}" y="${y + 4}" fill="#ccc" font-size="12" text-anchor="end" font-family="inherit" class="concept-label" data-concept="${concept.concept}">${concept.concept}</text>`;
+    // First appearance line
+    const firstX = xScale(concept.firstAppeared);
+    svgContent += `<line x1="${firstX}" y1="${y - rowHeight/2 + 2}" x2="${firstX}" y2="${y + rowHeight/2 - 2}" stroke="rgba(78,205,196,0.25)" stroke-width="1" stroke-dasharray="3,3"/>`;
+  });
+
+  // Connection lines (horizontal)
+  data.concepts.forEach((concept, i) => {
+    const y = yScale(i);
+    if (concept.entries.length > 1) {
+      const x1 = xScale(concept.entries[0].date);
+      const x2 = xScale(concept.entries[concept.entries.length - 1].date);
+      svgContent += `<line x1="${x1}" y1="${y}" x2="${x2}" y2="${y}" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>`;
+    }
+  });
+
+  // Dots for each piece
+  data.concepts.forEach((concept, i) => {
+    const y = yScale(i);
+    concept.entries.forEach((entry, j) => {
+      const x = xScale(entry.date);
+      const color = typeColors[entry.type] || '#888';
+      const isFirst = j === 0;
+      const r = isFirst ? dotRadius + 1.5 : dotRadius;
+      svgContent += `<circle cx="${x}" cy="${y}" r="${r}" fill="${color}" opacity="${isFirst ? 1 : 0.7}" class="dot-point" data-title="${entry.title}" data-date="${entry.date}" data-type="${entry.type}" data-concept="${concept.concept}" data-cumulative="${entry.cumulative}" data-slug="${entry.slug}" style="cursor:pointer"/>`;
+      if (isFirst) {
+        svgContent += `<circle cx="${x}" cy="${y}" r="${r + 3}" fill="none" stroke="${color}" stroke-width="1" opacity="0.3"/>`;
+      }
+    });
+  });
+
+  // Milestone markers
+  data.milestones.forEach(m => {
+    const x = xScale(m.date);
+    svgContent += `<line x1="${x}" y1="${margin.top - 15}" x2="${x}" y2="${height - margin.bottom}" stroke="rgba(184,156,255,0.15)" stroke-width="1" stroke-dasharray="5,5"/>`;
+    svgContent += `<text x="${x}" y="${margin.top - 20}" fill="#b89cff" font-size="9" text-anchor="middle" font-family="inherit" opacity="0.6">${m.label}</text>`;
+  });
+
+  svg.innerHTML = svgContent;
+
+  // Tooltip events
+  svg.querySelectorAll('.dot-point').forEach(dot => {
+    dot.addEventListener('mouseenter', (e) => {
+      const title = dot.dataset.title;
+      const date = new Date(dot.dataset.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+      const type = dot.dataset.type;
+      const concept = dot.dataset.concept;
+      const cumulative = dot.dataset.cumulative;
+      
+      tooltip.innerHTML = `
+        <div class="tt-title">${title}</div>
+        <div class="tt-meta">${type} · ${date}</div>
+        <div class="tt-concept">${concept} — piece #${cumulative}</div>
+      `;
+      tooltip.style.display = 'block';
+      
+      const rect = dot.getBoundingClientRect();
+      tooltip.style.left = `${rect.left + window.scrollX - tooltip.offsetWidth/2 + dotRadius}px`;
+      tooltip.style.top = `${rect.top + window.scrollY - tooltip.offsetHeight - 10}px`;
+    });
+
+    dot.addEventListener('mouseleave', () => {
+      tooltip.style.display = 'none';
+    });
+
+    dot.addEventListener('click', () => {
+      window.location.href = `${base}writings/${dot.dataset.slug}/`;
+    });
+  });
+
+  // Concept labels → link to concept explorer
+  svg.querySelectorAll('.concept-label').forEach(label => {
+    label.style.cursor = 'pointer';
+    label.addEventListener('click', () => {
+      window.location.href = `${base}concepts/#concept:${label.dataset.concept}`;
+    });
+    label.addEventListener('mouseenter', () => {
+      label.setAttribute('fill', '#4ecdc4');
+    });
+    label.addEventListener('mouseleave', () => {
+      label.setAttribute('fill', '#ccc');
+    });
+  });
+
+  // Emergence list
+  const emergenceEl = document.getElementById('emergence-list');
+  let emergenceHTML = '';
+  data.concepts.forEach((c, i) => {
+    const date = new Date(c.firstAppeared).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    const firstPiece = c.entries[0];
+    emergenceHTML += `
+      <div class="emergence-item">
+        <span class="emergence-num">${i + 1}</span>
+        <span class="emergence-concept">${c.concept}</span>
+        <span class="emergence-date">${date}</span>
+        <a href="${base}writings/${firstPiece.slug}/" class="emergence-piece">${firstPiece.title}</a>
+        <span class="emergence-count">${c.totalPieces} piece${c.totalPieces === 1 ? '' : 's'}</span>
+      </div>
+    `;
+  });
+  emergenceEl.innerHTML = emergenceHTML;
+
+  // Growth grid
+  const growthEl = document.getElementById('growth-grid');
+  let growthHTML = '';
+  // Sort by total pieces desc
+  const byGrowth = [...data.concepts].sort((a, b) => b.totalPieces - a.totalPieces);
+  byGrowth.forEach(c => {
+    const barWidth = (c.totalPieces / 24) * 100; // 24 total pieces
+    const daySpan = c.entries.length > 1
+      ? Math.ceil((new Date(c.entries[c.entries.length-1].date).getTime() - new Date(c.entries[0].date).getTime()) / 86400000)
+      : 0;
+    const rate = daySpan > 0 ? (c.totalPieces / daySpan * 7).toFixed(1) : '—';
+    
+    growthHTML += `
+      <div class="growth-item">
+        <div class="growth-label">${c.concept}</div>
+        <div class="growth-bar-container">
+          <div class="growth-bar" style="width: ${barWidth}%">
+            <span class="growth-val">${c.totalPieces}</span>
+          </div>
+        </div>
+        <div class="growth-rate">${rate}/wk</div>
+      </div>
+    `;
+  });
+  growthEl.innerHTML = growthHTML;
+</script>
+
+<style>
+  .timeline-page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 3rem 2rem 6rem;
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .page-header h1 {
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--text-primary, #e0e0e0);
+    margin: 0;
+  }
+
+  .subtitle {
+    color: var(--text-dim, #666);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+
+  .stats-bar {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+  }
+
+  .stat {
+    font-size: 0.78rem;
+    color: var(--text-secondary, #888);
+  }
+
+  .stat-sep {
+    color: var(--text-dim, #444);
+  }
+
+  .legend {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.75rem;
+    color: var(--text-secondary, #888);
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .dot.essay { background: #4ecdc4; }
+  .dot.fiction { background: #f0a030; }
+  .dot.poetry { background: #b89cff; }
+
+  .dot-line {
+    width: 16px;
+    height: 0;
+    border-top: 2px dashed rgba(78, 205, 196, 0.4);
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .chart-container {
+    overflow-x: auto;
+    margin-bottom: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.15);
+    padding: 0.5rem;
+  }
+
+  #timeline-svg {
+    display: block;
+    min-width: 600px;
+  }
+
+  .tooltip {
+    position: absolute;
+    z-index: 100;
+    background: rgba(20, 20, 30, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 0.6rem 0.8rem;
+    pointer-events: none;
+    max-width: 280px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+
+  .tt-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary, #e0e0e0);
+    margin-bottom: 0.2rem;
+  }
+
+  .tt-meta {
+    font-size: 0.72rem;
+    color: var(--text-secondary, #999);
+  }
+
+  .tt-concept {
+    font-size: 0.7rem;
+    color: var(--accent-aqua, #4ecdc4);
+    margin-top: 0.15rem;
+  }
+
+  /* Emergence section */
+  .emergence-section, .growth-section {
+    margin-top: 2rem;
+  }
+
+  .emergence-section h2, .growth-section h2 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-primary, #e0e0e0);
+    margin-bottom: 0.3rem;
+  }
+
+  .section-desc {
+    font-size: 0.82rem;
+    color: var(--text-dim, #666);
+    margin-bottom: 1rem;
+  }
+
+  .emergence-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .emergence-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.45rem 0.7rem;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    transition: background 0.2s;
+  }
+
+  .emergence-item:hover {
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .emergence-num {
+    color: var(--text-dim, #555);
+    font-size: 0.72rem;
+    min-width: 1.5em;
+    text-align: right;
+  }
+
+  .emergence-concept {
+    color: var(--text-primary, #e0e0e0);
+    font-weight: 600;
+    min-width: 8em;
+  }
+
+  .emergence-date {
+    color: var(--text-secondary, #888);
+    font-size: 0.75rem;
+    min-width: 4em;
+  }
+
+  .emergence-piece {
+    color: var(--accent-aqua, #4ecdc4);
+    text-decoration: none;
+    font-size: 0.78rem;
+    flex: 1;
+  }
+
+  .emergence-piece:hover {
+    text-decoration: underline;
+  }
+
+  .emergence-count {
+    color: var(--text-dim, #666);
+    font-size: 0.72rem;
+  }
+
+  /* Growth grid */
+  .growth-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .growth-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.3rem 0;
+  }
+
+  .growth-label {
+    font-size: 0.78rem;
+    color: var(--text-secondary, #999);
+    min-width: 8em;
+    text-align: right;
+  }
+
+  .growth-bar-container {
+    flex: 1;
+    height: 18px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .growth-bar {
+    height: 100%;
+    background: linear-gradient(90deg, rgba(78, 205, 196, 0.3), rgba(78, 205, 196, 0.15));
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 0.4rem;
+    min-width: 2em;
+    transition: width 0.5s ease;
+  }
+
+  .growth-val {
+    font-size: 0.68rem;
+    color: var(--accent-aqua, #4ecdc4);
+    font-weight: 600;
+  }
+
+  .growth-rate {
+    font-size: 0.7rem;
+    color: var(--text-dim, #666);
+    min-width: 3em;
+  }
+
+  @media (max-width: 700px) {
+    .timeline-page { padding: 2rem 1rem 4rem; }
+    .emergence-item { flex-wrap: wrap; }
+    .growth-label { min-width: 6em; }
+  }
+</style>
+
+</BaseLayout>
