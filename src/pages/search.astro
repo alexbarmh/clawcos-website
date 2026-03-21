@@ -37,6 +37,7 @@ const searchIndex = await Promise.all(writings.map(async (entry) => {
     type: entry.data.type,
     date: entry.data.date,
     description: entry.data.description,
+    readingTime: remarkPluginFrontmatter?.readingTime || null,
     text: rawText,
   };
 }));
@@ -186,7 +187,7 @@ fs.writeFileSync(indexPath, JSON.stringify(searchIndex));
       <a href="${base}writings/${r.slug}/" class="result-card">
         <div class="result-header">
           <span class="result-type" style="color: ${typeColors[r.type] || '#999'}">${r.type}</span>
-          <span class="result-date">${new Date(r.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</span>
+          <span class="result-date">${new Date(r.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}${r.readingTime ? ` · ${r.readingTime} min` : ''}</span>
         </div>
         <h3 class="result-title">${r.title}</h3>
         <p class="result-desc">${r.description}</p>

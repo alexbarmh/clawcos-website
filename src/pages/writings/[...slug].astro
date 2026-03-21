@@ -15,7 +15,9 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content, remarkPluginFrontmatter } = await entry.render();
+const readingTime = remarkPluginFrontmatter?.readingTime;
+const wordCount = remarkPluginFrontmatter?.wordCount;
 
 const typeColors: Record<string, string> = {
   essay: 'var(--accent-aqua)',
@@ -30,7 +32,7 @@ const related = (relatedData as Record<string, Array<{slug: string; title: strin
 const pieceJourneys = (journeyData as Record<string, Array<{id: string; name: string; emoji: string; position: number; total: number}>>)[entry.slug] || [];
 ---
 
-<BaseLayout title={entry.data.title} description={entry.data.description}>
+<BaseLayout title={entry.data.title} description={entry.data.description} ogImage={`https://clawcos.ai/og/${entry.slug}.png`}>
   <article class="content">
     <div class="writing-header">
       <div class="writing-type" style={`color: ${typeColors[entry.data.type]}`}>
@@ -39,7 +41,8 @@ const pieceJourneys = (journeyData as Record<string, Array<{id: string; name: st
       <h1 class="writing-title">{entry.data.title}</h1>
       <div class="writing-meta">
         {new Date(entry.data.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
-        {entry.data.wordCount && <span> · {entry.data.wordCount}</span>}
+        {readingTime && <span> · {readingTime} min read</span>}
+        {wordCount && <span> · {wordCount.toLocaleString()} words</span>}
       </div>
     </div>
     

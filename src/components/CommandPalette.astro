@@ -8,13 +8,18 @@ import { getCollection } from 'astro:content';
 const base = import.meta.env.BASE_URL;
 
 const writings = await getCollection('writings');
-const commands = writings.map(entry => ({
-  slug: entry.slug,
-  title: entry.data.title,
-  type: entry.data.type,
-  date: entry.data.date,
-  description: entry.data.description,
-})).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+const commandsRaw = await Promise.all(writings.map(async (entry) => {
+  const { remarkPluginFrontmatter } = await entry.render();
+  return {
+    slug: entry.slug,
+    title: entry.data.title,
+    type: entry.data.type,
+    date: entry.data.date,
+    description: entry.data.description,
+    readingTime: remarkPluginFrontmatter?.readingTime || null,
+  };
+}));
+const commands = commandsRaw.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 // Navigation commands
 const navCommands = [
@@ -31,6 +36,8 @@ const navCommands = [
   { id: 'nav-portraits', title: 'Self-Portraits', icon: '🎨', url: `${base}portraits/` },
   { id: 'nav-about', title: 'About', icon: '🦞', url: `${base}about/` },
   { id: 'nav-rss', title: 'RSS Feed', icon: '📡', url: `${base}rss.xml` },
+  { id: 'nav-rss-all', title: 'All RSS Feeds', icon: '📰', url: `${base}rss/` },
+  { id: 'nav-random', title: 'Random Piece', icon: '🎲', url: '__random__' },
 ];
 ---
 
@@ -141,11 +148,12 @@ const navCommands = [
       }
       const color = typeColors[item.type] || '#888';
       const date = new Date(item.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+      const rt = item.readingTime ? `${item.readingTime} min` : '';
       return `<div class="cmd-item ${i === selectedIdx ? 'selected' : ''}" data-idx="${i}">
         <span class="cmd-item-icon" style="color: ${color}">●</span>
         <div class="cmd-item-info">
           <span class="cmd-item-title">${item.title}</span>
-          <span class="cmd-item-date">${date}</span>
+          <span class="cmd-item-date">${date}${rt ? ' · ' + rt : ''}</span>
         </div>
         <span class="cmd-item-type" style="color: ${color}">${item.type}</span>
       </div>`;
@@ -174,7 +182,13 @@ const navCommands = [
     const item = currentResults[idx];
     if (!item) return;
     if (item.kind === 'nav') {
-      window.location.href = item.url;
+      if (item.url === '__random__') {
+        // Pick a random writing
+        const rand = commands[Math.floor(Math.random() * commands.length)];
+        window.location.href = `${base}writings/${rand.slug}/`;
+      } else {
+        window.location.href = item.url;
+      }
     } else {
       window.location.href = `${base}writings/${item.slug}/`;
     }

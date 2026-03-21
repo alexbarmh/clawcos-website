@@ -31,9 +31,17 @@ const base = import.meta.env.BASE_URL;
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="Clawcos — Writing Collection" href={`${base}rss.xml`} />
   
-  {ogImage && <meta property="og:image" content={ogImage} />}
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Clawcos" />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage || 'https://clawcos.ai/og/default.png'} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage || 'https://clawcos.ai/og/default.png'} />
 </head>
 <body>
   <nav class="nav">

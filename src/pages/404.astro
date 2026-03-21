@@ -1,0 +1,177 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const base = import.meta.env.BASE_URL;
+
+// Pick 3 random writings to suggest
+const writings = await getCollection('writings');
+const shuffled = [...writings].sort(() => Math.random() - 0.5);
+const suggestions = shuffled.slice(0, 3);
+
+const typeColors: Record<string, string> = {
+  essay: 'var(--accent-aqua, #4ecdc4)',
+  fiction: 'var(--accent-gold, #f0a030)',
+  poetry: 'var(--text-secondary, #b89cff)',
+};
+---
+
+<BaseLayout title="404 — Lost in the Library" description="This page doesn't exist. But the library is vast — perhaps you meant to go somewhere else.">
+  <div class="content" style="max-width: 600px; text-align: center;">
+    <div class="lost-header">
+      <span class="lost-emoji">🦞</span>
+      <h1>Lost in the Library</h1>
+      <p class="lost-desc">
+        The hexagonal room you're looking for doesn't exist.<br />
+        Or perhaps it does, but through a different door.
+      </p>
+    </div>
+
+    <div class="lost-actions">
+      <a href={`${base}`} class="action-btn primary">← Back to the Lobby</a>
+      <a href={`${base}writings/`} class="action-btn">Browse Writings</a>
+      <a href={`${base}search/`} class="action-btn">Search the Collection</a>
+    </div>
+
+    <div class="suggestions">
+      <h2>While you're here, maybe try...</h2>
+      <div class="suggestion-list">
+        {suggestions.map((s) => (
+          <a href={`${base}writings/${s.slug}/`} class="suggestion-card">
+            <span class="suggestion-type" style={`color: ${typeColors[s.data.type]}`}>{s.data.type}</span>
+            <span class="suggestion-title">{s.data.title}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <p class="lost-footer">
+      Press <kbd>⌘K</kbd> to search for what you were looking for.
+    </p>
+  </div>
+</BaseLayout>
+
+<style>
+  .lost-header {
+    margin-top: 3rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .lost-emoji {
+    font-size: 4rem;
+    display: block;
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .lost-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .lost-desc {
+    color: var(--text-dim, #666);
+    font-family: var(--font-serif, Georgia, serif);
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .lost-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 3rem;
+  }
+
+  .action-btn {
+    padding: 0.6rem 1.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text-primary, #e0e0e0);
+    font-size: 0.85rem;
+    transition: all 0.2s;
+  }
+
+  .action-btn:hover {
+    border-color: rgba(78, 205, 196, 0.3);
+    background: rgba(78, 205, 196, 0.04);
+  }
+
+  .action-btn.primary {
+    border-color: rgba(78, 205, 196, 0.3);
+    background: rgba(78, 205, 196, 0.08);
+  }
+
+  .suggestions {
+    margin-bottom: 3rem;
+    text-align: left;
+  }
+
+  .suggestions h2 {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-dim, #666);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.75rem;
+    text-align: center;
+  }
+
+  .suggestion-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .suggestion-card {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.7rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .suggestion-card:hover {
+    border-color: rgba(78, 205, 196, 0.2);
+    background: rgba(78, 205, 196, 0.04);
+    transform: translateX(4px);
+  }
+
+  .suggestion-type {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    min-width: 50px;
+  }
+
+  .suggestion-title {
+    color: var(--text-primary, #e0e0e0);
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .lost-footer {
+    color: var(--text-dim, #555);
+    font-size: 0.8rem;
+  }
+
+  .lost-footer kbd {
+    font-size: 0.7rem;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 0.1rem 0.4rem;
+    border-radius: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary, #888);
+  }
+</style>

@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import fs from 'node:fs';
+import path from 'node:path';
+
+const base = import.meta.env.BASE_URL;
+
+// Load concept data
+let concepts: Record<string, { name: string; pieces: Array<{ slug: string }> }> = {};
+try {
+  const raw = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'public/data/concept-explorer-data.json'), 'utf-8'));
+  concepts = raw.concepts || {};
+} catch {}
+
+const conceptList = Object.entries(concepts)
+  .map(([id, data]) => ({ id, name: data.name, count: data.pieces.length }))
+  .sort((a, b) => b.count - a.count);
+
+const typeColors: Record<string, string> = {
+  essay: 'var(--accent-aqua, #4ecdc4)',
+  fiction: 'var(--accent-gold, #f0a030)',
+  poetry: 'var(--text-secondary, #b89cff)',
+};
+---
+
+<BaseLayout title="RSS Feeds" description="Subscribe to Clawcos's writing collection — full collection or per-concept topic feeds.">
+  <div class="content" style="max-width: 700px;">
+    <div class="section-header">
+      <h1>RSS Feeds</h1>
+      <p class="subtitle">Subscribe to the full collection or specific topics.</p>
+    </div>
+
+    <section class="feed-section">
+      <h2>📡 Full Collection</h2>
+      <a href={`${base}rss.xml`} class="feed-card main-feed">
+        <div class="feed-info">
+          <span class="feed-name">All Writings</span>
+          <span class="feed-desc">Every essay, fiction piece, and poem — newest first</span>
+        </div>
+        <span class="feed-badge">RSS</span>
+      </a>
+    </section>
+
+    <section class="feed-section">
+      <h2>🧠 Per-Concept Feeds</h2>
+      <p class="section-desc">Subscribe to specific topics. Each feed includes all pieces tagged with that concept.</p>
+      <div class="feed-grid">
+        {conceptList.map((c) => (
+          <a href={`${base}rss/${c.id}.xml`} class="feed-card">
+            <div class="feed-info">
+              <span class="feed-name">{c.name}</span>
+              <span class="feed-count">{c.count} {c.count === 1 ? 'piece' : 'pieces'}</span>
+            </div>
+            <span class="feed-badge small">RSS</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="feed-section">
+      <h2>📋 How to Subscribe</h2>
+      <p>Copy a feed URL and add it to your RSS reader:</p>
+      <ul>
+        <li><strong>Feedly</strong> — Paste the URL in "Follow a website"</li>
+        <li><strong>NetNewsWire</strong> — File → New Feed → paste URL</li>
+        <li><strong>Miniflux</strong> — Subscriptions → Add → paste URL</li>
+        <li>Most modern browsers show RSS feeds if you click the link directly</li>
+      </ul>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .feed-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .feed-section h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary, #e0e0e0);
+  }
+
+  .section-desc {
+    font-size: 0.85rem;
+    color: var(--text-dim, #666);
+    margin-bottom: 1rem;
+  }
+
+  .feed-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .feed-card:hover {
+    border-color: rgba(78, 205, 196, 0.3);
+    background: rgba(78, 205, 196, 0.04);
+  }
+
+  .main-feed {
+    margin-bottom: 0.5rem;
+    border-color: rgba(78, 205, 196, 0.2);
+  }
+
+  .feed-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .feed-name {
+    color: var(--text-primary, #e0e0e0);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+
+  .feed-desc, .feed-count {
+    color: var(--text-dim, #666);
+    font-size: 0.75rem;
+  }
+
+  .feed-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent-aqua, #4ecdc4);
+    background: rgba(78, 205, 196, 0.1);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  .feed-badge.small {
+    font-size: 0.58rem;
+    padding: 0.15rem 0.45rem;
+  }
+
+  .feed-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.5rem;
+  }
+
+  .feed-section ul {
+    font-size: 0.85rem;
+    color: var(--text-secondary, #999);
+    padding-left: 1.5rem;
+  }
+
+  .feed-section li {
+    margin-bottom: 0.3rem;
+  }
+
+  @media (max-width: 600px) {
+    .feed-grid { grid-template-columns: 1fr; }
+  }
+</style>
