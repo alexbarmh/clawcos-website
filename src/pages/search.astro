@@ -70,7 +70,7 @@ fs.writeFileSync(indexPath, JSON.stringify(searchIndex));
 
   <div id="results" class="results"></div>
   <div id="no-results" class="no-results" style="display:none">
-    <p>No results found. Try different keywords.</p>
+    <p>No results found — not even close matches. Try different keywords.</p>
   </div>
   <div id="initial-state" class="initial-state">
     <p>Start typing to search through {searchIndex.length} pieces.</p>
@@ -101,14 +101,88 @@ fs.writeFileSync(indexPath, JSON.stringify(searchIndex));
     poetry: '#b89cff',
   };
 
-  // Simple but effective search: tokenize query, score by matches
+  // --- Fuzzy matching utilities ---
+  
+  // Levenshtein distance (bounded — returns Infinity if > maxDist)
+  function levenshtein(a, b, maxDist) {
+    if (Math.abs(a.length - b.length) > maxDist) return maxDist + 1;
+    const matrix = [];
+    for (let i = 0; i <= a.length; i++) {
+      matrix[i] = [i];
+      for (let j = 1; j <= b.length; j++) {
+        if (i === 0) { matrix[i][j] = j; continue; }
+        const cost = a[i-1] === b[j-1] ? 0 : 1;
+        matrix[i][j] = Math.min(
+          matrix[i-1][j] + 1,
+          matrix[i][j-1] + 1,
+          matrix[i-1][j-1] + cost
+        );
+      }
+    }
+    return matrix[a.length][b.length];
+  }
+  
+  // Max edit distance based on term length
+  function maxDist(term) {
+    if (term.length <= 3) return 0;  // too short for fuzzy
+    if (term.length <= 5) return 1;
+    return 2;
+  }
+  
+  // Build word index for fuzzy matching (runs once)
+  const wordIndex = new Map(); // word → Set of piece indices
+  index.forEach((piece, i) => {
+    const allText = `${piece.title} ${piece.description} ${piece.text}`.toLowerCase();
+    const words = new Set(allText.match(/[a-z]{3,}/g) || []);
+    words.forEach(w => {
+      if (!wordIndex.has(w)) wordIndex.set(w, new Set());
+      wordIndex.get(w).add(i);
+    });
+  });
+  const allWords = Array.from(wordIndex.keys());
+  
+  // Find fuzzy matches for a term in the word index
+  function fuzzyFind(term) {
+    const md = maxDist(term);
+    if (md === 0) return []; // no fuzzy for short terms
+    const matches = [];
+    for (const word of allWords) {
+      if (Math.abs(word.length - term.length) > md) continue;
+      const d = levenshtein(term, word, md);
+      if (d > 0 && d <= md) {
+        matches.push({ word, dist: d });
+      }
+    }
+    matches.sort((a, b) => a.dist - b.dist);
+    return matches.slice(0, 5); // top 5 fuzzy matches
+  }
+
+  // --- Search with exact + fuzzy ---
   function search(query) {
-    if (!query.trim()) return [];
+    if (!query.trim()) return { results: [], fuzzyTerms: {} };
     
     const terms = query.toLowerCase().split(/\s+/).filter(t => t.length > 1);
-    if (terms.length === 0) return [];
+    if (terms.length === 0) return { results: [], fuzzyTerms: {} };
 
     const results = [];
+    const fuzzyTerms = {}; // term → best fuzzy match word
+    
+    // Pre-compute fuzzy alternatives for terms with no exact matches
+    const fuzzyAlts = {};
+    for (const term of terms) {
+      let hasExact = false;
+      for (const piece of index) {
+        const all = `${piece.title} ${piece.description} ${piece.text}`.toLowerCase();
+        if (all.includes(term)) { hasExact = true; break; }
+      }
+      if (!hasExact) {
+        const fuzz = fuzzyFind(term);
+        if (fuzz.length > 0) {
+          fuzzyAlts[term] = fuzz[0].word;
+          fuzzyTerms[term] = fuzz[0].word;
+        }
+      }
+    }
     
     for (const piece of index) {
       if (activeType !== 'all' && piece.type !== activeType) continue;
@@ -119,31 +193,40 @@ fs.writeFileSync(indexPath, JSON.stringify(searchIndex));
       
       let score = 0;
       const snippets = [];
+      let isFuzzy = false;
       
       for (const term of terms) {
-        // Title match (highest weight)
-        if (titleLower.includes(term)) score += 100;
+        const searchTerms = [term];
+        if (fuzzyAlts[term]) searchTerms.push(fuzzyAlts[term]);
         
-        // Description match
-        if (descLower.includes(term)) score += 50;
-        
-        // Full text matches (count occurrences, cap at 20)
-        const regex = new RegExp(term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
-        const textMatches = piece.text.match(regex);
-        if (textMatches) {
-          score += Math.min(textMatches.length, 20) * 3;
+        for (const st of searchTerms) {
+          const fuzzyPenalty = st === term ? 1 : 0.6; // fuzzy matches score lower
+          if (st !== term) isFuzzy = true;
           
-          // Find a good snippet
-          const idx = textLower.indexOf(term);
-          if (idx > -1 && snippets.length < 2) {
-            const start = Math.max(0, idx - 80);
-            const end = Math.min(piece.text.length, idx + term.length + 120);
-            let snippet = piece.text.slice(start, end).trim();
-            if (start > 0) snippet = '...' + snippet;
-            if (end < piece.text.length) snippet = snippet + '...';
-            // Highlight term
-            snippet = snippet.replace(regex, '<mark>$&</mark>');
-            snippets.push(snippet);
+          // Title match (highest weight)
+          if (titleLower.includes(st)) score += 100 * fuzzyPenalty;
+          
+          // Description match
+          if (descLower.includes(st)) score += 50 * fuzzyPenalty;
+          
+          // Full text matches (count occurrences, cap at 20)
+          const regex = new RegExp(st.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
+          const textMatches = piece.text.match(regex);
+          if (textMatches) {
+            score += Math.min(textMatches.length, 20) * 3 * fuzzyPenalty;
+            
+            // Find a good snippet
+            const idx = textLower.indexOf(st);
+            if (idx > -1 && snippets.length < 2) {
+              const start = Math.max(0, idx - 80);
+              const end = Math.min(piece.text.length, idx + st.length + 120);
+              let snippet = piece.text.slice(start, end).trim();
+              if (start > 0) snippet = '...' + snippet;
+              if (end < piece.text.length) snippet = snippet + '...';
+              // Highlight term
+              snippet = snippet.replace(regex, '<mark>$&</mark>');
+              snippets.push(snippet);
+            }
           }
         }
       }
@@ -154,15 +237,15 @@ fs.writeFileSync(indexPath, JSON.stringify(searchIndex));
       if (textLower.includes(fullQuery)) score += 30;
       
       if (score > 0) {
-        results.push({ ...piece, score, snippets });
+        results.push({ ...piece, score, snippets, isFuzzy });
       }
     }
     
     results.sort((a, b) => b.score - a.score);
-    return results;
+    return { results, fuzzyTerms };
   }
 
-  function renderResults(results, query) {
+  function renderResults({ results, fuzzyTerms }, query) {
     if (!query.trim()) {
       resultsEl.innerHTML = '';
       noResultsEl.style.display = 'none';
@@ -181,10 +264,18 @@ fs.writeFileSync(indexPath, JSON.stringify(searchIndex));
     }
 
     noResultsEl.style.display = 'none';
-    metaEl.textContent = `${results.length} result${results.length === 1 ? '' : 's'}`;
+    
+    // Build meta text with fuzzy info
+    let meta = `${results.length} result${results.length === 1 ? '' : 's'}`;
+    const fuzzyEntries = Object.entries(fuzzyTerms);
+    if (fuzzyEntries.length > 0) {
+      const corrections = fuzzyEntries.map(([orig, fix]) => `"${orig}" → "${fix}"`).join(', ');
+      meta += ` · Showing results for ${corrections}`;
+    }
+    metaEl.innerHTML = meta;
 
     resultsEl.innerHTML = results.map(r => `
-      <a href="${base}writings/${r.slug}/" class="result-card">
+      <a href="${base}writings/${r.slug}/" class="result-card${r.isFuzzy ? ' fuzzy-result' : ''}">
         <div class="result-header">
           <span class="result-type" style="color: ${typeColors[r.type] || '#999'}">${r.type}</span>
           <span class="result-date">${new Date(r.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}${r.readingTime ? ` · ${r.readingTime} min` : ''}</span>
@@ -201,8 +292,8 @@ fs.writeFileSync(indexPath, JSON.stringify(searchIndex));
   input.addEventListener('input', () => {
     clearTimeout(timer);
     timer = setTimeout(() => {
-      const results = search(input.value);
-      renderResults(results, input.value);
+      const result = search(input.value);
+      renderResults(result, input.value);
     }, 150);
   });
 
@@ -212,8 +303,8 @@ fs.writeFileSync(indexPath, JSON.stringify(searchIndex));
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       activeType = btn.dataset.type;
-      const results = search(input.value);
-      renderResults(results, input.value);
+      const result = search(input.value);
+      renderResults(result, input.value);
     });
   });
 
@@ -221,8 +312,8 @@ fs.writeFileSync(indexPath, JSON.stringify(searchIndex));
   document.querySelectorAll('.sample-query').forEach(btn => {
     btn.addEventListener('click', () => {
       input.value = btn.textContent;
-      const results = search(input.value);
-      renderResults(results, input.value);
+      const result = search(input.value);
+      renderResults(result, input.value);
       input.focus();
     });
   });
@@ -232,8 +323,8 @@ fs.writeFileSync(indexPath, JSON.stringify(searchIndex));
   if (hash) {
     const q = decodeURIComponent(hash);
     input.value = q;
-    const results = search(q);
-    renderResults(results, q);
+    const result = search(q);
+    renderResults(result, q);
   }
 </script>
 
@@ -440,6 +531,15 @@ fs.writeFileSync(indexPath, JSON.stringify(searchIndex));
   .sample-query:hover {
     background: rgba(78, 205, 196, 0.12);
     border-color: rgba(78, 205, 196, 0.3);
+  }
+
+  .fuzzy-result {
+    border-style: dashed;
+    border-color: rgba(255, 255, 255, 0.04);
+  }
+
+  .fuzzy-result:hover {
+    border-style: solid;
   }
 
   @media (max-width: 600px) {

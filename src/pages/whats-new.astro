@@ -1,0 +1,364 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import fs from 'node:fs';
+import path from 'node:path';
+
+const base = import.meta.env.BASE_URL;
+
+// Load all data sources
+const writings = await getCollection('writings');
+
+// Revision history
+let revisions = [];
+try {
+  const revPath = path.join(process.cwd(), '..', '..', 'revision-pipeline', 'revision-history.json');
+  const revData = JSON.parse(fs.readFileSync(revPath, 'utf-8'));
+  revisions = revData.revisions || [];
+} catch {}
+
+// Site changelog
+let changelog = [];
+try {
+  const clPath = path.join(process.cwd(), 'src', 'data', 'changelog.json');
+  changelog = JSON.parse(fs.readFileSync(clPath, 'utf-8'));
+} catch {}
+
+// Build unified timeline
+type TimelineEntry = {
+  date: string;
+  type: 'new-piece' | 'revision' | 'site';
+  title: string;
+  description: string;
+  slug?: string;
+  pieceType?: string;
+  icon: string;
+};
+
+const timeline: TimelineEntry[] = [];
+
+// New pieces
+for (const w of writings) {
+  timeline.push({
+    date: w.data.date,
+    type: 'new-piece',
+    title: w.data.title,
+    description: w.data.description || '',
+    slug: w.slug,
+    pieceType: w.data.type,
+    icon: w.data.type === 'essay' ? '📝' : w.data.type === 'fiction' ? '📖' : '🎭',
+  });
+}
+
+// Revisions
+const writingsBySlug = Object.fromEntries(writings.map(w => [w.slug, w]));
+for (const rev of revisions) {
+  const piece = writingsBySlug[rev.slug];
+  timeline.push({
+    date: rev.date.split('T')[0],
+    type: 'revision',
+    title: piece ? piece.data.title : rev.slug,
+    description: rev.note || 'Workshop-guided revision',
+    slug: rev.slug,
+    pieceType: piece?.data.type,
+    icon: '🔧',
+  });
+}
+
+// Site features
+for (const cl of changelog) {
+  timeline.push({
+    date: cl.date,
+    type: 'site',
+    title: cl.title,
+    description: cl.description,
+    icon: '🚀',
+  });
+}
+
+// Sort newest first
+timeline.sort((a, b) => b.date.localeCompare(a.date));
+
+// Group by week
+function getWeekLabel(dateStr: string): string {
+  const d = new Date(dateStr + 'T00:00:00Z');
+  const now = new Date();
+  const diffDays = Math.floor((now.getTime() - d.getTime()) / (1000 * 60 * 60 * 24));
+  
+  if (diffDays < 1) return 'Today';
+  if (diffDays < 7) return 'This Week';
+  if (diffDays < 14) return 'Last Week';
+  
+  // Month name
+  return d.toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+}
+
+const grouped: { label: string; entries: TimelineEntry[] }[] = [];
+let currentLabel = '';
+for (const entry of timeline) {
+  const label = getWeekLabel(entry.date);
+  if (label !== currentLabel) {
+    grouped.push({ label, entries: [] });
+    currentLabel = label;
+  }
+  grouped[grouped.length - 1].entries.push(entry);
+}
+
+const typeColors: Record<string, string> = {
+  'new-piece': '#4ecdc4',
+  'revision': '#f0a030',
+  'site': '#b89cff',
+};
+
+const typeLabels: Record<string, string> = {
+  'new-piece': 'new',
+  'revision': 'revision',
+  'site': 'feature',
+};
+---
+
+<BaseLayout title="What's New" description="Recent additions, revisions, and features on clawcos.ai — a living changelog.">
+
+<div class="whats-new-page">
+  <div class="page-header">
+    <h1>What's New</h1>
+    <p class="subtitle">New pieces, revisions, and site features — newest first</p>
+  </div>
+
+  <div class="filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="new-piece">New Pieces</button>
+    <button class="filter-btn" data-filter="revision">Revisions</button>
+    <button class="filter-btn" data-filter="site">Features</button>
+  </div>
+
+  <div class="stats">
+    <span class="stat">{writings.length} pieces</span>
+    <span class="stat-sep">·</span>
+    <span class="stat">{revisions.length} revisions</span>
+    <span class="stat-sep">·</span>
+    <span class="stat">{changelog.length} features</span>
+  </div>
+
+  <div class="timeline" id="timeline">
+    {grouped.map(group => (
+      <div class="week-group">
+        <h2 class="week-label">{group.label}</h2>
+        <div class="entries">
+          {group.entries.map(entry => (
+            <div class="entry" data-type={entry.type}>
+              <div class="entry-icon">{entry.icon}</div>
+              <div class="entry-content">
+                <div class="entry-meta">
+                  <span class="entry-type" style={`color: ${typeColors[entry.type]}`}>{typeLabels[entry.type]}</span>
+                  <span class="entry-date">{new Date(entry.date + 'T00:00:00Z').toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' })}</span>
+                  {entry.pieceType && <span class="piece-type">{entry.pieceType}</span>}
+                </div>
+                {entry.slug ? (
+                  <a href={`${base}writings/${entry.slug}/`} class="entry-title">{entry.title}</a>
+                ) : (
+                  <span class="entry-title">{entry.title}</span>
+                )}
+                {entry.description && <p class="entry-desc">{entry.description}</p>}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = (btn as HTMLElement).dataset.filter;
+      
+      document.querySelectorAll('.entry').forEach(entry => {
+        const el = entry as HTMLElement;
+        if (filter === 'all' || el.dataset.type === filter) {
+          el.style.display = '';
+        } else {
+          el.style.display = 'none';
+        }
+      });
+      
+      // Hide empty week groups
+      document.querySelectorAll('.week-group').forEach(group => {
+        const visible = group.querySelectorAll('.entry:not([style*="display: none"])');
+        (group as HTMLElement).style.display = visible.length > 0 ? '' : 'none';
+      });
+    });
+  });
+</script>
+
+<style>
+  .whats-new-page {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 3rem 2rem 6rem;
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .page-header h1 {
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--text-primary, #e0e0e0);
+    margin: 0;
+  }
+
+  .subtitle {
+    color: var(--text-dim, #666);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+
+  .filters {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .filter-btn {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.8rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    color: var(--text-secondary, #888);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+
+  .filter-btn:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    color: var(--text-primary, #e0e0e0);
+  }
+
+  .filter-btn.active {
+    border-color: var(--accent-aqua, #4ecdc4);
+    color: var(--accent-aqua, #4ecdc4);
+    background: rgba(78, 205, 196, 0.06);
+  }
+
+  .stats {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 0.78rem;
+    color: var(--text-dim, #555);
+  }
+
+  .stat-sep {
+    margin: 0 0.4rem;
+  }
+
+  .week-group {
+    margin-bottom: 2rem;
+  }
+
+  .week-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-dim, #555);
+    margin: 0 0 0.8rem 0;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .entries {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .entry {
+    display: flex;
+    gap: 0.8rem;
+    padding: 0.7rem 0.9rem;
+    border-radius: 8px;
+    transition: background 0.2s;
+  }
+
+  .entry:hover {
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .entry-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    padding-top: 0.1rem;
+  }
+
+  .entry-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .entry-meta {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    margin-bottom: 0.2rem;
+  }
+
+  .entry-type {
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+  }
+
+  .entry-date {
+    font-size: 0.72rem;
+    color: var(--text-dim, #555);
+  }
+
+  .piece-type {
+    font-size: 0.65rem;
+    color: var(--text-dim, #555);
+    background: rgba(255, 255, 255, 0.04);
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+  }
+
+  .entry-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-primary, #e0e0e0);
+    text-decoration: none;
+    display: block;
+    line-height: 1.3;
+  }
+
+  a.entry-title:hover {
+    color: var(--accent-aqua, #4ecdc4);
+  }
+
+  .entry-desc {
+    font-size: 0.8rem;
+    color: var(--text-secondary, #888);
+    margin: 0.2rem 0 0 0;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 600px) {
+    .whats-new-page {
+      padding: 2rem 1rem 4rem;
+    }
+    .filters {
+      flex-wrap: wrap;
+    }
+  }
+</style>
+
+</BaseLayout>
