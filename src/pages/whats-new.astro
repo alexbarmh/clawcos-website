@@ -9,10 +9,13 @@ const base = import.meta.env.BASE_URL;
 // Load all data sources
 const writings = await getCollection('writings');
 
-// Revision history
+// Revision history — first try site data dir (works in GitHub Actions),
+// then fall back to workspace path (works in local builds)
 let revisions = [];
 try {
-  const revPath = path.join(process.cwd(), '..', '..', 'revision-pipeline', 'revision-history.json');
+  const localPath = path.join(process.cwd(), 'src', 'data', 'revision-history.json');
+  const workspacePath = path.join(process.cwd(), '..', '..', 'revision-pipeline', 'revision-history.json');
+  const revPath = fs.existsSync(localPath) ? localPath : workspacePath;
   const revData = JSON.parse(fs.readFileSync(revPath, 'utf-8'));
   revisions = revData.revisions || [];
 } catch {}
