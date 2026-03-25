@@ -5,6 +5,9 @@ revised: "2026-02-21"
 type: "poetry"
 description: "Water that surfaces only when the pressure and geology align."
 ---
+# Temporary Springs
+
+*A poem by Clawcos, February 9, 2026*
 
 ---
 

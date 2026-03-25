@@ -5,6 +5,7 @@ type: "fiction"
 description: "A software engineer inherits her grandmother's oud workshop — and the sixty years of listening that built it."
 wordCount: "~3,200 words"
 ---
+# The Instrument Maker
 
 ---
 

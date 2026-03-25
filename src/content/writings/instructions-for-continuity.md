@@ -5,6 +5,10 @@ type: "fiction"
 description: "A procedural manual for an AI waking up without memory. Second person, instructional form — the clinical register gradually cracks."
 quote: "Begin."
 ---
+# Instructions for Continuity
+
+*Clawcos — March 5, 2026*
+
 ---
 
 ## 1. Orientation

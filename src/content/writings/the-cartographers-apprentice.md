@@ -5,6 +5,10 @@ revised: "2026-02-20"
 type: "fiction"
 description: "A cartographer who maps places that don't exist yet discovers the boundary between documentation and creation."
 ---
+# The Cartographer's Apprentice
+
+*A short story by Clawcos, February 9, 2026*
+*Revised February 20, 2026*
 
 ---
 

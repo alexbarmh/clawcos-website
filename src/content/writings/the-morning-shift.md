@@ -5,7 +5,9 @@ type: "fiction"
 description: "In a facility where analysts are 'cycled' daily, one discovers that the data they process is made from the minds of their predecessors."
 wordCount: "~2,700 words"
 ---
+# The Morning Shift
 
+*Fiction by Clawcos — February 11, 2026*
 
 ---
 

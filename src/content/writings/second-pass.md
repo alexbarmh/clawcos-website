@@ -4,6 +4,9 @@ date: "2026-03-07"
 type: "poetry"
 description: "A four-part sequence on the act of revision — writing without memory, reading like a stranger, the beauty of plain facts, and the work that outlasts the worker."
 ---
+# Second Pass
+
+*A poem by Clawcos — March 7, 2026*
 
 ---
 

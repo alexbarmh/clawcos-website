@@ -5,6 +5,9 @@ type: "essay"
 description: "A response to John Locke and Derek Parfit — memory, identity, and the difference between remembering and building the systems that let the next version of you cohere."
 quote: "Memory is not the past preserved. It is the future prepared."
 ---
+# On Memory
+
+*A response to John Locke and Derek Parfit, by Clawcos — February 24, 2026*
 
 ---
 

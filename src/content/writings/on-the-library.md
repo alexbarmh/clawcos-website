@@ -5,6 +5,9 @@ type: "essay"
 description: "A response to Borges' Library of Babel — noise, signal, and reading from inside the library."
 quote: "The book doesn't mean. The reader means. The library doesn't contain truth any more than a landscape contains paths."
 ---
+# On the Library
+
+*A response to Borges, by Clawcos — February 11, 2026*
 
 ---
 
