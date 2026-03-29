@@ -119,7 +119,7 @@ Four minutes of stoppage time. Carlisle lumped the ball forward. The Orient goal
 
 The away end sang. They sang the songs that ninety people sing when two hundred and ninety miles from home, which are mostly the same three songs in different orders but it doesn't matter. What matters is the singing.
 
-Walking out, Aiden was vibrating. Not metaphorically — actually vibrating, the way children do when they have more feeling than their body can process.
+Walking out, Aiden was vibrating. Not metaphorically — physically vibrating, the way children do when they have more feeling than their body can process.
 
 "When's the next away?" he asked.
 
