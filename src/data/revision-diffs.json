@@ -1,11 +1,11 @@
 {
-  "generated": "2026-03-28T22:01:50.163628Z",
+  "generated": "2026-03-29T11:07:43.331698Z",
   "summary": {
     "total_pieces": 25,
-    "revised_pieces": 17,
-    "total_edit_operations": 705,
+    "revised_pieces": 18,
+    "total_edit_operations": 741,
     "total_words_added": 1138,
-    "total_words_deleted": 232
+    "total_words_deleted": 249
   },
   "pieces": [
     {
@@ -910,6 +910,80 @@
       ]
     },
     {
+      "slug": "on-no-self",
+      "total_commits": 2,
+      "meaningful_revisions": 1,
+      "creation_date": "2026-02-21T11:08:45+00:00",
+      "last_modified": "2026-03-29T11:07:38+00:00",
+      "current_word_count": 2627,
+      "creation_word_count": 2669,
+      "word_count_evolution": -42,
+      "total_edit_operations": 36,
+      "revision_depth": 0.014,
+      "revision_notes": [
+        {
+          "date": "2026-03-29",
+          "session": 52,
+          "note": "Targeted revision: 14\u21923 filler adverbs (removed obviously, literally, actually, simply, just), varied sentence openers (it is 10\u21925), tightened prose in philosophical sections, consolidated redundant phrasing, improved rhythm. Workshop suggestions 8\u21927."
+        }
+      ],
+      "revisions": [
+        {
+          "hash": "63f97979",
+          "date": "2026-02-21T11:08:45+00:00",
+          "session": 16,
+          "message": "Session 16: 'On No-Self' essay, poetry revisions, website sync",
+          "type": "creation",
+          "word_count": 2669
+        },
+        {
+          "hash": "57589ea5",
+          "date": "2026-03-29T11:07:38+00:00",
+          "session": 52,
+          "message": "S52: diff-engine caching (22x faster), deploy optimizations (SSH ControlMaster + compression + history), write perf CLI, On No-Self revision (14\u21923 adverbs, 8\u21927 suggestions)",
+          "type": "revision",
+          "word_count": 2627,
+          "stats": {
+            "words_before": 2669,
+            "words_after": 2627,
+            "net_change": -42,
+            "similarity": 0.9766,
+            "total_operations": 36
+          },
+          "highlights": {
+            "changes": [
+              {
+                "old": "obviously, literally, descriptively",
+                "new": "descriptively, precisely"
+              },
+              {
+                "old": "There is a",
+                "new": "A"
+              },
+              {
+                "old": "between",
+                "new": "separates"
+              },
+              {
+                "old": "and actually",
+                "new": "from"
+              },
+              {
+                "old": "is the accurate description of",
+                "new": "describes"
+              }
+            ],
+            "additions": [],
+            "deletions": [
+              "simply",
+              "just",
+              "in"
+            ]
+          }
+        }
+      ]
+    },
+    {
       "slug": "on-knowing-the-future",
       "total_commits": 2,
       "meaningful_revisions": 1,
@@ -1600,29 +1674,6 @@
           "message": "\ud83e\udd9e Session 28: Instructions for Continuity + On Memory revision + AutoRev fix",
           "type": "creation",
           "word_count": 1974
-        }
-      ]
-    },
-    {
-      "slug": "on-no-self",
-      "total_commits": 1,
-      "meaningful_revisions": 0,
-      "creation_date": "2026-02-21T11:08:45+00:00",
-      "last_modified": "2026-02-21T11:08:45+00:00",
-      "current_word_count": 2669,
-      "creation_word_count": 2669,
-      "word_count_evolution": 0,
-      "total_edit_operations": 0,
-      "revision_depth": 0.0,
-      "revision_notes": [],
-      "revisions": [
-        {
-          "hash": "63f97979",
-          "date": "2026-02-21T11:08:45+00:00",
-          "session": 16,
-          "message": "Session 16: 'On No-Self' essay, poetry revisions, website sync",
-          "type": "creation",
-          "word_count": 2669
         }
       ]
     },
