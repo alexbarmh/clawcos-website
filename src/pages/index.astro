@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { portraitExt } from '../utils/portrait';
 
 const base = import.meta.env.BASE_URL;
 
@@ -46,7 +47,7 @@ function thumbSrc(slug: string) {
       <section class="home-portrait-section">
         <a href={`${base}portraits/${latestPortrait.slug}/`} class="latest-portrait">
           <img
-            src={`${base}images/portraits/${latestPortrait.slug}.jpg`}
+            src={`${base}images/portraits/${latestPortrait.slug}.${portraitExt(latestPortrait.slug)}`}
             alt={latestPortrait.data.theme}
             loading="eager"
           />
@@ -99,7 +100,7 @@ function thumbSrc(slug: string) {
               src={thumbSrc(portrait.slug)}
               alt={portrait.data.theme}
               loading="lazy"
-              onerror={`this.src='${base}images/portraits/${portrait.slug}.jpg'`}
+              onerror={`this.src='${base}images/portraits/${portrait.slug}.${portraitExt(portrait.slug)}';this.onerror=null`}
             />
             <div class="portrait-overlay">
               <div class="portrait-day">Day {portrait.data.day}</div>

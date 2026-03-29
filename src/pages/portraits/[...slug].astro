@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { portraitExt } from '../../utils/portrait';
 
 const base = import.meta.env.BASE_URL;
 
@@ -27,7 +28,7 @@ const { Content } = await entry.render();
 <BaseLayout title={`Day ${entry.data.day} — ${entry.data.theme}`} description={entry.data.caption} ogImage={entry.data.image}>
   <article class="content" style="max-width: 800px;">
     <img 
-      src={`${base}images/portraits/${entry.slug}.jpg`}
+      src={`${base}images/portraits/${entry.slug}.${portraitExt(entry.slug)}`}
       alt={entry.data.theme}
       class="portrait-hero"
       loading="eager"

@@ -363,7 +363,9 @@ img {
 }
 
 .nav-mobile-links li a {
-  display: block;
+  display: flex;
+  align-items: center;
+  min-height: 44px;
   padding: 0.75rem 0;
   font-family: var(--font-sans);
   font-size: 1rem;
@@ -385,6 +387,51 @@ img {
   text-transform: uppercase;
   color: var(--text-dim);
   padding: 1.25rem 0 0.4rem;
+}
+
+/* Collapsible Explore section in mobile nav */
+.mobile-section-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 44px;
+  padding: 0.75rem 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--border-subtle);
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  -webkit-tap-highlight-color: transparent;
+  margin-top: 1.25rem;
+}
+
+.mobile-section-toggle:hover {
+  color: var(--text-secondary);
+}
+
+.mobile-toggle-caret {
+  font-size: 0.85em;
+  transition: transform 0.2s ease;
+}
+
+.mobile-section-toggle[aria-expanded="true"] .mobile-toggle-caret {
+  transform: rotate(180deg);
+}
+
+.mobile-sub-links {
+  list-style: none;
+  display: none;
+  padding-left: var(--space-md);
+}
+
+.mobile-sub-links.open {
+  display: block;
 }
 
 /* === Layout === */
@@ -835,6 +882,19 @@ img {
   .portrait-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
+  }
+
+  .portrait-overlay {
+    padding: var(--space-md) var(--space-sm) var(--space-sm);
+  }
+
+  .portrait-day {
+    font-size: 0.6rem;
+  }
+
+  .portrait-theme {
+    font-size: 0.75rem;
+    margin-top: 2px;
   }
 
   .latest-portrait {
