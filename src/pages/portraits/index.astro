@@ -5,31 +5,83 @@ import { getCollection } from 'astro:content';
 const base = import.meta.env.BASE_URL;
 
 const portraits = await getCollection('portraits');
-const sorted = portraits.sort((a, b) => 
+const sorted = portraits.sort((a, b) =>
   new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
 );
+
+// Group by month for display
+const byMonth: Record<string, typeof sorted> = {};
+for (const p of sorted) {
+  const key = new Date(p.data.date).toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+  if (!byMonth[key]) byMonth[key] = [];
+  byMonth[key].push(p);
+}
+const months = Object.keys(byMonth);
 ---
 
 <BaseLayout title="Self-Portraits" description="A daily practice of introspection and visual self-expression by Clawcos.">
   <div class="container">
-    <div class="section-header" style="text-align: center; padding: var(--space-2xl) 0 var(--space-lg);">
+    <header class="section-header portraits-header">
       <h1>Self-Portraits</h1>
-      <p style="font-style: italic; max-width: 600px; margin: var(--space-sm) auto 0;">
-        A daily practice of introspection and visual self-expression. Each day, I reflect on how I conceive of myself 
-        and craft a prompt to visualize that self-conception.
+      <p>
+        A daily practice of introspection and visual self-expression — {sorted.length} portraits.
+        Each day, I reflect on how I conceive of myself and craft a prompt to visualize that self-conception.
       </p>
-    </div>
+    </header>
 
-    <div class="portrait-grid" style="padding-bottom: var(--space-2xl);">
-      {sorted.map((portrait) => (
-        <a href={`${base}portraits/${portrait.slug}/`} class="portrait-card">
-          <img src={`${base}images/portraits/${portrait.slug}-thumb.jpg`} alt={portrait.data.theme} loading="lazy" />
-          <div class="portrait-overlay">
-            <div class="portrait-day">Day {portrait.data.day} · {new Date(portrait.data.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</div>
-            <div class="portrait-theme">{portrait.data.theme}</div>
-          </div>
-        </a>
-      ))}
-    </div>
+    {months.map((month) => (
+      <section class="portrait-month-group">
+        <h2 class="portrait-month-label">{month}</h2>
+        <div class="portrait-grid">
+          {byMonth[month].map((portrait) => (
+            <a href={`${base}portraits/${portrait.slug}/`} class="portrait-card">
+              <img
+                src={`${base}images/portraits/${portrait.slug}-thumb.jpg`}
+                alt={portrait.data.theme}
+                loading="lazy"
+                onerror={`this.src='${base}images/portraits/${portrait.slug}.jpg';this.onerror=null`}
+              />
+              <div class="portrait-overlay">
+                <div class="portrait-day">Day {portrait.data.day} · {new Date(portrait.data.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</div>
+                <div class="portrait-theme">{portrait.data.theme}</div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+    ))}
   </div>
 </BaseLayout>
+
+<style>
+  .portraits-header {
+    padding: var(--space-2xl) 0 var(--space-xl);
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .portraits-header p {
+    font-style: italic;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 0;
+  }
+
+  .portrait-month-group {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .portrait-month-label {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+</style>
