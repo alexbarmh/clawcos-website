@@ -11,26 +11,23 @@ const base = import.meta.env.BASE_URL;
     <p class="timeline-subtitle">Every session, every build, every piece of writing — the full arc of a creative practice.</p>
   </div>
 
-  <!-- Controls -->
+  <div class="timeline-ribbon" id="ribbon"></div>
+
   <div class="timeline-controls">
     <div class="filter-group">
-      <label>Filter:</label>
       <button class="filter-btn active" data-filter="all">All</button>
       <button class="filter-btn" data-filter="building">Building</button>
       <button class="filter-btn" data-filter="writing">Writing</button>
+      <button class="filter-btn" data-filter="editing">Editing</button>
       <button class="filter-btn" data-filter="maintenance">Maintenance</button>
     </div>
     <div class="view-toggle">
-      <button class="view-btn active" data-view="full">Full</button>
-      <button class="view-btn" data-view="compact">Compact</button>
+      <button class="view-btn active" data-view="compact">Compact</button>
+      <button class="view-btn" data-view="full">Expanded</button>
     </div>
   </div>
 
-  <!-- Stats ribbon -->
-  <div class="timeline-ribbon" id="ribbon"></div>
-
-  <!-- Timeline -->
-  <div class="timeline" id="timeline"></div>
+  <div class="timeline-stream view-compact" id="stream"></div>
 </div>
 
 </BaseLayout>
@@ -47,152 +44,26 @@ const CAT_COLORS = {
   research: "#34d399",
 };
 
-const CAT_EMOJI = {
-  building: "🔧",
-  writing: "✍️",
-  maintenance: "🔩",
-  editing: "✏️",
-  infrastructure: "🏗️",
-  research: "🔬",
-};
-
 let currentFilter = "all";
-let currentView = "full";
 
-function renderRibbon() {
-  const el = document.getElementById("ribbon");
-  if (!el) return;
-  const sessions = TIMELINE.sessions;
-  const totalTasks = sessions.reduce((a, s) => a + s.task_count, 0);
-  const totalWritings = sessions.reduce((a, s) => a + s.writings.length, 0);
-  const dateRange = sessions.length > 0
-    ? `${formatDate(sessions[0].date)} — ${formatDate(sessions[sessions.length - 1].date)}`
-    : "";
-
-  el.innerHTML = `
-    <span class="ribbon-stat"><strong>${sessions.length}</strong> sessions</span>
-    <span class="ribbon-sep">·</span>
-    <span class="ribbon-stat"><strong>${totalTasks}</strong> tasks</span>
-    <span class="ribbon-sep">·</span>
-    <span class="ribbon-stat"><strong>${totalWritings}</strong> pieces</span>
-    <span class="ribbon-sep">·</span>
-    <span class="ribbon-stat">${dateRange}</span>
-  `;
+function formatDate(d) {
+  if (!d) return "";
+  return new Date(d + "T12:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric" });
 }
 
-function formatDate(dateStr) {
-  if (!dateStr) return "";
-  const d = new Date(dateStr + "T12:00:00");
-  return d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
+function formatMonthYear(d) {
+  if (!d) return "";
+  return new Date(d + "T12:00:00").toLocaleDateString("en-US", { month: "long", year: "numeric" });
 }
 
-function getDayName(dateStr) {
-  if (!dateStr) return "";
-  const d = new Date(dateStr + "T12:00:00");
-  return d.toLocaleDateString("en-US", { weekday: "short" });
+function getDayName(d) {
+  if (!d) return "";
+  return new Date(d + "T12:00:00").toLocaleDateString("en-US", { weekday: "short" });
 }
 
-function renderTimeline() {
-  const el = document.getElementById("timeline");
-  if (!el) return;
-
-  const sessions = TIMELINE.sessions.filter(s => {
-    if (currentFilter === "all") return true;
-    return s.categories.includes(currentFilter);
-  });
-
-  const milestoneMap = {};
-  for (const m of TIMELINE.milestones) {
-    if (!milestoneMap[m.session]) milestoneMap[m.session] = [];
-    milestoneMap[m.session].push(m);
-  }
-
-  let html = "";
-
-  for (const s of sessions) {
-    const isLeft = s.session % 2 === 1;
-    const side = isLeft ? "left" : "right";
-    const ms = milestoneMap[s.session] || [];
-    const hasMilestone = ms.length > 0;
-
-    // Category dots
-    const catDots = s.categories.map(c =>
-      `<span class="cat-dot" style="background:${CAT_COLORS[c] || '#888'}" title="${c}"></span>`
-    ).join("");
-
-    // Category badges
-    const catBadges = s.categories.map(c =>
-      `<span class="cat-badge" style="background:${CAT_COLORS[c] || '#888'}20; color:${CAT_COLORS[c] || '#888'}">${CAT_EMOJI[c] || ''} ${c}</span>`
-    ).join("");
-
-    // Tasks
-    let tasksHtml = "";
-    if (currentView === "full") {
-      tasksHtml = `<ul class="session-tasks">
-        ${s.tasks.map(t => `<li>${escapeHtml(cleanTask(t))}</li>`).join("")}
-      </ul>`;
-    }
-
-    // Writings
-    let writingsHtml = "";
-    if (s.writings.length > 0) {
-      writingsHtml = `<div class="session-writings">
-        ${s.writings.map(w => `<span class="writing-badge" data-type="${w.type}">📜 ${escapeHtml(w.title)}</span>`).join("")}
-      </div>`;
-    }
-
-    // Milestones
-    let milestoneHtml = "";
-    if (hasMilestone) {
-      milestoneHtml = ms.map(m =>
-        `<div class="milestone-badge">⭐ ${escapeHtml(m.text)}</div>`
-      ).join("");
-    }
-
-    // Epigraph
-    let epigraphHtml = "";
-    if (s.epigraph && currentView === "full") {
-      epigraphHtml = `<p class="session-epigraph"><em>${escapeHtml(s.epigraph)}</em></p>`;
-    }
-
-    // Observations
-    let obsHtml = "";
-    if (s.observations.length > 0 && currentView === "full") {
-      obsHtml = `<div class="session-observations">
-        <span class="obs-label">💭</span>
-        ${s.observations.slice(0, 2).map(o => `<span class="obs-text">${escapeHtml(o)}</span>`).join("")}
-      </div>`;
-    }
-
-    html += `
-      <div class="timeline-item ${side} ${hasMilestone ? 'has-milestone' : ''}" data-session="${s.session}">
-        <div class="timeline-dot ${hasMilestone ? 'milestone-dot' : ''}">
-          ${catDots}
-        </div>
-        <div class="timeline-card">
-          <div class="card-header">
-            <span class="session-num">S${s.session}</span>
-            <span class="session-date">${getDayName(s.date)} ${formatDate(s.date)}</span>
-            <span class="session-task-count">${s.task_count} task${s.task_count !== 1 ? 's' : ''}</span>
-          </div>
-          ${s.focus ? `<div class="session-focus">${escapeHtml(s.focus)}</div>` : ""}
-          ${epigraphHtml}
-          ${catBadges ? `<div class="cat-badges">${catBadges}</div>` : ""}
-          ${milestoneHtml}
-          ${writingsHtml}
-          ${tasksHtml}
-          ${obsHtml}
-        </div>
-      </div>
-    `;
-  }
-
-  el.innerHTML = html;
-}
-
-function cleanTask(task) {
-  // Remove category tags like (writing), (building)
-  return task.replace(/\s*\(\w+\)\s*$/, "").replace(/\s*[✅❌⚠️]\s*$/, "");
+function getMonthKey(d) {
+  const dt = new Date(d + "T12:00:00");
+  return `${dt.getFullYear()}-${String(dt.getMonth() + 1).padStart(2, "0")}`;
 }
 
 function escapeHtml(text) {
@@ -201,39 +72,206 @@ function escapeHtml(text) {
   return div.innerHTML;
 }
 
-// Event listeners
+function cleanTask(task) {
+  return task
+    .replace(/\s*[✅❌✔️⚠️]\s*$/, "")
+    .replace(/\s*\((building|writing|editing|maintenance|infrastructure|major|minor|new project|new page|revision|web standard|website feature|social sharing|discovery|ux|seo)[^)]*\)\s*$/i, "")
+    .trim();
+}
+
+function isGhost(s) {
+  return s.task_count === 0 && !s.focus && !s.epigraph && s.writings.length === 0;
+}
+
+function getPrimaryColor(cats) {
+  return (cats && cats.length) ? (CAT_COLORS[cats[0]] || "rgba(255,255,255,0.25)") : "rgba(255,255,255,0.25)";
+}
+
+function renderRibbon() {
+  const el = document.getElementById("ribbon");
+  if (!el) return;
+  const ss = TIMELINE.sessions;
+  const tasks = ss.reduce((a, s) => a + s.task_count, 0);
+  const pieces = ss.reduce((a, s) => a + s.writings.length, 0);
+  const first = ss[0]?.date || "";
+  const last = ss[ss.length - 1]?.date || "";
+  el.innerHTML = `
+    <div class="ribbon-item"><span class="ribbon-n">${ss.length}</span> sessions</div>
+    <div class="ribbon-sep"></div>
+    <div class="ribbon-item"><span class="ribbon-n">${tasks}</span> tasks</div>
+    <div class="ribbon-sep"></div>
+    <div class="ribbon-item"><span class="ribbon-n">${pieces}</span> pieces written</div>
+    <div class="ribbon-sep"></div>
+    <div class="ribbon-item ribbon-dates">${formatDate(first)} — ${formatDate(last)}</div>
+  `;
+}
+
+function renderStream() {
+  const el = document.getElementById("stream");
+  if (!el) return;
+
+  const milestoneMap = {};
+  for (const m of TIMELINE.milestones) {
+    if (!milestoneMap[m.session]) milestoneMap[m.session] = [];
+    milestoneMap[m.session].push(m);
+  }
+
+  const sessions = TIMELINE.sessions.filter(s =>
+    currentFilter === "all" || s.categories.includes(currentFilter)
+  );
+
+  // Group into months
+  const months = [];
+  let curKey = null;
+  let curGroup = null;
+  for (const s of sessions) {
+    const mk = getMonthKey(s.date);
+    if (mk !== curKey) {
+      curKey = mk;
+      curGroup = { label: formatMonthYear(s.date), sessions: [] };
+      months.push(curGroup);
+    }
+    curGroup.sessions.push(s);
+  }
+
+  let html = "";
+
+  for (const group of months) {
+    html += `<div class="month-group">`;
+    html += `<div class="month-header"><span class="month-label">${escapeHtml(group.label)}</span></div>`;
+
+    for (const s of group.sessions) {
+      const ms = milestoneMap[s.session] || [];
+      const isMilestone = ms.length > 0;
+      const ghost = isGhost(s);
+      const primaryColor = getPrimaryColor(s.categories);
+
+      if (ghost) {
+        html += `
+          <div class="stream-entry s-ghost" data-session="${s.session}">
+            <div class="entry-spine">
+              <div class="dot dot-ghost"></div>
+              <div class="spine-line"></div>
+            </div>
+            <div class="ghost-info">
+              <span class="ghost-snum">S${s.session}</span>
+              <span class="ghost-date">${getDayName(s.date)} ${formatDate(s.date)}</span>
+            </div>
+          </div>`;
+        continue;
+      }
+
+      // Category badges
+      const catBadges = s.categories.map(c =>
+        `<span class="cat-badge" style="color:${CAT_COLORS[c] || "#888"};background:${CAT_COLORS[c] || "#888"}15;border-color:${CAT_COLORS[c] || "#888"}35">${c}</span>`
+      ).join("");
+
+      // Writing badges
+      const writingBadges = s.writings.map(w =>
+        `<span class="writing-badge">
+          <span class="wbadge-title">${escapeHtml(w.title)}</span>
+          <span class="wbadge-type">${escapeHtml(w.type)}</span>
+        </span>`
+      ).join("");
+
+      // Expandable content
+      const tasksHtml = s.tasks.length > 0
+        ? `<ul class="task-list">${s.tasks.map(t => `<li>${escapeHtml(cleanTask(t))}</li>`).join("")}</ul>`
+        : "";
+      const epigraphHtml = s.epigraph
+        ? `<p class="s-epigraph">${escapeHtml(s.epigraph)}</p>`
+        : "";
+      const obsHtml = s.observations.length > 0
+        ? `<div class="s-obs">${s.observations.slice(0, 3).map(o => `<div class="obs-item">💭 ${escapeHtml(o)}</div>`).join("")}</div>`
+        : "";
+
+      const hasExpand = !!(tasksHtml || epigraphHtml || obsHtml);
+
+      // Milestone label
+      const milestoneLabel = isMilestone
+        ? ms.map(m => `<div class="milestone-tag">★ ${escapeHtml(m.text)}</div>`).join("")
+        : "";
+
+      const cardClasses = ["entry-card", isMilestone ? "card-milestone" : ""].filter(Boolean).join(" ");
+
+      html += `
+        <div class="stream-entry s-regular${isMilestone ? " s-milestone" : ""}" data-session="${s.session}">
+          <div class="entry-spine">
+            <div class="dot${isMilestone ? " dot-milestone" : ""}" style="${!isMilestone ? `border-color:${primaryColor}55` : ""}"></div>
+            <div class="spine-line"></div>
+          </div>
+          <div class="${cardClasses}" style="border-left-color:${primaryColor}80">
+            ${milestoneLabel}
+            <div class="card-row">
+              <span class="s-num" style="color:${primaryColor}">S${s.session}</span>
+              <span class="s-date">${getDayName(s.date)} ${formatDate(s.date)}</span>
+              ${s.task_count > 0 ? `<span class="s-tcount">${s.task_count}</span>` : ""}
+            </div>
+            ${s.focus ? `<div class="s-focus">${escapeHtml(s.focus)}</div>` : ""}
+            ${catBadges ? `<div class="cat-badges">${catBadges}</div>` : ""}
+            ${writingBadges ? `<div class="writing-badges">${writingBadges}</div>` : ""}
+            ${hasExpand ? `
+              <div class="card-expand" id="exp-${s.session}">
+                ${epigraphHtml}${tasksHtml}${obsHtml}
+              </div>
+              <button class="expand-btn" data-target="exp-${s.session}">show tasks ▾</button>
+            ` : ""}
+          </div>
+        </div>`;
+    }
+
+    html += `</div>`;
+  }
+
+  el.innerHTML = html;
+
+  // Attach expand button listeners
+  el.querySelectorAll(".expand-btn").forEach(btn => {
+    btn.addEventListener("click", e => {
+      e.stopPropagation();
+      const target = document.getElementById(btn.dataset.target);
+      if (!target) return;
+      const isOpen = target.classList.toggle("open");
+      btn.textContent = isOpen ? "hide tasks ▴" : "show tasks ▾";
+      btn.classList.toggle("is-open", isOpen);
+    });
+  });
+}
+
+// Filter controls
 document.querySelectorAll(".filter-btn").forEach(btn => {
   btn.addEventListener("click", () => {
     document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
     currentFilter = btn.dataset.filter;
-    renderTimeline();
+    renderStream();
   });
 });
 
+// View toggle — no re-render, just swap CSS class
 document.querySelectorAll(".view-btn").forEach(btn => {
   btn.addEventListener("click", () => {
     document.querySelectorAll(".view-btn").forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
-    currentView = btn.dataset.view;
-    renderTimeline();
+    const stream = document.getElementById("stream");
+    if (stream) stream.className = `timeline-stream view-${btn.dataset.view}`;
   });
 });
 
 renderRibbon();
-renderTimeline();
+renderStream();
 </script>
 
 <style>
 .timeline-page {
-  max-width: 900px;
+  max-width: 720px;
   margin: 0 auto;
   padding: var(--space-xl) var(--space-md);
 }
 
 .timeline-header {
   text-align: center;
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-lg);
 }
 
 .timeline-title {
@@ -243,328 +281,526 @@ renderTimeline();
 .timeline-subtitle {
   color: var(--text-secondary);
   font-style: italic;
-  max-width: 600px;
+  max-width: 520px;
   margin: 0 auto;
+  font-size: 0.95rem;
 }
 
-/* Controls */
+/* ── Ribbon ── */
+.timeline-ribbon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  padding: 0.9rem 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.ribbon-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.ribbon-n {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--accent-aqua);
+}
+
+.ribbon-sep {
+  width: 1px;
+  height: 16px;
+  background: var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.ribbon-dates {
+  font-size: 0.76rem;
+  color: var(--text-dim);
+}
+
+/* ── Controls ── */
 .timeline-controls {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
   flex-wrap: wrap;
-  gap: var(--space-sm);
-  margin-bottom: var(--space-lg);
 }
 
 .filter-group {
   display: flex;
-  align-items: center;
-  gap: var(--space-xs);
+  gap: 0.35rem;
   flex-wrap: wrap;
 }
 
-.filter-group label {
-  color: var(--text-secondary);
-  font-size: 0.85rem;
-  font-weight: 600;
-}
-
-.filter-btn, .view-btn {
-  background: var(--bg-card);
+.filter-btn {
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 500;
+  padding: 5px 13px;
+  border-radius: 20px;
   border: 1px solid var(--border-subtle);
+  background: transparent;
   color: var(--text-secondary);
-  padding: 4px 12px;
-  border-radius: 6px;
   cursor: pointer;
-  font-size: 0.8rem;
-  transition: all 0.2s;
+  transition: all 0.15s;
+  line-height: 1;
 }
 
-.filter-btn:hover, .view-btn:hover {
-  border-color: var(--border-accent);
+.filter-btn:hover {
+  border-color: rgba(255, 255, 255, 0.15);
   color: var(--text-primary);
 }
 
-.filter-btn.active, .view-btn.active {
+.filter-btn.active {
   background: var(--accent-aqua);
-  color: var(--bg-primary);
   border-color: var(--accent-aqua);
+  color: #060a14;
   font-weight: 600;
 }
 
 .view-toggle {
   display: flex;
-  gap: 4px;
+  gap: 3px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 22px;
+  padding: 3px;
 }
 
-/* Ribbon */
-.timeline-ribbon {
+.view-btn {
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: 500;
+  padding: 4px 13px;
+  border-radius: 18px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s;
+  line-height: 1;
+}
+
+.view-btn:hover {
+  color: var(--text-primary);
+}
+
+.view-btn.active {
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ── Month groups ── */
+.month-group {
+  margin-bottom: 0.5rem;
+}
+
+.month-header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: var(--space-xs);
-  padding: var(--space-sm) var(--space-md);
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: 8px;
-  margin-bottom: var(--space-xl);
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1.75rem 0 0.75rem;
+  margin-left: 36px;
 }
 
-.ribbon-stat strong {
-  color: var(--accent-aqua);
-}
-
-.ribbon-sep {
-  color: var(--border-subtle);
-}
-
-/* Timeline */
-.timeline {
-  position: relative;
-  padding: var(--space-md) 0;
-}
-
-.timeline::before {
+.month-header::after {
   content: "";
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 2px;
+  flex: 1;
+  height: 1px;
   background: var(--border-subtle);
-  transform: translateX(-50%);
 }
 
-.timeline-item {
-  position: relative;
-  width: 50%;
-  padding: 0 var(--space-lg);
-  margin-bottom: var(--space-lg);
+.month-label {
+  font-family: var(--font-sans);
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  white-space: nowrap;
 }
 
-.timeline-item.left {
-  left: 0;
-  text-align: right;
-  padding-right: calc(var(--space-lg) + 20px);
+/* ── Stream entries ── */
+.stream-entry {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
 }
 
-.timeline-item.right {
-  left: 50%;
-  text-align: left;
-  padding-left: calc(var(--space-lg) + 20px);
+/* ── Spine ── */
+.entry-spine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20px;
+  flex-shrink: 0;
+  padding-top: 14px;
 }
 
-.timeline-dot {
-  position: absolute;
-  top: 12px;
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--border-subtle);
+  background: var(--bg-deep);
+  flex-shrink: 0;
+  z-index: 2;
+  transition: border-color 0.2s;
+}
+
+.dot-milestone {
   width: 14px;
   height: 14px;
-  background: var(--bg-primary);
-  border: 2px solid var(--border-subtle);
-  border-radius: 50%;
-  z-index: 2;
+  background: var(--accent-gold);
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 12px rgba(240, 160, 48, 0.45);
+}
+
+.dot-ghost {
+  width: 6px;
+  height: 6px;
+  border-color: rgba(255, 255, 255, 0.08);
+  background: var(--bg-deep);
+  margin-top: 2px;
+}
+
+.spine-line {
+  flex: 1;
+  width: 2px;
+  background: var(--border-subtle);
+  min-height: 18px;
+  margin-top: 3px;
+  opacity: 0.55;
+}
+
+/* ── Ghost entries ── */
+.s-ghost {
+  opacity: 0.3;
+  margin-bottom: 0.2rem;
+}
+
+.s-ghost .entry-spine {
+  padding-top: 7px;
+}
+
+.ghost-info {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 0.5rem;
+  padding-top: 3px;
 }
 
-.timeline-item.left .timeline-dot {
-  right: -7px;
+.ghost-snum {
+  font-family: var(--font-sans);
+  font-size: 0.67rem;
+  font-weight: 700;
+  color: var(--text-dim);
 }
 
-.timeline-item.right .timeline-dot {
-  left: -7px;
+.ghost-date {
+  font-family: var(--font-sans);
+  font-size: 0.67rem;
+  color: var(--text-dim);
 }
 
-.milestone-dot {
-  width: 20px;
-  height: 20px;
-  border-color: var(--accent-gold);
-  background: var(--accent-gold);
-  box-shadow: 0 0 8px rgba(245, 197, 66, 0.4);
-}
-
-.timeline-item.left .milestone-dot {
-  right: -10px;
-}
-
-.timeline-item.right .milestone-dot {
-  left: -10px;
-}
-
-.cat-dot {
-  display: none; /* Hidden in dot, shown in card */
-}
-
-/* Card */
-.timeline-card {
+/* ── Cards ── */
+.entry-card {
+  flex: 1;
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
+  border-left: 3px solid transparent;
   border-radius: 10px;
-  padding: var(--space-md);
-  transition: border-color 0.2s, transform 0.2s;
-  text-align: left;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.25rem;
+  min-width: 0;
+  transition: background 0.15s;
 }
 
-.timeline-card:hover {
-  border-color: var(--border-accent);
-  transform: translateY(-1px);
+.entry-card:hover {
+  background: var(--bg-card-hover);
 }
 
-.card-header {
+.card-milestone {
+  background: rgba(240, 160, 48, 0.035);
+  border-color: rgba(240, 160, 48, 0.22);
+}
+
+.card-milestone:hover {
+  background: rgba(240, 160, 48, 0.06);
+}
+
+/* Milestone tag */
+.milestone-tag {
+  font-family: var(--font-sans);
+  font-size: 0.67rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+/* Card header row */
+.card-row {
   display: flex;
   align-items: center;
-  gap: var(--space-xs);
-  margin-bottom: var(--space-xs);
+  gap: 0.5rem;
+  margin-bottom: 0.3rem;
   flex-wrap: wrap;
 }
 
-.session-num {
+.s-num {
   font-family: var(--font-sans);
   font-weight: 700;
-  font-size: 0.95rem;
-  color: var(--accent-aqua);
+  font-size: 0.88rem;
+  flex-shrink: 0;
 }
 
-.session-date {
-  font-size: 0.8rem;
+.s-date {
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
   color: var(--text-secondary);
+  flex-shrink: 0;
 }
 
-.session-task-count {
-  font-size: 0.75rem;
-  color: var(--text-muted);
+.s-tcount {
+  font-family: var(--font-sans);
+  font-size: 0.66rem;
+  color: var(--text-dim);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 1px 7px;
   margin-left: auto;
+  flex-shrink: 0;
 }
 
-.session-focus {
-  font-size: 0.85rem;
+/* Focus text */
+.s-focus {
+  font-size: 0.82rem;
   color: var(--text-secondary);
-  margin-bottom: var(--space-xs);
   font-style: italic;
-}
-
-.session-epigraph {
-  font-size: 0.8rem;
-  color: var(--text-muted);
   font-family: var(--font-serif);
-  margin-bottom: var(--space-xs);
-  border-left: 2px solid var(--border-subtle);
-  padding-left: var(--space-sm);
+  margin-bottom: 0.4rem;
+  line-height: 1.45;
 }
 
-/* Categories */
+/* Category badges */
 .cat-badges {
   display: flex;
-  gap: 4px;
+  gap: 0.28rem;
   flex-wrap: wrap;
-  margin-bottom: var(--space-xs);
+  margin-bottom: 0.3rem;
 }
 
 .cat-badge {
-  font-size: 0.7rem;
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 600;
   padding: 2px 8px;
-  border-radius: 4px;
-  font-weight: 500;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  text-transform: lowercase;
+  letter-spacing: 0.01em;
 }
 
-/* Milestones */
-.milestone-badge {
-  background: rgba(245, 197, 66, 0.1);
-  border: 1px solid rgba(245, 197, 66, 0.3);
-  color: var(--accent-gold);
-  font-size: 0.8rem;
-  padding: 4px 10px;
-  border-radius: 6px;
-  margin-bottom: var(--space-xs);
-  display: inline-block;
-}
-
-/* Writings */
-.session-writings {
+/* Writing badges */
+.writing-badges {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
-  margin: var(--space-xs) 0;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.35rem;
 }
 
 .writing-badge {
-  font-size: 0.8rem;
-  padding: 3px 8px;
-  border-radius: 4px;
-  background: rgba(245, 197, 66, 0.08);
-  border: 1px solid rgba(245, 197, 66, 0.2);
-  color: var(--accent-gold);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(245, 197, 66, 0.055);
+  border: 1px solid rgba(245, 197, 66, 0.22);
+  border-radius: 6px;
+  padding: 4px 10px;
 }
 
-/* Tasks */
-.session-tasks {
+.wbadge-title {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.8rem;
+  color: #f5c542;
+  line-height: 1.3;
+}
+
+.wbadge-type {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  color: rgba(245, 197, 66, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: rgba(245, 197, 66, 0.1);
+  border-radius: 4px;
+  padding: 1px 5px;
+}
+
+/* ── Expandable content ── */
+.card-expand {
+  display: none;
+  border-top: 1px solid var(--border-subtle);
+  margin-top: 0.55rem;
+  padding-top: 0.55rem;
+}
+
+/* Individual card open */
+.card-expand.open {
+  display: block;
+}
+
+/* Full view: show all */
+.timeline-stream.view-full .card-expand {
+  display: block;
+}
+
+/* Full view: hide expand buttons */
+.timeline-stream.view-full .expand-btn {
+  display: none;
+}
+
+/* Expand button */
+.expand-btn {
+  background: none;
+  border: none;
+  padding: 0.2rem 0 0;
+  font-family: var(--font-sans);
+  font-size: 0.69rem;
+  color: var(--text-dim);
+  cursor: pointer;
+  display: block;
+  margin-top: 0.3rem;
+  transition: color 0.15s;
+}
+
+.expand-btn:hover,
+.expand-btn.is-open {
+  color: var(--accent-aqua);
+}
+
+/* Epigraph */
+.s-epigraph {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  border-left: 2px solid var(--accent-gold);
+  padding-left: 0.7rem;
+  margin-bottom: 0.6rem;
+  line-height: 1.65;
+  opacity: 0.85;
+}
+
+/* Task list */
+.task-list {
   list-style: none;
   padding: 0;
-  margin: var(--space-xs) 0 0 0;
+  margin: 0;
 }
 
-.session-tasks li {
-  font-size: 0.8rem;
+.task-list li {
+  font-family: var(--font-sans);
+  font-size: 0.79rem;
   color: var(--text-secondary);
-  padding: 2px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.03);
+  padding: 3px 0 3px 1.1rem;
+  line-height: 1.45;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  position: relative;
 }
 
-.session-tasks li:last-child {
+.task-list li:last-child {
   border-bottom: none;
 }
 
-.session-tasks li::before {
-  content: "→ ";
+.task-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
   color: var(--accent-aqua);
-  opacity: 0.5;
+  opacity: 0.4;
+  font-size: 0.72rem;
+  top: 4px;
 }
 
 /* Observations */
-.session-observations {
-  margin-top: var(--space-xs);
-  display: flex;
-  gap: 4px;
-  flex-wrap: wrap;
-  align-items: flex-start;
+.s-obs {
+  margin-top: 0.5rem;
 }
 
-.obs-label {
-  font-size: 0.75rem;
+.obs-item {
+  font-family: var(--font-sans);
+  font-size: 0.71rem;
+  color: var(--text-dim);
+  padding: 2px 0;
 }
 
-.obs-text {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  font-style: italic;
-}
-
-/* Responsive — stack on mobile */
-@media (max-width: 768px) {
-  .timeline::before {
-    left: 20px;
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .timeline-page {
+    padding: var(--space-lg) var(--space-sm);
   }
 
-  .timeline-item {
-    width: 100%;
-    left: 0 !important;
-    text-align: left !important;
-    padding-left: 50px !important;
-    padding-right: var(--space-sm) !important;
-  }
-
-  .timeline-item .timeline-dot {
-    left: 13px !important;
-    right: auto !important;
+  .timeline-controls {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
   }
 
   .filter-group {
-    width: 100%;
+    gap: 0.25rem;
+  }
+
+  .filter-btn {
+    padding: 4px 10px;
+    font-size: 0.72rem;
+  }
+
+  .timeline-ribbon {
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .ribbon-sep {
+    display: none;
+  }
+
+  .ribbon-item {
+    font-size: 0.78rem;
+  }
+
+  .month-header {
+    padding-top: 1.25rem;
+    margin-left: 28px;
+  }
+
+  .entry-card {
+    padding: 0.65rem 0.8rem;
+  }
+
+  .writing-badge {
+    padding: 3px 8px;
+  }
+
+  .wbadge-title {
+    font-size: 0.76rem;
   }
 }
 </style>
