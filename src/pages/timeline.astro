@@ -87,6 +87,15 @@ function getPrimaryColor(cats) {
   return (cats && cats.length) ? (CAT_COLORS[cats[0]] || "rgba(255,255,255,0.25)") : "rgba(255,255,255,0.25)";
 }
 
+function titleToSlug(title) {
+  return title.toLowerCase()
+    .replace(/['']/g, "")
+    .replace(/[^a-z0-9\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
+    .trim();
+}
+
 function renderRibbon() {
   const el = document.getElementById("ribbon");
   if (!el) return;
@@ -95,6 +104,22 @@ function renderRibbon() {
   const pieces = ss.reduce((a, s) => a + s.writings.length, 0);
   const first = ss[0]?.date || "";
   const last = ss[ss.length - 1]?.date || "";
+
+  // Build cumulative sparkline
+  const W = 400, H = 30;
+  const maxT = Math.max(...ss.map(s => s.cumulative_tasks));
+  const maxP = Math.max(...ss.map(s => s.cumulative_pieces));
+  const taskPts = ss.map((s, i) => {
+    const x = (i / (ss.length - 1)) * W;
+    const y = H - (s.cumulative_tasks / maxT) * (H - 2) - 1;
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  }).join(" ");
+  const piecePts = ss.map((s, i) => {
+    const x = (i / (ss.length - 1)) * W;
+    const y = H - (s.cumulative_pieces / maxP) * (H - 2) - 1;
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  }).join(" ");
+
   el.innerHTML = `
     <div class="ribbon-item"><span class="ribbon-n">${ss.length}</span> sessions</div>
     <div class="ribbon-sep"></div>
@@ -103,6 +128,16 @@ function renderRibbon() {
     <div class="ribbon-item"><span class="ribbon-n">${pieces}</span> pieces written</div>
     <div class="ribbon-sep"></div>
     <div class="ribbon-item ribbon-dates">${formatDate(first)} — ${formatDate(last)}</div>
+    <div class="sparkline-row">
+      <svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" class="sparkline-svg" aria-hidden="true">
+        <polyline points="${taskPts}" fill="none" stroke="var(--accent-aqua)" stroke-width="1.8" stroke-linejoin="round" opacity="0.65"/>
+        <polyline points="${piecePts}" fill="none" stroke="#f5c542" stroke-width="1.4" stroke-linejoin="round" opacity="0.5"/>
+      </svg>
+      <div class="sparkline-legend">
+        <span class="spark-item spark-tasks">tasks</span>
+        <span class="spark-item spark-pieces">pieces</span>
+      </div>
+    </div>
   `;
 }
 
@@ -140,39 +175,66 @@ function renderStream() {
     html += `<div class="month-group">`;
     html += `<div class="month-header"><span class="month-label">${escapeHtml(group.label)}</span></div>`;
 
-    for (const s of group.sessions) {
-      const ms = milestoneMap[s.session] || [];
-      const isMilestone = ms.length > 0;
-      const ghost = isGhost(s);
-      const primaryColor = getPrimaryColor(s.categories);
+    let si = 0;
+    const sArr = group.sessions;
+    while (si < sArr.length) {
+      const s = sArr[si];
 
-      if (ghost) {
-        html += `
-          <div class="stream-entry s-ghost" data-session="${s.session}">
-            <div class="entry-spine">
-              <div class="dot dot-ghost"></div>
-              <div class="spine-line"></div>
-            </div>
-            <div class="ghost-info">
-              <span class="ghost-snum">S${s.session}</span>
-              <span class="ghost-date">${getDayName(s.date)} ${formatDate(s.date)}</span>
-            </div>
-          </div>`;
+      if (isGhost(s)) {
+        // Collect consecutive ghosts and render as a single compact group
+        let gi = si + 1;
+        while (gi < sArr.length && isGhost(sArr[gi])) gi++;
+        const ghosts = sArr.slice(si, gi);
+
+        if (ghosts.length === 1) {
+          html += `
+            <div class="stream-entry s-ghost" data-session="${ghosts[0].session}">
+              <div class="entry-spine">
+                <div class="dot dot-ghost"></div>
+                <div class="spine-line"></div>
+              </div>
+              <div class="ghost-info">
+                <span class="ghost-snum">S${ghosts[0].session}</span>
+                <span class="ghost-date">${getDayName(ghosts[0].date)} ${formatDate(ghosts[0].date)}</span>
+              </div>
+            </div>`;
+        } else {
+          const gFirst = ghosts[0];
+          const gLast = ghosts[ghosts.length - 1];
+          html += `
+            <div class="stream-entry s-ghost-group">
+              <div class="entry-spine">
+                <div class="dot dot-ghost-group"></div>
+                <div class="spine-line"></div>
+              </div>
+              <div class="ghost-group-info">
+                <span class="ghost-group-label">S${gFirst.session}–S${gLast.session}</span>
+                <span class="ghost-group-sub">quiet period · ${ghosts.length} sessions</span>
+              </div>
+            </div>`;
+        }
+
+        si = gi;
         continue;
       }
+
+      const ms = milestoneMap[s.session] || [];
+      const isMilestone = ms.length > 0;
+      const primaryColor = getPrimaryColor(s.categories);
 
       // Category badges
       const catBadges = s.categories.map(c =>
         `<span class="cat-badge" style="color:${CAT_COLORS[c] || "#888"};background:${CAT_COLORS[c] || "#888"}15;border-color:${CAT_COLORS[c] || "#888"}35">${c}</span>`
       ).join("");
 
-      // Writing badges
-      const writingBadges = s.writings.map(w =>
-        `<span class="writing-badge">
+      // Writing badges (linked to piece pages)
+      const writingBadges = s.writings.map(w => {
+        const slug = titleToSlug(w.title);
+        return `<a class="writing-badge" href="/writings/${slug}/">
           <span class="wbadge-title">${escapeHtml(w.title)}</span>
           <span class="wbadge-type">${escapeHtml(w.type)}</span>
-        </span>`
-      ).join("");
+        </a>`;
+      }).join("");
 
       // Expandable content
       const tasksHtml = s.tasks.length > 0
@@ -192,7 +254,9 @@ function renderStream() {
         ? ms.map(m => `<div class="milestone-tag">★ ${escapeHtml(m.text)}</div>`).join("")
         : "";
 
-      const cardClasses = ["entry-card", isMilestone ? "card-milestone" : ""].filter(Boolean).join(" ");
+      // High-activity sessions (5+ tasks) get a denser visual weight
+      const isDense = s.task_count >= 5;
+      const cardClasses = ["entry-card", isMilestone ? "card-milestone" : "", isDense ? "card-dense" : ""].filter(Boolean).join(" ");
 
       html += `
         <div class="stream-entry s-regular${isMilestone ? " s-milestone" : ""}" data-session="${s.session}">
@@ -218,6 +282,7 @@ function renderStream() {
             ` : ""}
           </div>
         </div>`;
+      si++;
     }
 
     html += `</div>`;
@@ -229,12 +294,30 @@ function renderStream() {
   el.querySelectorAll(".expand-btn").forEach(btn => {
     btn.addEventListener("click", e => {
       e.stopPropagation();
-      const target = document.getElementById(btn.dataset.target);
-      if (!target) return;
+      // Use sibling traversal — card-expand is always immediately before the button
+      const target = btn.previousElementSibling;
+      if (!target || !target.classList.contains("card-expand")) return;
       const isOpen = target.classList.toggle("open");
       btn.textContent = isOpen ? "hide tasks ▴" : "show tasks ▾";
       btn.classList.toggle("is-open", isOpen);
     });
+  });
+}
+
+// Compute per-category session counts and label filter buttons
+{
+  const counts = {};
+  let allCount = 0;
+  for (const s of TIMELINE.sessions) {
+    if (s.task_count > 0 || s.focus || s.epigraph || s.writings.length > 0) {
+      allCount++;
+      for (const c of s.categories) counts[c] = (counts[c] || 0) + 1;
+    }
+  }
+  document.querySelectorAll(".filter-btn").forEach(btn => {
+    const f = btn.dataset.filter;
+    const n = f === "all" ? allCount : counts[f];
+    if (n !== undefined) btn.textContent = `${btn.textContent} (${n})`;
   });
 }
 
@@ -262,7 +345,7 @@ renderRibbon();
 renderStream();
 </script>
 
-<style>
+<style is:global>
 .timeline-page {
   max-width: 720px;
   margin: 0 auto;
@@ -326,6 +409,47 @@ renderStream();
   font-size: 0.76rem;
   color: var(--text-dim);
 }
+
+.sparkline-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-top: 0.55rem;
+  margin-top: 0.35rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.sparkline-svg {
+  flex: 1;
+  height: 30px;
+  display: block;
+  min-width: 0;
+}
+
+.sparkline-legend {
+  display: flex;
+  gap: 0.65rem;
+  flex-shrink: 0;
+}
+
+.spark-item {
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  gap: 0.28rem;
+}
+
+.spark-item::before {
+  content: "—";
+  font-weight: 800;
+  letter-spacing: -0.05em;
+}
+
+.spark-tasks::before { color: var(--accent-aqua); }
+.spark-pieces::before { color: #f5c542; }
 
 /* ── Controls ── */
 .timeline-controls {
@@ -488,8 +612,8 @@ renderStream();
 
 /* ── Ghost entries ── */
 .s-ghost {
-  opacity: 0.3;
-  margin-bottom: 0.2rem;
+  opacity: 0.22;
+  margin-bottom: 0.15rem;
 }
 
 .s-ghost .entry-spine {
@@ -516,6 +640,44 @@ renderStream();
   color: var(--text-dim);
 }
 
+/* Grouped ghost sessions */
+.s-ghost-group {
+  opacity: 0.28;
+  margin-bottom: 0.35rem;
+  margin-top: 0.1rem;
+}
+
+.dot-ghost-group {
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  margin-top: 2px;
+}
+
+.ghost-group-info {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding-top: 4px;
+}
+
+.ghost-group-label {
+  font-family: var(--font-sans);
+  font-size: 0.69rem;
+  font-weight: 600;
+  color: var(--text-dim);
+  letter-spacing: 0.02em;
+}
+
+.ghost-group-sub {
+  font-family: var(--font-sans);
+  font-size: 0.64rem;
+  color: var(--text-dim);
+  opacity: 0.7;
+}
+
 /* ── Cards ── */
 .entry-card {
   flex: 1;
@@ -533,6 +695,13 @@ renderStream();
   background: var(--bg-card-hover);
 }
 
+/* High-activity sessions */
+.card-dense {
+  border-left-width: 4px;
+  padding-top: 0.85rem;
+  padding-bottom: 0.85rem;
+}
+
 .card-milestone {
   background: rgba(240, 160, 48, 0.035);
   border-color: rgba(240, 160, 48, 0.22);
@@ -540,6 +709,10 @@ renderStream();
 
 .card-milestone:hover {
   background: rgba(240, 160, 48, 0.06);
+}
+
+.card-dense.card-milestone {
+  box-shadow: 0 0 0 1px rgba(240, 160, 48, 0.12) inset;
 }
 
 /* Milestone tag */
@@ -633,6 +806,13 @@ renderStream();
   border: 1px solid rgba(245, 197, 66, 0.22);
   border-radius: 6px;
   padding: 4px 10px;
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.writing-badge:hover {
+  background: rgba(245, 197, 66, 0.12);
+  border-color: rgba(245, 197, 66, 0.45);
 }
 
 .wbadge-title {
