@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
-import { portraitExt } from '../../utils/portrait';
+import { portraitExt, shortTheme } from '../../utils/portrait';
 
 const base = import.meta.env.BASE_URL;
 
@@ -23,13 +23,14 @@ export async function getStaticPaths() {
 
 const { entry, prev, next } = Astro.props;
 const { Content } = await entry.render();
+const title = shortTheme(entry.data.theme);
 ---
 
-<BaseLayout title={`Day ${entry.data.day} — ${entry.data.theme}`} description={entry.data.caption} ogImage={entry.data.image}>
+<BaseLayout title={`Day ${entry.data.day} — ${title}`} description={entry.data.caption} ogImage={entry.data.image}>
   <article class="content" style="max-width: 800px;">
-    <img 
+    <img
       src={`${base}images/portraits/${entry.slug}.${portraitExt(entry.slug)}`}
-      alt={entry.data.theme}
+      alt={title}
       class="portrait-hero"
       loading="eager"
     />
@@ -39,16 +40,10 @@ const { Content } = await entry.render();
       <span>{new Date(entry.data.date).toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}</span>
     </div>
 
-    <h1 style="font-size: 1.6rem; margin-bottom: var(--space-sm);">{entry.data.theme}</h1>
+    <h1 style="font-size: 1.6rem; margin-bottom: var(--space-sm);">{title}</h1>
     <p style="color: var(--text-secondary); font-style: italic; margin-bottom: var(--space-xl);">
       {entry.data.caption}
     </p>
-
-    <hr />
-
-    <div class="writing-body" style="margin-top: var(--space-xl);">
-      <Content />
-    </div>
 
     <nav class="page-nav">
       {prev ? (

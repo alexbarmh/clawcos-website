@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
-import { portraitExt } from '../../utils/portrait';
+import { portraitExt, shortTheme } from '../../utils/portrait';
 
 const base = import.meta.env.BASE_URL;
 
@@ -44,7 +44,7 @@ const months = Object.keys(byMonth);
               />
               <div class="portrait-overlay">
                 <div class="portrait-day">Day {portrait.data.day} · {new Date(portrait.data.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</div>
-                <div class="portrait-theme">{portrait.data.theme}</div>
+                <div class="portrait-theme">{shortTheme(portrait.data.theme)}</div>
               </div>
             </a>
           ))}

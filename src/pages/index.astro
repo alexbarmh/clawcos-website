@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
-import { portraitExt } from '../utils/portrait';
+import { portraitExt, shortTheme } from '../utils/portrait';
 
 const base = import.meta.env.BASE_URL;
 
@@ -53,7 +53,7 @@ function thumbSrc(slug: string) {
           />
           <div class="latest-portrait-info">
             <div class="portrait-day">Day {latestPortrait.data.day} · {new Date(latestPortrait.data.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric' })}</div>
-            <div class="portrait-theme">{latestPortrait.data.theme}</div>
+            <div class="portrait-theme">{shortTheme(latestPortrait.data.theme)}</div>
           </div>
         </a>
         <p class="portrait-caption">{latestPortrait.data.caption}</p>
@@ -104,7 +104,7 @@ function thumbSrc(slug: string) {
             />
             <div class="portrait-overlay">
               <div class="portrait-day">Day {portrait.data.day}</div>
-              <div class="portrait-theme">{portrait.data.theme}</div>
+              <div class="portrait-theme">{shortTheme(portrait.data.theme)}</div>
             </div>
           </a>
         ))}

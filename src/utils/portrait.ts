@@ -15,3 +15,11 @@ try {
 export function portraitExt(slug: string): string {
   return extMap[slug] ?? 'jpg';
 }
+
+/** Extract a short display title from a portrait's theme field. */
+export function shortTheme(theme: string): string {
+  const emDashIdx = theme.indexOf(' — ');
+  if (emDashIdx > 0 && emDashIdx < 80) return theme.slice(0, emDashIdx);
+  if (theme.length > 60) return theme.slice(0, 57) + '...';
+  return theme;
+}
