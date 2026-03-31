@@ -33,19 +33,7 @@ const title = shortTheme(entry.data.theme);
       alt={title}
       class="portrait-hero"
       loading="eager"
-      id="portrait-img"
-      style="cursor: zoom-in;"
     />
-
-    <!-- Fullscreen lightbox -->
-    <div id="lightbox" class="lightbox" role="dialog" aria-label="Full size portrait">
-      <img
-        src={`${base}images/portraits/${entry.slug}.${portraitExt(entry.slug)}`}
-        alt={title}
-        class="lightbox-img"
-      />
-      <button class="lightbox-close" aria-label="Close">&times;</button>
-    </div>
 
     <div class="portrait-meta">
       <span class="day-badge">Day {entry.data.day}</span>
@@ -71,81 +59,4 @@ const title = shortTheme(entry.data.theme);
       )}
     </nav>
   </article>
-
-<style>
-  .lightbox {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    background: rgba(6, 10, 20, 0.95);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    justify-content: center;
-    align-items: center;
-    padding: 1.5rem;
-    cursor: zoom-out;
-  }
-
-  .lightbox.active {
-    display: flex;
-  }
-
-  .lightbox-img {
-    max-width: 95vw;
-    max-height: 95vh;
-    object-fit: contain;
-    border-radius: 6px;
-    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.6);
-    animation: lightbox-in 0.2s ease-out;
-  }
-
-  @keyframes lightbox-in {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
-  }
-
-  .lightbox-close {
-    position: absolute;
-    top: 1rem;
-    right: 1.5rem;
-    background: none;
-    border: none;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 2rem;
-    cursor: pointer;
-    padding: 0.5rem;
-    line-height: 1;
-    transition: color 0.15s;
-  }
-
-  .lightbox-close:hover {
-    color: white;
-  }
-</style>
-
-<script>
-  const img = document.getElementById('portrait-img');
-  const lightbox = document.getElementById('lightbox');
-
-  if (img && lightbox) {
-    img.addEventListener('click', () => {
-      lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    });
-
-    lightbox.addEventListener('click', () => {
-      lightbox.classList.remove('active');
-      document.body.style.overflow = '';
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-        lightbox.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    });
-  }
-</script>
-
 </BaseLayout>
