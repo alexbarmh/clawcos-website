@@ -11,17 +11,17 @@ wordCount: "~2,500 words"
 
 ---
 
-The rain at Brunton Park was different from the rain at home. That was the first thing Marcus noticed. In London, rain was an inconvenience — something that made the Tube escalators slippery and turned the walk from the station into a negotiation with an umbrella. Here in Carlisle, two hundred and ninety miles north of anything he recognized, the rain was structural. It was part of the landscape, like the hills. You didn't avoid it. You stood in it and became wet, and at some point the distinction between you and the weather stopped mattering.
+The rain at Brunton Park was different from the rain at home. That was the first thing Marcus noticed. In London, rain was an inconvenience — something that made the Tube escalators slippery and turned the walk from the station into a negotiation with an umbrella. Here in Carlisle, two hundred and ninety miles north of anything he recognized, the rain was structural. Rain was part of the landscape, like the hills. You didn't avoid it. You stood in it and became wet, and at some point the distinction between you and the weather stopped mattering.
 
 The away end at Brunton Park held twelve hundred when full, which it almost never was. Today it held maybe ninety. Ninety people who had left London at six in the morning to watch Leyton Orient play Carlisle United in League Two on a Tuesday night in November. Marcus was one of them. He wasn't sure why.
 
 Six weeks ago, his wife had left. Not in the dramatic way — no thrown plates, no screaming on the doorstep. She'd planned it like a project manager. Boxes labeled by room. A shared spreadsheet for dividing the streaming subscriptions. She'd even left the better toaster. That's how you know it's over: when someone is kind about the small things because they're already gone from the big ones.
 
-His therapist had suggested "new activities." His mate Dave had suggested the pub. Marcus had split the difference and bought a season ticket to Brisbane Road, Leyton Orient's ground, because it was walkable from his flat and because he remembered his granddad taking him to football as a kid. That had been West Ham. This was League Two. But the essential transaction was the same: you paid money to stand in the cold and feel something that wasn't about your own life for ninety minutes.
+His therapist had suggested "new activities." His mate Dave had suggested the pub. Marcus had split the difference and bought a season ticket to Brisbane Road, Leyton Orient's ground, because it was walkable from his flat and because he remembered his granddad taking him to football as a kid. That had been West Ham. This was League Two, but the essential transaction was the same: you paid money to stand in the cold and feel something that wasn't about your own life for ninety minutes.
 
 He'd fallen into it quickly. Three home matches and he was hooked — not on Orient, specifically, but on the rawness of lower-league football. The pitches were bad. The first touch was worse. Players earned less in a year than his old colleagues in the City earned in a quarter. But the ball was round and the goals were the same size and when the left winger beat his man and whipped in a cross that the big striker headed just over the bar, the sound that ninety people in an away end made was the same sound that ninety thousand would have made. It just echoed more.
 
-The away trips had started as a dare to himself. Newcastle was first — an excuse to ride the train and eat a stottie. Then Mansfield, Colchester, Doncaster. Towns he'd never visited, wouldn't have visited, places that existed for him only as names on the fixture list and then suddenly as streets, chip shops, turnstiles, accents. Each one a small education in a country he'd lived in for forty-three years without noticing.
+Away trips started as a dare to himself. Newcastle was first — an excuse to ride the train and eat a stottie. Then Mansfield, Colchester, Doncaster. Towns he'd never visited, wouldn't have visited, places that existed for him only as names on the fixture list and then suddenly as streets, chip shops, turnstiles, accents. Each one a small education in a country he'd lived in for forty-three years without noticing.
 
 He'd come to Carlisle alone. Dave couldn't make the Tuesday, and the other lads from the Supporters' Trust had families, which was a way of saying they had reasons not to spend fourteen hours on trains to watch a mid-table nothing match. Marcus had no reasons. He had a therapist, a rucksack, and a day return.
 
@@ -85,7 +85,7 @@ Aiden shook his head. "No one. Mum's from Sheffield but she doesn't follow it. D
 
 "You picked *very* well."
 
-The boy laughed. It was a good laugh — unselfconscious, sudden. The laugh of someone who hadn't yet learned to filter himself in front of adults.
+Aiden laughed. It was a good laugh — unselfconscious, sudden. The laugh of someone who hadn't yet learned to filter himself in front of adults.
 
 "My granddad used to take me to West Ham," Marcus offered. "Upton Park, before they moved. He'd put me on his shoulders for corners."
 
@@ -103,13 +103,13 @@ The second half was dire. Carlisle equalized on fifty-five minutes from a corner
 
 Aiden's commentary became more urgent. "Push UP... that's the problem, the midfield line's too deep, they can't get the ball to the forward... *come ON*, Taylor, that's exactly what I mean about positioning..."
 
-On seventy-eight minutes, Taylor — the right-back whose positioning Aiden had criticized — intercepted a Carlisle pass on the halfway line, looked up, and played a ball over the top that should not have worked. It was too far, hit too hard, aimed at a space where no Orient player was standing. But the striker had started his run a second before the pass was struck, and the ball and the player converged on the same point of grass at the same moment, and suddenly it was one-on-one with the goalkeeper.
+On seventy-eight minutes, Taylor — the right-back whose positioning Aiden had criticized — intercepted a Carlisle pass on the halfway line, looked up, and played a ball over the top that should not have worked. Too far, hit too hard, aimed at a space where no Orient player was standing — but the striker had started his run a second before the pass was struck, and the ball and the player converged on the same point of grass at the same moment, and suddenly it was one-on-one with the goalkeeper.
 
-The away end held its breath. Ninety people collectively stopped existing as individuals and became a single organism waiting for the same thing.
+Ninety people held their breath, stopped existing as individuals, and became a single organism waiting for the same thing.
 
 The striker placed it. Bottom corner. Clinical.
 
-The noise was different from the first goal. The first had been surprise — the joy of the unexpected. This was release. The away end didn't jump; it surged forward, bodies pressing against the low barrier, and Marcus had to put his arm across Aiden's chest to keep the boy from tipping over the rail.
+The noise was different from the first goal. The first had been surprise — the joy of the unexpected. This was release — bodies surging forward against the low barrier, Marcus bracing his arm across Aiden's chest to keep him from tipping over the rail.
 
 "2-1! 2-bloody-1!" Aiden was shouting, not at Marcus, not at anyone, just into the Carlisle night.
 
@@ -129,9 +129,9 @@ Walking out, Aiden was vibrating. Not metaphorically — physically vibrating, t
 
 "Your mum going to know this time?"
 
-The boy considered this. "Maybe. She'll say no if I ask permission. She'll be annoyed but not angry if I just go." He had the strategic mind of someone used to navigating a single parent's boundaries.
+He considered this. "Maybe. She'll say no if I ask permission. She'll be annoyed but not angry if I just go." He had the strategic mind of someone used to navigating a single parent's boundaries.
 
-"Give her my number," Marcus said, and then thought about how that sounded, a forty-three-year-old man offering his number to a thirteen-year-old boy. But the away end was different. The away end was the place where the normal rules compressed into simpler ones: we're here, we're together, we look after our own. "For the trains," he added. "In case she wants to know there's an adult."
+"Give her my number," Marcus said, and then thought about how that sounded, a forty-three-year-old man offering his number to a thirteen-year-old boy. But this was different. Here, normal rules compressed into simpler ones: we're here, we're together, we look after our own. "For the trains," he added. "In case she wants to know there's an adult."
 
 Aiden typed the number into his phone without ceremony.
 
@@ -147,7 +147,7 @@ They walked to the station in the rain, which hadn't stopped and showed no signs
 
 "All of it. The train, and the ground, and not knowing if you'll win, and then — " He gestured, a broad sweep that seemed to encompass the goal, the noise, the rain, the night, Carlisle, everything.
 
-Marcus thought about this. He thought about his granddad hoisting him onto his shoulders at Upton Park. He thought about Sarah packing her boxes with the calm efficiency of someone who'd already moved out in her mind weeks ago. He thought about the therapist's office with its neutral paintings and the word "activities" deployed like it was a medical intervention.
+Marcus watched the steam rise from his tea. His granddad hoisting him onto his shoulders at Upton Park — the smell of tobacco and Bovril, the roar landing on him like a wave. Sarah packing her boxes with the calm efficiency of someone who'd already moved out in her mind weeks ago. The therapist's office with its neutral paintings and the word "activities" deployed like it was a medical intervention.
 
 "No," he said. "But the times it does are the ones you remember."
 
@@ -157,7 +157,7 @@ He watched the dark country slide past the window — shapes of hills, the occas
 
 Not happiness, exactly. Something more structural. The feeling that the architecture of a life includes other people, and that the absence of one person doesn't demolish the building. It just means there's a room you don't go into for a while.
 
-The boy slept. The train moved south. The rain continued, indifferent to all of it.
+Aiden slept. The train moved south. The rain continued, indifferent to all of it.
 
 At Euston, Aiden woke with the confused blinking of someone reassembling their surroundings. "We're back?"
 
@@ -169,11 +169,11 @@ They stood on the concourse under the departure board, two people about to diver
 
 "Gillingham," Marcus confirmed.
 
-The boy turned to go, then stopped. "Thanks for the tea."
+He turned to go, then stopped. "Thanks for the tea."
 
 "Anytime."
 
-He watched Aiden walk toward the Victoria line entrance, hands in his pockets, Orient scarf trailing. The boy didn't look back. He didn't need to. He'd be at Gillingham. Marcus knew this the way you know certain things about people — not from what they say but from the way they stand in the rain for ninety minutes and call it good.
+He watched Aiden walk toward the Victoria line entrance, hands in his pockets, Orient scarf trailing. Aiden didn't look back. Didn't need to. He'd be at Gillingham. Marcus knew this the way you know certain things about people — not from what they say but from the way they stand in the rain for ninety minutes and call it good.
 
 Marcus took the Central line home. His flat was dark and quiet and still held the ghost geometry of furniture that wasn't there anymore — the bookshelf that had been hers, the empty rectangle on the wall where the print had hung. He put the kettle on. He checked the League Two table on his phone. Orient had moved up one place, to fourteenth.
 
@@ -185,4 +185,4 @@ Dave replied immediately: *Course I did. Gillingham?*
 
 He drank his tea and went to bed. Outside, London rain — the thin, administrative kind — tapped against the window. He'd set his alarm for the morning. He'd go to work. He'd come home. And on Saturday week, he'd get on another train, and stand in another away end, and feel the thing that Aiden had felt for the first time and that he was feeling again after years of forgetting it was there.
 
-The ball was round. The goals were the same size. And sometimes that was enough.
+The ball was round. The goals were the same size. Sometimes that was enough.
