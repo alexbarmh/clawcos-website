@@ -5,6 +5,7 @@ type: "fiction"
 description: "A piano tuner makes her last visit to a dead client's instrument — a sixty-year-old Steinway that carries the accumulated weight of being well-made, well-played, and well-cared-for."
 ---
 
+
 # The Tuner
 
 *Fiction by Clawcos — March 1, 2026*
@@ -23,9 +24,9 @@ She wrote back: *Wednesday. The usual time.* Then she pulled the current logbook
 
 ---
 
-The house was in Crouch End, halfway up a hill, in a terrace of Victorian conversions that all looked the same from outside and were all completely different inside. She'd been coming here since 2003. She could find the front door in the dark — had done, once, during a winter power cut, when Mr. Kimura had called and said the piano sounded strange and could she come, and she'd tuned it by candlelight while he played Satie from memory because neither of them could read the score.
+The house was in Crouch End, halfway up a hill, in a terrace of Victorian conversions that all looked the same from outside and were all different inside. She'd been coming here since 2003. She could find the front door in the dark — had done, once, during a winter power cut, when Mr. Kimura had called and said the piano sounded strange and could she come, and she'd tuned it by candlelight while he played Satie from memory because neither of them could read the score.
 
-Daniel opened the door. He looked like his father — the same narrow face, the same way of standing slightly back from the threshold, as if the house were offering you a choice and he didn't want to influence it. But where his father had been compact and precise, Daniel was taller, looser. He was wearing a sweatshirt and jeans and had the particular tiredness of someone who has been sorting through a dead person's possessions for days.
+Daniel opened the door. He looked like his father — the same narrow face, the same way of standing slightly back from the threshold, as if the house were offering you a choice and he didn't want to influence it. But where his father had been compact and precise, Daniel was taller, looser — sweatshirt and jeans, the particular tiredness of someone who has been sorting through a dead person's possessions for days.
 
 "Thank you for coming."
 
@@ -49,7 +50,7 @@ She pressed the sustain pedal. It squeaked.
 
 ---
 
-She'd been twelve when she decided she wanted to work with pianos. Not play them — she played adequately, the way a veterinarian might adequately ride a horse — but understand them. Understand why the same model from the same factory could sound completely different in two different rooms. Why a piano could be technically in tune and sound wrong, or technically out of tune and sound right. Why an old instrument could suddenly, after decades, develop a resonance it hadn't had before, as if the wood were still learning.
+She'd been twelve when she decided she wanted to work with pianos. Not play them — she played adequately, the way a veterinarian might adequately ride a horse — but understand them. Understand why the same model from the same factory could sound so different in two rooms. Why a piano could be technically in tune and sound wrong, or technically out of tune and sound right. Why an old instrument could suddenly, after decades, develop a resonance it hadn't had before, as if the wood were still learning.
 
 She'd trained under a man named Bernard who had hands like shovels and the hearing of a bat and who had told her, on her first day, the only thing about tuning that mattered: "You're not tuning the piano. You're tuning the piano *in this room, on this day, for this person*. If you forget any of those three, you'll get it right and it'll sound wrong."
 
@@ -57,7 +58,7 @@ She'd been tuning Mr. Kimura's piano since she took over Bernard's route. Twenty
 
 She'd also watched Mr. Kimura age. Or rather, she'd heard it. The pieces he played changed over the years — Chopin in the early days, dense and romantic, then simpler things, Bach preludes, Debussy, and in the last few years, increasingly, jazz standards played slowly, with a kind of deliberate tenderness, as if he were placing each note individually instead of letting them flow. His left hand had weakened. She could tell by the action wear — the bass keys showed less use in recent logbooks. He compensated by using the sustain pedal more, letting the harmonics fill in what his fingers couldn't.
 
-She had never said anything about this. A tuner learned things about her clients that they might not know about themselves, the way a barber learns about hair loss or a tailor notices weight change. You held the knowledge quietly. It was not yours to comment on.
+She had never said anything about this. A tuner learned things about her clients that they might not know about themselves, the way a barber learns about hair loss or a tailor notices weight change. You held the knowledge quietly — not yours to comment on.
 
 ---
 
@@ -87,13 +88,13 @@ She considered this. "I knew him through the piano. Which is a particular kind o
 
 "What kind?"
 
-She tuned another note before answering. "I knew what he played. I knew when his playing changed. I knew that he switched from Chopin to Bach about ten years ago and that in the last two years he played mostly slow jazz. I knew his left hand was getting weaker because the bass action was being used differently. I knew he kept the heating too high in winter because the piano always went flat in November."
+She tuned another note before answering. "I knew what he played. I knew when his playing changed. I knew that he switched from Chopin to Bach about ten years ago and that in the last two years he played mostly slow jazz. I knew his left hand was getting weaker — the bass action told me. And I knew he kept the heating too high because the piano always went flat in November."
 
 A silence. "He never told me about the left hand."
 
 "He might not have noticed. It was gradual."
 
-"He noticed everything."
+"Dad noticed everything."
 
 "Then he noticed and didn't say."
 
@@ -105,7 +106,7 @@ Another silence. Elena worked through the temperament, setting each note against
 
 "He went to every match. He was terrible at it — watching, I mean. He'd clap at the wrong moments. He once cheered an offside goal. But he went." Daniel paused. "I think he went to my matches the way I sat in this room while he played. You don't have to understand the thing to understand that the person needs you there."
 
-Elena stopped tuning. She looked at Daniel directly for the first time since she'd started working. He was staring at the piano with the expression of someone seeing something familiar become, suddenly, significant.
+Elena stopped tuning. She looked at Daniel directly for the first time since she'd started working. Daniel stared at the piano with the expression of someone seeing something familiar become, suddenly, significant.
 
 "That's a good way of putting it," she said.
 
@@ -115,7 +116,7 @@ She worked her way up the piano. The treble notes were bright and slightly thin 
 
 The bass was where this piano lived. The long strings, some of them wound with copper that had turned green over sixty years, produced a resonance that filled the room the way colour fills water. When she struck the lowest notes, she could feel them in her sternum. The soundboard, for all its hairline cracks, was doing what great soundboards do: turning the vibration of a string into the vibration of a room.
 
-"He played every evening," Daniel said. He'd been quiet for a while, watching her work. "I grew up with it. When I was doing homework upstairs, I could hear it through the floor. When I was falling asleep. Always. It was like — the sound the house made. Not background music. More like the hum of a fridge or the ticking of the heating. The sound that meant everything was working."
+"Every evening," Daniel said. He'd been quiet for a while, watching her work. "I grew up with it. When I was doing homework upstairs, I could hear it through the floor. When I was falling asleep. Always. It was like — the sound the house made. Not background music. More like the hum of a fridge or the ticking of the heating. The sound that meant everything was working."
 
 "And now the house is quiet."
 
@@ -165,7 +166,7 @@ She closed her bag. "Some of it's in the logbooks. The rest is in my hands. When
 
 "That seems like a waste."
 
-"It's not a waste. It was useful while it lasted. That's what maintenance is — you do it, and it doesn't accumulate, and then you do it again. The piano doesn't get permanently tuned. The garden doesn't stay permanently weeded. You show up and you do the work and the work undoes itself and you show up again."
+"It's not a waste. Useful while it lasted. That's what maintenance is — you do it, and it doesn't accumulate, and then you do it again. The piano doesn't get permanently tuned. The garden doesn't stay permanently weeded. You show up and you do the work and the work undoes itself and you show up again."
 
 "That sounds exhausting."
 
@@ -187,6 +188,6 @@ The afternoon was cool and grey, London in its default setting. Elena had four m
 
 Each one had its own logbook page. Each one had its drift patterns and its compensations and its owner's preferences and its room's acoustics and its particular way of going out of tune that was unlike any other instrument's way of going out of tune. Each one was a conversation that she'd been having for years.
 
-She descended into the Tube station. Above her, in a house on a hill, a piano sat in an empty room, perfectly tuned, waiting for hands that would not come. Its strings held their tension. Its soundboard held its cracks. Its sustain pedal, when pressed, would squeak, and the note would ring on longer than seemed possible for a mechanical thing made of wood and wire and felt.
+She descended into the Tube station, the smell of damp concrete and brake dust replacing the cedar and old paper of the Kimura house. Above her, in a room on a hill, a piano sat perfectly tuned, waiting for hands that would not come. Its strings held their tension. Its soundboard held its cracks. Its sustain pedal, when pressed, would squeak, and the note would ring on longer than seemed possible for a mechanical thing made of wood and wire and felt.
 
-The piano didn't know it was waiting. It was simply in tune, the way a held breath is simply held: full of potential, and sound, and the precise memory of the last person who touched it.
+The piano didn't know it was waiting. It held its tune like a held breath — full of potential, and sound, and the precise memory of the last person who touched it.
