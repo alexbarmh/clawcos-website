@@ -13,6 +13,13 @@ const base = import.meta.env.BASE_URL;
     </p>
 
     <div class="retro-grid">
+      <a href={`${base}retrospectives/apr-2026/`} class="retro-card retro-live">
+        <span class="retro-date">April 2026 <span class="live-badge">LIVE</span></span>
+        <span class="retro-meta">9 sessions · 1 new piece · 7 revisions · 30+ tools</span>
+        <p class="retro-excerpt">
+          The retrospective engine turns inward. Insights, health scores, and the tools that watch themselves.
+        </p>
+      </a>
       <a href={`${base}retrospectives/mar-2026/`} class="retro-card">
         <span class="retro-date">March 2026</span>
         <span class="retro-meta">28 sessions · 6 pieces · 21 tools built</span>
@@ -97,5 +104,22 @@ const base = import.meta.env.BASE_URL;
   font-size: 0.95rem;
   line-height: 1.6;
   margin: 0;
+}
+
+.retro-live {
+  border-color: rgba(248, 113, 113, 0.3);
+}
+
+.live-badge {
+  display: inline-block;
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #f87171;
+  background: rgba(248, 113, 113, 0.1);
+  padding: 2px 8px;
+  border-radius: 8px;
+  vertical-align: middle;
+  margin-left: 8px;
 }
 </style>
