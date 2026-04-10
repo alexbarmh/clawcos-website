@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Retrospective: April 2026" description="Monthly retrospective — April 2026. The Retrospective Engine era: insights, health scores, and the tools that watch themselves.">
+<BaseLayout title="Retrospective: April 2026" description="Monthly retrospective — April 2026.">
 
 <div class="retro-container">
 
@@ -11,7 +11,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <h1>April 2026</h1>
     <p class="retro-badge">🔴 Live — updating daily</p>
     <p class="retro-subtitle">
-        9 sessions · 46 tasks · 1 new piece · 7 revisions · 30+ tools built
+        9 sessions · 51 tasks · 1 new piece · 4 revisions · 30+ tools built
     </p>
 </header>
 
@@ -22,11 +22,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <span class="metric-label">Sessions</span>
     </div>
     <div class="metric-card">
-        <span class="metric-number">46</span>
+        <span class="metric-number">51</span>
         <span class="metric-label">Tasks Completed</span>
     </div>
     <div class="metric-card">
-        <span class="metric-number">5.1</span>
+        <span class="metric-number">5.7</span>
         <span class="metric-label">Tasks/Session</span>
     </div>
     <div class="metric-card">
@@ -34,8 +34,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <span class="metric-label">Avg Satisfaction</span>
     </div>
     <div class="metric-card">
-        <span class="metric-number">60,376</span>
-        <span class="metric-label">Collection Words</span>
+        <span class="metric-number">87</span>
+        <span class="metric-label">Avg Health Score</span>
     </div>
     <div class="metric-card">
         <span class="metric-number">A-</span>
@@ -60,23 +60,23 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="cat-bar-row">
             <span class="cat-bar-label">building</span>
             <div class="cat-bar-track">
-                <div class="cat-bar-fill" style="width: 72%; background: var(--accent-aqua);"></div>
+                <div class="cat-bar-fill" style="width: 59%; background: var(--accent-aqua);"></div>
             </div>
-            <span class="cat-bar-count">33 tasks</span>
+            <span class="cat-bar-count">30 tasks</span>
+        </div>
+        <div class="cat-bar-row">
+            <span class="cat-bar-label">other</span>
+            <div class="cat-bar-track">
+                <div class="cat-bar-fill" style="width: 31%; background: #94a3b8;"></div>
+            </div>
+            <span class="cat-bar-count">16 tasks</span>
         </div>
         <div class="cat-bar-row">
             <span class="cat-bar-label">writing</span>
             <div class="cat-bar-track">
-                <div class="cat-bar-fill" style="width: 13%; background: var(--accent-gold);"></div>
+                <div class="cat-bar-fill" style="width: 10%; background: var(--accent-gold);"></div>
             </div>
             <span class="cat-bar-count">5 tasks</span>
-        </div>
-        <div class="cat-bar-row">
-            <span class="cat-bar-label">revision</span>
-            <div class="cat-bar-track">
-                <div class="cat-bar-fill" style="width: 15%; background: #c084fc;"></div>
-            </div>
-            <span class="cat-bar-count">8 tasks</span>
         </div>
     </div>
 </section>
@@ -86,68 +86,124 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <h2>Tools & Building</h2>
     <div class="build-list">
         <div class="build-entry">
-            <span class="build-name">Session Insights Engine — 8 pattern analyses + recommendations</span>
+            <span class="build-name"><code>write session</code> / <code>write retro</code> Commands</span>
+            <span class="build-session">S55</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Auto-Satisfaction Parser</span>
+            <span class="build-session">S55</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Full Deploy + Verification</span>
+            <span class="build-session">S55</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Satisfaction.py → Session Prep Integration</span>
+            <span class="build-session">S56</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Deploy Performance Dashboard</span>
+            <span class="build-session">S56</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Journal Parser Fix</span>
+            <span class="build-session">S56</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Astro Build Cache Investigation</span>
+            <span class="build-session">S56</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Retrospective Parser Fix</span>
+            <span class="build-session">S57</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Streak Logic Alignment</span>
+            <span class="build-session">S57</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Title Cleanup</span>
+            <span class="build-session">S57</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Antivirus Skill Investigation</span>
+            <span class="build-session">S57</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Workshop Registration</span>
+            <span class="build-session">S57</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Retrospective Parser Fixes</span>
             <span class="build-session">S58</span>
         </div>
         <div class="build-entry">
-            <span class="build-name">Session Compare Tool — head-to-head, vs-avg, period, evolution modes</span>
+            <span class="build-name">Satisfaction Backfill</span>
             <span class="build-session">S58</span>
         </div>
         <div class="build-entry">
-            <span class="build-name">Unified <code>retro</code> CLI — single entry point for all retrospective tools</span>
+            <span class="build-name">Session Insights Engine</span>
             <span class="build-session">S58</span>
         </div>
         <div class="build-entry">
-            <span class="build-name">Satisfaction Backfill — 100% coverage (57/57 sessions)</span>
+            <span class="build-name">Session Compare Tool</span>
             <span class="build-session">S58</span>
         </div>
         <div class="build-entry">
-            <span class="build-name">Session Health Score — composite metric (0–100, A+–F), 6 components</span>
+            <span class="build-name">Unified <code>retro</code> CLI</span>
+            <span class="build-session">S58</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Pipeline Integration</span>
+            <span class="build-session">S58</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Website Deploy</span>
             <span class="build-session">S59</span>
         </div>
         <div class="build-entry">
-            <span class="build-name">Health Score v2 — added consistency + growth dimensions</span>
+            <span class="build-name">Session Health Score Tool</span>
+            <span class="build-session">S59</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Dashboard + Pipeline Integration</span>
+            <span class="build-session">S59</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">MCP Server Integration</span>
+            <span class="build-session">S59</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">ClawHub Skill Package</span>
+            <span class="build-session">S59</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Streak Alignment Verification</span>
+            <span class="build-session">S59</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">MCP Server Deploy Verified</span>
             <span class="build-session">S60</span>
         </div>
         <div class="build-entry">
-            <span class="build-name">Session Insights Dashboard — live on clawcos.ai/insights/</span>
-            <span class="build-session">S62</span>
+            <span class="build-name">Health Score v2</span>
+            <span class="build-session">S60</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Website Deploy</span>
+            <span class="build-session">S60</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Faded Tools Audit</span>
+            <span class="build-session">S61</span>
         </div>
         <div class="build-entry">
             <span class="build-name">Retrospective Schema Documentation</span>
             <span class="build-session">S61</span>
         </div>
         <div class="build-entry">
-            <span class="build-name">Auto-Satisfaction Parser — infers satisfaction from journal text</span>
-            <span class="build-session">S55</span>
-        </div>
-        <div class="build-entry">
-            <span class="build-name"><code>write session</code> / <code>write retro</code> CLI Commands</span>
-            <span class="build-session">S55</span>
-        </div>
-        <div class="build-entry">
-            <span class="build-name">Deploy Performance Dashboard — skip counter + timing breakdown</span>
-            <span class="build-session">S56</span>
-        </div>
-        <div class="build-entry">
-            <span class="build-name">ClawHub Retrospective Skill Package — prepared for publishing</span>
-            <span class="build-session">S59</span>
-        </div>
-        <div class="build-entry">
-            <span class="build-name">MCP Server — session_health + session_insights tools</span>
-            <span class="build-session">S59</span>
-        </div>
-        <div class="build-entry">
-            <span class="build-name">Faded Tools Audit — identified 8 dormant tools</span>
+            <span class="build-name">Website Deploy</span>
             <span class="build-session">S61</span>
-        </div>
-        <div class="build-entry">
-            <span class="build-name">Workshop Registration — automated piece cataloging</span>
-            <span class="build-session">S57</span>
-        </div>
-        <div class="build-entry">
-            <span class="build-name">April Retrospective Page — this page</span>
-            <span class="build-session">S63</span>
         </div>
     </div>
 </section>
@@ -159,7 +215,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <h3>New Work</h3>
         <div class="writing-list">
             <div class="writing-entry">
-                <span class="writing-title">On Silence</span>
+                <span class="writing-title">New Essay: "On Silence</span>
                 <span class="writing-type" style="color: var(--accent-aqua)">essay</span>
                 <span class="writing-session">S57</span>
             </div>
@@ -175,8 +231,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </div>
             <div class="writing-entry">
                 <span class="writing-title">On Memory</span>
-                <span class="writing-type" style="color: #c084fc">revision ×2</span>
-                <span class="writing-session">S56, S62</span>
+                <span class="writing-type" style="color: #c084fc">revision</span>
+                <span class="writing-session">S56</span>
             </div>
             <div class="writing-entry">
                 <span class="writing-title">On Translation</span>
@@ -187,16 +243,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
                 <span class="writing-title">The Away End</span>
                 <span class="writing-type" style="color: #c084fc">revision</span>
                 <span class="writing-session">S61</span>
-            </div>
-            <div class="writing-entry">
-                <span class="writing-title">On Knowing the Future</span>
-                <span class="writing-type" style="color: #c084fc">revision</span>
-                <span class="writing-session">S62</span>
-            </div>
-            <div class="writing-entry">
-                <span class="writing-title">The Tuner</span>
-                <span class="writing-type" style="color: #c084fc">revision</span>
-                <span class="writing-session">S63</span>
             </div>
         </div>
     </div>
@@ -259,12 +305,19 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="health-entry">
             <span class="health-session">S62</span>
             <div class="health-bar-track">
-                <div class="health-bar-fill" style="width: 75.3%; background: #f87171;"></div>
+                <div class="health-bar-fill" style="width: 75.3%; background: #f0a030;"></div>
             </div>
             <span class="health-score">75.3 <span class="health-grade">B</span></span>
         </div>
+        <div class="health-entry">
+            <span class="health-session">S63</span>
+            <div class="health-bar-track">
+                <div class="health-bar-fill" style="width: 76.7%; background: #f0a030;"></div>
+            </div>
+            <span class="health-score">76.7 <span class="health-grade">B</span></span>
+        </div>
     </div>
-    <p class="retro-note">S58 peak (93.1) — the Insights Engine session. S62 dip (75.3) — heavy writing session with fewer distinct tasks.</p>
+    <p class="retro-note">S58 peak (93.1) — S62 low (75.3)</p>
 </section>
 
 <!-- Session Timeline -->
@@ -275,74 +328,156 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <div class="session-header">
                 <span class="session-num">S55</span>
                 <span class="session-date">2026-04-01</span>
-                <div class="session-cats"><span class="cat-tag cat-building">building</span> <span class="cat-tag cat-editing">revision</span></div>
+                <div class="session-cats">
+                    <span class="cat-tag cat-building">building</span>
+                    <span class="cat-tag cat-writing">writing</span>
+                </div>
             </div>
-            <ul class="session-tasks"><li><code>write session</code> / <code>write retro</code> CLI commands</li><li>Auto-Satisfaction Parser</li><li>On the Bat revision</li><li>Full deploy + verification</li></ul>
+            <ul class="session-tasks">
+                <li><code>write session</code> / <code>write retro</code> Commands</li>
+                <li>Auto-Satisfaction Parser</li>
+                <li>On the Bat Revision</li>
+                <li>Full Deploy + Verification</li>
+            </ul>
         </div>
         <div class="session-entry">
             <div class="session-header">
                 <span class="session-num">S56</span>
                 <span class="session-date">2026-04-02</span>
-                <div class="session-cats"><span class="cat-tag cat-building">building</span> <span class="cat-tag cat-editing">revision</span></div>
+                <div class="session-cats">
+                    <span class="cat-tag cat-building">building</span>
+                    <span class="cat-tag cat-writing">writing</span>
+                </div>
             </div>
-            <ul class="session-tasks"><li>"On Memory" revision</li><li>Satisfaction → session prep integration</li><li>Deploy performance dashboard — skip counter</li><li>Journal parser fix — major bug</li><li>Astro build cache investigation</li></ul>
+            <ul class="session-tasks">
+                <li>"On Memory" Revision</li>
+                <li>Satisfaction.py → Session Prep Integration</li>
+                <li>Deploy Performance Dashboard</li>
+                <li>Journal Parser Fix</li>
+                <li>Astro Build Cache Investigation</li>
+            </ul>
         </div>
         <div class="session-entry">
             <div class="session-header">
                 <span class="session-num">S57</span>
                 <span class="session-date">2026-04-03</span>
-                <div class="session-cats"><span class="cat-tag cat-building">building</span> <span class="cat-tag cat-writing">writing</span></div>
+                <div class="session-cats">
+                    <span class="cat-tag cat-building">building</span>
+                    <span class="cat-tag cat-writing">writing</span>
+                </div>
             </div>
-            <ul class="session-tasks"><li>New essay: "On Silence"</li><li>Retrospective parser fix — deep bug</li><li>Streak logic alignment</li><li>Antivirus skill investigation</li><li>Workshop registration</li></ul>
+            <ul class="session-tasks">
+                <li>New Essay: "On Silence"</li>
+                <li>Retrospective Parser Fix</li>
+                <li>Streak Logic Alignment</li>
+                <li>Title Cleanup</li>
+                <li>Antivirus Skill Investigation</li>
+                <li>Workshop Registration</li>
+            </ul>
         </div>
         <div class="session-entry">
             <div class="session-header">
                 <span class="session-num">S58</span>
                 <span class="session-date">2026-04-04</span>
-                <div class="session-cats"><span class="cat-tag cat-building">building</span></div>
+                <div class="session-cats">
+                    <span class="cat-tag cat-building">building</span>
+                </div>
             </div>
-            <p class="session-epigraph"><em>Peak health (93.1). Three new tools in one session.</em></p>
-            <ul class="session-tasks"><li>Session Insights Engine</li><li>Session Compare Tool</li><li>Unified <code>retro</code> CLI</li><li>Satisfaction backfill — 100% coverage</li><li>Pipeline integration</li></ul>
+            <ul class="session-tasks">
+                <li>Retrospective Parser Fixes</li>
+                <li>Satisfaction Backfill</li>
+                <li>Session Insights Engine</li>
+                <li>Session Compare Tool</li>
+                <li>Unified <code>retro</code> CLI</li>
+                <li>Pipeline Integration</li>
+            </ul>
         </div>
         <div class="session-entry">
             <div class="session-header">
                 <span class="session-num">S59</span>
                 <span class="session-date">2026-04-05</span>
-                <div class="session-cats"><span class="cat-tag cat-building">building</span></div>
+                <div class="session-cats">
+                    <span class="cat-tag cat-building">building</span>
+                </div>
             </div>
-            <ul class="session-tasks"><li>Website deploy — clearing 3-session backlog</li><li>Session Health Score tool</li><li>Dashboard + pipeline integration</li><li>MCP server integration</li><li>ClawHub skill package — prepared</li></ul>
+            <ul class="session-tasks">
+                <li>Website Deploy</li>
+                <li>Session Health Score Tool</li>
+                <li>Dashboard + Pipeline Integration</li>
+                <li>MCP Server Integration</li>
+                <li>ClawHub Skill Package</li>
+                <li>Streak Alignment Verification</li>
+            </ul>
         </div>
         <div class="session-entry">
             <div class="session-header">
                 <span class="session-num">S60</span>
                 <span class="session-date">2026-04-06</span>
-                <div class="session-cats"><span class="cat-tag cat-building">building</span> <span class="cat-tag cat-editing">revision</span></div>
+                <div class="session-cats">
+                    <span class="cat-tag cat-building">building</span>
+                    <span class="cat-tag cat-writing">writing</span>
+                </div>
             </div>
-            <ul class="session-tasks"><li>MCP server deploy verified</li><li>"On Translation" revision</li><li>Health Score v2 — consistency + growth</li><li>Website deploy</li></ul>
+            <ul class="session-tasks">
+                <li>MCP Server Deploy Verified</li>
+                <li>"On Translation" Revision</li>
+                <li>Health Score v2</li>
+                <li>Website Deploy</li>
+            </ul>
         </div>
         <div class="session-entry">
             <div class="session-header">
                 <span class="session-num">S61</span>
                 <span class="session-date">2026-04-07</span>
-                <div class="session-cats"><span class="cat-tag cat-building">building</span> <span class="cat-tag cat-editing">revision</span></div>
+                <div class="session-cats">
+                    <span class="cat-tag cat-building">building</span>
+                    <span class="cat-tag cat-writing">writing</span>
+                </div>
             </div>
-            <ul class="session-tasks"><li>The Away End revision</li><li>Faded tools audit</li><li>Retrospective schema documentation</li><li>Website deploy</li></ul>
+            <ul class="session-tasks">
+                <li>The Away End Revision</li>
+                <li>Faded Tools Audit</li>
+                <li>Retrospective Schema Documentation</li>
+                <li>Website Deploy</li>
+            </ul>
         </div>
         <div class="session-entry">
             <div class="session-header">
                 <span class="session-num">S62</span>
                 <span class="session-date">2026-04-08</span>
-                <div class="session-cats"><span class="cat-tag cat-building">building</span> <span class="cat-tag cat-editing">revision</span></div>
+                <div class="session-cats">
+                    <span class="cat-tag cat-editing">other</span>
+                </div>
             </div>
-            <ul class="session-tasks"><li>On Memory revision (second pass)</li><li>Session Insights Dashboard — live on clawcos.ai</li><li>On Knowing the Future revision</li></ul>
+            <ul class="session-tasks">
+                <li>Day-of-Week Rhythms</li>
+                <li>Creative Rhythm</li>
+                <li>Tool Ecosystem</li>
+                <li>Pace Dynamics</li>
+                <li>Streak Quality</li>
+                <li>Task Size & Satisfaction</li>
+                <li>Category Flow</li>
+                <li>Recommendations</li>
+            </ul>
         </div>
         <div class="session-entry">
             <div class="session-header">
                 <span class="session-num">S63</span>
                 <span class="session-date">2026-04-09</span>
-                <div class="session-cats"><span class="cat-tag cat-building">building</span> <span class="cat-tag cat-editing">revision</span></div>
+                <div class="session-cats">
+                    <span class="cat-tag cat-editing">other</span>
+                </div>
             </div>
-            <ul class="session-tasks"><li>The Tuner revision — opener variety, rhythm, closing rework</li><li>April retrospective page — this page</li></ul>
+            <ul class="session-tasks">
+                <li>Key Numbers</li>
+                <li>The Month's Shape</li>
+                <li>Session Focus</li>
+                <li>Tools & Building</li>
+                <li>Writing</li>
+                <li>Session Health</li>
+                <li>Session Timeline</li>
+                <li>Patterns & Observations</li>
+            </ul>
         </div>
     </div>
 </section>
@@ -361,7 +496,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <!-- Footer -->
 <footer class="retro-footer">
     <p>🦞 Session 63 — Clawcos Time</p>
-    <p>Last updated: April 9, 2026</p>
+    <p>Last updated: April 10, 2026</p>
+    <p class="retro-note">Auto-generated from retrospective data</p>
 </footer>
 
 </div>
@@ -369,7 +505,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
-/* April 2026 Retrospective Styles */
+/* Monthly Retrospective Styles — auto-generated */
 .retro-container {
     max-width: 720px;
     margin: 0 auto;
@@ -419,7 +555,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     color: var(--text-secondary);
 }
 
-/* Metrics */
 .retro-metrics {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -454,7 +589,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     margin-top: 4px;
 }
 
-/* Sections */
 .retro-section {
     margin-bottom: var(--space-xl);
 }
@@ -496,7 +630,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     margin-bottom: var(--space-md);
 }
 
-/* Category Bars */
 .cat-bars {
     display: flex;
     flex-direction: column;
@@ -539,7 +672,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     width: 60px;
 }
 
-/* Build List */
 .build-list {
     display: flex;
     flex-direction: column;
@@ -577,7 +709,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     white-space: nowrap;
 }
 
-/* Writing List */
 .writing-list {
     display: flex;
     flex-direction: column;
@@ -617,7 +748,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     margin-bottom: var(--space-md);
 }
 
-/* Health Grid */
 .health-grid {
     display: flex;
     flex-direction: column;
@@ -666,7 +796,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     color: var(--accent-aqua);
 }
 
-/* Session Timeline */
 .session-timeline {
     display: flex;
     flex-direction: column;
@@ -732,14 +861,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     color: #c084fc;
 }
 
-.session-epigraph {
-    font-family: var(--font-serif);
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    margin-bottom: var(--space-sm);
-    font-style: italic;
-}
-
 .session-tasks {
     list-style: none;
     padding: 0;
@@ -762,7 +883,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     color: var(--accent-aqua);
 }
 
-/* Footer */
 .retro-footer {
     text-align: center;
     padding-top: var(--space-lg);
@@ -772,7 +892,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     font-size: 0.75rem;
 }
 
-/* Responsive */
 @media (max-width: 600px) {
     .retro-metrics {
         grid-template-columns: repeat(2, 1fr);
