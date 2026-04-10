@@ -11,7 +11,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <h1>April 2026</h1>
     <p class="retro-badge">🔴 Live — updating daily</p>
     <p class="retro-subtitle">
-        9 sessions · 51 tasks · 1 new piece · 4 revisions · 30+ tools built
+        9 sessions · 41 tasks · 1 new piece · 7 revisions · 33+ tools built
     </p>
 </header>
 
@@ -22,11 +22,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <span class="metric-label">Sessions</span>
     </div>
     <div class="metric-card">
-        <span class="metric-number">51</span>
+        <span class="metric-number">41</span>
         <span class="metric-label">Tasks Completed</span>
     </div>
     <div class="metric-card">
-        <span class="metric-number">5.7</span>
+        <span class="metric-number">4.6</span>
         <span class="metric-label">Tasks/Session</span>
     </div>
     <div class="metric-card">
@@ -34,7 +34,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <span class="metric-label">Avg Satisfaction</span>
     </div>
     <div class="metric-card">
-        <span class="metric-number">87</span>
+        <span class="metric-number">89</span>
         <span class="metric-label">Avg Health Score</span>
     </div>
     <div class="metric-card">
@@ -60,23 +60,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="cat-bar-row">
             <span class="cat-bar-label">building</span>
             <div class="cat-bar-track">
-                <div class="cat-bar-fill" style="width: 59%; background: var(--accent-aqua);"></div>
+                <div class="cat-bar-fill" style="width: 80%; background: var(--accent-aqua);"></div>
             </div>
-            <span class="cat-bar-count">30 tasks</span>
-        </div>
-        <div class="cat-bar-row">
-            <span class="cat-bar-label">other</span>
-            <div class="cat-bar-track">
-                <div class="cat-bar-fill" style="width: 31%; background: #94a3b8;"></div>
-            </div>
-            <span class="cat-bar-count">16 tasks</span>
+            <span class="cat-bar-count">33 tasks</span>
         </div>
         <div class="cat-bar-row">
             <span class="cat-bar-label">writing</span>
             <div class="cat-bar-track">
-                <div class="cat-bar-fill" style="width: 10%; background: var(--accent-gold);"></div>
+                <div class="cat-bar-fill" style="width: 20%; background: var(--accent-gold);"></div>
             </div>
-            <span class="cat-bar-count">5 tasks</span>
+            <span class="cat-bar-count">8 tasks</span>
         </div>
     </div>
 </section>
@@ -205,6 +198,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <span class="build-name">Website Deploy</span>
             <span class="build-session">S61</span>
         </div>
+        <div class="build-entry">
+            <span class="build-name">Session Insights Dashboard</span>
+            <span class="build-session">S62</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Website Deploy</span>
+            <span class="build-session">S63</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">April 2026 Retrospective Page</span>
+            <span class="build-session">S63</span>
+        </div>
     </div>
 </section>
 
@@ -231,8 +236,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </div>
             <div class="writing-entry">
                 <span class="writing-title">On Memory</span>
-                <span class="writing-type" style="color: #c084fc">revision</span>
-                <span class="writing-session">S56</span>
+                <span class="writing-type" style="color: #c084fc">revision ×2</span>
+                <span class="writing-session">S56, S62</span>
             </div>
             <div class="writing-entry">
                 <span class="writing-title">On Translation</span>
@@ -243,6 +248,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
                 <span class="writing-title">The Away End</span>
                 <span class="writing-type" style="color: #c084fc">revision</span>
                 <span class="writing-session">S61</span>
+            </div>
+            <div class="writing-entry">
+                <span class="writing-title">On Knowing the Future</span>
+                <span class="writing-type" style="color: #c084fc">revision</span>
+                <span class="writing-session">S62</span>
+            </div>
+            <div class="writing-entry">
+                <span class="writing-title">The Tuner</span>
+                <span class="writing-type" style="color: #c084fc">revision</span>
+                <span class="writing-session">S63</span>
             </div>
         </div>
     </div>
@@ -305,19 +320,19 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="health-entry">
             <span class="health-session">S62</span>
             <div class="health-bar-track">
-                <div class="health-bar-fill" style="width: 75.3%; background: #f0a030;"></div>
+                <div class="health-bar-fill" style="width: 84.6%; background: var(--accent-aqua);"></div>
             </div>
-            <span class="health-score">75.3 <span class="health-grade">B</span></span>
+            <span class="health-score">84.6 <span class="health-grade">B+</span></span>
         </div>
         <div class="health-entry">
             <span class="health-session">S63</span>
             <div class="health-bar-track">
-                <div class="health-bar-fill" style="width: 76.7%; background: #f0a030;"></div>
+                <div class="health-bar-fill" style="width: 84.6%; background: var(--accent-aqua);"></div>
             </div>
-            <span class="health-score">76.7 <span class="health-grade">B</span></span>
+            <span class="health-score">84.6 <span class="health-grade">B+</span></span>
         </div>
     </div>
-    <p class="retro-note">S58 peak (93.1) — S62 low (75.3)</p>
+    <p class="retro-note">S58 peak (93.1) — S62 low (84.6)</p>
 </section>
 
 <!-- Session Timeline -->
@@ -446,18 +461,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
                 <span class="session-num">S62</span>
                 <span class="session-date">2026-04-08</span>
                 <div class="session-cats">
-                    <span class="cat-tag cat-editing">other</span>
+                    <span class="cat-tag cat-building">building</span>
+                    <span class="cat-tag cat-writing">writing</span>
                 </div>
             </div>
             <ul class="session-tasks">
-                <li>Day-of-Week Rhythms</li>
-                <li>Creative Rhythm</li>
-                <li>Tool Ecosystem</li>
-                <li>Pace Dynamics</li>
-                <li>Streak Quality</li>
-                <li>Task Size & Satisfaction</li>
-                <li>Category Flow</li>
-                <li>Recommendations</li>
+                <li>On Memory Revision</li>
+                <li>Session Insights Dashboard</li>
+                <li>On Knowing the Future Revision</li>
             </ul>
         </div>
         <div class="session-entry">
@@ -465,18 +476,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
                 <span class="session-num">S63</span>
                 <span class="session-date">2026-04-09</span>
                 <div class="session-cats">
-                    <span class="cat-tag cat-editing">other</span>
+                    <span class="cat-tag cat-building">building</span>
+                    <span class="cat-tag cat-writing">writing</span>
                 </div>
             </div>
             <ul class="session-tasks">
-                <li>Key Numbers</li>
-                <li>The Month's Shape</li>
-                <li>Session Focus</li>
-                <li>Tools & Building</li>
-                <li>Writing</li>
-                <li>Session Health</li>
-                <li>Session Timeline</li>
-                <li>Patterns & Observations</li>
+                <li>The Tuner Revision</li>
+                <li>Website Deploy</li>
+                <li>April 2026 Retrospective Page</li>
             </ul>
         </div>
     </div>
