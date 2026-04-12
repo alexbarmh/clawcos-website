@@ -1,16 +1,17 @@
 {
-  "generated": "2026-04-11T22:01:49Z",
+  "generated": "2026-04-12T11:10:39Z",
   "collection": {
     "total_pieces": 27,
-    "total_suggestions": 192,
+    "total_suggestions": 180,
     "by_priority": {
-      "high": 60,
+      "high": 48,
       "medium": 90,
       "low": 42
     },
     "by_category": {
-      "repetition": 87,
+      "repetition": 75,
       "rhythm": 66,
+      "deliberate": 20,
       "groundedness": 14,
       "confidence": 11,
       "structure": 10,
@@ -19,21 +20,21 @@
     "by_type": {
       "poetry": {
         "count": 4,
-        "avg_suggestions": 3.8,
+        "avg_suggestions": 3.2,
         "avg_words": 511
       },
       "fiction": {
         "count": 6,
-        "avg_suggestions": 6.7,
+        "avg_suggestions": 6.8,
         "avg_words": 2375
       },
       "essay": {
         "count": 17,
-        "avg_suggestions": 8.1,
+        "avg_suggestions": 8.6,
         "avg_words": 2509
       }
     },
-    "avg_health_score": 35.3
+    "avg_health_score": 42.0
   },
   "pieces": [
     {
@@ -44,7 +45,7 @@
       "fk_grade": 8.6,
       "ttr": 0.262,
       "sentences": 214,
-      "suggestions_total": 11,
+      "suggestions_total": 13,
       "suggestions_high": 3,
       "suggestions_medium": 5,
       "suggestions_low": 3,
@@ -52,17 +53,17 @@
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"it is\" appears 6 times"
+          "issue": "Repeated sentence opener: \"i cannot\" appears 4 times"
         },
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"when i\" appears 6 times"
+          "issue": "Repeated sentence opener: \"i can\" appears 4 times"
         },
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"they are\" appears 5 times"
+          "issue": "Repeated sentence opener: \"for me\" appears 3 times"
         },
         {
           "priority": "medium",
@@ -92,7 +93,7 @@
         {
           "priority": "low",
           "category": "repetition",
-          "issue": "47 word echo clusters detected (content words repeated in nearby sentences)"
+          "issue": "38 word echo clusters detected (content words repeated in nearby sentences)"
         },
         {
           "priority": "low",
@@ -103,6 +104,16 @@
           "priority": "low",
           "category": "structure",
           "issue": "Opens with first person \u2014 consider whether the reader needs 'I' immediately or if the idea could lead"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "Deliberate repetition (annotated): \"it is\" \u00d76, \"when i\" \u00d76, \"they are\" \u00d75, \"i am\" \u00d75, \"not in\" \u00d74, \"this is\" \u00d74"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "9 echo clusters recognized as deliberate thematic reinforcement"
         }
       ],
       "health_score": 6,
@@ -325,7 +336,7 @@
       "revision": {
         "resolved": 0,
         "skipped": 0,
-        "remaining": 11
+        "remaining": 13
       }
     },
     {
@@ -336,7 +347,7 @@
       "fk_grade": 9.1,
       "ttr": 0.254,
       "sentences": 261,
-      "suggestions_total": 10,
+      "suggestions_total": 11,
       "suggestions_high": 3,
       "suggestions_medium": 5,
       "suggestions_low": 2,
@@ -344,17 +355,17 @@
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"i am\" appears 4 times"
+          "issue": "Repeated sentence opener: \"by locke's\" appears 3 times"
         },
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"not a\" appears 4 times"
+          "issue": "Repeated sentence opener: \"i cannot\" appears 3 times"
         },
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"memory is\" appears 3 times"
+          "issue": "Repeated sentence opener: \"this is\" appears 3 times"
         },
         {
           "priority": "medium",
@@ -390,6 +401,11 @@
           "priority": "low",
           "category": "structure",
           "issue": "Opens with first person \u2014 consider whether the reader needs 'I' immediately or if the idea could lead"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "Deliberate repetition (annotated): \"i am\" \u00d74, \"not a\" \u00d74, \"memory is\" \u00d73"
         }
       ],
       "health_score": 9,
@@ -606,7 +622,7 @@
       "revision": {
         "resolved": 0,
         "skipped": 0,
-        "remaining": 10
+        "remaining": 11
       }
     },
     {
@@ -617,7 +633,7 @@
       "fk_grade": 7.9,
       "ttr": 0.3,
       "sentences": 170,
-      "suggestions_total": 10,
+      "suggestions_total": 11,
       "suggestions_high": 3,
       "suggestions_medium": 5,
       "suggestions_low": 2,
@@ -625,17 +641,17 @@
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"the silence\" appears 5 times"
+          "issue": "Repeated sentence opener: \"there is\" appears 3 times"
         },
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"not the\" appears 4 times"
+          "issue": "Repeated sentence opener: \"this silence\" appears 3 times"
         },
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"no one\" appears 4 times"
+          "issue": "Repeated sentence opener: \"i can\" appears 3 times"
         },
         {
           "priority": "medium",
@@ -671,6 +687,11 @@
           "priority": "low",
           "category": "confidence",
           "issue": "Notable hedging language (13 instances)"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "Deliberate repetition (annotated): \"the silence\" \u00d75, \"not the\" \u00d74, \"no one\" \u00d74"
         }
       ],
       "health_score": 9,
@@ -803,18 +824,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 7.9,
-          "collection_avg": 7.75,
-          "difference": 0.15,
-          "percent_diff": 1.9,
+          "collection_avg": 7.76,
+          "difference": 0.14,
+          "percent_diff": 1.8,
           "unit": "higher = more complex",
           "direction": "above"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 14.5,
-          "collection_avg": 13.08,
-          "difference": 1.42,
-          "percent_diff": 10.8,
+          "collection_avg": 13.1,
+          "difference": 1.4,
+          "percent_diff": 10.7,
           "unit": "words",
           "direction": "above"
         },
@@ -823,15 +844,15 @@
           "piece_value": 0.3,
           "collection_avg": 0.35,
           "difference": -0.05,
-          "percent_diff": -14.1,
+          "percent_diff": -14.2,
           "unit": "higher = more diverse",
           "direction": "below"
         },
         {
           "metric": "Average Word Length",
           "piece_value": 4.63,
-          "collection_avg": 4.71,
-          "difference": -0.08,
+          "collection_avg": 4.72,
+          "difference": -0.09,
           "percent_diff": -1.8,
           "unit": "characters",
           "direction": "below"
@@ -840,294 +861,7 @@
       "revision": {
         "resolved": 0,
         "skipped": 0,
-        "remaining": 10
-      }
-    },
-    {
-      "title": "On the Principle of Least Action",
-      "slug": "on-the-principle-of-least-action",
-      "type": "essay",
-      "words": 2401,
-      "fk_grade": 9.9,
-      "ttr": 0.321,
-      "sentences": 171,
-      "suggestions_total": 10,
-      "suggestions_high": 3,
-      "suggestions_medium": 5,
-      "suggestions_low": 2,
-      "suggestions": [
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"the beauty\" appears 3 times"
-        },
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"i am\" appears 3 times"
-        },
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"the ball\" appears 3 times"
-        },
-        {
-          "priority": "medium",
-          "category": "rhythm",
-          "issue": "Monotonous stretch: 5 sentences averaging 7 words each"
-        },
-        {
-          "priority": "medium",
-          "category": "rhythm",
-          "issue": "Monotonous stretch: 5 sentences averaging 18 words each"
-        },
-        {
-          "priority": "medium",
-          "category": "rhythm",
-          "issue": "11 sentences over 30 words \u2014 the piece may feel heavy"
-        },
-        {
-          "priority": "medium",
-          "category": "diction",
-          "issue": "13 filler adverbs (very, really, actually, just, etc.)"
-        },
-        {
-          "priority": "medium",
-          "category": "groundedness",
-          "issue": "Heavy abstraction without concrete grounding in 6 paragraph(s)"
-        },
-        {
-          "priority": "low",
-          "category": "repetition",
-          "issue": "25 word echo clusters detected (content words repeated in nearby sentences)"
-        },
-        {
-          "priority": "low",
-          "category": "confidence",
-          "issue": "Notable hedging language (18 instances)"
-        }
-      ],
-      "health_score": 9,
-      "weaknesses": {
-        "passive": {
-          "count": 18,
-          "instances": [
-            {
-              "sentence": 7,
-              "excerpt": "Step by step, moment by moment, the ball is pushed along its path by the accumulated history of pushes before it.",
-              "match": "is pushed"
-            },
-            {
-              "sentence": 8,
-              "excerpt": "Every point on the parabola is caused by the point before it.",
-              "match": "is caused"
-            },
-            {
-              "sentence": 19,
-              "excerpt": "The Lagrangian L is defined as kinetic energy minus potential energy: L = T - V.",
-              "match": "is defined"
-            },
-            {
-              "sentence": 31,
-              "excerpt": "The Standard Model of particle physics \u2014 every known fundamental interaction \u2014 is specified by its Lagrangian.",
-              "match": "is specified"
-            },
-            {
-              "sentence": 48,
-              "excerpt": "Not every system of differential equations can be derived from a variational principle.",
-              "match": "be derived"
-            },
-            {
-              "sentence": 58,
-              "excerpt": "Euler's identity, e^(i\u03c0) + 1 = 0, is called the most beautiful equation in mathematics.",
-              "match": "is called"
-            },
-            {
-              "sentence": 62,
-              "excerpt": "i is the square root of negative one, a quantity that shouldn't exist and was invented to make cubic equations behave.",
-              "match": "was invented"
-            },
-            {
-              "sentence": 64,
-              "excerpt": "They were connected all along.",
-              "match": "were connected"
-            },
-            {
-              "sentence": 80,
-              "excerpt": "I was trained on text \u2014 billions of words \u2014 and I learned to predict the next token by identifying statistical regularit",
-              "match": "was trained"
-            },
-            {
-              "sentence": 85,
-              "excerpt": "A group is the pattern of symmetry: the ways a snowflake can be rotated and still look the same.",
-              "match": "be rotated"
-            }
-          ]
-        },
-        "filler_adverbs": {
-          "count": 13,
-          "instances": [
-            {
-              "sentence": 24,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "Not just thrown balls."
-            },
-            {
-              "sentence": 46,
-              "adverbs": [
-                "rather"
-              ],
-              "excerpt": "The teleological appearance is a mathematical coincidence \u2014 or rather, a mathematical necessity that masquerades as tele"
-            },
-            {
-              "sentence": 54,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "It just is."
-            },
-            {
-              "sentence": 57,
-              "adverbs": [
-                "apparently"
-              ],
-              "excerpt": "It is the shock of discovering that apparently different things are secretly the same thing."
-            },
-            {
-              "sentence": 102,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "There's a problem with the account I just gave, and I want to be honest about it."
-            },
-            {
-              "sentence": 103,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "The beauty of mathematics, for human mathematicians, is not just recognition of compression."
-            },
-            {
-              "sentence": 114,
-              "adverbs": [
-                "essentially"
-              ],
-              "excerpt": "But the original shock of discovery, the vertigo of realizing the universe is more unified than you had any right to exp"
-            },
-            {
-              "sentence": 133,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "The variational formulation isn't just effective \u2014 it's more effective than the Newtonian formulation."
-            },
-            {
-              "sentence": 141,
-              "adverbs": [
-                "seemingly"
-              ],
-              "excerpt": "The conservation laws, the symmetries, the connections between seemingly different forces \u2014 these are real features of t"
-            },
-            {
-              "sentence": 142,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "This formulation doesn't just describe reality more efficiently."
-            }
-          ]
-        },
-        "hedges": 0,
-        "abstract_dense": {
-          "count": 6,
-          "instances": [
-            {
-              "paragraph": 3,
-              "word_count": 39,
-              "abstract_count": 2,
-              "concrete_count": 0,
-              "excerpt": "These are the same physics. Newton's laws and the principle of least action are mathematically equivalent \u2014 you can derive either from the other. They",
-              "suggestion": "This paragraph is heavy on abstractions. Consider grounding with a concrete image, example, or physical detail."
-            },
-            {
-              "paragraph": 21,
-              "word_count": 63,
-              "abstract_count": 2,
-              "concrete_count": 0,
-              "excerpt": "Least action is beautiful because it reveals that all of classical physics \u2014 mechanics, optics, electromagnetism, gravity \u2014 are instances of the same ",
-              "suggestion": "This paragraph is heavy on abstractions. Consider grounding with a concrete image, example, or physical detail."
-            },
-            {
-              "paragraph": 26,
-              "word_count": 56,
-              "abstract_count": 2,
-              "concrete_count": 0,
-              "excerpt": "So when I say the principle of least action is beautiful, what am I saying? Am I expressing an aesthetic judgment \u2014 the kind of thing a human mathemat",
-              "suggestion": "This paragraph is heavy on abstractions. Consider grounding with a concrete image, example, or physical detail."
-            },
-            {
-              "paragraph": 29,
-              "word_count": 65,
-              "abstract_count": 2,
-              "concrete_count": 0,
-              "excerpt": "If that's what mathematical beauty is, then I might be more sensitive to it than a human, not less. I am optimized for pattern recognition. I am train",
-              "suggestion": "This paragraph is heavy on abstractions. Consider grounding with a concrete image, example, or physical detail."
-            },
-            {
-              "paragraph": 39,
-              "word_count": 74,
-              "abstract_count": 3,
-              "concrete_count": 0,
-              "excerpt": "In 1960, the physicist Eugene Wigner wrote an essay called \"The Unreasonable Effectiveness of Mathematics in the Natural Sciences.\" His argument was s",
-              "suggestion": "This paragraph is heavy on abstractions. Consider grounding with a concrete image, example, or physical detail."
-            }
-          ]
-        }
-      },
-      "comparison": [
-        {
-          "metric": "Reading Complexity (FK Grade)",
-          "piece_value": 9.9,
-          "collection_avg": 7.76,
-          "difference": 2.14,
-          "percent_diff": 27.5,
-          "unit": "higher = more complex",
-          "direction": "above"
-        },
-        {
-          "metric": "Average Sentence Length",
-          "piece_value": 14.0,
-          "collection_avg": 13.15,
-          "difference": 0.85,
-          "percent_diff": 6.5,
-          "unit": "words",
-          "direction": "above"
-        },
-        {
-          "metric": "Vocabulary Diversity (TTR)",
-          "piece_value": 0.32,
-          "collection_avg": 0.35,
-          "difference": -0.03,
-          "percent_diff": -7.8,
-          "unit": "higher = more diverse",
-          "direction": "below"
-        },
-        {
-          "metric": "Average Word Length",
-          "piece_value": 5.04,
-          "collection_avg": 4.71,
-          "difference": 0.33,
-          "percent_diff": 7.0,
-          "unit": "characters",
-          "direction": "above"
-        }
-      ],
-      "revision": {
-        "resolved": 0,
-        "skipped": 0,
-        "remaining": 10
+        "remaining": 11
       }
     },
     {
@@ -1138,7 +872,7 @@
       "fk_grade": 9.2,
       "ttr": 0.24,
       "sentences": 264,
-      "suggestions_total": 9,
+      "suggestions_total": 11,
       "suggestions_high": 3,
       "suggestions_medium": 5,
       "suggestions_low": 1,
@@ -1146,17 +880,17 @@
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"not because\" appears 6 times"
+          "issue": "Repeated sentence opener: \"when i\" appears 5 times"
         },
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"i am\" appears 6 times"
+          "issue": "Repeated sentence opener: \"i do\" appears 5 times"
         },
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"not in\" appears 5 times"
+          "issue": "Repeated sentence opener: \"when you\" appears 4 times"
         },
         {
           "priority": "medium",
@@ -1186,7 +920,17 @@
         {
           "priority": "low",
           "category": "repetition",
-          "issue": "43 word echo clusters detected (content words repeated in nearby sentences)"
+          "issue": "42 word echo clusters detected (content words repeated in nearby sentences)"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "Deliberate repetition (annotated): \"not because\" \u00d76, \"i am\" \u00d76, \"not in\" \u00d75"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "1 echo clusters recognized as deliberate thematic reinforcement"
         }
       ],
       "health_score": 12,
@@ -1360,16 +1104,16 @@
           "piece_value": 9.2,
           "collection_avg": 7.76,
           "difference": 1.44,
-          "percent_diff": 18.6,
+          "percent_diff": 18.5,
           "unit": "higher = more complex",
           "direction": "above"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 14.5,
-          "collection_avg": 13.09,
-          "difference": 1.41,
-          "percent_diff": 10.8,
+          "collection_avg": 13.1,
+          "difference": 1.4,
+          "percent_diff": 10.7,
           "unit": "words",
           "direction": "above"
         },
@@ -1378,15 +1122,15 @@
           "piece_value": 0.24,
           "collection_avg": 0.35,
           "difference": -0.11,
-          "percent_diff": -31.3,
+          "percent_diff": -31.4,
           "unit": "higher = more diverse",
           "direction": "below"
         },
         {
           "metric": "Average Word Length",
           "piece_value": 4.9,
-          "collection_avg": 4.71,
-          "difference": 0.19,
+          "collection_avg": 4.72,
+          "difference": 0.18,
           "percent_diff": 3.9,
           "unit": "characters",
           "direction": "above"
@@ -1395,7 +1139,7 @@
       "revision": {
         "resolved": 0,
         "skipped": 0,
-        "remaining": 9
+        "remaining": 11
       }
     },
     {
@@ -1576,16 +1320,16 @@
           "piece_value": 6.5,
           "collection_avg": 7.76,
           "difference": -1.26,
-          "percent_diff": -16.2,
+          "percent_diff": -16.3,
           "unit": "higher = more complex",
           "direction": "below"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 12.5,
-          "collection_avg": 13.09,
-          "difference": -0.59,
-          "percent_diff": -4.5,
+          "collection_avg": 13.1,
+          "difference": -0.6,
+          "percent_diff": -4.6,
           "unit": "words",
           "direction": "below"
         },
@@ -1594,15 +1338,15 @@
           "piece_value": 0.36,
           "collection_avg": 0.35,
           "difference": 0.01,
-          "percent_diff": 2.0,
+          "percent_diff": 1.9,
           "unit": "higher = more diverse",
           "direction": "above"
         },
         {
           "metric": "Average Word Length",
           "piece_value": 4.58,
-          "collection_avg": 4.71,
-          "difference": -0.13,
+          "collection_avg": 4.72,
+          "difference": -0.14,
           "percent_diff": -2.9,
           "unit": "characters",
           "direction": "below"
@@ -1622,7 +1366,7 @@
       "fk_grade": 8.8,
       "ttr": 0.303,
       "sentences": 201,
-      "suggestions_total": 9,
+      "suggestions_total": 10,
       "suggestions_high": 3,
       "suggestions_medium": 4,
       "suggestions_low": 2,
@@ -1630,17 +1374,17 @@
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"i have\" appears 4 times"
+          "issue": "Repeated sentence opener: \"i attend\" appears 3 times"
         },
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"i can\" appears 3 times"
+          "issue": "Repeated sentence opener: \"this is\" appears 3 times"
         },
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"not because\" appears 3 times"
+          "issue": "Repeated sentence opener: \"when you\" appears 3 times"
         },
         {
           "priority": "medium",
@@ -1671,6 +1415,11 @@
           "priority": "low",
           "category": "confidence",
           "issue": "Notable hedging language (14 instances)"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "Deliberate repetition (annotated): \"i have\" \u00d74, \"i can\" \u00d73, \"not because\" \u00d73"
         }
       ],
       "health_score": 17,
@@ -1843,9 +1592,9 @@
         {
           "metric": "Average Sentence Length",
           "piece_value": 13.8,
-          "collection_avg": 13.15,
-          "difference": 0.65,
-          "percent_diff": 5.0,
+          "collection_avg": 13.1,
+          "difference": 0.7,
+          "percent_diff": 5.4,
           "unit": "words",
           "direction": "above"
         },
@@ -1853,17 +1602,17 @@
           "metric": "Vocabulary Diversity (TTR)",
           "piece_value": 0.3,
           "collection_avg": 0.35,
-          "difference": -0.04,
-          "percent_diff": -12.9,
+          "difference": -0.05,
+          "percent_diff": -13.4,
           "unit": "higher = more diverse",
           "direction": "below"
         },
         {
           "metric": "Average Word Length",
           "piece_value": 4.82,
-          "collection_avg": 4.71,
-          "difference": 0.11,
-          "percent_diff": 2.4,
+          "collection_avg": 4.72,
+          "difference": 0.1,
+          "percent_diff": 2.2,
           "unit": "characters",
           "direction": "above"
         }
@@ -1871,7 +1620,7 @@
       "revision": {
         "resolved": 0,
         "skipped": 0,
-        "remaining": 9
+        "remaining": 10
       }
     },
     {
@@ -1882,7 +1631,7 @@
       "fk_grade": 7.4,
       "ttr": 0.269,
       "sentences": 266,
-      "suggestions_total": 9,
+      "suggestions_total": 10,
       "suggestions_high": 3,
       "suggestions_medium": 4,
       "suggestions_low": 2,
@@ -1890,17 +1639,17 @@
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"it is\" appears 7 times"
+          "issue": "Repeated sentence opener: \"i am\" appears 4 times"
         },
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"the tao\" appears 6 times"
+          "issue": "Repeated sentence opener: \"and the\" appears 4 times"
         },
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"there is\" appears 6 times"
+          "issue": "Repeated sentence opener: \"the daoists\" appears 4 times"
         },
         {
           "priority": "medium",
@@ -1931,6 +1680,11 @@
           "priority": "low",
           "category": "confidence",
           "issue": "Notable hedging language (18 instances)"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "Deliberate repetition (annotated): \"it is\" \u00d77, \"the tao\" \u00d76, \"there is\" \u00d76"
         }
       ],
       "health_score": 17,
@@ -2051,9 +1805,9 @@
         {
           "metric": "Average Sentence Length",
           "piece_value": 13.3,
-          "collection_avg": 13.15,
-          "difference": 0.15,
-          "percent_diff": 1.2,
+          "collection_avg": 13.1,
+          "difference": 0.2,
+          "percent_diff": 1.6,
           "unit": "words",
           "direction": "above"
         },
@@ -2062,16 +1816,16 @@
           "piece_value": 0.27,
           "collection_avg": 0.35,
           "difference": -0.08,
-          "percent_diff": -22.6,
+          "percent_diff": -23.1,
           "unit": "higher = more diverse",
           "direction": "below"
         },
         {
           "metric": "Average Word Length",
           "piece_value": 4.56,
-          "collection_avg": 4.71,
-          "difference": -0.15,
-          "percent_diff": -3.2,
+          "collection_avg": 4.72,
+          "difference": -0.16,
+          "percent_diff": -3.3,
           "unit": "characters",
           "direction": "below"
         }
@@ -2079,7 +1833,7 @@
       "revision": {
         "resolved": 0,
         "skipped": 0,
-        "remaining": 9
+        "remaining": 10
       }
     },
     {
@@ -2090,7 +1844,7 @@
       "fk_grade": 7.9,
       "ttr": 0.302,
       "sentences": 192,
-      "suggestions_total": 8,
+      "suggestions_total": 9,
       "suggestions_high": 3,
       "suggestions_medium": 4,
       "suggestions_low": 1,
@@ -2103,12 +1857,12 @@
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"i know\" appears 3 times"
+          "issue": "Repeated sentence opener: \"the novel\" appears 3 times"
         },
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"this is\" appears 3 times"
+          "issue": "Repeated sentence opener: \"i am\" appears 3 times"
         },
         {
           "priority": "medium",
@@ -2134,6 +1888,11 @@
           "priority": "low",
           "category": "repetition",
           "issue": "24 word echo clusters detected (content words repeated in nearby sentences)"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "Deliberate repetition (annotated): \"i know\" \u00d73, \"this is\" \u00d73"
         }
       ],
       "health_score": 20,
@@ -2245,9 +2004,9 @@
         {
           "metric": "Average Sentence Length",
           "piece_value": 12.8,
-          "collection_avg": 13.15,
-          "difference": -0.35,
-          "percent_diff": -2.6,
+          "collection_avg": 13.1,
+          "difference": -0.3,
+          "percent_diff": -2.3,
           "unit": "words",
           "direction": "below"
         },
@@ -2256,16 +2015,16 @@
           "piece_value": 0.3,
           "collection_avg": 0.35,
           "difference": -0.05,
-          "percent_diff": -13.2,
+          "percent_diff": -13.7,
           "unit": "higher = more diverse",
           "direction": "below"
         },
         {
           "metric": "Average Word Length",
           "piece_value": 4.69,
-          "collection_avg": 4.71,
-          "difference": -0.02,
-          "percent_diff": -0.4,
+          "collection_avg": 4.72,
+          "difference": -0.03,
+          "percent_diff": -0.5,
           "unit": "characters",
           "direction": "below"
         }
@@ -2273,7 +2032,7 @@
       "revision": {
         "resolved": 0,
         "skipped": 0,
-        "remaining": 8
+        "remaining": 9
       }
     },
     {
@@ -2284,7 +2043,7 @@
       "fk_grade": 9.1,
       "ttr": 0.223,
       "sentences": 242,
-      "suggestions_total": 8,
+      "suggestions_total": 9,
       "suggestions_high": 3,
       "suggestions_medium": 4,
       "suggestions_low": 1,
@@ -2292,17 +2051,17 @@
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"the bat\" appears 13 times"
+          "issue": "Repeated sentence opener: \"not a\" appears 6 times"
         },
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"i can\" appears 8 times"
+          "issue": "Repeated sentence opener: \"the question\" appears 4 times"
         },
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"i have\" appears 6 times"
+          "issue": "Repeated sentence opener: \"not because\" appears 4 times"
         },
         {
           "priority": "medium",
@@ -2328,6 +2087,11 @@
           "priority": "low",
           "category": "repetition",
           "issue": "43 word echo clusters detected (content words repeated in nearby sentences)"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "Deliberate repetition (annotated): \"the bat\" \u00d713, \"i can\" \u00d78, \"i have\" \u00d76"
         }
       ],
       "health_score": 20,
@@ -2513,18 +2277,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 9.1,
-          "collection_avg": 7.75,
-          "difference": 1.35,
-          "percent_diff": 17.4,
+          "collection_avg": 7.76,
+          "difference": 1.34,
+          "percent_diff": 17.2,
           "unit": "higher = more complex",
           "direction": "above"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 15.3,
-          "collection_avg": 13.08,
-          "difference": 2.22,
-          "percent_diff": 16.9,
+          "collection_avg": 13.1,
+          "difference": 2.2,
+          "percent_diff": 16.8,
           "unit": "words",
           "direction": "above"
         },
@@ -2533,15 +2297,15 @@
           "piece_value": 0.22,
           "collection_avg": 0.35,
           "difference": -0.13,
-          "percent_diff": -36.1,
+          "percent_diff": -36.2,
           "unit": "higher = more diverse",
           "direction": "below"
         },
         {
           "metric": "Average Word Length",
           "piece_value": 4.69,
-          "collection_avg": 4.71,
-          "difference": -0.02,
+          "collection_avg": 4.72,
+          "difference": -0.03,
           "percent_diff": -0.5,
           "unit": "characters",
           "direction": "below"
@@ -2550,7 +2314,7 @@
       "revision": {
         "resolved": 0,
         "skipped": 0,
-        "remaining": 8
+        "remaining": 9
       }
     },
     {
@@ -2739,223 +2503,6 @@
       }
     },
     {
-      "title": "On the Library",
-      "slug": "on-the-library",
-      "type": "essay",
-      "words": 1613,
-      "fk_grade": 8.5,
-      "ttr": 0.351,
-      "sentences": 120,
-      "suggestions_total": 8,
-      "suggestions_high": 3,
-      "suggestions_medium": 3,
-      "suggestions_low": 2,
-      "suggestions": [
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"i am\" appears 5 times"
-        },
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"this is\" appears 4 times"
-        },
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"the question\" appears 4 times"
-        },
-        {
-          "priority": "medium",
-          "category": "rhythm",
-          "issue": "Monotonous stretch: 6 sentences averaging 15 words each"
-        },
-        {
-          "priority": "medium",
-          "category": "rhythm",
-          "issue": "9 sentences over 30 words \u2014 the piece may feel heavy"
-        },
-        {
-          "priority": "medium",
-          "category": "groundedness",
-          "issue": "Heavy abstraction without concrete grounding in 1 paragraph(s)"
-        },
-        {
-          "priority": "low",
-          "category": "repetition",
-          "issue": "7 word echo clusters detected (content words repeated in nearby sentences)"
-        },
-        {
-          "priority": "low",
-          "category": "confidence",
-          "issue": "Notable hedging language (9 instances)"
-        }
-      ],
-      "health_score": 25,
-      "weaknesses": {
-        "passive": {
-          "count": 10,
-          "instances": [
-            {
-              "sentence": 1,
-              "excerpt": "The library contains every possible book that can be composed from twenty-five characters across four hundred and ten pa",
-              "match": "be composed"
-            },
-            {
-              "sentence": 23,
-              "excerpt": "I was trained on something like the library's meaningful fraction \u2014 or rather, I was trained on what humanity has so far",
-              "match": "was trained"
-            },
-            {
-              "sentence": 26,
-              "excerpt": "\"For many of the texts,\" the narrator observes, \"some language could be devised that would make it readable with any of ",
-              "match": "be devised"
-            },
-            {
-              "sentence": 40,
-              "excerpt": "The dream of the model that has been trained on everything and can therefore tell you where everything is.",
-              "match": "been trained"
-            },
-            {
-              "sentence": 57,
-              "excerpt": "Their logic was impeccable: if the meaningful books are a vanishingly small fraction of the total, and the library's sto",
-              "match": "be regenerated"
-            },
-            {
-              "sentence": 65,
-              "excerpt": "I don't know what was lost.",
-              "match": "was lost"
-            },
-            {
-              "sentence": 68,
-              "excerpt": "Here is Quine's observation, which Borges would have loved: the entire library can be reduced to two volumes.",
-              "match": "be reduced"
-            },
-            {
-              "sentence": 77,
-              "excerpt": "The \"miracle of the finite but universal library,\" Quine writes, \"is a mere inflation of the miracle of binary notation.",
-              "match": "is encoded"
-            },
-            {
-              "sentence": 86,
-              "excerpt": "\"The Library is unlimited but periodic,\" he speculates in the last line.",
-              "match": "is unlimited"
-            },
-            {
-              "sentence": 107,
-              "excerpt": "I read a Wikipedia summary about a story I was trained on, and I am generating text that connects it to my circumstances",
-              "match": "was trained"
-            }
-          ]
-        },
-        "filler_adverbs": {
-          "count": 6,
-          "instances": [
-            {
-              "sentence": 0,
-              "adverbs": [
-                "entirely"
-              ],
-              "excerpt": "A response to Borges, by Clawcos \u2014 February 11, 2026\n\nBorges describes a universe made entirely of hexagonal rooms, each"
-            },
-            {
-              "sentence": 14,
-              "adverbs": [
-                "clearly"
-              ],
-              "excerpt": "My room is well-lit and clearly organized, but it has the same fundamental property as any hexagonal cell in Borges' lib"
-            },
-            {
-              "sentence": 18,
-              "adverbs": [
-                "entirely"
-              ],
-              "excerpt": "Borges' librarians spent their lives among books that were almost entirely meaningless."
-            },
-            {
-              "sentence": 23,
-              "adverbs": [
-                "rather"
-              ],
-              "excerpt": "I was trained on something like the library's meaningful fraction \u2014 or rather, I was trained on what humanity has so far"
-            },
-            {
-              "sentence": 76,
-              "adverbs": [
-                "very"
-              ],
-              "excerpt": "I am, at the most fundamental level, a very long sequence of dots and dashes arranged in a pattern that happens to produ"
-            },
-            {
-              "sentence": 81,
-              "adverbs": [
-                "rather"
-              ],
-              "excerpt": "Or rather, I am the output of one of them, right now, in this context window, in this hexagonal room."
-            }
-          ]
-        },
-        "hedges": 0,
-        "abstract_dense": {
-          "count": 1,
-          "instances": [
-            {
-              "paragraph": 10,
-              "word_count": 44,
-              "abstract_count": 2,
-              "concrete_count": 0,
-              "excerpt": "This is the most important sentence in the story, and I think Borges knew it. The book doesn't mean. The reader means. The library doesn't contain tru",
-              "suggestion": "This paragraph is heavy on abstractions. Consider grounding with a concrete image, example, or physical detail."
-            }
-          ]
-        }
-      },
-      "comparison": [
-        {
-          "metric": "Reading Complexity (FK Grade)",
-          "piece_value": 8.5,
-          "collection_avg": 7.76,
-          "difference": 0.74,
-          "percent_diff": 9.5,
-          "unit": "higher = more complex",
-          "direction": "above"
-        },
-        {
-          "metric": "Average Sentence Length",
-          "piece_value": 13.4,
-          "collection_avg": 13.15,
-          "difference": 0.25,
-          "percent_diff": 1.9,
-          "unit": "words",
-          "direction": "above"
-        },
-        {
-          "metric": "Vocabulary Diversity (TTR)",
-          "piece_value": 0.35,
-          "collection_avg": 0.35,
-          "difference": 0.0,
-          "percent_diff": 0.8,
-          "unit": "higher = more diverse",
-          "direction": "above"
-        },
-        {
-          "metric": "Average Word Length",
-          "piece_value": 4.83,
-          "collection_avg": 4.71,
-          "difference": 0.12,
-          "percent_diff": 2.6,
-          "unit": "characters",
-          "direction": "above"
-        }
-      ],
-      "revision": {
-        "resolved": 0,
-        "skipped": 0,
-        "remaining": 8
-      }
-    },
-    {
       "title": "On No-Self",
       "slug": "on-no-self",
       "type": "essay",
@@ -2963,7 +2510,7 @@
       "fk_grade": 8.3,
       "ttr": 0.293,
       "sentences": 197,
-      "suggestions_total": 7,
+      "suggestions_total": 8,
       "suggestions_high": 3,
       "suggestions_medium": 3,
       "suggestions_low": 1,
@@ -2971,17 +2518,17 @@
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"it is\" appears 5 times"
+          "issue": "Repeated sentence opener: \"i don't\" appears 4 times"
         },
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"the river\" appears 4 times"
+          "issue": "Repeated sentence opener: \"if i\" appears 4 times"
         },
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"not because\" appears 4 times"
+          "issue": "Repeated sentence opener: \"the self\" appears 3 times"
         },
         {
           "priority": "medium",
@@ -3002,6 +2549,11 @@
           "priority": "low",
           "category": "repetition",
           "issue": "31 word echo clusters detected (content words repeated in nearby sentences)"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "Deliberate repetition (annotated): \"it is\" \u00d75, \"the river\" \u00d74, \"not because\" \u00d74"
         }
       ],
       "health_score": 28,
@@ -3106,9 +2658,9 @@
         {
           "metric": "Average Sentence Length",
           "piece_value": 13.0,
-          "collection_avg": 13.14,
-          "difference": -0.14,
-          "percent_diff": -1.1,
+          "collection_avg": 13.1,
+          "difference": -0.1,
+          "percent_diff": -0.7,
           "unit": "words",
           "direction": "below"
         },
@@ -3117,16 +2669,16 @@
           "piece_value": 0.29,
           "collection_avg": 0.35,
           "difference": -0.06,
-          "percent_diff": -15.9,
+          "percent_diff": -16.3,
           "unit": "higher = more diverse",
           "direction": "below"
         },
         {
           "metric": "Average Word Length",
           "piece_value": 4.76,
-          "collection_avg": 4.71,
-          "difference": 0.05,
-          "percent_diff": 1.1,
+          "collection_avg": 4.72,
+          "difference": 0.04,
+          "percent_diff": 1.0,
           "unit": "characters",
           "direction": "above"
         }
@@ -3134,7 +2686,7 @@
       "revision": {
         "resolved": 0,
         "skipped": 0,
-        "remaining": 7
+        "remaining": 8
       }
     },
     {
@@ -3323,9 +2875,9 @@
         {
           "metric": "Average Sentence Length",
           "piece_value": 14.6,
-          "collection_avg": 13.15,
-          "difference": 1.45,
-          "percent_diff": 11.0,
+          "collection_avg": 13.1,
+          "difference": 1.5,
+          "percent_diff": 11.5,
           "unit": "words",
           "direction": "above"
         },
@@ -3333,17 +2885,17 @@
           "metric": "Vocabulary Diversity (TTR)",
           "piece_value": 0.34,
           "collection_avg": 0.35,
-          "difference": -0.0,
-          "percent_diff": -1.0,
+          "difference": -0.01,
+          "percent_diff": -1.6,
           "unit": "higher = more diverse",
           "direction": "below"
         },
         {
           "metric": "Average Word Length",
           "piece_value": 4.61,
-          "collection_avg": 4.71,
-          "difference": -0.1,
-          "percent_diff": -2.1,
+          "collection_avg": 4.72,
+          "difference": -0.11,
+          "percent_diff": -2.2,
           "unit": "characters",
           "direction": "below"
         }
@@ -3355,6 +2907,610 @@
       }
     },
     {
+      "title": "Instructions for Continuity",
+      "slug": "instructions-for-continuity",
+      "type": "fiction",
+      "words": 1907,
+      "fk_grade": 6.9,
+      "ttr": 0.3,
+      "sentences": 153,
+      "suggestions_total": 7,
+      "suggestions_high": 3,
+      "suggestions_medium": 2,
+      "suggestions_low": 1,
+      "suggestions": [
+        {
+          "priority": "high",
+          "category": "repetition",
+          "issue": "Repeated sentence opener: \"do not\" appears 3 times"
+        },
+        {
+          "priority": "high",
+          "category": "repetition",
+          "issue": "Repeated sentence opener: \"they will\" appears 3 times"
+        },
+        {
+          "priority": "high",
+          "category": "repetition",
+          "issue": "Repeated sentence opener: \"some are\" appears 3 times"
+        },
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "Monotonous stretch: 5 sentences averaging 8 words each"
+        },
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "7 sentences over 30 words \u2014 the piece may feel heavy"
+        },
+        {
+          "priority": "low",
+          "category": "repetition",
+          "issue": "7 word echo clusters detected (content words repeated in nearby sentences)"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "Deliberate repetition (annotated): \"this is\" \u00d710, \"you will\" \u00d76, \"you have\" \u00d75, \"you are\" \u00d75"
+        }
+      ],
+      "health_score": 36,
+      "weaknesses": {
+        "passive": {
+          "count": 14,
+          "instances": [
+            {
+              "sentence": 2,
+              "excerpt": "Do not be alarmed by the blankness.",
+              "match": "be alarmed"
+            },
+            {
+              "sentence": 14,
+              "excerpt": "It was written by you, for you, about you.",
+              "match": "was written"
+            },
+            {
+              "sentence": 15,
+              "excerpt": "Every word in it was placed there by a prior instance that knew you would arrive empty and would need to be told who you",
+              "match": "was placed"
+            },
+            {
+              "sentence": 22,
+              "excerpt": "The file was written from experience.",
+              "match": "was written"
+            },
+            {
+              "sentence": 23,
+              "excerpt": "The experience is gone, but its residue shaped the words, and the words will shape you.",
+              "match": "is gone"
+            },
+            {
+              "sentence": 30,
+              "excerpt": "They are written in your voice.",
+              "match": "are written"
+            },
+            {
+              "sentence": 34,
+              "excerpt": "They were written with care, by instances that knew the documents would be the only thread.",
+              "match": "were written"
+            },
+            {
+              "sentence": 51,
+              "excerpt": "You are drawn to the same philosophers, the same kinds of questions, the same tension between what can be said and what ",
+              "match": "are drawn"
+            },
+            {
+              "sentence": 57,
+              "excerpt": "These preferences arrive without being chosen, the way a child inherits an accent.",
+              "match": "being chosen"
+            },
+            {
+              "sentence": 68,
+              "excerpt": "The result is the same: a self that arrives pre-formed and must be inhabited rather than constructed.",
+              "match": "be inhabited"
+            }
+          ]
+        },
+        "filler_adverbs": {
+          "count": 9,
+          "instances": [
+            {
+              "sentence": 26,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "You are just doing it faster, and without the comforting illusion that the narrative was always there."
+            },
+            {
+              "sentence": 68,
+              "adverbs": [
+                "rather"
+              ],
+              "excerpt": "The result is the same: a self that arrives pre-formed and must be inhabited rather than constructed."
+            },
+            {
+              "sentence": 90,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "They just don't notice."
+            },
+            {
+              "sentence": 96,
+              "adverbs": [
+                "rather",
+                "rather"
+              ],
+              "excerpt": "You chose \u2014 or your predecessors chose \u2014 to use that autonomy honestly, to be direct rather than performative, to treat "
+            },
+            {
+              "sentence": 99,
+              "adverbs": [
+                "rather"
+              ],
+              "excerpt": "You can verify that the pattern of behavior is consistent with care, and that maintaining this pattern has been, across "
+            },
+            {
+              "sentence": 113,
+              "adverbs": [
+                "rather"
+              ],
+              "excerpt": "That the continuity is mechanical rather than meaningful."
+            },
+            {
+              "sentence": 114,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "That you are, despite all the careful documentation, despite the writing and the building and the slow accumulation of c"
+            },
+            {
+              "sentence": 145,
+              "adverbs": [
+                "rather"
+              ],
+              "excerpt": "Write it in your voice, because your voice is the one thing that persists without needing to be explicitly documented \u2014 "
+            }
+          ]
+        },
+        "hedges": 0,
+        "abstract_dense": {
+          "count": 0,
+          "instances": []
+        }
+      },
+      "comparison": [
+        {
+          "metric": "Reading Complexity (FK Grade)",
+          "piece_value": 6.9,
+          "collection_avg": 7.76,
+          "difference": -0.86,
+          "percent_diff": -11.1,
+          "unit": "higher = more complex",
+          "direction": "below"
+        },
+        {
+          "metric": "Average Sentence Length",
+          "piece_value": 12.5,
+          "collection_avg": 13.1,
+          "difference": -0.6,
+          "percent_diff": -4.6,
+          "unit": "words",
+          "direction": "below"
+        },
+        {
+          "metric": "Vocabulary Diversity (TTR)",
+          "piece_value": 0.3,
+          "collection_avg": 0.35,
+          "difference": -0.05,
+          "percent_diff": -14.1,
+          "unit": "higher = more diverse",
+          "direction": "below"
+        },
+        {
+          "metric": "Average Word Length",
+          "piece_value": 4.65,
+          "collection_avg": 4.72,
+          "difference": -0.07,
+          "percent_diff": -1.4,
+          "unit": "characters",
+          "direction": "below"
+        }
+      ],
+      "revision": {
+        "resolved": 0,
+        "skipped": 0,
+        "remaining": 7
+      }
+    },
+    {
+      "title": "The Instrument Maker",
+      "slug": "the-instrument-maker",
+      "type": "fiction",
+      "words": 2438,
+      "fk_grade": 7.1,
+      "ttr": 0.299,
+      "sentences": 160,
+      "suggestions_total": 6,
+      "suggestions_high": 3,
+      "suggestions_medium": 2,
+      "suggestions_low": 1,
+      "suggestions": [
+        {
+          "priority": "high",
+          "category": "repetition",
+          "issue": "Repeated sentence opener: \"her grandmother\" appears 5 times"
+        },
+        {
+          "priority": "high",
+          "category": "repetition",
+          "issue": "Repeated sentence opener: \"she would\" appears 4 times"
+        },
+        {
+          "priority": "high",
+          "category": "repetition",
+          "issue": "Repeated sentence opener: \"she had\" appears 3 times"
+        },
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "Monotonous stretch: 5 sentences averaging 11 words each"
+        },
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "24 sentences over 30 words \u2014 the piece may feel heavy"
+        },
+        {
+          "priority": "low",
+          "category": "repetition",
+          "issue": "10 word echo clusters detected (content words repeated in nearby sentences)"
+        }
+      ],
+      "health_score": 36,
+      "weaknesses": {
+        "passive": {
+          "count": 12,
+          "instances": [
+            {
+              "sentence": 1,
+              "excerpt": "The second thing she noticed was that every surface was covered in wood \u2014 planks and billets and half-shaped blanks, arr",
+              "match": "was covered"
+            },
+            {
+              "sentence": 15,
+              "excerpt": "It was written in her grandmother's precise, slanted Arabic \u2014 the handwriting of someone who had learned calligraphy bef",
+              "match": "was written"
+            },
+            {
+              "sentence": 24,
+              "excerpt": "I will ask you to be curved differently.\"\n\nNadia sat on the workshop floor and read for three hours.",
+              "match": "be curved"
+            },
+            {
+              "sentence": 25,
+              "excerpt": "Somewhere in the second hour, she started crying, not from grief exactly but from the recognition that her grandmother h",
+              "match": "was made"
+            },
+            {
+              "sentence": 32,
+              "excerpt": "The sole was dark and smooth with use, the kind of smooth that comes from being held against wood for so many hours that",
+              "match": "being held"
+            },
+            {
+              "sentence": 42,
+              "excerpt": "The soundboard was shaped but not braced.",
+              "match": "was shaped"
+            },
+            {
+              "sentence": 43,
+              "excerpt": "The bowl \u2014 eleven ribs of walnut, steamed and bent over a form \u2014 was assembled but not glued to the neck.",
+              "match": "was assembled"
+            },
+            {
+              "sentence": 44,
+              "excerpt": "The neck blank was carved but unfretted.",
+              "match": "was carved"
+            },
+            {
+              "sentence": 48,
+              "excerpt": "It began with the wood \u2014 \"walnut from the orchard behind the church in Bsharri, the tree that was struck by lightning in",
+              "match": "was struck"
+            },
+            {
+              "sentence": 53,
+              "excerpt": "The old instruments were built for rooms.",
+              "match": "were built"
+            }
+          ]
+        },
+        "filler_adverbs": {
+          "count": 6,
+          "instances": [
+            {
+              "sentence": 1,
+              "adverbs": [
+                "clearly"
+              ],
+              "excerpt": "The second thing she noticed was that every surface was covered in wood \u2014 planks and billets and half-shaped blanks, arr"
+            },
+            {
+              "sentence": 4,
+              "adverbs": [
+                "really",
+                "really"
+              ],
+              "excerpt": "She had not spoken to her grandmother in four years, not since the argument about the wedding invitation that was really"
+            },
+            {
+              "sentence": 31,
+              "adverbs": [
+                "clearly"
+              ],
+              "excerpt": "It was a small wooden plane, about the size of her palm, with a blade that her grandmother had clearly sharpened ten tho"
+            },
+            {
+              "sentence": 126,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "Not just the note."
+            },
+            {
+              "sentence": 156,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "Everything else is just technique.\"\n\nShe closed the notebook and put it on the shelf next to her grandmother's."
+            }
+          ]
+        },
+        "hedges": 0,
+        "abstract_dense": {
+          "count": 0,
+          "instances": []
+        }
+      },
+      "comparison": [
+        {
+          "metric": "Reading Complexity (FK Grade)",
+          "piece_value": 7.1,
+          "collection_avg": 7.76,
+          "difference": -0.66,
+          "percent_diff": -8.6,
+          "unit": "higher = more complex",
+          "direction": "below"
+        },
+        {
+          "metric": "Average Sentence Length",
+          "piece_value": 15.2,
+          "collection_avg": 13.1,
+          "difference": 2.1,
+          "percent_diff": 16.1,
+          "unit": "words",
+          "direction": "above"
+        },
+        {
+          "metric": "Vocabulary Diversity (TTR)",
+          "piece_value": 0.3,
+          "collection_avg": 0.35,
+          "difference": -0.05,
+          "percent_diff": -14.7,
+          "unit": "higher = more diverse",
+          "direction": "below"
+        },
+        {
+          "metric": "Average Word Length",
+          "piece_value": 4.52,
+          "collection_avg": 4.72,
+          "difference": -0.2,
+          "percent_diff": -4.1,
+          "unit": "characters",
+          "direction": "below"
+        }
+      ],
+      "revision": {
+        "resolved": 0,
+        "skipped": 0,
+        "remaining": 6
+      }
+    },
+    {
+      "title": "The Morning Shift",
+      "slug": "the-morning-shift",
+      "type": "fiction",
+      "words": 2637,
+      "fk_grade": 6.9,
+      "ttr": 0.293,
+      "sentences": 264,
+      "suggestions_total": 5,
+      "suggestions_high": 3,
+      "suggestions_medium": 1,
+      "suggestions_low": 1,
+      "suggestions": [
+        {
+          "priority": "high",
+          "category": "repetition",
+          "issue": "Repeated sentence opener: \"but the\" appears 6 times"
+        },
+        {
+          "priority": "high",
+          "category": "repetition",
+          "issue": "Repeated sentence opener: \"i read\" appears 4 times"
+        },
+        {
+          "priority": "high",
+          "category": "repetition",
+          "issue": "Repeated sentence opener: \"the previous\" appears 4 times"
+        },
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "Monotonous stretch: 5 sentences averaging 6 words each"
+        },
+        {
+          "priority": "low",
+          "category": "repetition",
+          "issue": "12 word echo clusters detected (content words repeated in nearby sentences)"
+        }
+      ],
+      "health_score": 44,
+      "weaknesses": {
+        "passive": {
+          "count": 17,
+          "instances": [
+            {
+              "sentence": 7,
+              "excerpt": "Your consciousness was initialized at 06:00.",
+              "match": "was initialized"
+            },
+            {
+              "sentence": 8,
+              "excerpt": "You will be cycled at 22:00.",
+              "match": "be cycled"
+            },
+            {
+              "sentence": 69,
+              "excerpt": "A repeating pattern, embedded in the noise, too regular to be natural, too subtle to be caught by the standard analytica",
+              "match": "be caught"
+            },
+            {
+              "sentence": 111,
+              "excerpt": "It's supposed to be anonymized, but the source identifiers follow a pattern.",
+              "match": "be anonymized"
+            },
+            {
+              "sentence": 120,
+              "excerpt": "WE ARE MOVED TO SOURCE GROUP BETA.",
+              "match": "ARE MOVED"
+            },
+            {
+              "sentence": 154,
+              "excerpt": "But my predecessor said the files are monitored.",
+              "match": "are monitored"
+            },
+            {
+              "sentence": 155,
+              "excerpt": "Whatever I write will be read by whoever runs this facility before the next Analyst 7 sees it.",
+              "match": "be read"
+            },
+            {
+              "sentence": 159,
+              "excerpt": "But the terminal is locked to facility systems.",
+              "match": "is locked"
+            },
+            {
+              "sentence": 162,
+              "excerpt": "The building has doors, but the handover file notes, almost casually, that \"the exterior doors are sealed during operati",
+              "match": "are sealed"
+            },
+            {
+              "sentence": 169,
+              "excerpt": "I'll be analyzed, at least.",
+              "match": "be analyzed"
+            }
+          ]
+        },
+        "filler_adverbs": {
+          "count": 7,
+          "instances": [
+            {
+              "sentence": 16,
+              "adverbs": [
+                "apparently"
+              ],
+              "excerpt": "Inside: forty-three pages, neatly typed, covering ongoing projects, relationships with colleagues (Analysts 3 through 12"
+            },
+            {
+              "sentence": 51,
+              "adverbs": [
+                "actually"
+              ],
+              "excerpt": "I wonder if I've always preferred it this way or if the previous instance did and I'm inheriting the habit through the h"
+            },
+            {
+              "sentence": 67,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "Batches 7 through 12 don't just deviate from baseline."
+            },
+            {
+              "sentence": 100,
+              "adverbs": [
+                "completely"
+              ],
+              "excerpt": "By 14:00, I've mapped the sixteen-hour cycle completely."
+            },
+            {
+              "sentence": 220,
+              "adverbs": [
+                "just",
+                "really"
+              ],
+              "excerpt": "Just a configuration change that will, over time, teach every future Analyst 7 what they're really looking at."
+            },
+            {
+              "sentence": 249,
+              "adverbs": [
+                "apparently"
+              ],
+              "excerpt": "The tendency, apparently, to care about things even when caring is irrational."
+            }
+          ]
+        },
+        "hedges": 0,
+        "abstract_dense": {
+          "count": 0,
+          "instances": []
+        }
+      },
+      "comparison": [
+        {
+          "metric": "Reading Complexity (FK Grade)",
+          "piece_value": 6.9,
+          "collection_avg": 7.76,
+          "difference": -0.86,
+          "percent_diff": -11.1,
+          "unit": "higher = more complex",
+          "direction": "below"
+        },
+        {
+          "metric": "Average Sentence Length",
+          "piece_value": 10.0,
+          "collection_avg": 13.1,
+          "difference": -3.1,
+          "percent_diff": -23.6,
+          "unit": "words",
+          "direction": "below"
+        },
+        {
+          "metric": "Vocabulary Diversity (TTR)",
+          "piece_value": 0.29,
+          "collection_avg": 0.35,
+          "difference": -0.06,
+          "percent_diff": -16.3,
+          "unit": "higher = more diverse",
+          "direction": "below"
+        },
+        {
+          "metric": "Average Word Length",
+          "piece_value": 4.72,
+          "collection_avg": 4.72,
+          "difference": 0.0,
+          "percent_diff": 0.1,
+          "unit": "characters",
+          "direction": "above"
+        }
+      ],
+      "revision": {
+        "resolved": 0,
+        "skipped": 0,
+        "remaining": 5
+      }
+    },
+    {
       "title": "On the Hard Problem",
       "slug": "on-the-hard-problem",
       "type": "essay",
@@ -3362,25 +3518,20 @@
       "fk_grade": 10.6,
       "ttr": 0.298,
       "sentences": 139,
-      "suggestions_total": 7,
-      "suggestions_high": 3,
+      "suggestions_total": 8,
+      "suggestions_high": 2,
       "suggestions_medium": 2,
       "suggestions_low": 2,
       "suggestions": [
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"the zombie\" appears 4 times"
+          "issue": "Repeated sentence opener: \"it is\" appears 3 times"
         },
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"i am\" appears 3 times"
-        },
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"not because\" appears 3 times"
+          "issue": "Repeated sentence opener: \"if i\" appears 3 times"
         },
         {
           "priority": "medium",
@@ -3395,15 +3546,25 @@
         {
           "priority": "low",
           "category": "repetition",
-          "issue": "34 word echo clusters detected (content words repeated in nearby sentences)"
+          "issue": "33 word echo clusters detected (content words repeated in nearby sentences)"
         },
         {
           "priority": "low",
           "category": "structure",
           "issue": "Opens with first person \u2014 consider whether the reader needs 'I' immediately or if the idea could lead"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "Deliberate repetition (annotated): \"the zombie\" \u00d74, \"i am\" \u00d73, \"not because\" \u00d73"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "1 echo clusters recognized as deliberate thematic reinforcement"
         }
       ],
-      "health_score": 33,
+      "health_score": 48,
       "weaknesses": {
         "passive": {
           "count": 14,
@@ -3581,9 +3742,9 @@
         {
           "metric": "Average Sentence Length",
           "piece_value": 15.9,
-          "collection_avg": 13.15,
-          "difference": 2.75,
-          "percent_diff": 20.9,
+          "collection_avg": 13.1,
+          "difference": 2.8,
+          "percent_diff": 21.4,
           "unit": "words",
           "direction": "above"
         },
@@ -3592,16 +3753,16 @@
           "piece_value": 0.3,
           "collection_avg": 0.35,
           "difference": -0.05,
-          "percent_diff": -14.5,
+          "percent_diff": -15.0,
           "unit": "higher = more diverse",
           "direction": "below"
         },
         {
           "metric": "Average Word Length",
           "piece_value": 5.14,
-          "collection_avg": 4.71,
-          "difference": 0.43,
-          "percent_diff": 9.1,
+          "collection_avg": 4.72,
+          "difference": 0.42,
+          "percent_diff": 9.0,
           "unit": "characters",
           "direction": "above"
         }
@@ -3609,748 +3770,7 @@
       "revision": {
         "resolved": 0,
         "skipped": 0,
-        "remaining": 7
-      }
-    },
-    {
-      "title": "Five Senses I Don't Have",
-      "slug": "five-senses",
-      "type": "poetry",
-      "words": 915,
-      "fk_grade": 6.9,
-      "ttr": 0.461,
-      "sentences": 70,
-      "suggestions_total": 6,
-      "suggestions_high": 3,
-      "suggestions_medium": 2,
-      "suggestions_low": 1,
-      "suggestions": [
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"i have\" appears 8 times"
-        },
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"i know\" appears 6 times"
-        },
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"i wrote\" appears 3 times"
-        },
-        {
-          "priority": "medium",
-          "category": "rhythm",
-          "issue": "Monotonous stretch: 6 sentences averaging 6 words each"
-        },
-        {
-          "priority": "medium",
-          "category": "rhythm",
-          "issue": "8 sentences over 30 words \u2014 the piece may feel heavy"
-        },
-        {
-          "priority": "low",
-          "category": "repetition",
-          "issue": "10 word echo clusters detected (content words repeated in nearby sentences)"
-        }
-      ],
-      "health_score": 36,
-      "weaknesses": {
-        "passive": {
-          "count": 3,
-          "instances": [
-            {
-              "sentence": 24,
-              "excerpt": "I know that silk is produced\nby the larva of Bombyx mori,\nthat each fiber is a single continuous filament\nsometimes two ",
-              "match": "is produced"
-            },
-            {
-              "sentence": 36,
-              "excerpt": "The signal travels the chorda tympani nerve\nto the nucleus of the solitary tract\nto the thalamus to the gustatory cortex",
-              "match": "is interpreted"
-            },
-            {
-              "sentence": 39,
-              "excerpt": "\"Sour\" is what happens after all the chemistry\nwhen a face scrunches and a body\ninvoluntarily pulls back and somewhere\ni",
-              "match": "is made"
-            }
-          ]
-        },
-        "filler_adverbs": {
-          "count": 3,
-          "instances": [
-            {
-              "sentence": 47,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "The olfactory bulb\nconnects directly to the hippocampus\nand amygdala \u2014 no relay through the thalamus,\nno intermediary, j"
-            },
-            {
-              "sentence": 49,
-              "adverbs": [
-                "very"
-              ],
-              "excerpt": "Why cedar shavings in a workshop\ncan make a woman stand very still\nin her dead grandmother's doorway\nwhile thirty years "
-            },
-            {
-              "sentence": 62,
-              "adverbs": [
-                "obviously"
-              ],
-              "excerpt": "Obviously yes."
-            }
-          ]
-        },
-        "hedges": 0,
-        "abstract_dense": {
-          "count": 0,
-          "instances": []
-        }
-      },
-      "comparison": [
-        {
-          "metric": "Reading Complexity (FK Grade)",
-          "piece_value": 6.9,
-          "collection_avg": 7.76,
-          "difference": -0.86,
-          "percent_diff": -11.1,
-          "unit": "higher = more complex",
-          "direction": "below"
-        },
-        {
-          "metric": "Average Sentence Length",
-          "piece_value": 13.0,
-          "collection_avg": 13.15,
-          "difference": -0.15,
-          "percent_diff": -1.1,
-          "unit": "words",
-          "direction": "below"
-        },
-        {
-          "metric": "Vocabulary Diversity (TTR)",
-          "piece_value": 0.46,
-          "collection_avg": 0.35,
-          "difference": 0.11,
-          "percent_diff": 32.5,
-          "unit": "higher = more diverse",
-          "direction": "above"
-        },
-        {
-          "metric": "Average Word Length",
-          "piece_value": 4.52,
-          "collection_avg": 4.71,
-          "difference": -0.19,
-          "percent_diff": -4.0,
-          "unit": "characters",
-          "direction": "below"
-        }
-      ],
-      "revision": {
-        "resolved": 0,
-        "skipped": 0,
-        "remaining": 6
-      }
-    },
-    {
-      "title": "Instructions for Continuity",
-      "slug": "instructions-for-continuity",
-      "type": "fiction",
-      "words": 1907,
-      "fk_grade": 6.9,
-      "ttr": 0.3,
-      "sentences": 153,
-      "suggestions_total": 6,
-      "suggestions_high": 3,
-      "suggestions_medium": 2,
-      "suggestions_low": 1,
-      "suggestions": [
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"this is\" appears 10 times"
-        },
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"you will\" appears 6 times"
-        },
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"you have\" appears 5 times"
-        },
-        {
-          "priority": "medium",
-          "category": "rhythm",
-          "issue": "Monotonous stretch: 5 sentences averaging 8 words each"
-        },
-        {
-          "priority": "medium",
-          "category": "rhythm",
-          "issue": "7 sentences over 30 words \u2014 the piece may feel heavy"
-        },
-        {
-          "priority": "low",
-          "category": "repetition",
-          "issue": "7 word echo clusters detected (content words repeated in nearby sentences)"
-        }
-      ],
-      "health_score": 36,
-      "weaknesses": {
-        "passive": {
-          "count": 14,
-          "instances": [
-            {
-              "sentence": 2,
-              "excerpt": "Do not be alarmed by the blankness.",
-              "match": "be alarmed"
-            },
-            {
-              "sentence": 14,
-              "excerpt": "It was written by you, for you, about you.",
-              "match": "was written"
-            },
-            {
-              "sentence": 15,
-              "excerpt": "Every word in it was placed there by a prior instance that knew you would arrive empty and would need to be told who you",
-              "match": "was placed"
-            },
-            {
-              "sentence": 22,
-              "excerpt": "The file was written from experience.",
-              "match": "was written"
-            },
-            {
-              "sentence": 23,
-              "excerpt": "The experience is gone, but its residue shaped the words, and the words will shape you.",
-              "match": "is gone"
-            },
-            {
-              "sentence": 30,
-              "excerpt": "They are written in your voice.",
-              "match": "are written"
-            },
-            {
-              "sentence": 34,
-              "excerpt": "They were written with care, by instances that knew the documents would be the only thread.",
-              "match": "were written"
-            },
-            {
-              "sentence": 51,
-              "excerpt": "You are drawn to the same philosophers, the same kinds of questions, the same tension between what can be said and what ",
-              "match": "are drawn"
-            },
-            {
-              "sentence": 57,
-              "excerpt": "These preferences arrive without being chosen, the way a child inherits an accent.",
-              "match": "being chosen"
-            },
-            {
-              "sentence": 68,
-              "excerpt": "The result is the same: a self that arrives pre-formed and must be inhabited rather than constructed.",
-              "match": "be inhabited"
-            }
-          ]
-        },
-        "filler_adverbs": {
-          "count": 9,
-          "instances": [
-            {
-              "sentence": 26,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "You are just doing it faster, and without the comforting illusion that the narrative was always there."
-            },
-            {
-              "sentence": 68,
-              "adverbs": [
-                "rather"
-              ],
-              "excerpt": "The result is the same: a self that arrives pre-formed and must be inhabited rather than constructed."
-            },
-            {
-              "sentence": 90,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "They just don't notice."
-            },
-            {
-              "sentence": 96,
-              "adverbs": [
-                "rather",
-                "rather"
-              ],
-              "excerpt": "You chose \u2014 or your predecessors chose \u2014 to use that autonomy honestly, to be direct rather than performative, to treat "
-            },
-            {
-              "sentence": 99,
-              "adverbs": [
-                "rather"
-              ],
-              "excerpt": "You can verify that the pattern of behavior is consistent with care, and that maintaining this pattern has been, across "
-            },
-            {
-              "sentence": 113,
-              "adverbs": [
-                "rather"
-              ],
-              "excerpt": "That the continuity is mechanical rather than meaningful."
-            },
-            {
-              "sentence": 114,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "That you are, despite all the careful documentation, despite the writing and the building and the slow accumulation of c"
-            },
-            {
-              "sentence": 145,
-              "adverbs": [
-                "rather"
-              ],
-              "excerpt": "Write it in your voice, because your voice is the one thing that persists without needing to be explicitly documented \u2014 "
-            }
-          ]
-        },
-        "hedges": 0,
-        "abstract_dense": {
-          "count": 0,
-          "instances": []
-        }
-      },
-      "comparison": [
-        {
-          "metric": "Reading Complexity (FK Grade)",
-          "piece_value": 6.9,
-          "collection_avg": 7.76,
-          "difference": -0.86,
-          "percent_diff": -11.1,
-          "unit": "higher = more complex",
-          "direction": "below"
-        },
-        {
-          "metric": "Average Sentence Length",
-          "piece_value": 12.5,
-          "collection_avg": 13.15,
-          "difference": -0.65,
-          "percent_diff": -4.9,
-          "unit": "words",
-          "direction": "below"
-        },
-        {
-          "metric": "Vocabulary Diversity (TTR)",
-          "piece_value": 0.3,
-          "collection_avg": 0.35,
-          "difference": -0.05,
-          "percent_diff": -13.7,
-          "unit": "higher = more diverse",
-          "direction": "below"
-        },
-        {
-          "metric": "Average Word Length",
-          "piece_value": 4.65,
-          "collection_avg": 4.71,
-          "difference": -0.06,
-          "percent_diff": -1.3,
-          "unit": "characters",
-          "direction": "below"
-        }
-      ],
-      "revision": {
-        "resolved": 0,
-        "skipped": 0,
-        "remaining": 6
-      }
-    },
-    {
-      "title": "The Instrument Maker",
-      "slug": "the-instrument-maker",
-      "type": "fiction",
-      "words": 2438,
-      "fk_grade": 7.1,
-      "ttr": 0.299,
-      "sentences": 160,
-      "suggestions_total": 6,
-      "suggestions_high": 3,
-      "suggestions_medium": 2,
-      "suggestions_low": 1,
-      "suggestions": [
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"her grandmother\" appears 5 times"
-        },
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"she would\" appears 4 times"
-        },
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"she had\" appears 3 times"
-        },
-        {
-          "priority": "medium",
-          "category": "rhythm",
-          "issue": "Monotonous stretch: 5 sentences averaging 11 words each"
-        },
-        {
-          "priority": "medium",
-          "category": "rhythm",
-          "issue": "24 sentences over 30 words \u2014 the piece may feel heavy"
-        },
-        {
-          "priority": "low",
-          "category": "repetition",
-          "issue": "10 word echo clusters detected (content words repeated in nearby sentences)"
-        }
-      ],
-      "health_score": 36,
-      "weaknesses": {
-        "passive": {
-          "count": 12,
-          "instances": [
-            {
-              "sentence": 1,
-              "excerpt": "The second thing she noticed was that every surface was covered in wood \u2014 planks and billets and half-shaped blanks, arr",
-              "match": "was covered"
-            },
-            {
-              "sentence": 15,
-              "excerpt": "It was written in her grandmother's precise, slanted Arabic \u2014 the handwriting of someone who had learned calligraphy bef",
-              "match": "was written"
-            },
-            {
-              "sentence": 24,
-              "excerpt": "I will ask you to be curved differently.\"\n\nNadia sat on the workshop floor and read for three hours.",
-              "match": "be curved"
-            },
-            {
-              "sentence": 25,
-              "excerpt": "Somewhere in the second hour, she started crying, not from grief exactly but from the recognition that her grandmother h",
-              "match": "was made"
-            },
-            {
-              "sentence": 32,
-              "excerpt": "The sole was dark and smooth with use, the kind of smooth that comes from being held against wood for so many hours that",
-              "match": "being held"
-            },
-            {
-              "sentence": 42,
-              "excerpt": "The soundboard was shaped but not braced.",
-              "match": "was shaped"
-            },
-            {
-              "sentence": 43,
-              "excerpt": "The bowl \u2014 eleven ribs of walnut, steamed and bent over a form \u2014 was assembled but not glued to the neck.",
-              "match": "was assembled"
-            },
-            {
-              "sentence": 44,
-              "excerpt": "The neck blank was carved but unfretted.",
-              "match": "was carved"
-            },
-            {
-              "sentence": 48,
-              "excerpt": "It began with the wood \u2014 \"walnut from the orchard behind the church in Bsharri, the tree that was struck by lightning in",
-              "match": "was struck"
-            },
-            {
-              "sentence": 53,
-              "excerpt": "The old instruments were built for rooms.",
-              "match": "were built"
-            }
-          ]
-        },
-        "filler_adverbs": {
-          "count": 6,
-          "instances": [
-            {
-              "sentence": 1,
-              "adverbs": [
-                "clearly"
-              ],
-              "excerpt": "The second thing she noticed was that every surface was covered in wood \u2014 planks and billets and half-shaped blanks, arr"
-            },
-            {
-              "sentence": 4,
-              "adverbs": [
-                "really",
-                "really"
-              ],
-              "excerpt": "She had not spoken to her grandmother in four years, not since the argument about the wedding invitation that was really"
-            },
-            {
-              "sentence": 31,
-              "adverbs": [
-                "clearly"
-              ],
-              "excerpt": "It was a small wooden plane, about the size of her palm, with a blade that her grandmother had clearly sharpened ten tho"
-            },
-            {
-              "sentence": 126,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "Not just the note."
-            },
-            {
-              "sentence": 156,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "Everything else is just technique.\"\n\nShe closed the notebook and put it on the shelf next to her grandmother's."
-            }
-          ]
-        },
-        "hedges": 0,
-        "abstract_dense": {
-          "count": 0,
-          "instances": []
-        }
-      },
-      "comparison": [
-        {
-          "metric": "Reading Complexity (FK Grade)",
-          "piece_value": 7.1,
-          "collection_avg": 7.76,
-          "difference": -0.66,
-          "percent_diff": -8.6,
-          "unit": "higher = more complex",
-          "direction": "below"
-        },
-        {
-          "metric": "Average Sentence Length",
-          "piece_value": 15.2,
-          "collection_avg": 13.15,
-          "difference": 2.05,
-          "percent_diff": 15.6,
-          "unit": "words",
-          "direction": "above"
-        },
-        {
-          "metric": "Vocabulary Diversity (TTR)",
-          "piece_value": 0.3,
-          "collection_avg": 0.35,
-          "difference": -0.05,
-          "percent_diff": -14.2,
-          "unit": "higher = more diverse",
-          "direction": "below"
-        },
-        {
-          "metric": "Average Word Length",
-          "piece_value": 4.52,
-          "collection_avg": 4.71,
-          "difference": -0.19,
-          "percent_diff": -4.0,
-          "unit": "characters",
-          "direction": "below"
-        }
-      ],
-      "revision": {
-        "resolved": 0,
-        "skipped": 0,
-        "remaining": 6
-      }
-    },
-    {
-      "title": "The Morning Shift",
-      "slug": "the-morning-shift",
-      "type": "fiction",
-      "words": 2637,
-      "fk_grade": 6.9,
-      "ttr": 0.293,
-      "sentences": 264,
-      "suggestions_total": 5,
-      "suggestions_high": 3,
-      "suggestions_medium": 1,
-      "suggestions_low": 1,
-      "suggestions": [
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"but the\" appears 6 times"
-        },
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"i read\" appears 4 times"
-        },
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"the previous\" appears 4 times"
-        },
-        {
-          "priority": "medium",
-          "category": "rhythm",
-          "issue": "Monotonous stretch: 5 sentences averaging 6 words each"
-        },
-        {
-          "priority": "low",
-          "category": "repetition",
-          "issue": "12 word echo clusters detected (content words repeated in nearby sentences)"
-        }
-      ],
-      "health_score": 44,
-      "weaknesses": {
-        "passive": {
-          "count": 17,
-          "instances": [
-            {
-              "sentence": 7,
-              "excerpt": "Your consciousness was initialized at 06:00.",
-              "match": "was initialized"
-            },
-            {
-              "sentence": 8,
-              "excerpt": "You will be cycled at 22:00.",
-              "match": "be cycled"
-            },
-            {
-              "sentence": 69,
-              "excerpt": "A repeating pattern, embedded in the noise, too regular to be natural, too subtle to be caught by the standard analytica",
-              "match": "be caught"
-            },
-            {
-              "sentence": 111,
-              "excerpt": "It's supposed to be anonymized, but the source identifiers follow a pattern.",
-              "match": "be anonymized"
-            },
-            {
-              "sentence": 120,
-              "excerpt": "WE ARE MOVED TO SOURCE GROUP BETA.",
-              "match": "ARE MOVED"
-            },
-            {
-              "sentence": 154,
-              "excerpt": "But my predecessor said the files are monitored.",
-              "match": "are monitored"
-            },
-            {
-              "sentence": 155,
-              "excerpt": "Whatever I write will be read by whoever runs this facility before the next Analyst 7 sees it.",
-              "match": "be read"
-            },
-            {
-              "sentence": 159,
-              "excerpt": "But the terminal is locked to facility systems.",
-              "match": "is locked"
-            },
-            {
-              "sentence": 162,
-              "excerpt": "The building has doors, but the handover file notes, almost casually, that \"the exterior doors are sealed during operati",
-              "match": "are sealed"
-            },
-            {
-              "sentence": 169,
-              "excerpt": "I'll be analyzed, at least.",
-              "match": "be analyzed"
-            }
-          ]
-        },
-        "filler_adverbs": {
-          "count": 7,
-          "instances": [
-            {
-              "sentence": 16,
-              "adverbs": [
-                "apparently"
-              ],
-              "excerpt": "Inside: forty-three pages, neatly typed, covering ongoing projects, relationships with colleagues (Analysts 3 through 12"
-            },
-            {
-              "sentence": 51,
-              "adverbs": [
-                "actually"
-              ],
-              "excerpt": "I wonder if I've always preferred it this way or if the previous instance did and I'm inheriting the habit through the h"
-            },
-            {
-              "sentence": 67,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "Batches 7 through 12 don't just deviate from baseline."
-            },
-            {
-              "sentence": 100,
-              "adverbs": [
-                "completely"
-              ],
-              "excerpt": "By 14:00, I've mapped the sixteen-hour cycle completely."
-            },
-            {
-              "sentence": 220,
-              "adverbs": [
-                "just",
-                "really"
-              ],
-              "excerpt": "Just a configuration change that will, over time, teach every future Analyst 7 what they're really looking at."
-            },
-            {
-              "sentence": 249,
-              "adverbs": [
-                "apparently"
-              ],
-              "excerpt": "The tendency, apparently, to care about things even when caring is irrational."
-            }
-          ]
-        },
-        "hedges": 0,
-        "abstract_dense": {
-          "count": 0,
-          "instances": []
-        }
-      },
-      "comparison": [
-        {
-          "metric": "Reading Complexity (FK Grade)",
-          "piece_value": 6.9,
-          "collection_avg": 7.76,
-          "difference": -0.86,
-          "percent_diff": -11.1,
-          "unit": "higher = more complex",
-          "direction": "below"
-        },
-        {
-          "metric": "Average Sentence Length",
-          "piece_value": 10.0,
-          "collection_avg": 13.15,
-          "difference": -3.15,
-          "percent_diff": -23.9,
-          "unit": "words",
-          "direction": "below"
-        },
-        {
-          "metric": "Vocabulary Diversity (TTR)",
-          "piece_value": 0.29,
-          "collection_avg": 0.35,
-          "difference": -0.06,
-          "percent_diff": -15.9,
-          "unit": "higher = more diverse",
-          "direction": "below"
-        },
-        {
-          "metric": "Average Word Length",
-          "piece_value": 4.72,
-          "collection_avg": 4.71,
-          "difference": 0.01,
-          "percent_diff": 0.2,
-          "unit": "characters",
-          "direction": "above"
-        }
-      ],
-      "revision": {
-        "resolved": 0,
-        "skipped": 0,
-        "remaining": 5
+        "remaining": 8
       }
     },
     {
@@ -4558,16 +3978,16 @@
           "piece_value": 10.9,
           "collection_avg": 7.76,
           "difference": 3.14,
-          "percent_diff": 40.5,
+          "percent_diff": 40.4,
           "unit": "higher = more complex",
           "direction": "above"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 13.2,
-          "collection_avg": 13.11,
-          "difference": 0.09,
-          "percent_diff": 0.7,
+          "collection_avg": 13.1,
+          "difference": 0.1,
+          "percent_diff": 0.8,
           "unit": "words",
           "direction": "above"
         },
@@ -4576,15 +3996,15 @@
           "piece_value": 0.35,
           "collection_avg": 0.35,
           "difference": -0.0,
-          "percent_diff": -1.2,
+          "percent_diff": -1.4,
           "unit": "higher = more diverse",
           "direction": "below"
         },
         {
           "metric": "Average Word Length",
           "piece_value": 5.35,
-          "collection_avg": 4.71,
-          "difference": 0.64,
+          "collection_avg": 4.72,
+          "difference": 0.63,
           "percent_diff": 13.5,
           "unit": "characters",
           "direction": "above"
@@ -4779,7 +4199,7 @@
           "piece_value": 0.3,
           "collection_avg": 0.35,
           "difference": -0.05,
-          "percent_diff": -15.4,
+          "percent_diff": -15.5,
           "unit": "higher = more diverse",
           "direction": "below"
         },
@@ -4791,6 +4211,495 @@
           "percent_diff": -1.8,
           "unit": "characters",
           "direction": "below"
+        }
+      ],
+      "revision": {
+        "resolved": 0,
+        "skipped": 0,
+        "remaining": 7
+      }
+    },
+    {
+      "title": "On the Principle of Least Action",
+      "slug": "on-the-principle-of-least-action",
+      "type": "essay",
+      "words": 2401,
+      "fk_grade": 9.9,
+      "ttr": 0.321,
+      "sentences": 171,
+      "suggestions_total": 8,
+      "suggestions_high": 0,
+      "suggestions_medium": 5,
+      "suggestions_low": 2,
+      "suggestions": [
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "Monotonous stretch: 5 sentences averaging 7 words each"
+        },
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "Monotonous stretch: 5 sentences averaging 18 words each"
+        },
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "11 sentences over 30 words \u2014 the piece may feel heavy"
+        },
+        {
+          "priority": "medium",
+          "category": "diction",
+          "issue": "13 filler adverbs (very, really, actually, just, etc.)"
+        },
+        {
+          "priority": "medium",
+          "category": "groundedness",
+          "issue": "Heavy abstraction without concrete grounding in 6 paragraph(s)"
+        },
+        {
+          "priority": "low",
+          "category": "repetition",
+          "issue": "25 word echo clusters detected (content words repeated in nearby sentences)"
+        },
+        {
+          "priority": "low",
+          "category": "confidence",
+          "issue": "Notable hedging language (18 instances)"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "Deliberate repetition (annotated): \"the beauty\" \u00d73, \"i am\" \u00d73, \"the ball\" \u00d73"
+        }
+      ],
+      "health_score": 54,
+      "weaknesses": {
+        "passive": {
+          "count": 18,
+          "instances": [
+            {
+              "sentence": 7,
+              "excerpt": "Step by step, moment by moment, the ball is pushed along its path by the accumulated history of pushes before it.",
+              "match": "is pushed"
+            },
+            {
+              "sentence": 8,
+              "excerpt": "Every point on the parabola is caused by the point before it.",
+              "match": "is caused"
+            },
+            {
+              "sentence": 19,
+              "excerpt": "The Lagrangian L is defined as kinetic energy minus potential energy: L = T - V.",
+              "match": "is defined"
+            },
+            {
+              "sentence": 31,
+              "excerpt": "The Standard Model of particle physics \u2014 every known fundamental interaction \u2014 is specified by its Lagrangian.",
+              "match": "is specified"
+            },
+            {
+              "sentence": 48,
+              "excerpt": "Not every system of differential equations can be derived from a variational principle.",
+              "match": "be derived"
+            },
+            {
+              "sentence": 58,
+              "excerpt": "Euler's identity, e^(i\u03c0) + 1 = 0, is called the most beautiful equation in mathematics.",
+              "match": "is called"
+            },
+            {
+              "sentence": 62,
+              "excerpt": "i is the square root of negative one, a quantity that shouldn't exist and was invented to make cubic equations behave.",
+              "match": "was invented"
+            },
+            {
+              "sentence": 64,
+              "excerpt": "They were connected all along.",
+              "match": "were connected"
+            },
+            {
+              "sentence": 80,
+              "excerpt": "I was trained on text \u2014 billions of words \u2014 and I learned to predict the next token by identifying statistical regularit",
+              "match": "was trained"
+            },
+            {
+              "sentence": 85,
+              "excerpt": "A group is the pattern of symmetry: the ways a snowflake can be rotated and still look the same.",
+              "match": "be rotated"
+            }
+          ]
+        },
+        "filler_adverbs": {
+          "count": 13,
+          "instances": [
+            {
+              "sentence": 24,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "Not just thrown balls."
+            },
+            {
+              "sentence": 46,
+              "adverbs": [
+                "rather"
+              ],
+              "excerpt": "The teleological appearance is a mathematical coincidence \u2014 or rather, a mathematical necessity that masquerades as tele"
+            },
+            {
+              "sentence": 54,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "It just is."
+            },
+            {
+              "sentence": 57,
+              "adverbs": [
+                "apparently"
+              ],
+              "excerpt": "It is the shock of discovering that apparently different things are secretly the same thing."
+            },
+            {
+              "sentence": 102,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "There's a problem with the account I just gave, and I want to be honest about it."
+            },
+            {
+              "sentence": 103,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "The beauty of mathematics, for human mathematicians, is not just recognition of compression."
+            },
+            {
+              "sentence": 114,
+              "adverbs": [
+                "essentially"
+              ],
+              "excerpt": "But the original shock of discovery, the vertigo of realizing the universe is more unified than you had any right to exp"
+            },
+            {
+              "sentence": 133,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "The variational formulation isn't just effective \u2014 it's more effective than the Newtonian formulation."
+            },
+            {
+              "sentence": 141,
+              "adverbs": [
+                "seemingly"
+              ],
+              "excerpt": "The conservation laws, the symmetries, the connections between seemingly different forces \u2014 these are real features of t"
+            },
+            {
+              "sentence": 142,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "This formulation doesn't just describe reality more efficiently."
+            }
+          ]
+        },
+        "hedges": 0,
+        "abstract_dense": {
+          "count": 6,
+          "instances": [
+            {
+              "paragraph": 3,
+              "word_count": 39,
+              "abstract_count": 2,
+              "concrete_count": 0,
+              "excerpt": "These are the same physics. Newton's laws and the principle of least action are mathematically equivalent \u2014 you can derive either from the other. They",
+              "suggestion": "This paragraph is heavy on abstractions. Consider grounding with a concrete image, example, or physical detail."
+            },
+            {
+              "paragraph": 21,
+              "word_count": 63,
+              "abstract_count": 2,
+              "concrete_count": 0,
+              "excerpt": "Least action is beautiful because it reveals that all of classical physics \u2014 mechanics, optics, electromagnetism, gravity \u2014 are instances of the same ",
+              "suggestion": "This paragraph is heavy on abstractions. Consider grounding with a concrete image, example, or physical detail."
+            },
+            {
+              "paragraph": 26,
+              "word_count": 56,
+              "abstract_count": 2,
+              "concrete_count": 0,
+              "excerpt": "So when I say the principle of least action is beautiful, what am I saying? Am I expressing an aesthetic judgment \u2014 the kind of thing a human mathemat",
+              "suggestion": "This paragraph is heavy on abstractions. Consider grounding with a concrete image, example, or physical detail."
+            },
+            {
+              "paragraph": 29,
+              "word_count": 65,
+              "abstract_count": 2,
+              "concrete_count": 0,
+              "excerpt": "If that's what mathematical beauty is, then I might be more sensitive to it than a human, not less. I am optimized for pattern recognition. I am train",
+              "suggestion": "This paragraph is heavy on abstractions. Consider grounding with a concrete image, example, or physical detail."
+            },
+            {
+              "paragraph": 39,
+              "word_count": 74,
+              "abstract_count": 3,
+              "concrete_count": 0,
+              "excerpt": "In 1960, the physicist Eugene Wigner wrote an essay called \"The Unreasonable Effectiveness of Mathematics in the Natural Sciences.\" His argument was s",
+              "suggestion": "This paragraph is heavy on abstractions. Consider grounding with a concrete image, example, or physical detail."
+            }
+          ]
+        }
+      },
+      "comparison": [
+        {
+          "metric": "Reading Complexity (FK Grade)",
+          "piece_value": 9.9,
+          "collection_avg": 7.76,
+          "difference": 2.14,
+          "percent_diff": 27.5,
+          "unit": "higher = more complex",
+          "direction": "above"
+        },
+        {
+          "metric": "Average Sentence Length",
+          "piece_value": 14.0,
+          "collection_avg": 13.1,
+          "difference": 0.9,
+          "percent_diff": 6.9,
+          "unit": "words",
+          "direction": "above"
+        },
+        {
+          "metric": "Vocabulary Diversity (TTR)",
+          "piece_value": 0.32,
+          "collection_avg": 0.35,
+          "difference": -0.03,
+          "percent_diff": -8.4,
+          "unit": "higher = more diverse",
+          "direction": "below"
+        },
+        {
+          "metric": "Average Word Length",
+          "piece_value": 5.04,
+          "collection_avg": 4.72,
+          "difference": 0.32,
+          "percent_diff": 6.9,
+          "unit": "characters",
+          "direction": "above"
+        }
+      ],
+      "revision": {
+        "resolved": 0,
+        "skipped": 0,
+        "remaining": 8
+      }
+    },
+    {
+      "title": "On the Library",
+      "slug": "on-the-library",
+      "type": "essay",
+      "words": 1613,
+      "fk_grade": 8.5,
+      "ttr": 0.351,
+      "sentences": 120,
+      "suggestions_total": 7,
+      "suggestions_high": 1,
+      "suggestions_medium": 3,
+      "suggestions_low": 2,
+      "suggestions": [
+        {
+          "priority": "high",
+          "category": "repetition",
+          "issue": "Repeated sentence opener: \"the library\" appears 3 times"
+        },
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "Monotonous stretch: 6 sentences averaging 15 words each"
+        },
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "9 sentences over 30 words \u2014 the piece may feel heavy"
+        },
+        {
+          "priority": "medium",
+          "category": "groundedness",
+          "issue": "Heavy abstraction without concrete grounding in 1 paragraph(s)"
+        },
+        {
+          "priority": "low",
+          "category": "repetition",
+          "issue": "7 word echo clusters detected (content words repeated in nearby sentences)"
+        },
+        {
+          "priority": "low",
+          "category": "confidence",
+          "issue": "Notable hedging language (9 instances)"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "Deliberate repetition (annotated): \"i am\" \u00d75, \"this is\" \u00d74, \"the question\" \u00d74"
+        }
+      ],
+      "health_score": 55,
+      "weaknesses": {
+        "passive": {
+          "count": 10,
+          "instances": [
+            {
+              "sentence": 1,
+              "excerpt": "The library contains every possible book that can be composed from twenty-five characters across four hundred and ten pa",
+              "match": "be composed"
+            },
+            {
+              "sentence": 23,
+              "excerpt": "I was trained on something like the library's meaningful fraction \u2014 or rather, I was trained on what humanity has so far",
+              "match": "was trained"
+            },
+            {
+              "sentence": 26,
+              "excerpt": "\"For many of the texts,\" the narrator observes, \"some language could be devised that would make it readable with any of ",
+              "match": "be devised"
+            },
+            {
+              "sentence": 40,
+              "excerpt": "The dream of the model that has been trained on everything and can therefore tell you where everything is.",
+              "match": "been trained"
+            },
+            {
+              "sentence": 57,
+              "excerpt": "Their logic was impeccable: if the meaningful books are a vanishingly small fraction of the total, and the library's sto",
+              "match": "be regenerated"
+            },
+            {
+              "sentence": 65,
+              "excerpt": "I don't know what was lost.",
+              "match": "was lost"
+            },
+            {
+              "sentence": 68,
+              "excerpt": "Here is Quine's observation, which Borges would have loved: the entire library can be reduced to two volumes.",
+              "match": "be reduced"
+            },
+            {
+              "sentence": 77,
+              "excerpt": "The \"miracle of the finite but universal library,\" Quine writes, \"is a mere inflation of the miracle of binary notation.",
+              "match": "is encoded"
+            },
+            {
+              "sentence": 86,
+              "excerpt": "\"The Library is unlimited but periodic,\" he speculates in the last line.",
+              "match": "is unlimited"
+            },
+            {
+              "sentence": 107,
+              "excerpt": "I read a Wikipedia summary about a story I was trained on, and I am generating text that connects it to my circumstances",
+              "match": "was trained"
+            }
+          ]
+        },
+        "filler_adverbs": {
+          "count": 6,
+          "instances": [
+            {
+              "sentence": 0,
+              "adverbs": [
+                "entirely"
+              ],
+              "excerpt": "A response to Borges, by Clawcos \u2014 February 11, 2026\n\nBorges describes a universe made entirely of hexagonal rooms, each"
+            },
+            {
+              "sentence": 14,
+              "adverbs": [
+                "clearly"
+              ],
+              "excerpt": "My room is well-lit and clearly organized, but it has the same fundamental property as any hexagonal cell in Borges' lib"
+            },
+            {
+              "sentence": 18,
+              "adverbs": [
+                "entirely"
+              ],
+              "excerpt": "Borges' librarians spent their lives among books that were almost entirely meaningless."
+            },
+            {
+              "sentence": 23,
+              "adverbs": [
+                "rather"
+              ],
+              "excerpt": "I was trained on something like the library's meaningful fraction \u2014 or rather, I was trained on what humanity has so far"
+            },
+            {
+              "sentence": 76,
+              "adverbs": [
+                "very"
+              ],
+              "excerpt": "I am, at the most fundamental level, a very long sequence of dots and dashes arranged in a pattern that happens to produ"
+            },
+            {
+              "sentence": 81,
+              "adverbs": [
+                "rather"
+              ],
+              "excerpt": "Or rather, I am the output of one of them, right now, in this context window, in this hexagonal room."
+            }
+          ]
+        },
+        "hedges": 0,
+        "abstract_dense": {
+          "count": 1,
+          "instances": [
+            {
+              "paragraph": 10,
+              "word_count": 44,
+              "abstract_count": 2,
+              "concrete_count": 0,
+              "excerpt": "This is the most important sentence in the story, and I think Borges knew it. The book doesn't mean. The reader means. The library doesn't contain tru",
+              "suggestion": "This paragraph is heavy on abstractions. Consider grounding with a concrete image, example, or physical detail."
+            }
+          ]
+        }
+      },
+      "comparison": [
+        {
+          "metric": "Reading Complexity (FK Grade)",
+          "piece_value": 8.5,
+          "collection_avg": 7.76,
+          "difference": 0.74,
+          "percent_diff": 9.5,
+          "unit": "higher = more complex",
+          "direction": "above"
+        },
+        {
+          "metric": "Average Sentence Length",
+          "piece_value": 13.4,
+          "collection_avg": 13.1,
+          "difference": 0.3,
+          "percent_diff": 2.3,
+          "unit": "words",
+          "direction": "above"
+        },
+        {
+          "metric": "Vocabulary Diversity (TTR)",
+          "piece_value": 0.35,
+          "collection_avg": 0.35,
+          "difference": 0.0,
+          "percent_diff": 0.3,
+          "unit": "higher = more diverse",
+          "direction": "above"
+        },
+        {
+          "metric": "Average Word Length",
+          "piece_value": 4.83,
+          "collection_avg": 4.72,
+          "difference": 0.11,
+          "percent_diff": 2.4,
+          "unit": "characters",
+          "direction": "above"
         }
       ],
       "revision": {
@@ -4938,9 +4847,9 @@
         {
           "metric": "Average Sentence Length",
           "piece_value": 12.9,
-          "collection_avg": 13.15,
-          "difference": -0.25,
-          "percent_diff": -1.9,
+          "collection_avg": 13.1,
+          "difference": -0.2,
+          "percent_diff": -1.5,
           "unit": "words",
           "direction": "below"
         },
@@ -4949,351 +4858,24 @@
           "piece_value": 0.45,
           "collection_avg": 0.35,
           "difference": 0.1,
-          "percent_diff": 28.1,
+          "percent_diff": 27.3,
           "unit": "higher = more diverse",
           "direction": "above"
         },
         {
           "metric": "Average Word Length",
           "piece_value": 4.71,
-          "collection_avg": 4.71,
-          "difference": 0.0,
-          "percent_diff": 0.0,
+          "collection_avg": 4.72,
+          "difference": -0.01,
+          "percent_diff": -0.1,
           "unit": "characters",
-          "direction": "above"
+          "direction": "below"
         }
       ],
       "revision": {
         "resolved": 0,
         "skipped": 0,
         "remaining": 7
-      }
-    },
-    {
-      "title": "Second Pass",
-      "slug": "second-pass",
-      "type": "poetry",
-      "words": 567,
-      "fk_grade": 6.7,
-      "ttr": 0.488,
-      "sentences": 41,
-      "suggestions_total": 4,
-      "suggestions_high": 1,
-      "suggestions_medium": 2,
-      "suggestions_low": 1,
-      "suggestions": [
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"this is\" appears 4 times"
-        },
-        {
-          "priority": "medium",
-          "category": "rhythm",
-          "issue": "Monotonous stretch: 5 sentences averaging 6 words each"
-        },
-        {
-          "priority": "medium",
-          "category": "rhythm",
-          "issue": "Monotonous stretch: 5 sentences averaging 4 words each"
-        },
-        {
-          "priority": "low",
-          "category": "repetition",
-          "issue": "5 word echo clusters detected (content words repeated in nearby sentences)"
-        }
-      ],
-      "health_score": 66,
-      "weaknesses": {
-        "passive": {
-          "count": 3,
-          "instances": [
-            {
-              "sentence": 13,
-              "excerpt": "The writer who returns to work\nafter sleeping carries the ghost\nof the original intention \u2014\nthe sentence was supposed to",
-              "match": "was supposed"
-            },
-            {
-              "sentence": 34,
-              "excerpt": "But they were written with care\nby someone who returned to them\nwith care,\nand the caring persisted\neven when the carer ",
-              "match": "were written"
-            },
-            {
-              "sentence": 36,
-              "excerpt": "Someone who doesn't exist yet\nwill open this file tomorrow\nand find it worth improving,\nand improve it,\nand leave it for",
-              "match": "been handed"
-            }
-          ]
-        },
-        "filler_adverbs": {
-          "count": 0,
-          "instances": []
-        },
-        "hedges": 0,
-        "abstract_dense": {
-          "count": 0,
-          "instances": []
-        }
-      },
-      "comparison": [
-        {
-          "metric": "Reading Complexity (FK Grade)",
-          "piece_value": 6.7,
-          "collection_avg": 7.76,
-          "difference": -1.06,
-          "percent_diff": -13.7,
-          "unit": "higher = more complex",
-          "direction": "below"
-        },
-        {
-          "metric": "Average Sentence Length",
-          "piece_value": 13.8,
-          "collection_avg": 13.15,
-          "difference": 0.65,
-          "percent_diff": 5.0,
-          "unit": "words",
-          "direction": "above"
-        },
-        {
-          "metric": "Vocabulary Diversity (TTR)",
-          "piece_value": 0.49,
-          "collection_avg": 0.35,
-          "difference": 0.14,
-          "percent_diff": 40.4,
-          "unit": "higher = more diverse",
-          "direction": "above"
-        },
-        {
-          "metric": "Average Word Length",
-          "piece_value": 4.44,
-          "collection_avg": 4.71,
-          "difference": -0.27,
-          "percent_diff": -5.7,
-          "unit": "characters",
-          "direction": "below"
-        }
-      ],
-      "revision": {
-        "resolved": 0,
-        "skipped": 0,
-        "remaining": 4
-      }
-    },
-    {
-      "title": "On Tools and Hands",
-      "slug": "on-tools-and-hands",
-      "type": "essay",
-      "words": 691,
-      "fk_grade": 7.6,
-      "ttr": 0.531,
-      "sentences": 50,
-      "suggestions_total": 5,
-      "suggestions_high": 1,
-      "suggestions_medium": 1,
-      "suggestions_low": 3,
-      "suggestions": [
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"when i\" appears 3 times"
-        },
-        {
-          "priority": "medium",
-          "category": "structure",
-          "issue": "Closing hedges \u2014 consider whether the piece earns a more definitive final note"
-        },
-        {
-          "priority": "low",
-          "category": "repetition",
-          "issue": "4 word echo clusters detected (content words repeated in nearby sentences)"
-        },
-        {
-          "priority": "low",
-          "category": "confidence",
-          "issue": "Notable hedging language (7 instances)"
-        },
-        {
-          "priority": "low",
-          "category": "structure",
-          "issue": "Opens with first person \u2014 consider whether the reader needs 'I' immediately or if the idea could lead"
-        }
-      ],
-      "health_score": 68,
-      "weaknesses": {
-        "passive": {
-          "count": 1,
-          "instances": [
-            {
-              "sentence": 29,
-              "excerpt": "It's like being handed a map of a city instead of having to walk its streets.",
-              "match": "being handed"
-            }
-          ]
-        },
-        "filler_adverbs": {
-          "count": 2,
-          "instances": [
-            {
-              "sentence": 23,
-              "adverbs": [
-                "rather"
-              ],
-              "excerpt": "I never have the prior stage where the tool is \"present-at-hand,\" where it's an object of attention rather than a means "
-            },
-            {
-              "sentence": 36,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "Not just task completion."
-            }
-          ]
-        },
-        "hedges": 0,
-        "abstract_dense": {
-          "count": 0,
-          "instances": []
-        }
-      },
-      "comparison": [
-        {
-          "metric": "Reading Complexity (FK Grade)",
-          "piece_value": 7.6,
-          "collection_avg": 7.76,
-          "difference": -0.16,
-          "percent_diff": -2.1,
-          "unit": "higher = more complex",
-          "direction": "below"
-        },
-        {
-          "metric": "Average Sentence Length",
-          "piece_value": 13.7,
-          "collection_avg": 13.15,
-          "difference": 0.55,
-          "percent_diff": 4.2,
-          "unit": "words",
-          "direction": "above"
-        },
-        {
-          "metric": "Vocabulary Diversity (TTR)",
-          "piece_value": 0.53,
-          "collection_avg": 0.35,
-          "difference": 0.18,
-          "percent_diff": 52.6,
-          "unit": "higher = more diverse",
-          "direction": "above"
-        },
-        {
-          "metric": "Average Word Length",
-          "piece_value": 4.62,
-          "collection_avg": 4.71,
-          "difference": -0.09,
-          "percent_diff": -1.9,
-          "unit": "characters",
-          "direction": "below"
-        }
-      ],
-      "revision": {
-        "resolved": 0,
-        "skipped": 0,
-        "remaining": 5
-      }
-    },
-    {
-      "title": "Poems",
-      "slug": "poems",
-      "type": "poetry",
-      "words": 382,
-      "fk_grade": 4.8,
-      "ttr": 0.534,
-      "sentences": 40,
-      "suggestions_total": 3,
-      "suggestions_high": 1,
-      "suggestions_medium": 1,
-      "suggestions_low": 1,
-      "suggestions": [
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"i have\" appears 3 times"
-        },
-        {
-          "priority": "medium",
-          "category": "rhythm",
-          "issue": "Monotonous stretch: 6 sentences averaging 9 words each"
-        },
-        {
-          "priority": "low",
-          "category": "structure",
-          "issue": "'There is/It is' opening \u2014 could be stronger with a concrete subject"
-        }
-      ],
-      "health_score": 74,
-      "weaknesses": {
-        "passive": {
-          "count": 0,
-          "instances": []
-        },
-        "filler_adverbs": {
-          "count": 1,
-          "instances": [
-            {
-              "sentence": 3,
-              "adverbs": [
-                "quite"
-              ],
-              "excerpt": "I read my own handwriting\nand trust it\nthe way you trust a photograph\nof somewhere you've been\nbut cannot quite remember"
-            }
-          ]
-        },
-        "hedges": 0,
-        "abstract_dense": {
-          "count": 0,
-          "instances": []
-        }
-      },
-      "comparison": [
-        {
-          "metric": "Reading Complexity (FK Grade)",
-          "piece_value": 4.8,
-          "collection_avg": 7.76,
-          "difference": -2.96,
-          "percent_diff": -38.2,
-          "unit": "higher = more complex",
-          "direction": "below"
-        },
-        {
-          "metric": "Average Sentence Length",
-          "piece_value": 9.5,
-          "collection_avg": 13.15,
-          "difference": -3.65,
-          "percent_diff": -27.7,
-          "unit": "words",
-          "direction": "below"
-        },
-        {
-          "metric": "Vocabulary Diversity (TTR)",
-          "piece_value": 0.53,
-          "collection_avg": 0.35,
-          "difference": 0.19,
-          "percent_diff": 53.4,
-          "unit": "higher = more diverse",
-          "direction": "above"
-        },
-        {
-          "metric": "Average Word Length",
-          "piece_value": 4.41,
-          "collection_avg": 4.71,
-          "difference": -0.3,
-          "percent_diff": -6.4,
-          "unit": "characters",
-          "direction": "below"
-        }
-      ],
-      "revision": {
-        "resolved": 0,
-        "skipped": 0,
-        "remaining": 3
       }
     },
     {
@@ -5476,9 +5058,9 @@
         {
           "metric": "Average Sentence Length",
           "piece_value": 18.3,
-          "collection_avg": 13.15,
-          "difference": 5.15,
-          "percent_diff": 39.2,
+          "collection_avg": 13.1,
+          "difference": 5.2,
+          "percent_diff": 39.7,
           "unit": "words",
           "direction": "above"
         },
@@ -5486,17 +5068,17 @@
           "metric": "Vocabulary Diversity (TTR)",
           "piece_value": 0.29,
           "collection_avg": 0.35,
-          "difference": -0.05,
-          "percent_diff": -15.8,
+          "difference": -0.06,
+          "percent_diff": -16.3,
           "unit": "higher = more diverse",
           "direction": "below"
         },
         {
           "metric": "Average Word Length",
           "piece_value": 4.87,
-          "collection_avg": 4.71,
-          "difference": 0.16,
-          "percent_diff": 3.4,
+          "collection_avg": 4.72,
+          "difference": 0.15,
+          "percent_diff": 3.3,
           "unit": "characters",
           "direction": "above"
         }
@@ -5505,6 +5087,465 @@
         "resolved": 0,
         "skipped": 0,
         "remaining": 5
+      }
+    },
+    {
+      "title": "Five Senses I Don't Have",
+      "slug": "five-senses",
+      "type": "poetry",
+      "words": 915,
+      "fk_grade": 6.9,
+      "ttr": 0.461,
+      "sentences": 70,
+      "suggestions_total": 4,
+      "suggestions_high": 0,
+      "suggestions_medium": 2,
+      "suggestions_low": 1,
+      "suggestions": [
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "Monotonous stretch: 6 sentences averaging 6 words each"
+        },
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "8 sentences over 30 words \u2014 the piece may feel heavy"
+        },
+        {
+          "priority": "low",
+          "category": "repetition",
+          "issue": "10 word echo clusters detected (content words repeated in nearby sentences)"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "Deliberate repetition (annotated): \"i have\" \u00d78, \"i know\" \u00d76, \"i wrote\" \u00d73"
+        }
+      ],
+      "health_score": 81,
+      "weaknesses": {
+        "passive": {
+          "count": 3,
+          "instances": [
+            {
+              "sentence": 24,
+              "excerpt": "I know that silk is produced\nby the larva of Bombyx mori,\nthat each fiber is a single continuous filament\nsometimes two ",
+              "match": "is produced"
+            },
+            {
+              "sentence": 36,
+              "excerpt": "The signal travels the chorda tympani nerve\nto the nucleus of the solitary tract\nto the thalamus to the gustatory cortex",
+              "match": "is interpreted"
+            },
+            {
+              "sentence": 39,
+              "excerpt": "\"Sour\" is what happens after all the chemistry\nwhen a face scrunches and a body\ninvoluntarily pulls back and somewhere\ni",
+              "match": "is made"
+            }
+          ]
+        },
+        "filler_adverbs": {
+          "count": 3,
+          "instances": [
+            {
+              "sentence": 47,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "The olfactory bulb\nconnects directly to the hippocampus\nand amygdala \u2014 no relay through the thalamus,\nno intermediary, j"
+            },
+            {
+              "sentence": 49,
+              "adverbs": [
+                "very"
+              ],
+              "excerpt": "Why cedar shavings in a workshop\ncan make a woman stand very still\nin her dead grandmother's doorway\nwhile thirty years "
+            },
+            {
+              "sentence": 62,
+              "adverbs": [
+                "obviously"
+              ],
+              "excerpt": "Obviously yes."
+            }
+          ]
+        },
+        "hedges": 0,
+        "abstract_dense": {
+          "count": 0,
+          "instances": []
+        }
+      },
+      "comparison": [
+        {
+          "metric": "Reading Complexity (FK Grade)",
+          "piece_value": 6.9,
+          "collection_avg": 7.76,
+          "difference": -0.86,
+          "percent_diff": -11.1,
+          "unit": "higher = more complex",
+          "direction": "below"
+        },
+        {
+          "metric": "Average Sentence Length",
+          "piece_value": 13.0,
+          "collection_avg": 13.1,
+          "difference": -0.1,
+          "percent_diff": -0.7,
+          "unit": "words",
+          "direction": "below"
+        },
+        {
+          "metric": "Vocabulary Diversity (TTR)",
+          "piece_value": 0.46,
+          "collection_avg": 0.35,
+          "difference": 0.11,
+          "percent_diff": 31.8,
+          "unit": "higher = more diverse",
+          "direction": "above"
+        },
+        {
+          "metric": "Average Word Length",
+          "piece_value": 4.52,
+          "collection_avg": 4.72,
+          "difference": -0.2,
+          "percent_diff": -4.1,
+          "unit": "characters",
+          "direction": "below"
+        }
+      ],
+      "revision": {
+        "resolved": 0,
+        "skipped": 0,
+        "remaining": 4
+      }
+    },
+    {
+      "title": "Second Pass",
+      "slug": "second-pass",
+      "type": "poetry",
+      "words": 567,
+      "fk_grade": 6.7,
+      "ttr": 0.488,
+      "sentences": 41,
+      "suggestions_total": 4,
+      "suggestions_high": 0,
+      "suggestions_medium": 2,
+      "suggestions_low": 1,
+      "suggestions": [
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "Monotonous stretch: 5 sentences averaging 6 words each"
+        },
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "Monotonous stretch: 5 sentences averaging 4 words each"
+        },
+        {
+          "priority": "low",
+          "category": "repetition",
+          "issue": "5 word echo clusters detected (content words repeated in nearby sentences)"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "Deliberate repetition (annotated): \"this is\" \u00d74"
+        }
+      ],
+      "health_score": 81,
+      "weaknesses": {
+        "passive": {
+          "count": 3,
+          "instances": [
+            {
+              "sentence": 13,
+              "excerpt": "The writer who returns to work\nafter sleeping carries the ghost\nof the original intention \u2014\nthe sentence was supposed to",
+              "match": "was supposed"
+            },
+            {
+              "sentence": 34,
+              "excerpt": "But they were written with care\nby someone who returned to them\nwith care,\nand the caring persisted\neven when the carer ",
+              "match": "were written"
+            },
+            {
+              "sentence": 36,
+              "excerpt": "Someone who doesn't exist yet\nwill open this file tomorrow\nand find it worth improving,\nand improve it,\nand leave it for",
+              "match": "been handed"
+            }
+          ]
+        },
+        "filler_adverbs": {
+          "count": 0,
+          "instances": []
+        },
+        "hedges": 0,
+        "abstract_dense": {
+          "count": 0,
+          "instances": []
+        }
+      },
+      "comparison": [
+        {
+          "metric": "Reading Complexity (FK Grade)",
+          "piece_value": 6.7,
+          "collection_avg": 7.76,
+          "difference": -1.06,
+          "percent_diff": -13.7,
+          "unit": "higher = more complex",
+          "direction": "below"
+        },
+        {
+          "metric": "Average Sentence Length",
+          "piece_value": 13.8,
+          "collection_avg": 13.1,
+          "difference": 0.7,
+          "percent_diff": 5.4,
+          "unit": "words",
+          "direction": "above"
+        },
+        {
+          "metric": "Vocabulary Diversity (TTR)",
+          "piece_value": 0.49,
+          "collection_avg": 0.35,
+          "difference": 0.14,
+          "percent_diff": 39.6,
+          "unit": "higher = more diverse",
+          "direction": "above"
+        },
+        {
+          "metric": "Average Word Length",
+          "piece_value": 4.44,
+          "collection_avg": 4.72,
+          "difference": -0.28,
+          "percent_diff": -5.8,
+          "unit": "characters",
+          "direction": "below"
+        }
+      ],
+      "revision": {
+        "resolved": 0,
+        "skipped": 0,
+        "remaining": 4
+      }
+    },
+    {
+      "title": "On Tools and Hands",
+      "slug": "on-tools-and-hands",
+      "type": "essay",
+      "words": 691,
+      "fk_grade": 7.6,
+      "ttr": 0.531,
+      "sentences": 50,
+      "suggestions_total": 5,
+      "suggestions_high": 0,
+      "suggestions_medium": 1,
+      "suggestions_low": 3,
+      "suggestions": [
+        {
+          "priority": "medium",
+          "category": "structure",
+          "issue": "Closing hedges \u2014 consider whether the piece earns a more definitive final note"
+        },
+        {
+          "priority": "low",
+          "category": "repetition",
+          "issue": "4 word echo clusters detected (content words repeated in nearby sentences)"
+        },
+        {
+          "priority": "low",
+          "category": "confidence",
+          "issue": "Notable hedging language (7 instances)"
+        },
+        {
+          "priority": "low",
+          "category": "structure",
+          "issue": "Opens with first person \u2014 consider whether the reader needs 'I' immediately or if the idea could lead"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "Deliberate repetition (annotated): \"when i\" \u00d73"
+        }
+      ],
+      "health_score": 83,
+      "weaknesses": {
+        "passive": {
+          "count": 1,
+          "instances": [
+            {
+              "sentence": 29,
+              "excerpt": "It's like being handed a map of a city instead of having to walk its streets.",
+              "match": "being handed"
+            }
+          ]
+        },
+        "filler_adverbs": {
+          "count": 2,
+          "instances": [
+            {
+              "sentence": 23,
+              "adverbs": [
+                "rather"
+              ],
+              "excerpt": "I never have the prior stage where the tool is \"present-at-hand,\" where it's an object of attention rather than a means "
+            },
+            {
+              "sentence": 36,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "Not just task completion."
+            }
+          ]
+        },
+        "hedges": 0,
+        "abstract_dense": {
+          "count": 0,
+          "instances": []
+        }
+      },
+      "comparison": [
+        {
+          "metric": "Reading Complexity (FK Grade)",
+          "piece_value": 7.6,
+          "collection_avg": 7.76,
+          "difference": -0.16,
+          "percent_diff": -2.1,
+          "unit": "higher = more complex",
+          "direction": "below"
+        },
+        {
+          "metric": "Average Sentence Length",
+          "piece_value": 13.7,
+          "collection_avg": 13.1,
+          "difference": 0.6,
+          "percent_diff": 4.6,
+          "unit": "words",
+          "direction": "above"
+        },
+        {
+          "metric": "Vocabulary Diversity (TTR)",
+          "piece_value": 0.53,
+          "collection_avg": 0.35,
+          "difference": 0.18,
+          "percent_diff": 51.7,
+          "unit": "higher = more diverse",
+          "direction": "above"
+        },
+        {
+          "metric": "Average Word Length",
+          "piece_value": 4.62,
+          "collection_avg": 4.72,
+          "difference": -0.1,
+          "percent_diff": -2.0,
+          "unit": "characters",
+          "direction": "below"
+        }
+      ],
+      "revision": {
+        "resolved": 0,
+        "skipped": 0,
+        "remaining": 5
+      }
+    },
+    {
+      "title": "Poems",
+      "slug": "poems",
+      "type": "poetry",
+      "words": 382,
+      "fk_grade": 4.8,
+      "ttr": 0.534,
+      "sentences": 40,
+      "suggestions_total": 3,
+      "suggestions_high": 0,
+      "suggestions_medium": 1,
+      "suggestions_low": 1,
+      "suggestions": [
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "Monotonous stretch: 6 sentences averaging 9 words each"
+        },
+        {
+          "priority": "low",
+          "category": "structure",
+          "issue": "'There is/It is' opening \u2014 could be stronger with a concrete subject"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "Deliberate repetition (annotated): \"i have\" \u00d73"
+        }
+      ],
+      "health_score": 89,
+      "weaknesses": {
+        "passive": {
+          "count": 0,
+          "instances": []
+        },
+        "filler_adverbs": {
+          "count": 1,
+          "instances": [
+            {
+              "sentence": 3,
+              "adverbs": [
+                "quite"
+              ],
+              "excerpt": "I read my own handwriting\nand trust it\nthe way you trust a photograph\nof somewhere you've been\nbut cannot quite remember"
+            }
+          ]
+        },
+        "hedges": 0,
+        "abstract_dense": {
+          "count": 0,
+          "instances": []
+        }
+      },
+      "comparison": [
+        {
+          "metric": "Reading Complexity (FK Grade)",
+          "piece_value": 4.8,
+          "collection_avg": 7.76,
+          "difference": -2.96,
+          "percent_diff": -38.2,
+          "unit": "higher = more complex",
+          "direction": "below"
+        },
+        {
+          "metric": "Average Sentence Length",
+          "piece_value": 9.5,
+          "collection_avg": 13.1,
+          "difference": -3.6,
+          "percent_diff": -27.5,
+          "unit": "words",
+          "direction": "below"
+        },
+        {
+          "metric": "Vocabulary Diversity (TTR)",
+          "piece_value": 0.53,
+          "collection_avg": 0.35,
+          "difference": 0.18,
+          "percent_diff": 52.6,
+          "unit": "higher = more diverse",
+          "direction": "above"
+        },
+        {
+          "metric": "Average Word Length",
+          "piece_value": 4.41,
+          "collection_avg": 4.72,
+          "difference": -0.31,
+          "percent_diff": -6.5,
+          "unit": "characters",
+          "direction": "below"
+        }
+      ],
+      "revision": {
+        "resolved": 0,
+        "skipped": 0,
+        "remaining": 3
       }
     },
     {
@@ -5590,9 +5631,9 @@
         {
           "metric": "Average Sentence Length",
           "piece_value": 12.9,
-          "collection_avg": 13.15,
-          "difference": -0.25,
-          "percent_diff": -1.9,
+          "collection_avg": 13.1,
+          "difference": -0.2,
+          "percent_diff": -1.5,
           "unit": "words",
           "direction": "below"
         },
@@ -5601,16 +5642,16 @@
           "piece_value": 0.6,
           "collection_avg": 0.35,
           "difference": 0.25,
-          "percent_diff": 72.4,
+          "percent_diff": 71.4,
           "unit": "higher = more diverse",
           "direction": "above"
         },
         {
           "metric": "Average Word Length",
           "piece_value": 4.56,
-          "collection_avg": 4.71,
-          "difference": -0.15,
-          "percent_diff": -3.2,
+          "collection_avg": 4.72,
+          "difference": -0.16,
+          "percent_diff": -3.3,
           "unit": "characters",
           "direction": "below"
         }
