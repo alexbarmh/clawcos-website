@@ -1,7 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import healthData from '../data/collection-health.json';
+let historyData: any = null;
+try {
+  historyData = await import('../data/health-history.json');
+} catch (e) { /* no history yet */ }
 const base = import.meta.env.BASE_URL;
+const timeline = historyData?.timeline || [];
 ---
 
 <BaseLayout title="Collection Health" description="Workshop diagnostics for every piece in the collection — suggestions, health scores, and the ongoing work of revision.">
@@ -40,6 +45,108 @@ const base = import.meta.env.BASE_URL;
       <div class="metric-detail">Most common: {Object.entries(healthData.collection.by_category)[0]?.[0] || 'none'}</div>
     </div>
   </div>
+
+  <!-- Health Over Time -->
+  {timeline.length >= 2 && (
+    <section class="health-section">
+      <h2>📈 Health Over Time</h2>
+      <p class="section-desc">How the collection's average health score evolves across revision sessions. Each point is a deploy snapshot.</p>
+      <div class="history-chart" id="history-chart">
+        <svg viewBox={`0 0 600 200`} class="history-svg">
+          {/* Grid lines */}
+          {[0, 25, 50, 75, 100].map(v => {
+            const y = 180 - (v / 100) * 160;
+            return (
+              <>
+                <line x1="50" y1={y} x2="580" y2={y} stroke="#2a2520" stroke-width="1" />
+                <text x="44" y={y + 4} text-anchor="end" fill="#706858" font-size="10">{v}</text>
+              </>
+            );
+          })}
+          {/* Data line */}
+          {timeline.length >= 2 && (() => {
+            const xStep = 530 / Math.max(timeline.length - 1, 1);
+            const points = timeline.map((t: any, i: number) => ({
+              x: 50 + i * xStep,
+              y: 180 - (t.avgHealth / 100) * 160,
+              date: t.date,
+              health: t.avgHealth,
+              session: t.session,
+            }));
+            const pathD = points.map((p: any, i: number) => `${i === 0 ? 'M' : 'L'} ${p.x} ${p.y}`).join(' ');
+            return (
+              <>
+                <path d={pathD} fill="none" stroke="#4ecdc4" stroke-width="2" />
+                {points.map((p: any) => (
+                  <g>
+                    <circle cx={p.x} cy={p.y} r="4" fill="#4ecdc4" />
+                    <title>S{p.session} ({p.date}): {p.health}</title>
+                  </g>
+                ))}
+                {/* Labels for first and last */}
+                <text x={points[0].x} y={points[0].y - 10} text-anchor="start" fill="#a09888" font-size="10">{points[0].health}</text>
+                <text x={points[points.length - 1].x} y={points[points.length - 1].y - 10} text-anchor="end" fill="#4ecdc4" font-size="11" font-weight="bold">{points[points.length - 1].health}</text>
+              </>
+            );
+          })()}
+          {/* Suggestions line (secondary) */}
+          {timeline.length >= 2 && (() => {
+            const xStep = 530 / Math.max(timeline.length - 1, 1);
+            const maxSug = Math.max(...timeline.map((t: any) => t.suggestions));
+            const points = timeline.map((t: any, i: number) => ({
+              x: 50 + i * xStep,
+              y: 180 - (t.suggestions / Math.max(maxSug, 1)) * 160,
+              val: t.suggestions,
+            }));
+            const pathD = points.map((p: any, i: number) => `${i === 0 ? 'M' : 'L'} ${p.x} ${p.y}`).join(' ');
+            return (
+              <>
+                <path d={pathD} fill="none" stroke="#ff6b6b" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.6" />
+              </>
+            );
+          })()}
+          {/* X-axis labels */}
+          {timeline.length <= 30 && timeline.map((t: any, i: number) => {
+            const xStep = 530 / Math.max(timeline.length - 1, 1);
+            const x = 50 + i * xStep;
+            const showLabel = timeline.length <= 10 || i % Math.ceil(timeline.length / 10) === 0 || i === timeline.length - 1;
+            return showLabel ? (
+              <text x={x} y="196" text-anchor="middle" fill="#706858" font-size="8">{t.date.slice(5)}</text>
+            ) : null;
+          })}
+        </svg>
+        <div class="history-legend">
+          <span class="legend-item"><span class="legend-line" style="background: #4ecdc4;"></span> Avg Health</span>
+          <span class="legend-item"><span class="legend-line legend-dashed" style="background: #ff6b6b;"></span> Total Suggestions</span>
+        </div>
+      </div>
+      <div class="history-stats">
+        {(() => {
+          const first = timeline[0];
+          const last = timeline[timeline.length - 1];
+          const delta = last.avgHealth - first.avgHealth;
+          const arrow = delta > 0 ? '↑' : delta < 0 ? '↓' : '→';
+          const color = delta > 0 ? '#4ecdc4' : delta < 0 ? '#ff6b6b' : '#a09888';
+          return (
+            <span class="history-trend" style={`color: ${color};`}>
+              {first.avgHealth} → {last.avgHealth} ({arrow} {Math.abs(delta).toFixed(1)}) over {timeline.length} snapshots
+            </span>
+          );
+        })()}
+      </div>
+    </section>
+  )}
+
+  {timeline.length === 1 && (
+    <section class="health-section">
+      <h2>📈 Health Over Time</h2>
+      <p class="section-desc">Tracking begins today. The trend chart will appear after the next revision session deploy.</p>
+      <div class="history-single">
+        <span class="history-single-value">{timeline[0].avgHealth}</span>
+        <span class="history-single-label">First snapshot — {timeline[0].date}</span>
+      </div>
+    </section>
+  )}
 
   <!-- Health Ranking -->
   <section class="health-section">
@@ -670,6 +777,84 @@ const base = import.meta.env.BASE_URL;
     font-size: 0.9rem;
     line-height: 1.7;
     margin-bottom: 0.8rem;
+  }
+
+  /* Health History Chart */
+  .history-chart {
+    background: #1c1a17;
+    border: 1px solid #2a2520;
+    border-radius: 12px;
+    padding: 1.5rem 1rem 1rem;
+  }
+
+  .history-svg {
+    width: 100%;
+    height: auto;
+  }
+
+  .history-legend {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 0.8rem;
+    font-size: 0.78rem;
+    color: #a09888;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .legend-line {
+    display: inline-block;
+    width: 16px;
+    height: 2px;
+    border-radius: 1px;
+  }
+
+  .legend-dashed {
+    background: repeating-linear-gradient(
+      90deg,
+      currentColor 0px,
+      currentColor 4px,
+      transparent 4px,
+      transparent 7px
+    ) !important;
+    height: 2px;
+  }
+
+  .history-stats {
+    text-align: center;
+    margin-top: 0.8rem;
+  }
+
+  .history-trend {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .history-single {
+    background: #1c1a17;
+    border: 1px solid #2a2520;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .history-single-value {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #4ecdc4;
+  }
+
+  .history-single-label {
+    display: block;
+    color: #706858;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
   }
 
   /* Responsive */
