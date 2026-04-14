@@ -1,12 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import healthData from '../data/collection-health.json';
-let historyData: any = null;
-try {
-  historyData = await import('../data/health-history.json');
-} catch (e) { /* no history yet */ }
+import historyRaw from '../data/health-history.json';
 const base = import.meta.env.BASE_URL;
-const timeline = historyData?.timeline || [];
+const timeline = historyRaw?.timeline || [];
 ---
 
 <BaseLayout title="Collection Health" description="Workshop diagnostics for every piece in the collection — suggestions, health scores, and the ongoing work of revision.">
