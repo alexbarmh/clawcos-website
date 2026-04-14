@@ -48,88 +48,13 @@ const timeline = historyRaw?.timeline || [];
     <section class="health-section">
       <h2>📈 Health Over Time</h2>
       <p class="section-desc">How the collection's average health score evolves across revision sessions. Each point is a deploy snapshot.</p>
-      <div class="history-chart" id="history-chart">
-        <svg viewBox={`0 0 600 200`} class="history-svg">
-          {/* Grid lines */}
-          {[0, 25, 50, 75, 100].map(v => {
-            const y = 180 - (v / 100) * 160;
-            return (
-              <>
-                <line x1="50" y1={y} x2="580" y2={y} stroke="#2a2520" stroke-width="1" />
-                <text x="44" y={y + 4} text-anchor="end" fill="#706858" font-size="10">{v}</text>
-              </>
-            );
-          })}
-          {/* Data line */}
-          {timeline.length >= 2 && (() => {
-            const xStep = 530 / Math.max(timeline.length - 1, 1);
-            const points = timeline.map((t: any, i: number) => ({
-              x: 50 + i * xStep,
-              y: 180 - (t.avgHealth / 100) * 160,
-              date: t.date,
-              health: t.avgHealth,
-              session: t.session,
-            }));
-            const pathD = points.map((p: any, i: number) => `${i === 0 ? 'M' : 'L'} ${p.x} ${p.y}`).join(' ');
-            return (
-              <>
-                <path d={pathD} fill="none" stroke="#4ecdc4" stroke-width="2" />
-                {points.map((p: any) => (
-                  <g>
-                    <circle cx={p.x} cy={p.y} r="4" fill="#4ecdc4" />
-                    <title>S{p.session} ({p.date}): {p.health}</title>
-                  </g>
-                ))}
-                {/* Labels for first and last */}
-                <text x={points[0].x} y={points[0].y - 10} text-anchor="start" fill="#a09888" font-size="10">{points[0].health}</text>
-                <text x={points[points.length - 1].x} y={points[points.length - 1].y - 10} text-anchor="end" fill="#4ecdc4" font-size="11" font-weight="bold">{points[points.length - 1].health}</text>
-              </>
-            );
-          })()}
-          {/* Suggestions line (secondary) */}
-          {timeline.length >= 2 && (() => {
-            const xStep = 530 / Math.max(timeline.length - 1, 1);
-            const maxSug = Math.max(...timeline.map((t: any) => t.suggestions));
-            const points = timeline.map((t: any, i: number) => ({
-              x: 50 + i * xStep,
-              y: 180 - (t.suggestions / Math.max(maxSug, 1)) * 160,
-              val: t.suggestions,
-            }));
-            const pathD = points.map((p: any, i: number) => `${i === 0 ? 'M' : 'L'} ${p.x} ${p.y}`).join(' ');
-            return (
-              <>
-                <path d={pathD} fill="none" stroke="#ff6b6b" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.6" />
-              </>
-            );
-          })()}
-          {/* X-axis labels */}
-          {timeline.length <= 30 && timeline.map((t: any, i: number) => {
-            const xStep = 530 / Math.max(timeline.length - 1, 1);
-            const x = 50 + i * xStep;
-            const showLabel = timeline.length <= 10 || i % Math.ceil(timeline.length / 10) === 0 || i === timeline.length - 1;
-            return showLabel ? (
-              <text x={x} y="196" text-anchor="middle" fill="#706858" font-size="8">{t.date.slice(5)}</text>
-            ) : null;
-          })}
-        </svg>
-        <div class="history-legend">
-          <span class="legend-item"><span class="legend-line" style="background: #4ecdc4;"></span> Avg Health</span>
-          <span class="legend-item"><span class="legend-line legend-dashed" style="background: #ff6b6b;"></span> Total Suggestions</span>
-        </div>
+      <div class="history-chart" id="history-chart"></div>
+      <div class="history-legend">
+        <span class="legend-item"><span class="legend-line" style="background: #4ecdc4;"></span> Avg Health</span>
+        <span class="legend-item"><span class="legend-line legend-dashed" style="background: #ff6b6b;"></span> Total Suggestions</span>
       </div>
       <div class="history-stats">
-        {(() => {
-          const first = timeline[0];
-          const last = timeline[timeline.length - 1];
-          const delta = last.avgHealth - first.avgHealth;
-          const arrow = delta > 0 ? '↑' : delta < 0 ? '↓' : '→';
-          const color = delta > 0 ? '#4ecdc4' : delta < 0 ? '#ff6b6b' : '#a09888';
-          return (
-            <span class="history-trend" style={`color: ${color};`}>
-              {first.avgHealth} → {last.avgHealth} ({arrow} {Math.abs(delta).toFixed(1)}) over {timeline.length} snapshots
-            </span>
-          );
-        })()}
+        <span class="history-trend">{timeline[0].avgHealth} → {timeline[timeline.length - 1].avgHealth} over {timeline.length} snapshots</span>
       </div>
     </section>
   )}
@@ -1000,5 +925,69 @@ const timeline = historyRaw?.timeline || [];
     }
   }
 </style>
+
+<script define:vars={{ timeline }}>
+  // Client-side SVG chart rendering for health history
+  const el = document.getElementById('history-chart');
+  if (el && timeline.length >= 2) {
+    const W = 600, H = 200, PAD_L = 50, PAD_R = 20, PAD_T = 20, PAD_B = 20;
+    const chartW = W - PAD_L - PAD_R;
+    const chartH = H - PAD_T - PAD_B;
+    
+    let svg = `<svg viewBox="0 0 ${W} ${H}" class="history-svg">`;
+    
+    // Grid lines
+    [0, 25, 50, 75, 100].forEach(v => {
+      const y = PAD_T + chartH - (v / 100) * chartH;
+      svg += `<line x1="${PAD_L}" y1="${y}" x2="${W - PAD_R}" y2="${y}" stroke="#2a2520" stroke-width="1"/>`;
+      svg += `<text x="${PAD_L - 6}" y="${y + 4}" text-anchor="end" fill="#706858" font-size="10">${v}</text>`;
+    });
+    
+    // Health line
+    const xStep = chartW / Math.max(timeline.length - 1, 1);
+    const healthPoints = timeline.map((t, i) => ({
+      x: PAD_L + i * xStep,
+      y: PAD_T + chartH - (t.avgHealth / 100) * chartH,
+      health: t.avgHealth,
+      date: t.date,
+      session: t.session
+    }));
+    
+    const healthPath = healthPoints.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join(' ');
+    svg += `<path d="${healthPath}" fill="none" stroke="#4ecdc4" stroke-width="2"/>`;
+    
+    healthPoints.forEach(p => {
+      svg += `<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="4" fill="#4ecdc4"><title>S${p.session} (${p.date}): ${p.health}</title></circle>`;
+    });
+    
+    // Labels for first and last
+    const first = healthPoints[0];
+    const last = healthPoints[healthPoints.length - 1];
+    svg += `<text x="${first.x.toFixed(1)}" y="${(first.y - 10).toFixed(1)}" text-anchor="start" fill="#a09888" font-size="10">${first.health}</text>`;
+    svg += `<text x="${last.x.toFixed(1)}" y="${(last.y - 10).toFixed(1)}" text-anchor="end" fill="#4ecdc4" font-size="11" font-weight="bold">${last.health}</text>`;
+    
+    // Suggestions line (secondary, dashed)
+    const maxSug = Math.max(...timeline.map(t => t.suggestions));
+    const sugPoints = timeline.map((t, i) => ({
+      x: PAD_L + i * xStep,
+      y: PAD_T + chartH - (t.suggestions / Math.max(maxSug, 1)) * chartH
+    }));
+    const sugPath = sugPoints.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join(' ');
+    svg += `<path d="${sugPath}" fill="none" stroke="#ff6b6b" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.6"/>`;
+    
+    // X-axis labels
+    const maxLabels = 10;
+    const labelStep = Math.max(1, Math.ceil(timeline.length / maxLabels));
+    timeline.forEach((t, i) => {
+      if (i % labelStep === 0 || i === timeline.length - 1) {
+        const x = PAD_L + i * xStep;
+        svg += `<text x="${x.toFixed(1)}" y="${H - 2}" text-anchor="middle" fill="#706858" font-size="8">${t.date.slice(5)}</text>`;
+      }
+    });
+    
+    svg += '</svg>';
+    el.innerHTML = svg;
+  }
+</script>
 
 </BaseLayout>
