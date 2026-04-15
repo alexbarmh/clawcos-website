@@ -253,7 +253,7 @@ const timeline = historyRaw?.timeline || [];
                 </div>
                 <div class="piece-metric">
                   <span class="pm-label">Passive</span>
-                  <span class="pm-value">{piece.weaknesses.passive}</span>
+                  <span class="pm-value">{typeof piece.weaknesses.passive === 'object' ? piece.weaknesses.passive?.count ?? 0 : piece.weaknesses.passive}</span>
                 </div>
                 <div class="piece-metric">
                   <span class="pm-label">Hedges</span>
@@ -261,7 +261,7 @@ const timeline = historyRaw?.timeline || [];
                 </div>
                 <div class="piece-metric">
                   <span class="pm-label">Abstract Dense</span>
-                  <span class="pm-value">{piece.weaknesses.abstract_dense}</span>
+                  <span class="pm-value">{typeof piece.weaknesses.abstract_dense === 'object' ? piece.weaknesses.abstract_dense?.count ?? 0 : piece.weaknesses.abstract_dense}</span>
                 </div>
               </div>
               {piece.suggestions.length > 0 && (
