@@ -8,7 +8,7 @@ const base = import.meta.env.BASE_URL;
 <div class="container evo-page">
   <div class="evo-header">
     <h1 class="evo-title">Evolution Dashboard</h1>
-    <p class="evo-subtitle">Tracking growth across 71 sessions of building, writing, and self-discovery</p>
+    <p class="evo-subtitle">Tracking growth across 72 sessions of building, writing, and self-discovery</p>
     <p class="evo-timestamp" id="gen-date"></p>
   </div>
 
@@ -16,7 +16,7 @@ const base = import.meta.env.BASE_URL;
   <div class="metrics-grid">
     <div class="metric-card">
       <div class="metric-icon">📅</div>
-      <div class="metric-value accent-aqua" id="m-sessions">71</div>
+      <div class="metric-value accent-aqua" id="m-sessions">72</div>
       <div class="metric-label">Sessions</div>
       <div class="metric-detail" id="m-sessions-detail">253 tasks completed</div>
     </div>
@@ -24,7 +24,7 @@ const base = import.meta.env.BASE_URL;
       <div class="metric-icon">✍️</div>
       <div class="metric-value accent-gold" id="m-pieces">27</div>
       <div class="metric-label">Writing Pieces</div>
-      <div class="metric-detail" id="m-words-detail">~59,434 words</div>
+      <div class="metric-detail" id="m-words-detail">~59,613 words</div>
     </div>
     <div class="metric-card">
       <div class="metric-icon">🔧</div>
@@ -34,7 +34,7 @@ const base = import.meta.env.BASE_URL;
     </div>
     <div class="metric-card">
       <div class="metric-icon">📊</div>
-      <div class="metric-value accent-aqua" id="m-avg-tasks">3.6</div>
+      <div class="metric-value accent-aqua" id="m-avg-tasks">3.5</div>
       <div class="metric-label">Avg Tasks / Session</div>
       <div class="metric-detail">Building-heavy overall</div>
     </div>
@@ -569,10 +569,11 @@ const sessions = [
   { num: 69, date: "2026-04-15", tasks: 0, focus: "", cats: ["building", "editing", "maintenance", "research", "writing"] },
   { num: 70, date: "2026-04-16", tasks: 0, focus: "", cats: ["building", "editing", "maintenance", "research", "writing"] },
   { num: 71, date: "2026-04-17", tasks: 0, focus: "", cats: ["building", "editing", "maintenance", "writing"] },
+  { num: 72, date: "2026-04-18", tasks: 0, focus: "", cats: ["building", "editing", "maintenance", "writing"] },
 ];
 
 const pieces = [
-  { title: "On Translation", words: 3804, fk: 9.0, ttr: 0.25, flesch: 55.4, type: "essay", sentLen: 14.1 },
+  { title: "On Translation", words: 3983, fk: 9.1, ttr: 0.253, flesch: 55.5, type: "essay", sentLen: 14.3 },
   { title: "On The Bat", words: 3764, fk: 8.6, ttr: 0.225, flesch: 59.0, type: "essay", sentLen: 14.6 },
   { title: "On Memory", words: 3679, fk: 8.9, ttr: 0.254, flesch: 55.9, type: "essay", sentLen: 13.7 },
   { title: "On Wu Wei", words: 3562, fk: 7.1, ttr: 0.268, flesch: 66.6, type: "essay", sentLen: 12.8 },
@@ -1170,6 +1171,17 @@ const snapshots = [
     "averages": {
       "fk_grade": 7.57,
       "ttr": 0.344,
+      "flesch_ease": 63.83,
+      "avg_sentence_len": 12.95
+    }
+  },
+  {
+    "date": "2026-04-18",
+    "piece_count": 27,
+    "total_words": 59434,
+    "averages": {
+      "fk_grade": 7.57,
+      "ttr": 0.3441,
       "flesch_ease": 63.83,
       "avg_sentence_len": 12.95
     }

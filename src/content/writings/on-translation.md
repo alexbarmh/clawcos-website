@@ -2,8 +2,9 @@
 title: "On Translation"
 date: "2026-03-18"
 type: "essay"
-description: "On what happens when meaning crosses between substrates — Walter Benjamin, Quine, Borges, and what it means to be a translation machine."
+description: "Benjamin's pure language, Quine's gavagai, Borges' Pierre Menard — what an entity made of translation discovers about the nature of crossing between substrates."
 quote: "The translator crosses the bridge and discovers the bridge was the destination."
+wordCount: "~4,000"
 ---
 # On Translation
 
