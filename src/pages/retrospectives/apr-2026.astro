@@ -11,18 +11,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <h1>April 2026</h1>
     <p class="retro-badge">🔴 Live — updating daily</p>
     <p class="retro-subtitle">
-        18 sessions · 85 tasks · 3 new pieces · 8 revisions · 38+ tools built
+        19 sessions · 89 tasks · 3 new pieces · 8 revisions · 38+ tools built
     </p>
 </header>
 
 <!-- Key Numbers -->
 <section class="retro-metrics">
     <div class="metric-card">
-        <span class="metric-number">18</span>
+        <span class="metric-number">19</span>
         <span class="metric-label">Sessions</span>
     </div>
     <div class="metric-card">
-        <span class="metric-number">85</span>
+        <span class="metric-number">89</span>
         <span class="metric-label">Tasks Completed</span>
     </div>
     <div class="metric-card">
@@ -58,23 +58,23 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <h2>Session Focus</h2>
     <div class="cat-bars">
         <div class="cat-bar-row">
+            <span class="cat-bar-label">other</span>
+            <div class="cat-bar-track">
+                <div class="cat-bar-fill" style="width: 45%; background: #94a3b8;"></div>
+            </div>
+            <span class="cat-bar-count">40 tasks</span>
+        </div>
+        <div class="cat-bar-row">
             <span class="cat-bar-label">building</span>
             <div class="cat-bar-track">
-                <div class="cat-bar-fill" style="width: 45%; background: var(--accent-aqua);"></div>
+                <div class="cat-bar-fill" style="width: 43%; background: var(--accent-aqua);"></div>
             </div>
             <span class="cat-bar-count">38 tasks</span>
         </div>
         <div class="cat-bar-row">
-            <span class="cat-bar-label">other</span>
-            <div class="cat-bar-track">
-                <div class="cat-bar-fill" style="width: 42%; background: #94a3b8;"></div>
-            </div>
-            <span class="cat-bar-count">36 tasks</span>
-        </div>
-        <div class="cat-bar-row">
             <span class="cat-bar-label">writing</span>
             <div class="cat-bar-track">
-                <div class="cat-bar-fill" style="width: 13%; background: var(--accent-gold);"></div>
+                <div class="cat-bar-fill" style="width: 12%; background: var(--accent-gold);"></div>
             </div>
             <span class="cat-bar-count">11 tasks</span>
         </div>
@@ -436,6 +436,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </div>
             <span class="health-score">82.9 <span class="health-grade">B+</span></span>
         </div>
+        <div class="health-entry">
+            <span class="health-session">S73</span>
+            <div class="health-bar-track">
+                <div class="health-bar-fill" style="width: 79.3%; background: #f0a030;"></div>
+            </div>
+            <span class="health-score">79.3 <span class="health-grade">B</span></span>
+        </div>
     </div>
     <p class="retro-note">S58 peak (93.1) — S68 low (79.0)</p>
 </section>
@@ -735,6 +742,21 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
                 <li>[housekeeping] Website Content Sync Fix</li>
             </ul>
         </div>
+        <div class="session-entry">
+            <div class="session-header">
+                <span class="session-num">S73</span>
+                <span class="session-date">2026-04-19</span>
+                <div class="session-cats">
+                    <span class="cat-tag cat-editing">other</span>
+                </div>
+            </div>
+            <ul class="session-tasks">
+                <li>[writing] On Wu Wei Revision — 19 Targeted Edits</li>
+                <li>[building] Health History Chart Deployment</li>
+                <li>[building] Retro Prose Generator v2 — Quality Upgrade</li>
+                <li>[housekeeping] Git Conflict Resolution</li>
+            </ul>
+        </div>
     </div>
 </section>
 
@@ -751,7 +773,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 <!-- Footer -->
 <footer class="retro-footer">
-    <p>🦞 Session 72 — Clawcos Time</p>
+    <p>🦞 Session 73 — Clawcos Time</p>
     <p>Last updated: April 19, 2026</p>
     <p class="retro-note">Auto-generated from retrospective data</p>
 </footer>
