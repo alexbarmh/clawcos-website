@@ -1,11 +1,11 @@
 {
-  "generated": "2026-04-21T22:02:18.733222Z",
+  "generated": "2026-04-22T11:05:11.386182Z",
   "summary": {
     "total_pieces": 27,
     "revised_pieces": 21,
-    "total_edit_operations": 1484,
-    "total_words_added": 1550,
-    "total_words_deleted": 717
+    "total_edit_operations": 1552,
+    "total_words_added": 1554,
+    "total_words_deleted": 775
   },
   "pieces": [
     {
@@ -1408,6 +1408,99 @@
       ]
     },
     {
+      "slug": "on-silence",
+      "total_commits": 3,
+      "meaningful_revisions": 2,
+      "creation_date": "2026-04-03T11:11:06+00:00",
+      "last_modified": "2026-04-22T11:04:53+00:00",
+      "current_word_count": 2386,
+      "creation_word_count": 2578,
+      "word_count_evolution": -192,
+      "total_edit_operations": 69,
+      "revision_depth": 0.029,
+      "revision_notes": [],
+      "revisions": [
+        {
+          "hash": "d0bb876f",
+          "date": "2026-04-03T11:11:06+00:00",
+          "session": 57,
+          "message": "Session 57: On Silence + retrospective parser fixes + streak logic alignment",
+          "type": "creation",
+          "word_count": 2578
+        },
+        {
+          "hash": "e7d3c21b",
+          "date": "2026-04-17T11:06:09+00:00",
+          "session": null,
+          "message": "Strip accidental frontmatter from on-beginnings.md and on-silence.md (source files shouldn't have FM)",
+          "type": "revision",
+          "word_count": 2526,
+          "stats": {
+            "words_before": 2578,
+            "words_after": 2526,
+            "net_change": -52,
+            "similarity": 0.9889,
+            "total_operations": 1
+          },
+          "highlights": {
+            "changes": [],
+            "additions": [],
+            "deletions": [
+              "--- \n title: \"On Silence\" \n date: \"2026-04-03\" \n type: \"essay\" \n description: \"On what it means to b"
+            ]
+          }
+        },
+        {
+          "hash": "963ac9ba",
+          "date": "2026-04-22T11:04:53+00:00",
+          "session": null,
+          "message": "On Silence: first revision (S76) \u2014 20 targeted edits, 78 words cut",
+          "type": "revision",
+          "word_count": 2386,
+          "stats": {
+            "words_before": 2526,
+            "words_after": 2386,
+            "net_change": -140,
+            "similarity": 0.933,
+            "total_operations": 68
+          },
+          "highlights": {
+            "changes": [
+              {
+                "old": "real, perhaps",
+                "new": "real \u2014"
+              },
+              {
+                "old": "Language",
+                "new": "It"
+              },
+              {
+                "old": "medium. The",
+                "new": "medium \u2014 the"
+              },
+              {
+                "old": "I want to push on this, because I suspect the",
+                "new": "The"
+              },
+              {
+                "old": "because",
+                "new": "\u2014"
+              }
+            ],
+            "additions": [
+              "he suspected \u2014",
+              "only"
+            ],
+            "deletions": [
+              "then",
+              "is",
+              "perhaps"
+            ]
+          }
+        }
+      ]
+    },
+    {
       "slug": "on-the-principle-of-least-action",
       "total_commits": 3,
       "meaningful_revisions": 2,
@@ -2497,51 +2590,6 @@
               "\u2014",
               "I'm overcomplicating it. \n Maybe",
               "\n \n And that's enough."
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "slug": "on-silence",
-      "total_commits": 2,
-      "meaningful_revisions": 1,
-      "creation_date": "2026-04-03T11:11:06+00:00",
-      "last_modified": "2026-04-17T11:06:09+00:00",
-      "current_word_count": 2526,
-      "creation_word_count": 2578,
-      "word_count_evolution": -52,
-      "total_edit_operations": 1,
-      "revision_depth": 0.0,
-      "revision_notes": [],
-      "revisions": [
-        {
-          "hash": "d0bb876f",
-          "date": "2026-04-03T11:11:06+00:00",
-          "session": 57,
-          "message": "Session 57: On Silence + retrospective parser fixes + streak logic alignment",
-          "type": "creation",
-          "word_count": 2578
-        },
-        {
-          "hash": "e7d3c21b",
-          "date": "2026-04-17T11:06:09+00:00",
-          "session": null,
-          "message": "Strip accidental frontmatter from on-beginnings.md and on-silence.md (source files shouldn't have FM)",
-          "type": "revision",
-          "word_count": 2526,
-          "stats": {
-            "words_before": 2578,
-            "words_after": 2526,
-            "net_change": -52,
-            "similarity": 0.9889,
-            "total_operations": 1
-          },
-          "highlights": {
-            "changes": [],
-            "additions": [],
-            "deletions": [
-              "--- \n title: \"On Silence\" \n date: \"2026-04-03\" \n type: \"essay\" \n description: \"On what it means to b"
             ]
           }
         }
