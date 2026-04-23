@@ -1,0 +1,530 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import lifecycleData from '../data/lifecycle.json';
+
+const base = import.meta.env.BASE_URL;
+const pieces = lifecycleData.pieces;
+const summary = lifecycleData.summary;
+
+// Sort by creation date
+const sortedPieces = [...pieces].sort((a, b) => {
+  const dateA = a.created || '9999';
+  const dateB = b.created || '9999';
+  return dateA.localeCompare(dateB);
+});
+
+// Stage info
+const stageConfig = {
+  fresh: { icon: '🌱', color: '#ff6b6b', label: 'Fresh — never revised' },
+  developing: { icon: '🌿', color: '#ffd93d', label: 'Developing — early revisions' },
+  maturing: { icon: '🌳', color: '#a8e6cf', label: 'Maturing — good health' },
+  polished: { icon: '💎', color: '#4ecdc4', label: 'Polished — high health' },
+  stubborn: { icon: '🪨', color: '#c44569', label: 'Stubborn — many revisions, low health' },
+};
+
+const typeIcons = { essay: '📝', fiction: '📖', poetry: '🎭' };
+
+function formatDate(dateStr: string | null) {
+  if (!dateStr) return 'Unknown';
+  const d = new Date(dateStr + 'T00:00:00');
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+}
+
+// Health sparkline SVG
+function sparkline(trajectory: any[], color: string) {
+  if (!trajectory || trajectory.length < 2) return '';
+  const values = trajectory.map((h: any) => h.health).filter((v: any) => v != null);
+  if (values.length < 2) return '';
+  
+  const minV = Math.max(0, Math.min(...values) - 5);
+  const maxV = Math.min(100, Math.max(...values) + 5);
+  const range = maxV - minV || 1;
+  const w = 100, h = 24;
+  
+  const points = values.map((v: number, i: number) => {
+    const x = (i / (values.length - 1)) * w;
+    const y = h - ((v - minV) / range) * h;
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  }).join(' ');
+  
+  return `<svg width="${w}" height="${h}" class="sparkline"><polyline points="${points}" fill="none" stroke="${color}" stroke-width="2"/></svg>`;
+}
+
+// Stage counts
+const stageCounts: Record<string, number> = {};
+for (const p of pieces) {
+  stageCounts[p.stage] = (stageCounts[p.stage] || 0) + 1;
+}
+---
+
+<BaseLayout title="Piece Lifecycles" description="The complete journey of every piece — from creation through revision, health trajectories, and cross-references.">
+
+<div class="container lifecycle-page">
+  <div class="lifecycle-header">
+    <h1 class="lifecycle-title">Piece Lifecycles</h1>
+    <p class="lifecycle-subtitle">The complete journey of {summary.total_pieces} pieces &mdash; from first draft through revision</p>
+    <p class="lifecycle-timestamp">Generated: {new Date(lifecycleData.generated).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+  </div>
+
+  <!-- Summary Metrics -->
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <div class="metric-icon">📚</div>
+      <div class="metric-value accent-aqua">{summary.total_pieces}</div>
+      <div class="metric-label">Pieces</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon">✏️</div>
+      <div class="metric-value accent-gold">{summary.total_words.toLocaleString()}</div>
+      <div class="metric-label">Total Words</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon">🔄</div>
+      <div class="metric-value accent-purple">{summary.total_revisions}</div>
+      <div class="metric-label">Total Revisions</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon">❤️</div>
+      <div class="metric-value accent-coral">{summary.avg_health}</div>
+      <div class="metric-label">Avg Health</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon">📅</div>
+      <div class="metric-value accent-green">{summary.avg_age}d</div>
+      <div class="metric-label">Avg Age</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon">🔗</div>
+      <div class="metric-value accent-aqua">{summary.total_connections}</div>
+      <div class="metric-label">Links</div>
+    </div>
+  </div>
+
+  <!-- Stage Distribution -->
+  <div class="stage-distribution">
+    <h2>Collection Maturity</h2>
+    <div class="stage-bars">
+      {Object.entries(stageConfig).map(([stage, config]) => {
+        const count = stageCounts[stage] || 0;
+        const pct = (count / pieces.length * 100);
+        return (
+          <div class="stage-bar-row">
+            <span class="stage-label">{config.icon} {stage.charAt(0).toUpperCase() + stage.slice(1)}</span>
+            <div class="stage-bar-track">
+              <div class="stage-bar-fill" style={`width: ${pct}%; background: ${config.color}`}></div>
+            </div>
+            <span class="stage-count">{count}</span>
+          </div>
+        );
+      })}
+    </div>
+    <div class="stage-legend">
+      {Object.entries(stageConfig).map(([_, config]) => (
+        <span class="legend-item" style={`border-color: ${config.color}`}>{config.icon} {config.label}</span>
+      ))}
+    </div>
+  </div>
+
+  <!-- Filters -->
+  <div class="filters" id="filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="essay">📝 Essays</button>
+    <button class="filter-btn" data-filter="fiction">📖 Fiction</button>
+    <button class="filter-btn" data-filter="poetry">🎭 Poetry</button>
+    <span class="filter-sep">|</span>
+    <button class="filter-btn" data-filter="fresh">🌱 Fresh</button>
+    <button class="filter-btn" data-filter="developing">🌿 Developing</button>
+    <button class="filter-btn" data-filter="maturing">🌳 Maturing</button>
+    <button class="filter-btn" data-filter="polished">💎 Polished</button>
+    <button class="filter-btn" data-filter="stubborn">🪨 Stubborn</button>
+  </div>
+
+  <!-- Piece Cards -->
+  <div class="pieces-grid">
+    {sortedPieces.map((p) => {
+      const stage = stageConfig[p.stage] || stageConfig.developing;
+      const typeIcon = typeIcons[p.type] || '📄';
+      const healthDisplay = p.current_health != null ? p.current_health : '—';
+      const sinceRev = p.days_since_revision != null ? `${p.days_since_revision}d` : 'never';
+      const sparklineSvg = sparkline(p.health_trajectory, stage.color);
+      
+      return (
+        <div class="piece-card" data-stage={p.stage} data-type={p.type} style={`border-left-color: ${stage.color}`}>
+          <div class="card-header">
+            <div class="card-title-row">
+              <span class="type-icon">{typeIcon}</span>
+              <h3 class="piece-title">
+                <a href={`${base}writings/${p.slug}`}>{p.title}</a>
+              </h3>
+              <span class="stage-badge" style={`background: ${stage.color}`}>{stage.icon} {p.stage}</span>
+            </div>
+            <div class="card-meta">
+              <span class="meta-item">📅 {formatDate(p.created)}</span>
+              <span class="meta-item">✏️ {p.word_count?.toLocaleString()} words</span>
+              <span class="meta-item">🔄 {p.revision_count} revisions</span>
+              <span class="meta-item health-badge">❤️ {healthDisplay}</span>
+            </div>
+          </div>
+          
+          <div class="card-body">
+            <div class="card-metrics">
+              <div class="metric-col">
+                <div class="col-label">Health</div>
+                <div class="col-value">{healthDisplay}</div>
+                {sparklineSvg && <Fragment set:html={sparklineSvg} />}
+              </div>
+              <div class="metric-col">
+                <div class="col-label">Age</div>
+                <div class="col-value">{p.age_days ?? '?'}d</div>
+              </div>
+              <div class="metric-col">
+                <div class="col-label">Since Rev</div>
+                <div class="col-value">{sinceRev}</div>
+              </div>
+              <div class="metric-col">
+                <div class="col-label">Links</div>
+                <div class="col-value">{p.connections?.length || 0}</div>
+              </div>
+            </div>
+
+            {p.suggestions && (
+              <div class="sugg-row">
+                <span class="sugg-high">{p.suggestions.high}🔴</span>
+                <span class="sugg-med">{p.suggestions.medium}🟡</span>
+                <span class="sugg-low">{p.suggestions.low}🔵</span>
+              </div>
+            )}
+
+            {p.revisions && p.revisions.length > 0 && (
+              <div class="rev-timeline">
+                {p.revisions.slice(0, 4).reverse().map((rev: any) => (
+                  <div class="rev-item">
+                    <span class="rev-date">{rev.date}</span>
+                    {rev.session && <span class="rev-session">S{rev.session}</span>}
+                    {rev.edit_count && <span class="rev-edits">({rev.edit_count} edits)</span>}
+                    {rev.techniques && rev.techniques.length > 0 && (
+                      <span class="rev-tech">{rev.techniques.slice(0, 3).join(', ')}</span>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {p.connections && p.connections.length > 0 && (
+              <div class="connections">
+                {p.connections.slice(0, 4).map((c: any) => (
+                  <a href={`${base}writings/${c.slug}`} class="conn-tag" title={`Strength: ${c.strength}`}>{c.piece}</a>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      );
+    })}
+  </div>
+
+  <!-- Creation Timeline -->
+  <div class="timeline-section">
+    <h2>📅 Creation Timeline</h2>
+    <div class="creation-timeline">
+      {sortedPieces.filter(p => p.created).map((p) => {
+        const typeIcon = typeIcons[p.type] || '📄';
+        const healthDisplay = p.current_health != null ? p.current_health : '—';
+        return (
+          <div class="timeline-item">
+            <div class="timeline-date">{formatDate(p.created)}</div>
+            <div class="timeline-title">
+              {typeIcon} <a href={`${base}writings/${p.slug}`}>{p.title}</a>
+            </div>
+            <div class="timeline-detail">
+              {p.word_count?.toLocaleString()} words &middot; {p.revision_count} revisions &middot; Health: {healthDisplay}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</div>
+
+<script>
+document.getElementById('filters')?.addEventListener('click', (e) => {
+  const btn = (e.target as HTMLElement).closest('.filter-btn');
+  if (!btn) return;
+  const filter = btn.getAttribute('data-filter');
+  
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  
+  const types = ['essay', 'fiction', 'poetry'];
+  const stages = ['fresh', 'developing', 'maturing', 'polished', 'stubborn'];
+  
+  document.querySelectorAll('.piece-card').forEach(card => {
+    const el = card as HTMLElement;
+    if (filter === 'all') {
+      el.style.display = '';
+    } else if (types.includes(filter!)) {
+      el.style.display = el.dataset.type === filter ? '' : 'none';
+    } else if (stages.includes(filter!)) {
+      el.style.display = el.dataset.stage === filter ? '' : 'none';
+    }
+  });
+});
+</script>
+
+<style>
+  .lifecycle-page {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .lifecycle-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border, #222);
+  }
+  .lifecycle-title {
+    font-size: 2rem;
+    background: linear-gradient(135deg, #4ecdc4, #a8e6cf);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+  }
+  .lifecycle-subtitle { color: var(--text-muted, #888); font-size: 1rem; }
+  .lifecycle-timestamp { color: var(--text-muted, #666); font-size: 0.8rem; margin-top: 0.3rem; }
+
+  /* Metrics Grid */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .metric-card {
+    background: var(--surface, #151520);
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+  }
+  .metric-icon { font-size: 1.3rem; }
+  .metric-value { font-size: 1.6rem; font-weight: 700; margin: 0.2rem 0; }
+  .metric-label { font-size: 0.75rem; color: var(--text-muted, #888); }
+  .accent-aqua { color: #4ecdc4; }
+  .accent-gold { color: #ffd93d; }
+  .accent-purple { color: #a78bfa; }
+  .accent-coral { color: #ff6b6b; }
+  .accent-green { color: #a8e6cf; }
+
+  /* Stage Distribution */
+  .stage-distribution {
+    background: var(--surface, #151520);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .stage-distribution h2 {
+    font-size: 1.1rem;
+    color: #a8e6cf;
+    margin-bottom: 1rem;
+  }
+  .stage-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+  .stage-label { width: 110px; font-size: 0.85rem; }
+  .stage-bar-track {
+    flex: 1;
+    height: 20px;
+    background: var(--surface-hover, #1a1a2e);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .stage-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.5s;
+    min-width: 3px;
+  }
+  .stage-count { font-size: 0.85rem; color: var(--text-muted, #888); width: 20px; text-align: right; }
+  .stage-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    font-size: 0.75rem;
+  }
+  .legend-item {
+    padding: 0.2rem 0.5rem;
+    border-left: 3px solid;
+    color: var(--text-muted, #999);
+  }
+
+  /* Filters */
+  .filters {
+    display: flex;
+    gap: 0.4rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .filter-btn {
+    background: var(--surface, #1a1a2e);
+    border: 1px solid var(--border, #333);
+    color: var(--text-muted, #ccc);
+    padding: 0.35rem 0.7rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.78rem;
+    transition: all 0.2s;
+  }
+  .filter-btn:hover, .filter-btn.active {
+    background: var(--surface-hover, #2a2a4e);
+    border-color: #4ecdc4;
+    color: #4ecdc4;
+  }
+  .filter-sep { color: var(--border, #444); font-size: 0.8rem; }
+
+  /* Piece Cards */
+  .pieces-grid { display: grid; gap: 1rem; }
+  .piece-card {
+    background: var(--surface, #151520);
+    border-radius: 12px;
+    padding: 1.2rem 1.5rem;
+    border-left: 4px solid var(--border, #333);
+    transition: transform 0.15s;
+  }
+  .piece-card:hover { transform: translateX(3px); }
+
+  .card-title-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.4rem;
+  }
+  .type-icon { font-size: 1.1rem; }
+  .piece-title { font-size: 1.05rem; flex: 1; }
+  .piece-title a { color: var(--text, #e8e8e8); text-decoration: none; }
+  .piece-title a:hover { color: #4ecdc4; }
+  .stage-badge {
+    font-size: 0.65rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 12px;
+    color: #000;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .card-meta {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+  }
+  .meta-item { font-size: 0.75rem; color: var(--text-muted, #888); }
+  .health-badge { color: #4ecdc4; font-weight: 600; }
+
+  .card-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.6rem;
+    margin: 0.8rem 0;
+  }
+  .metric-col { text-align: center; }
+  .col-label { font-size: 0.65rem; color: var(--text-muted, #666); text-transform: uppercase; }
+  .col-value { font-size: 1.2rem; font-weight: 700; color: var(--text, #ccc); }
+  .sparkline { margin-top: 3px; }
+
+  .sugg-row {
+    display: flex;
+    gap: 0.6rem;
+    margin-bottom: 0.6rem;
+    font-size: 0.82rem;
+  }
+
+  .rev-timeline {
+    margin: 0.6rem 0;
+    padding-left: 0.8rem;
+    border-left: 2px solid var(--surface-hover, #2a2a4e);
+  }
+  .rev-item {
+    margin-bottom: 0.3rem;
+    font-size: 0.78rem;
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    align-items: baseline;
+  }
+  .rev-date { color: #4ecdc4; }
+  .rev-session { color: #a8e6cf; }
+  .rev-edits { color: var(--text-muted, #888); }
+  .rev-tech { color: var(--text-muted, #777); font-style: italic; }
+
+  .connections {
+    display: flex;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+    margin-top: 0.4rem;
+  }
+  .conn-tag {
+    background: var(--surface-hover, #1a1a2e);
+    padding: 0.15rem 0.4rem;
+    border-radius: 8px;
+    font-size: 0.7rem;
+    color: #a8e6cf;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .conn-tag:hover { background: #2a2a4e; }
+
+  /* Timeline Section */
+  .timeline-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border, #222);
+  }
+  .timeline-section h2 {
+    font-size: 1.2rem;
+    color: #a8e6cf;
+    margin-bottom: 1.5rem;
+  }
+  .creation-timeline {
+    position: relative;
+    padding-left: 1.5rem;
+  }
+  .creation-timeline::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border, #333);
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 0.8rem;
+    padding: 0.3rem 0;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -1.5rem;
+    top: 0.5rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #4ecdc4;
+    border: 2px solid var(--bg, #0a0a0f);
+  }
+  .timeline-date { color: #4ecdc4; font-size: 0.82rem; font-weight: 600; }
+  .timeline-title { font-size: 0.9rem; }
+  .timeline-title a { color: var(--text, #e0e0e0); text-decoration: none; }
+  .timeline-title a:hover { color: #4ecdc4; }
+  .timeline-detail { color: var(--text-muted, #888); font-size: 0.78rem; }
+
+  @media (max-width: 768px) {
+    .card-metrics { grid-template-columns: repeat(2, 1fr); }
+    .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+    .card-meta { gap: 0.5rem; }
+  }
+</style>
+</BaseLayout>
