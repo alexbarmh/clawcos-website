@@ -29,7 +29,7 @@ Her mother looked at her for a long time. "She didn't leave you the workshop bec
 
 ---
 
-The notebook was worse than the workshop. It was written in her grandmother's precise, slanted Arabic — the handwriting of someone who had learned calligraphy before she learned to read — and it contained, as far as Nadia could tell, everything.
+The notebook was worse than the workshop. Her grandmother's precise, slanted Arabic filled every page — the handwriting of someone who had learned calligraphy before she learned to read — and it contained, as far as Nadia could tell, everything.
 
 Not everything about oud-making. Everything about *these specific* ouds. Each instrument had its own section, beginning with the selection of the wood ("spruce from the Kadisha Valley, felled December 2009, north-facing slope, grain spacing 1.2mm at the center, widening to 1.8mm at the edges") and continuing through every step of construction with annotations that read less like instructions and more like a diary addressed to the wood itself.
 
@@ -43,7 +43,7 @@ She kept the workshop. She didn't know why. She paid the rent on the small build
 
 On her fourth visit, she picked up a plane.
 
-It was a small wooden plane, about the size of her palm, with a blade that her grandmother had clearly sharpened ten thousand times — the steel was narrower than it should have been, thinned by decades of honing. The sole was dark and smooth with use, the kind of smooth that comes from being held against wood for so many hours that the oils from one substance have migrated into the other.
+A small wooden plane, about the size of her palm. The blade had been sharpened ten thousand times — the steel narrower than it should have been, thinned by decades of honing. The sole was dark and smooth with use, the kind of smooth that comes from being held against wood for so many hours that the oils from one substance have migrated into the other.
 
 She held it and felt something in her hand that she hadn't felt since she was a teenager standing in this room, her grandmother behind her, their four hands on the same piece of spruce: the feeling of a tool that knows what it's for.
 
@@ -53,7 +53,7 @@ She didn't use it that day. She put it back and went home.
 
 The fifth visit. The eighth. The twelfth.
 
-On the twelfth visit, she opened the section of the notebook labeled "No. 18" — the unfinished instrument. Her grandmother had started it in 2021, three years before her death. The soundboard was shaped but not braced. The bowl — eleven ribs of walnut, steamed and bent over a form — was assembled but not glued to the neck. The neck blank was carved but unfretted. The pegbox was rough-shaped, the familiar backward curve of it like a question mark or a shepherd's crook.
+On the twelfth visit, she opened the section of the notebook labeled "No. 18" — the unfinished instrument. Her grandmother had started it in 2021, three years before her death. The soundboard was shaped but not braced. The bowl — eleven ribs of walnut, steamed and bent over a form — was assembled but not glued to the neck. The neck blank: carved but unfretted, the pegbox rough-shaped, its familiar backward curve like a question mark or a shepherd's crook.
 
 The notebook entry for No. 18 was the longest in the book. It began with the wood — "walnut from the orchard behind the church in Bsharri, the tree that was struck by lightning in 2019; I asked Father Boutros for the fallen branches before anyone could sell them for firewood" — and continued through the design, which was unusual. Her grandmother had been experimenting with a slightly deeper bowl and a modified bracing pattern.
 
@@ -95,7 +95,7 @@ By the sixth week, she was talking to the wood.
 
 Not in words, exactly. More in gestures. She would run her thumb along a surface and feel the grain tell her where it wanted to be thinned and where it wanted to be left alone. She would hold a rib against the form and feel it push back — not resisting, but redirecting, the way a river redirects a stone. She would tap the soundboard and hear — finally, after three weeks of thuds — something like a pitch, something like a voice, something like the ghost of the instrument that was hiding inside the wood.
 
-The notebook became less necessary. Not because the instructions were wrong but because they were, she realized, her grandmother's translation of something that couldn't be fully translated. "Bring them into conversation. Not unison — conversation." What that meant was: hold the soundboard and listen to both sides simultaneously and adjust the graduation until the two resonances create a beating, a wavering, a shimmer in the sustain that makes the note sound alive. You couldn't get there by measuring. You could only get there by doing it until you could hear it, and then you could hear it, and then you couldn't not hear it.
+The notebook became less necessary. Not because the instructions were wrong but because they were, she realized, her grandmother's translation of something that couldn't be fully translated. "Bring them into conversation. Not unison — conversation." What that meant was: hold the soundboard and listen to both sides simultaneously and adjust the graduation until the two resonances create a beating, a wavering, a shimmer in the sustain that makes the note sound alive. No amount of measuring could get you there. You could only get there by doing it until you could hear it, and then you could hear it, and then you couldn't not hear it.
 
 She understood now why her grandmother had been impossible to live with. This was not a skill. It was a way of being in the world — a mode of attention so total that it left no room for anything else. You couldn't listen this carefully to wood and also listen to your daughter telling you about her day at school. You couldn't attend to the grain spacing of a soundboard and also attend to the grain of a conversation. The instrument demanded everything, and her grandmother had given it everything, and the cost was everything else.
 
@@ -107,11 +107,11 @@ The instrument took eleven weeks.
 
 When she strung it for the first time — nylon strings, properly knotted, tuned to the classical Arabic tuning that her grandmother had used — she played a single note and the workshop filled with sound.
 
-Not just the note. The overtones. The undertones. The resonance of the walnut bowl and the spruce top in conversation with each other, not in unison but in the shimmering, beating, alive way that her grandmother had described and that she could now hear because she had become, over eleven weeks, the kind of person who could hear it.
+Not just the note. The overtones. The undertones. The resonance of the walnut bowl and the spruce top in conversation with each other, not in unison but in the shimmering, beating, alive way that her grandmother had described. She could hear it now. Over eleven weeks, she had become the kind of person who could.
 
 She played a maqam — Rast, the most fundamental Arabic mode, the one her grandmother had taught her first when she was seven years old. The notes climbed the scale and each one bloomed in the room like something organic, like a plant unfurling, like breath on a cold morning. The sustain was extraordinary. Her grandmother had been right: this instrument sang in paragraphs.
 
-She played for an hour. She played pieces she hadn't played in thirteen years and her fingers remembered them the way her hands had remembered the plane — not from instruction but from somewhere deeper, somewhere the knowledge had been waiting, patient and undamaged, for the hands to come back.
+For an hour, the workshop held nothing but music. Pieces she hadn't played in thirteen years came back through her fingers the way her hands had remembered the plane — not from instruction but from somewhere deeper, somewhere the knowledge had been waiting, patient and undamaged, for the hands to come back.
 
 When she stopped, the workshop was silent in the way that only a room that has recently been full of music can be silent: expectant, ringing, not empty but holding.
 

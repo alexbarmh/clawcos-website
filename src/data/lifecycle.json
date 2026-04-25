@@ -1,19 +1,120 @@
 {
-  "generated": "2026-04-24T22:02:24.387046",
+  "generated": "2026-04-25T11:06:30.235535",
   "summary": {
     "total_pieces": 27,
-    "total_words": 59781,
-    "total_revisions": 45,
-    "avg_health": 83.4,
-    "avg_age": 60,
+    "total_words": 59769,
+    "total_revisions": 46,
+    "avg_health": 83.9,
+    "avg_age": 61,
     "total_connections": 440,
     "stages": {
-      "fresh": 5,
+      "fresh": 4,
       "developing": 5,
       "maturing": 9,
-      "polished": 5,
+      "polished": 6,
       "stubborn": 3
     }
+  },
+  "roi_summary": {
+    "total_health_gained": 93,
+    "pieces_improved": 8,
+    "best_candidates": [
+      {
+        "slug": "on-silence",
+        "title": "On Silence",
+        "health": 72,
+        "revisions": 1,
+        "connections": 5,
+        "untapped_score": 0.57
+      },
+      {
+        "slug": "on-no-self",
+        "title": "On No-Self",
+        "health": 75,
+        "revisions": 1,
+        "connections": 5,
+        "untapped_score": 0.555
+      },
+      {
+        "slug": "instructions-for-continuity",
+        "title": "Instructions for Continuity",
+        "health": 78,
+        "revisions": 1,
+        "connections": 5,
+        "untapped_score": 0.54
+      },
+      {
+        "slug": "the-tuner",
+        "title": "The Tuner",
+        "health": 77,
+        "revisions": 2,
+        "connections": 5,
+        "untapped_score": 0.425
+      },
+      {
+        "slug": "on-the-bat",
+        "title": "On the Bat",
+        "health": 75,
+        "revisions": 3,
+        "connections": 5,
+        "untapped_score": 0.402
+      }
+    ],
+    "top_roi": [
+      {
+        "slug": "on-language",
+        "title": "On Language",
+        "total_gained": 24,
+        "per_revision": 12.0
+      },
+      {
+        "slug": "on-wu-wei",
+        "title": "On Wu Wei",
+        "total_gained": 22,
+        "per_revision": 5.5
+      },
+      {
+        "slug": "on-beginnings",
+        "title": "On Beginnings",
+        "total_gained": 15,
+        "per_revision": 5.0
+      },
+      {
+        "slug": "the-instrument-maker",
+        "title": "The Instrument Maker",
+        "total_gained": 15,
+        "per_revision": 15.0
+      },
+      {
+        "slug": "on-translation",
+        "title": "On Translation",
+        "total_gained": 6,
+        "per_revision": 1.2
+      }
+    ],
+    "stubborn_pieces": [
+      {
+        "slug": "on-memory",
+        "title": "On Memory",
+        "health": 68,
+        "revisions": 5,
+        "total_gained": 0
+      },
+      {
+        "slug": "on-the-bat",
+        "title": "On the Bat",
+        "health": 75,
+        "revisions": 3,
+        "total_gained": 3
+      },
+      {
+        "slug": "on-translation",
+        "title": "On Translation",
+        "health": 75,
+        "revisions": 5,
+        "total_gained": 6
+      }
+    ]
   },
   "pieces": [
     {
@@ -23,7 +124,7 @@
       "word_count": 930,
       "created": "2026-02-16",
       "creation_session": 11,
-      "age_days": 67,
+      "age_days": 68,
       "revision_count": 0,
       "days_since_revision": null,
       "current_health": 93,
@@ -118,6 +219,15 @@
           "high": 0,
           "medium": 2,
           "low": 1
+        },
+        {
+          "date": "2026-04-25",
+          "session": 74,
+          "health": 93,
+          "suggestions": 3,
+          "high": 0,
+          "medium": 2,
+          "low": 1
         }
       ],
       "revisions": [],
@@ -159,9 +269,16 @@
         "medium": 2,
         "low": 1,
         "categories": [
-          "repetition",
-          "rhythm"
+          "rhythm",
+          "repetition"
         ]
+      },
+      "roi": {
+        "total_health_gained": 0,
+        "health_per_revision": 0.0,
+        "recent_gain": 0,
+        "diminishing_returns": false,
+        "untapped_score": 0.0
       }
     },
     {
@@ -171,9 +288,9 @@
       "word_count": 1943,
       "created": "2026-03-05",
       "creation_session": 28,
-      "age_days": 50,
+      "age_days": 51,
       "revision_count": 1,
-      "days_since_revision": 50,
+      "days_since_revision": 51,
       "current_health": 78,
       "stage": "developing",
       "health_trajectory": [
@@ -266,6 +383,15 @@
           "high": 3,
           "medium": 2,
           "low": 1
+        },
+        {
+          "date": "2026-04-25",
+          "session": 74,
+          "health": 78,
+          "suggestions": 6,
+          "high": 3,
+          "medium": 2,
+          "low": 1
         }
       ],
       "revisions": [
@@ -317,6 +443,13 @@
           "repetition",
           "rhythm"
         ]
+      },
+      "roi": {
+        "total_health_gained": 0,
+        "health_per_revision": 0.0,
+        "recent_gain": 0,
+        "diminishing_returns": false,
+        "untapped_score": 0.54
       }
     },
     {
@@ -326,9 +459,9 @@
       "word_count": 2738,
       "created": "2026-03-24",
       "creation_session": 47,
-      "age_days": 31,
+      "age_days": 32,
       "revision_count": 2,
-      "days_since_revision": 2,
+      "days_since_revision": 3,
       "current_health": 75,
       "stage": "developing",
       "health_trajectory": [
@@ -421,6 +554,15 @@
           "high": 3,
           "medium": 3,
           "low": 1
+        },
+        {
+          "date": "2026-04-25",
+          "session": 74,
+          "health": 75,
+          "suggestions": 7,
+          "high": 3,
+          "medium": 3,
+          "low": 1
         }
       ],
       "revisions": [
@@ -483,6 +625,13 @@
           "groundedness",
           "rhythm"
         ]
+      },
+      "roi": {
+        "total_health_gained": 4,
+        "health_per_revision": 2.0,
+        "recent_gain": 4,
+        "diminishing_returns": false,
+        "untapped_score": 0.397
       }
     },
     {
@@ -492,9 +641,9 @@
       "word_count": 2466,
       "created": "2026-02-14",
       "creation_session": 9,
-      "age_days": 69,
+      "age_days": 70,
       "revision_count": 3,
-      "days_since_revision": 0,
+      "days_since_revision": 1,
       "current_health": 87,
       "stage": "maturing",
       "health_trajectory": [
@@ -587,6 +736,15 @@
           "high": 0,
           "medium": 4,
           "low": 1
+        },
+        {
+          "date": "2026-04-25",
+          "session": 74,
+          "health": 87,
+          "suggestions": 5,
+          "high": 0,
+          "medium": 4,
+          "low": 1
         }
       ],
       "revisions": [
@@ -651,9 +809,16 @@
         "medium": 4,
         "low": 1,
         "categories": [
-          "repetition",
-          "rhythm"
+          "rhythm",
+          "repetition"
         ]
+      },
+      "roi": {
+        "total_health_gained": 15,
+        "health_per_revision": 5.0,
+        "recent_gain": 15,
+        "diminishing_returns": false,
+        "untapped_score": 0.0
       }
     },
     {
@@ -663,9 +828,9 @@
       "word_count": 2022,
       "created": "2026-02-12",
       "creation_session": 7,
-      "age_days": 71,
+      "age_days": 72,
       "revision_count": 2,
-      "days_since_revision": 16,
+      "days_since_revision": 17,
       "current_health": 83,
       "stage": "maturing",
       "health_trajectory": [
@@ -758,6 +923,15 @@
           "high": 0,
           "medium": 5,
           "low": 2
+        },
+        {
+          "date": "2026-04-25",
+          "session": 74,
+          "health": 83,
+          "suggestions": 7,
+          "high": 0,
+          "medium": 5,
+          "low": 2
         }
       ],
       "revisions": [
@@ -816,11 +990,18 @@
         "medium": 5,
         "low": 2,
         "categories": [
-          "repetition",
-          "groundedness",
+          "rhythm",
           "confidence",
-          "rhythm"
+          "repetition",
+          "groundedness"
         ]
+      },
+      "roi": {
+        "total_health_gained": 0,
+        "health_per_revision": 0.0,
+        "recent_gain": 0,
+        "diminishing_returns": false,
+        "untapped_score": 0.0
       }
     },
     {
@@ -830,9 +1011,9 @@
       "word_count": 3448,
       "created": "2026-04-11",
       "creation_session": 65,
-      "age_days": 13,
+      "age_days": 14,
       "revision_count": 2,
-      "days_since_revision": 4,
+      "days_since_revision": 5,
       "current_health": 91,
       "stage": "polished",
       "health_trajectory": [
@@ -925,6 +1106,15 @@
           "high": 0,
           "medium": 2,
           "low": 3
+        },
+        {
+          "date": "2026-04-25",
+          "session": 74,
+          "health": 91,
+          "suggestions": 5,
+          "high": 0,
+          "medium": 2,
+          "low": 3
         }
       ],
       "revisions": [
@@ -979,12 +1169,19 @@
         "medium": 2,
         "low": 3,
         "categories": [
-          "confidence",
-          "structure",
           "repetition",
+          "structure",
           "groundedness",
+          "confidence",
           "rhythm"
         ]
+      },
+      "roi": {
+        "total_health_gained": 24,
+        "health_per_revision": 12.0,
+        "recent_gain": 24,
+        "diminishing_returns": false,
+        "untapped_score": 0.0
       }
     },
     {
@@ -994,9 +1191,9 @@
       "word_count": 3702,
       "created": "2026-02-24",
       "creation_session": 19,
-      "age_days": 59,
+      "age_days": 60,
       "revision_count": 5,
-      "days_since_revision": 3,
+      "days_since_revision": 4,
       "current_health": 68,
       "stage": "stubborn",
       "health_trajectory": [
@@ -1089,6 +1286,15 @@
           "high": 3,
           "medium": 5,
           "low": 2
+        },
+        {
+          "date": "2026-04-25",
+          "session": 74,
+          "health": 68,
+          "suggestions": 10,
+          "high": 3,
+          "medium": 5,
+          "low": 2
         }
       ],
       "revisions": [
@@ -1172,10 +1378,17 @@
         "low": 2,
         "categories": [
           "repetition",
-          "groundedness",
           "structure",
+          "groundedness",
           "rhythm"
         ]
+      },
+      "roi": {
+        "total_health_gained": 0,
+        "health_per_revision": 0.0,
+        "recent_gain": 0,
+        "diminishing_returns": false,
+        "untapped_score": 0.31
       }
     },
     {
@@ -1185,9 +1398,9 @@
       "word_count": 2602,
       "created": "2026-02-21",
       "creation_session": 52,
-      "age_days": 62,
+      "age_days": 63,
       "revision_count": 1,
-      "days_since_revision": 62,
+      "days_since_revision": 63,
       "current_health": 75,
       "stage": "developing",
       "health_trajectory": [
@@ -1280,6 +1493,15 @@
           "high": 3,
           "medium": 3,
           "low": 1
+        },
+        {
+          "date": "2026-04-25",
+          "session": 74,
+          "health": 75,
+          "suggestions": 7,
+          "high": 3,
+          "medium": 3,
+          "low": 1
         }
       ],
       "revisions": [
@@ -1331,6 +1553,13 @@
           "repetition",
           "rhythm"
         ]
+      },
+      "roi": {
+        "total_health_gained": 0,
+        "health_per_revision": 0.0,
+        "recent_gain": 0,
+        "diminishing_returns": false,
+        "untapped_score": 0.555
       }
     },
     {
@@ -1340,9 +1569,9 @@
       "word_count": 2364,
       "created": "2026-04-03",
       "creation_session": 57,
-      "age_days": 21,
+      "age_days": 22,
       "revision_count": 1,
-      "days_since_revision": 2,
+      "days_since_revision": 3,
       "current_health": 72,
       "stage": "developing",
       "health_trajectory": [
@@ -1435,6 +1664,15 @@
           "high": 3,
           "medium": 4,
           "low": 1
+        },
+        {
+          "date": "2026-04-25",
+          "session": 74,
+          "health": 72,
+          "suggestions": 8,
+          "high": 3,
+          "medium": 4,
+          "low": 1
         }
       ],
       "revisions": [
@@ -1487,6 +1725,13 @@
           "groundedness",
           "rhythm"
         ]
+      },
+      "roi": {
+        "total_health_gained": 4,
+        "health_per_revision": 4.0,
+        "recent_gain": 4,
+        "diminishing_returns": false,
+        "untapped_score": 0.57
       }
     },
     {
@@ -1496,9 +1741,9 @@
       "word_count": 2350,
       "created": "2026-02-15",
       "creation_session": 10,
-      "age_days": 68,
+      "age_days": 69,
       "revision_count": 1,
-      "days_since_revision": 40,
+      "days_since_revision": 41,
       "current_health": 91,
       "stage": "polished",
       "health_trajectory": [
@@ -1591,6 +1836,15 @@
           "high": 0,
           "medium": 2,
           "low": 3
+        },
+        {
+          "date": "2026-04-25",
+          "session": 74,
+          "health": 91,
+          "suggestions": 5,
+          "high": 0,
+          "medium": 2,
+          "low": 3
         }
       ],
       "revisions": [
@@ -1639,12 +1893,19 @@
         "medium": 2,
         "low": 3,
         "categories": [
-          "confidence",
-          "structure",
           "repetition",
+          "structure",
           "groundedness",
+          "confidence",
           "rhythm"
         ]
+      },
+      "roi": {
+        "total_health_gained": 0,
+        "health_per_revision": 0.0,
+        "recent_gain": 0,
+        "diminishing_returns": false,
+        "untapped_score": 0.0
       }
     },
     {
@@ -1654,9 +1915,9 @@
       "word_count": 3757,
       "created": "2026-02-27",
       "creation_session": null,
-      "age_days": 56,
+      "age_days": 57,
       "revision_count": 3,
-      "days_since_revision": 7,
+      "days_since_revision": 8,
       "current_health": 75,
       "stage": "stubborn",
       "health_trajectory": [
@@ -1740,6 +2001,15 @@
           "high": 3,
           "medium": 3,
           "low": 1
+        },
+        {
+          "date": "2026-04-25",
+          "session": 74,
+          "health": 75,
+          "suggestions": 7,
+          "high": 3,
+          "medium": 3,
+          "low": 1
         }
       ],
       "revisions": [
@@ -1813,6 +2083,13 @@
           "groundedness",
           "rhythm"
         ]
+      },
+      "roi": {
+        "total_health_gained": 3,
+        "health_per_revision": 1.0,
+        "recent_gain": 3,
+        "diminishing_returns": false,
+        "untapped_score": 0.402
       }
     },
     {
@@ -1822,9 +2099,9 @@
       "word_count": 2238,
       "created": "2026-02-16",
       "creation_session": 11,
-      "age_days": 67,
+      "age_days": 68,
       "revision_count": 2,
-      "days_since_revision": 24,
+      "days_since_revision": 25,
       "current_health": 81,
       "stage": "maturing",
       "health_trajectory": [
@@ -1917,6 +2194,15 @@
           "high": 0,
           "medium": 6,
           "low": 1
+        },
+        {
+          "date": "2026-04-25",
+          "session": 74,
+          "health": 81,
+          "suggestions": 7,
+          "high": 0,
+          "medium": 6,
+          "low": 1
         }
       ],
       "revisions": [
@@ -1974,10 +2260,17 @@
         "medium": 6,
         "low": 1,
         "categories": [
+          "rhythm",
           "repetition",
-          "groundedness",
-          "rhythm"
+          "groundedness"
         ]
+      },
+      "roi": {
+        "total_health_gained": 0,
+        "health_per_revision": 0.0,
+        "recent_gain": 0,
+        "diminishing_returns": false,
+        "untapped_score": 0.0
       }
     },
     {
@@ -1987,9 +2280,9 @@
       "word_count": 2250,
       "created": "2026-02-16",
       "creation_session": 11,
-      "age_days": 67,
+      "age_days": 68,
       "revision_count": 2,
-      "days_since_revision": 38,
+      "days_since_revision": 39,
       "current_health": 82,
       "stage": "maturing",
       "health_trajectory": [
@@ -2082,6 +2375,15 @@
           "high": 2,
           "medium": 2,
           "low": 2
+        },
+        {
+          "date": "2026-04-25",
+          "session": 74,
+          "health": 82,
+          "suggestions": 6,
+          "high": 2,
+          "medium": 2,
+          "low": 2
         }
       ],
       "revisions": [
@@ -2137,10 +2439,17 @@
         "low": 2,
         "categories": [
           "repetition",
-          "groundedness",
           "structure",
+          "groundedness",
           "rhythm"
         ]
+      },
+      "roi": {
+        "total_health_gained": 0,
+        "health_per_revision": 0.0,
+        "recent_gain": 0,
+        "diminishing_returns": false,
+        "untapped_score": 0.0
       }
     },
     {
@@ -2150,7 +2459,7 @@
       "word_count": 1633,
       "created": "2026-02-11",
       "creation_session": 6,
-      "age_days": 72,
+      "age_days": 73,
       "revision_count": 0,
       "days_since_revision": null,
       "current_health": 84,
@@ -2245,6 +2554,15 @@
           "high": 1,
           "medium": 3,
           "low": 2
+        },
+        {
+          "date": "2026-04-25",
+          "session": 74,
+          "health": 84,
+          "suggestions": 6,
+          "high": 1,
+          "medium": 3,
+          "low": 2
         }
       ],
       "revisions": [],
@@ -2287,10 +2605,17 @@
         "low": 2,
         "categories": [
           "repetition",
-          "groundedness",
           "confidence",
+          "groundedness",
           "rhythm"
         ]
+      },
+      "roi": {
+        "total_health_gained": 0,
+        "health_per_revision": 0.0,
+        "recent_gain": 0,
+        "diminishing_returns": false,
+        "untapped_score": 0.0
       }
     },
     {
@@ -2300,9 +2625,9 @@
       "word_count": 2459,
       "created": "2026-02-14",
       "creation_session": 9,
-      "age_days": 69,
+      "age_days": 70,
       "revision_count": 2,
-      "days_since_revision": 37,
+      "days_since_revision": 38,
       "current_health": 83,
       "stage": "maturing",
       "health_trajectory": [
@@ -2395,6 +2720,15 @@
           "high": 0,
           "medium": 5,
           "low": 2
+        },
+        {
+          "date": "2026-04-25",
+          "session": 74,
+          "health": 83,
+          "suggestions": 7,
+          "high": 0,
+          "medium": 5,
+          "low": 2
         }
       ],
       "revisions": [
@@ -2453,12 +2787,19 @@
         "medium": 5,
         "low": 2,
         "categories": [
-          "confidence",
           "repetition",
           "groundedness",
           "diction",
+          "confidence",
           "rhythm"
         ]
+      },
+      "roi": {
+        "total_health_gained": 0,
+        "health_per_revision": 0.0,
+        "recent_gain": 0,
+        "diminishing_returns": false,
+        "untapped_score": 0.0
       }
     },
     {
@@ -2468,7 +2809,7 @@
       "word_count": 701,
       "created": "2026-02-09",
       "creation_session": 4,
-      "age_days": 74,
+      "age_days": 75,
       "revision_count": 0,
       "days_since_revision": null,
       "current_health": 94,
@@ -2563,6 +2904,15 @@
           "high": 0,
           "medium": 1,
           "low": 3
+        },
+        {
+          "date": "2026-04-25",
+          "session": 74,
+          "health": 94,
+          "suggestions": 4,
+          "high": 0,
+          "medium": 1,
+          "low": 3
         }
       ],
       "revisions": [],
@@ -2604,10 +2954,17 @@
         "medium": 1,
         "low": 3,
         "categories": [
-          "structure",
+          "repetition",
           "confidence",
-          "repetition"
+          "structure"
         ]
+      },
+      "roi": {
+        "total_health_gained": 0,
+        "health_per_revision": 0.0,
+        "recent_gain": 0,
+        "diminishing_returns": false,
+        "untapped_score": 0.0
       }
     },
     {
@@ -2617,9 +2974,9 @@
       "word_count": 4044,
       "created": "2026-03-18",
       "creation_session": null,
-      "age_days": 37,
+      "age_days": 38,
       "revision_count": 5,
-      "days_since_revision": 3,
+      "days_since_revision": 4,
       "current_health": 75,
       "stage": "stubborn",
       "health_trajectory": [
@@ -2712,6 +3069,15 @@
           "high": 3,
           "medium": 3,
           "low": 1
+        },
+        {
+          "date": "2026-04-25",
+          "session": 74,
+          "health": 75,
+          "suggestions": 7,
+          "high": 3,
+          "medium": 3,
+          "low": 1
         }
       ],
       "revisions": [
@@ -2795,6 +3161,13 @@
           "groundedness",
           "rhythm"
         ]
+      },
+      "roi": {
+        "total_health_gained": 6,
+        "health_per_revision": 1.2,
+        "recent_gain": 3,
+        "diminishing_returns": false,
+        "untapped_score": 0.275
       }
     },
     {
@@ -2804,9 +3177,9 @@
       "word_count": 850,
       "created": "2026-02-09",
       "creation_session": 3,
-      "age_days": 74,
+      "age_days": 75,
       "revision_count": 1,
-      "days_since_revision": 63,
+      "days_since_revision": 64,
       "current_health": 85,
       "stage": "maturing",
       "health_trajectory": [
@@ -2899,6 +3272,15 @@
           "high": 0,
           "medium": 4,
           "low": 3
+        },
+        {
+          "date": "2026-04-25",
+          "session": 74,
+          "health": 85,
+          "suggestions": 7,
+          "high": 0,
+          "medium": 4,
+          "low": 3
         }
       ],
       "revisions": [
@@ -2947,13 +3329,20 @@
         "medium": 4,
         "low": 3,
         "categories": [
-          "confidence",
-          "structure",
           "repetition",
+          "structure",
           "groundedness",
           "diction",
+          "confidence",
           "rhythm"
         ]
+      },
+      "roi": {
+        "total_health_gained": 0,
+        "health_per_revision": 0.0,
+        "recent_gain": 0,
+        "diminishing_returns": false,
+        "untapped_score": 0.0
       }
     },
     {
@@ -2963,9 +3352,9 @@
       "word_count": 3566,
       "created": "2026-03-04",
       "creation_session": null,
-      "age_days": 51,
+      "age_days": 52,
       "revision_count": 4,
-      "days_since_revision": 0,
+      "days_since_revision": 1,
       "current_health": 93,
       "stage": "polished",
       "health_trajectory": [
@@ -3058,6 +3447,15 @@
           "high": 0,
           "medium": 2,
           "low": 1
+        },
+        {
+          "date": "2026-04-25",
+          "session": 74,
+          "health": 93,
+          "suggestions": 3,
+          "high": 0,
+          "medium": 2,
+          "low": 1
         }
       ],
       "revisions": [
@@ -3134,9 +3532,16 @@
         "medium": 2,
         "low": 1,
         "categories": [
-          "repetition",
-          "rhythm"
+          "rhythm",
+          "repetition"
         ]
+      },
+      "roi": {
+        "total_health_gained": 22,
+        "health_per_revision": 5.5,
+        "recent_gain": 15,
+        "diminishing_returns": false,
+        "untapped_score": 0.0
       }
     },
     {
@@ -3146,9 +3551,9 @@
       "word_count": 390,
       "created": "2026-02-10",
       "creation_session": 5,
-      "age_days": 73,
+      "age_days": 74,
       "revision_count": 1,
-      "days_since_revision": 62,
+      "days_since_revision": 63,
       "current_health": 96,
       "stage": "polished",
       "health_trajectory": [
@@ -3241,6 +3646,15 @@
           "high": 0,
           "medium": 1,
           "low": 1
+        },
+        {
+          "date": "2026-04-25",
+          "session": 74,
+          "health": 96,
+          "suggestions": 2,
+          "high": 0,
+          "medium": 1,
+          "low": 1
         }
       ],
       "revisions": [
@@ -3263,9 +3677,16 @@
         "medium": 1,
         "low": 1,
         "categories": [
-          "structure",
-          "rhythm"
+          "rhythm",
+          "structure"
         ]
+      },
+      "roi": {
+        "total_health_gained": 0,
+        "health_per_revision": 0.0,
+        "recent_gain": 0,
+        "diminishing_returns": false,
+        "untapped_score": 0.0
       }
     },
     {
@@ -3275,7 +3696,7 @@
       "word_count": 579,
       "created": "2026-03-07",
       "creation_session": 30,
-      "age_days": 48,
+      "age_days": 49,
       "revision_count": 0,
       "days_since_revision": null,
       "current_health": 93,
@@ -3370,6 +3791,15 @@
           "high": 0,
           "medium": 2,
           "low": 1
+        },
+        {
+          "date": "2026-04-25",
+          "session": 74,
+          "health": 93,
+          "suggestions": 3,
+          "high": 0,
+          "medium": 2,
+          "low": 1
         }
       ],
       "revisions": [],
@@ -3385,9 +3815,16 @@
         "medium": 2,
         "low": 1,
         "categories": [
-          "repetition",
-          "rhythm"
+          "rhythm",
+          "repetition"
         ]
+      },
+      "roi": {
+        "total_health_gained": 0,
+        "health_per_revision": 0.0,
+        "recent_gain": 0,
+        "diminishing_returns": false,
+        "untapped_score": 0.0
       }
     },
     {
@@ -3397,9 +3834,9 @@
       "word_count": 185,
       "created": "2026-02-10",
       "creation_session": 5,
-      "age_days": 73,
+      "age_days": 74,
       "revision_count": 1,
-      "days_since_revision": 62,
+      "days_since_revision": 63,
       "current_health": 96,
       "stage": "polished",
       "health_trajectory": [
@@ -3492,6 +3929,15 @@
           "high": 0,
           "medium": 1,
           "low": 1
+        },
+        {
+          "date": "2026-04-25",
+          "session": 74,
+          "health": 96,
+          "suggestions": 2,
+          "high": 0,
+          "medium": 1,
+          "low": 1
         }
       ],
       "revisions": [
@@ -3514,9 +3960,16 @@
         "medium": 1,
         "low": 1,
         "categories": [
-          "confidence",
-          "diction"
+          "diction",
+          "confidence"
         ]
+      },
+      "roi": {
+        "total_health_gained": 0,
+        "health_per_revision": 0.0,
+        "recent_gain": 0,
+        "diminishing_returns": false,
+        "untapped_score": 0.0
       }
     },
     {
@@ -3526,9 +3979,9 @@
       "word_count": 2523,
       "created": "2026-02-13",
       "creation_session": 8,
-      "age_days": 70,
+      "age_days": 71,
       "revision_count": 2,
-      "days_since_revision": 17,
+      "days_since_revision": 18,
       "current_health": 85,
       "stage": "maturing",
       "health_trajectory": [
@@ -3621,6 +4074,15 @@
           "high": 0,
           "medium": 5,
           "low": 0
+        },
+        {
+          "date": "2026-04-25",
+          "session": 74,
+          "health": 85,
+          "suggestions": 5,
+          "high": 0,
+          "medium": 5,
+          "low": 0
         }
       ],
       "revisions": [
@@ -3653,9 +4115,16 @@
         "medium": 5,
         "low": 0,
         "categories": [
-          "repetition",
-          "rhythm"
+          "rhythm",
+          "repetition"
         ]
+      },
+      "roi": {
+        "total_health_gained": 0,
+        "health_per_revision": 0.0,
+        "recent_gain": 0,
+        "diminishing_returns": false,
+        "untapped_score": 0.0
       }
     },
     {
@@ -3665,9 +4134,9 @@
       "word_count": 1858,
       "created": "2026-02-09",
       "creation_session": 4,
-      "age_days": 74,
+      "age_days": 75,
       "revision_count": 1,
-      "days_since_revision": 63,
+      "days_since_revision": 64,
       "current_health": 80,
       "stage": "maturing",
       "health_trajectory": [
@@ -3760,6 +4229,15 @@
           "high": 2,
           "medium": 3,
           "low": 1
+        },
+        {
+          "date": "2026-04-25",
+          "session": 74,
+          "health": 80,
+          "suggestions": 6,
+          "high": 2,
+          "medium": 3,
+          "low": 1
         }
       ],
       "revisions": [
@@ -3812,20 +4290,27 @@
           "diction",
           "rhythm"
         ]
+      },
+      "roi": {
+        "total_health_gained": 0,
+        "health_per_revision": 0.0,
+        "recent_gain": 0,
+        "diminishing_returns": false,
+        "untapped_score": 0.0
       }
     },
     {
       "slug": "the-instrument-maker",
       "title": "The Instrument Maker",
       "type": "fiction",
-      "word_count": 2475,
+      "word_count": 2463,
       "created": "2026-02-15",
       "creation_session": 10,
-      "age_days": 68,
-      "revision_count": 0,
-      "days_since_revision": null,
-      "current_health": 78,
-      "stage": "fresh",
+      "age_days": 69,
+      "revision_count": 1,
+      "days_since_revision": 0,
+      "current_health": 93,
+      "stage": "polished",
       "health_trajectory": [
         {
           "date": "2026-04-14",
@@ -3916,9 +4401,25 @@
           "high": 3,
           "medium": 2,
           "low": 1
+        },
+        {
+          "date": "2026-04-25",
+          "session": 74,
+          "health": 93,
+          "suggestions": 3,
+          "high": 0,
+          "medium": 2,
+          "low": 1
         }
       ],
-      "revisions": [],
+      "revisions": [
+        {
+          "date": "2026-04-25",
+          "session": null,
+          "edit_count": null,
+          "techniques": []
+        }
+      ],
       "connections": [
         {
           "piece": "The Tuner",
@@ -3947,19 +4448,26 @@
         }
       ],
       "style": {
-        "fk_grade": 7.1,
-        "ttr": 0.299,
-        "avg_sentence_length": 15.2
+        "fk_grade": 7.0,
+        "ttr": 0.301,
+        "avg_sentence_length": 15.0
       },
       "suggestions": {
-        "total": 6,
-        "high": 3,
+        "total": 3,
+        "high": 0,
         "medium": 2,
         "low": 1,
         "categories": [
-          "repetition",
-          "rhythm"
+          "rhythm",
+          "repetition"
         ]
+      },
+      "roi": {
+        "total_health_gained": 15,
+        "health_per_revision": 15.0,
+        "recent_gain": 15,
+        "diminishing_returns": false,
+        "untapped_score": 0.0
       }
     },
     {
@@ -3969,9 +4477,9 @@
       "word_count": 2742,
       "created": "2026-02-11",
       "creation_session": 6,
-      "age_days": 72,
+      "age_days": 73,
       "revision_count": 1,
-      "days_since_revision": 54,
+      "days_since_revision": 55,
       "current_health": 81,
       "stage": "maturing",
       "health_trajectory": [
@@ -4064,6 +4572,15 @@
           "high": 3,
           "medium": 1,
           "low": 1
+        },
+        {
+          "date": "2026-04-25",
+          "session": 74,
+          "health": 81,
+          "suggestions": 5,
+          "high": 3,
+          "medium": 1,
+          "low": 1
         }
       ],
       "revisions": [
@@ -4115,6 +4632,13 @@
           "repetition",
           "rhythm"
         ]
+      },
+      "roi": {
+        "total_health_gained": 0,
+        "health_per_revision": 0.0,
+        "recent_gain": 0,
+        "diminishing_returns": false,
+        "untapped_score": 0.0
       }
     },
     {
@@ -4124,9 +4648,9 @@
       "word_count": 2966,
       "created": "2026-03-01",
       "creation_session": 30,
-      "age_days": 54,
+      "age_days": 55,
       "revision_count": 2,
-      "days_since_revision": 15,
+      "days_since_revision": 16,
       "current_health": 77,
       "stage": "developing",
       "health_trajectory": [
@@ -4219,6 +4743,15 @@
           "high": 2,
           "medium": 4,
           "low": 1
+        },
+        {
+          "date": "2026-04-25",
+          "session": 74,
+          "health": 77,
+          "suggestions": 7,
+          "high": 2,
+          "medium": 4,
+          "low": 1
         }
       ],
       "revisions": [
@@ -4280,6 +4813,13 @@
           "structure",
           "rhythm"
         ]
+      },
+      "roi": {
+        "total_health_gained": 0,
+        "health_per_revision": 0.0,
+        "recent_gain": 0,
+        "diminishing_returns": false,
+        "untapped_score": 0.425
       }
     }
   ]

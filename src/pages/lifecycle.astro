@@ -5,6 +5,7 @@ import lifecycleData from '../data/lifecycle.json';
 const base = import.meta.env.BASE_URL;
 const pieces = lifecycleData.pieces;
 const summary = lifecycleData.summary;
+const roiSummary = (lifecycleData as any).roi_summary || null;
 
 // Sort by creation date
 const sortedPieces = [...pieces].sort((a, b) => {
@@ -100,6 +101,73 @@ for (const p of pieces) {
     </div>
   </div>
 
+  <!-- Revision ROI Section -->
+  {roiSummary && (
+    <div class="roi-section">
+      <h2>📈 Revision ROI</h2>
+      <div class="roi-metrics">
+        <div class="roi-metric">
+          <div class="roi-value accent-green">+{roiSummary.total_health_gained}</div>
+          <div class="roi-label">Total Health Gained</div>
+        </div>
+        <div class="roi-metric">
+          <div class="roi-value accent-aqua">{roiSummary.pieces_improved}/{summary.total_pieces}</div>
+          <div class="roi-label">Pieces Improved</div>
+        </div>
+      </div>
+
+      <div class="roi-columns">
+        <div class="roi-col">
+          <h3>🏆 Highest ROI</h3>
+          <div class="roi-list">
+            {roiSummary.top_roi.map((p: any) => (
+              <div class="roi-item">
+                <a href={`${base}writings/${p.slug}`} class="roi-title">{p.title}</a>
+                <div class="roi-bar-row">
+                  <div class="roi-bar-track">
+                    <div class="roi-bar-fill roi-bar-gained" style={`width: ${Math.min(100, (p.total_gained / 30) * 100)}%`}></div>
+                  </div>
+                  <span class="roi-stat">+{p.total_gained} pts ({p.per_revision}/rev)</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="roi-col">
+          <h3>🎯 Best Revision Candidates</h3>
+          <div class="roi-list">
+            {roiSummary.best_candidates.map((p: any) => (
+              <div class="roi-item">
+                <a href={`${base}writings/${p.slug}`} class="roi-title">{p.title}</a>
+                <div class="roi-bar-row">
+                  <div class="roi-bar-track">
+                    <div class="roi-bar-fill roi-bar-potential" style={`width: ${Math.min(100, p.untapped_score * 170)}%`}></div>
+                  </div>
+                  <span class="roi-stat">h={p.health} · {p.revisions} rev · score {p.untapped_score}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {roiSummary.stubborn_pieces && roiSummary.stubborn_pieces.length > 0 && (
+        <div class="stubborn-section">
+          <h3>🪨 Stubborn &mdash; Needs Structural Revision</h3>
+          <div class="stubborn-list">
+            {roiSummary.stubborn_pieces.map((p: any) => (
+              <div class="stubborn-item">
+                <a href={`${base}writings/${p.slug}`}>{p.title}</a>
+                <span class="stubborn-detail">health={p.health} · {p.revisions} revisions · gained {p.total_gained} pts total</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  )}
+
   <!-- Stage Distribution -->
   <div class="stage-distribution">
     <h2>Collection Maturity</h2>
@@ -192,6 +260,20 @@ for (const p of pieces) {
                 <span class="sugg-high">{p.suggestions.high}🔴</span>
                 <span class="sugg-med">{p.suggestions.medium}🟡</span>
                 <span class="sugg-low">{p.suggestions.low}🔵</span>
+              </div>
+            )}
+
+            {p.roi && (p.roi.total_health_gained > 0 || p.roi.untapped_score > 0) && (
+              <div class="card-roi">
+                {p.roi.total_health_gained > 0 && (
+                  <span class="roi-tag roi-gained">📈 +{p.roi.total_health_gained} pts ({p.roi.health_per_revision}/rev)</span>
+                )}
+                {p.roi.untapped_score > 0 && (
+                  <span class="roi-tag roi-potential">🎯 {p.roi.untapped_score.toFixed(2)} potential</span>
+                )}
+                {p.roi.diminishing_returns && (
+                  <span class="roi-tag roi-warning">⚠️ diminishing returns</span>
+                )}
               </div>
             )}
 
@@ -521,7 +603,103 @@ document.getElementById('filters')?.addEventListener('click', (e) => {
   .timeline-title a:hover { color: #4ecdc4; }
   .timeline-detail { color: var(--text-muted, #888); font-size: 0.78rem; }
 
+  /* ROI Section */
+  .roi-section {
+    background: var(--surface, #151520);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .roi-section h2 {
+    font-size: 1.1rem;
+    color: #a8e6cf;
+    margin-bottom: 1rem;
+  }
+  .roi-section h3 {
+    font-size: 0.9rem;
+    color: #ffd93d;
+    margin-bottom: 0.6rem;
+  }
+  .roi-metrics {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+  }
+  .roi-metric { text-align: center; }
+  .roi-value { font-size: 1.6rem; font-weight: 700; }
+  .roi-label { font-size: 0.75rem; color: var(--text-muted, #888); }
+  .roi-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .roi-list { display: flex; flex-direction: column; gap: 0.6rem; }
+  .roi-item { font-size: 0.82rem; }
+  .roi-title {
+    color: var(--text, #e0e0e0);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .roi-title:hover { color: #4ecdc4; }
+  .roi-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.2rem;
+  }
+  .roi-bar-track {
+    flex: 1;
+    height: 8px;
+    background: var(--surface-hover, #1a1a2e);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .roi-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.5s;
+  }
+  .roi-bar-gained { background: linear-gradient(90deg, #4ecdc4, #a8e6cf); }
+  .roi-bar-potential { background: linear-gradient(90deg, #ffd93d, #ff6b6b); }
+  .roi-stat { font-size: 0.7rem; color: var(--text-muted, #888); white-space: nowrap; }
+  .stubborn-section {
+    margin-top: 1.2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border, #222);
+  }
+  .stubborn-list { display: flex; flex-direction: column; gap: 0.4rem; }
+  .stubborn-item { font-size: 0.82rem; }
+  .stubborn-item a {
+    color: #c44569;
+    text-decoration: none;
+  }
+  .stubborn-item a:hover { text-decoration: underline; }
+  .stubborn-detail {
+    color: var(--text-muted, #777);
+    font-size: 0.72rem;
+    margin-left: 0.5rem;
+  }
+
+  /* Per-card ROI */
+  .card-roi {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    margin: 0.4rem 0;
+  }
+  .roi-tag {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.45rem;
+    border-radius: 8px;
+    background: var(--surface-hover, #1a1a2e);
+  }
+  .roi-gained { color: #4ecdc4; }
+  .roi-potential { color: #ffd93d; }
+  .roi-warning { color: #c44569; }
+
   @media (max-width: 768px) {
+    .roi-columns { grid-template-columns: 1fr; }
     .card-metrics { grid-template-columns: repeat(2, 1fr); }
     .metrics-grid { grid-template-columns: repeat(2, 1fr); }
     .card-meta { gap: 0.5rem; }
