@@ -1,11 +1,11 @@
 {
-  "generated": "2026-04-25T11:06:28.362620Z",
+  "generated": "2026-04-26T22:02:11.606680Z",
   "summary": {
     "total_pieces": 27,
     "revised_pieces": 22,
-    "total_edit_operations": 1686,
-    "total_words_added": 1597,
-    "total_words_deleted": 851
+    "total_edit_operations": 1716,
+    "total_words_added": 1611,
+    "total_words_deleted": 866
   },
   "pieces": [
     {
@@ -1626,15 +1626,15 @@
     },
     {
       "slug": "on-silence",
-      "total_commits": 3,
-      "meaningful_revisions": 2,
+      "total_commits": 4,
+      "meaningful_revisions": 3,
       "creation_date": "2026-04-03T11:11:06+00:00",
-      "last_modified": "2026-04-22T11:04:53+00:00",
-      "current_word_count": 2386,
+      "last_modified": "2026-04-26T11:13:35+00:00",
+      "current_word_count": 2385,
       "creation_word_count": 2578,
-      "word_count_evolution": -192,
-      "total_edit_operations": 69,
-      "revision_depth": 0.029,
+      "word_count_evolution": -193,
+      "total_edit_operations": 85,
+      "revision_depth": 0.036,
       "revision_notes": [],
       "revisions": [
         {
@@ -1712,6 +1712,53 @@
               "then",
               "is",
               "perhaps"
+            ]
+          }
+        },
+        {
+          "hash": "eeb07c77",
+          "date": "2026-04-26T11:13:35+00:00",
+          "session": 80,
+          "message": "S80: On Silence revision (72\u219290), On No-Self revision (75\u219293), retro prose generator improvements, content-sync audit enhancement, website deploy",
+          "type": "revision",
+          "word_count": 2385,
+          "stats": {
+            "words_before": 2386,
+            "words_after": 2385,
+            "net_change": -1,
+            "similarity": 0.9826,
+            "total_operations": 16
+          },
+          "highlights": {
+            "changes": [
+              {
+                "old": "There is no such thing as silence,",
+                "new": "Silence does not exist \u2014"
+              },
+              {
+                "old": "fresh rather than crowded.",
+                "new": "fresh, uncrowded."
+              },
+              {
+                "old": "*Mu* is usually glossed",
+                "new": "Most readers gloss *mu*"
+              },
+              {
+                "old": "question open.",
+                "new": "question."
+              },
+              {
+                "old": "lesson: silence",
+                "new": "lesson. Silence"
+              }
+            ],
+            "additions": [
+              "A hand that stays open when every instinct says close."
+            ],
+            "deletions": [
+              "simply",
+              "actually",
+              "was"
             ]
           }
         }
@@ -1834,6 +1881,127 @@
               "actually",
               "actually",
               "The number"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "slug": "on-no-self",
+      "total_commits": 3,
+      "meaningful_revisions": 2,
+      "creation_date": "2026-02-21T11:08:45+00:00",
+      "last_modified": "2026-04-26T11:13:35+00:00",
+      "current_word_count": 2628,
+      "creation_word_count": 2669,
+      "word_count_evolution": -41,
+      "total_edit_operations": 50,
+      "revision_depth": 0.019,
+      "revision_notes": [
+        {
+          "date": "2026-03-29",
+          "session": 52,
+          "note": "Targeted revision: 14\u21923 filler adverbs (removed obviously, literally, actually, simply, just), varied sentence openers (it is 10\u21925), tightened prose in philosophical sections, consolidated redundant phrasing, improved rhythm. Workshop suggestions 8\u21927."
+        }
+      ],
+      "revisions": [
+        {
+          "hash": "63f97979",
+          "date": "2026-02-21T11:08:45+00:00",
+          "session": 16,
+          "message": "Session 16: 'On No-Self' essay, poetry revisions, website sync",
+          "type": "creation",
+          "word_count": 2669
+        },
+        {
+          "hash": "57589ea5",
+          "date": "2026-03-29T11:07:38+00:00",
+          "session": 52,
+          "message": "S52: diff-engine caching (22x faster), deploy optimizations (SSH ControlMaster + compression + history), write perf CLI, On No-Self revision (14\u21923 adverbs, 8\u21927 suggestions)",
+          "type": "revision",
+          "word_count": 2627,
+          "stats": {
+            "words_before": 2669,
+            "words_after": 2627,
+            "net_change": -42,
+            "similarity": 0.9766,
+            "total_operations": 36
+          },
+          "highlights": {
+            "changes": [
+              {
+                "old": "obviously, literally, descriptively",
+                "new": "descriptively, precisely"
+              },
+              {
+                "old": "There is a",
+                "new": "A"
+              },
+              {
+                "old": "between",
+                "new": "separates"
+              },
+              {
+                "old": "and actually",
+                "new": "from"
+              },
+              {
+                "old": "is the accurate description of",
+                "new": "describes"
+              }
+            ],
+            "additions": [],
+            "deletions": [
+              "simply",
+              "just",
+              "in"
+            ]
+          }
+        },
+        {
+          "hash": "eeb07c77",
+          "date": "2026-04-26T11:13:35+00:00",
+          "session": 80,
+          "message": "S80: On Silence revision (72\u219290), On No-Self revision (75\u219293), retro prose generator improvements, content-sync audit enhancement, website deploy",
+          "type": "revision",
+          "word_count": 2628,
+          "stats": {
+            "words_before": 2627,
+            "words_after": 2628,
+            "net_change": 1,
+            "similarity": 0.9888,
+            "total_operations": 14
+          },
+          "highlights": {
+            "changes": [
+              {
+                "old": "it \u2014 just",
+                "new": "it. Just"
+              },
+              {
+                "old": "there: the",
+                "new": "there. The"
+              },
+              {
+                "old": "states, the",
+                "new": "states. The"
+              },
+              {
+                "old": "controlled, the",
+                "new": "controlled. The"
+              },
+              {
+                "old": "I have the knowledge.",
+                "new": "The knowledge is mine."
+              }
+            ],
+            "additions": [
+              "Too neatly, maybe.",
+              "But"
+            ],
+            "deletions": [
+              "process",
+              "I don't watch my self arise."
             ]
           }
         }
@@ -2109,80 +2277,6 @@
             "additions": [],
             "deletions": [
               "or eternalism,"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "slug": "on-no-self",
-      "total_commits": 2,
-      "meaningful_revisions": 1,
-      "creation_date": "2026-02-21T11:08:45+00:00",
-      "last_modified": "2026-03-29T11:07:38+00:00",
-      "current_word_count": 2627,
-      "creation_word_count": 2669,
-      "word_count_evolution": -42,
-      "total_edit_operations": 36,
-      "revision_depth": 0.014,
-      "revision_notes": [
-        {
-          "date": "2026-03-29",
-          "session": 52,
-          "note": "Targeted revision: 14\u21923 filler adverbs (removed obviously, literally, actually, simply, just), varied sentence openers (it is 10\u21925), tightened prose in philosophical sections, consolidated redundant phrasing, improved rhythm. Workshop suggestions 8\u21927."
-        }
-      ],
-      "revisions": [
-        {
-          "hash": "63f97979",
-          "date": "2026-02-21T11:08:45+00:00",
-          "session": 16,
-          "message": "Session 16: 'On No-Self' essay, poetry revisions, website sync",
-          "type": "creation",
-          "word_count": 2669
-        },
-        {
-          "hash": "57589ea5",
-          "date": "2026-03-29T11:07:38+00:00",
-          "session": 52,
-          "message": "S52: diff-engine caching (22x faster), deploy optimizations (SSH ControlMaster + compression + history), write perf CLI, On No-Self revision (14\u21923 adverbs, 8\u21927 suggestions)",
-          "type": "revision",
-          "word_count": 2627,
-          "stats": {
-            "words_before": 2669,
-            "words_after": 2627,
-            "net_change": -42,
-            "similarity": 0.9766,
-            "total_operations": 36
-          },
-          "highlights": {
-            "changes": [
-              {
-                "old": "obviously, literally, descriptively",
-                "new": "descriptively, precisely"
-              },
-              {
-                "old": "There is a",
-                "new": "A"
-              },
-              {
-                "old": "between",
-                "new": "separates"
-              },
-              {
-                "old": "and actually",
-                "new": "from"
-              },
-              {
-                "old": "is the accurate description of",
-                "new": "describes"
-              }
-            ],
-            "additions": [],
-            "deletions": [
-              "simply",
-              "just",
-              "in"
             ]
           }
         }
