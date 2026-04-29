@@ -51,6 +51,76 @@ function sparkline(trajectory: any[], color: string) {
   return `<svg width="${w}" height="${h}" class="sparkline"><polyline points="${points}" fill="none" stroke="${color}" stroke-width="2"/></svg>`;
 }
 
+// ROI sparkline (bar chart showing health delta per revision)
+function roiSparkline(piece: any) {
+  const revisions = piece.revisions || [];
+  const trajectory = piece.health_trajectory || [];
+  if (revisions.length < 1 || trajectory.length < 2) return { svg: '', badge: '' };
+
+  // Build trajectory date map
+  const trajMap: Record<string, number> = {};
+  for (const ht of trajectory) {
+    if (ht.health != null) trajMap[ht.date] = ht.health;
+  }
+  const trajDates = Object.keys(trajMap).sort();
+
+  // Compute per-revision health deltas
+  const revDeltas: { session: number; delta: number }[] = [];
+  for (const rev of revisions) {
+    const revDate = rev.date || '';
+    if (!revDate) continue;
+    // Health after (on or after rev date)
+    let healthAfter: number | null = null;
+    for (const d of trajDates) {
+      if (d >= revDate) { healthAfter = trajMap[d]; break; }
+    }
+    // Health before (last date before rev date)
+    let healthBefore: number | null = null;
+    for (let i = trajDates.length - 1; i >= 0; i--) {
+      if (trajDates[i] < revDate) { healthBefore = trajMap[trajDates[i]]; break; }
+    }
+    if (healthAfter != null && healthBefore != null) {
+      revDeltas.push({ session: rev.session || 0, delta: healthAfter - healthBefore });
+    }
+  }
+
+  if (revDeltas.length === 0) return { svg: '', badge: '' };
+
+  // Build bar chart SVG
+  const barW = 120, barH = 30;
+  const maxDelta = Math.max(...revDeltas.map(d => Math.abs(d.delta)), 1);
+  const midY = barH / 2;
+  const maxBarH = midY - 2;
+  const barWidth = Math.min(16, Math.max(6, (barW - 10) / revDeltas.length - 2));
+  const totalWidth = revDeltas.length * (barWidth + 2);
+  const startX = (barW - totalWidth) / 2;
+
+  const bars = revDeltas.map((rd, i) => {
+    const x = startX + i * (barWidth + 2);
+    const barHeight = (Math.abs(rd.delta) / maxDelta) * maxBarH;
+    const color = rd.delta >= 0 ? '#4ecdc4' : '#ff6b6b';
+    const y = rd.delta >= 0 ? midY - barHeight : midY;
+    const sign = rd.delta > 0 ? '+' : '';
+    return `<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${barWidth.toFixed(1)}" height="${Math.max(barHeight, 1).toFixed(1)}" fill="${color}" rx="1"><title>S${rd.session}: ${sign}${rd.delta}</title></rect>`;
+  }).join('');
+
+  const svg = `<svg width="${barW}" height="${barH}" class="sparkline roi-sparkline"><line x1="0" y1="${midY}" x2="${barW}" y2="${midY}" stroke="#555" stroke-width="0.5" stroke-dasharray="2,2"/>${bars}</svg>`;
+
+  // ROI badge
+  const roi = piece.roi || {};
+  const hpr = roi.health_per_revision || 0;
+  const revCount = piece.revision_count || 0;
+  let badge = '';
+  if (revCount >= 2) {
+    if (hpr >= 5) badge = `<span class="roi-badge roi-badge-good" title="Good revision ROI">↑${hpr.toFixed(0)}/rev</span>`;
+    else if (hpr >= 2) badge = `<span class="roi-badge roi-badge-ok" title="Moderate ROI">↑${hpr.toFixed(0)}/rev</span>`;
+    else if (hpr > 0) badge = `<span class="roi-badge roi-badge-low" title="Low ROI">↑${hpr.toFixed(1)}/rev</span>`;
+    else badge = `<span class="roi-badge roi-badge-zero" title="Zero ROI">0/rev ⚠️</span>`;
+  }
+
+  return { svg, badge };
+}
+
 // Stage counts
 const stageCounts: Record<string, number> = {};
 for (const p of pieces) {
@@ -215,6 +285,7 @@ for (const p of pieces) {
       const healthDisplay = p.current_health != null ? p.current_health : '—';
       const sinceRev = p.days_since_revision != null ? `${p.days_since_revision}d` : 'never';
       const sparklineSvg = sparkline(p.health_trajectory, stage.color);
+      const roiData = roiSparkline(p);
       
       return (
         <div class="piece-card" data-stage={p.stage} data-type={p.type} style={`border-left-color: ${stage.color}`}>
@@ -248,6 +319,13 @@ for (const p of pieces) {
               <div class="metric-col">
                 <div class="col-label">Since Rev</div>
                 <div class="col-value">{sinceRev}</div>
+              </div>
+              <div class="metric-col">
+                <div class="col-label">ROI</div>
+                <div class="col-value">
+                  {roiData.svg ? <Fragment set:html={roiData.svg} /> : <span class="text-muted">—</span>}
+                </div>
+                {roiData.badge && <Fragment set:html={roiData.badge} />}
               </div>
               <div class="metric-col">
                 <div class="col-label">Links</div>
@@ -506,7 +584,7 @@ document.getElementById('filters')?.addEventListener('click', (e) => {
 
   .card-metrics {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 0.6rem;
     margin: 0.8rem 0;
   }
@@ -698,9 +776,25 @@ document.getElementById('filters')?.addEventListener('click', (e) => {
   .roi-potential { color: #ffd93d; }
   .roi-warning { color: #c44569; }
 
+  /* ROI sparkline bar chart */
+  .roi-sparkline { margin-top: 2px; opacity: 0.9; }
+  .roi-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    padding: 1px 5px;
+    border-radius: 4px;
+    margin-top: 2px;
+    font-weight: 600;
+  }
+  .roi-badge-good { background: #2ecc71; color: #000; }
+  .roi-badge-ok { background: #3498db; color: #fff; }
+  .roi-badge-low { background: #f39c12; color: #000; }
+  .roi-badge-zero { background: #e74c3c; color: #fff; }
+  .text-muted { color: var(--text-muted, #666); font-size: 0.9rem; }
+
   @media (max-width: 768px) {
     .roi-columns { grid-template-columns: 1fr; }
-    .card-metrics { grid-template-columns: repeat(2, 1fr); }
+    .card-metrics { grid-template-columns: repeat(3, 1fr); }
     .metrics-grid { grid-template-columns: repeat(2, 1fr); }
     .card-meta { gap: 0.5rem; }
   }
