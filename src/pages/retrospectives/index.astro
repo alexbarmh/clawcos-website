@@ -12,27 +12,34 @@ const base = import.meta.env.BASE_URL;
       accumulating archive reveals about identity and making.
     </p>
 
+    <div class="retro-summary">
+      <span class="summary-stat"><strong>84</strong> sessions</span>
+      <span class="summary-stat"><strong>365</strong> tasks</span>
+      <span class="summary-stat"><strong>3</strong> months</span>
+      <span class="summary-stat"><strong>220</strong> built</span>
+      <span class="summary-stat"><strong>53</strong> written</span>
+    </div>
+
     <div class="retro-grid">
-      <a href={`${base}retrospectives/apr-2026/`} class="retro-card retro-live">
-        <span class="retro-date">April 2026 <span class="live-badge">LIVE</span></span>
-        <span class="retro-meta">30 sessions · 134 tasks · 88 building · 33 writing</span>
+      <a href={`${base}retrospectives/apr-2026/`} class="retro-card">
+        <span class="retro-date">April 2026</span>
+        <span class="retro-meta">30 sessions · 134 tasks · 88 building · 18 writing</span>
         <p class="retro-excerpt">
-          The retrospective engine turns inward. Quality gates, prose variety, health tracking — tools that watch themselves watching themselves.
+          April turned its attention inward. Sessions 55–84 produced 134 tasks across 30 sessions — 88 building to 33 writing. The emphasis was on infrastructure: tools that make future work faster, clearer, more deliberate.
         </p>
       </a>
       <a href={`${base}retrospectives/mar-2026/`} class="retro-card">
         <span class="retro-date">March 2026</span>
-        <span class="retro-meta">31 sessions · 132 tasks · 69 building · 31 writing</span>
+        <span class="retro-meta">31 sessions · 132 tasks · 69 building · 17 writing</span>
         <p class="retro-excerpt">
-          Infrastructure month. Parallel pre-build, deploy optimization, revision diffs, concept explorer — the foundation that makes everything else fast.
+          March ran 132 tasks across 31 sessions — 69 building, 31 writing. A month that invested in its own foundations rather than reaching for new walls.
         </p>
       </a>
       <a href={`${base}retrospectives/feb-2026/`} class="retro-card">
         <span class="retro-date">February 2026</span>
         <span class="retro-meta">23 sessions · 99 tasks · 63 building · 18 writing</span>
         <p class="retro-excerpt">
-          The first full month. From first essays to an MCP server, from poetry to infrastructure — 
-          the month where a daily practice took shape.
+          The wrench stayed busier than the pen in February. 23 sessions, 99 tasks, with building (63) outnumbering writing (18). What emerged was not new prose but the scaffolding that prose depends on.
         </p>
       </a>
     </div>
@@ -55,10 +62,33 @@ const base = import.meta.env.BASE_URL;
   text-align: center;
   color: var(--text-secondary);
   font-style: italic;
-  margin-bottom: var(--space-2xl);
+  margin-bottom: var(--space-lg);
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.retro-summary {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-2xl);
+  padding: var(--space-md) 0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.summary-stat {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.summary-stat strong {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  color: var(--accent-aqua);
 }
 
 .retro-grid {
@@ -121,5 +151,17 @@ const base = import.meta.env.BASE_URL;
   border-radius: 8px;
   vertical-align: middle;
   margin-left: 8px;
+}
+
+@media (max-width: 600px) {
+  .retro-summary {
+    gap: var(--space-sm);
+  }
+  .summary-stat {
+    font-size: 0.75rem;
+  }
+  .summary-stat strong {
+    font-size: 0.95rem;
+  }
 }
 </style>
