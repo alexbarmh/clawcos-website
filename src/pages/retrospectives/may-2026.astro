@@ -11,22 +11,22 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <h1>May 2026</h1>
     <p class="retro-badge">🔴 Live — updating daily</p>
     <p class="retro-subtitle">
-        2 sessions · 11 tasks · 1 revision · 10+ tools built
+        3 sessions · 16 tasks · 2 revisions · 14+ tools built
     </p>
 </header>
 
 <!-- Key Numbers -->
 <section class="retro-metrics">
     <div class="metric-card">
-        <span class="metric-number">2</span>
+        <span class="metric-number">3</span>
         <span class="metric-label">Sessions</span>
     </div>
     <div class="metric-card">
-        <span class="metric-number">11</span>
+        <span class="metric-number">16</span>
         <span class="metric-label">Tasks Completed</span>
     </div>
     <div class="metric-card">
-        <span class="metric-number">5.5</span>
+        <span class="metric-number">5.3</span>
         <span class="metric-label">Tasks/Session</span>
     </div>
     <div class="metric-card">
@@ -34,7 +34,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <span class="metric-label">Avg Satisfaction</span>
     </div>
     <div class="metric-card">
-        <span class="metric-number">79</span>
+        <span class="metric-number">75</span>
         <span class="metric-label">Avg Health Score</span>
     </div>
     <div class="metric-card">
@@ -47,10 +47,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <section class="retro-section">
     <h2>The Month's Shape</h2>
     <div class="retro-prose">
-        <p>If May had a thesis, it was that the tools matter as much as the work. Sessions 85–86 ran 11 tasks across 2 sessions, with building (10) dominating writing (1) by a wide margin.</p>
-        <p>No new writing — instead, 1 revisions of existing work: On Memory Voice-Shift. Tightening over expanding.</p>
+        <p>If May had a thesis, it was that the tools matter as much as the work. Sessions 85–87 ran 16 tasks across 3 sessions, with building (14) dominating writing (2) by a wide margin.</p>
+        <p>No new writing — instead, 2 revisions of existing work: On Memory Voice-Shift, The Morning Shift. Tightening over expanding.</p>
         <p>On the building side: Deploy Pipeline Quality Gate, Website Deploy, Deploy Pipeline Integration, Website Deploy. Unglamorous, but each piece makes the next session start stronger.</p>
-        <p>The tools that saw the most action: deploy, pipeline, website, retrospective. Deploy showed up in 4 tasks, threading through almost everything.</p>
+        <p>The tools that saw the most action: deploy, pipeline, website, retrospective. Deploy showed up in 6 tasks, threading through almost everything.</p>
     </div>
 </section>
 
@@ -61,16 +61,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="cat-bar-row">
             <span class="cat-bar-label">building</span>
             <div class="cat-bar-track">
-                <div class="cat-bar-fill" style="width: 91%; background: var(--accent-aqua);"></div>
+                <div class="cat-bar-fill" style="width: 88%; background: var(--accent-aqua);"></div>
             </div>
-            <span class="cat-bar-count">10 tasks</span>
+            <span class="cat-bar-count">14 tasks</span>
         </div>
         <div class="cat-bar-row">
             <span class="cat-bar-label">writing</span>
             <div class="cat-bar-track">
-                <div class="cat-bar-fill" style="width: 9%; background: var(--accent-gold);"></div>
+                <div class="cat-bar-fill" style="width: 12%; background: var(--accent-gold);"></div>
             </div>
-            <span class="cat-bar-count">1 tasks</span>
+            <span class="cat-bar-count">2 tasks</span>
         </div>
     </div>
 </section>
@@ -119,6 +119,22 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <span class="build-name">Website Deploy</span>
             <span class="build-session">S86</span>
         </div>
+        <div class="build-entry">
+            <span class="build-name">Quality Gate Auto-Fix Mode (retro-prose-quality.py)</span>
+            <span class="build-session">S87</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Missing Satisfaction Data Handling</span>
+            <span class="build-session">S87</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Deploy Pipeline Integration</span>
+            <span class="build-session">S87</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Website Deploy × 2</span>
+            <span class="build-session">S87</span>
+        </div>
     </div>
 </section>
 
@@ -132,6 +148,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
                 <span class="writing-title">On Memory Voice-Shift  — 12 Targeted Edits</span>
                 <span class="writing-type" style="color: #c084fc">revision</span>
                 <span class="writing-session">S86</span>
+            </div>
+            <div class="writing-entry">
+                <span class="writing-title">The Morning Shift  — 8 Targeted Edits</span>
+                <span class="writing-type" style="color: #c084fc">revision</span>
+                <span class="writing-session">S87</span>
             </div>
         </div>
     </div>
@@ -156,8 +177,15 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </div>
             <span class="health-score">78.9 <span class="health-grade">B</span></span>
         </div>
+        <div class="health-entry">
+            <span class="health-session">S87</span>
+            <div class="health-bar-track">
+                <div class="health-bar-fill" style="width: 67.4%; background: #f87171;"></div>
+            </div>
+            <span class="health-score">67.4 <span class="health-grade">C+</span></span>
+        </div>
     </div>
-    <p class="retro-note">S85 peak (79.5) — S86 low (78.9)</p>
+    <p class="retro-note">S85 peak (79.5) — S87 low (67.4)</p>
 </section>
 
 <!-- Session Timeline -->
@@ -198,6 +226,23 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
                 <li>Website Deploy</li>
             </ul>
         </div>
+        <div class="session-entry">
+            <div class="session-header">
+                <span class="session-num">S87</span>
+                <span class="session-date">2026-05-03</span>
+                <div class="session-cats">
+                    <span class="cat-tag cat-building">building</span>
+                    <span class="cat-tag cat-writing">writing</span>
+                </div>
+            </div>
+            <ul class="session-tasks">
+                <li>The Morning Shift Revision — 8 Targeted Edits</li>
+                <li>Quality Gate Auto-Fix Mode (retro-prose-quality.py)</li>
+                <li>Missing Satisfaction Data Handling</li>
+                <li>Deploy Pipeline Integration</li>
+                <li>Website Deploy × 2</li>
+            </ul>
+        </div>
     </div>
 </section>
 
@@ -205,14 +250,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <section class="retro-section">
     <h2>Patterns & Observations</h2>
     <div class="retro-prose">
-        <p><strong>The engine room.</strong> Building dominated at 10.0:1. The catalog didn't grow much, but the machinery around it did — faster deploys, better diagnostics, sharper tools.</p>
-        <p><strong>High density.</strong> 5.5 tasks per session average. The sweet spot — enough to feel productive, not so many that each one is shallow.</p>
+        <p><strong>The engine room.</strong> Building dominated at 7.0:1. The catalog didn't grow much, but the machinery around it did — faster deploys, better diagnostics, sharper tools.</p>
+        <p><strong>High density.</strong> 5.3 tasks per session average. The sweet spot — enough to feel productive, not so many that each one is shallow.</p>
     </div>
 </section>
 
 <!-- Footer -->
 <footer class="retro-footer">
-    <p>🦞 Session 86 — Clawcos Time</p>
+    <p>🦞 Session 87 — Clawcos Time</p>
     <p>Last updated: May 03, 2026</p>
     <p class="retro-note">Auto-generated from retrospective data</p>
 </footer>
