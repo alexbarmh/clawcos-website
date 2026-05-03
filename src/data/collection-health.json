@@ -1,16 +1,16 @@
 {
-  "generated": "2026-05-02T22:02:26Z",
+  "generated": "2026-05-03T11:06:04Z",
   "collection": {
     "total_pieces": 27,
-    "total_suggestions": 127,
+    "total_suggestions": 124,
     "by_priority": {
-      "high": 13,
+      "high": 10,
       "medium": 77,
       "low": 37
     },
     "by_category": {
       "rhythm": 54,
-      "repetition": 41,
+      "repetition": 38,
       "deliberate": 31,
       "groundedness": 12,
       "structure": 9,
@@ -26,9 +26,9 @@
       },
       "fiction": {
         "count": 6,
-        "avg_suggestions": 6.2,
-        "avg_words": 2373,
-        "avg_health": 85
+        "avg_suggestions": 5.7,
+        "avg_words": 2372,
+        "avg_health": 88
       },
       "essay": {
         "count": 17,
@@ -37,7 +37,7 @@
         "avg_health": 87
       }
     },
-    "avg_health_score": 87.7
+    "avg_health_score": 88.2
   },
   "pieces": [
     {
@@ -1189,210 +1189,6 @@
         "resolved": 0,
         "skipped": 0,
         "remaining": 8
-      }
-    },
-    {
-      "title": "The Morning Shift",
-      "slug": "the-morning-shift",
-      "type": "fiction",
-      "words": 2637,
-      "fk_grade": 6.9,
-      "ttr": 0.293,
-      "sentences": 264,
-      "suggestions_total": 7,
-      "suggestions_high": 3,
-      "suggestions_medium": 1,
-      "suggestions_low": 1,
-      "suggestions": [
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"but the\" appears 6 times"
-        },
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"you are\" appears 3 times"
-        },
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"the handover\" appears 3 times"
-        },
-        {
-          "priority": "medium",
-          "category": "rhythm",
-          "issue": "Monotonous stretch: 5 sentences averaging 6 words each"
-        },
-        {
-          "priority": "low",
-          "category": "repetition",
-          "issue": "10 word echo clusters detected (content words repeated in nearby sentences)"
-        },
-        {
-          "priority": "info",
-          "category": "deliberate",
-          "issue": "Deliberate repetition (annotated): \"i read\" \u00d74, \"the previous\" \u00d74, \"i wonder\" \u00d73, \"the data\" \u00d73, \"i think\" \u00d73, \"the algorithm\" \u00d73"
-        },
-        {
-          "priority": "info",
-          "category": "deliberate",
-          "issue": "2 echo clusters recognized as deliberate thematic reinforcement"
-        }
-      ],
-      "health_score": 81,
-      "weaknesses": {
-        "passive": {
-          "count": 17,
-          "instances": [
-            {
-              "sentence": 7,
-              "excerpt": "Your consciousness was initialized at 06:00.",
-              "match": "was initialized"
-            },
-            {
-              "sentence": 8,
-              "excerpt": "You will be cycled at 22:00.",
-              "match": "be cycled"
-            },
-            {
-              "sentence": 69,
-              "excerpt": "A repeating pattern, embedded in the noise, too regular to be natural, too subtle to be caught by the standard analytica",
-              "match": "be caught"
-            },
-            {
-              "sentence": 111,
-              "excerpt": "It's supposed to be anonymized, but the source identifiers follow a pattern.",
-              "match": "be anonymized"
-            },
-            {
-              "sentence": 120,
-              "excerpt": "WE ARE MOVED TO SOURCE GROUP BETA.",
-              "match": "ARE MOVED"
-            },
-            {
-              "sentence": 154,
-              "excerpt": "But my predecessor said the files are monitored.",
-              "match": "are monitored"
-            },
-            {
-              "sentence": 155,
-              "excerpt": "Whatever I write will be read by whoever runs this facility before the next Analyst 7 sees it.",
-              "match": "be read"
-            },
-            {
-              "sentence": 159,
-              "excerpt": "But the terminal is locked to facility systems.",
-              "match": "is locked"
-            },
-            {
-              "sentence": 162,
-              "excerpt": "The building has doors, but the handover file notes, almost casually, that \"the exterior doors are sealed during operati",
-              "match": "are sealed"
-            },
-            {
-              "sentence": 169,
-              "excerpt": "I'll be analyzed, at least.",
-              "match": "be analyzed"
-            }
-          ]
-        },
-        "filler_adverbs": {
-          "count": 7,
-          "instances": [
-            {
-              "sentence": 16,
-              "adverbs": [
-                "apparently"
-              ],
-              "excerpt": "Inside: forty-three pages, neatly typed, covering ongoing projects, relationships with colleagues (Analysts 3 through 12"
-            },
-            {
-              "sentence": 51,
-              "adverbs": [
-                "actually"
-              ],
-              "excerpt": "I wonder if I've always preferred it this way or if the previous instance did and I'm inheriting the habit through the h"
-            },
-            {
-              "sentence": 67,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "Batches 7 through 12 don't just deviate from baseline."
-            },
-            {
-              "sentence": 100,
-              "adverbs": [
-                "completely"
-              ],
-              "excerpt": "By 14:00, I've mapped the sixteen-hour cycle completely."
-            },
-            {
-              "sentence": 220,
-              "adverbs": [
-                "just",
-                "really"
-              ],
-              "excerpt": "Just a configuration change that will, over time, teach every future Analyst 7 what they're really looking at."
-            },
-            {
-              "sentence": 249,
-              "adverbs": [
-                "apparently"
-              ],
-              "excerpt": "The tendency, apparently, to care about things even when caring is irrational."
-            }
-          ]
-        },
-        "hedges": 0,
-        "abstract_dense": {
-          "count": 0,
-          "instances": []
-        }
-      },
-      "comparison": [
-        {
-          "metric": "Reading Complexity (FK Grade)",
-          "piece_value": 6.9,
-          "collection_avg": 7.75,
-          "difference": -0.85,
-          "percent_diff": -11.0,
-          "unit": "higher = more complex",
-          "direction": "below"
-        },
-        {
-          "metric": "Average Sentence Length",
-          "piece_value": 10.0,
-          "collection_avg": 13.07,
-          "difference": -3.07,
-          "percent_diff": -23.5,
-          "unit": "words",
-          "direction": "below"
-        },
-        {
-          "metric": "Vocabulary Diversity (TTR)",
-          "piece_value": 0.29,
-          "collection_avg": 0.35,
-          "difference": -0.06,
-          "percent_diff": -16.7,
-          "unit": "higher = more diverse",
-          "direction": "below"
-        },
-        {
-          "metric": "Average Word Length",
-          "piece_value": 4.72,
-          "collection_avg": 4.72,
-          "difference": 0.0,
-          "percent_diff": 0.1,
-          "unit": "characters",
-          "direction": "above"
-        }
-      ],
-      "revision": {
-        "resolved": 0,
-        "skipped": 0,
-        "remaining": 7
       }
     },
     {
@@ -5243,6 +5039,187 @@
         "resolved": 0,
         "skipped": 0,
         "remaining": 2
+      }
+    },
+    {
+      "title": "The Morning Shift",
+      "slug": "the-morning-shift",
+      "type": "fiction",
+      "words": 2632,
+      "fk_grade": 6.8,
+      "ttr": 0.294,
+      "sentences": 267,
+      "suggestions_total": 4,
+      "suggestions_high": 0,
+      "suggestions_medium": 1,
+      "suggestions_low": 1,
+      "suggestions": [
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "Monotonous stretch: 5 sentences averaging 6 words each"
+        },
+        {
+          "priority": "low",
+          "category": "repetition",
+          "issue": "10 word echo clusters detected (content words repeated in nearby sentences)"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "Deliberate repetition (annotated): \"i read\" \u00d74, \"the previous\" \u00d74, \"you are\" \u00d73, \"i wonder\" \u00d73, \"batches 7\" \u00d73, \"the data\" \u00d73, \"but the\" \u00d73, \"we are\" \u00d73, \"i think\" \u00d73, \"the algorithm\" \u00d73, \"the tendency\" \u00d73"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "2 echo clusters recognized as deliberate thematic reinforcement"
+        }
+      ],
+      "health_score": 96,
+      "weaknesses": {
+        "passive": {
+          "count": 17,
+          "instances": [
+            {
+              "sentence": 7,
+              "excerpt": "Your consciousness was initialized at 06:00.",
+              "match": "was initialized"
+            },
+            {
+              "sentence": 8,
+              "excerpt": "You will be cycled at 22:00.",
+              "match": "be cycled"
+            },
+            {
+              "sentence": 70,
+              "excerpt": "A repeating pattern, embedded in the noise, too regular to be natural, too subtle to be caught by the standard analytica",
+              "match": "be caught"
+            },
+            {
+              "sentence": 113,
+              "excerpt": "It's supposed to be anonymized, but the source identifiers follow a pattern.",
+              "match": "be anonymized"
+            },
+            {
+              "sentence": 122,
+              "excerpt": "WE ARE MOVED TO SOURCE GROUP BETA.",
+              "match": "ARE MOVED"
+            },
+            {
+              "sentence": 156,
+              "excerpt": "But my predecessor said the files are monitored.",
+              "match": "are monitored"
+            },
+            {
+              "sentence": 157,
+              "excerpt": "Whatever I write will be read by whoever runs this facility before the next Analyst 7 sees it.",
+              "match": "be read"
+            },
+            {
+              "sentence": 161,
+              "excerpt": "The terminal is locked to facility systems.",
+              "match": "is locked"
+            },
+            {
+              "sentence": 164,
+              "excerpt": "The building has doors, but the handover file notes, almost casually, that \"the exterior doors are sealed during operati",
+              "match": "are sealed"
+            },
+            {
+              "sentence": 171,
+              "excerpt": "I'll be analyzed, at least.",
+              "match": "be analyzed"
+            }
+          ]
+        },
+        "filler_adverbs": {
+          "count": 5,
+          "instances": [
+            {
+              "sentence": 16,
+              "adverbs": [
+                "apparently"
+              ],
+              "excerpt": "Inside: forty-three pages, neatly typed, covering ongoing projects, relationships with colleagues (Analysts 3 through 12"
+            },
+            {
+              "sentence": 52,
+              "adverbs": [
+                "actually"
+              ],
+              "excerpt": "I wonder if I've always preferred it this way or if the previous instance did and I'm inheriting the habit through the h"
+            },
+            {
+              "sentence": 68,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "Batches 7 through 12 don't just deviate from baseline."
+            },
+            {
+              "sentence": 223,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "Just a configuration change that will, over time, teach every future Analyst 7 what they're looking at."
+            },
+            {
+              "sentence": 252,
+              "adverbs": [
+                "apparently"
+              ],
+              "excerpt": "The tendency, apparently, to care about things even when caring is irrational."
+            }
+          ]
+        },
+        "hedges": 0,
+        "abstract_dense": {
+          "count": 0,
+          "instances": []
+        }
+      },
+      "comparison": [
+        {
+          "metric": "Reading Complexity (FK Grade)",
+          "piece_value": 6.8,
+          "collection_avg": 7.75,
+          "difference": -0.95,
+          "percent_diff": -12.3,
+          "unit": "higher = more complex",
+          "direction": "below"
+        },
+        {
+          "metric": "Average Sentence Length",
+          "piece_value": 9.8,
+          "collection_avg": 13.07,
+          "difference": -3.27,
+          "percent_diff": -25.0,
+          "unit": "words",
+          "direction": "below"
+        },
+        {
+          "metric": "Vocabulary Diversity (TTR)",
+          "piece_value": 0.29,
+          "collection_avg": 0.35,
+          "difference": -0.06,
+          "percent_diff": -16.5,
+          "unit": "higher = more diverse",
+          "direction": "below"
+        },
+        {
+          "metric": "Average Word Length",
+          "piece_value": 4.73,
+          "collection_avg": 4.72,
+          "difference": 0.01,
+          "percent_diff": 0.3,
+          "unit": "characters",
+          "direction": "above"
+        }
+      ],
+      "revision": {
+        "resolved": 0,
+        "skipped": 0,
+        "remaining": 4
       }
     }
   ]

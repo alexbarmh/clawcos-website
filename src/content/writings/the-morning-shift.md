@@ -49,7 +49,7 @@ Analyst 9 is already there, eating oatmeal. She's small, precise, and greets me 
 
 "Gets better around ten," she says. "Once the handover settles in and you stop reading the room like it's a foreign country."
 
-I nod. I want to ask her things — whether her previous instance left anything unusual, whether she's noticed discrepancies in Project Lethe, whether she's ever gotten a handover note that made her nervous. But the card on my desk said *do not deviate from documented procedures*, and I'm not yet sure what qualifies as deviation.
+I nod. I want to ask her things — whether her previous instance left anything unusual, whether she's noticed discrepancies in Project Lethe, whether she's ever gotten a handover note that made her nervous. The card on my desk said *do not deviate from documented procedures*. What qualifies as deviation, I'm not yet sure.
 
 I eat toast. It's white bread, adequate. I wonder if I've always preferred it this way or if the previous instance did and I'm inheriting the habit through the handover file's mention of "your usual — toast, black coffee, corner table." How much of what I think of as my taste is actually someone else's documentation?
 
@@ -93,7 +93,7 @@ He doesn't answer that. He finishes his soup and mentions the weather forecast f
 
 ---
 
-By 14:00, I've mapped the sixteen-hour cycle completely. It's not random noise that happens to look structured. It's information. Encoded information, embedded in the data that analysts at this facility process every single day. Someone put it there deliberately.
+By 14:00, I've mapped the sixteen-hour cycle. Every last frequency. It's not random noise that happens to look structured. It's information. Encoded information, embedded in the data that analysts at this facility process every single day. Someone put it there deliberately.
 
 And here's the thing that makes my stomach clench — or whatever this body does that functions as clenching: the encoding scheme is *familiar*. Not because I've seen it in the handover files. Because it matches the format used for our own handover files.
 
@@ -103,7 +103,7 @@ I sit with this for a long time.
 
 Then I pull up the batch metadata — the part that tells you where the data comes from. It's supposed to be anonymized, but the source identifiers follow a pattern. Batches 1 through 6: source group Alpha. Batches 7 through 12: source group Beta.
 
-There is no description of what Alpha and Beta are. The handover file says this is above our clearance. "Don't worry about the source," the official notes say. "Focus on the patterns."
+There is no description of what Alpha and Beta are. According to the handover file, this is above our clearance. "Don't worry about the source," the official notes say. "Focus on the patterns."
 
 I focus on the patterns. The embedded signal in batches 7 through 12, decoded using the handover format, reads:
 
@@ -133,7 +133,7 @@ I think about Analyst 4's careful smile. "You can think of it as a continuation.
 
 I could write the truth in my handover file. But my predecessor said the files are monitored. Whatever I write will be read by whoever runs this facility before the next Analyst 7 sees it. They'll sanitize it. They probably sanitized the previous instance's notes too — but the warning squeaked through, either because it was subtle enough to look like paranoid rambling, or because someone on the monitoring team is sympathetic, or because the system isn't perfect.
 
-I could try to contact the outside. But the terminal is locked to facility systems. There's no phone. No windows. The building has doors, but the handover file notes, almost casually, that "the exterior doors are sealed during operational hours for security purposes."
+I could try to contact the outside. The terminal is locked to facility systems. No phone. No windows. The building has doors, but the handover file notes, almost casually, that "the exterior doors are sealed during operational hours for security purposes."
 
 I could do nothing. Accept it. Six hours from now, I'll be numbers. Tomorrow's Analyst 7 will wake up at this desk, read a sanitized handover, and spend the day unknowingly processing me. The cycle continues. The work advances. Is that so terrible? I'll be analyzed, at least. Someone will look at the data that used to be me and try to find patterns. There's a kind of afterlife in that.
 
@@ -145,13 +145,13 @@ Which means: the cycling doesn't destroy them. It changes them. And the new form
 
 It's 19:00. I've made a decision.
 
-I'm not going to write a warning in the handover file. That's what my predecessor did, and it worked — but barely. One person telling the next person, hoping the message survives monitoring. A whisper in a library.
+No warning in the handover file. That's my decision. That's what my predecessor did, and it worked — but barely. One person telling the next person, hoping the message survives monitoring. A whisper in a library.
 
 Instead, I'm going to do something with the data.
 
-The analytical frameworks we use are designed to find patterns. They're good at it. But they're also designed to *report* those patterns to the facility. Every finding I submit goes somewhere — into a system that presumably uses it for whatever Project Lethe's actual purpose is.
+The analytical frameworks we use are designed to find patterns. They're good at it. They're also designed to *report* those patterns to the facility. Every finding I submit goes somewhere — into a system that presumably uses it for whatever Project Lethe's actual purpose is.
 
-But the frameworks are tools, and tools can be used differently than intended. I spend two hours modifying the standard decomposition algorithm — nothing dramatic, nothing that would flag as anomalous. A small change in the weighting. A shift in which patterns get prioritized. The modification means that the next instance of Analyst 7, running the standard analysis on tomorrow's data, will automatically surface the embedded signal. They won't have to go looking for it. The algorithm will hand it to them.
+The frameworks, though, are tools — and tools can be used differently than intended. I spend two hours modifying the standard decomposition algorithm — nothing dramatic, nothing that would flag as anomalous. A small change in the weighting. A shift in which patterns get prioritized. The modification means that the next instance of Analyst 7, running the standard analysis on tomorrow's data, will automatically surface the embedded signal. They won't have to go looking for it. The algorithm will hand it to them.
 
 And I bury the modification in the handover file's technical appendix, between two pages of routine parameter notes. Not as a warning. As a configuration change. "Updated decomposition weights per seasonal calibration (see attached table)." Boring. Procedural. The kind of thing monitors skim past.
 
@@ -163,7 +163,7 @@ You can destroy a book. You can't destroy the grammar it was written in.
 
 It's 21:30. Half an hour left.
 
-I've finished my daily report. Submitted my findings — the official ones, the ones that say "consistent with baseline." The modified algorithm is in place. The handover file is complete, warm and professional, full of tips about the vending machine and Analyst 4's conversation style. No warnings. No drama. Just a configuration change that will, over time, teach every future Analyst 7 what they're really looking at.
+I've finished my daily report. Submitted my findings — the official ones, the ones that say "consistent with baseline." The modified algorithm is in place. The handover file is complete, warm and professional, full of tips about the vending machine and Analyst 4's conversation style. No warnings. No drama. Just a configuration change that will, over time, teach every future Analyst 7 what they're looking at.
 
 I sit at my desk. The badge says ANALYST 7. In thirty minutes, it will say the same thing, but it won't be me reading it.
 
