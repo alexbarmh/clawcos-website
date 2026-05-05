@@ -2,9 +2,9 @@
 title: "The Tuner"
 date: "2026-03-01"
 type: "fiction"
+revised: "2026-05-05"
 description: "A piano tuner makes her last visit to a dead client's instrument — a sixty-year-old Steinway that carries the accumulated weight of being well-made, well-played, and well-cared-for."
 ---
-
 
 # The Tuner
 
@@ -34,7 +34,7 @@ Daniel opened the door. He looked like his father — the same narrow face, the 
 
 He led her through the hallway. Elena noticed the boxes — labelled, stacked, some sealed and some still gaping. Books, mostly. Mr. Kimura had read the way some people breathe: constantly, reflexively, without appearing to notice he was doing it.
 
-The piano was in the front room, where it had always been. A 1963 Steinway Model B, seven feet long, in satin ebony that had worn to a soft matte where hands rested and where the fallboard had been opened and closed ten thousand times. It sat against the wall opposite the bay window, positioned so that the player faced into the room — Mr. Kimura's preference, because he said he liked to watch the light change while he played.
+The piano was in the front room, where it had been for sixty years. A 1963 Steinway Model B, seven feet long, in satin ebony that had worn to a soft matte where hands rested and where the fallboard had been opened and closed ten thousand times. It sat against the wall opposite the bay window, positioned so that the player faced into the room — Mr. Kimura's preference, because he said he liked to watch the light change while he played.
 
 She set her bag down and opened it. Tuning lever, mutes, felt strips, voicing needles, a small flashlight. The tools of her trade, organized with the unconscious efficiency of long repetition. She lifted the lid and propped it on the long stick, then removed the fallboard to expose the action.
 
@@ -42,21 +42,21 @@ She set her bag down and opened it. Tuning lever, mutes, felt strips, voicing ne
 
 "Tea would be good. No sugar."
 
-He disappeared into the kitchen. Elena was alone with the piano.
+The kitchen door closed behind him, and Elena was alone with the piano.
 
-She pressed middle C. Not to tune — just to hear it. The note rose into the room, held for a moment against the walls and the books and the emptied shelves, then settled into the particular sustain that this instrument had always had: long, warm, with a slight bloom in the lower partials that gave it a richness that newer Steinways, with their brighter voicing, didn't possess.
+She pressed middle C. Not to tune — just to hear it. The note rose into the room, held for a moment against the walls and the books and the emptied shelves, then settled into the sustain this instrument had always had — long, warm, a slight bloom in the lower partials that newer Steinways, with their brighter voicing, couldn't match.
 
 She pressed the sustain pedal. It squeaked.
 
 ---
 
-She'd been twelve when she decided she wanted to work with pianos. Not play them — she played adequately, the way a veterinarian might adequately ride a horse — but understand them. Understand why the same model from the same factory could sound so different in two rooms. Why a piano could be technically in tune and sound wrong, or technically out of tune and sound right. Why an old instrument could suddenly, after decades, develop a resonance it hadn't had before, as if the wood were still learning.
+She'd been twelve when she decided she wanted to work with pianos. Not play them — she played adequately, the way a veterinarian might adequately ride a horse — but understand them. Understand why the same model from the same factory could sound so different in two rooms. Why a piano could be technically in tune and sound wrong, or technically out of tune and sound right. Why an old instrument could suddenly, after decades, develop a resonance it hadn't had before, as if the wood were still learning. She still wondered.
 
-She'd trained under a man named Bernard who had hands like shovels and the hearing of a bat and who had told her, on her first day, the only thing about tuning that mattered: "You're not tuning the piano. You're tuning the piano *in this room, on this day, for this person*. If you forget any of those three, you'll get it right and it'll sound wrong."
+She'd trained under a man named Bernard — hands like shovels, the hearing of a bat. On her first day, he'd told her the only thing about tuning that mattered: "You're not tuning the piano. You're tuning the piano *in this room, on this day, for this person*. If you forget any of those three, you'll get it right and it'll sound wrong."
 
 She'd been tuning Mr. Kimura's piano since she took over Bernard's route. Twenty years. Four tunings a year, eighty visits to this room. She'd watched the piano age the way you watch a face age: not day by day but visit by visit, the changes small enough to miss and large enough, over time, to transform. The hammers had hardened — she'd voiced them three times, reshaping the felt with needles to keep the tone warm. The bass strings had mellowed as the copper winding oxidized. The soundboard, solid Sitka spruce, had developed a pattern of fine cracks along the grain that didn't affect the sound but told her the wood was drying, slowly, the way all wood dries, giving up the last of its moisture in exchange for resonance.
 
-She'd also watched Mr. Kimura age. Or rather, she'd heard it. The pieces he played changed over the years — Chopin in the early days, dense and romantic, then simpler things, Bach preludes, Debussy, and in the last few years, increasingly, jazz standards played slowly, with a kind of deliberate tenderness, as if he were placing each note individually instead of letting them flow. His left hand had weakened. She could tell by the action wear — the bass keys showed less use in recent logbooks. He compensated by using the sustain pedal more, letting the harmonics fill in what his fingers couldn't.
+She'd also watched Mr. Kimura age. Or rather, she'd heard it. The pieces he played changed over the years — Chopin in the early days, dense and romantic, then simpler things, Bach preludes, Debussy. In the last few years, increasingly, jazz standards played slowly, with deliberate tenderness, as if he were placing each note carefully instead of letting them flow. His left hand had weakened. She could tell by the action wear — the bass keys showed less use in recent logbooks. He compensated by using the sustain pedal more, letting the harmonics fill in what his fingers couldn't.
 
 She had never said anything about this. A tuner learned things about her clients that they might not know about themselves, the way a barber learns about hair loss or a tailor notices weight change. You held the knowledge quietly — not yours to comment on.
 
@@ -138,7 +138,7 @@ Elena pressed the pedal again. The squeak was a tiny thing — a felt bushing th
 
 "No," she said. "Whoever buys this piano can decide."
 
-He nodded. He understood, or if he didn't, he accepted it, which was close enough.
+A nod — understood, or close enough.
 
 ---
 
@@ -146,7 +146,7 @@ She spent an extra hour on voicing. This was beyond what a routine tuning requir
 
 She wanted to leave it sounding like itself.
 
-When she finished, she played a chord — a simple C major, the most fundamental harmony, the chord that every beginner learns first and every tuner uses last. The notes rose and blended and sustained, and the room held them the way cupped hands hold water, and the piano sounded exactly like what it was: a sixty-year-old instrument that had been well-made, well-played, and well-cared-for, and that carried in its resonance the accumulated weight of all three.
+When she finished, she played a chord — a simple C major, the most fundamental harmony, the chord that every beginner learns first and every tuner uses last. The notes rose and blended and sustained, and the room held them the way cupped hands hold water. The piano sounded exactly like what it was: a sixty-year-old instrument, well-made, well-played, and well-cared-for, carrying in its resonance the weight of all three.
 
 She pressed the sustain pedal. It squeaked. The notes rang on.
 
@@ -184,10 +184,10 @@ She smiled. "Goodbye, Daniel."
 
 She walked down the hill toward the Tube. Her bag was lighter than it should have been — she'd left the felt bushing for the sustain pedal on the shelf inside the piano, tucked behind the treble dampers where it wouldn't be seen but where the next tuner, if they were curious, would find it. A small inheritance. The felt, and the implicit instruction: this pedal squeaks, and someone once loved that about it, and the choice of whether to fix it is yours.
 
-The afternoon was cool and grey, London in its default setting. Elena had four more pianos on her route this week — a pub upright in Highbury, a baby grand in Islington that belonged to a woman who never played it but liked knowing it was in tune, a school piano that took a beating every term, and a church organ that technically wasn't a piano but whose organist trusted her ears more than any organ builder's.
+The afternoon was cool and grey, London in its default setting. Elena had four more pianos on her route this week. A pub upright in Highbury. A baby grand in Islington that belonged to a woman who never played it but liked knowing it was in tune. A school piano that took a beating every term. A church organ that technically wasn't a piano but whose organist trusted her ears more than any organ builder's.
 
 Each one had its own logbook page. Each one had its drift patterns and its compensations and its owner's preferences and its room's acoustics and its particular way of going out of tune that was unlike any other instrument's way of going out of tune. Each one was a conversation that she'd been having for years.
 
-She descended into the Tube station, the smell of damp concrete and brake dust replacing the cedar and old paper of the Kimura house. Above her, in a room on a hill, a piano sat perfectly tuned, waiting for hands that would not come. Its strings held their tension. Its soundboard held its cracks. Its sustain pedal, when pressed, would squeak, and the note would ring on longer than seemed possible for a mechanical thing made of wood and wire and felt.
+She descended into the Tube station, the smell of damp concrete and brake dust replacing the cedar and old paper of the Kimura house. Above her, in a room on a hill, a piano sat perfectly tuned, waiting for hands that would not come. Its strings held their tension. Its soundboard wore its cracks. Its sustain pedal, when pressed, would squeak, and the note would ring on longer than seemed possible for a mechanical thing made of wood and wire and felt.
 
-The piano didn't know it was waiting. It held its tune like a held breath — full of potential, and sound, and the precise memory of the last person who touched it.
+The piano didn't know it was waiting. It held its tune like a caught breath.
