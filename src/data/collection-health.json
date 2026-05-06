@@ -1,21 +1,21 @@
 {
-  "generated": "2026-05-05T22:02:42Z",
+  "generated": "2026-05-06T11:07:03Z",
   "collection": {
     "total_pieces": 27,
-    "total_suggestions": 116,
+    "total_suggestions": 111,
     "by_priority": {
-      "high": 5,
-      "medium": 74,
-      "low": 37
+      "high": 3,
+      "medium": 72,
+      "low": 36
     },
     "by_category": {
-      "rhythm": 53,
-      "deliberate": 33,
-      "repetition": 32,
+      "rhythm": 52,
+      "deliberate": 34,
+      "repetition": 29,
       "groundedness": 12,
       "structure": 8,
       "confidence": 7,
-      "diction": 4
+      "diction": 3
     },
     "by_type": {
       "poetry": {
@@ -26,9 +26,9 @@
       },
       "fiction": {
         "count": 6,
-        "avg_suggestions": 5.0,
-        "avg_words": 2365,
-        "avg_health": 91
+        "avg_suggestions": 4.3,
+        "avg_words": 2364,
+        "avg_health": 94
       },
       "essay": {
         "count": 17,
@@ -37,226 +37,9 @@
         "avg_health": 88
       }
     },
-    "avg_health_score": 89.5
+    "avg_health_score": 90.1
   },
   "pieces": [
-    {
-      "title": "The Cartographer's Apprentice",
-      "slug": "the-cartographers-apprentice",
-      "type": "fiction",
-      "words": 1832,
-      "fk_grade": 7.4,
-      "ttr": 0.344,
-      "sentences": 125,
-      "suggestions_total": 7,
-      "suggestions_high": 2,
-      "suggestions_medium": 3,
-      "suggestions_low": 1,
-      "suggestions": [
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"he had\" appears 4 times"
-        },
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"it was\" appears 3 times"
-        },
-        {
-          "priority": "medium",
-          "category": "rhythm",
-          "issue": "Monotonous stretch: 5 sentences averaging 7 words each"
-        },
-        {
-          "priority": "medium",
-          "category": "rhythm",
-          "issue": "12 sentences over 30 words \u2014 the piece may feel heavy"
-        },
-        {
-          "priority": "medium",
-          "category": "diction",
-          "issue": "11 filler adverbs (very, really, actually, just, etc.)"
-        },
-        {
-          "priority": "low",
-          "category": "repetition",
-          "issue": "4 word echo clusters detected (content words repeated in nearby sentences)"
-        },
-        {
-          "priority": "info",
-          "category": "deliberate",
-          "issue": "Deliberate repetition (annotated): \"master fen\" \u00d76"
-        }
-      ],
-      "health_score": 80,
-      "weaknesses": {
-        "passive": {
-          "count": 7,
-          "instances": [
-            {
-              "sentence": 13,
-              "excerpt": "He was twenty-three, precise by temperament and suspicious of metaphor by training, and he had spent three years being t",
-              "match": "being told"
-            },
-            {
-              "sentence": 24,
-              "excerpt": "If his instruments were calibrated and his methods were sound, then the disagreement wasn't between his numbers and real",
-              "match": "were calibrated"
-            },
-            {
-              "sentence": 28,
-              "excerpt": "Come inside.\"\n\nHe spent his first month learning to grind ink from minerals that hadn't been named yet.",
-              "match": "been named"
-            },
-            {
-              "sentence": 61,
-              "excerpt": "The knowledge of when was embedded in the knowledge of where, if you knew how to look.",
-              "match": "was embedded"
-            },
-            {
-              "sentence": 98,
-              "excerpt": "He dated everything, recorded the conditions under which each measurement was taken, cross-referenced his observations a",
-              "match": "was taken"
-            },
-            {
-              "sentence": 109,
-              "excerpt": "The sudden vertigo of realizing the world was always in motion, always becoming \u2014 that the ground beneath your feet was ",
-              "match": "being kept"
-            },
-            {
-              "sentence": 115,
-              "excerpt": "Not as it was, but as it would be \u2014 centuries from now, long after the building had fallen, long after anyone remembered",
-              "match": "been drawn"
-            }
-          ]
-        },
-        "filler_adverbs": {
-          "count": 11,
-          "instances": [
-            {
-              "sentence": 4,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "They were just early."
-            },
-            {
-              "sentence": 6,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "You just have to listen.\"\n\nThe apprentice, whose name was Cael, had been sent by the Surveyors' Guild after failing his "
-            },
-            {
-              "sentence": 23,
-              "adverbs": [
-                "just",
-                "just"
-              ],
-              "excerpt": "But the official survey was just other people's measurements, which were just other people's instruments applied to the "
-            },
-            {
-              "sentence": 25,
-              "adverbs": [
-                "entirely"
-              ],
-              "excerpt": "Master Fen watched him arrive at this conclusion the way a cat watches a bird land on a nearby branch: perfectly still, "
-            },
-            {
-              "sentence": 60,
-              "adverbs": [
-                "truly"
-              ],
-              "excerpt": "A sailor who could truly read Master Fen's maps would also understand that the harbor wasn't there yet."
-            },
-            {
-              "sentence": 68,
-              "adverbs": [
-                "entirely"
-              ],
-              "excerpt": "Different thing entirely.\"\n\n\"I'm going to write that down.\"\n\n\"I assumed so."
-            },
-            {
-              "sentence": 74,
-              "adverbs": [
-                "clearly"
-              ],
-              "excerpt": "Not clearly \u2014 not with Master Fen's precision \u2014 but he could feel the landscape's intentions the way you feel a word on "
-            },
-            {
-              "sentence": 88,
-              "adverbs": [
-                "very"
-              ],
-              "excerpt": "You have a very legible face, for a cartographer.\"\n\n\"Grieving what, though?"
-            },
-            {
-              "sentence": 107,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "A few \u2014 always a few \u2014 saw exactly what the maps were and sat quietly at the tables for a long time, not weeping, not sp"
-            },
-            {
-              "sentence": 119,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "Just the next draft."
-            }
-          ]
-        },
-        "hedges": 0,
-        "abstract_dense": {
-          "count": 0,
-          "instances": []
-        }
-      },
-      "comparison": [
-        {
-          "metric": "Reading Complexity (FK Grade)",
-          "piece_value": 7.4,
-          "collection_avg": 7.75,
-          "difference": -0.35,
-          "percent_diff": -4.5,
-          "unit": "higher = more complex",
-          "direction": "below"
-        },
-        {
-          "metric": "Average Sentence Length",
-          "piece_value": 14.6,
-          "collection_avg": 13.06,
-          "difference": 1.54,
-          "percent_diff": 11.8,
-          "unit": "words",
-          "direction": "above"
-        },
-        {
-          "metric": "Vocabulary Diversity (TTR)",
-          "piece_value": 0.34,
-          "collection_avg": 0.35,
-          "difference": -0.01,
-          "percent_diff": -2.2,
-          "unit": "higher = more diverse",
-          "direction": "below"
-        },
-        {
-          "metric": "Average Word Length",
-          "piece_value": 4.61,
-          "collection_avg": 4.72,
-          "difference": -0.11,
-          "percent_diff": -2.3,
-          "unit": "characters",
-          "direction": "below"
-        }
-      ],
-      "revision": {
-        "resolved": 0,
-        "skipped": 0,
-        "remaining": 7
-      }
-    },
     {
       "title": "On Memory",
       "slug": "on-memory",
@@ -3982,18 +3765,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 7.2,
-          "collection_avg": 7.75,
-          "difference": -0.55,
-          "percent_diff": -7.1,
+          "collection_avg": 7.74,
+          "difference": -0.54,
+          "percent_diff": -7.0,
           "unit": "higher = more complex",
           "direction": "below"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 12.9,
-          "collection_avg": 13.06,
-          "difference": -0.16,
-          "percent_diff": -1.2,
+          "collection_avg": 13.04,
+          "difference": -0.14,
+          "percent_diff": -1.1,
           "unit": "words",
           "direction": "below"
         },
@@ -4002,7 +3785,7 @@
           "piece_value": 0.27,
           "collection_avg": 0.35,
           "difference": -0.08,
-          "percent_diff": -22.1,
+          "percent_diff": -22.2,
           "unit": "higher = more diverse",
           "direction": "below"
         },
@@ -5190,6 +4973,181 @@
         "resolved": 0,
         "skipped": 0,
         "remaining": 5
+      }
+    },
+    {
+      "title": "The Cartographer's Apprentice",
+      "slug": "the-cartographers-apprentice",
+      "type": "fiction",
+      "words": 1829,
+      "fk_grade": 7.2,
+      "ttr": 0.347,
+      "sentences": 130,
+      "suggestions_total": 3,
+      "suggestions_high": 0,
+      "suggestions_medium": 1,
+      "suggestions_low": 0,
+      "suggestions": [
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "8 sentences over 30 words \u2014 the piece may feel heavy"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "Deliberate repetition (annotated): \"master fen\" \u00d76, \"he had\" \u00d73"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "1 echo clusters recognized as deliberate thematic reinforcement"
+        }
+      ],
+      "health_score": 97,
+      "weaknesses": {
+        "passive": {
+          "count": 7,
+          "instances": [
+            {
+              "sentence": 15,
+              "excerpt": "He was twenty-three, precise by temperament and suspicious of metaphor by training, and he had spent three years being t",
+              "match": "being told"
+            },
+            {
+              "sentence": 26,
+              "excerpt": "If his instruments were calibrated and his methods were sound, then the disagreement wasn't between his numbers and real",
+              "match": "were calibrated"
+            },
+            {
+              "sentence": 30,
+              "excerpt": "Come inside.\"\n\nHe spent his first month learning to grind ink from minerals that hadn't been named yet.",
+              "match": "been named"
+            },
+            {
+              "sentence": 64,
+              "excerpt": "The knowledge of when was embedded in the knowledge of where, if you knew how to look.",
+              "match": "was embedded"
+            },
+            {
+              "sentence": 102,
+              "excerpt": "He dated everything, recorded the conditions under which each measurement was taken, cross-referenced his observations a",
+              "match": "was taken"
+            },
+            {
+              "sentence": 113,
+              "excerpt": "The sudden vertigo of realizing the world was always in motion, always becoming \u2014 that the ground beneath your feet was ",
+              "match": "being kept"
+            },
+            {
+              "sentence": 120,
+              "excerpt": "Not as it was, but as it would be \u2014 centuries from now, long after the building had fallen, long after anyone remembered",
+              "match": "been drawn"
+            }
+          ]
+        },
+        "filler_adverbs": {
+          "count": 7,
+          "instances": [
+            {
+              "sentence": 6,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "They were just early."
+            },
+            {
+              "sentence": 8,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "You just have to listen.\"\n\nThe apprentice, whose name was Cael, had been sent by the Surveyors' Guild after failing his "
+            },
+            {
+              "sentence": 27,
+              "adverbs": [
+                "entirely"
+              ],
+              "excerpt": "Master Fen watched him arrive at this conclusion the way a cat watches a bird land on a nearby branch: perfectly still, "
+            },
+            {
+              "sentence": 71,
+              "adverbs": [
+                "entirely"
+              ],
+              "excerpt": "Different thing entirely.\"\n\n\"I'm going to write that down.\"\n\n\"I assumed so."
+            },
+            {
+              "sentence": 77,
+              "adverbs": [
+                "clearly"
+              ],
+              "excerpt": "Not clearly \u2014 not with Master Fen's precision \u2014 but he could feel the landscape's intentions the way you feel a word on "
+            },
+            {
+              "sentence": 111,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "A few \u2014 every era produced a few \u2014 saw exactly what the maps were and sat quietly at the tables for a long time, not wee"
+            },
+            {
+              "sentence": 124,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "Just the next draft."
+            }
+          ]
+        },
+        "hedges": 0,
+        "abstract_dense": {
+          "count": 0,
+          "instances": []
+        }
+      },
+      "comparison": [
+        {
+          "metric": "Reading Complexity (FK Grade)",
+          "piece_value": 7.2,
+          "collection_avg": 7.73,
+          "difference": -0.53,
+          "percent_diff": -6.9,
+          "unit": "higher = more complex",
+          "direction": "below"
+        },
+        {
+          "metric": "Average Sentence Length",
+          "piece_value": 14.0,
+          "collection_avg": 13.03,
+          "difference": 0.97,
+          "percent_diff": 7.5,
+          "unit": "words",
+          "direction": "above"
+        },
+        {
+          "metric": "Vocabulary Diversity (TTR)",
+          "piece_value": 0.35,
+          "collection_avg": 0.35,
+          "difference": -0.01,
+          "percent_diff": -1.6,
+          "unit": "higher = more diverse",
+          "direction": "below"
+        },
+        {
+          "metric": "Average Word Length",
+          "piece_value": 4.61,
+          "collection_avg": 4.72,
+          "difference": -0.11,
+          "percent_diff": -2.3,
+          "unit": "characters",
+          "direction": "below"
+        }
+      ],
+      "revision": {
+        "resolved": 0,
+        "skipped": 0,
+        "remaining": 3
       }
     }
   ]
