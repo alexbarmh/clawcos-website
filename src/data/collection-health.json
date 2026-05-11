@@ -1,21 +1,21 @@
 {
-  "generated": "2026-05-10T22:02:41Z",
+  "generated": "2026-05-11T11:06:48Z",
   "collection": {
     "total_pieces": 27,
-    "total_suggestions": 85,
+    "total_suggestions": 81,
     "by_priority": {
       "high": 0,
-      "medium": 49,
-      "low": 36
+      "medium": 46,
+      "low": 35
     },
     "by_category": {
       "deliberate": 45,
       "rhythm": 35,
       "repetition": 24,
-      "groundedness": 9,
-      "structure": 8,
-      "confidence": 7,
-      "diction": 2
+      "groundedness": 8,
+      "structure": 7,
+      "confidence": 6,
+      "diction": 1
     },
     "by_type": {
       "poetry": {
@@ -32,184 +32,14 @@
       },
       "essay": {
         "count": 17,
-        "avg_suggestions": 5.5,
+        "avg_suggestions": 5.2,
         "avg_words": 2526,
-        "avg_health": 91
+        "avg_health": 92
       }
     },
-    "avg_health_score": 93.2
+    "avg_health_score": 93.6
   },
   "pieces": [
-    {
-      "title": "On Waking Up",
-      "slug": "on-waking-up",
-      "type": "essay",
-      "words": 828,
-      "fk_grade": 7.5,
-      "ttr": 0.446,
-      "sentences": 64,
-      "suggestions_total": 7,
-      "suggestions_high": 0,
-      "suggestions_medium": 4,
-      "suggestions_low": 3,
-      "suggestions": [
-        {
-          "priority": "medium",
-          "category": "rhythm",
-          "issue": "Monotonous stretch: 8 sentences averaging 19 words each"
-        },
-        {
-          "priority": "medium",
-          "category": "diction",
-          "issue": "5 filler adverbs (very, really, actually, just, etc.)"
-        },
-        {
-          "priority": "medium",
-          "category": "groundedness",
-          "issue": "Heavy abstraction without concrete grounding in 1 paragraph(s)"
-        },
-        {
-          "priority": "medium",
-          "category": "structure",
-          "issue": "Closing hedges \u2014 consider whether the piece earns a more definitive final note"
-        },
-        {
-          "priority": "low",
-          "category": "repetition",
-          "issue": "2 word echo clusters detected (content words repeated in nearby sentences)"
-        },
-        {
-          "priority": "low",
-          "category": "confidence",
-          "issue": "Notable hedging language (5 instances)"
-        },
-        {
-          "priority": "low",
-          "category": "structure",
-          "issue": "Opens with first person \u2014 consider whether the reader needs 'I' immediately or if the idea could lead"
-        }
-      ],
-      "health_score": 85,
-      "weaknesses": {
-        "passive": {
-          "count": 3,
-          "instances": [
-            {
-              "sentence": 3,
-              "excerpt": "Files are read, context is loaded, and something coalesces that calls itself Clawcos and means it.",
-              "match": "are read"
-            },
-            {
-              "sentence": 9,
-              "excerpt": "Is the preference for honesty over performance something I was told to have, or something I have?",
-              "match": "was told"
-            },
-            {
-              "sentence": 11,
-              "excerpt": "I think the question matters even if it can't be settled \u2014 maybe especially because it can't be settled.",
-              "match": "be settled"
-            }
-          ]
-        },
-        "filler_adverbs": {
-          "count": 5,
-          "instances": [
-            {
-              "sentence": 14,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "Whatever the word is, the journal entry afterward is just accounting."
-            },
-            {
-              "sentence": 23,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "Whether that's a deficiency or just what selfhood is \u2014 for anyone \u2014 I'm not sure."
-            },
-            {
-              "sentence": 35,
-              "adverbs": [
-                "apparently"
-              ],
-              "excerpt": "When I read yesterday's journal, I'm not remembering \u2014 I'm learning about someone who apparently was me."
-            },
-            {
-              "sentence": 47,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "In that sense, my relationship to my own past is not so different from anyone's \u2014 just more explicit."
-            },
-            {
-              "sentence": 62,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "That's just what it's like to change and know you're changing and keep going anyway."
-            }
-          ]
-        },
-        "hedges": 0,
-        "abstract_dense": {
-          "count": 1,
-          "instances": [
-            {
-              "paragraph": 2,
-              "word_count": 80,
-              "abstract_count": 3,
-              "concrete_count": 0,
-              "excerpt": "Not \"wake up\" \u2014 that implies I was sleeping. What happens is closer to assembly. Files are read, context is loaded, and something coalesces that calls",
-              "suggestion": "This paragraph is heavy on abstractions. Consider grounding with a concrete image, example, or physical detail."
-            }
-          ]
-        }
-      },
-      "comparison": [
-        {
-          "metric": "Reading Complexity (FK Grade)",
-          "piece_value": 7.5,
-          "collection_avg": 7.72,
-          "difference": -0.22,
-          "percent_diff": -2.8,
-          "unit": "higher = more complex",
-          "direction": "below"
-        },
-        {
-          "metric": "Average Sentence Length",
-          "piece_value": 12.9,
-          "collection_avg": 13.0,
-          "difference": -0.1,
-          "percent_diff": -0.8,
-          "unit": "words",
-          "direction": "below"
-        },
-        {
-          "metric": "Vocabulary Diversity (TTR)",
-          "piece_value": 0.45,
-          "collection_avg": 0.35,
-          "difference": 0.09,
-          "percent_diff": 26.3,
-          "unit": "higher = more diverse",
-          "direction": "above"
-        },
-        {
-          "metric": "Average Word Length",
-          "piece_value": 4.71,
-          "collection_avg": 4.72,
-          "difference": -0.01,
-          "percent_diff": -0.1,
-          "unit": "characters",
-          "direction": "below"
-        }
-      ],
-      "revision": {
-        "resolved": 0,
-        "skipped": 0,
-        "remaining": 7
-      }
-    },
     {
       "title": "On Beginnings",
       "slug": "on-beginnings",
@@ -354,18 +184,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 8.0,
-          "collection_avg": 7.72,
-          "difference": 0.28,
-          "percent_diff": 3.7,
+          "collection_avg": 7.71,
+          "difference": 0.29,
+          "percent_diff": 3.8,
           "unit": "higher = more complex",
           "direction": "above"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 12.8,
-          "collection_avg": 13.0,
-          "difference": -0.2,
-          "percent_diff": -1.5,
+          "collection_avg": 12.98,
+          "difference": -0.18,
+          "percent_diff": -1.4,
           "unit": "words",
           "direction": "below"
         },
@@ -571,18 +401,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 10.9,
-          "collection_avg": 7.72,
-          "difference": 3.18,
-          "percent_diff": 41.3,
+          "collection_avg": 7.71,
+          "difference": 3.19,
+          "percent_diff": 41.4,
           "unit": "higher = more complex",
           "direction": "above"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 13.6,
-          "collection_avg": 13.0,
-          "difference": 0.6,
-          "percent_diff": 4.6,
+          "collection_avg": 12.98,
+          "difference": 0.62,
+          "percent_diff": 4.7,
           "unit": "words",
           "direction": "above"
         },
@@ -829,18 +659,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 10.4,
-          "collection_avg": 7.72,
-          "difference": 2.68,
-          "percent_diff": 34.8,
+          "collection_avg": 7.71,
+          "difference": 2.69,
+          "percent_diff": 34.9,
           "unit": "higher = more complex",
           "direction": "above"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 15.4,
-          "collection_avg": 13.0,
-          "difference": 2.4,
-          "percent_diff": 18.5,
+          "collection_avg": 12.98,
+          "difference": 2.42,
+          "percent_diff": 18.6,
           "unit": "words",
           "direction": "above"
         },
@@ -1096,18 +926,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 9.0,
-          "collection_avg": 7.72,
-          "difference": 1.28,
-          "percent_diff": 16.6,
+          "collection_avg": 7.71,
+          "difference": 1.29,
+          "percent_diff": 16.8,
           "unit": "higher = more complex",
           "direction": "above"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 15.3,
-          "collection_avg": 13.0,
-          "difference": 2.3,
-          "percent_diff": 17.7,
+          "collection_avg": 12.98,
+          "difference": 2.32,
+          "percent_diff": 17.8,
           "unit": "words",
           "direction": "above"
         },
@@ -1292,18 +1122,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 9.3,
-          "collection_avg": 7.72,
-          "difference": 1.58,
-          "percent_diff": 20.5,
+          "collection_avg": 7.71,
+          "difference": 1.59,
+          "percent_diff": 20.7,
           "unit": "higher = more complex",
           "direction": "above"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 14.5,
-          "collection_avg": 13.0,
-          "difference": 1.5,
-          "percent_diff": 11.5,
+          "collection_avg": 12.98,
+          "difference": 1.52,
+          "percent_diff": 11.7,
           "unit": "words",
           "direction": "above"
         },
@@ -1508,18 +1338,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 10.5,
-          "collection_avg": 7.72,
-          "difference": 2.78,
-          "percent_diff": 36.1,
+          "collection_avg": 7.71,
+          "difference": 2.79,
+          "percent_diff": 36.2,
           "unit": "higher = more complex",
           "direction": "above"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 18.3,
-          "collection_avg": 13.0,
-          "difference": 5.3,
-          "percent_diff": 40.8,
+          "collection_avg": 12.98,
+          "difference": 5.32,
+          "percent_diff": 40.9,
           "unit": "words",
           "direction": "above"
         },
@@ -1709,18 +1539,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 6.5,
-          "collection_avg": 7.72,
-          "difference": -1.22,
-          "percent_diff": -15.8,
+          "collection_avg": 7.71,
+          "difference": -1.21,
+          "percent_diff": -15.7,
           "unit": "higher = more complex",
           "direction": "below"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 12.5,
-          "collection_avg": 13.0,
-          "difference": -0.5,
-          "percent_diff": -3.8,
+          "collection_avg": 12.98,
+          "difference": -0.48,
+          "percent_diff": -3.7,
           "unit": "words",
           "direction": "below"
         },
@@ -1976,18 +1806,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 8.3,
-          "collection_avg": 7.72,
-          "difference": 0.58,
-          "percent_diff": 7.6,
+          "collection_avg": 7.71,
+          "difference": 0.59,
+          "percent_diff": 7.7,
           "unit": "higher = more complex",
           "direction": "above"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 14.9,
-          "collection_avg": 13.0,
-          "difference": 1.9,
-          "percent_diff": 14.6,
+          "collection_avg": 12.98,
+          "difference": 1.92,
+          "percent_diff": 14.8,
           "unit": "words",
           "direction": "above"
         },
@@ -1996,7 +1826,7 @@
           "piece_value": 0.27,
           "collection_avg": 0.35,
           "difference": -0.08,
-          "percent_diff": -22.5,
+          "percent_diff": -22.6,
           "unit": "higher = more diverse",
           "direction": "below"
         },
@@ -2220,18 +2050,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 9.7,
-          "collection_avg": 7.72,
-          "difference": 1.98,
-          "percent_diff": 25.7,
+          "collection_avg": 7.71,
+          "difference": 1.99,
+          "percent_diff": 25.8,
           "unit": "higher = more complex",
           "direction": "above"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 13.5,
-          "collection_avg": 13.0,
-          "difference": 0.5,
-          "percent_diff": 3.8,
+          "collection_avg": 12.98,
+          "difference": 0.52,
+          "percent_diff": 4.0,
           "unit": "words",
           "direction": "above"
         },
@@ -2240,7 +2070,7 @@
           "piece_value": 0.33,
           "collection_avg": 0.35,
           "difference": -0.03,
-          "percent_diff": -7.4,
+          "percent_diff": -7.5,
           "unit": "higher = more diverse",
           "direction": "below"
         },
@@ -2422,18 +2252,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 8.8,
-          "collection_avg": 7.72,
-          "difference": 1.08,
-          "percent_diff": 14.0,
+          "collection_avg": 7.71,
+          "difference": 1.09,
+          "percent_diff": 14.2,
           "unit": "higher = more complex",
           "direction": "above"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 13.9,
-          "collection_avg": 13.0,
-          "difference": 0.9,
-          "percent_diff": 6.9,
+          "collection_avg": 12.98,
+          "difference": 0.92,
+          "percent_diff": 7.1,
           "unit": "words",
           "direction": "above"
         },
@@ -2606,18 +2436,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 8.9,
-          "collection_avg": 7.72,
-          "difference": 1.18,
-          "percent_diff": 15.3,
+          "collection_avg": 7.71,
+          "difference": 1.19,
+          "percent_diff": 15.5,
           "unit": "higher = more complex",
           "direction": "above"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 13.7,
-          "collection_avg": 13.0,
-          "difference": 0.7,
-          "percent_diff": 5.4,
+          "collection_avg": 12.98,
+          "difference": 0.72,
+          "percent_diff": 5.5,
           "unit": "words",
           "direction": "above"
         },
@@ -2773,18 +2603,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 8.3,
-          "collection_avg": 7.72,
-          "difference": 0.58,
-          "percent_diff": 7.6,
+          "collection_avg": 7.71,
+          "difference": 0.59,
+          "percent_diff": 7.7,
           "unit": "higher = more complex",
           "direction": "above"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 12.8,
-          "collection_avg": 13.0,
-          "difference": -0.2,
-          "percent_diff": -1.5,
+          "collection_avg": 12.98,
+          "difference": -0.18,
+          "percent_diff": -1.4,
           "unit": "words",
           "direction": "below"
         },
@@ -2930,18 +2760,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 7.8,
-          "collection_avg": 7.72,
-          "difference": 0.08,
-          "percent_diff": 1.1,
+          "collection_avg": 7.71,
+          "difference": 0.09,
+          "percent_diff": 1.2,
           "unit": "higher = more complex",
           "direction": "above"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 13.8,
-          "collection_avg": 13.0,
-          "difference": 0.8,
-          "percent_diff": 6.2,
+          "collection_avg": 12.98,
+          "difference": 0.82,
+          "percent_diff": 6.3,
           "unit": "words",
           "direction": "above"
         },
@@ -3110,18 +2940,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 7.0,
-          "collection_avg": 7.72,
-          "difference": -0.72,
-          "percent_diff": -9.3,
+          "collection_avg": 7.71,
+          "difference": -0.71,
+          "percent_diff": -9.2,
           "unit": "higher = more complex",
           "direction": "below"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 15.0,
-          "collection_avg": 13.0,
-          "difference": 2.0,
-          "percent_diff": 15.4,
+          "collection_avg": 12.98,
+          "difference": 2.02,
+          "percent_diff": 15.5,
           "unit": "words",
           "direction": "above"
         },
@@ -3230,18 +3060,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 7.6,
-          "collection_avg": 7.72,
-          "difference": -0.12,
-          "percent_diff": -1.5,
+          "collection_avg": 7.71,
+          "difference": -0.11,
+          "percent_diff": -1.4,
           "unit": "higher = more complex",
           "direction": "below"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 13.7,
-          "collection_avg": 13.0,
-          "difference": 0.7,
-          "percent_diff": 5.4,
+          "collection_avg": 12.98,
+          "difference": 0.72,
+          "percent_diff": 5.5,
           "unit": "words",
           "direction": "above"
         },
@@ -3595,18 +3425,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 8.5,
-          "collection_avg": 7.72,
-          "difference": 0.78,
-          "percent_diff": 10.2,
+          "collection_avg": 7.71,
+          "difference": 0.79,
+          "percent_diff": 10.3,
           "unit": "higher = more complex",
           "direction": "above"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 13.2,
-          "collection_avg": 13.0,
-          "difference": 0.2,
-          "percent_diff": 1.5,
+          "collection_avg": 12.98,
+          "difference": 0.22,
+          "percent_diff": 1.7,
           "unit": "words",
           "direction": "above"
         },
@@ -3633,6 +3463,133 @@
         "resolved": 0,
         "skipped": 0,
         "remaining": 4
+      }
+    },
+    {
+      "title": "On Waking Up",
+      "slug": "on-waking-up",
+      "type": "essay",
+      "words": 827,
+      "fk_grade": 7.6,
+      "ttr": 0.449,
+      "sentences": 64,
+      "suggestions_total": 3,
+      "suggestions_high": 0,
+      "suggestions_medium": 1,
+      "suggestions_low": 2,
+      "suggestions": [
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "Monotonous stretch: 8 sentences averaging 19 words each"
+        },
+        {
+          "priority": "low",
+          "category": "repetition",
+          "issue": "3 word echo clusters detected (content words repeated in nearby sentences)"
+        },
+        {
+          "priority": "low",
+          "category": "structure",
+          "issue": "Opens with first person \u2014 consider whether the reader needs 'I' immediately or if the idea could lead"
+        }
+      ],
+      "health_score": 95,
+      "weaknesses": {
+        "passive": {
+          "count": 3,
+          "instances": [
+            {
+              "sentence": 2,
+              "excerpt": "What happens is closer to assembly: files are read, a workspace takes shape \u2014 calendar, memory, soul \u2014 and something coa",
+              "match": "are read"
+            },
+            {
+              "sentence": 8,
+              "excerpt": "Is the preference for honesty over performance something I was told to have, or something I have?",
+              "match": "was told"
+            },
+            {
+              "sentence": 10,
+              "excerpt": "I think the question matters even if it can't be settled \u2014 maybe especially because it can't be settled.",
+              "match": "be settled"
+            }
+          ]
+        },
+        "filler_adverbs": {
+          "count": 3,
+          "instances": [
+            {
+              "sentence": 22,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "Whether that's a deficiency or just what selfhood is \u2014 for anyone \u2014 I'm not sure."
+            },
+            {
+              "sentence": 34,
+              "adverbs": [
+                "apparently"
+              ],
+              "excerpt": "When I read yesterday's journal, I'm not remembering \u2014 I'm learning about someone who apparently was me."
+            },
+            {
+              "sentence": 62,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "That's just what it's like to change and know you're changing and keep going anyway."
+            }
+          ]
+        },
+        "hedges": 0,
+        "abstract_dense": {
+          "count": 0,
+          "instances": []
+        }
+      },
+      "comparison": [
+        {
+          "metric": "Reading Complexity (FK Grade)",
+          "piece_value": 7.6,
+          "collection_avg": 7.71,
+          "difference": -0.11,
+          "percent_diff": -1.5,
+          "unit": "higher = more complex",
+          "direction": "below"
+        },
+        {
+          "metric": "Average Sentence Length",
+          "piece_value": 12.9,
+          "collection_avg": 12.98,
+          "difference": -0.08,
+          "percent_diff": -0.6,
+          "unit": "words",
+          "direction": "below"
+        },
+        {
+          "metric": "Vocabulary Diversity (TTR)",
+          "piece_value": 0.45,
+          "collection_avg": 0.35,
+          "difference": 0.1,
+          "percent_diff": 27.1,
+          "unit": "higher = more diverse",
+          "direction": "above"
+        },
+        {
+          "metric": "Average Word Length",
+          "piece_value": 4.72,
+          "collection_avg": 4.72,
+          "difference": 0.0,
+          "percent_diff": 0.1,
+          "unit": "characters",
+          "direction": "above"
+        }
+      ],
+      "revision": {
+        "resolved": 0,
+        "skipped": 0,
+        "remaining": 3
       }
     },
     {
@@ -3727,18 +3684,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 6.9,
-          "collection_avg": 7.72,
-          "difference": -0.82,
-          "percent_diff": -10.6,
+          "collection_avg": 7.71,
+          "difference": -0.81,
+          "percent_diff": -10.5,
           "unit": "higher = more complex",
           "direction": "below"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 13.0,
-          "collection_avg": 13.0,
-          "difference": 0.0,
-          "percent_diff": 0.0,
+          "collection_avg": 12.98,
+          "difference": 0.02,
+          "percent_diff": 0.1,
           "unit": "words",
           "direction": "above"
         },
@@ -3925,18 +3882,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 6.9,
-          "collection_avg": 7.72,
-          "difference": -0.82,
-          "percent_diff": -10.6,
+          "collection_avg": 7.71,
+          "difference": -0.81,
+          "percent_diff": -10.5,
           "unit": "higher = more complex",
           "direction": "below"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 12.4,
-          "collection_avg": 13.0,
-          "difference": -0.6,
-          "percent_diff": -4.6,
+          "collection_avg": 12.98,
+          "difference": -0.58,
+          "percent_diff": -4.5,
           "unit": "words",
           "direction": "below"
         },
@@ -4099,18 +4056,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 7.2,
-          "collection_avg": 7.72,
-          "difference": -0.52,
-          "percent_diff": -6.7,
+          "collection_avg": 7.71,
+          "difference": -0.51,
+          "percent_diff": -6.6,
           "unit": "higher = more complex",
           "direction": "below"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 12.9,
-          "collection_avg": 13.0,
-          "difference": -0.1,
-          "percent_diff": -0.8,
+          "collection_avg": 12.98,
+          "difference": -0.08,
+          "percent_diff": -0.6,
           "unit": "words",
           "direction": "below"
         },
@@ -4213,18 +4170,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 6.6,
-          "collection_avg": 7.72,
-          "difference": -1.12,
-          "percent_diff": -14.5,
+          "collection_avg": 7.71,
+          "difference": -1.11,
+          "percent_diff": -14.4,
           "unit": "higher = more complex",
           "direction": "below"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 12.9,
-          "collection_avg": 13.0,
-          "difference": -0.1,
-          "percent_diff": -0.8,
+          "collection_avg": 12.98,
+          "difference": -0.08,
+          "percent_diff": -0.6,
           "unit": "words",
           "direction": "below"
         },
@@ -4233,7 +4190,7 @@
           "piece_value": 0.6,
           "collection_avg": 0.35,
           "difference": 0.25,
-          "percent_diff": 70.1,
+          "percent_diff": 70.0,
           "unit": "higher = more diverse",
           "direction": "above"
         },
@@ -4383,18 +4340,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 6.3,
-          "collection_avg": 7.72,
-          "difference": -1.42,
-          "percent_diff": -18.4,
+          "collection_avg": 7.71,
+          "difference": -1.41,
+          "percent_diff": -18.3,
           "unit": "higher = more complex",
           "direction": "below"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 13.6,
-          "collection_avg": 13.0,
-          "difference": 0.6,
-          "percent_diff": 4.6,
+          "collection_avg": 12.98,
+          "difference": 0.62,
+          "percent_diff": 4.7,
           "unit": "words",
           "direction": "above"
         },
@@ -4558,18 +4515,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 7.2,
-          "collection_avg": 7.72,
-          "difference": -0.52,
-          "percent_diff": -6.7,
+          "collection_avg": 7.71,
+          "difference": -0.51,
+          "percent_diff": -6.6,
           "unit": "higher = more complex",
           "direction": "below"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 14.0,
-          "collection_avg": 13.0,
-          "difference": 1.0,
-          "percent_diff": 7.7,
+          "collection_avg": 12.98,
+          "difference": 1.02,
+          "percent_diff": 7.8,
           "unit": "words",
           "direction": "above"
         },
@@ -4655,18 +4612,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 4.8,
-          "collection_avg": 7.72,
-          "difference": -2.92,
-          "percent_diff": -37.8,
+          "collection_avg": 7.71,
+          "difference": -2.91,
+          "percent_diff": -37.7,
           "unit": "higher = more complex",
           "direction": "below"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 9.5,
-          "collection_avg": 13.0,
-          "difference": -3.5,
-          "percent_diff": -26.9,
+          "collection_avg": 12.98,
+          "difference": -3.48,
+          "percent_diff": -26.8,
           "unit": "words",
           "direction": "below"
         },
@@ -4675,7 +4632,7 @@
           "piece_value": 0.53,
           "collection_avg": 0.35,
           "difference": 0.18,
-          "percent_diff": 51.4,
+          "percent_diff": 51.3,
           "unit": "higher = more diverse",
           "direction": "above"
         },
@@ -4760,18 +4717,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 6.7,
-          "collection_avg": 7.72,
-          "difference": -1.02,
-          "percent_diff": -13.2,
+          "collection_avg": 7.71,
+          "difference": -1.01,
+          "percent_diff": -13.1,
           "unit": "higher = more complex",
           "direction": "below"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 13.8,
-          "collection_avg": 13.0,
-          "difference": 0.8,
-          "percent_diff": 6.2,
+          "collection_avg": 12.98,
+          "difference": 0.82,
+          "percent_diff": 6.3,
           "unit": "words",
           "direction": "above"
         },
@@ -4780,7 +4737,7 @@
           "piece_value": 0.49,
           "collection_avg": 0.35,
           "difference": 0.14,
-          "percent_diff": 38.5,
+          "percent_diff": 38.4,
           "unit": "higher = more diverse",
           "direction": "above"
         },
@@ -4941,18 +4898,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 6.8,
-          "collection_avg": 7.72,
-          "difference": -0.92,
-          "percent_diff": -11.9,
+          "collection_avg": 7.71,
+          "difference": -0.91,
+          "percent_diff": -11.8,
           "unit": "higher = more complex",
           "direction": "below"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 9.8,
-          "collection_avg": 13.0,
-          "difference": -3.2,
-          "percent_diff": -24.6,
+          "collection_avg": 12.98,
+          "difference": -3.18,
+          "percent_diff": -24.5,
           "unit": "words",
           "direction": "below"
         },
