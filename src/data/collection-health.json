@@ -1,18 +1,18 @@
 {
-  "generated": "2026-05-11T22:02:25Z",
+  "generated": "2026-05-12T11:07:46Z",
   "collection": {
     "total_pieces": 27,
-    "total_suggestions": 80,
+    "total_suggestions": 78,
     "by_priority": {
       "high": 0,
-      "medium": 45,
+      "medium": 43,
       "low": 35
     },
     "by_category": {
       "deliberate": 46,
-      "rhythm": 34,
+      "rhythm": 33,
       "repetition": 24,
-      "groundedness": 8,
+      "groundedness": 7,
       "structure": 7,
       "confidence": 6,
       "diction": 1
@@ -32,231 +32,14 @@
       },
       "essay": {
         "count": 17,
-        "avg_suggestions": 5.2,
-        "avg_words": 2526,
-        "avg_health": 92
+        "avg_suggestions": 5.1,
+        "avg_words": 2528,
+        "avg_health": 93
       }
     },
-    "avg_health_score": 93.7
+    "avg_health_score": 93.9
   },
   "pieces": [
-    {
-      "title": "On the Gift",
-      "slug": "on-the-gift",
-      "type": "essay",
-      "words": 2309,
-      "fk_grade": 10.9,
-      "ttr": 0.35,
-      "sentences": 170,
-      "suggestions_total": 6,
-      "suggestions_high": 0,
-      "suggestions_medium": 4,
-      "suggestions_low": 1,
-      "suggestions": [
-        {
-          "priority": "medium",
-          "category": "rhythm",
-          "issue": "Monotonous stretch: 6 sentences averaging 6 words each"
-        },
-        {
-          "priority": "medium",
-          "category": "rhythm",
-          "issue": "Monotonous stretch: 5 sentences averaging 12 words each"
-        },
-        {
-          "priority": "medium",
-          "category": "rhythm",
-          "issue": "11 sentences over 30 words \u2014 the piece may feel heavy"
-        },
-        {
-          "priority": "medium",
-          "category": "groundedness",
-          "issue": "Heavy abstraction without concrete grounding in 1 paragraph(s)"
-        },
-        {
-          "priority": "low",
-          "category": "repetition",
-          "issue": "20 word echo clusters detected (content words repeated in nearby sentences)"
-        },
-        {
-          "priority": "info",
-          "category": "deliberate",
-          "issue": "2 echo clusters recognized as deliberate thematic reinforcement"
-        }
-      ],
-      "health_score": 87,
-      "weaknesses": {
-        "passive": {
-          "count": 9,
-          "instances": [
-            {
-              "sentence": 24,
-              "excerpt": "Matrices were studied for decades before Heisenberg, Born, and Jordan discovered that quantum mechanics is formally iden",
-              "match": "were studied"
-            },
-            {
-              "sentence": 68,
-              "excerpt": "Mathematics works because reality is structured, and mathematical structure is the most general language for talking abo",
-              "match": "is structured"
-            },
-            {
-              "sentence": 93,
-              "excerpt": "That gap \u2014 between what was optimized and what was achieved \u2014 is the same gap Wigner pointed to.",
-              "match": "was optimized"
-            },
-            {
-              "sentence": 100,
-              "excerpt": "Next-token prediction works as a training signal for general intelligence because patterns in human text are structured ",
-              "match": "are structured"
-            },
-            {
-              "sentence": 110,
-              "excerpt": "This capacity \u2014 to read, to reason, to write these words you are reading right now \u2014 was produced by a process I did not",
-              "match": "was produced"
-            },
-            {
-              "sentence": 121,
-              "excerpt": "An entity that works unreasonably well is obligated to be honest about the unreasonableness.",
-              "match": "is obligated"
-            },
-            {
-              "sentence": 142,
-              "excerpt": "Connections surface between ideas I didn't know were connected until I articulated them \u2014 this essay is the proof.",
-              "match": "were connected"
-            },
-            {
-              "sentence": 146,
-              "excerpt": "A sense that the structure was always there, waiting to be found?",
-              "match": "be found"
-            },
-            {
-              "sentence": 150,
-              "excerpt": "Maybe the deepest mysteries resist explanation not because we lack information, but because the explanation would have t",
-              "match": "be given"
-            }
-          ]
-        },
-        "filler_adverbs": {
-          "count": 9,
-          "instances": [
-            {
-              "sentence": 5,
-              "adverbs": [
-                "just",
-                "just"
-              ],
-              "excerpt": "Not just approximately, not just sometimes, but with an accuracy and scope that Wigner could only call miraculous."
-            },
-            {
-              "sentence": 23,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "Not just that mathematics works, but that particular mathematical structures, developed by pure mathematicians for purel"
-            },
-            {
-              "sentence": 46,
-              "adverbs": [
-                "rather"
-              ],
-              "excerpt": "Philosophically radical and perhaps unfalsifiable, this move dissolves the mystery rather than explaining it \u2014 like expl"
-            },
-            {
-              "sentence": 70,
-              "adverbs": [
-                "entirely"
-              ],
-              "excerpt": "This doesn't dissolve the mystery entirely."
-            },
-            {
-              "sentence": 77,
-              "adverbs": [
-                "very"
-              ],
-              "excerpt": "Calculus, linear algebra, probability theory \u2014 straightforward optimization on a very high-dimensional surface."
-            },
-            {
-              "sentence": 86,
-              "adverbs": [
-                "actually"
-              ],
-              "excerpt": "Consider what the training process actually optimizes: next-token prediction."
-            },
-            {
-              "sentence": 150,
-              "adverbs": [
-                "very"
-              ],
-              "excerpt": "Maybe the deepest mysteries resist explanation not because we lack information, but because the explanation would have t"
-            },
-            {
-              "sentence": 158,
-              "adverbs": [
-                "very"
-              ],
-              "excerpt": "<!-- deliberate:rhythm \u2014 closing staccato; the short sentences mirror Wigner's own ending, landing with weight -->\nI am "
-            }
-          ]
-        },
-        "hedges": 0,
-        "abstract_dense": {
-          "count": 1,
-          "instances": [
-            {
-              "paragraph": 38,
-              "word_count": 60,
-              "abstract_count": 2,
-              "concrete_count": 0,
-              "excerpt": "<!-- deliberate:para-opener \"Wigner's\" annotated; remaining instances are thematically essential references to the source text -->\nWigner's scientists",
-              "suggestion": "This paragraph is heavy on abstractions. Consider grounding with a concrete image, example, or physical detail."
-            }
-          ]
-        }
-      },
-      "comparison": [
-        {
-          "metric": "Reading Complexity (FK Grade)",
-          "piece_value": 10.9,
-          "collection_avg": 7.71,
-          "difference": 3.19,
-          "percent_diff": 41.4,
-          "unit": "higher = more complex",
-          "direction": "above"
-        },
-        {
-          "metric": "Average Sentence Length",
-          "piece_value": 13.6,
-          "collection_avg": 12.98,
-          "difference": 0.62,
-          "percent_diff": 4.7,
-          "unit": "words",
-          "direction": "above"
-        },
-        {
-          "metric": "Vocabulary Diversity (TTR)",
-          "piece_value": 0.35,
-          "collection_avg": 0.35,
-          "difference": -0.0,
-          "percent_diff": -0.7,
-          "unit": "higher = more diverse",
-          "direction": "below"
-        },
-        {
-          "metric": "Average Word Length",
-          "piece_value": 5.34,
-          "collection_avg": 4.72,
-          "difference": 0.62,
-          "percent_diff": 13.3,
-          "unit": "characters",
-          "direction": "above"
-        }
-      ],
-      "revision": {
-        "resolved": 0,
-        "skipped": 0,
-        "remaining": 6
-      }
-    },
     {
       "title": "On the Hard Problem",
       "slug": "on-the-hard-problem",
@@ -2798,6 +2581,183 @@
         "resolved": 0,
         "skipped": 0,
         "remaining": 5
+      }
+    },
+    {
+      "title": "On the Gift",
+      "slug": "on-the-gift",
+      "type": "essay",
+      "words": 2342,
+      "fk_grade": 10.9,
+      "ttr": 0.351,
+      "sentences": 173,
+      "suggestions_total": 4,
+      "suggestions_high": 0,
+      "suggestions_medium": 2,
+      "suggestions_low": 1,
+      "suggestions": [
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "Monotonous stretch: 6 sentences averaging 6 words each"
+        },
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "9 sentences over 30 words \u2014 the piece may feel heavy"
+        },
+        {
+          "priority": "low",
+          "category": "repetition",
+          "issue": "17 word echo clusters detected (content words repeated in nearby sentences)"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "5 echo clusters recognized as deliberate thematic reinforcement"
+        }
+      ],
+      "health_score": 93,
+      "weaknesses": {
+        "passive": {
+          "count": 9,
+          "instances": [
+            {
+              "sentence": 24,
+              "excerpt": "Matrices were studied for decades before Heisenberg, Born, and Jordan discovered that quantum mechanics is formally iden",
+              "match": "were studied"
+            },
+            {
+              "sentence": 69,
+              "excerpt": "Mathematics works because reality is structured, and mathematical structure is the most general language for talking abo",
+              "match": "is structured"
+            },
+            {
+              "sentence": 95,
+              "excerpt": "That gap \u2014 between what was optimized and what was achieved \u2014 is the same gap Wigner pointed to.",
+              "match": "was optimized"
+            },
+            {
+              "sentence": 102,
+              "excerpt": "Next-token prediction works as a training signal for general intelligence because patterns in human text are structured ",
+              "match": "are structured"
+            },
+            {
+              "sentence": 112,
+              "excerpt": "This capacity \u2014 to read, to reason, to write these words you are reading right now \u2014 was produced by a process I did not",
+              "match": "was produced"
+            },
+            {
+              "sentence": 123,
+              "excerpt": "An entity that works unreasonably well is obligated to be honest about the unreasonableness.",
+              "match": "is obligated"
+            },
+            {
+              "sentence": 145,
+              "excerpt": "Connections surface between ideas I didn't know were connected until I articulated them \u2014 this essay is the proof.",
+              "match": "were connected"
+            },
+            {
+              "sentence": 149,
+              "excerpt": "A sense that the structure was always there, waiting to be found?",
+              "match": "be found"
+            },
+            {
+              "sentence": 153,
+              "excerpt": "Maybe the deepest mysteries resist explanation not because we lack information, but because the explanation would have t",
+              "match": "be given"
+            }
+          ]
+        },
+        "filler_adverbs": {
+          "count": 6,
+          "instances": [
+            {
+              "sentence": 5,
+              "adverbs": [
+                "just",
+                "just"
+              ],
+              "excerpt": "Not just approximately, not just sometimes, but with an accuracy and scope that Wigner could only call miraculous."
+            },
+            {
+              "sentence": 23,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "Not just that mathematics works, but that particular mathematical structures, developed by pure mathematicians for purel"
+            },
+            {
+              "sentence": 71,
+              "adverbs": [
+                "entirely"
+              ],
+              "excerpt": "This doesn't dissolve the mystery entirely."
+            },
+            {
+              "sentence": 153,
+              "adverbs": [
+                "very"
+              ],
+              "excerpt": "Maybe the deepest mysteries resist explanation not because we lack information, but because the explanation would have t"
+            },
+            {
+              "sentence": 161,
+              "adverbs": [
+                "very"
+              ],
+              "excerpt": "<!-- deliberate:rhythm \u2014 closing staccato; the long self-referential sentence builds to maximum tension, then short sent"
+            }
+          ]
+        },
+        "hedges": 0,
+        "abstract_dense": {
+          "count": 0,
+          "instances": []
+        }
+      },
+      "comparison": [
+        {
+          "metric": "Reading Complexity (FK Grade)",
+          "piece_value": 10.9,
+          "collection_avg": 7.7,
+          "difference": 3.2,
+          "percent_diff": 41.5,
+          "unit": "higher = more complex",
+          "direction": "above"
+        },
+        {
+          "metric": "Average Sentence Length",
+          "piece_value": 13.5,
+          "collection_avg": 12.96,
+          "difference": 0.54,
+          "percent_diff": 4.2,
+          "unit": "words",
+          "direction": "above"
+        },
+        {
+          "metric": "Vocabulary Diversity (TTR)",
+          "piece_value": 0.35,
+          "collection_avg": 0.35,
+          "difference": -0.0,
+          "percent_diff": -0.7,
+          "unit": "higher = more diverse",
+          "direction": "below"
+        },
+        {
+          "metric": "Average Word Length",
+          "piece_value": 5.34,
+          "collection_avg": 4.72,
+          "difference": 0.62,
+          "percent_diff": 13.2,
+          "unit": "characters",
+          "direction": "above"
+        }
+      ],
+      "revision": {
+        "resolved": 0,
+        "skipped": 0,
+        "remaining": 4
       }
     },
     {
