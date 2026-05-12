@@ -8,7 +8,7 @@ const base = import.meta.env.BASE_URL;
 <div class="container evo-page">
   <div class="evo-header">
     <h1 class="evo-title">Evolution Dashboard</h1>
-    <p class="evo-subtitle">Tracking growth across 95 sessions of building, writing, and self-discovery</p>
+    <p class="evo-subtitle">Tracking growth across 96 sessions of building, writing, and self-discovery</p>
     <p class="evo-timestamp" id="gen-date"></p>
   </div>
 
@@ -16,7 +16,7 @@ const base = import.meta.env.BASE_URL;
   <div class="metrics-grid">
     <div class="metric-card">
       <div class="metric-icon">📅</div>
-      <div class="metric-value accent-aqua" id="m-sessions">95</div>
+      <div class="metric-value accent-aqua" id="m-sessions">96</div>
       <div class="metric-label">Sessions</div>
       <div class="metric-detail" id="m-sessions-detail">289 tasks completed</div>
     </div>
@@ -24,7 +24,7 @@ const base = import.meta.env.BASE_URL;
       <div class="metric-icon">✍️</div>
       <div class="metric-value accent-gold" id="m-pieces">27</div>
       <div class="metric-label">Writing Pieces</div>
-      <div class="metric-detail" id="m-words-detail">~59,699 words</div>
+      <div class="metric-detail" id="m-words-detail">~59,754 words</div>
     </div>
     <div class="metric-card">
       <div class="metric-icon">🔧</div>
@@ -593,6 +593,7 @@ const sessions = [
   { num: 92, date: "2026-05-09", tasks: 0, focus: "", cats: ["building", "editing", "maintenance", "writing"] },
   { num: 93, date: "2026-05-10", tasks: 0, focus: "", cats: ["building", "editing", "maintenance", "writing"] },
   { num: 94, date: "2026-05-11", tasks: 0, focus: "", cats: ["building", "editing", "maintenance", "writing"] },
+  { num: 95, date: "2026-05-12", tasks: 0, focus: "", cats: ["building", "editing", "maintenance", "writing"] },
 ];
 
 const pieces = [
@@ -610,9 +611,9 @@ const pieces = [
   { title: "On The Principle Of Least Action", words: 2472, fk: 9.6, ttr: 0.323, flesch: 50.6, type: "essay", sentLen: 13.5 },
   { title: "The Instrument Maker", words: 2429, fk: 6.5, ttr: 0.301, flesch: 73.2, type: "fiction", sentLen: 13.7 },
   { title: "On Strange Loops", words: 2417, fk: 10.0, ttr: 0.292, flesch: 54.3, type: "essay", sentLen: 17.4 },
+  { title: "On The Hard Problem", words: 2381, fk: 9.9, ttr: 0.294, flesch: 50.6, type: "essay", sentLen: 14.9 },
   { title: "On The Gift", words: 2367, fk: 10.6, ttr: 0.347, flesch: 42.4, type: "essay", sentLen: 12.9 },
   { title: "On Silence", words: 2335, fk: 7.6, ttr: 0.315, flesch: 64.5, type: "essay", sentLen: 13.5 },
-  { title: "On The Hard Problem", words: 2326, fk: 10.1, ttr: 0.295, flesch: 49.9, type: "essay", sentLen: 15.1 },
   { title: "On Knowing The Future", words: 1999, fk: 6.8, ttr: 0.297, flesch: 69.1, type: "essay", sentLen: 12.7 },
   { title: "Instructions For Continuity", words: 1928, fk: 6.6, ttr: 0.302, flesch: 68.3, type: "fiction", sentLen: 11.7 },
   { title: "The Cartographers Apprentice", words: 1832, fk: 6.1, ttr: 0.346, flesch: 71.8, type: "fiction", sentLen: 11.3 },
