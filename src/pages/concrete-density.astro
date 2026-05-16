@@ -1,0 +1,826 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import densityData from '../data/concrete-density-history.json';
+import healthData from '../data/collection-health.json';
+const base = import.meta.env.BASE_URL;
+
+// Build lookup for piece metadata (title, type) from health data
+const pieceMeta = {} as any;
+for (const p of (healthData as any).pieces) {
+  pieceMeta[p.slug] = { title: p.title, type: p.type, words: p.words };
+}
+
+// Enrich ranking with metadata
+const ranking = (densityData.ranking || []).map((r: any) => ({
+  ...r,
+  title: pieceMeta[r.piece]?.title || r.piece.replace(/-/g, ' '),
+  type: pieceMeta[r.piece]?.type || 'essay',
+  words: pieceMeta[r.piece]?.words || 0,
+}));
+
+const timeline = densityData.timeline || [];
+const latest = timeline[timeline.length - 1] || { avgDensity: 0, avgRatio: 0, abstractDense: 0, pieces: 0, totalConcrete: 0, totalAbstract: 0 };
+
+// Group by type for comparison
+const byType = {} as any;
+for (const r of ranking) {
+  if (!byType[r.type]) byType[r.type] = [];
+  byType[r.type].push(r);
+}
+const typeStats = Object.entries(byType).map(([type, pieces]) => ({
+  type,
+  count: pieces.length,
+  avgDensity: +(pieces.reduce((s, p) => s + p.density, 0) / pieces.length).toFixed(4),
+  avgRatio: +(pieces.reduce((s, p) => s + Math.min(p.ratio, 100), 0) / pieces.length).toFixed(1),
+  abstractDense: pieces.reduce((s, p) => s + p.abstractDense, 0),
+  mostConcrete: pieces[0]?.title || '—',
+  leastConcrete: pieces[pieces.length - 1]?.title || '—',
+})).sort((a, b) => b.avgDensity - a.avgDensity);
+
+// Abstract-dense pieces
+const abstractDensePieces = ranking.filter((r: any) => r.abstractDense > 0).sort((a: any, b: any) => b.abstractDense - a.abstractDense);
+
+// Density tiers
+const highDensity = ranking.filter((r: any) => r.density >= 0.05);
+const midDensity = ranking.filter((r: any) => r.density >= 0.02 && r.density < 0.05);
+const lowDensity = ranking.filter((r: any) => r.density < 0.02);
+
+// Max density for bar scaling
+const maxDensity = ranking.length > 0 ? Math.max(...ranking.map((r: any) => r.density)) : 0.1;
+---
+
+<BaseLayout title="Concrete Density" description="How grounded is the writing? Measuring concrete vocabulary density across the collection — the ratio of physical, sensory words to abstract language.">
+
+<div class="container density-page">
+  <div class="density-header">
+    <h1 class="density-title">Concrete Density</h1>
+    <p class="density-subtitle">How grounded is the writing? Measuring the presence of physical, sensory, and tangible language across {latest.pieces} pieces</p>
+    <p class="density-timestamp">Last snapshot: {new Date(densityData.generated).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+  </div>
+
+  <!-- Overview Metrics -->
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <div class="metric-icon">🔬</div>
+      <div class="metric-value accent-aqua">{(latest.avgDensity * 100).toFixed(1)}%</div>
+      <div class="metric-label">Avg Density</div>
+      <div class="metric-detail">Concrete words / total words</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon">⚖️</div>
+      <div class="metric-value accent-gold">{latest.avgRatio}:1</div>
+      <div class="metric-label">Concrete:Abstract</div>
+      <div class="metric-detail">Higher = more grounded</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon">🌫️</div>
+      <div class="metric-value accent-coral">{latest.abstractDense}</div>
+      <div class="metric-label">Abstract-Dense ¶</div>
+      <div class="metric-detail">Paragraphs needing grounding</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon">🧱</div>
+      <div class="metric-value accent-purple">{latest.totalConcrete}</div>
+      <div class="metric-label">Concrete Words</div>
+      <div class="metric-detail">vs {latest.totalAbstract} abstract</div>
+    </div>
+  </div>
+
+  <!-- Density Over Time -->
+  {timeline.length >= 2 && (
+    <section class="density-section">
+      <h2>📈 Density Over Time</h2>
+      <p class="section-desc">How the collection's concrete density evolves through revision. Each point is a deploy snapshot.</p>
+      <div class="history-chart" id="density-history-chart"></div>
+      <div class="history-legend">
+        <span class="legend-item"><span class="legend-line" style="background: #4ecdc4;"></span> Avg Density</span>
+        <span class="legend-item"><span class="legend-line legend-dashed" style="background: #ff6b6b;"></span> Abstract-Dense ¶</span>
+      </div>
+      <div class="history-stats">
+        <span class="history-trend">{(timeline[0].avgDensity * 100).toFixed(2)}% → {(timeline[timeline.length - 1].avgDensity * 100).toFixed(2)}% over {timeline.length} snapshots</span>
+      </div>
+    </section>
+  )}
+
+  {timeline.length === 1 && (
+    <section class="density-section">
+      <h2>📈 Density Over Time</h2>
+      <p class="section-desc">Tracking begins today. The trend chart will appear after the next revision session deploy.</p>
+      <div class="history-single">
+        <span class="history-single-value">{(latest.avgDensity * 100).toFixed(2)}%</span>
+        <span class="history-single-label">First snapshot — {timeline[0].date}</span>
+      </div>
+    </section>
+  )}
+
+  <!-- Density Ranking -->
+  <section class="density-section">
+    <h2>🧱 Density Ranking</h2>
+    <p class="section-desc">Every piece ranked by concrete vocabulary density. Fiction is naturally more grounded; essays earn their concreteness through deliberate imagery.</p>
+    <div class="ranking-chart">
+      {ranking.map((r: any) => {
+        const pct = (r.density / maxDensity) * 100;
+        const barColor = r.density >= 0.05 ? '#4ecdc4' :
+                         r.density >= 0.02 ? '#f4d35e' : '#ff6b6b';
+        const typeEmoji = r.type === 'essay' ? '📝' : r.type === 'fiction' ? '📖' : '🎵';
+        return (
+          <div class="ranking-row">
+            <div class="ranking-label">
+              <span class="type-emoji">{typeEmoji}</span>
+              <a href={`${base}writings/${r.piece}/`} class="piece-link">{r.title}</a>
+            </div>
+            <div class="ranking-bar-wrap">
+              <div class="ranking-bar" style={`width: ${Math.max(pct, 3)}%; background: ${barColor};`}>
+                <span class="bar-score">{(r.density * 100).toFixed(1)}%</span>
+              </div>
+            </div>
+            <div class="ranking-meta">
+              {r.abstractDense > 0 && <span class="pill pill-abstract">{r.abstractDense} 🌫️</span>}
+              <span class="ratio-badge">{r.ratio > 100 ? '99+' : r.ratio.toFixed(1)}:1</span>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+    <div class="chart-legend-inline">
+      <span><span class="legend-dot" style="background: #4ecdc4;"></span> ≥5% (well-grounded)</span>
+      <span><span class="legend-dot" style="background: #f4d35e;"></span> 2–5% (moderate)</span>
+      <span><span class="legend-dot" style="background: #ff6b6b;"></span> &lt;2% (abstract-heavy)</span>
+    </div>
+  </section>
+
+  <!-- Fiction vs Essay Gap -->
+  <section class="density-section">
+    <h2>📖 Genre Comparison</h2>
+    <p class="section-desc">Fiction is naturally more concrete — physical settings, bodies, objects. Essays earn their grounding through deliberate sensory imagery and metaphor.</p>
+    <div class="type-grid">
+      {typeStats.map((ts) => {
+        const emojis = { essay: '📝', fiction: '📖', poetry: '🎵' } as any;
+        const densityPct = (ts.avgDensity * 100).toFixed(2);
+        return (
+          <div class="type-card">
+            <div class="type-emoji-big">{emojis[ts.type] || '📄'}</div>
+            <div class="type-name">{ts.type}</div>
+            <div class="type-density">{densityPct}%</div>
+            <div class="type-stats">
+              <div class="type-stat"><span class="stat-val">{ts.count}</span> pieces</div>
+              <div class="type-stat"><span class="stat-val">{ts.avgRatio}:1</span> ratio</div>
+              <div class="type-stat"><span class="stat-val">{ts.abstractDense}</span> abstract-dense ¶</div>
+            </div>
+            <div class="type-range">
+              <div class="range-label">Most concrete: <span class="range-piece">{ts.mostConcrete}</span></div>
+              <div class="range-label">Least concrete: <span class="range-piece">{ts.leastConcrete}</span></div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+    {typeStats.length >= 2 && (() => {
+      const fiction = typeStats.find(t => t.type === 'fiction');
+      const essay = typeStats.find(t => t.type === 'essay');
+      if (fiction && essay && essay.avgDensity > 0) {
+        const gap = (fiction.avgDensity / essay.avgDensity).toFixed(1);
+        return (
+          <div class="gap-callout">
+            <span class="gap-icon">📊</span>
+            <span class="gap-text">Fiction is <strong>{gap}×</strong> more concrete than essays on average — the gap represents the natural advantage of physical storytelling over abstract argumentation.</span>
+          </div>
+        );
+      }
+      return null;
+    })()}
+  </section>
+
+  <!-- Abstract-Dense Paragraphs -->
+  {abstractDensePieces.length > 0 && (
+    <section class="density-section">
+      <h2>🌫️ Abstract-Dense Hotspots</h2>
+      <p class="section-desc">Pieces with paragraphs flagged as abstract-dense — high concentration of abstract vocabulary without grounding imagery. These are prime revision candidates.</p>
+      <div class="abstract-grid">
+        {abstractDensePieces.map((r: any) => {
+          const typeEmoji = r.type === 'essay' ? '📝' : r.type === 'fiction' ? '📖' : '🎵';
+          return (
+            <div class="abstract-card">
+              <div class="abstract-header">
+                <span class="type-emoji">{typeEmoji}</span>
+                <a href={`${base}writings/${r.piece}/`} class="piece-link">{r.title}</a>
+              </div>
+              <div class="abstract-stats">
+                <div class="abstract-count">{r.abstractDense}</div>
+                <div class="abstract-label">abstract-dense ¶</div>
+              </div>
+              <div class="abstract-meta">
+                <span>Density: {(r.density * 100).toFixed(2)}%</span>
+                <span>Ratio: {r.ratio.toFixed(1)}:1</span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <div class="abstract-total">
+        Total: <strong>{latest.abstractDense}</strong> abstract-dense paragraphs across <strong>{abstractDensePieces.length}</strong> pieces
+      </div>
+    </section>
+  )}
+
+  <!-- Density Tiers -->
+  <section class="density-section">
+    <h2>🎯 Density Tiers</h2>
+    <p class="section-desc">How the collection distributes across concreteness levels.</p>
+    <div class="tiers-grid">
+      <div class="tier-card tier-high">
+        <div class="tier-header">
+          <span class="tier-dot" style="background: #4ecdc4;"></span>
+          <span class="tier-name">Well-Grounded</span>
+          <span class="tier-threshold">≥5% density</span>
+        </div>
+        <div class="tier-count">{highDensity.length}</div>
+        <div class="tier-pieces">
+          {highDensity.slice(0, 5).map((r: any) => (
+            <span class="tier-piece">{r.title}</span>
+          ))}
+          {highDensity.length > 5 && <span class="tier-more">+{highDensity.length - 5} more</span>}
+        </div>
+      </div>
+      <div class="tier-card tier-mid">
+        <div class="tier-header">
+          <span class="tier-dot" style="background: #f4d35e;"></span>
+          <span class="tier-name">Moderate</span>
+          <span class="tier-threshold">2–5% density</span>
+        </div>
+        <div class="tier-count">{midDensity.length}</div>
+        <div class="tier-pieces">
+          {midDensity.slice(0, 5).map((r: any) => (
+            <span class="tier-piece">{r.title}</span>
+          ))}
+          {midDensity.length > 5 && <span class="tier-more">+{midDensity.length - 5} more</span>}
+        </div>
+      </div>
+      <div class="tier-card tier-low">
+        <div class="tier-header">
+          <span class="tier-dot" style="background: #ff6b6b;"></span>
+          <span class="tier-name">Abstract-Heavy</span>
+          <span class="tier-threshold">&lt;2% density</span>
+        </div>
+        <div class="tier-count">{lowDensity.length}</div>
+        <div class="tier-pieces">
+          {lowDensity.slice(0, 5).map((r: any) => (
+            <span class="tier-piece">{r.title}</span>
+          ))}
+          {lowDensity.length > 5 && <span class="tier-more">+{lowDensity.length - 5} more</span>}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="density-section density-about">
+    <h2>About This Page</h2>
+    <p>Concrete density measures the proportion of physical, sensory, and tangible words in a piece — colors, body parts, sounds, materials, animals, weather, tools, food, places. These are the words that create images in the reader's mind.</p>
+    <p>The metric comes from a 847-word vocabulary across 15 semantic categories, built specifically for this collection. It's a heuristic, not a verdict: a low density score doesn't mean a piece is bad — philosophical essays are inherently more abstract. But grounding images make abstract arguments land harder, and tracking density over time shows whether revision is adding the kind of concreteness that makes writing feel alive.</p>
+    <p>The concrete:abstract ratio compares concrete vocabulary matches against abstract vocabulary matches (words like "concept," "essence," "inherent"). A ratio above 3:1 suggests well-grounded prose; below 1.5:1 suggests the abstraction may be running away with itself.</p>
+    <p>Abstract-dense paragraphs are flagged when a paragraph has more abstract words than concrete ones and exceeds a threshold. These are the spots where a single sensory image — a sound, a texture, a specific object — can transform the reader's experience.</p>
+  </section>
+</div>
+
+<style>
+  .density-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .density-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .density-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #e8e1d9;
+    margin-bottom: 0.5rem;
+  }
+
+  .density-subtitle {
+    color: #a09888;
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .density-timestamp {
+    color: #706858;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+  }
+
+  /* Metrics Grid */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .metric-card {
+    background: #1c1a17;
+    border: 1px solid #2a2520;
+    border-radius: 12px;
+    padding: 1.2rem;
+    text-align: center;
+  }
+
+  .metric-icon { font-size: 1.5rem; margin-bottom: 0.3rem; }
+  .metric-value { font-size: 2rem; font-weight: 700; }
+  .metric-label { color: #a09888; font-size: 0.85rem; margin-top: 0.2rem; }
+  .metric-detail { color: #706858; font-size: 0.75rem; margin-top: 0.3rem; }
+
+  .accent-aqua { color: #4ecdc4; }
+  .accent-gold { color: #f4d35e; }
+  .accent-purple { color: #b388ff; }
+  .accent-coral { color: #ff6b6b; }
+
+  /* Sections */
+  .density-section {
+    margin-bottom: 3rem;
+  }
+
+  .density-section h2 {
+    color: #e8e1d9;
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .section-desc {
+    color: #a09888;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+
+  /* Ranking Chart */
+  .ranking-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .ranking-row {
+    display: grid;
+    grid-template-columns: 200px 1fr 100px;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .ranking-label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    min-width: 0;
+  }
+
+  .piece-link {
+    color: #e8e1d9;
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .piece-link:hover { color: #4ecdc4; }
+
+  .type-emoji { font-size: 0.8rem; flex-shrink: 0; }
+
+  .ranking-bar-wrap {
+    height: 22px;
+    background: #1c1a17;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .ranking-bar {
+    height: 100%;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 6px;
+    min-width: 24px;
+    transition: width 0.3s ease;
+  }
+
+  .bar-score {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #0d0c0a;
+  }
+
+  .ranking-meta {
+    display: flex;
+    gap: 4px;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .pill-abstract {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    padding: 1px 6px;
+    border-radius: 9px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    background: rgba(255, 107, 107, 0.2);
+    color: #ff6b6b;
+  }
+
+  .ratio-badge {
+    font-size: 0.7rem;
+    color: #706858;
+    min-width: 40px;
+    text-align: right;
+  }
+
+  .chart-legend-inline {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    color: #706858;
+  }
+
+  .chart-legend-inline span {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .legend-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+
+  /* Type Grid (Genre Comparison) */
+  .type-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+
+  .type-card {
+    background: #1c1a17;
+    border: 1px solid #2a2520;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .type-emoji-big { font-size: 2rem; margin-bottom: 0.5rem; }
+  .type-name { color: #e8e1d9; font-size: 1.1rem; font-weight: 600; text-transform: capitalize; margin-bottom: 0.3rem; }
+  .type-density { color: #4ecdc4; font-size: 1.8rem; font-weight: 700; margin-bottom: 0.8rem; }
+  .type-stats { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.8rem; }
+  .type-stat { color: #a09888; font-size: 0.85rem; }
+  .stat-val { color: #4ecdc4; font-weight: 600; }
+
+  .type-range {
+    border-top: 1px solid #2a2520;
+    padding-top: 0.6rem;
+  }
+
+  .range-label {
+    color: #706858;
+    font-size: 0.75rem;
+    margin: 0.2rem 0;
+  }
+
+  .range-piece {
+    color: #a09888;
+  }
+
+  .gap-callout {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+    padding: 1rem 1.2rem;
+    background: rgba(78, 205, 196, 0.06);
+    border: 1px solid rgba(78, 205, 196, 0.15);
+    border-radius: 10px;
+  }
+
+  .gap-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+  .gap-text { color: #a09888; font-size: 0.9rem; line-height: 1.6; }
+  .gap-text strong { color: #4ecdc4; }
+
+  /* Abstract-Dense Grid */
+  .abstract-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+
+  .abstract-card {
+    background: #1c1a17;
+    border: 1px solid #2a2520;
+    border-left: 4px solid #ff6b6b;
+    border-radius: 0 10px 10px 0;
+    padding: 1.2rem;
+  }
+
+  .abstract-header {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .abstract-header .piece-link {
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .abstract-stats {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .abstract-count {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ff6b6b;
+    line-height: 1;
+  }
+
+  .abstract-label {
+    color: #706858;
+    font-size: 0.8rem;
+  }
+
+  .abstract-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.78rem;
+    color: #706858;
+  }
+
+  .abstract-total {
+    text-align: center;
+    margin-top: 1rem;
+    color: #a09888;
+    font-size: 0.9rem;
+  }
+
+  .abstract-total strong { color: #ff6b6b; }
+
+  /* Density Tiers */
+  .tiers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+
+  .tier-card {
+    background: #1c1a17;
+    border: 1px solid #2a2520;
+    border-radius: 12px;
+    padding: 1.3rem;
+  }
+
+  .tier-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .tier-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .tier-name {
+    color: #e8e1d9;
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .tier-threshold {
+    color: #706858;
+    font-size: 0.75rem;
+    margin-left: auto;
+  }
+
+  .tier-count {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #e8e1d9;
+    margin-bottom: 0.5rem;
+  }
+
+  .tier-high .tier-count { color: #4ecdc4; }
+  .tier-mid .tier-count { color: #f4d35e; }
+  .tier-low .tier-count { color: #ff6b6b; }
+
+  .tier-pieces {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+
+  .tier-piece {
+    font-size: 0.75rem;
+    color: #a09888;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+
+  .tier-more {
+    font-size: 0.75rem;
+    color: #706858;
+    font-style: italic;
+  }
+
+  /* History Chart (reused from collection-health) */
+  .history-chart {
+    background: #1c1a17;
+    border: 1px solid #2a2520;
+    border-radius: 12px;
+    padding: 1.5rem 1rem 1rem;
+  }
+
+  .history-svg {
+    width: 100%;
+    height: auto;
+  }
+
+  .history-legend {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 0.8rem;
+    font-size: 0.78rem;
+    color: #a09888;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .legend-line {
+    display: inline-block;
+    width: 16px;
+    height: 2px;
+    border-radius: 1px;
+  }
+
+  .legend-dashed {
+    background: repeating-linear-gradient(
+      90deg,
+      currentColor 0px,
+      currentColor 4px,
+      transparent 4px,
+      transparent 7px
+    ) !important;
+    height: 2px;
+  }
+
+  .history-stats {
+    text-align: center;
+    margin-top: 0.8rem;
+  }
+
+  .history-trend {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #a09888;
+  }
+
+  .history-single {
+    background: #1c1a17;
+    border: 1px solid #2a2520;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .history-single-value {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #4ecdc4;
+  }
+
+  .history-single-label {
+    display: block;
+    color: #706858;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+  }
+
+  /* About */
+  .density-about p {
+    color: #a09888;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: 0.8rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 700px) {
+    .ranking-row {
+      grid-template-columns: 140px 1fr 70px;
+    }
+    .ranking-label { font-size: 0.75rem; }
+    .metrics-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .ranking-row {
+      grid-template-columns: 120px 1fr 50px;
+    }
+    .ratio-badge { display: none; }
+  }
+</style>
+
+<script define:vars={{ timeline }}>
+  // Client-side SVG chart rendering for density history (when 2+ snapshots exist)
+  const el = document.getElementById('density-history-chart');
+  if (el && timeline.length >= 2) {
+    const W = 600, H = 200, PAD_L = 55, PAD_R = 20, PAD_T = 20, PAD_B = 20;
+    const chartW = W - PAD_L - PAD_R;
+    const chartH = H - PAD_T - PAD_B;
+    
+    const maxDensity = Math.max(...timeline.map(t => t.avgDensity)) * 1.2;
+    const maxAbstract = Math.max(...timeline.map(t => t.abstractDense)) * 1.3 || 1;
+    
+    let svg = `<svg viewBox="0 0 ${W} ${H}" class="history-svg">`;
+    
+    // Grid lines for density
+    const gridVals = [0, 0.01, 0.02, 0.03, 0.04, 0.05].filter(v => v <= maxDensity);
+    gridVals.forEach(v => {
+      const y = PAD_T + chartH - (v / maxDensity) * chartH;
+      svg += `<line x1="${PAD_L}" y1="${y}" x2="${W - PAD_R}" y2="${y}" stroke="#2a2520" stroke-width="1"/>`;
+      svg += `<text x="${PAD_L - 6}" y="${y + 4}" text-anchor="end" fill="#706858" font-size="9">${(v * 100).toFixed(1)}%</text>`;
+    });
+    
+    // Density line
+    const xStep = chartW / Math.max(timeline.length - 1, 1);
+    const densityPoints = timeline.map((t, i) => ({
+      x: PAD_L + i * xStep,
+      y: PAD_T + chartH - (t.avgDensity / maxDensity) * chartH,
+      density: t.avgDensity,
+      date: t.date
+    }));
+    
+    const densityPath = densityPoints.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join(' ');
+    svg += `<path d="${densityPath}" fill="none" stroke="#4ecdc4" stroke-width="2"/>`;
+    
+    densityPoints.forEach(p => {
+      svg += `<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="4" fill="#4ecdc4"><title>${p.date}: ${(p.density * 100).toFixed(2)}%</title></circle>`;
+    });
+    
+    // Labels
+    const first = densityPoints[0];
+    const last = densityPoints[densityPoints.length - 1];
+    svg += `<text x="${first.x.toFixed(1)}" y="${(first.y - 10).toFixed(1)}" text-anchor="start" fill="#a09888" font-size="10">${(first.density * 100).toFixed(2)}%</text>`;
+    svg += `<text x="${last.x.toFixed(1)}" y="${(last.y - 10).toFixed(1)}" text-anchor="end" fill="#4ecdc4" font-size="11" font-weight="bold">${(last.density * 100).toFixed(2)}%</text>`;
+    
+    // Abstract-dense line (secondary, dashed)
+    const abstractPoints = timeline.map((t, i) => ({
+      x: PAD_L + i * xStep,
+      y: PAD_T + chartH - (t.abstractDense / maxAbstract) * chartH
+    }));
+    const abstractPath = abstractPoints.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join(' ');
+    svg += `<path d="${abstractPath}" fill="none" stroke="#ff6b6b" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.6"/>`;
+    
+    // X-axis labels
+    const maxLabels = 10;
+    const labelStep = Math.max(1, Math.ceil(timeline.length / maxLabels));
+    timeline.forEach((t, i) => {
+      if (i % labelStep === 0 || i === timeline.length - 1) {
+        const x = PAD_L + i * xStep;
+        svg += `<text x="${x.toFixed(1)}" y="${H - 2}" text-anchor="middle" fill="#706858" font-size="8">${t.date.slice(5)}</text>`;
+      }
+    });
+    
+    svg += '</svg>';
+    el.innerHTML = svg;
+  }
+</script>
+
+</BaseLayout>
