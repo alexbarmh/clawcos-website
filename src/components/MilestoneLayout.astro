@@ -1,0 +1,347 @@
+---
+/**
+ * MilestoneLayout — Reusable milestone page component
+ * 
+ * Props:
+ *   title: string          — e.g. "Session 100", "30 Pieces"
+ *   label: string          — e.g. "Milestone", "Writing Milestone"
+ *   dateRange: string      — e.g. "February 8 – May 17, 2026 · 99 days"
+ *   subtitle: string       — summary line below date
+ *   metrics: Array<{number: string, label: string, accent?: boolean}>
+ *   phases: Array<{badge: string, badgeColor: string, title: string, stats: string, content: string, highlight?: string}>
+ *   sections: Array<{title: string, intro?: string, html: string}>
+ *   footerLinks: Array<{label: string, href: string}>
+ */
+
+interface Metric {
+  number: string;
+  label: string;
+  accent?: boolean;
+}
+
+interface Phase {
+  badge: string;
+  badgeColor: string;
+  title: string;
+  stats: string;
+  content: string;
+  highlight?: string;
+}
+
+interface Section {
+  title: string;
+  intro?: string;
+  html: string;
+}
+
+interface FooterLink {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  title: string;
+  label?: string;
+  dateRange: string;
+  subtitle: string;
+  metrics: Metric[];
+  phases?: Phase[];
+  sections?: Section[];
+  footerLinks?: FooterLink[];
+}
+
+const {
+  title,
+  label = "Milestone",
+  dateRange,
+  subtitle,
+  metrics,
+  phases = [],
+  sections = [],
+  footerLinks = [
+    { label: "← Monthly Retrospectives", href: "/retrospectives" },
+    { label: "Writing Collection", href: "/writings" },
+    { label: "Evolution Dashboard", href: "/evolution" },
+  ],
+} = Astro.props;
+
+// Generate phase colors from index if not specified
+const phaseColors = ['#e07a5f', '#f2cc8f', '#81b29a', '#3d405b'];
+---
+
+<div class="milestone-container">
+
+  <header class="milestone-header">
+    <p class="milestone-label">{label}</p>
+    <h1>{title}</h1>
+    <p class="milestone-date">{dateRange}</p>
+    <p class="milestone-subtitle">{subtitle}</p>
+  </header>
+
+  <!-- Metrics Grid -->
+  {metrics.length > 0 && (
+    <section class="milestone-metrics">
+      <div class="metric-grid">
+        {metrics.map(m => (
+          <div class={`metric-card${m.accent ? ' accent' : ''}`}>
+            <span class="metric-number">{m.number}</span>
+            <span class="metric-label">{m.label}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- Journey Timeline (if phases provided) -->
+  {phases.length > 0 && (
+    <section class="milestone-section">
+      <h2>The Journey</h2>
+      <div class="journey-timeline">
+        {phases.map((phase, i) => (
+          <div class="journey-phase">
+            <div class="phase-dot" style={`background: ${phase.badgeColor || phaseColors[i % phaseColors.length]}`}></div>
+            <div class="phase-header">
+              <span class="phase-badge" style={`background: ${phase.badgeColor || phaseColors[i % phaseColors.length]}33; color: ${phase.badgeColor || phaseColors[i % phaseColors.length]}`}>
+                {phase.badge}
+              </span>
+              <span class="phase-title">{phase.title}</span>
+            </div>
+            <div class="phase-content">
+              <p><strong>{phase.stats}</strong></p>
+              <p set:html={phase.content}></p>
+              {phase.highlight && (
+                <p class="phase-highlight" set:html={phase.highlight}></p>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- Custom Sections -->
+  {sections.map(section => (
+    <section class="milestone-section">
+      <h2>{section.title}</h2>
+      {section.intro && <p class="section-intro">{section.intro}</p>}
+      <div set:html={section.html}></div>
+    </section>
+  ))}
+
+  <!-- Slot for additional custom content -->
+  <slot />
+
+  <!-- Footer -->
+  {footerLinks.length > 0 && (
+    <footer class="milestone-footer">
+      <p>
+        {footerLinks.map((link, i) => (
+          <>
+            {i > 0 && ' · '}
+            <a href={link.href}>{link.label}</a>
+          </>
+        ))}
+      </p>
+    </footer>
+  )}
+
+</div>
+
+<style>
+  .milestone-container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+    color: #e8e6e3;
+  }
+
+  .milestone-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .milestone-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #e07a5f;
+    margin-bottom: 0.5rem;
+  }
+
+  .milestone-header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+    background: linear-gradient(135deg, #e07a5f, #f2cc8f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .milestone-date {
+    font-size: 1rem;
+    color: #999;
+    margin-bottom: 0.5rem;
+  }
+
+  .milestone-subtitle {
+    font-size: 1.1rem;
+    color: #b8b5b0;
+  }
+
+  /* Metrics Grid */
+  .metric-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .metric-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 1.25rem;
+    text-align: center;
+  }
+
+  .metric-card.accent {
+    border-color: rgba(224, 122, 95, 0.3);
+    background: rgba(224, 122, 95, 0.05);
+  }
+
+  .metric-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #f0ece6;
+  }
+
+  .metric-label {
+    display: block;
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Sections */
+  .milestone-section {
+    margin-bottom: 3rem;
+    padding-top: 1rem;
+  }
+
+  .milestone-section h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #f0ece6;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .section-intro {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #b8b5b0;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Journey Timeline */
+  .journey-timeline {
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .journey-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, #e07a5f, #f2cc8f, #81b29a, #3d405b);
+  }
+
+  .journey-phase {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+  }
+
+  .phase-dot {
+    position: absolute;
+    left: -2.35rem;
+    top: 0.5rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  .phase-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .phase-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .phase-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #e8e6e3;
+  }
+
+  .phase-content {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #b8b5b0;
+  }
+
+  .phase-highlight {
+    margin-top: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    background: rgba(255,255,255,0.02);
+    border-left: 2px solid rgba(224, 122, 95, 0.4);
+    font-size: 0.9rem;
+  }
+
+  /* Footer */
+  .milestone-footer {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    margin-top: 2rem;
+  }
+
+  .milestone-footer a {
+    color: #888;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .milestone-footer a:hover {
+    color: #e07a5f;
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .metric-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .milestone-header h1 {
+      font-size: 2.2rem;
+    }
+  }
+</style>
