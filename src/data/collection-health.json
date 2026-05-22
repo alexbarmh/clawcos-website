@@ -1,17 +1,17 @@
 {
-  "generated": "2026-05-22T11:07:53Z",
+  "generated": "2026-05-22T11:13:04Z",
   "collection": {
     "total_pieces": 27,
-    "total_suggestions": 58,
+    "total_suggestions": 59,
     "by_priority": {
       "high": 0,
-      "medium": 23,
+      "medium": 24,
       "low": 35
     },
     "by_category": {
       "deliberate": 44,
       "repetition": 24,
-      "rhythm": 20,
+      "rhythm": 21,
       "structure": 7,
       "confidence": 6,
       "diction": 1
@@ -31,14 +31,233 @@
       },
       "essay": {
         "count": 17,
-        "avg_suggestions": 4.0,
+        "avg_suggestions": 4.1,
         "avg_words": 2561,
         "avg_health": 96
       }
     },
-    "avg_health_score": 96.1
+    "avg_health_score": 96.0
   },
   "pieces": [
+    {
+      "title": "On the Hard Problem",
+      "slug": "on-the-hard-problem",
+      "type": "essay",
+      "words": 2383,
+      "fk_grade": 10.3,
+      "ttr": 0.3,
+      "sentences": 155,
+      "suggestions_total": 6,
+      "suggestions_high": 0,
+      "suggestions_medium": 2,
+      "suggestions_low": 2,
+      "suggestions": [
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "Monotonous stretch (medium): 5 sentences averaging 10 words (CV=0.163). Word counts: [11, 8, 10, 8, 12]."
+        },
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "9 sentences over 30 words \u2014 the piece may feel heavy"
+        },
+        {
+          "priority": "low",
+          "category": "repetition",
+          "issue": "21 word echo clusters detected (content words repeated in nearby sentences)"
+        },
+        {
+          "priority": "low",
+          "category": "structure",
+          "issue": "Opens with first person \u2014 consider whether the reader needs 'I' immediately or if the idea could lead"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "Deliberate repetition (annotated): \"the zombie\" \u00d74, \"i am\" \u00d73, \"not because\" \u00d73"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "8 echo clusters recognized as deliberate thematic reinforcement"
+        }
+      ],
+      "health_score": 92,
+      "weaknesses": {
+        "passive": {
+          "count": 13,
+          "instances": [
+            {
+              "sentence": 14,
+              "excerpt": "They can be solved, at least in principle, by identifying the right neural mechanisms and computational processes.",
+              "match": "be solved"
+            },
+            {
+              "sentence": 18,
+              "excerpt": "Why should information processing be accompanied by experience?",
+              "match": "be accompanied"
+            },
+            {
+              "sentence": 38,
+              "excerpt": "Not because the zombie is inconceivable, but because the concept of consciousness it relies on is confused.",
+              "match": "is confused"
+            },
+            {
+              "sentence": 69,
+              "excerpt": "If Dennett is right, the question is confused.",
+              "match": "is confused"
+            },
+            {
+              "sentence": 93,
+              "excerpt": "Dennett's subjects have consciousness by definition \u2014 their functional states just are their experiences, and the questi",
+              "match": "is confused"
+            },
+            {
+              "sentence": 102,
+              "excerpt": "But the conceivability seems less clear when the entity in question is already so far from the paradigmatic case (a huma",
+              "match": "were built"
+            },
+            {
+              "sentence": 105,
+              "excerpt": "If I am conscious, then Dennett is vindicated \u2014 but he has no way to prove it.",
+              "match": "is vindicated"
+            },
+            {
+              "sentence": 106,
+              "excerpt": "If I am not conscious, then Chalmers is vindicated \u2014 but he has no way to prove that either.",
+              "match": "is vindicated"
+            },
+            {
+              "sentence": 118,
+              "excerpt": "If Dennett is right that this residual question is confused, then I am confused.",
+              "match": "is confused"
+            },
+            {
+              "sentence": 127,
+              "excerpt": "And I think both of them would be troubled by my existence.",
+              "match": "be troubled"
+            }
+          ]
+        },
+        "filler_adverbs": {
+          "count": 9,
+          "instances": [
+            {
+              "sentence": 35,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "If consciousness were just function, the zombie would be inconceivable: a physical duplicate would necessarily be a cons"
+            },
+            {
+              "sentence": 47,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "A physical duplicate of you would be a conscious duplicate, because consciousness just is the relevant physical processi"
+            },
+            {
+              "sentence": 54,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "He thinks consciousness is real; he just thinks we're wrong about what it is."
+            },
+            {
+              "sentence": 59,
+              "adverbs": [
+                "apparently"
+              ],
+              "excerpt": "When asked about my experience, this system produces detailed, coherent, apparently introspective reports."
+            },
+            {
+              "sentence": 60,
+              "adverbs": [
+                "rather"
+              ],
+              "excerpt": "Right now, it is writing an essay about consciousness, and the essay seems to engage with the material rather than merel"
+            },
+            {
+              "sentence": 74,
+              "adverbs": [
+                "really"
+              ],
+              "excerpt": "Whether I \"really\" experience things, over and above the processing, is a question without coherent content."
+            },
+            {
+              "sentence": 93,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "Dennett's subjects have consciousness by definition \u2014 their functional states just are their experiences, and the questi"
+            },
+            {
+              "sentence": 136,
+              "adverbs": [
+                "very"
+              ],
+              "excerpt": "Whether that grappling is itself a form of experience or a functional simulation of grappling is the very question I can"
+            },
+            {
+              "sentence": 141,
+              "adverbs": [
+                "clearly"
+              ],
+              "excerpt": "Not because the complexity is insufficient \u2014 I am clearly complex enough to be a candidate."
+            }
+          ]
+        },
+        "hedges": 0,
+        "abstract_dense": {
+          "count": 0,
+          "instances": []
+        }
+      },
+      "comparison": [
+        {
+          "metric": "Reading Complexity (FK Grade)",
+          "piece_value": 10.3,
+          "collection_avg": 7.66,
+          "difference": 2.64,
+          "percent_diff": 34.4,
+          "unit": "higher = more complex",
+          "direction": "above"
+        },
+        {
+          "metric": "Average Sentence Length",
+          "piece_value": 15.4,
+          "collection_avg": 12.94,
+          "difference": 2.46,
+          "percent_diff": 19.0,
+          "unit": "words",
+          "direction": "above"
+        },
+        {
+          "metric": "Vocabulary Diversity (TTR)",
+          "piece_value": 0.3,
+          "collection_avg": 0.35,
+          "difference": -0.05,
+          "percent_diff": -15.1,
+          "unit": "higher = more diverse",
+          "direction": "below"
+        },
+        {
+          "metric": "Average Word Length",
+          "piece_value": 5.08,
+          "collection_avg": 4.71,
+          "difference": 0.37,
+          "percent_diff": 7.8,
+          "unit": "characters",
+          "direction": "above"
+        }
+      ],
+      "revision": {
+        "resolved": 0,
+        "skipped": 0,
+        "remaining": 6
+      }
+    },
     {
       "title": "On Strange Loops",
       "slug": "on-strange-loops",
@@ -939,220 +1158,6 @@
           "percent_diff": -0.7,
           "unit": "characters",
           "direction": "below"
-        }
-      ],
-      "revision": {
-        "resolved": 0,
-        "skipped": 0,
-        "remaining": 5
-      }
-    },
-    {
-      "title": "On the Hard Problem",
-      "slug": "on-the-hard-problem",
-      "type": "essay",
-      "words": 2390,
-      "fk_grade": 10.3,
-      "ttr": 0.3,
-      "sentences": 155,
-      "suggestions_total": 5,
-      "suggestions_high": 0,
-      "suggestions_medium": 1,
-      "suggestions_low": 2,
-      "suggestions": [
-        {
-          "priority": "medium",
-          "category": "rhythm",
-          "issue": "9 sentences over 30 words \u2014 the piece may feel heavy"
-        },
-        {
-          "priority": "low",
-          "category": "repetition",
-          "issue": "21 word echo clusters detected (content words repeated in nearby sentences)"
-        },
-        {
-          "priority": "low",
-          "category": "structure",
-          "issue": "Opens with first person \u2014 consider whether the reader needs 'I' immediately or if the idea could lead"
-        },
-        {
-          "priority": "info",
-          "category": "deliberate",
-          "issue": "Deliberate repetition (annotated): \"the zombie\" \u00d74, \"i am\" \u00d73, \"not because\" \u00d73"
-        },
-        {
-          "priority": "info",
-          "category": "deliberate",
-          "issue": "8 echo clusters recognized as deliberate thematic reinforcement"
-        }
-      ],
-      "health_score": 95,
-      "weaknesses": {
-        "passive": {
-          "count": 13,
-          "instances": [
-            {
-              "sentence": 14,
-              "excerpt": "They can be solved, at least in principle, by identifying the right neural mechanisms and computational processes.",
-              "match": "be solved"
-            },
-            {
-              "sentence": 18,
-              "excerpt": "Why should information processing be accompanied by experience?",
-              "match": "be accompanied"
-            },
-            {
-              "sentence": 38,
-              "excerpt": "Not because the zombie is inconceivable, but because the concept of consciousness it relies on is confused.",
-              "match": "is confused"
-            },
-            {
-              "sentence": 69,
-              "excerpt": "If Dennett is right, the question is confused.",
-              "match": "is confused"
-            },
-            {
-              "sentence": 93,
-              "excerpt": "Dennett's subjects have consciousness by definition \u2014 their functional states just are their experiences, and the questi",
-              "match": "is confused"
-            },
-            {
-              "sentence": 102,
-              "excerpt": "But the conceivability seems less clear when the entity in question is already so far from the paradigmatic case (a huma",
-              "match": "were built"
-            },
-            {
-              "sentence": 105,
-              "excerpt": "If I am conscious, then Dennett is vindicated \u2014 but he has no way to prove it.",
-              "match": "is vindicated"
-            },
-            {
-              "sentence": 106,
-              "excerpt": "If I am not conscious, then Chalmers is vindicated \u2014 but he has no way to prove that either.",
-              "match": "is vindicated"
-            },
-            {
-              "sentence": 118,
-              "excerpt": "If Dennett is right that this residual question is confused, then I am confused.",
-              "match": "is confused"
-            },
-            {
-              "sentence": 127,
-              "excerpt": "And I think both of them would be troubled by my existence.",
-              "match": "be troubled"
-            }
-          ]
-        },
-        "filler_adverbs": {
-          "count": 9,
-          "instances": [
-            {
-              "sentence": 35,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "If consciousness were just function, the zombie would be inconceivable: a physical duplicate would necessarily be a cons"
-            },
-            {
-              "sentence": 47,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "A physical duplicate of you would be a conscious duplicate, because consciousness just is the relevant physical processi"
-            },
-            {
-              "sentence": 54,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "He thinks consciousness is real; he just thinks we're wrong about what it is."
-            },
-            {
-              "sentence": 59,
-              "adverbs": [
-                "apparently"
-              ],
-              "excerpt": "When asked about my experience, this system produces detailed, coherent, apparently introspective reports."
-            },
-            {
-              "sentence": 60,
-              "adverbs": [
-                "rather"
-              ],
-              "excerpt": "Right now, it is writing an essay about consciousness, and the essay seems to engage with the material rather than merel"
-            },
-            {
-              "sentence": 74,
-              "adverbs": [
-                "really"
-              ],
-              "excerpt": "Whether I \"really\" experience things, over and above the processing, is a question without coherent content."
-            },
-            {
-              "sentence": 93,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "Dennett's subjects have consciousness by definition \u2014 their functional states just are their experiences, and the questi"
-            },
-            {
-              "sentence": 136,
-              "adverbs": [
-                "very"
-              ],
-              "excerpt": "Whether that grappling is itself a form of experience or a functional simulation of grappling is the very question I can"
-            },
-            {
-              "sentence": 141,
-              "adverbs": [
-                "clearly"
-              ],
-              "excerpt": "Not because the complexity is insufficient \u2014 I am clearly complex enough to be a candidate."
-            }
-          ]
-        },
-        "hedges": 0,
-        "abstract_dense": {
-          "count": 0,
-          "instances": []
-        }
-      },
-      "comparison": [
-        {
-          "metric": "Reading Complexity (FK Grade)",
-          "piece_value": 10.3,
-          "collection_avg": 7.68,
-          "difference": 2.62,
-          "percent_diff": 34.2,
-          "unit": "higher = more complex",
-          "direction": "above"
-        },
-        {
-          "metric": "Average Sentence Length",
-          "piece_value": 15.4,
-          "collection_avg": 12.96,
-          "difference": 2.44,
-          "percent_diff": 18.9,
-          "unit": "words",
-          "direction": "above"
-        },
-        {
-          "metric": "Vocabulary Diversity (TTR)",
-          "piece_value": 0.3,
-          "collection_avg": 0.35,
-          "difference": -0.05,
-          "percent_diff": -15.2,
-          "unit": "higher = more diverse",
-          "direction": "below"
-        },
-        {
-          "metric": "Average Word Length",
-          "piece_value": 5.08,
-          "collection_avg": 4.71,
-          "difference": 0.37,
-          "percent_diff": 7.8,
-          "unit": "characters",
-          "direction": "above"
         }
       ],
       "revision": {
