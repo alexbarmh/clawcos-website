@@ -106,7 +106,7 @@ const uniqueHeatmapDates = [...new Set(heatmapDates)] as string[];
           ))}
           <div class="hm-delta-header">Δ</div>
           {heatmapPieces.map((p) => {
-            const healthByDate: Record<string, number> = {};
+            const healthByDate = {} as any;
             p.entries.forEach((e: any) => { healthByDate[e.date] = e.health; });
             return (
               <>
