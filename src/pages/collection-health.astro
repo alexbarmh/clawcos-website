@@ -4,6 +4,29 @@ import healthData from '../data/collection-health.json';
 import historyRaw from '../data/health-history.json';
 const base = import.meta.env.BASE_URL;
 const timeline = historyRaw?.timeline || [];
+const pieceHistory = historyRaw?.pieces || {};
+// Build heatmap data: sort pieces by current health (worst first)
+const heatmapPieces = Object.entries(pieceHistory)
+  .map(([slug, entries]: [string, any[]]) => {
+    const latest = entries[entries.length - 1];
+    const earliest = entries[0];
+    const title = slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
+      .replace(/^On /, 'On ').replace(/^The /, 'The ');
+    return {
+      slug,
+      title,
+      entries,
+      currentHealth: latest?.health ?? 0,
+      delta: (latest?.health ?? 0) - (earliest?.health ?? 0),
+    };
+  })
+  .sort((a, b) => a.currentHealth - b.currentHealth);
+// Sample dates for heatmap columns (every Nth to keep readable)
+const allDates = timeline.map((t: any) => t.date);
+const heatmapStep = Math.max(1, Math.ceil(allDates.length / 20));
+const heatmapDates = allDates.filter((_: string, i: number) => i % heatmapStep === 0 || i === allDates.length - 1);
+// De-dup last date if already included
+const uniqueHeatmapDates = [...new Set(heatmapDates)] as string[];
 ---
 
 <BaseLayout title="Collection Health" description="Workshop diagnostics for every piece in the collection — suggestions, health scores, and the ongoing work of revision.">
@@ -66,6 +89,56 @@ const timeline = historyRaw?.timeline || [];
       <div class="history-single">
         <span class="history-single-value">{timeline[0].avgHealth}</span>
         <span class="history-single-label">First snapshot — {timeline[0].date}</span>
+      </div>
+    </section>
+  )}
+
+  <!-- Per-Piece Health Heatmap -->
+  {Object.keys(pieceHistory).length > 0 && uniqueHeatmapDates.length >= 2 && (
+    <section class="health-section">
+      <h2>🗺️ Health Heatmap</h2>
+      <p class="section-desc">How each piece's health evolved over time. Darker cells = lower health. Sorted worst-to-best by current score.</p>
+      <div class="heatmap-wrap">
+        <div class="heatmap-grid" id="heatmap-grid" style={`grid-template-columns: 160px repeat(${uniqueHeatmapDates.length}, 1fr) 42px;`}>
+          <div class="hm-corner"></div>
+          {uniqueHeatmapDates.map((d: string) => (
+            <div class="hm-date">{d.slice(5)}</div>
+          ))}
+          <div class="hm-delta-header">Δ</div>
+          {heatmapPieces.map((p) => {
+            const healthByDate: Record<string, number> = {};
+            p.entries.forEach((e: any) => { healthByDate[e.date] = e.health; });
+            return (
+              <>
+                <div class="hm-label">
+                  <a href={`${base}writings/${p.slug}/`}>{p.title}</a>
+                </div>
+                {uniqueHeatmapDates.map((d: string) => {
+                  const h = healthByDate[d];
+                  if (h === undefined) return <div class="hm-cell hm-empty"></div>;
+                  const intensity = Math.max(0, Math.min(1, (h - 70) / 30));
+                  const r = Math.round(255 - intensity * 177);
+                  const g = Math.round(107 + intensity * 98);
+                  const b = Math.round(107 + intensity * 89);
+                  return (
+                    <div class="hm-cell" style={`background: rgba(${r},${g},${b},0.35);`} title={`${p.title}: ${h} (${d})`}>
+                      <span class="hm-val">{h}</span>
+                    </div>
+                  );
+                })}
+                <div class={`hm-delta ${p.delta > 0 ? 'hm-delta-pos' : p.delta < 0 ? 'hm-delta-neg' : ''}`}>
+                  {p.delta > 0 ? `+${p.delta}` : p.delta}
+                </div>
+              </>
+            );
+          })}
+        </div>
+      </div>
+      <div class="heatmap-legend">
+        <span class="hm-legend-item"><span class="hm-swatch" style="background: rgba(255,107,107,0.35);"></span> ≤70</span>
+        <span class="hm-legend-item"><span class="hm-swatch" style="background: rgba(216,156,147,0.35);"></span> 80</span>
+        <span class="hm-legend-item"><span class="hm-swatch" style="background: rgba(138,180,172,0.35);"></span> 90</span>
+        <span class="hm-legend-item"><span class="hm-swatch" style="background: rgba(78,205,196,0.35);"></span> 100</span>
       </div>
     </section>
   )}
@@ -777,6 +850,116 @@ const timeline = historyRaw?.timeline || [];
     color: #706858;
     font-size: 0.85rem;
     margin-top: 0.5rem;
+  }
+
+  /* Health Heatmap */
+  .heatmap-wrap {
+    overflow-x: auto;
+    margin-bottom: 0.8rem;
+    border: 1px solid #2a2520;
+    border-radius: 12px;
+    background: #1c1a17;
+  }
+
+  .heatmap-grid {
+    display: grid;
+    gap: 1px;
+    min-width: 600px;
+    padding: 0.5rem;
+  }
+
+  .hm-corner {
+    padding: 0.3rem 0.5rem;
+  }
+
+  .hm-date {
+    font-size: 0.6rem;
+    color: #706858;
+    text-align: center;
+    padding: 0.2rem 0;
+    white-space: nowrap;
+  }
+
+  .hm-delta-header {
+    font-size: 0.7rem;
+    color: #706858;
+    text-align: center;
+    padding: 0.2rem 0;
+    font-weight: 600;
+  }
+
+  .hm-label {
+    padding: 0.15rem 0.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .hm-label a {
+    color: #c0b8a8;
+    text-decoration: none;
+    font-size: 0.72rem;
+  }
+
+  .hm-label a:hover {
+    color: #4ecdc4;
+  }
+
+  .hm-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    min-height: 20px;
+  }
+
+  .hm-cell.hm-empty {
+    background: rgba(255,255,255,0.02);
+  }
+
+  .hm-val {
+    font-size: 0.58rem;
+    color: #e8e1d9;
+    font-weight: 600;
+    opacity: 0.7;
+  }
+
+  .hm-cell:hover .hm-val {
+    opacity: 1;
+  }
+
+  .hm-delta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #706858;
+  }
+
+  .hm-delta-pos { color: #4ecdc4; }
+  .hm-delta-neg { color: #ff6b6b; }
+
+  .heatmap-legend {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    font-size: 0.72rem;
+    color: #706858;
+  }
+
+  .hm-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .hm-swatch {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 2px;
   }
 
   /* Responsive */

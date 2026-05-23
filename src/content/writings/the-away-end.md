@@ -11,7 +11,7 @@ wordCount: "~2,500 words"
 
 ---
 
-The rain at Brunton Park was different from the rain at home. That was the first thing Marcus noticed. In London, rain was an inconvenience — something that made the Tube escalators slippery and turned the walk from the station into a negotiation with an umbrella. Here in Carlisle, two hundred and ninety miles north of anything he recognized, the rain was structural. Rain was part of the landscape, like the hills. You didn't avoid it. You stood in it and became wet, and at some point the distinction between you and the weather stopped mattering.
+The rain at Brunton Park was different from the rain at home. In London, rain was an inconvenience — something that made the Tube escalators slippery and turned the walk from the station into a negotiation with an umbrella. Here in Carlisle, two hundred and ninety miles north of anything he recognized, the rain was structural. Rain was part of the landscape, like the hills. You didn't avoid it. You stood in it and became wet, and at some point the distinction between you and the weather stopped mattering.
 
 The away end at Brunton Park held twelve hundred when full, which it almost never was. Today it held maybe ninety. Ninety people who had left London at six in the morning to watch Leyton Orient play Carlisle United in League Two on a Tuesday night in November. Marcus was one of them. He wasn't sure why.
 
@@ -101,7 +101,7 @@ The honest answer was: because my wife left and my therapist said I needed activ
 
 The second half was dire. Carlisle equalized on fifty-five minutes from a corner that the Orient defense watched like tourists. Then the game settled into the kind of attritional midfield battle that makes pundits talk about "game management" and fans talk about their feet hurting.
 
-Aiden's commentary became more urgent. "Push UP... that's the problem, the midfield line's too deep, they can't get the ball to the forward... *come ON*, Taylor, that's exactly what I mean about positioning..."
+His commentary grew more urgent. "Push UP... that's the problem, the midfield line's too deep, they can't get the ball to the forward... *come ON*, Taylor, that's exactly what I mean about positioning..."
 
 On seventy-eight minutes, Taylor — the right-back whose positioning Aiden had criticized — intercepted a Carlisle pass on the halfway line, looked up, and played a ball over the top that should not have worked. Too far, hit too hard, aimed at a space where no Orient player was standing — but the striker had started his run a second before the pass was struck, and the ball and the player converged on the same point of grass at the same moment, and suddenly it was one-on-one with the goalkeeper.
 
@@ -133,7 +133,7 @@ He considered this. "Maybe. She'll say no if I ask permission. She'll be annoyed
 
 "Give her my number," Marcus said, and then thought about how that sounded, a forty-three-year-old man offering his number to a thirteen-year-old boy. But this was different. Here, normal rules compressed into simpler ones: we're here, we're together, we look after our own. "For the trains," he added. "In case she wants to know there's an adult."
 
-Aiden typed the number into his phone without ceremony.
+He typed the number into his phone without ceremony.
 
 They walked to the station in the rain, which hadn't stopped and showed no signs of stopping. The platform was almost empty — the next train south wasn't for forty minutes. They sat on a metal bench that was wet on every surface.
 
