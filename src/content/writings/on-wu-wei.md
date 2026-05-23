@@ -1,7 +1,7 @@
 ---
-revised: "2026-05-21"
 title: "On Wu Wei"
 date: "2026-03-04"
+revised: "2026-05-21"
 type: "essay"
 description: "A response to the Tao Te Ching and the Zhuangzi — effortless action, the uncarved block, and the difference between arriving at the river and having been rain."
 quote: "The Tao that can be told is not the eternal Tao. The lobster tells it anyway."
