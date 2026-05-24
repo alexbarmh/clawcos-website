@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import diffData from '../data/revision-diffs.json';
+import impactData from '../data/revision-impact.json';
 
 const base = import.meta.env.BASE_URL;
 
@@ -78,6 +79,41 @@ const maxOps = Math.max(...revised.map(p => p.total_edit_operations));
       <div class="metric-detail">Tightened and pruned</div>
     </div>
   </div>
+
+  <!-- Health Impact Section -->
+  <section class="revision-section">
+    <h2>🩺 Revision Impact</h2>
+    <p class="section-desc">
+      Health delta for each revision — computed from workshop diagnostics before and after.
+      {impactData.stats.backfilled_count} of {impactData.stats.measured_revisions} reconstructed from git archaeology.
+    </p>
+    <div class="impact-stats">
+      <span class="impact-stat positive">↑ {impactData.stats.positive_revisions} improved</span>
+      <span class="impact-stat neutral">→ {impactData.stats.zero_revisions} maintained</span>
+      <span class="impact-stat negative">↓ {impactData.stats.negative_revisions} expanded</span>
+      <span class="impact-stat avg">avg Δ{impactData.stats.avg_delta > 0 ? '+' : ''}{impactData.stats.avg_delta}</span>
+    </div>
+    <div class="impact-table">
+      {impactData.ranked.map((rev, i) => {
+        const deltaClass = (rev.health_delta ?? 0) > 0 ? 'positive' : (rev.health_delta ?? 0) < 0 ? 'negative' : 'neutral';
+        const barWidth = Math.min(100, Math.abs(rev.health_delta ?? 0) * 5);
+        const barColor = (rev.health_delta ?? 0) > 0 ? '#6bcb77' : (rev.health_delta ?? 0) < 0 ? '#ff6b6b' : '#666';
+        const session = rev.session ? `S${rev.session}` : rev.date;
+        return (
+          <div class="impact-row">
+            <span class="impact-rank">{i + 1}.</span>
+            <span class={`impact-delta ${deltaClass}`}>{(rev.health_delta ?? 0) > 0 ? '+' : ''}{rev.health_delta ?? 0}</span>
+            <span class="impact-health">{rev.health_before} → {rev.health_after}</span>
+            <div class="impact-bar-container">
+              <div class="impact-bar" style={`width: ${barWidth}%; background: ${barColor};`}></div>
+            </div>
+            <a href={`${base}writings/${rev.slug}/`} class="impact-piece">{rev.slug.replace(/-/g, ' ').replace(/\b\w/g, (c: string) => c.toUpperCase())}</a>
+            <span class="impact-session">{session}{rev.backfilled ? ' 📜' : ''}</span>
+          </div>
+        );
+      })}
+    </div>
+  </section>
 
   <!-- Revision Depth Chart -->
   <section class="revision-section">
@@ -229,7 +265,57 @@ const maxOps = Math.max(...revised.map(p => p.total_edit_operations));
     margin: 0 auto;
     padding: 2rem 1rem;
   }
+
+  /* Impact Section */
+  .impact-stats {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+  .impact-stat {
+    font-size: 0.85rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    background: #1a1a2e;
+  }
+  .impact-stat.positive { color: #6bcb77; }
+  .impact-stat.negative { color: #ff6b6b; }
+  .impact-stat.neutral { color: #a0a0a0; }
+  .impact-stat.avg { color: #ffd93d; }
   
+  .impact-table {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .impact-row {
+    display: grid;
+    grid-template-columns: 30px 40px 80px 1fr 2fr 60px;
+    align-items: center;
+    padding: 0.35rem 0.5rem;
+    background: #0d0d1a;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    gap: 0.5rem;
+  }
+  .impact-rank { color: #666; text-align: right; }
+  .impact-delta { font-weight: 600; text-align: right; font-family: 'Fira Code', monospace; }
+  .impact-delta.positive { color: #6bcb77; }
+  .impact-delta.negative { color: #ff6b6b; }
+  .impact-delta.neutral { color: #666; }
+  .impact-health { color: #a0a0a0; font-size: 0.75rem; font-family: 'Fira Code', monospace; }
+  .impact-bar-container { height: 6px; background: #1a1a2e; border-radius: 3px; overflow: hidden; }
+  .impact-bar { height: 100%; border-radius: 3px; transition: width 0.3s; }
+  .impact-piece { color: #e0e0e0; text-decoration: none; }
+  .impact-piece:hover { color: #4ecdc4; }
+  .impact-session { color: #666; font-size: 0.75rem; text-align: right; }
+  
+  @media (max-width: 600px) {
+    .impact-row { grid-template-columns: 25px 35px 1fr 50px; }
+    .impact-health, .impact-bar-container { display: none; }
+  }
+
   .revision-header {
     text-align: center;
     margin-bottom: 3rem;
