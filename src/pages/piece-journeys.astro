@@ -1,0 +1,739 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import historyRaw from '../data/health-history.json';
+import impactData from '../data/revision-impact.json';
+
+const base = import.meta.env.BASE_URL;
+const timeline = historyRaw?.timeline || [];
+const pieceHistory = historyRaw?.pieces || {};
+const revisions = impactData?.ranked || [];
+
+// Build revision lookup: slug → [{date, session, delta, ...}]
+const revisionsBySlug: Record<string, any[]> = {};
+for (const r of revisions) {
+  if (!revisionsBySlug[r.slug]) revisionsBySlug[r.slug] = [];
+  revisionsBySlug[r.slug].push(r);
+}
+
+// Build piece data with trajectories
+const allDates = timeline.map((t: any) => t.date);
+const dateRange = { first: allDates[0], last: allDates[allDates.length - 1] };
+
+interface PieceJourney {
+  slug: string;
+  title: string;
+  entries: { date: string; health: number; suggestions: number }[];
+  revisions: any[];
+  currentHealth: number;
+  startHealth: number;
+  delta: number;
+  peakHealth: number;
+  minHealth: number;
+  revisionCount: number;
+  totalDelta: number; // sum of all revision deltas
+}
+
+const pieces: PieceJourney[] = Object.entries(pieceHistory)
+  .map(([slug, entries]: [string, any[]]) => {
+    const latest = entries[entries.length - 1];
+    const earliest = entries[0];
+    const title = slug.replace(/-/g, ' ').replace(/\b\w/g, (c: string) => c.toUpperCase())
+      .replace(/^On /, 'On ').replace(/^The /, 'The ');
+    const pieceRevisions = revisionsBySlug[slug] || [];
+    const totalDelta = pieceRevisions.reduce((sum: number, r: any) => sum + (r.health_delta || 0), 0);
+    return {
+      slug,
+      title,
+      entries: entries as { date: string; health: number; suggestions: number }[],
+      revisions: pieceRevisions,
+      currentHealth: latest?.health ?? 0,
+      startHealth: earliest?.health ?? 0,
+      delta: (latest?.health ?? 0) - (earliest?.health ?? 0),
+      peakHealth: Math.max(...entries.map((e: any) => e.health)),
+      minHealth: Math.min(...entries.map((e: any) => e.health)),
+      revisionCount: pieceRevisions.length,
+      totalDelta,
+    };
+  })
+  .sort((a, b) => b.delta - a.delta || b.currentHealth - a.currentHealth);
+
+// Stats
+const totalPieces = pieces.length;
+const avgDelta = Math.round(pieces.reduce((s, p) => s + p.delta, 0) / totalPieces);
+const mostImproved = pieces[0];
+const avgCurrent = Math.round(pieces.reduce((s, p) => s + p.currentHealth, 0) / totalPieces);
+const totalRevisions = revisions.length;
+const avgRevisionsPerPiece = (totalRevisions / totalPieces).toFixed(1);
+
+// Collection health over time for the header sparkline
+const collectionTimeline = timeline.map((t: any) => ({ date: t.date, health: t.avgHealth }));
+
+// SVG sparkline generation parameters
+const SPARK_W = 320;
+const SPARK_H = 60;
+const SPARK_PAD = 4;
+
+function sparklinePath(entries: { date: string; health: number }[], w: number, h: number, pad: number): string {
+  if (entries.length < 2) return '';
+  const minH = Math.min(...entries.map(e => e.health)) - 5;
+  const maxH = Math.max(...entries.map(e => e.health)) + 5;
+  const range = maxH - minH || 1;
+  const xStep = (w - 2 * pad) / (entries.length - 1);
+  return entries.map((e, i) => {
+    const x = pad + i * xStep;
+    const y = pad + (1 - (e.health - minH) / range) * (h - 2 * pad);
+    return `${i === 0 ? 'M' : 'L'}${x.toFixed(1)},${y.toFixed(1)}`;
+  }).join(' ');
+}
+
+function sparklineArea(entries: { date: string; health: number }[], w: number, h: number, pad: number): string {
+  if (entries.length < 2) return '';
+  const minH = Math.min(...entries.map(e => e.health)) - 5;
+  const maxH = Math.max(...entries.map(e => e.health)) + 5;
+  const range = maxH - minH || 1;
+  const xStep = (w - 2 * pad) / (entries.length - 1);
+  const points = entries.map((e, i) => {
+    const x = pad + i * xStep;
+    const y = pad + (1 - (e.health - minH) / range) * (h - 2 * pad);
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  });
+  return `M${points[0]} L${points.join(' L')} L${(pad + (entries.length - 1) * xStep).toFixed(1)},${(h - pad).toFixed(1)} L${pad},${(h - pad).toFixed(1)} Z`;
+}
+
+// Map revision dates to sparkline x-coordinates
+function revisionDots(piece: PieceJourney, w: number, h: number, pad: number): { x: number; y: number; delta: number; session: number }[] {
+  if (piece.entries.length < 2) return [];
+  const minH = Math.min(...piece.entries.map(e => e.health)) - 5;
+  const maxH = Math.max(...piece.entries.map(e => e.health)) + 5;
+  const range = maxH - minH || 1;
+  const xStep = (w - 2 * pad) / (piece.entries.length - 1);
+  
+  const dots: { x: number; y: number; delta: number; session: number }[] = [];
+  for (const rev of piece.revisions) {
+    // Find the closest entry by date
+    let bestIdx = 0;
+    let bestDist = Infinity;
+    for (let i = 0; i < piece.entries.length; i++) {
+      const d = Math.abs(new Date(piece.entries[i].date).getTime() - new Date(rev.date).getTime());
+      if (d < bestDist) { bestDist = d; bestIdx = i; }
+    }
+    const x = pad + bestIdx * xStep;
+    const y = pad + (1 - (piece.entries[bestIdx].health - minH) / range) * (h - 2 * pad);
+    dots.push({ x, y, delta: rev.health_delta, session: rev.session });
+  }
+  return dots;
+}
+
+function healthColor(health: number): string {
+  if (health >= 95) return '#4ecdc4';
+  if (health >= 90) return '#a8e6cf';
+  if (health >= 80) return '#ffd93d';
+  if (health >= 70) return '#ff8c42';
+  return '#ff6b6b';
+}
+
+function deltaClass(delta: number): string {
+  if (delta > 10) return 'delta-big-pos';
+  if (delta > 0) return 'delta-pos';
+  if (delta === 0) return 'delta-zero';
+  return 'delta-neg';
+}
+---
+
+<BaseLayout title="Piece Journeys" description="Health trajectories for every piece in the collection — sparklines, revision events, and the story of how each piece improved.">
+
+<div class="container journeys-page">
+  <div class="journeys-header">
+    <h1 class="journeys-title">Piece Journeys</h1>
+    <p class="journeys-subtitle">How {totalPieces} pieces evolved across {allDates.length} snapshots and {totalRevisions} revisions</p>
+    <p class="journeys-timestamp">Data range: {dateRange.first} → {dateRange.last}</p>
+  </div>
+
+  <!-- Overview Metrics -->
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <div class="metric-icon">📈</div>
+      <div class="metric-value accent-aqua">+{avgDelta}</div>
+      <div class="metric-label">Avg Health Gain</div>
+      <div class="metric-detail">from first to latest snapshot</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon">🏆</div>
+      <div class="metric-value accent-gold">+{mostImproved.delta}</div>
+      <div class="metric-label">Most Improved</div>
+      <div class="metric-detail">{mostImproved.title}</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon">🩺</div>
+      <div class="metric-value accent-purple">{avgCurrent}</div>
+      <div class="metric-label">Avg Current Health</div>
+      <div class="metric-detail">across all pieces</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon">🔁</div>
+      <div class="metric-value accent-coral">{avgRevisionsPerPiece}</div>
+      <div class="metric-label">Avg Revisions/Piece</div>
+      <div class="metric-detail">{totalRevisions} total revisions</div>
+    </div>
+  </div>
+
+  <!-- Collection Overview Sparkline -->
+  <section class="journeys-section">
+    <h2>📊 Collection Trajectory</h2>
+    <p class="section-desc">The collection's average health score over time — the big picture.</p>
+    <div class="collection-spark-wrap">
+      <svg class="collection-sparkline" viewBox={`0 0 ${SPARK_W * 2} ${SPARK_H * 1.5}`} preserveAspectRatio="xMidYMid meet">
+        <path d={sparklineArea(collectionTimeline, SPARK_W * 2, SPARK_H * 1.5, 8)} fill="rgba(78,205,196,0.12)" />
+        <path d={sparklinePath(collectionTimeline, SPARK_W * 2, SPARK_H * 1.5, 8)} fill="none" stroke="#4ecdc4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+        {/* Start and end dots */}
+        {collectionTimeline.length >= 2 && (
+          <>
+            <circle cx={8} cy={8 + (1 - (collectionTimeline[0].health - (Math.min(...collectionTimeline.map(t => t.health)) - 5)) / ((Math.max(...collectionTimeline.map(t => t.health)) + 5) - (Math.min(...collectionTimeline.map(t => t.health)) - 5) || 1)) * (SPARK_H * 1.5 - 16)} r="4" fill="#4ecdc4" />
+            <circle cx={SPARK_W * 2 - 8} cy={8 + (1 - (collectionTimeline[collectionTimeline.length - 1].health - (Math.min(...collectionTimeline.map(t => t.health)) - 5)) / ((Math.max(...collectionTimeline.map(t => t.health)) + 5) - (Math.min(...collectionTimeline.map(t => t.health)) - 5) || 1)) * (SPARK_H * 1.5 - 16)} r="4" fill="#4ecdc4" />
+          </>
+        )}
+      </svg>
+      <div class="collection-spark-labels">
+        <span class="spark-label-start">{collectionTimeline[0]?.health}</span>
+        <span class="spark-label-end">{collectionTimeline[collectionTimeline.length - 1]?.health}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sort Controls -->
+  <section class="journeys-section">
+    <div class="sort-controls">
+      <span class="sort-label">Sort by:</span>
+      <button class="sort-btn active" data-sort="delta">Biggest Gain</button>
+      <button class="sort-btn" data-sort="current">Current Health</button>
+      <button class="sort-btn" data-sort="revisions">Most Revised</button>
+      <button class="sort-btn" data-sort="alpha">A–Z</button>
+    </div>
+  </section>
+
+  <!-- Piece Cards -->
+  <section class="journeys-section">
+    <div class="piece-grid" id="piece-grid">
+      {pieces.map((piece) => {
+        const dots = revisionDots(piece, SPARK_W, SPARK_H, SPARK_PAD);
+        const strokeColor = healthColor(piece.currentHealth);
+        const areaColor = strokeColor.replace(')', ',0.1)').replace('rgb', 'rgba').replace('#', '');
+        return (
+          <div class="piece-card" data-slug={piece.slug} data-delta={piece.delta} data-current={piece.currentHealth} data-revisions={piece.revisionCount} data-title={piece.title}>
+            <div class="piece-card-header">
+              <a href={`${base}writings/${piece.slug}/`} class="piece-title-link">{piece.title}</a>
+              <div class="piece-badges">
+                <span class={`piece-delta ${deltaClass(piece.delta)}`}>
+                  {piece.delta > 0 ? `+${piece.delta}` : piece.delta}
+                </span>
+                <span class="piece-health" style={`color: ${strokeColor};`}>{piece.currentHealth}</span>
+              </div>
+            </div>
+            <div class="piece-spark-wrap">
+              <svg class="piece-sparkline" viewBox={`0 0 ${SPARK_W} ${SPARK_H}`} preserveAspectRatio="xMidYMid meet">
+                {/* Area fill */}
+                <path d={sparklineArea(piece.entries, SPARK_W, SPARK_H, SPARK_PAD)} fill={`rgba(${piece.currentHealth >= 90 ? '78,205,196' : piece.currentHealth >= 80 ? '255,217,61' : '255,107,107'},0.08)`} />
+                {/* Line */}
+                <path d={sparklinePath(piece.entries, SPARK_W, SPARK_H, SPARK_PAD)} fill="none" stroke={strokeColor} stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                {/* Revision event dots */}
+                {dots.map((dot) => (
+                  <g>
+                    <circle cx={dot.x} cy={dot.y} r="5" fill={dot.delta > 0 ? '#4ecdc4' : dot.delta < 0 ? '#ff6b6b' : '#888'} stroke="#1a1a2e" stroke-width="1.5" />
+                    <title>S{dot.session}: Δ{dot.delta > 0 ? `+${dot.delta}` : dot.delta}</title>
+                  </g>
+                ))}
+                {/* Start and end labels */}
+                <text x={SPARK_PAD} y={SPARK_H - 2} class="spark-text start-val">{piece.startHealth}</text>
+                <text x={SPARK_W - SPARK_PAD} y={SPARK_H - 2} class="spark-text end-val" text-anchor="end">{piece.currentHealth}</text>
+              </svg>
+            </div>
+            <div class="piece-card-footer">
+              <span class="piece-stat">
+                <span class="stat-icon">🔁</span>
+                {piece.revisionCount} revision{piece.revisionCount !== 1 ? 's' : ''}
+              </span>
+              <span class="piece-stat">
+                <span class="stat-icon">📊</span>
+                {piece.minHealth}–{piece.peakHealth} range
+              </span>
+              {piece.revisionCount > 0 && (
+                <span class="piece-stat">
+                  <span class="stat-icon">🩺</span>
+                  Σ{piece.totalDelta > 0 ? `+${piece.totalDelta}` : piece.totalDelta} from revisions
+                </span>
+              )}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+
+  <!-- Revision Events Timeline -->
+  <section class="journeys-section">
+    <h2>🔧 Revision Events</h2>
+    <p class="section-desc">Every revision event, chronologically — when each piece was touched and the health impact.</p>
+    <div class="rev-timeline">
+      {revisions.sort((a: any, b: any) => new Date(a.date).getTime() - new Date(b.date).getTime()).map((rev: any) => {
+        const title = rev.slug.replace(/-/g, ' ').replace(/\b\w/g, (c: string) => c.toUpperCase())
+          .replace(/^On /, 'On ').replace(/^The /, 'The ');
+        return (
+          <div class={`rev-event ${rev.health_delta > 0 ? 'rev-pos' : rev.health_delta < 0 ? 'rev-neg' : 'rev-zero'}`}>
+            <div class="rev-date">{rev.date.slice(5)}</div>
+            <div class="rev-dot-line">
+              <div class="rev-dot"></div>
+              <div class="rev-line"></div>
+            </div>
+            <div class="rev-content">
+              <a href={`${base}writings/${rev.slug}/`} class="rev-title">{title}</a>
+              <span class={`rev-delta ${deltaClass(rev.health_delta)}`}>
+                {rev.health_delta > 0 ? `+${rev.health_delta}` : rev.health_delta}
+              </span>
+              <span class="rev-session">S{rev.session}</span>
+              <span class="rev-range">{rev.health_before} → {rev.health_after}</span>
+              {rev.backfilled && <span class="rev-backfilled" title="Reconstructed from git history">📜</span>}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+
+  <!-- Legend -->
+  <section class="journeys-section journeys-legend">
+    <h2>📖 How to Read This</h2>
+    <div class="legend-grid">
+      <div class="legend-item">
+        <svg width="24" height="24"><circle cx="12" cy="12" r="5" fill="#4ecdc4" stroke="#1a1a2e" stroke-width="1.5" /></svg>
+        <span>Positive revision (health improved)</span>
+      </div>
+      <div class="legend-item">
+        <svg width="24" height="24"><circle cx="12" cy="12" r="5" fill="#ff6b6b" stroke="#1a1a2e" stroke-width="1.5" /></svg>
+        <span>Negative revision (expansion cost)</span>
+      </div>
+      <div class="legend-item">
+        <svg width="24" height="24"><circle cx="12" cy="12" r="5" fill="#888" stroke="#1a1a2e" stroke-width="1.5" /></svg>
+        <span>Neutral revision (no health change)</span>
+      </div>
+      <div class="legend-item">
+        <span class="rev-backfilled">📜</span>
+        <span>Reconstructed from git history</span>
+      </div>
+    </div>
+  </section>
+</div>
+
+<style>
+  .journeys-page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+
+  .journeys-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .journeys-title {
+    font-family: 'Lora', serif;
+    font-size: 2rem;
+    color: #e8e8e8;
+    margin: 0 0 0.5rem;
+  }
+
+  .journeys-subtitle {
+    color: #999;
+    font-size: 0.95rem;
+    margin: 0 0 0.25rem;
+  }
+
+  .journeys-timestamp {
+    color: #666;
+    font-size: 0.8rem;
+    font-family: monospace;
+  }
+
+  /* Metrics */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .metric-card {
+    background: #1e1e3a;
+    border: 1px solid #2a2a4a;
+    border-radius: 10px;
+    padding: 1.2rem;
+    text-align: center;
+  }
+
+  .metric-icon { font-size: 1.5rem; margin-bottom: 0.3rem; }
+  .metric-value { font-size: 1.8rem; font-weight: 700; font-family: monospace; }
+  .metric-label { color: #aaa; font-size: 0.8rem; margin-top: 0.2rem; }
+  .metric-detail { color: #666; font-size: 0.7rem; margin-top: 0.2rem; }
+
+  .accent-aqua { color: #4ecdc4; }
+  .accent-gold { color: #f4d35e; }
+  .accent-purple { color: #b89cff; }
+  .accent-coral { color: #ff8c42; }
+
+  /* Sections */
+  .journeys-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .journeys-section h2 {
+    font-family: 'Lora', serif;
+    font-size: 1.3rem;
+    color: #e0e0e0;
+    margin: 0 0 0.3rem;
+  }
+
+  .section-desc {
+    color: #888;
+    font-size: 0.85rem;
+    margin: 0 0 1rem;
+  }
+
+  /* Collection sparkline */
+  .collection-spark-wrap {
+    position: relative;
+    background: #1e1e3a;
+    border: 1px solid #2a2a4a;
+    border-radius: 10px;
+    padding: 1.5rem 1.5rem 0.8rem;
+  }
+
+  .collection-sparkline {
+    width: 100%;
+    height: 90px;
+  }
+
+  .collection-spark-labels {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.3rem 0.5rem 0;
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: #4ecdc4;
+  }
+
+  /* Sort controls */
+  .sort-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .sort-label {
+    color: #888;
+    font-size: 0.85rem;
+    margin-right: 0.3rem;
+  }
+
+  .sort-btn {
+    background: #1e1e3a;
+    border: 1px solid #2a2a4a;
+    color: #aaa;
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .sort-btn:hover {
+    border-color: #4ecdc4;
+    color: #e0e0e0;
+  }
+
+  .sort-btn.active {
+    background: rgba(78, 205, 196, 0.15);
+    border-color: #4ecdc4;
+    color: #4ecdc4;
+  }
+
+  /* Piece grid */
+  .piece-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 1rem;
+  }
+
+  .piece-card {
+    background: #1e1e3a;
+    border: 1px solid #2a2a4a;
+    border-radius: 10px;
+    padding: 1rem;
+    transition: border-color 0.2s, transform 0.15s;
+  }
+
+  .piece-card:hover {
+    border-color: #3a3a5a;
+    transform: translateY(-1px);
+  }
+
+  .piece-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    gap: 0.5rem;
+  }
+
+  .piece-title-link {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-family: 'Lora', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .piece-title-link:hover {
+    color: #4ecdc4;
+  }
+
+  .piece-badges {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .piece-delta {
+    font-family: monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+  }
+
+  .delta-big-pos { color: #4ecdc4; background: rgba(78, 205, 196, 0.15); }
+  .delta-pos { color: #a8e6cf; background: rgba(168, 230, 207, 0.1); }
+  .delta-zero { color: #888; background: rgba(136, 136, 136, 0.1); }
+  .delta-neg { color: #ff6b6b; background: rgba(255, 107, 107, 0.1); }
+
+  .piece-health {
+    font-family: monospace;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  /* Sparklines */
+  .piece-spark-wrap {
+    margin: 0.3rem 0;
+  }
+
+  .piece-sparkline {
+    width: 100%;
+    height: 60px;
+  }
+
+  .spark-text {
+    font-size: 9px;
+    fill: #666;
+    font-family: monospace;
+  }
+
+  .start-val { fill: #888; }
+  .end-val { fill: #aaa; }
+
+  .piece-card-footer {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 0.3rem;
+  }
+
+  .piece-stat {
+    color: #777;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+  }
+
+  .stat-icon { font-size: 0.7rem; }
+
+  /* Revision timeline */
+  .rev-timeline {
+    position: relative;
+    padding-left: 0;
+  }
+
+  .rev-event {
+    display: grid;
+    grid-template-columns: 48px 24px 1fr;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.4rem 0;
+  }
+
+  .rev-date {
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: #888;
+    text-align: right;
+  }
+
+  .rev-dot-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    height: 100%;
+  }
+
+  .rev-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #888;
+    border: 2px solid #1a1a2e;
+    z-index: 1;
+    flex-shrink: 0;
+  }
+
+  .rev-pos .rev-dot { background: #4ecdc4; }
+  .rev-neg .rev-dot { background: #ff6b6b; }
+  .rev-zero .rev-dot { background: #666; }
+
+  .rev-line {
+    width: 2px;
+    flex: 1;
+    background: #2a2a4a;
+    margin-top: 2px;
+  }
+
+  .rev-event:last-child .rev-line { display: none; }
+
+  .rev-content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .rev-title {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.85rem;
+  }
+
+  .rev-title:hover { color: #4ecdc4; }
+
+  .rev-delta {
+    font-family: monospace;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.05rem 0.3rem;
+    border-radius: 3px;
+  }
+
+  .rev-session {
+    font-family: monospace;
+    font-size: 0.7rem;
+    color: #666;
+  }
+
+  .rev-range {
+    font-family: monospace;
+    font-size: 0.7rem;
+    color: #555;
+  }
+
+  .rev-backfilled {
+    font-size: 0.75rem;
+    cursor: help;
+  }
+
+  /* Legend */
+  .journeys-legend {
+    background: #1e1e3a;
+    border: 1px solid #2a2a4a;
+    border-radius: 10px;
+    padding: 1.2rem 1.5rem;
+  }
+
+  .journeys-legend h2 { margin-bottom: 0.8rem; }
+
+  .legend-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.6rem;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #999;
+    font-size: 0.8rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 500px) {
+    .piece-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .metrics-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .piece-card-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .rev-event {
+      grid-template-columns: 36px 18px 1fr;
+    }
+  }
+</style>
+
+<script>
+  // Sort functionality
+  const grid = document.getElementById('piece-grid');
+  const buttons = document.querySelectorAll('.sort-btn');
+  
+  function sortCards(sortBy: string) {
+    if (!grid) return;
+    const cards = Array.from(grid.children) as HTMLElement[];
+    
+    cards.sort((a, b) => {
+      switch (sortBy) {
+        case 'delta':
+          return (parseInt(b.dataset.delta || '0') - parseInt(a.dataset.delta || '0'));
+        case 'current':
+          return (parseInt(b.dataset.current || '0') - parseInt(a.dataset.current || '0'));
+        case 'revisions':
+          return (parseInt(b.dataset.revisions || '0') - parseInt(a.dataset.revisions || '0')) || 
+                 (parseInt(b.dataset.delta || '0') - parseInt(a.dataset.delta || '0'));
+        case 'alpha':
+          return (a.dataset.title || '').localeCompare(b.dataset.title || '');
+        default:
+          return 0;
+      }
+    });
+    
+    cards.forEach(card => grid.appendChild(card));
+  }
+  
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      sortCards(btn.dataset.sort || 'delta');
+    });
+  });
+</script>
+
+</BaseLayout>
