@@ -2,6 +2,15 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import historyRaw from '../data/health-history.json';
 import impactData from '../data/revision-impact.json';
+import fs from 'node:fs';
+import path from 'node:path';
+
+// Load efficiency data (optional — may not exist on first build)
+let efficiencyData: any = null;
+try {
+  const effPath = path.join(process.cwd(), 'src/data/revision-efficiency.json');
+  efficiencyData = JSON.parse(fs.readFileSync(effPath, 'utf-8'));
+} catch {}
 
 const base = import.meta.env.BASE_URL;
 const timeline = historyRaw?.timeline || [];
@@ -298,6 +307,90 @@ function deltaClass(delta: number): string {
       })}
     </div>
   </section>
+
+  <!-- Efficiency Insights -->
+  {efficiencyData && (
+    <section class="journeys-section">
+      <h2>💡 Revision Efficiency</h2>
+      <p class="section-desc">What the data says about which revision approaches work — and which don't.</p>
+      
+      <div class="efficiency-grid">
+        {/* ROI Card */}
+        {efficiencyData.roi && (
+          <div class="eff-card">
+            <div class="eff-card-title">📊 ROI</div>
+            <div class="eff-stats">
+              <div class="eff-stat">
+                <span class="eff-val accent-aqua">{efficiencyData.roi.hit_rate}%</span>
+                <span class="eff-label">hit rate</span>
+              </div>
+              <div class="eff-stat">
+                <span class="eff-val accent-gold">+{efficiencyData.roi.net_health_gained}</span>
+                <span class="eff-label">net health</span>
+              </div>
+              <div class="eff-stat">
+                <span class="eff-val accent-purple">{efficiencyData.roi.avg_delta > 0 ? '+' : ''}{efficiencyData.roi.avg_delta}</span>
+                <span class="eff-label">avg delta</span>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Phase Analysis */}
+        {efficiencyData.phases && (
+          <div class="eff-card">
+            <div class="eff-card-title">📈 By Phase</div>
+            <div class="eff-phases">
+              {Object.entries(efficiencyData.phases).map(([phase, data]: [string, any]) => (
+                <div class="eff-phase">
+                  <span class="eff-phase-name">{phase}</span>
+                  <span class="eff-phase-range">{data.session_range}</span>
+                  <span class={`eff-phase-delta ${data.avg_delta > 3 ? 'accent-aqua' : data.avg_delta > 0 ? 'accent-gold' : 'accent-coral'}`}>
+                    {data.avg_delta > 0 ? '+' : ''}{data.avg_delta}
+                  </span>
+                  <span class="eff-phase-rate">{data.positive_rate}%</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Workshop Impact */}
+        {efficiencyData.tracking && (
+          <div class="eff-card">
+            <div class="eff-card-title">🔍 Workshop Impact</div>
+            <div class="eff-phases">
+              {Object.entries(efficiencyData.tracking).map(([label, data]: [string, any]) => (
+                <div class="eff-phase">
+                  <span class="eff-phase-name">{label}</span>
+                  <span class="eff-phase-range">{data.count} revisions</span>
+                  <span class={`eff-phase-delta ${data.avg_delta > 3 ? 'accent-aqua' : data.avg_delta > 0 ? 'accent-gold' : 'accent-coral'}`}>
+                    {data.avg_delta > 0 ? '+' : ''}{data.avg_delta}
+                  </span>
+                  <span class="eff-phase-rate">{data.positive_rate}%</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Insights */}
+      {efficiencyData.insights && efficiencyData.insights.length > 0 && (
+        <div class="eff-insights">
+          {efficiencyData.insights.map((insight: any) => {
+            const icon = { improvement: '🟢', warning: '🟡', info: '🔵', stats: '📊' }[insight.type as string] || '•';
+            return (
+              <div class="eff-insight">
+                <span class="eff-insight-icon">{icon}</span>
+                <span class="eff-insight-text">{insight.message}</span>
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </section>
+  )}
 
   <!-- Legend -->
   <section class="journeys-section journeys-legend">
@@ -676,6 +769,116 @@ function deltaClass(delta: number): string {
     gap: 0.5rem;
     color: #999;
     font-size: 0.8rem;
+  }
+
+  /* Efficiency section */
+  .efficiency-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .eff-card {
+    background: #1e1e3a;
+    border: 1px solid #2a2a4a;
+    border-radius: 10px;
+    padding: 1rem;
+  }
+
+  .eff-card-title {
+    font-size: 0.85rem;
+    color: #aaa;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+  }
+
+  .eff-stats {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .eff-stat {
+    text-align: center;
+  }
+
+  .eff-val {
+    display: block;
+    font-family: monospace;
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+
+  .eff-label {
+    font-size: 0.7rem;
+    color: #888;
+  }
+
+  .eff-phases {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .eff-phase {
+    display: grid;
+    grid-template-columns: 80px 1fr auto auto;
+    gap: 0.5rem;
+    align-items: center;
+    font-size: 0.8rem;
+  }
+
+  .eff-phase-name {
+    color: #ccc;
+    text-transform: capitalize;
+    font-weight: 500;
+  }
+
+  .eff-phase-range {
+    color: #777;
+    font-family: monospace;
+    font-size: 0.75rem;
+  }
+
+  .eff-phase-delta {
+    font-family: monospace;
+    font-weight: 600;
+    text-align: right;
+  }
+
+  .eff-phase-rate {
+    color: #888;
+    font-family: monospace;
+    font-size: 0.75rem;
+    text-align: right;
+  }
+
+  .eff-insights {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .eff-insight {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+    background: #1e1e3a;
+    border: 1px solid #2a2a4a;
+    border-radius: 8px;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .eff-insight-icon {
+    flex-shrink: 0;
+    font-size: 0.85rem;
+  }
+
+  .eff-insight-text {
+    color: #ccc;
+    font-size: 0.8rem;
+    line-height: 1.4;
   }
 
   /* Responsive */

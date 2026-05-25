@@ -1,0 +1,217 @@
+{
+  "roi": {
+    "total_revisions": 25,
+    "total_health_gained": 88,
+    "total_health_lost": -16,
+    "net_health_gained": 72,
+    "avg_delta": 2.9,
+    "avg_positive_delta": 6.3,
+    "avg_negative_delta": -4.0,
+    "positive_count": 14,
+    "negative_count": 4,
+    "zero_count": 7,
+    "hit_rate": 56,
+    "best": 18,
+    "worst": -8
+  },
+  "phases": {
+    "early": {
+      "count": 11,
+      "avg_delta": 1.1,
+      "positive_rate": 55,
+      "total_delta": 12,
+      "session_range": "S15\u2013S40"
+    },
+    "mid": {
+      "count": 9,
+      "avg_delta": 2.8,
+      "positive_rate": 56,
+      "total_delta": 25,
+      "session_range": "S45\u2013S75"
+    },
+    "late": {
+      "count": 5,
+      "avg_delta": 7.0,
+      "positive_rate": 60,
+      "total_delta": 35,
+      "session_range": "S83\u2013S106"
+    }
+  },
+  "tracking": {
+    "backfilled": {
+      "count": 17,
+      "avg_delta": 1.6,
+      "positive_rate": 53,
+      "total_delta": 27
+    },
+    "tracked": {
+      "count": 8,
+      "avg_delta": 5.6,
+      "positive_rate": 62,
+      "total_delta": 45
+    }
+  },
+  "diminishing_returns": [
+    {
+      "slug": "on-memory",
+      "title": "On Memory",
+      "revision_count": 3,
+      "deltas": [
+        0,
+        4,
+        0
+      ],
+      "sessions": [
+        28,
+        47,
+        75
+      ],
+      "trend": "stable",
+      "total_delta": 4,
+      "first_delta": 0,
+      "last_delta": 0
+    },
+    {
+      "slug": "on-the-bat",
+      "title": "On The Bat",
+      "revision_count": 2,
+      "deltas": [
+        3,
+        5
+      ],
+      "sessions": [
+        34,
+        71
+      ],
+      "trend": "improving",
+      "total_delta": 8,
+      "first_delta": 3,
+      "last_delta": 5
+    },
+    {
+      "slug": "on-the-hard-problem",
+      "title": "On The Hard Problem",
+      "revision_count": 2,
+      "deltas": [
+        6,
+        -3
+      ],
+      "sessions": [
+        40,
+        105
+      ],
+      "trend": "diminishing",
+      "total_delta": 3,
+      "first_delta": 6,
+      "last_delta": -3
+    },
+    {
+      "slug": "on-translation",
+      "title": "On Translation",
+      "revision_count": 2,
+      "deltas": [
+        3,
+        0
+      ],
+      "sessions": [
+        75,
+        105
+      ],
+      "trend": "diminishing",
+      "total_delta": 3,
+      "first_delta": 3,
+      "last_delta": 0
+    },
+    {
+      "slug": "on-wu-wei",
+      "title": "On Wu Wei",
+      "revision_count": 2,
+      "deltas": [
+        6,
+        7
+      ],
+      "sessions": [
+        45,
+        73
+      ],
+      "trend": "improving",
+      "total_delta": 13,
+      "first_delta": 6,
+      "last_delta": 7
+    },
+    {
+      "slug": "the-away-end",
+      "title": "The Away End",
+      "revision_count": 3,
+      "deltas": [
+        3,
+        0,
+        3
+      ],
+      "sessions": [
+        30,
+        52,
+        106
+      ],
+      "trend": "stable",
+      "total_delta": 6,
+      "first_delta": 3,
+      "last_delta": 3
+    },
+    {
+      "slug": "the-cartographers-apprentice",
+      "title": "The Cartographers Apprentice",
+      "revision_count": 2,
+      "deltas": [
+        -8,
+        17
+      ],
+      "sessions": [
+        15,
+        90
+      ],
+      "trend": "improving",
+      "total_delta": 9,
+      "first_delta": -8,
+      "last_delta": 17
+    }
+  ],
+  "ceilings": [
+    {
+      "slug": "on-translation",
+      "title": "On Translation",
+      "current_health": 96,
+      "last_delta": 0,
+      "revision_count": 2
+    },
+    {
+      "slug": "temporary-springs",
+      "title": "Temporary Springs",
+      "current_health": 96,
+      "last_delta": 1,
+      "revision_count": 1
+    }
+  ],
+  "insights": [
+    {
+      "type": "improvement",
+      "message": "Late revisions are 5.9 points more effective than early ones (avg \u0394+7.0 vs \u0394+1.1). The workshop-guided approach works.",
+      "confidence": "high"
+    },
+    {
+      "type": "improvement",
+      "message": "Workshop-tracked revisions average \u0394+5.6 vs \u0394+1.6 for pre-workshop revisions. Data-guided revision beats intuition by 4.0 points.",
+      "confidence": "high"
+    },
+    {
+      "type": "warning",
+      "message": "Diminishing returns detected in: On The Hard Problem, On Translation. Consider focusing revision energy on less-polished pieces.",
+      "confidence": "medium"
+    },
+    {
+      "type": "stats",
+      "message": "Revision ROI: 56% hit rate, net +72 health gained across 25 revisions. Best: \u0394+18, worst: \u0394-8.",
+      "confidence": "high"
+    }
+  ]
+}
