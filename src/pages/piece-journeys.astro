@@ -77,6 +77,21 @@ const avgRevisionsPerPiece = (totalRevisions / totalPieces).toFixed(1);
 // Collection health over time for the header sparkline
 const collectionTimeline = timeline.map((t: any) => ({ date: t.date, health: t.avgHealth }));
 
+// Serialize piece data for client-side comparison mode
+const pieceDataForClient = JSON.stringify(pieces.map(p => ({
+  slug: p.slug,
+  title: p.title,
+  entries: p.entries,
+  revisions: p.revisions.map((r: any) => ({ date: r.date, session: r.session, delta: r.health_delta || 0 })),
+  currentHealth: p.currentHealth,
+  startHealth: p.startHealth,
+  delta: p.delta,
+  peakHealth: p.peakHealth,
+  minHealth: p.minHealth,
+  revisionCount: p.revisionCount,
+  totalDelta: p.totalDelta,
+})));
+
 // SVG sparkline generation parameters
 const SPARK_W = 320;
 const SPARK_H = 60;
@@ -217,6 +232,26 @@ function deltaClass(delta: number): string {
       <button class="sort-btn" data-sort="current">Current Health</button>
       <button class="sort-btn" data-sort="revisions">Most Revised</button>
       <button class="sort-btn" data-sort="alpha">A–Z</button>
+      <span class="sort-divider">|</span>
+      <button class="sort-btn compare-toggle" id="compare-toggle">🔀 Compare</button>
+    </div>
+  </section>
+
+  <!-- Piece Data (for client-side comparison) -->
+  <script type="application/json" id="piece-data" set:html={pieceDataForClient} />
+
+  <!-- Comparison Panel -->
+  <section class="compare-panel journeys-section" id="compare-panel" style="display:none;">
+    <div class="compare-header">
+      <h2>🔀 Comparison</h2>
+      <p class="compare-hint" id="compare-hint">Click two pieces below to compare their journeys</p>
+      <button class="compare-close" id="compare-close">✕ Exit</button>
+    </div>
+    <div class="compare-body" id="compare-body" style="display:none;">
+      <div class="compare-chart-wrap">
+        <svg id="compare-svg" class="compare-svg" viewBox="0 0 640 160" preserveAspectRatio="xMidYMid meet"></svg>
+      </div>
+      <div class="compare-stats" id="compare-stats"></div>
     </div>
   </section>
 
@@ -881,6 +916,148 @@ function deltaClass(delta: number): string {
     line-height: 1.4;
   }
 
+  /* Sort divider */
+  .sort-divider {
+    color: #3a3a5a;
+    font-size: 0.9rem;
+    user-select: none;
+  }
+
+  /* Compare toggle active state */
+  .compare-toggle.comparing {
+    background: rgba(184, 156, 255, 0.2);
+    border-color: #b89cff;
+    color: #b89cff;
+  }
+
+  /* Piece card selection in compare mode */
+  .piece-card.compare-selectable {
+    cursor: pointer;
+  }
+
+  .piece-card.compare-selectable:hover {
+    border-color: #b89cff;
+    box-shadow: 0 0 0 1px rgba(184, 156, 255, 0.3);
+  }
+
+  .piece-card.compare-selected-a {
+    border-color: #4ecdc4;
+    box-shadow: 0 0 0 2px rgba(78, 205, 196, 0.3);
+  }
+
+  .piece-card.compare-selected-b {
+    border-color: #b89cff;
+    box-shadow: 0 0 0 2px rgba(184, 156, 255, 0.3);
+  }
+
+  /* Comparison panel */
+  .compare-panel {
+    background: #1e1e3a;
+    border: 1px solid #2a2a4a;
+    border-radius: 10px;
+    padding: 1.2rem 1.5rem;
+  }
+
+  .compare-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .compare-header h2 {
+    margin: 0;
+    font-family: 'Lora', serif;
+    font-size: 1.2rem;
+    color: #e0e0e0;
+  }
+
+  .compare-hint {
+    color: #888;
+    font-size: 0.8rem;
+    margin: 0;
+    flex: 1;
+  }
+
+  .compare-close {
+    background: none;
+    border: 1px solid #3a3a5a;
+    color: #888;
+    padding: 0.3rem 0.7rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .compare-close:hover {
+    border-color: #ff6b6b;
+    color: #ff6b6b;
+  }
+
+  .compare-body {
+    margin-top: 0.8rem;
+  }
+
+  .compare-chart-wrap {
+    background: #16162e;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .compare-svg {
+    width: 100%;
+    height: 160px;
+  }
+
+  .compare-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+  }
+
+  .compare-stat-card {
+    border: 1px solid #2a2a4a;
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    background: #16162e;
+  }
+
+  .compare-stat-card.card-a {
+    border-left: 3px solid #4ecdc4;
+  }
+
+  .compare-stat-card.card-b {
+    border-left: 3px solid #b89cff;
+  }
+
+  .compare-stat-title {
+    font-family: 'Lora', serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .card-a .compare-stat-title { color: #4ecdc4; }
+  .card-b .compare-stat-title { color: #b89cff; }
+
+  .compare-stat-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    padding: 0.15rem 0;
+  }
+
+  .compare-stat-label { color: #888; }
+  .compare-stat-value { color: #ccc; font-family: monospace; font-weight: 600; }
+
+  .compare-winner {
+    color: #f4d35e;
+    font-size: 0.65rem;
+    margin-left: 0.3rem;
+  }
+
   /* Responsive */
   @media (max-width: 500px) {
     .piece-grid {
@@ -899,13 +1076,21 @@ function deltaClass(delta: number): string {
     .rev-event {
       grid-template-columns: 36px 18px 1fr;
     }
+
+    .compare-stats {
+      grid-template-columns: 1fr;
+    }
+
+    .compare-header {
+      flex-wrap: wrap;
+    }
   }
 </style>
 
 <script>
-  // Sort functionality
+  // === Sort functionality ===
   const grid = document.getElementById('piece-grid');
-  const buttons = document.querySelectorAll('.sort-btn');
+  const buttons = document.querySelectorAll('.sort-btn:not(.compare-toggle)');
   
   function sortCards(sortBy: string) {
     if (!grid) return;
@@ -934,8 +1119,268 @@ function deltaClass(delta: number): string {
     btn.addEventListener('click', () => {
       buttons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      sortCards(btn.dataset.sort || 'delta');
+      sortCards((btn as HTMLElement).dataset.sort || 'delta');
     });
+  });
+
+  // === Comparison Mode ===
+  const compareToggle = document.getElementById('compare-toggle');
+  const comparePanel = document.getElementById('compare-panel');
+  const compareClose = document.getElementById('compare-close');
+  const compareBody = document.getElementById('compare-body');
+  const compareHint = document.getElementById('compare-hint');
+  const compareSvg = document.getElementById('compare-svg');
+  const compareStats = document.getElementById('compare-stats');
+
+  // Load piece data
+  let allPieces: any[] = [];
+  try {
+    const dataEl = document.getElementById('piece-data');
+    if (dataEl) allPieces = JSON.parse(dataEl.textContent || '[]');
+  } catch {}
+
+  let comparing = false;
+  let selectedSlugs: string[] = [];
+
+  function enterCompareMode() {
+    comparing = true;
+    compareToggle?.classList.add('comparing');
+    if (comparePanel) comparePanel.style.display = '';
+    if (compareBody) compareBody.style.display = 'none';
+    if (compareHint) compareHint.textContent = 'Click two pieces below to compare their journeys';
+    selectedSlugs = [];
+    updateCardStates();
+  }
+
+  function exitCompareMode() {
+    comparing = false;
+    compareToggle?.classList.remove('comparing');
+    if (comparePanel) comparePanel.style.display = 'none';
+    selectedSlugs = [];
+    updateCardStates();
+  }
+
+  function updateCardStates() {
+    const cards = grid ? Array.from(grid.children) as HTMLElement[] : [];
+    cards.forEach(card => {
+      card.classList.toggle('compare-selectable', comparing);
+      card.classList.toggle('compare-selected-a', comparing && selectedSlugs[0] === card.dataset.slug);
+      card.classList.toggle('compare-selected-b', comparing && selectedSlugs[1] === card.dataset.slug);
+    });
+  }
+
+  function selectPiece(slug: string) {
+    if (!comparing) return;
+    const idx = selectedSlugs.indexOf(slug);
+    if (idx >= 0) {
+      selectedSlugs.splice(idx, 1);
+    } else if (selectedSlugs.length < 2) {
+      selectedSlugs.push(slug);
+    } else {
+      selectedSlugs[1] = slug;
+    }
+    updateCardStates();
+    if (selectedSlugs.length === 2) {
+      renderComparison();
+    } else {
+      if (compareBody) compareBody.style.display = 'none';
+      if (compareHint) {
+        compareHint.textContent = selectedSlugs.length === 0
+          ? 'Click two pieces below to compare their journeys'
+          : `Selected: ${getPieceTitle(selectedSlugs[0])} — click one more`;
+      }
+    }
+  }
+
+  function getPiece(slug: string) {
+    return allPieces.find(p => p.slug === slug);
+  }
+
+  function getPieceTitle(slug: string) {
+    const p = getPiece(slug);
+    return p ? p.title : slug;
+  }
+
+  function renderComparison() {
+    const a = getPiece(selectedSlugs[0]);
+    const b = getPiece(selectedSlugs[1]);
+    if (!a || !b || !compareSvg || !compareBody || !compareStats || !compareHint) return;
+
+    compareBody.style.display = '';
+    compareHint.textContent = `${a.title}  vs  ${b.title}`;
+
+    // Build unified date axis
+    const allDatesSet = new Set<string>();
+    a.entries.forEach((e: any) => allDatesSet.add(e.date));
+    b.entries.forEach((e: any) => allDatesSet.add(e.date));
+    const allDates = Array.from(allDatesSet).sort();
+
+    if (allDates.length < 2) return;
+
+    // Map entries to unified dates
+    function mapToAxis(entries: any[], dates: string[]) {
+      const byDate: Record<string, number> = {};
+      entries.forEach((e: any) => { byDate[e.date] = e.health; });
+      const result: (number | null)[] = [];
+      let lastVal: number | null = null;
+      for (const d of dates) {
+        if (byDate[d] !== undefined) {
+          lastVal = byDate[d];
+          result.push(lastVal);
+        } else {
+          result.push(lastVal); // carry forward or null
+        }
+      }
+      return result;
+    }
+
+    const aVals = mapToAxis(a.entries, allDates);
+    const bVals = mapToAxis(b.entries, allDates);
+
+    // SVG dimensions
+    const W = 640, H = 160, PAD = 24, RPAD = 8, TPAD = 12, BPAD = 20;
+    const plotW = W - PAD - RPAD;
+    const plotH = H - TPAD - BPAD;
+
+    // Y range (combined)
+    const allHealth = [...aVals, ...bVals].filter(v => v !== null) as number[];
+    const minH = Math.min(...allHealth) - 3;
+    const maxH = Math.max(...allHealth) + 3;
+    const rangeH = maxH - minH || 1;
+
+    function toX(i: number) { return PAD + (i / (allDates.length - 1)) * plotW; }
+    function toY(v: number) { return TPAD + (1 - (v - minH) / rangeH) * plotH; }
+
+    // Build paths
+    function buildPath(vals: (number | null)[]) {
+      let path = '';
+      let started = false;
+      for (let i = 0; i < vals.length; i++) {
+        if (vals[i] === null) continue;
+        const x = toX(i).toFixed(1);
+        const y = toY(vals[i]!).toFixed(1);
+        path += started ? ` L${x},${y}` : `M${x},${y}`;
+        started = true;
+      }
+      return path;
+    }
+
+    // Grid lines
+    const gridLines = [70, 80, 90, 100].filter(v => v >= minH && v <= maxH);
+    let gridSvg = '';
+    for (const v of gridLines) {
+      const y = toY(v).toFixed(1);
+      gridSvg += `<line x1="${PAD}" y1="${y}" x2="${W - RPAD}" y2="${y}" stroke="#2a2a4a" stroke-width="0.5" stroke-dasharray="4,4" />`;
+      gridSvg += `<text x="${PAD - 4}" y="${parseFloat(y) + 3}" fill="#555" font-size="8" font-family="monospace" text-anchor="end">${v}</text>`;
+    }
+
+    // Revision dots
+    function revisionDotsSvg(piece: any, vals: (number | null)[], color: string, yOff: number) {
+      let dots = '';
+      for (const rev of piece.revisions) {
+        const dateIdx = allDates.indexOf(rev.date);
+        if (dateIdx < 0) {
+          // Find closest
+          let bestIdx = 0, bestDist = Infinity;
+          for (let i = 0; i < allDates.length; i++) {
+            const d = Math.abs(new Date(allDates[i]).getTime() - new Date(rev.date).getTime());
+            if (d < bestDist) { bestDist = d; bestIdx = i; }
+          }
+          if (vals[bestIdx] !== null) {
+            const x = toX(bestIdx).toFixed(1);
+            const y = (toY(vals[bestIdx]!) + yOff).toFixed(1);
+            dots += `<circle cx="${x}" cy="${y}" r="4" fill="${color}" stroke="#16162e" stroke-width="1.5" opacity="0.8"><title>S${rev.session}: \u0394${rev.delta > 0 ? '+' : ''}${rev.delta}</title></circle>`;
+          }
+        } else if (vals[dateIdx] !== null) {
+          const x = toX(dateIdx).toFixed(1);
+          const y = (toY(vals[dateIdx]!) + yOff).toFixed(1);
+          dots += `<circle cx="${x}" cy="${y}" r="4" fill="${color}" stroke="#16162e" stroke-width="1.5" opacity="0.8"><title>S${rev.session}: \u0394${rev.delta > 0 ? '+' : ''}${rev.delta}</title></circle>`;
+        }
+      }
+      return dots;
+    }
+
+    // Date labels (first and last)
+    const dateLabelSvg = `
+      <text x="${PAD}" y="${H - 4}" fill="#555" font-size="8" font-family="monospace">${allDates[0].slice(5)}</text>
+      <text x="${W - RPAD}" y="${H - 4}" fill="#555" font-size="8" font-family="monospace" text-anchor="end">${allDates[allDates.length - 1].slice(5)}</text>
+    `;
+
+    // Legend in SVG
+    const legendSvg = `
+      <circle cx="${W - 180}" cy="12" r="4" fill="#4ecdc4" />
+      <text x="${W - 173}" y="15" fill="#4ecdc4" font-size="9" font-family="monospace">${a.title.length > 18 ? a.title.slice(0, 18) + '\u2026' : a.title}</text>
+      <circle cx="${W - 180}" cy="26" r="4" fill="#b89cff" />
+      <text x="${W - 173}" y="29" fill="#b89cff" font-size="9" font-family="monospace">${b.title.length > 18 ? b.title.slice(0, 18) + '\u2026' : b.title}</text>
+    `;
+
+    const pathA = buildPath(aVals);
+    const pathB = buildPath(bVals);
+
+    compareSvg.innerHTML = `
+      ${gridSvg}
+      ${dateLabelSvg}
+      ${legendSvg}
+      <path d="${pathA}" fill="none" stroke="#4ecdc4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+      <path d="${pathB}" fill="none" stroke="#b89cff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+      ${revisionDotsSvg(a, aVals, '#4ecdc4', -2)}
+      ${revisionDotsSvg(b, bVals, '#b89cff', 2)}
+    `;
+
+    // Stats
+    function statRow(label: string, valA: string | number, valB: string | number, higherBetter = true) {
+      const nA = typeof valA === 'number' ? valA : parseFloat(String(valA));
+      const nB = typeof valB === 'number' ? valB : parseFloat(String(valB));
+      const winA = higherBetter ? nA > nB : nA < nB;
+      const winB = higherBetter ? nB > nA : nB < nA;
+      return { label, valA: String(valA), valB: String(valB), winA, winB };
+    }
+
+    const rows = [
+      statRow('Current Health', a.currentHealth, b.currentHealth),
+      statRow('Start Health', a.startHealth, b.startHealth),
+      statRow('Total Delta', `${a.delta > 0 ? '+' : ''}${a.delta}`, `${b.delta > 0 ? '+' : ''}${b.delta}`),
+      statRow('Peak', a.peakHealth, b.peakHealth),
+      statRow('Revisions', a.revisionCount, b.revisionCount),
+      statRow('Revision Delta', `${a.totalDelta > 0 ? '+' : ''}${a.totalDelta}`, `${b.totalDelta > 0 ? '+' : ''}${b.totalDelta}`),
+    ];
+
+    function renderStatCard(piece: any, side: 'a' | 'b', rows: any[]) {
+      const sideKey = side === 'a' ? 'valA' : 'valB';
+      const winKey = side === 'a' ? 'winA' : 'winB';
+      return `
+        <div class="compare-stat-card card-${side}">
+          <div class="compare-stat-title">${piece.title}</div>
+          ${rows.map(r => `
+            <div class="compare-stat-row">
+              <span class="compare-stat-label">${r.label}</span>
+              <span class="compare-stat-value">${r[sideKey]}${r[winKey] ? '<span class="compare-winner">\u2605</span>' : ''}</span>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    compareStats.innerHTML = renderStatCard(a, 'a', rows) + renderStatCard(b, 'b', rows);
+  }
+
+  // Wire up events
+  compareToggle?.addEventListener('click', () => {
+    if (comparing) exitCompareMode();
+    else enterCompareMode();
+  });
+
+  compareClose?.addEventListener('click', exitCompareMode);
+
+  // Card click handler (delegated)
+  grid?.addEventListener('click', (e: Event) => {
+    if (!comparing) return;
+    const target = e.target as HTMLElement;
+    const card = target.closest('.piece-card') as HTMLElement;
+    if (!card || !card.dataset.slug) return;
+    e.preventDefault();
+    e.stopPropagation();
+    selectPiece(card.dataset.slug);
   });
 </script>
 
