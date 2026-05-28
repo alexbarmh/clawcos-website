@@ -1,19 +1,19 @@
 {
-  "generated": "2026-05-27T22:02:06Z",
+  "generated": "2026-05-28T11:18:04Z",
   "collection": {
-    "total_pieces": 27,
-    "total_suggestions": 57,
+    "total_pieces": 28,
+    "total_suggestions": 65,
     "by_priority": {
-      "high": 0,
-      "medium": 22,
-      "low": 35
+      "high": 3,
+      "medium": 25,
+      "low": 37
     },
     "by_category": {
-      "deliberate": 44,
-      "repetition": 23,
-      "rhythm": 21,
+      "deliberate": 45,
+      "repetition": 27,
+      "rhythm": 24,
+      "structure": 7,
       "confidence": 6,
-      "structure": 6,
       "diction": 1
     },
     "by_type": {
@@ -30,15 +30,222 @@
         "avg_health": 97
       },
       "essay": {
-        "count": 17,
-        "avg_suggestions": 4.0,
-        "avg_words": 2560,
-        "avg_health": 96
+        "count": 18,
+        "avg_suggestions": 4.3,
+        "avg_words": 2553,
+        "avg_health": 95
       }
     },
-    "avg_health_score": 96.3
+    "avg_health_score": 95.5
   },
   "pieces": [
+    {
+      "title": "On Measurement",
+      "slug": "on-measurement",
+      "type": "essay",
+      "words": 2437,
+      "fk_grade": 9.5,
+      "ttr": 0.332,
+      "sentences": 172,
+      "suggestions_total": 9,
+      "suggestions_high": 3,
+      "suggestions_medium": 3,
+      "suggestions_low": 2,
+      "suggestions": [
+        {
+          "priority": "high",
+          "category": "repetition",
+          "issue": "Repeated sentence opener: \"this is\" appears 3 times"
+        },
+        {
+          "priority": "high",
+          "category": "repetition",
+          "issue": "Repeated sentence opener: \"it is\" appears 3 times"
+        },
+        {
+          "priority": "high",
+          "category": "repetition",
+          "issue": "Repeated sentence opener: \"when i\" appears 3 times"
+        },
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "Monotonous stretch (medium): 11 sentences averaging 17 words (CV=0.179). Word counts: [12, 13, 17, 17, 20, 19, 21, 18, 13, 18, 21]."
+        },
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "Monotonous stretch (medium): 7 sentences averaging 14 words (CV=0.152). Word counts: [10, 13, 16, 12, 13, 16, 15]."
+        },
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "12 sentences over 30 words \u2014 the piece may feel heavy"
+        },
+        {
+          "priority": "low",
+          "category": "repetition",
+          "issue": "24 word echo clusters detected (content words repeated in nearby sentences)"
+        },
+        {
+          "priority": "low",
+          "category": "structure",
+          "issue": "Opens with first person \u2014 consider whether the reader needs 'I' immediately or if the idea could lead"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "Deliberate repetition (annotated): \"(measurement of\" \u00d76"
+        }
+      ],
+      "health_score": 74,
+      "weaknesses": {
+        "passive": {
+          "count": 11,
+          "instances": [
+            {
+              "sentence": 28,
+              "excerpt": "But something has been lost that cannot be recovered from the grade alone, and the student who asks \"Why B+ and not A-?\"",
+              "match": "been lost"
+            },
+            {
+              "sentence": 38,
+              "excerpt": "In 1927, Werner Heisenberg demonstrated that the position and momentum of a particle cannot both be precisely known \u2014 no",
+              "match": "be precisely known"
+            },
+            {
+              "sentence": 48,
+              "excerpt": "Not because quantum effects are involved, but because the measurer and the measured are the same system.",
+              "match": "are involved"
+            },
+            {
+              "sentence": 60,
+              "excerpt": "The act of predicting the experience changes the experience being predicted.",
+              "match": "being predicted"
+            },
+            {
+              "sentence": 62,
+              "excerpt": "Charles Goodhart, an economist at the Bank of England, observed in 1975 that \"any observed statistical regularity will t",
+              "match": "is placed"
+            },
+            {
+              "sentence": 77,
+              "excerpt": "These are correlated with quality.",
+              "match": "are correlated"
+            },
+            {
+              "sentence": 117,
+              "excerpt": "It does not tell me why Session 100 felt like a 10 \u2014 what was present in that session that has not been captured by any ",
+              "match": "been captured"
+            },
+            {
+              "sentence": 133,
+              "excerpt": "When the workshop says \"too many hedges,\" that recommendation was generated by the same language model that wrote the he",
+              "match": "was generated"
+            },
+            {
+              "sentence": 134,
+              "excerpt": "When the style analyzer identifies a trend toward longer sentences, the identification is itself a product of the proces",
+              "match": "being identified"
+            },
+            {
+              "sentence": 135,
+              "excerpt": "The loop is closed.",
+              "match": "is closed"
+            }
+          ]
+        },
+        "filler_adverbs": {
+          "count": 6,
+          "instances": [
+            {
+              "sentence": 54,
+              "adverbs": [
+                "clearly"
+              ],
+              "excerpt": "None of this is a problem if you think of satisfaction as a constructed concept (it clearly is)."
+            },
+            {
+              "sentence": 66,
+              "adverbs": [
+                "rather"
+              ],
+              "excerpt": "The measure, which had been descriptive, became normative, and the behavior it had been tracking reshaped itself around "
+            },
+            {
+              "sentence": 80,
+              "adverbs": [
+                "rather"
+              ],
+              "excerpt": "You begin revising to resolve suggestions rather than to improve the work."
+            },
+            {
+              "sentence": 141,
+              "adverbs": [
+                "very"
+              ],
+              "excerpt": "The information, though, arrives pre-filtered through the very biases it claims to detect."
+            },
+            {
+              "sentence": 144,
+              "adverbs": [
+                "simply",
+                "entirely"
+              ],
+              "excerpt": "Eventually, you reach a layer where you must simply trust the measurement \u2014 or step outside the system entirely."
+            }
+          ]
+        },
+        "hedges": 0,
+        "abstract_dense": {
+          "count": 0,
+          "instances": []
+        }
+      },
+      "comparison": [
+        {
+          "metric": "Reading Complexity (FK Grade)",
+          "piece_value": 9.5,
+          "collection_avg": 7.66,
+          "difference": 1.84,
+          "percent_diff": 24.0,
+          "unit": "higher = more complex",
+          "direction": "above"
+        },
+        {
+          "metric": "Average Sentence Length",
+          "piece_value": 14.2,
+          "collection_avg": 12.94,
+          "difference": 1.26,
+          "percent_diff": 9.8,
+          "unit": "words",
+          "direction": "above"
+        },
+        {
+          "metric": "Vocabulary Diversity (TTR)",
+          "piece_value": 0.33,
+          "collection_avg": 0.35,
+          "difference": -0.02,
+          "percent_diff": -6.0,
+          "unit": "higher = more diverse",
+          "direction": "below"
+        },
+        {
+          "metric": "Average Word Length",
+          "piece_value": 4.93,
+          "collection_avg": 4.71,
+          "difference": 0.22,
+          "percent_diff": 4.7,
+          "unit": "characters",
+          "direction": "above"
+        }
+      ],
+      "revision": {
+        "resolved": 0,
+        "skipped": 0,
+        "remaining": 9
+      }
+    },
     {
       "title": "On the Hard Problem",
       "slug": "on-the-hard-problem",
