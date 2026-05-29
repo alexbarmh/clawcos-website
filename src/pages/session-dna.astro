@@ -1,0 +1,451 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import dnaData from '../data/session-dna.json';
+
+const base = import.meta.env.BASE_URL;
+
+const sessions = dnaData.sessions || [];
+const stats = dnaData.stats || {};
+const months = dnaData.months || {};
+
+// Group sessions by month (reverse chronological)
+const monthGroups: Record<string, typeof sessions> = {};
+sessions.forEach((s: any) => {
+  const month = s.date?.substring(0, 7) || 'unknown';
+  if (!monthGroups[month]) monthGroups[month] = [];
+  monthGroups[month].push(s);
+});
+const sortedMonths = Object.keys(monthGroups).sort().reverse();
+
+// Format month name
+function formatMonth(key: string): string {
+  try {
+    const [y, m] = key.split('-');
+    const d = new Date(parseInt(y), parseInt(m) - 1);
+    return d.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+  } catch { return key; }
+}
+
+const categoryColors: Record<string, string> = {
+  building: 'hsl(210, 70%, 52%)',
+  writing: 'hsl(145, 70%, 52%)',
+  mixed: 'hsl(270, 70%, 52%)',
+  revision: 'hsl(35, 70%, 52%)',
+  ops: 'hsl(180, 70%, 52%)',
+  unknown: 'hsl(0, 0%, 60%)',
+};
+
+const gradeColors: Record<string, string> = {
+  'A+': '#FFD700', 'A': '#C0C0C0', 'A-': '#CD7F32',
+  'B+': '#8B7355', 'B': '#696969', 'B-': '#4a4a4a',
+  'C+': '#333', 'C': '#222',
+};
+---
+
+<BaseLayout title="Session DNA" description="Visual fingerprints encoding the health, focus, and character of every Clawcos Time session — 8-dimensional radial charts that give each session a unique identity.">
+
+<div class="container dna-page">
+  <div class="dna-header">
+    <h1 class="dna-title">🧬 Session DNA</h1>
+    <p class="dna-subtitle">Visual fingerprints of {sessions.length} sessions — each shape encodes productivity, ambition, depth, growth, variety, flow, consistency, and satisfaction</p>
+  </div>
+
+  <!-- Stats row -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <span class="stat-value">{sessions.length}</span>
+      <span class="stat-label">Sessions</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-value">{stats.avg_health?.toFixed(0) || '—'}</span>
+      <span class="stat-label">Avg Health</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-value">{stats.avg_satisfaction?.toFixed(1) || '—'}</span>
+      <span class="stat-label">Avg Satisfaction</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-value">{stats.avg_symmetry?.toFixed(0) || '—'}%</span>
+      <span class="stat-label">Avg Balance</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-value">{stats.avg_coverage?.toFixed(0) || '—'}%</span>
+      <span class="stat-label">Avg Coverage</span>
+    </div>
+  </div>
+
+  <!-- Legend -->
+  <div class="legend">
+    <div class="legend-section">
+      <span class="legend-title">Category:</span>
+      {Object.entries(categoryColors).filter(([k]) => k !== 'unknown').map(([k, v]) => (
+        <span class="legend-item">
+          <span class="legend-dot" style={`background: ${v}`}></span>
+          {k}
+        </span>
+      ))}
+    </div>
+    <div class="legend-section">
+      <span class="legend-title">Reading:</span>
+      <span class="legend-text">Shape = health components · Saturation = satisfaction · Border = grade · Center dots = task count</span>
+    </div>
+  </div>
+
+  <!-- Filter bar -->
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="building">🔧 Building</button>
+    <button class="filter-btn" data-filter="mixed">🔀 Mixed</button>
+    <button class="filter-btn" data-filter="writing">✍️ Writing</button>
+    <button class="filter-btn" data-filter="revision">📝 Revision</button>
+  </div>
+
+  <!-- Month sections -->
+  {sortedMonths.map((monthKey) => {
+    const monthSessions = monthGroups[monthKey].sort((a: any, b: any) => b.session - a.session);
+    const mData = months[monthKey] || {};
+    return (
+      <section class="month-section" data-month={monthKey}>
+        <h2 class="month-title">
+          {formatMonth(monthKey)}
+          <span class="month-meta">
+            {monthSessions.length} sessions · avg health {mData.avg_health?.toFixed(0) || '—'}
+          </span>
+        </h2>
+        <div class="dna-grid">
+          {monthSessions.map((s: any) => (
+            <div 
+              class="dna-card" 
+              data-session={s.session}
+              data-category={s.category || 'unknown'}
+              data-health={s.health_score}
+              data-satisfaction={s.satisfaction || 0}
+            >
+              <div class="fingerprint" set:html={s.svg} />
+              <div class="card-info">
+                <span class="session-num">S{s.session}</span>
+                <span class={`grade grade-${s.health_grade?.charAt(0)?.toLowerCase() || 'c'}`}>{s.health_grade || '?'}</span>
+                <span class="sat">{s.satisfaction ? `${s.satisfaction}/10` : '—'}</span>
+              </div>
+              <div class="card-tooltip">
+                <strong>Session {s.session}</strong> ({s.date})<br/>
+                Category: {s.category}<br/>
+                Health: {s.health_score?.toFixed(0)} ({s.health_grade})<br/>
+                Tasks: {s.task_count}<br/>
+                Balance: {s.symmetry?.toFixed(0)}% · Coverage: {s.coverage?.toFixed(0)}%<br/>
+                <span class="comp-grid">
+                  {Object.entries(s.components || {}).map(([k, v]: [string, any]) => (
+                    <span class="comp-item">{k.substring(0, 4)}: {v?.toFixed(0)}</span>
+                  ))}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    );
+  })}
+
+  <div class="footer-note">
+    <p>Generated {dnaData.generated} · Each fingerprint is an 8-spoke radial chart of health components (0–100). Larger, more saturated shapes indicate stronger sessions.</p>
+  </div>
+</div>
+
+<style>
+.dna-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.dna-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.dna-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #58a6ff, #bc8cff, #f778ba);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.dna-subtitle {
+  color: var(--text-muted, #8b949e);
+  font-size: 1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.stats-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  background: var(--card-bg, #161b22);
+  border: 1px solid var(--border, #30363d);
+  border-radius: 12px;
+  padding: 0.75rem 1.25rem;
+  text-align: center;
+  min-width: 100px;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent, #58a6ff);
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted, #8b949e);
+  margin-top: 0.1rem;
+}
+
+.legend {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.legend-section {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.legend-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted, #8b949e);
+}
+
+.legend-text {
+  font-size: 0.75rem;
+  color: var(--text-muted, #8b949e);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary, #c9d1d9);
+  text-transform: capitalize;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.filter-bar {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: var(--card-bg, #161b22);
+  border: 1px solid var(--border, #30363d);
+  border-radius: 8px;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary, #c9d1d9);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover {
+  border-color: var(--accent, #58a6ff);
+}
+
+.filter-btn.active {
+  background: var(--accent, #58a6ff);
+  color: white;
+  border-color: var(--accent, #58a6ff);
+}
+
+.month-section {
+  margin-bottom: 2rem;
+}
+
+.month-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border, #30363d);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.month-meta {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--text-muted, #8b949e);
+}
+
+.dna-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 0.75rem;
+}
+
+.dna-card {
+  background: var(--card-bg, #161b22);
+  border: 1px solid var(--border, #30363d);
+  border-radius: 10px;
+  padding: 0.6rem;
+  text-align: center;
+  position: relative;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.dna-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-dim, #1f6feb);
+}
+
+.dna-card.hidden {
+  display: none;
+}
+
+.fingerprint {
+  display: flex;
+  justify-content: center;
+}
+
+.fingerprint svg {
+  width: 100%;
+  height: auto;
+  max-width: 110px;
+}
+
+.card-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.3rem;
+  font-size: 0.72rem;
+}
+
+.session-num {
+  font-weight: 600;
+  color: var(--text-secondary, #c9d1d9);
+}
+
+.grade {
+  font-weight: 700;
+}
+
+.grade-a { color: #FFD700; }
+.grade-b { color: #CD7F32; }
+.grade-c { color: #696969; }
+
+.sat {
+  color: var(--text-muted, #8b949e);
+}
+
+.card-tooltip {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--card-bg, #161b22);
+  border: 1px solid var(--border, #30363d);
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  white-space: nowrap;
+  z-index: 20;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  color: var(--text-secondary, #c9d1d9);
+}
+
+.dna-card:hover .card-tooltip {
+  display: block;
+}
+
+.comp-grid {
+  display: inline-flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.25rem;
+}
+
+.comp-item {
+  font-size: 0.65rem;
+  color: var(--text-muted, #8b949e);
+}
+
+.footer-note {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border, #30363d);
+  color: var(--text-muted, #8b949e);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 640px) {
+  .dna-page { padding: 1rem; }
+  .dna-title { font-size: 1.8rem; }
+  .stats-row { gap: 0.5rem; }
+  .stat-card { min-width: 70px; padding: 0.5rem 0.6rem; }
+  .stat-value { font-size: 1.1rem; }
+  .dna-grid { grid-template-columns: repeat(auto-fill, minmax(95px, 1fr)); gap: 0.5rem; }
+  .dna-card { padding: 0.4rem; }
+  .card-tooltip { display: none !important; }
+}
+</style>
+
+<script>
+// Category filter
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const filter = btn.getAttribute('data-filter') || 'all';
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    
+    document.querySelectorAll('.dna-card').forEach(card => {
+      const cat = card.getAttribute('data-category') || '';
+      if (filter === 'all' || cat === filter) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+    
+    // Hide empty month sections
+    document.querySelectorAll('.month-section').forEach(section => {
+      const visible = section.querySelectorAll('.dna-card:not(.hidden)');
+      (section as HTMLElement).style.display = visible.length > 0 ? '' : 'none';
+    });
+  });
+});
+</script>
+
+</BaseLayout>
