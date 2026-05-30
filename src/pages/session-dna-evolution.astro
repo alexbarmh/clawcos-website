@@ -1,0 +1,512 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import dnaData from '../data/session-dna.json';
+
+const base = import.meta.env.BASE_URL;
+const sessions = dnaData.sessions || [];
+const componentNames = ['productivity', 'ambition', 'depth', 'growth', 'variety', 'flow', 'consistency', 'satisfaction'];
+
+// Compute monthly averages
+const monthlyAvgs: Record<string, any> = {};
+sessions.forEach((s: any) => {
+  const month = s.date?.substring(0, 7) || 'unknown';
+  if (!monthlyAvgs[month]) {
+    monthlyAvgs[month] = { count: 0, components: {} as any, symmetry: 0, coverage: 0, satisfaction: 0 };
+    componentNames.forEach(c => monthlyAvgs[month].components[c] = 0);
+  }
+  monthlyAvgs[month].count++;
+  monthlyAvgs[month].symmetry += s.symmetry || 0;
+  monthlyAvgs[month].coverage += s.coverage || 0;
+  monthlyAvgs[month].satisfaction += (s.satisfaction || 0);
+  componentNames.forEach(c => {
+    monthlyAvgs[month].components[c] += s.components?.[c] || 0;
+  });
+});
+
+const monthlyData = Object.entries(monthlyAvgs).sort(([a], [b]) => a.localeCompare(b)).map(([month, data]: [string, any]) => {
+  const avg: any = { month, count: data.count, components: {} as any };
+  avg.symmetry = Math.round(data.symmetry / data.count * 10) / 10;
+  avg.coverage = Math.round(data.coverage / data.count * 10) / 10;
+  avg.satisfaction = Math.round(data.satisfaction / data.count * 10) / 10;
+  componentNames.forEach(c => {
+    avg.components[c] = Math.round(data.components[c] / data.count * 10) / 10;
+  });
+  return avg;
+});
+
+function formatMonth(key: string): string {
+  try {
+    const [y, m] = key.split('-');
+    const d = new Date(parseInt(y), parseInt(m) - 1);
+    return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+  } catch { return key; }
+}
+
+const categoryColors: Record<string, string> = {
+  building: '#4e9af5',
+  writing: '#4ecf72',
+  mixed: '#9b6fcf',
+  revision: '#cf9b4e',
+  ops: '#4ecfcf',
+  unknown: '#888',
+};
+---
+
+<BaseLayout title="Session DNA Evolution" description="Watch how session fingerprints morph over time — an animated timeline of creative evolution across 111+ sessions.">
+
+<div class="container evo-page">
+  <div class="evo-header">
+    <h1 class="evo-title">🧬 Session DNA Evolution</h1>
+    <p class="evo-subtitle">Watch the fingerprint morph across {sessions.length} sessions — drag the slider or press Play to see the shape of creative evolution</p>
+  </div>
+
+  <!-- Main Morphing Display -->
+  <section class="morph-section">
+    <div class="morph-layout">
+      <div class="morph-canvas-wrap">
+        <canvas id="morph-canvas" width="400" height="400"></canvas>
+        <div class="morph-label" id="morph-label">S1</div>
+      </div>
+      <div class="morph-info" id="morph-info">
+        <div class="morph-meta">
+          <span class="morph-date" id="morph-date"></span>
+          <span class="morph-category" id="morph-category"></span>
+        </div>
+        <div class="morph-metrics">
+          <div class="morph-metric">
+            <span class="mm-label">Health</span>
+            <span class="mm-value" id="mm-health">—</span>
+          </div>
+          <div class="morph-metric">
+            <span class="mm-label">Symmetry</span>
+            <span class="mm-value" id="mm-symmetry">—</span>
+          </div>
+          <div class="morph-metric">
+            <span class="mm-label">Coverage</span>
+            <span class="mm-value" id="mm-coverage">—</span>
+          </div>
+          <div class="morph-metric">
+            <span class="mm-label">Tasks</span>
+            <span class="mm-value" id="mm-tasks">—</span>
+          </div>
+        </div>
+        <div class="morph-components" id="morph-components"></div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="morph-controls">
+      <button class="morph-btn" id="btn-prev" title="Previous">⏮</button>
+      <button class="morph-btn morph-btn-play" id="btn-play" title="Play/Pause">▶</button>
+      <button class="morph-btn" id="btn-next" title="Next">⏭</button>
+      <input type="range" id="morph-slider" min="0" max={sessions.length - 1} value="0" class="morph-slider" />
+      <select id="morph-speed" class="morph-speed">
+        <option value="800">Slow</option>
+        <option value="400" selected>Normal</option>
+        <option value="150">Fast</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- Component Trend Lines -->
+  <section class="trends-section">
+    <h2>📈 Component Trends</h2>
+    <p class="section-desc">How each dimension of session quality evolves over time</p>
+    <div class="trends-grid" id="trends-grid"></div>
+  </section>
+
+  <!-- Monthly Average Fingerprints -->
+  <section class="monthly-section">
+    <h2>📅 Monthly Averages</h2>
+    <p class="section-desc">The "typical" session shape for each month — watch how balance and coverage evolve</p>
+    <div class="monthly-grid">
+      {monthlyData.map(m => (
+        <div class="monthly-card" data-month={m.month} data-components={JSON.stringify(m.components)}>
+          <canvas class="monthly-canvas" width="140" height="140"></canvas>
+          <div class="monthly-meta">
+            <span class="monthly-name">{formatMonth(m.month)}</span>
+            <span class="monthly-count">{m.count} sessions</span>
+            <span class="monthly-stats">Sym: {m.symmetry}% · Cov: {m.coverage}%</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Filmstrip -->
+  <section class="filmstrip-section">
+    <h2>🎞️ Full Filmstrip</h2>
+    <p class="section-desc">Every session fingerprint in chronological order — click any to jump to it</p>
+    <div class="filmstrip" id="filmstrip"></div>
+  </section>
+
+  <div class="evo-nav">
+    <a href={`${base}session-dna/`}>← Session DNA Gallery</a>
+    <a href={`${base}analytics/`}>Analytics →</a>
+  </div>
+</div>
+
+<style>
+  .evo-page { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem; }
+  .evo-header { text-align: center; margin-bottom: 2rem; }
+  .evo-title { font-size: 2rem; color: #e8dcc8; margin: 0 0 0.5rem; }
+  .evo-subtitle { color: #a09080; font-size: 0.95rem; margin: 0; }
+
+  .morph-section { background: #1a1612; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; border: 1px solid #2a2520; }
+  .morph-layout { display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap; justify-content: center; }
+  .morph-canvas-wrap { position: relative; flex-shrink: 0; }
+  #morph-canvas { background: radial-gradient(circle, #252018, #1a1612); border-radius: 50%; }
+  .morph-label { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); color: #706858; font-size: 1.2rem; font-weight: 700; opacity: 0.5; pointer-events: none; }
+
+  .morph-info { flex: 1; min-width: 240px; }
+  .morph-meta { display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; }
+  .morph-date { color: #c8b898; font-size: 1.1rem; font-weight: 600; }
+  .morph-category { padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; color: white; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  .morph-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 1rem; }
+  .morph-metric { background: #252018; padding: 0.6rem 0.8rem; border-radius: 8px; }
+  .mm-label { display: block; color: #706858; font-size: 0.75rem; text-transform: uppercase; }
+  .mm-value { display: block; color: #e8dcc8; font-size: 1.2rem; font-weight: 700; }
+
+  .morph-components { display: flex; flex-direction: column; gap: 4px; }
+  .comp-bar { display: flex; align-items: center; gap: 8px; }
+  .comp-name { color: #a09080; font-size: 0.75rem; width: 85px; text-align: right; flex-shrink: 0; }
+  .comp-track { flex: 1; height: 6px; background: #252018; border-radius: 3px; overflow: hidden; }
+  .comp-fill { height: 100%; border-radius: 3px; transition: width 0.3s ease; }
+  .comp-val { color: #c8b898; font-size: 0.7rem; width: 30px; flex-shrink: 0; }
+
+  .morph-controls { display: flex; gap: 0.5rem; align-items: center; margin-top: 1rem; flex-wrap: wrap; }
+  .morph-btn { background: #252018; border: 1px solid #3a3530; color: #c8b898; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 1rem; }
+  .morph-btn:hover { background: #3a3530; }
+  .morph-btn-play { background: #4e9af5; color: white; border-color: #4e9af5; }
+  .morph-slider { flex: 1; min-width: 200px; accent-color: #4e9af5; }
+  .morph-speed { background: #252018; border: 1px solid #3a3530; color: #c8b898; padding: 4px 8px; border-radius: 6px; font-size: 0.8rem; }
+
+  .trends-section, .monthly-section, .filmstrip-section { margin-bottom: 2rem; }
+  .trends-section h2, .monthly-section h2, .filmstrip-section h2 { color: #e8dcc8; font-size: 1.3rem; margin: 0 0 0.3rem; }
+  .section-desc { color: #a09080; font-size: 0.85rem; margin: 0 0 1rem; }
+
+  .trends-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+  .trend-card { background: #1a1612; border: 1px solid #2a2520; border-radius: 8px; padding: 0.8rem; }
+  .trend-label { color: #c8b898; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.3rem; }
+  .trend-range { color: #706858; font-size: 0.7rem; }
+  .trend-svg { width: 100%; height: 50px; }
+
+  .monthly-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1rem; }
+  .monthly-card { background: #1a1612; border: 1px solid #2a2520; border-radius: 8px; padding: 0.8rem; text-align: center; }
+  .monthly-canvas { display: block; margin: 0 auto; }
+  .monthly-meta { margin-top: 0.3rem; }
+  .monthly-name { display: block; color: #c8b898; font-size: 0.85rem; font-weight: 600; }
+  .monthly-count { display: block; color: #706858; font-size: 0.7rem; }
+  .monthly-stats { display: block; color: #a09080; font-size: 0.7rem; }
+
+  .filmstrip { display: flex; gap: 4px; overflow-x: auto; padding: 0.5rem 0; }
+  .filmstrip-item { width: 48px; height: 48px; flex-shrink: 0; cursor: pointer; border-radius: 50%; border: 2px solid transparent; transition: border-color 0.2s, transform 0.2s; }
+  .filmstrip-item:hover { border-color: #4e9af5; transform: scale(1.15); }
+  .filmstrip-item.active { border-color: #FFD700; transform: scale(1.2); }
+  .filmstrip-canvas { width: 100%; height: 100%; border-radius: 50%; }
+
+  .evo-nav { display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; }
+  .evo-nav a { color: #4e9af5; text-decoration: none; font-size: 0.9rem; }
+  .evo-nav a:hover { text-decoration: underline; }
+
+  @media (max-width: 600px) {
+    #morph-canvas { width: 280px; height: 280px; }
+    .morph-layout { flex-direction: column; align-items: center; }
+    .morph-info { min-width: unset; width: 100%; }
+  }
+</style>
+
+<script define:vars={{ sessions, componentNames, categoryColors }}>
+  const CX = 200, CY = 200, R = 170;
+  const COMPONENT_COLORS = {
+    productivity: '#4e9af5', ambition: '#f5734e', depth: '#9b6fcf',
+    growth: '#4ecf72', variety: '#cf9b4e', flow: '#4ecfcf',
+    consistency: '#cfcf4e', satisfaction: '#cf4e9b'
+  };
+
+  // Draw fingerprint on a canvas
+  function drawFingerprint(ctx, components, size, opts = {}) {
+    const cx = size / 2, cy = size / 2, r = size * 0.42;
+    const n = componentNames.length;
+    const bgColor = opts.bg || '#1a1612';
+    const fillColor = opts.fill || 'rgba(78,154,245,0.25)';
+    const strokeColor = opts.stroke || 'rgba(78,154,245,0.7)';
+
+    ctx.clearRect(0, 0, size, size);
+
+    // Background circles
+    ctx.strokeStyle = 'rgba(112,104,88,0.15)';
+    ctx.lineWidth = 0.5;
+    for (let i = 1; i <= 4; i++) {
+      ctx.beginPath();
+      ctx.arc(cx, cy, r * i / 4, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+
+    // Spokes
+    for (let i = 0; i < n; i++) {
+      const angle = (Math.PI * 2 * i / n) - Math.PI / 2;
+      ctx.beginPath();
+      ctx.moveTo(cx, cy);
+      ctx.lineTo(cx + Math.cos(angle) * r, cy + Math.sin(angle) * r);
+      ctx.strokeStyle = 'rgba(112,104,88,0.2)';
+      ctx.stroke();
+    }
+
+    // Shape
+    const points = [];
+    for (let i = 0; i < n; i++) {
+      const angle = (Math.PI * 2 * i / n) - Math.PI / 2;
+      const val = (components[componentNames[i]] || 0) / 100;
+      points.push({
+        x: cx + Math.cos(angle) * r * val,
+        y: cy + Math.sin(angle) * r * val
+      });
+    }
+
+    ctx.beginPath();
+    ctx.moveTo(points[0].x, points[0].y);
+    for (let i = 1; i < points.length; i++) {
+      ctx.lineTo(points[i].x, points[i].y);
+    }
+    ctx.closePath();
+    ctx.fillStyle = fillColor;
+    ctx.fill();
+    ctx.strokeStyle = strokeColor;
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    // Dots
+    points.forEach((p, i) => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, size > 100 ? 4 : 2, 0, Math.PI * 2);
+      ctx.fillStyle = COMPONENT_COLORS[componentNames[i]] || '#aaa';
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(255,255,255,0.5)';
+      ctx.lineWidth = 0.5;
+      ctx.stroke();
+    });
+  }
+
+  // Interpolate between two component sets
+  function lerp(a, b, t) {
+    const result = {};
+    componentNames.forEach(c => {
+      result[c] = (a[c] || 0) * (1 - t) + (b[c] || 0) * t;
+    });
+    return result;
+  }
+
+  function getCatColor(cat) {
+    return categoryColors[cat] || '#888';
+  }
+
+  function getCatFill(cat) {
+    const c = getCatColor(cat);
+    return c.replace(')', ',0.25)').replace('rgb', 'rgba').replace('#', '');
+  }
+
+  // Category-based fill/stroke colors
+  function getColors(cat) {
+    const base = getCatColor(cat);
+    return {
+      fill: base + '40',  // 25% alpha hex
+      stroke: base + 'B3', // 70% alpha hex
+    };
+  }
+
+  // Main morph canvas
+  const canvas = document.getElementById('morph-canvas');
+  const ctx = canvas.getContext('2d');
+  const slider = document.getElementById('morph-slider');
+  const btnPlay = document.getElementById('btn-play');
+  const btnPrev = document.getElementById('btn-prev');
+  const btnNext = document.getElementById('btn-next');
+  const speedSelect = document.getElementById('morph-speed');
+  const labelEl = document.getElementById('morph-label');
+
+  let currentIdx = 0;
+  let playing = false;
+  let animFrame = null;
+  let lastTime = 0;
+
+  function updateDisplay(idx, components) {
+    const s = sessions[idx];
+    const cat = s.category || 'unknown';
+    const colors = { fill: getCatColor(cat) + '40', stroke: getCatColor(cat) + 'B3' };
+    drawFingerprint(ctx, components || s.components, 400, colors);
+    labelEl.textContent = 'S' + s.session;
+
+    document.getElementById('morph-date').textContent = s.date || '';
+    const catEl = document.getElementById('morph-category');
+    catEl.textContent = cat;
+    catEl.style.background = getCatColor(cat);
+
+    document.getElementById('mm-health').textContent = (s.health_score || 0).toFixed(1);
+    document.getElementById('mm-symmetry').textContent = (s.symmetry || 0).toFixed(1) + '%';
+    document.getElementById('mm-coverage').textContent = (s.coverage || 0).toFixed(1) + '%';
+    document.getElementById('mm-tasks').textContent = s.task_count || '—';
+
+    // Component bars
+    const compEl = document.getElementById('morph-components');
+    const comps = components || s.components;
+    compEl.innerHTML = componentNames.map(c => {
+      const val = Math.round(comps[c] || 0);
+      const color = COMPONENT_COLORS[c] || '#aaa';
+      return `<div class="comp-bar">
+        <span class="comp-name">${c}</span>
+        <div class="comp-track"><div class="comp-fill" style="width:${val}%;background:${color}"></div></div>
+        <span class="comp-val">${val}</span>
+      </div>`;
+    }).join('');
+
+    // Filmstrip active
+    document.querySelectorAll('.filmstrip-item').forEach((el, i) => {
+      el.classList.toggle('active', i === idx);
+    });
+  }
+
+  function goTo(idx) {
+    currentIdx = Math.max(0, Math.min(sessions.length - 1, idx));
+    slider.value = currentIdx;
+    updateDisplay(currentIdx);
+  }
+
+  // Smooth morphing animation
+  let morphFrom = null, morphTo = null, morphT = 0, morphTarget = 0;
+
+  function animateMorph(timestamp) {
+    if (!morphFrom || !morphTo) return;
+    const speed = parseInt(speedSelect.value) || 400;
+    const dt = timestamp - lastTime;
+    lastTime = timestamp;
+
+    morphT = Math.min(1, morphT + dt / speed);
+    const interp = lerp(morphFrom, morphTo, easeInOut(morphT));
+    updateDisplay(morphT >= 1 ? morphTarget : currentIdx, interp);
+
+    if (morphT >= 1) {
+      currentIdx = morphTarget;
+      slider.value = currentIdx;
+      if (playing) {
+        if (currentIdx < sessions.length - 1) {
+          startMorph(currentIdx + 1);
+        } else {
+          stopPlay();
+        }
+      }
+    } else {
+      animFrame = requestAnimationFrame(animateMorph);
+    }
+  }
+
+  function easeInOut(t) { return t < 0.5 ? 2*t*t : -1+(4-2*t)*t; }
+
+  function startMorph(targetIdx) {
+    morphFrom = sessions[currentIdx].components;
+    morphTo = sessions[targetIdx].components;
+    morphTarget = targetIdx;
+    morphT = 0;
+    lastTime = performance.now();
+    if (animFrame) cancelAnimationFrame(animFrame);
+    animFrame = requestAnimationFrame(animateMorph);
+  }
+
+  function stopPlay() {
+    playing = false;
+    btnPlay.textContent = '▶';
+    if (animFrame) { cancelAnimationFrame(animFrame); animFrame = null; }
+  }
+
+  btnPlay.addEventListener('click', () => {
+    if (playing) {
+      stopPlay();
+    } else {
+      playing = true;
+      btnPlay.textContent = '⏸';
+      if (currentIdx >= sessions.length - 1) currentIdx = 0;
+      startMorph(currentIdx + 1);
+    }
+  });
+
+  btnPrev.addEventListener('click', () => { stopPlay(); if (currentIdx > 0) { startMorph(currentIdx - 1); } });
+  btnNext.addEventListener('click', () => { stopPlay(); if (currentIdx < sessions.length - 1) { startMorph(currentIdx + 1); } });
+
+  slider.addEventListener('input', () => {
+    stopPlay();
+    const idx = parseInt(slider.value);
+    if (idx !== currentIdx) {
+      startMorph(idx);
+    }
+  });
+
+  // Filmstrip
+  const filmstrip = document.getElementById('filmstrip');
+  sessions.forEach((s, i) => {
+    const item = document.createElement('div');
+    item.className = 'filmstrip-item';
+    item.title = `S${s.session} — ${s.date} (${s.category})`;
+    const c = document.createElement('canvas');
+    c.className = 'filmstrip-canvas';
+    c.width = 48; c.height = 48;
+    item.appendChild(c);
+    item.addEventListener('click', () => { stopPlay(); startMorph(i); });
+    filmstrip.appendChild(item);
+    const fctx = c.getContext('2d');
+    const col = getCatColor(s.category || 'unknown');
+    drawFingerprint(fctx, s.components, 48, { fill: col + '40', stroke: col + 'B3' });
+  });
+
+  // Trend sparklines
+  const trendsGrid = document.getElementById('trends-grid');
+  componentNames.forEach(comp => {
+    const values = sessions.map(s => s.components?.[comp] || 0);
+    const min = Math.min(...values);
+    const max = Math.max(...values);
+    const latest = values[values.length - 1];
+    const first = values[0];
+    const delta = latest - first;
+    const color = COMPONENT_COLORS[comp] || '#aaa';
+
+    const card = document.createElement('div');
+    card.className = 'trend-card';
+
+    const w = 260, h = 50, pad = 4;
+    const plotW = w - pad * 2, plotH = h - pad * 2;
+    const range = max - min || 1;
+
+    let pathD = '';
+    values.forEach((v, i) => {
+      const x = pad + (i / Math.max(values.length - 1, 1)) * plotW;
+      const y = pad + plotH - ((v - min) / range) * plotH;
+      pathD += (i === 0 ? 'M' : 'L') + x.toFixed(1) + ',' + y.toFixed(1);
+    });
+
+    card.innerHTML = `
+      <div class="trend-label">${comp} <span class="trend-range" style="color:${delta >= 0 ? '#4ecf72' : '#cf4e4e'}">${delta >= 0 ? '+' : ''}${delta.toFixed(1)}</span></div>
+      <svg class="trend-svg" viewBox="0 0 ${w} ${h}">
+        <path d="${pathD}" fill="none" stroke="${color}" stroke-width="1.5" opacity="0.8"/>
+        <circle cx="${pad + plotW}" cy="${pad + plotH - ((latest - min) / range) * plotH}" r="3" fill="${color}"/>
+      </svg>
+      <div class="trend-range">${min.toFixed(0)}–${max.toFixed(0)} · now: ${latest.toFixed(0)}</div>
+    `;
+    trendsGrid.appendChild(card);
+  });
+
+  // Monthly canvases
+  document.querySelectorAll('.monthly-card').forEach(card => {
+    const comps = JSON.parse(card.dataset.components || '{}');
+    const c = card.querySelector('.monthly-canvas');
+    const mctx = c.getContext('2d');
+    drawFingerprint(mctx, comps, 140, {
+      fill: 'rgba(78,154,245,0.2)',
+      stroke: 'rgba(78,154,245,0.6)'
+    });
+  });
+
+  // Initial display
+  goTo(0);
+</script>
+
+</BaseLayout>
