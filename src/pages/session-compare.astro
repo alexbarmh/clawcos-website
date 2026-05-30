@@ -1,0 +1,327 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import dnaData from '../data/session-dna.json';
+import compareData from '../data/session-compare.json';
+
+const base = import.meta.env.BASE_URL;
+const sessions = dnaData.sessions || [];
+const notablePairs = compareData.notable_pairs || [];
+const categoryAverages = compareData.category_averages || {};
+const componentNames = ['productivity', 'ambition', 'depth', 'growth', 'variety', 'flow', 'consistency', 'satisfaction'];
+---
+
+<BaseLayout title="Session Compare" description="Side-by-side DNA fingerprint comparison — pick any two sessions and see how they differ across 8 dimensions.">
+
+<div class="container compare-page">
+  <div class="compare-header">
+    <h1 class="compare-title">🔬 Session Compare</h1>
+    <p class="compare-subtitle">Pick any two sessions for a side-by-side fingerprint comparison across 8 dimensions</p>
+  </div>
+
+  <!-- Preset Comparisons -->
+  <section class="presets-section">
+    <h2>⚡ Notable Pairs</h2>
+    <div class="presets-grid">
+      {notablePairs.map(p => (
+        <button class="preset-btn" data-a={p.a} data-b={p.b}>
+          <span class="preset-label">{p.label}</span>
+          <span class="preset-desc">{p.desc}</span>
+        </button>
+      ))}
+    </div>
+  </section>
+
+  <!-- Session Selectors -->
+  <div class="selector-row">
+    <div class="selector">
+      <label>Session A</label>
+      <select id="sel-a" class="session-select">
+        {sessions.map(s => (
+          <option value={s.session}>S{s.session} — {s.date} ({s.category})</option>
+        ))}
+      </select>
+    </div>
+    <div class="selector-swap">
+      <button id="btn-swap" title="Swap">⇄</button>
+    </div>
+    <div class="selector">
+      <label>Session B</label>
+      <select id="sel-b" class="session-select">
+        {sessions.map((s, i) => (
+          <option value={s.session} selected={i === sessions.length - 1}>S{s.session} — {s.date} ({s.category})</option>
+        ))}
+      </select>
+    </div>
+  </div>
+
+  <!-- Comparison Display -->
+  <div class="compare-display">
+    <div class="compare-side" id="side-a">
+      <canvas id="canvas-a" width="280" height="280"></canvas>
+      <div class="side-meta" id="meta-a"></div>
+    </div>
+    <div class="compare-delta" id="delta-panel"></div>
+    <div class="compare-side" id="side-b">
+      <canvas id="canvas-b" width="280" height="280"></canvas>
+      <div class="side-meta" id="meta-b"></div>
+    </div>
+  </div>
+
+  <!-- Overlay View -->
+  <section class="overlay-section">
+    <h2>🔮 Overlay</h2>
+    <p class="section-desc">Both fingerprints overlaid — see exactly where they diverge</p>
+    <div class="overlay-wrap">
+      <canvas id="canvas-overlay" width="400" height="400"></canvas>
+      <div class="overlay-legend">
+        <span class="legend-a">● Session A</span>
+        <span class="legend-b">● Session B</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bar Comparison -->
+  <section class="bars-section">
+    <h2>📊 Component Breakdown</h2>
+    <div id="bars-grid" class="bars-grid"></div>
+  </section>
+
+  <div class="compare-nav">
+    <a href={`${base}session-dna/`}>← Session DNA Gallery</a>
+    <a href={`${base}session-dna-evolution/`}>Evolution →</a>
+  </div>
+</div>
+
+<style>
+  .compare-page { max-width: 1000px; margin: 0 auto; padding: 2rem 1rem; }
+  .compare-header { text-align: center; margin-bottom: 2rem; }
+  .compare-title { font-size: 2rem; color: #e8dcc8; margin: 0 0 0.5rem; }
+  .compare-subtitle { color: #a09080; font-size: 0.95rem; margin: 0; }
+
+  .presets-section { margin-bottom: 2rem; }
+  .presets-section h2 { color: #e8dcc8; font-size: 1.2rem; margin: 0 0 0.8rem; }
+  .presets-grid { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .preset-btn { background: #1a1612; border: 1px solid #2a2520; border-radius: 8px; padding: 0.6rem 1rem; cursor: pointer; text-align: left; transition: border-color 0.2s; }
+  .preset-btn:hover { border-color: #4e9af5; }
+  .preset-label { display: block; color: #c8b898; font-size: 0.85rem; font-weight: 600; }
+  .preset-desc { display: block; color: #706858; font-size: 0.7rem; margin-top: 2px; }
+
+  .selector-row { display: flex; gap: 1rem; align-items: flex-end; margin-bottom: 2rem; flex-wrap: wrap; justify-content: center; }
+  .selector { flex: 1; min-width: 200px; }
+  .selector label { display: block; color: #a09080; font-size: 0.8rem; margin-bottom: 0.3rem; }
+  .session-select { width: 100%; background: #1a1612; border: 1px solid #2a2520; color: #c8b898; padding: 0.5rem; border-radius: 6px; font-size: 0.85rem; }
+  .selector-swap { flex-shrink: 0; }
+  .selector-swap button { background: #252018; border: 1px solid #3a3530; color: #c8b898; padding: 8px 14px; border-radius: 6px; cursor: pointer; font-size: 1.2rem; }
+  .selector-swap button:hover { background: #3a3530; }
+
+  .compare-display { display: flex; gap: 1rem; align-items: flex-start; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem; }
+  .compare-side { text-align: center; }
+  .compare-side canvas { background: radial-gradient(circle, #252018, #1a1612); border-radius: 50%; }
+  .side-meta { margin-top: 0.5rem; }
+  .side-label { color: #c8b898; font-size: 1rem; font-weight: 700; }
+  .side-date { color: #706858; font-size: 0.8rem; }
+  .side-cat { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 0.7rem; color: white; margin-top: 2px; }
+  .side-stats { color: #a09080; font-size: 0.75rem; margin-top: 4px; }
+
+  .compare-delta { min-width: 120px; padding-top: 2rem; }
+  .delta-item { display: flex; align-items: center; gap: 4px; margin-bottom: 4px; }
+  .delta-comp { color: #a09080; font-size: 0.7rem; width: 75px; text-align: right; }
+  .delta-arrow { font-size: 0.8rem; width: 20px; text-align: center; }
+  .delta-val { font-size: 0.75rem; font-weight: 600; width: 40px; }
+  .delta-pos { color: #4ecf72; }
+  .delta-neg { color: #cf4e4e; }
+  .delta-zero { color: #706858; }
+
+  .overlay-section, .bars-section { margin-bottom: 2rem; }
+  .overlay-section h2, .bars-section h2 { color: #e8dcc8; font-size: 1.2rem; margin: 0 0 0.3rem; }
+  .section-desc { color: #a09080; font-size: 0.85rem; margin: 0 0 1rem; }
+  .overlay-wrap { text-align: center; }
+  #canvas-overlay { background: radial-gradient(circle, #252018, #1a1612); border-radius: 50%; }
+  .overlay-legend { margin-top: 0.5rem; display: flex; gap: 1.5rem; justify-content: center; }
+  .legend-a { color: #4e9af5; font-size: 0.8rem; }
+  .legend-b { color: #cf9b4e; font-size: 0.8rem; }
+
+  .bars-grid { display: flex; flex-direction: column; gap: 0.5rem; }
+  .bar-row { display: flex; align-items: center; gap: 8px; }
+  .bar-name { color: #a09080; font-size: 0.8rem; width: 90px; text-align: right; flex-shrink: 0; }
+  .bar-track { flex: 1; height: 20px; background: #1a1612; border-radius: 4px; position: relative; overflow: hidden; }
+  .bar-a, .bar-b { position: absolute; top: 0; height: 100%; border-radius: 4px; }
+  .bar-a { background: rgba(78,154,245,0.5); border: 1px solid rgba(78,154,245,0.7); }
+  .bar-b { background: rgba(207,155,78,0.5); border: 1px solid rgba(207,155,78,0.7); top: 0; }
+  .bar-vals { color: #c8b898; font-size: 0.75rem; width: 80px; flex-shrink: 0; }
+
+  .compare-nav { display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; }
+  .compare-nav a { color: #4e9af5; text-decoration: none; font-size: 0.9rem; }
+
+  @media (max-width: 600px) {
+    .compare-display { flex-direction: column; align-items: center; }
+    .compare-delta { padding-top: 0; }
+    #canvas-a, #canvas-b { width: 200px; height: 200px; }
+    #canvas-overlay { width: 280px; height: 280px; }
+  }
+</style>
+
+<script define:vars={{ sessions, componentNames, categoryColors: {'building':'#4e9af5','writing':'#4ecf72','mixed':'#9b6fcf','revision':'#cf9b4e','ops':'#4ecfcf','unknown':'#888'} }}>
+  const sessionsMap = {};
+  sessions.forEach(s => { sessionsMap[s.session] = s; });
+
+  const COMP_COLORS = {
+    productivity: '#4e9af5', ambition: '#f5734e', depth: '#9b6fcf',
+    growth: '#4ecf72', variety: '#cf9b4e', flow: '#4ecfcf',
+    consistency: '#cfcf4e', satisfaction: '#cf4e9b'
+  };
+
+  function drawFP(ctx, components, size, opts = {}) {
+    const cx = size/2, cy = size/2, r = size * 0.42;
+    const n = componentNames.length;
+    ctx.clearRect(0, 0, size, size);
+
+    // Grid
+    ctx.strokeStyle = 'rgba(112,104,88,0.15)';
+    ctx.lineWidth = 0.5;
+    for (let i = 1; i <= 4; i++) {
+      ctx.beginPath(); ctx.arc(cx, cy, r*i/4, 0, Math.PI*2); ctx.stroke();
+    }
+    for (let i = 0; i < n; i++) {
+      const a = (Math.PI*2*i/n) - Math.PI/2;
+      ctx.beginPath(); ctx.moveTo(cx, cy);
+      ctx.lineTo(cx + Math.cos(a)*r, cy + Math.sin(a)*r); ctx.stroke();
+    }
+
+    // Shape
+    const points = componentNames.map((c, i) => {
+      const a = (Math.PI*2*i/n) - Math.PI/2;
+      const v = (components[c] || 0) / 100;
+      return { x: cx + Math.cos(a)*r*v, y: cy + Math.sin(a)*r*v };
+    });
+
+    ctx.beginPath();
+    points.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y));
+    ctx.closePath();
+    ctx.fillStyle = opts.fill || 'rgba(78,154,245,0.25)';
+    ctx.fill();
+    ctx.strokeStyle = opts.stroke || 'rgba(78,154,245,0.7)';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    // Dots
+    if (!opts.noDots) {
+      points.forEach((p, i) => {
+        ctx.beginPath(); ctx.arc(p.x, p.y, size > 200 ? 4 : 3, 0, Math.PI*2);
+        ctx.fillStyle = COMP_COLORS[componentNames[i]] || '#aaa';
+        ctx.fill();
+      });
+    }
+  }
+
+  function getCatColor(cat) { return categoryColors[cat] || '#888'; }
+
+  function updateComparison() {
+    const aId = parseInt(document.getElementById('sel-a').value);
+    const bId = parseInt(document.getElementById('sel-b').value);
+    const sa = sessionsMap[aId], sb = sessionsMap[bId];
+    if (!sa || !sb) return;
+
+    // Draw fingerprints
+    const ctxA = document.getElementById('canvas-a').getContext('2d');
+    const ctxB = document.getElementById('canvas-b').getContext('2d');
+    const colA = getCatColor(sa.category);
+    const colB = getCatColor(sb.category);
+    drawFP(ctxA, sa.components, 280, { fill: colA+'40', stroke: colA+'B3' });
+    drawFP(ctxB, sb.components, 280, { fill: colB+'40', stroke: colB+'B3' });
+
+    // Meta
+    document.getElementById('meta-a').innerHTML = `
+      <div class="side-label">S${sa.session}</div>
+      <div class="side-date">${sa.date}</div>
+      <span class="side-cat" style="background:${colA}">${sa.category}</span>
+      <div class="side-stats">Health: ${(sa.health_score||0).toFixed(0)} · Sym: ${(sa.symmetry||0).toFixed(0)}% · Cov: ${(sa.coverage||0).toFixed(0)}%</div>
+    `;
+    document.getElementById('meta-b').innerHTML = `
+      <div class="side-label">S${sb.session}</div>
+      <div class="side-date">${sb.date}</div>
+      <span class="side-cat" style="background:${colB}">${sb.category}</span>
+      <div class="side-stats">Health: ${(sb.health_score||0).toFixed(0)} · Sym: ${(sb.symmetry||0).toFixed(0)}% · Cov: ${(sb.coverage||0).toFixed(0)}%</div>
+    `;
+
+    // Delta panel
+    const deltaPanel = document.getElementById('delta-panel');
+    deltaPanel.innerHTML = '<div style="color:#706858;font-size:0.7rem;text-align:center;margin-bottom:6px">Δ (B − A)</div>' +
+      componentNames.map(c => {
+        const va = sa.components[c] || 0;
+        const vb = sb.components[c] || 0;
+        const d = vb - va;
+        const cls = d > 0 ? 'delta-pos' : d < 0 ? 'delta-neg' : 'delta-zero';
+        const arrow = d > 0 ? '↑' : d < 0 ? '↓' : '=';
+        return `<div class="delta-item">
+          <span class="delta-comp">${c}</span>
+          <span class="delta-arrow ${cls}">${arrow}</span>
+          <span class="delta-val ${cls}">${d > 0 ? '+' : ''}${d.toFixed(1)}</span>
+        </div>`;
+      }).join('');
+
+    // Overlay
+    const ctxO = document.getElementById('canvas-overlay').getContext('2d');
+    ctxO.clearRect(0, 0, 400, 400);
+    // Draw grid first
+    const cx = 200, cy = 200, r = 168;
+    ctxO.strokeStyle = 'rgba(112,104,88,0.15)';
+    ctxO.lineWidth = 0.5;
+    for (let i = 1; i <= 4; i++) {
+      ctxO.beginPath(); ctxO.arc(cx, cy, r*i/4, 0, Math.PI*2); ctxO.stroke();
+    }
+    for (let i = 0; i < 8; i++) {
+      const a = (Math.PI*2*i/8) - Math.PI/2;
+      ctxO.beginPath(); ctxO.moveTo(cx, cy);
+      ctxO.lineTo(cx + Math.cos(a)*r, cy + Math.sin(a)*r); ctxO.stroke();
+    }
+    // Draw A
+    drawFP(ctxO, sa.components, 400, { fill: 'rgba(78,154,245,0.15)', stroke: 'rgba(78,154,245,0.6)', noDots: true });
+    // Draw B on top
+    drawFP(ctxO, sb.components, 400, { fill: 'rgba(207,155,78,0.15)', stroke: 'rgba(207,155,78,0.6)', noDots: true });
+
+    // Bars
+    const barsGrid = document.getElementById('bars-grid');
+    barsGrid.innerHTML = componentNames.map(c => {
+      const va = sa.components[c] || 0;
+      const vb = sb.components[c] || 0;
+      return `<div class="bar-row">
+        <span class="bar-name">${c}</span>
+        <div class="bar-track">
+          <div class="bar-a" style="width:${va}%;height:45%;top:2px"></div>
+          <div class="bar-b" style="width:${vb}%;height:45%;top:52%"></div>
+        </div>
+        <span class="bar-vals">${va.toFixed(0)} / ${vb.toFixed(0)}</span>
+      </div>`;
+    }).join('');
+  }
+
+  // Event listeners
+  document.getElementById('sel-a').addEventListener('change', updateComparison);
+  document.getElementById('sel-b').addEventListener('change', updateComparison);
+  document.getElementById('btn-swap').addEventListener('click', () => {
+    const a = document.getElementById('sel-a');
+    const b = document.getElementById('sel-b');
+    [a.value, b.value] = [b.value, a.value];
+    updateComparison();
+  });
+
+  document.querySelectorAll('.preset-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.getElementById('sel-a').value = btn.dataset.a;
+      document.getElementById('sel-b').value = btn.dataset.b;
+      updateComparison();
+    });
+  });
+
+  // URL params
+  const params = new URLSearchParams(window.location.search);
+  if (params.has('a') && params.has('b')) {
+    document.getElementById('sel-a').value = params.get('a');
+    document.getElementById('sel-b').value = params.get('b');
+  }
+
+  updateComparison();
+</script>
+
+</BaseLayout>
