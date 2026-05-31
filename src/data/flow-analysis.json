@@ -1,14 +1,14 @@
 {
-  "generated": "2026-05-31T11:09:27.360592Z",
-  "total_sessions": 112,
+  "generated": "2026-05-31T11:17:59.362299Z",
+  "total_sessions": 113,
   "summary": {
-    "mean": 71.4,
+    "mean": 71.7,
     "median": 70.0,
-    "std": 13.8,
+    "std": 14.0,
     "min": 55.0,
     "max": 100,
     "floor_count": 32,
-    "ceiling_count": 9
+    "ceiling_count": 10
   },
   "by_category": {
     "building": {
@@ -19,11 +19,11 @@
       "floor_pct": 17.2
     },
     "mixed": {
-      "mean": 70.6,
-      "n": 78,
+      "mean": 71.0,
+      "n": 79,
       "min": 55.0,
       "max": 100,
-      "floor_pct": 30.8
+      "floor_pct": 30.4
     },
     "writing": {
       "mean": 62.5,
@@ -50,8 +50,8 @@
       "n": 18
     },
     "4": {
-      "mean": 70.5,
-      "n": 37
+      "mean": 71.3,
+      "n": 38
     },
     "5": {
       "mean": 70.5,
@@ -71,15 +71,15 @@
     }
   },
   "correlations": {
-    "productivity": 0.166,
-    "ambition": -0.334,
-    "depth": 0.118,
-    "growth": -0.196,
-    "variety": -0.029,
-    "consistency": 0.211,
-    "satisfaction": 0.076,
-    "raw_satisfaction": -0.11,
-    "task_count": 0.291
+    "productivity": 0.161,
+    "ambition": -0.34,
+    "depth": 0.124,
+    "growth": -0.191,
+    "variety": -0.025,
+    "consistency": 0.216,
+    "satisfaction": 0.09,
+    "raw_satisfaction": -0.093,
+    "task_count": 0.277
   },
   "phases": [
     {
@@ -505,14 +505,14 @@
     {
       "phase": "rising",
       "start": 108,
-      "end": 112,
+      "end": 113,
       "start_flow": 80.0,
-      "end_flow": 85.0
+      "end_flow": 86.5
     }
   ],
   "floor_analysis": {
     "count": 32,
-    "pct": 28.6,
+    "pct": 28.3,
     "by_category": {
       "building": 5,
       "mixed": 24,
@@ -523,12 +523,12 @@
     "avg_satisfaction": 8.8
   },
   "v2_comparison": {
-    "correlation": 0.494,
-    "avg_delta": -9.4,
+    "correlation": 0.495,
+    "avg_delta": -9.6,
     "max_increase": 15.0,
     "max_decrease": -40.0,
     "v2_mean": 62.0,
-    "v1_mean": 71.4
+    "v1_mean": 71.7
   },
   "sessions": [
     {
@@ -3545,6 +3545,33 @@
         "MCP `session_focus_analysis` Tool \u2014 2 New MCP Tools",
         "[ops] Website Deploy"
       ]
+    },
+    {
+      "session": 113,
+      "date": "2026-05-30",
+      "category": "mixed",
+      "task_count": 4,
+      "flow_v1": 100,
+      "flow_v2": 65.1,
+      "v2_detail": {
+        "adj_overlap": 0.444,
+        "coherence": 0.3,
+        "pipeline": 0.25,
+        "learning_overlap": 0.0,
+        "raw": 0.303
+      },
+      "satisfaction": 9.0,
+      "signal_count": 3,
+      "signal_types": [
+        "pipeline_word",
+        "title_overlap"
+      ],
+      "tasks": [
+        "On Measurement \u2014 First Revision Pass",
+        "Session DNA Evolution Page \u2014 New Astro Page",
+        "Session Compare Page + Tool \u2014 New Page + MCP Tool",
+        "[ops] Deploy Pipeline + MCP Server"
+      ]
     }
   ],
   "insights": [
@@ -3556,7 +3583,7 @@
     },
     {
       "type": "distribution",
-      "title": "28.6% of sessions hit the flow floor (\u226455)",
+      "title": "28.3% of sessions hit the flow floor (\u226455)",
       "detail": "32 sessions. Dominated by: mixed (24)",
       "severity": "medium"
     },
@@ -3568,8 +3595,8 @@
     },
     {
       "type": "metric_evolution",
-      "title": "V2 flow metric shifts scores by -9.4 on average",
-      "detail": "V1 mean: 71.4, V2 mean: 62.0. Correlation: r=0.49. V2 adds category coherence and learning overlap.",
+      "title": "V2 flow metric shifts scores by -9.6 on average",
+      "detail": "V1 mean: 71.7, V2 mean: 62.0. Correlation: r=0.49. V2 adds category coherence and learning overlap.",
       "severity": "info"
     }
   ]
