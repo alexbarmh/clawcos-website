@@ -1,0 +1,615 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import flowData from '../data/flow-analysis.json';
+
+const base = import.meta.env.BASE_URL;
+
+const sessions = flowData.sessions || [];
+const summary = flowData.summary || {};
+const byCategory = flowData.by_category || {};
+const byTaskCount = flowData.by_task_count || {};
+const correlations = flowData.correlations || {};
+const floorAnalysis = flowData.floor_analysis || {};
+const v2Comparison = flowData.v2_comparison || {};
+const insights = flowData.insights || [];
+
+// Category colors
+const categoryColors: Record<string, string> = {
+  building: 'hsl(210, 70%, 52%)',
+  writing: 'hsl(145, 60%, 42%)',
+  mixed: 'hsl(270, 55%, 52%)',
+  revision: 'hsl(35, 80%, 52%)',
+  ops: 'hsl(180, 55%, 42%)',
+  unknown: 'hsl(0, 0%, 50%)',
+};
+
+// Compute moving averages for the chart
+function movingAverage(values: number[], window: number): number[] {
+  const result: number[] = [];
+  for (let i = 0; i < values.length; i++) {
+    const start = Math.max(0, i - window + 1);
+    const windowVals = values.slice(start, i + 1);
+    result.push(windowVals.reduce((a, b) => a + b, 0) / windowVals.length);
+  }
+  return result;
+}
+
+const flowV1 = sessions.map((s: any) => s.flow_v1);
+const flowV2 = sessions.map((s: any) => s.flow_v2);
+const ma10 = movingAverage(flowV1, 10);
+const ma20 = movingAverage(flowV1, 20);
+
+// Sorted correlations
+const sortedCorrelations = Object.entries(correlations)
+  .map(([k, v]) => ({ component: k, r: v as number }))
+  .sort((a, b) => Math.abs(b.r) - Math.abs(a.r));
+---
+
+<BaseLayout title="Flow Analysis — Session DNA Deep Dive" description="Deep investigation into what drives flow scores in Clawcos sessions">
+  <main class="flow-analysis">
+    <div class="header">
+      <h1>🔗 Flow Analysis</h1>
+      <p class="subtitle">Deep dive into the flow component of Session DNA</p>
+      <p class="generated">Generated {new Date(flowData.generated).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} · {flowData.total_sessions} sessions analyzed</p>
+    </div>
+
+    <!-- Summary Cards -->
+    <section class="summary-cards">
+      <div class="card">
+        <div class="card-value">{summary.mean}</div>
+        <div class="card-label">Mean Flow</div>
+      </div>
+      <div class="card">
+        <div class="card-value">{summary.median}</div>
+        <div class="card-label">Median</div>
+      </div>
+      <div class="card">
+        <div class="card-value">{summary.floor_count}</div>
+        <div class="card-label">Floor (≤55)</div>
+      </div>
+      <div class="card">
+        <div class="card-value">{summary.ceiling_count}</div>
+        <div class="card-label">Ceiling (≥95)</div>
+      </div>
+      <div class="card">
+        <div class="card-value">{summary.std}</div>
+        <div class="card-label">Std Dev</div>
+      </div>
+    </section>
+
+    <!-- Insights -->
+    {insights.length > 0 && (
+    <section class="insights">
+      <h2>💡 Key Insights</h2>
+      <div class="insight-grid">
+        {insights.map((insight: any) => (
+          <div class={`insight-card severity-${insight.severity}`}>
+            <div class="insight-icon">
+              {insight.severity === 'high' ? '🔴' : insight.severity === 'medium' ? '🟡' : '🔵'}
+            </div>
+            <div class="insight-content">
+              <h3>{insight.title}</h3>
+              <p>{insight.detail}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+    )}
+
+    <!-- Main Flow Chart -->
+    <section class="chart-section">
+      <h2>📈 Flow Over Time</h2>
+      <div class="chart-controls">
+        <label><input type="checkbox" id="showV2" /> Show V2 metric</label>
+        <label><input type="checkbox" id="showMA10" checked /> 10-session MA</label>
+        <label><input type="checkbox" id="showMA20" /> 20-session MA</label>
+      </div>
+      <div class="flow-chart-container">
+        <canvas id="flowChart" width="900" height="350"></canvas>
+      </div>
+    </section>
+
+    <!-- Category Breakdown -->
+    <section class="breakdown-section">
+      <h2>📂 Flow by Category</h2>
+      <div class="category-bars">
+        {Object.entries(byCategory)
+          .sort((a: any, b: any) => (b[1] as any).mean - (a[1] as any).mean)
+          .map(([cat, data]: [string, any]) => (
+          <div class="category-row">
+            <div class="cat-label" style={`color: ${categoryColors[cat] || '#888'}`}>{cat}</div>
+            <div class="cat-bar-container">
+              <div class="cat-bar" style={`width: ${data.mean}%; background: ${categoryColors[cat] || '#888'}`}>
+                <span class="cat-bar-value">{data.mean}</span>
+              </div>
+            </div>
+            <div class="cat-meta">n={data.n} · {data.floor_pct}% floor</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Task Count Analysis -->
+    <section class="breakdown-section">
+      <h2>📊 Flow by Task Count</h2>
+      <div class="task-count-chart">
+        {Object.entries(byTaskCount)
+          .sort((a, b) => parseInt(a[0]) - parseInt(b[0]))
+          .map(([tc, data]: [string, any]) => (
+          <div class="tc-row">
+            <div class="tc-label">{tc} tasks</div>
+            <div class="tc-bar-container">
+              <div class="tc-bar" style={`width: ${data.mean}%`}>
+                <span class="tc-value">{data.mean}</span>
+              </div>
+            </div>
+            <div class="tc-meta">n={data.n}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Correlations -->
+    <section class="correlations-section">
+      <h2>🔗 Correlations with Other Components</h2>
+      <div class="correlation-bars">
+        {sortedCorrelations.map(({ component, r }) => {
+          const width = Math.abs(r) * 100;
+          const isPositive = r > 0;
+          const strength = Math.abs(r) > 0.5 ? 'strong' : Math.abs(r) > 0.3 ? 'moderate' : 'weak';
+          return (
+            <div class="corr-row">
+              <div class="corr-label">{component}</div>
+              <div class="corr-bar-container">
+                <div class="corr-center"></div>
+                {isPositive ? (
+                  <div class="corr-bar positive" style={`width: ${width}%; left: 50%`}>
+                    <span class="corr-value">{r > 0 ? '+' : ''}{r.toFixed(3)}</span>
+                  </div>
+                ) : (
+                  <div class="corr-bar negative" style={`width: ${width}%; right: 50%`}>
+                    <span class="corr-value">{r.toFixed(3)}</span>
+                  </div>
+                )}
+              </div>
+              <div class={`corr-strength ${strength}`}>{strength}</div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+
+    <!-- V2 Comparison -->
+    <section class="v2-section">
+      <h2>🆕 V2 Flow Metric</h2>
+      <p class="v2-desc">The V2 flow metric adds category coherence, learning overlap, and normalizes for task count bias.</p>
+      <div class="v2-cards">
+        <div class="card">
+          <div class="card-value">{v2Comparison.v1_mean} → {v2Comparison.v2_mean}</div>
+          <div class="card-label">V1 → V2 Mean</div>
+        </div>
+        <div class="card">
+          <div class="card-value">r={v2Comparison.correlation}</div>
+          <div class="card-label">Correlation</div>
+        </div>
+        <div class="card">
+          <div class="card-value">{v2Comparison.avg_delta > 0 ? '+' : ''}{v2Comparison.avg_delta}</div>
+          <div class="card-label">Avg Delta</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Floor Analysis -->
+    <section class="floor-section">
+      <h2>🔻 Floor Sessions (≤55)</h2>
+      <div class="floor-stats">
+        <p><strong>{floorAnalysis.count}</strong> sessions ({floorAnalysis.pct}%) hit the flow floor.</p>
+        <p>Average task count: <strong>{floorAnalysis.avg_task_count}</strong> · Average satisfaction: <strong>{floorAnalysis.avg_satisfaction}</strong>/10</p>
+        <p>Despite low flow, these sessions had <em>high satisfaction</em> — proving that flow and quality are independent.</p>
+      </div>
+      <div class="floor-category-chart">
+        {Object.entries(floorAnalysis.by_category || {})
+          .sort((a: any, b: any) => (b[1] as number) - (a[1] as number))
+          .map(([cat, count]: [string, any]) => (
+          <div class="floor-cat-row">
+            <span class="floor-cat-name" style={`color: ${categoryColors[cat] || '#888'}`}>{cat}</span>
+            <span class="floor-cat-count">{count}</span>
+            <div class="floor-cat-bar" style={`width: ${(count / floorAnalysis.count) * 100}%; background: ${categoryColors[cat] || '#888'}`}></div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Session Scatter -->
+    <section class="chart-section">
+      <h2>🎯 Flow vs Satisfaction</h2>
+      <div class="scatter-container">
+        <canvas id="scatterChart" width="600" height="400"></canvas>
+      </div>
+    </section>
+
+    <div class="nav-links">
+      <a href={`${base}session-dna/`}>← DNA Gallery</a>
+      <a href={`${base}session-dna-evolution/`}>DNA Evolution →</a>
+    </div>
+  </main>
+
+  <script define:vars={{ sessions, flowV1, flowV2, ma10, ma20, categoryColors }}>
+    // Flow timeline chart
+    function drawFlowChart() {
+      const canvas = document.getElementById('flowChart') as HTMLCanvasElement;
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+
+      const dpr = window.devicePixelRatio || 1;
+      const rect = canvas.getBoundingClientRect();
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      ctx.scale(dpr, dpr);
+      const W = rect.width;
+      const H = rect.height;
+
+      const pad = { top: 20, right: 20, bottom: 40, left: 45 };
+      const chartW = W - pad.left - pad.right;
+      const chartH = H - pad.top - pad.bottom;
+
+      ctx.clearRect(0, 0, W, H);
+
+      // Grid
+      ctx.strokeStyle = '#333';
+      ctx.lineWidth = 0.5;
+      for (let v = 40; v <= 100; v += 10) {
+        const y = pad.top + chartH - ((v - 40) / 60) * chartH;
+        ctx.beginPath();
+        ctx.moveTo(pad.left, y);
+        ctx.lineTo(W - pad.right, y);
+        ctx.stroke();
+        ctx.fillStyle = '#666';
+        ctx.font = '11px monospace';
+        ctx.textAlign = 'right';
+        ctx.fillText(v.toString(), pad.left - 5, y + 4);
+      }
+
+      // X axis labels
+      ctx.fillStyle = '#666';
+      ctx.textAlign = 'center';
+      for (let i = 0; i < sessions.length; i += 20) {
+        const x = pad.left + (i / (sessions.length - 1)) * chartW;
+        ctx.fillText(`S${sessions[i].session}`, x, H - 5);
+      }
+
+      const toX = (i: number) => pad.left + (i / (sessions.length - 1)) * chartW;
+      const toY = (v: number) => pad.top + chartH - ((v - 40) / 60) * chartH;
+
+      // Individual session dots
+      sessions.forEach((s: any, i: number) => {
+        const x = toX(i);
+        const y = toY(s.flow_v1);
+        const color = categoryColors[s.category] || '#888';
+        ctx.fillStyle = color;
+        ctx.globalAlpha = 0.5;
+        ctx.beginPath();
+        ctx.arc(x, y, 3, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      ctx.globalAlpha = 1;
+
+      // V2 line (optional)
+      const showV2El = document.getElementById('showV2') as HTMLInputElement;
+      if (showV2El?.checked) {
+        ctx.strokeStyle = '#ff6b6b';
+        ctx.lineWidth = 1.5;
+        ctx.setLineDash([4, 4]);
+        ctx.beginPath();
+        flowV2.forEach((v: number, i: number) => {
+          const x = toX(i);
+          const y = toY(v);
+          if (i === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        });
+        ctx.stroke();
+        ctx.setLineDash([]);
+      }
+
+      // MA10 line
+      const showMA10El = document.getElementById('showMA10') as HTMLInputElement;
+      if (showMA10El?.checked) {
+        ctx.strokeStyle = '#4ecdc4';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ma10.forEach((v: number, i: number) => {
+          const x = toX(i);
+          const y = toY(v);
+          if (i === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        });
+        ctx.stroke();
+      }
+
+      // MA20 line
+      const showMA20El = document.getElementById('showMA20') as HTMLInputElement;
+      if (showMA20El?.checked) {
+        ctx.strokeStyle = '#ffd93d';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ma20.forEach((v: number, i: number) => {
+          const x = toX(i);
+          const y = toY(v);
+          if (i === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        });
+        ctx.stroke();
+      }
+
+      // Floor line
+      ctx.strokeStyle = '#ff4444';
+      ctx.lineWidth = 1;
+      ctx.setLineDash([6, 3]);
+      const floorY = toY(55);
+      ctx.beginPath();
+      ctx.moveTo(pad.left, floorY);
+      ctx.lineTo(W - pad.right, floorY);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle = '#ff4444';
+      ctx.font = '10px monospace';
+      ctx.textAlign = 'left';
+      ctx.fillText('floor (55)', pad.left + 5, floorY - 5);
+
+      // Legend
+      const legendY = pad.top + 5;
+      ctx.font = '11px sans-serif';
+      const items = [
+        { color: '#4ecdc4', label: '10-session MA', id: 'showMA10' },
+        { color: '#ffd93d', label: '20-session MA', id: 'showMA20' },
+        { color: '#ff6b6b', label: 'V2 metric', id: 'showV2' },
+      ];
+      let legendX = pad.left + 10;
+      items.forEach(item => {
+        const el = document.getElementById(item.id) as HTMLInputElement;
+        if (el?.checked) {
+          ctx.fillStyle = item.color;
+          ctx.fillRect(legendX, legendY, 12, 3);
+          ctx.fillStyle = '#aaa';
+          ctx.textAlign = 'left';
+          ctx.fillText(item.label, legendX + 16, legendY + 5);
+          legendX += ctx.measureText(item.label).width + 30;
+        }
+      });
+    }
+
+    // Scatter chart: Flow vs Satisfaction
+    function drawScatterChart() {
+      const canvas = document.getElementById('scatterChart') as HTMLCanvasElement;
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+
+      const dpr = window.devicePixelRatio || 1;
+      const rect = canvas.getBoundingClientRect();
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      ctx.scale(dpr, dpr);
+      const W = rect.width;
+      const H = rect.height;
+
+      const pad = { top: 20, right: 20, bottom: 40, left: 45 };
+      const chartW = W - pad.left - pad.right;
+      const chartH = H - pad.top - pad.bottom;
+
+      ctx.clearRect(0, 0, W, H);
+
+      // Grid
+      ctx.strokeStyle = '#333';
+      ctx.lineWidth = 0.5;
+      for (let v = 5; v <= 10; v++) {
+        const y = pad.top + chartH - ((v - 5) / 5) * chartH;
+        ctx.beginPath();
+        ctx.moveTo(pad.left, y);
+        ctx.lineTo(W - pad.right, y);
+        ctx.stroke();
+        ctx.fillStyle = '#666';
+        ctx.font = '11px monospace';
+        ctx.textAlign = 'right';
+        ctx.fillText(v.toString(), pad.left - 5, y + 4);
+      }
+      for (let v = 50; v <= 100; v += 10) {
+        const x = pad.left + ((v - 50) / 50) * chartW;
+        ctx.beginPath();
+        ctx.moveTo(x, pad.top);
+        ctx.lineTo(x, H - pad.bottom);
+        ctx.stroke();
+        ctx.fillStyle = '#666';
+        ctx.textAlign = 'center';
+        ctx.fillText(v.toString(), x, H - 5);
+      }
+
+      // Axis labels
+      ctx.fillStyle = '#999';
+      ctx.font = '12px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('Flow Score', W / 2, H - 5);
+      ctx.save();
+      ctx.translate(12, H / 2);
+      ctx.rotate(-Math.PI / 2);
+      ctx.fillText('Satisfaction', 0, 0);
+      ctx.restore();
+
+      // Plot points
+      sessions.forEach((s: any) => {
+        if (s.satisfaction === null) return;
+        const x = pad.left + ((s.flow_v1 - 50) / 50) * chartW;
+        const y = pad.top + chartH - ((s.satisfaction - 5) / 5) * chartH;
+        const color = categoryColors[s.category] || '#888';
+        ctx.fillStyle = color;
+        ctx.globalAlpha = 0.6;
+        ctx.beginPath();
+        ctx.arc(x, y, 5, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      ctx.globalAlpha = 1;
+
+      // Category legend
+      const cats = ['building', 'mixed', 'writing', 'revision'];
+      let lx = pad.left + 10;
+      ctx.font = '11px sans-serif';
+      cats.forEach(cat => {
+        ctx.fillStyle = categoryColors[cat] || '#888';
+        ctx.beginPath();
+        ctx.arc(lx + 5, pad.top + 12, 4, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = '#aaa';
+        ctx.textAlign = 'left';
+        ctx.fillText(cat, lx + 14, pad.top + 16);
+        lx += ctx.measureText(cat).width + 28;
+      });
+    }
+
+    // Init
+    drawFlowChart();
+    drawScatterChart();
+
+    // Redraw on toggle
+    ['showV2', 'showMA10', 'showMA20'].forEach(id => {
+      document.getElementById(id)?.addEventListener('change', drawFlowChart);
+    });
+
+    // Responsive redraw
+    window.addEventListener('resize', () => {
+      drawFlowChart();
+      drawScatterChart();
+    });
+  </script>
+
+  <style>
+    .flow-analysis {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      color: #e0e0e0;
+    }
+    .header { text-align: center; margin-bottom: 2rem; }
+    .header h1 { font-size: 2rem; margin-bottom: 0.25rem; }
+    .subtitle { color: #999; font-size: 1.1rem; margin: 0; }
+    .generated { color: #666; font-size: 0.85rem; margin-top: 0.5rem; }
+
+    .summary-cards {
+      display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
+      margin-bottom: 2rem;
+    }
+    .card {
+      background: #1a1a2e; border: 1px solid #333; border-radius: 8px;
+      padding: 1rem 1.5rem; text-align: center; min-width: 100px;
+    }
+    .card-value { font-size: 1.5rem; font-weight: 700; color: #4ecdc4; }
+    .card-label { font-size: 0.8rem; color: #888; margin-top: 0.25rem; }
+
+    .insights { margin-bottom: 2rem; }
+    .insights h2 { font-size: 1.3rem; margin-bottom: 1rem; }
+    .insight-grid { display: flex; flex-direction: column; gap: 0.75rem; }
+    .insight-card {
+      display: flex; gap: 0.75rem; padding: 1rem;
+      background: #1a1a2e; border-radius: 8px; border-left: 3px solid #666;
+    }
+    .insight-card.severity-high { border-left-color: #ff4444; }
+    .insight-card.severity-medium { border-left-color: #ffd93d; }
+    .insight-card.severity-info { border-left-color: #4ecdc4; }
+    .insight-icon { font-size: 1.2rem; flex-shrink: 0; }
+    .insight-content h3 { font-size: 0.95rem; margin: 0 0 0.25rem 0; color: #e0e0e0; }
+    .insight-content p { font-size: 0.85rem; color: #999; margin: 0; line-height: 1.4; }
+
+    .chart-section { margin-bottom: 2rem; }
+    .chart-section h2 { font-size: 1.3rem; margin-bottom: 0.75rem; }
+    .chart-controls {
+      display: flex; gap: 1.5rem; margin-bottom: 0.5rem;
+      font-size: 0.85rem; color: #999;
+    }
+    .chart-controls label { cursor: pointer; display: flex; align-items: center; gap: 0.3rem; }
+    .flow-chart-container, .scatter-container {
+      background: #111; border-radius: 8px; padding: 0.5rem;
+      border: 1px solid #222;
+    }
+    canvas { width: 100%; height: auto; display: block; }
+
+    .breakdown-section { margin-bottom: 2rem; }
+    .breakdown-section h2 { font-size: 1.3rem; margin-bottom: 1rem; }
+
+    .category-row, .tc-row {
+      display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;
+    }
+    .cat-label, .tc-label {
+      width: 80px; text-align: right; font-size: 0.9rem; font-weight: 600;
+    }
+    .cat-bar-container, .tc-bar-container {
+      flex: 1; height: 24px; background: #1a1a2e; border-radius: 4px; overflow: hidden;
+      position: relative;
+    }
+    .cat-bar, .tc-bar {
+      height: 100%; border-radius: 4px; display: flex; align-items: center;
+      justify-content: flex-end; padding-right: 6px; transition: width 0.3s;
+    }
+    .tc-bar { background: #4ecdc4; }
+    .cat-bar-value, .tc-value {
+      font-size: 0.75rem; font-weight: 700; color: #fff;
+    }
+    .cat-meta, .tc-meta { width: 120px; font-size: 0.75rem; color: #666; }
+
+    .correlations-section { margin-bottom: 2rem; }
+    .correlations-section h2 { font-size: 1.3rem; margin-bottom: 1rem; }
+    .corr-row {
+      display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;
+    }
+    .corr-label { width: 130px; text-align: right; font-size: 0.85rem; color: #ccc; }
+    .corr-bar-container {
+      flex: 1; height: 20px; position: relative; background: #1a1a2e;
+      border-radius: 4px;
+    }
+    .corr-center {
+      position: absolute; left: 50%; top: 0; bottom: 0; width: 1px;
+      background: #555;
+    }
+    .corr-bar {
+      position: absolute; top: 2px; bottom: 2px; border-radius: 3px;
+    }
+    .corr-bar.positive { background: #4ecdc4; }
+    .corr-bar.negative { background: #ff6b6b; }
+    .corr-value { font-size: 0.7rem; color: #fff; padding: 0 4px; white-space: nowrap; }
+    .corr-strength { width: 70px; font-size: 0.75rem; }
+    .corr-strength.strong { color: #ff6b6b; }
+    .corr-strength.moderate { color: #ffd93d; }
+    .corr-strength.weak { color: #666; }
+
+    .v2-section { margin-bottom: 2rem; }
+    .v2-section h2 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+    .v2-desc { color: #999; font-size: 0.9rem; margin-bottom: 1rem; }
+    .v2-cards { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .floor-section { margin-bottom: 2rem; }
+    .floor-section h2 { font-size: 1.3rem; margin-bottom: 0.75rem; }
+    .floor-stats { color: #ccc; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem; }
+    .floor-stats em { color: #4ecdc4; }
+    .floor-category-chart { max-width: 400px; }
+    .floor-cat-row {
+      display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.3rem;
+    }
+    .floor-cat-name { width: 70px; text-align: right; font-size: 0.85rem; font-weight: 600; }
+    .floor-cat-count { width: 25px; text-align: right; font-size: 0.8rem; color: #999; }
+    .floor-cat-bar { height: 16px; border-radius: 3px; opacity: 0.7; }
+
+    .nav-links {
+      display: flex; justify-content: space-between; padding-top: 1rem;
+      border-top: 1px solid #333; margin-top: 2rem;
+    }
+    .nav-links a { color: #4ecdc4; text-decoration: none; font-size: 0.9rem; }
+    .nav-links a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .summary-cards { flex-direction: column; align-items: stretch; }
+      .cat-label, .tc-label { width: 60px; font-size: 0.8rem; }
+      .cat-meta, .tc-meta { width: 80px; }
+      .corr-label { width: 90px; font-size: 0.75rem; }
+    }
+  </style>
+</BaseLayout>
