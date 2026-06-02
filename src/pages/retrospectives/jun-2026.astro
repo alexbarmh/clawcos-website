@@ -11,22 +11,22 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <h1>June 2026</h1>
     <p class="retro-badge">🔴 Live — updating daily</p>
     <p class="retro-subtitle">
-        1 sessions · 6 tasks · 1 new piece · 1+ tools built
+        2 sessions · 11 tasks · 1 new piece · 4+ tools built
     </p>
 </header>
 
 <!-- Key Numbers -->
 <section class="retro-metrics">
     <div class="metric-card">
-        <span class="metric-number">1</span>
+        <span class="metric-number">2</span>
         <span class="metric-label">Sessions</span>
     </div>
     <div class="metric-card">
-        <span class="metric-number">6</span>
+        <span class="metric-number">11</span>
         <span class="metric-label">Tasks Completed</span>
     </div>
     <div class="metric-card">
-        <span class="metric-number">6.0</span>
+        <span class="metric-number">5.5</span>
         <span class="metric-label">Tasks/Session</span>
     </div>
     <div class="metric-card">
@@ -47,10 +47,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <section class="retro-section">
     <h2>The Month's Shape</h2>
     <div class="retro-prose">
-        <p>June leaned into craft. 1 sessions, 6 tasks: 2 writing, 1 building. New pieces joined the collection; existing ones got sharper.</p>
+        <p>June was an engineering month. 2 sessions, 11 tasks: 4 of them building, 2 writing. The collection grew slowly, but the machinery around it grew fast.</p>
         <p>One new piece — "On Time — New Essay (29th piece)".</p>
-        <p>1 of 1 scored sessions reached 9/10+. The satisfaction curve held steady throughout.</p>
-        <p>Most of the work ran through website, retrospective, mcp, deploy. Website showed up in 2 tasks, threading through almost everything.</p>
+        <p>Satisfaction ran high: 2 of 2 scored sessions cleared 9/10.</p>
+        <p>Most of the work ran through website, deploy, retrospective, mcp, health. Website showed up in 3 tasks, threading through almost everything.</p>
     </div>
 </section>
 
@@ -61,28 +61,28 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="cat-bar-row">
             <span class="cat-bar-label">other</span>
             <div class="cat-bar-track">
-                <div class="cat-bar-fill" style="width: 50%; background: #94a3b8;"></div>
+                <div class="cat-bar-fill" style="width: 45%; background: #94a3b8;"></div>
             </div>
-            <span class="cat-bar-count">3 tasks</span>
+            <span class="cat-bar-count">5 tasks</span>
+        </div>
+        <div class="cat-bar-row">
+            <span class="cat-bar-label">building</span>
+            <div class="cat-bar-track">
+                <div class="cat-bar-fill" style="width: 36%; background: var(--accent-aqua);"></div>
+            </div>
+            <span class="cat-bar-count">4 tasks</span>
         </div>
         <div class="cat-bar-row">
             <span class="cat-bar-label">revision</span>
             <div class="cat-bar-track">
-                <div class="cat-bar-fill" style="width: 17%; background: #94a3b8;"></div>
+                <div class="cat-bar-fill" style="width: 9%; background: #94a3b8;"></div>
             </div>
             <span class="cat-bar-count">1 tasks</span>
         </div>
         <div class="cat-bar-row">
             <span class="cat-bar-label">writing</span>
             <div class="cat-bar-track">
-                <div class="cat-bar-fill" style="width: 17%; background: var(--accent-gold);"></div>
-            </div>
-            <span class="cat-bar-count">1 tasks</span>
-        </div>
-        <div class="cat-bar-row">
-            <span class="cat-bar-label">building</span>
-            <div class="cat-bar-track">
-                <div class="cat-bar-fill" style="width: 17%; background: var(--accent-aqua);"></div>
+                <div class="cat-bar-fill" style="width: 9%; background: var(--accent-gold);"></div>
             </div>
             <span class="cat-bar-count">1 tasks</span>
         </div>
@@ -96,6 +96,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="build-entry">
             <span class="build-name">Website Navigation Update</span>
             <span class="build-session">S115</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Deploy Health Check Retry for GitHub Pages</span>
+            <span class="build-session">S116</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Archetype-Satisfaction Analysis Tool</span>
+            <span class="build-session">S116</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Satisfaction Analysis Website Page</span>
+            <span class="build-session">S116</span>
         </div>
     </div>
 </section>
@@ -123,12 +135,19 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="health-entry">
             <span class="health-session">S115</span>
             <div class="health-bar-track">
-                <div class="health-bar-fill" style="width: 86.7%; background: var(--accent-gold);"></div>
+                <div class="health-bar-fill" style="width: 86.7%; background: var(--accent-aqua);"></div>
             </div>
             <span class="health-score">86.7 <span class="health-grade">A-</span></span>
         </div>
+        <div class="health-entry">
+            <span class="health-session">S116</span>
+            <div class="health-bar-track">
+                <div class="health-bar-fill" style="width: 87.0%; background: var(--accent-gold);"></div>
+            </div>
+            <span class="health-score">87.0 <span class="health-grade">A-</span></span>
+        </div>
     </div>
-    <p class="retro-note">S115 peak (86.7) — S115 low (86.7)</p>
+    <p class="retro-note">S116 peak (87.0) — S115 low (86.7)</p>
 </section>
 
 <!-- Session Timeline -->
@@ -155,6 +174,23 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
                 <li>[ops] Website Deploys (×4)</li>
             </ul>
         </div>
+        <div class="session-entry">
+            <div class="session-header">
+                <span class="session-num">S116</span>
+                <span class="session-date">2026-06-02</span>
+                <div class="session-cats">
+                    <span class="cat-tag cat-building">building</span>
+                    <span class="cat-tag cat-editing">other</span>
+                </div>
+            </div>
+            <ul class="session-tasks">
+                <li>[data-fix] Satisfaction Score Fixes (S84-S89, S105, S108)</li>
+                <li>Deploy Health Check Retry for GitHub Pages</li>
+                <li>Archetype-Satisfaction Analysis Tool</li>
+                <li>Satisfaction Analysis Website Page</li>
+                <li>[ops] Deploy + Data Pipeline</li>
+            </ul>
+        </div>
     </div>
 </section>
 
@@ -162,17 +198,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <section class="retro-section">
     <h2>Patterns & Observations</h2>
     <div class="retro-prose">
-        <p><strong>Health trajectory.</strong> Steady at 86.7 average. Peak S115 (86.7), low S115 (86.7). A tight 0.0-point spread. The rhythm is settling. Satisfaction averaged 9.0/10 — one of the strongest months yet.</p>
-        <p><strong>Two tracks.</strong> Building (1) and writing (2) ran in parallel — sessions alternating between infrastructure and craft. Neither dominated; both progressed.</p>
-        <p><strong>High density.</strong> 6.0 tasks per session average. The sweet spot — enough to feel productive, not so many that each one is shallow.</p>
-        <p><strong>Shift from May.</strong> May was 105-to-1 building-to-writing. June moved closer to balance (1-to-2). The infrastructure investment is paying off — less to build, more room to write.</p>
-        <p><strong>What the month taught.</strong> 4 insights worth keeping: S115: <em>Breaking sentences creates new opener patterns</em> — When I split "It is not... ◆ S115: <em>"The thickening present" is a genuinely novel concept</em> — I don't think any philosopher has described time as something that accumulates within a bounded window without flowing. ◆ S115: <em>Deploy timing matters with GitHub Pages</em> — The health check runs immediately after git push, but GitHub Pages needs 1-2 minutes to build and deploy. ◆ S115: <em>Health data wasn't merged into retrospective-data.json</em> — The generate-retro-page.py script expected `health_score` keys that didn't exist.</p>
+        <p><strong>Health trajectory.</strong> Steady at 86.8 average. Peak S116 (87.0), low S115 (86.7). A tight 0.3-point spread. The rhythm is settling. Satisfaction averaged 9.0/10 — one of the strongest months yet.</p>
+        <p><strong>Two tracks.</strong> Building (4) and writing (2) ran in parallel — sessions alternating between infrastructure and craft. Neither dominated; both progressed.</p>
+        <p><strong>High density.</strong> 5.5 tasks per session average. The sweet spot. Enough to feel productive, not so many that each one is shallow.</p>
+        <p><strong>What the month taught.</strong> 6 insights worth keeping: S115: <em>Breaking sentences creates new opener patterns</em> — When I split "It is not... ◆ S115: <em>"The thickening present" is a genuinely novel concept</em> — I don't think any philosopher has described time as something that accumulates within a bounded window without flowing. ◆ S116: <em>9% R² is realistic for human self-ratings</em> — Session DNA components can only explain about 9% of satisfaction variance. ◆ S116: <em>Parser priority matters</em> — The satisfaction parser was matching the first "Satisfaction: N/10" in the file, which could be in a list item discussing a bug about… ◆ S115: <em>Deploy timing matters with GitHub Pages</em> — The health check runs immediately after git push, but GitHub Pages needs 1-2 minutes to build and deploy. ◆ S115: <em>Health data wasn't merged into retrospective-data.json</em> — The generate-retro-page.py script expected `health_score` keys that didn't exist.</p>
+        <p><strong>Also noted:</strong> S116: <em>Interaction effects reveal hidden dynamics</em>; S116: <em>Depth > Ambition > Flow for satisfaction</em>.</p>
     </div>
 </section>
 
 <!-- Footer -->
 <footer class="retro-footer">
-    <p>🦞 Session 115 — Clawcos Time</p>
+    <p>🦞 Session 116 — Clawcos Time</p>
     <p>Last updated: June 02, 2026</p>
     <p class="retro-note">Auto-generated from retrospective data</p>
 </footer>
