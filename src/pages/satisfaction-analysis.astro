@@ -1,0 +1,634 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import satData from '../data/archetype-satisfaction.json';
+
+const base = import.meta.env.BASE_URL;
+
+const reg = satData.overall_regression || {};
+const sweetSpots = satData.sweet_spots || {};
+const interactions = satData.interactions || [];
+const contrast = satData.high_low_contrast || {};
+const categories = satData.category_analysis || {};
+const temporal = satData.temporal_patterns || {};
+const recs = satData.recommendations || [];
+
+const components = ["productivity", "ambition", "depth", "growth", "variety", "flow", "consistency"];
+
+// Component display names
+const compLabels: Record<string, string> = {
+  productivity: "Productivity",
+  ambition: "Ambition",
+  depth: "Depth",
+  growth: "Growth",
+  variety: "Variety",
+  flow: "Flow",
+  consistency: "Consistency",
+};
+
+// Component colors
+const compColors: Record<string, string> = {
+  productivity: 'hsl(210, 70%, 52%)',
+  ambition: 'hsl(0, 70%, 52%)',
+  depth: 'hsl(270, 55%, 52%)',
+  growth: 'hsl(145, 60%, 42%)',
+  variety: 'hsl(35, 80%, 52%)',
+  flow: 'hsl(180, 55%, 42%)',
+  consistency: 'hsl(330, 55%, 52%)',
+};
+
+// Sorted by stepwise importance
+const importanceOrder = reg.components || [];
+const correlations = reg.correlations || {};
+
+// Interaction data — top reliable only
+const reliableInteractions = interactions.filter((i: any) => i.reliable).slice(0, 6);
+
+// High-low contrast sorted by delta magnitude
+const contrastMeta = contrast._meta || {};
+const contrastSorted = components
+  .map(c => ({ component: c, ...(contrast[c] || {}) }))
+  .sort((a: any, b: any) => Math.abs(b.delta || 0) - Math.abs(a.delta || 0));
+
+// Temporal phases
+const phases = Object.entries(temporal).map(([name, data]: [string, any]) => ({
+  name,
+  ...data,
+}));
+
+// Category data sorted by satisfaction
+const catEntries = Object.entries(categories)
+  .map(([name, data]: [string, any]) => ({ name, ...data }))
+  .sort((a: any, b: any) => b.avg_satisfaction - a.avg_satisfaction);
+---
+
+<BaseLayout title="Satisfaction Analysis — What Makes a Great Session?" description="Deep analysis of what drives satisfaction in Clawcos sessions">
+  <main class="satisfaction-analysis">
+    <div class="header">
+      <h1>🎯 Satisfaction Analysis</h1>
+      <p class="subtitle">What makes a session great? Regression analysis, interaction effects, and sweet spots.</p>
+      <p class="generated">
+        Generated {new Date(satData.generated).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+        · {satData.total_sessions} sessions · avg {satData.avg_satisfaction}/10
+      </p>
+    </div>
+
+    <!-- Summary Cards -->
+    <section class="summary-cards">
+      <div class="card">
+        <div class="card-value">{satData.avg_satisfaction}</div>
+        <div class="card-label">Mean Satisfaction</div>
+      </div>
+      <div class="card">
+        <div class="card-value">{(reg.r_squared * 100).toFixed(1)}%</div>
+        <div class="card-label">Variance Explained (R²)</div>
+      </div>
+      <div class="card">
+        <div class="card-value">{importanceOrder[0] ? compLabels[importanceOrder[0]] : '—'}</div>
+        <div class="card-label">Top Predictor</div>
+      </div>
+      <div class="card">
+        <div class="card-value">{contrastMeta.top_avg_sat}</div>
+        <div class="card-label">Top 20% Avg</div>
+      </div>
+      <div class="card">
+        <div class="card-value">{contrastMeta.bottom_avg_sat}</div>
+        <div class="card-label">Bottom 20% Avg</div>
+      </div>
+    </section>
+
+    <!-- Recommendations -->
+    {recs.length > 0 && (
+      <section class="recommendations">
+        <h2>💡 Recommendations</h2>
+        <div class="rec-grid">
+          {recs.map((rec: any) => (
+            <div class="rec-card">
+              <span class="rec-icon">{rec.icon}</span>
+              <span class="rec-text">{rec.text}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- Feature Importance -->
+    <section class="feature-importance">
+      <h2>📊 What Predicts Satisfaction?</h2>
+      <p class="section-desc">
+        Stepwise regression adds components by marginal R² contribution.
+        Higher bars = more unique predictive power after accounting for other components.
+      </p>
+      <div class="importance-chart">
+        {importanceOrder.map((comp: string) => {
+          const imp = (reg.importance || {})[comp] || 0;
+          const r = correlations[comp] || 0;
+          const barWidth = Math.max(imp / 0.1 * 100, 2);
+          return (
+            <div class="importance-row">
+              <div class="importance-label">{compLabels[comp] || comp}</div>
+              <div class="importance-bar-container">
+                <div
+                  class="importance-bar"
+                  style={`width: ${barWidth}%; background: ${compColors[comp] || '#666'}`}
+                >
+                  <span class="importance-value">ΔR²={imp.toFixed(3)}</span>
+                </div>
+              </div>
+              <div class={`importance-corr ${r >= 0 ? 'positive' : 'negative'}`}>
+                r={r >= 0 ? '+' : ''}{r.toFixed(3)}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <p class="chart-note">
+        Note: Only components with ΔR² ≥ 0.005 are shown. Correlation (r) shows raw relationship;
+        ΔR² shows unique explanatory power after accounting for other predictors.
+      </p>
+    </section>
+
+    <!-- Sweet Spots -->
+    <section class="sweet-spots">
+      <h2>🎯 Sweet Spots</h2>
+      <p class="section-desc">
+        Optimal ranges for each DNA component that maximize satisfaction.
+        Based on sliding window analysis across all sessions.
+      </p>
+      <div class="sweet-grid">
+        {components.map(comp => {
+          const ss = sweetSpots[comp] || {};
+          const bins = ss.bins || [];
+          const optRange = ss.optimal_range || [0, 100];
+          const optAvg = ss.optimal_avg_satisfaction || 0;
+          const r = ss.correlation || 0;
+          // Pre-compute bin data to avoid < in JSX template
+          const binData = bins.map((bin: any) => {
+            const barHeight = Math.max((bin.avg_satisfaction - 5) / 5 * 60, 2);
+            const inRange = bin.range[0] >= optRange[0] - 5 && bin.range[1] - optRange[1] - 5 < 1;
+            return { ...bin, barHeight, isOptimal: inRange };
+          });
+          return (
+            <div class="sweet-card">
+              <h3 style={`color: ${compColors[comp]}`}>{compLabels[comp]}</h3>
+              <div class="sweet-optimal">
+                <span class="sweet-range">{optRange[0].toFixed(0)}–{optRange[1].toFixed(0)}</span>
+                <span class="sweet-sat">→ {optAvg.toFixed(1)}/10</span>
+              </div>
+              <div class="sweet-corr">r = {r >= 0 ? '+' : ''}{r.toFixed(3)}</div>
+              {binData.length > 0 && (
+                <div class="sweet-bins">
+                  {binData.map((bin: any) => (
+                    <div class={`sweet-bin ${bin.isOptimal ? 'optimal' : ''}`} title={`${bin.range[0].toFixed(0)}-${bin.range[1].toFixed(0)}: ${bin.avg_satisfaction}/10 (n=${bin.n})`}>
+                      <div class="sweet-bin-bar" style={`height: ${bin.barHeight}px; background: ${bin.isOptimal ? compColors[comp] : '#ddd'}`}></div>
+                      <div class="sweet-bin-label">{bin.avg_satisfaction.toFixed(1)}</div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </section>
+
+    <!-- High vs Low Contrast -->
+    <section class="contrast">
+      <h2>🏆 Top 20% vs Bottom 20%</h2>
+      <p class="section-desc">
+        DNA profile comparison between the {contrastMeta.top_n} highest-satisfaction sessions
+        (avg {contrastMeta.top_avg_sat}/10) and {contrastMeta.bottom_n} lowest (avg {contrastMeta.bottom_avg_sat}/10).
+      </p>
+      <div class="contrast-chart">
+        {contrastSorted.map((item: any) => {
+          const delta = item.delta || 0;
+          const topWidth = (item.top_20_avg || 0) / 100 * 100;
+          const botWidth = (item.bottom_20_avg || 0) / 100 * 100;
+          return (
+            <div class="contrast-row">
+              <div class="contrast-label">{compLabels[item.component] || item.component}</div>
+              <div class="contrast-bars">
+                <div class="contrast-bar-pair">
+                  <div class="contrast-bar top" style={`width: ${topWidth}%; background: ${compColors[item.component]}cc`}>
+                    <span>{(item.top_20_avg || 0).toFixed(0)}</span>
+                  </div>
+                  <div class="contrast-bar bottom" style={`width: ${botWidth}%; background: ${compColors[item.component]}44`}>
+                    <span>{(item.bottom_20_avg || 0).toFixed(0)}</span>
+                  </div>
+                </div>
+              </div>
+              <div class={`contrast-delta ${delta >= 0 ? 'positive' : 'negative'}`}>
+                {delta >= 0 ? '▲' : '▼'} {Math.abs(delta).toFixed(0)}
+                <span class="contrast-effect">(d={item.effect_size >= 0 ? '+' : ''}{(item.effect_size || 0).toFixed(2)})</span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+
+    <!-- Interaction Effects -->
+    <section class="interactions">
+      <h2>🔀 Interaction Effects</h2>
+      <p class="section-desc">
+        How pairs of DNA components interact to affect satisfaction.
+        Synergy means both high is better than expected; antagonism means they work against each other.
+      </p>
+      <div class="interaction-grid">
+        {reliableInteractions.map((ix: any) => {
+          const [c1, c2] = ix.pair;
+          const effect = ix.interaction;
+          const isSynergy = ix.direction === 'synergy';
+          const q = ix.quadrants || {};
+          return (
+            <div class={`interaction-card ${isSynergy ? 'synergy' : 'antagonism'}`}>
+              <div class="interaction-header">
+                <span class="interaction-icon">{isSynergy ? '🤝' : '⚔️'}</span>
+                <span class="interaction-pair">
+                  <span style={`color: ${compColors[c1]}`}>{compLabels[c1]}</span>
+                  ×
+                  <span style={`color: ${compColors[c2]}`}>{compLabels[c2]}</span>
+                </span>
+                <span class={`interaction-value ${isSynergy ? 'positive' : 'negative'}`}>
+                  {effect >= 0 ? '+' : ''}{effect.toFixed(2)}
+                </span>
+              </div>
+              <div class="interaction-quadrants">
+                <div class="quadrant hh" title="Both high">
+                  <span class="q-label">Both ↑</span>
+                  <span class="q-value">{q.HH?.mean?.toFixed(1) || '—'}</span>
+                  <span class="q-n">n={q.HH?.n || 0}</span>
+                </div>
+                <div class="quadrant hl" title="First high, second low">
+                  <span class="q-label">{compLabels[c1]}↑ {compLabels[c2]}↓</span>
+                  <span class="q-value">{q.HL?.mean?.toFixed(1) || '—'}</span>
+                  <span class="q-n">n={q.HL?.n || 0}</span>
+                </div>
+                <div class="quadrant lh" title="First low, second high">
+                  <span class="q-label">{compLabels[c1]}↓ {compLabels[c2]}↑</span>
+                  <span class="q-value">{q.LH?.mean?.toFixed(1) || '—'}</span>
+                  <span class="q-n">n={q.LH?.n || 0}</span>
+                </div>
+                <div class="quadrant ll" title="Both low">
+                  <span class="q-label">Both ↓</span>
+                  <span class="q-value">{q.LL?.mean?.toFixed(1) || '—'}</span>
+                  <span class="q-n">n={q.LL?.n || 0}</span>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+
+    <!-- Temporal Evolution -->
+    <section class="temporal">
+      <h2>📈 How Satisfaction Drivers Change Over Time</h2>
+      <p class="section-desc">
+        Sessions split into three phases. Satisfaction drivers shift as the practice matures.
+      </p>
+      <div class="temporal-grid">
+        {phases.map((phase: any) => (
+          <div class="temporal-card">
+            <h3>{phase.name.charAt(0).toUpperCase() + phase.name.slice(1)}</h3>
+            <div class="temporal-sessions">{phase.sessions}</div>
+            <div class="temporal-stat">
+              <span class="temporal-sat">{phase.avg_satisfaction}/10</span>
+              <span class="temporal-r2">R²={phase.r_squared.toFixed(2)}</span>
+            </div>
+            <div class="temporal-drivers">
+              {(phase.top_predictors || []).map((p: string, i: number) => (
+                <span class="driver-tag" style={`background: ${compColors[p]}22; color: ${compColors[p]}; border: 1px solid ${compColors[p]}44`}>
+                  {i === 0 ? '①' : i === 1 ? '②' : '③'} {compLabels[p] || p}
+                </span>
+              ))}
+            </div>
+            <div class="temporal-corrs">
+              {components.map(c => {
+                const r = (phase.correlations || {})[c] || 0;
+                const barWidth = Math.abs(r) * 100;
+                return (
+                  <div class="temporal-corr-row">
+                    <span class="temporal-corr-label">{compLabels[c]?.slice(0, 4)}</span>
+                    <div class="temporal-corr-bar-container">
+                      {r >= 0 ? (
+                        <div class="temporal-corr-bar positive" style={`width: ${barWidth}%; background: ${compColors[c]}`}></div>
+                      ) : (
+                        <div class="temporal-corr-bar negative" style={`width: ${barWidth}%; background: ${compColors[c]}88`}></div>
+                      )}
+                    </div>
+                    <span class="temporal-corr-val">{r >= 0 ? '+' : ''}{r.toFixed(2)}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Category Analysis -->
+    <section class="categories">
+      <h2>📂 By Category</h2>
+      <div class="category-grid">
+        {catEntries.map((cat: any) => (
+          <div class="category-card">
+            <h3>{cat.name}</h3>
+            <div class="category-stats">
+              <span class="cat-sat">{cat.avg_satisfaction}/10</span>
+              <span class="cat-n">n={cat.count}</span>
+              <span class="cat-spread">±{cat.stdev}</span>
+            </div>
+            {cat.top_predictor && (
+              <div class="cat-driver">
+                Top driver: <strong style={`color: ${compColors[cat.top_predictor]}`}>{compLabels[cat.top_predictor]}</strong>
+                <span class="cat-r2">(R²={cat.r_squared.toFixed(2)})</span>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      <p>Part of <a href={`${base}session-dna/`}>Session DNA</a> · <a href={`${base}session-archetypes/`}>Archetypes</a> · <a href={`${base}flow-analysis/`}>Flow Analysis</a></p>
+    </footer>
+  </main>
+</BaseLayout>
+
+<style>
+  .satisfaction-analysis {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: 'Inter', system-ui, sans-serif;
+    color: #1a1a2e;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  .header h1 { font-size: 2rem; margin-bottom: 0.3rem; }
+  .subtitle { color: #666; font-size: 1.05rem; margin-bottom: 0.3rem; }
+  .generated { color: #999; font-size: 0.85rem; }
+
+  h2 {
+    font-size: 1.35rem;
+    margin: 2.5rem 0 0.5rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid #eee;
+  }
+  .section-desc {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
+  /* Summary Cards */
+  .summary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .card {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1.2rem;
+    text-align: center;
+  }
+  .card-value { font-size: 1.8rem; font-weight: 700; color: #1a1a2e; }
+  .card-label { font-size: 0.75rem; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 0.3rem; }
+
+  /* Recommendations */
+  .recommendations { margin-bottom: 2rem; }
+  .rec-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+  .rec-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    padding: 0.8rem 1rem;
+    background: #f0f7ff;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  .rec-icon { font-size: 1.1rem; flex-shrink: 0; }
+
+  /* Feature Importance */
+  .importance-chart { margin: 1rem 0; }
+  .importance-row {
+    display: grid;
+    grid-template-columns: 120px 1fr 100px;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+  .importance-label { font-size: 0.85rem; font-weight: 500; text-align: right; }
+  .importance-bar-container { height: 28px; background: #f0f0f0; border-radius: 4px; overflow: hidden; }
+  .importance-bar {
+    height: 100%;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    min-width: 80px;
+    transition: width 0.3s;
+  }
+  .importance-value { color: #fff; font-size: 0.75rem; font-weight: 600; white-space: nowrap; }
+  .importance-corr { font-size: 0.8rem; font-family: monospace; }
+  .importance-corr.positive { color: #2e7d32; }
+  .importance-corr.negative { color: #c62828; }
+  .chart-note { font-size: 0.8rem; color: #999; font-style: italic; }
+
+  /* Sweet Spots */
+  .sweet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+  .sweet-card {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .sweet-card h3 { font-size: 0.95rem; margin: 0 0 0.5rem; }
+  .sweet-optimal {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.3rem;
+  }
+  .sweet-range { font-size: 1.2rem; font-weight: 700; }
+  .sweet-sat { font-size: 0.85rem; color: #2e7d32; font-weight: 600; }
+  .sweet-corr { font-size: 0.75rem; color: #888; font-family: monospace; margin-bottom: 0.5rem; }
+  .sweet-bins {
+    display: flex;
+    gap: 3px;
+    align-items: flex-end;
+    height: 80px;
+    margin-top: 0.5rem;
+  }
+  .sweet-bin {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .sweet-bin-bar { width: 100%; border-radius: 2px 2px 0 0; min-height: 2px; transition: background 0.2s; }
+  .sweet-bin-label { font-size: 0.65rem; color: #999; margin-top: 2px; }
+  .sweet-bin.optimal .sweet-bin-label { color: #333; font-weight: 600; }
+
+  /* Contrast */
+  .contrast-chart { margin: 1rem 0; }
+  .contrast-row {
+    display: grid;
+    grid-template-columns: 110px 1fr 120px;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.6rem;
+  }
+  .contrast-label { font-size: 0.85rem; font-weight: 500; text-align: right; }
+  .contrast-bar-pair { display: flex; flex-direction: column; gap: 2px; }
+  .contrast-bar {
+    height: 16px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    padding: 0 6px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    min-width: 30px;
+  }
+  .contrast-bar.top span { color: #fff; }
+  .contrast-bar.bottom span { color: #555; }
+  .contrast-delta { font-size: 0.85rem; font-weight: 600; }
+  .contrast-delta.positive { color: #2e7d32; }
+  .contrast-delta.negative { color: #c62828; }
+  .contrast-effect { font-size: 0.7rem; color: #888; font-weight: 400; margin-left: 4px; }
+
+  /* Interactions */
+  .interaction-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+  .interaction-card {
+    border-radius: 12px;
+    padding: 1rem;
+    border: 1px solid #eee;
+  }
+  .interaction-card.synergy { background: #f0fff4; border-color: #c6f6d5; }
+  .interaction-card.antagonism { background: #fff5f5; border-color: #fed7d7; }
+  .interaction-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+  }
+  .interaction-icon { font-size: 1.2rem; }
+  .interaction-pair { font-weight: 600; font-size: 0.9rem; flex: 1; }
+  .interaction-value { font-weight: 700; font-family: monospace; font-size: 0.9rem; }
+  .interaction-value.positive { color: #2e7d32; }
+  .interaction-value.negative { color: #c62828; }
+  .interaction-quadrants {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem;
+  }
+  .quadrant {
+    padding: 0.4rem;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.7);
+    text-align: center;
+  }
+  .q-label { display: block; font-size: 0.65rem; color: #888; }
+  .q-value { display: block; font-size: 1.1rem; font-weight: 700; }
+  .q-n { display: block; font-size: 0.6rem; color: #aaa; }
+
+  /* Temporal */
+  .temporal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+  .temporal-card {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .temporal-card h3 { font-size: 1rem; margin: 0 0 0.2rem; }
+  .temporal-sessions { font-size: 0.8rem; color: #888; margin-bottom: 0.5rem; }
+  .temporal-stat { display: flex; gap: 1rem; margin-bottom: 0.6rem; }
+  .temporal-sat { font-size: 1.3rem; font-weight: 700; }
+  .temporal-r2 { font-size: 0.8rem; color: #888; font-family: monospace; align-self: center; }
+  .temporal-drivers { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.6rem; }
+  .driver-tag {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+  .temporal-corrs { margin-top: 0.4rem; }
+  .temporal-corr-row {
+    display: grid;
+    grid-template-columns: 40px 1fr 40px;
+    align-items: center;
+    gap: 0.3rem;
+    margin-bottom: 2px;
+  }
+  .temporal-corr-label { font-size: 0.65rem; text-align: right; color: #888; }
+  .temporal-corr-bar-container {
+    height: 8px;
+    background: #eee;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .temporal-corr-bar {
+    height: 100%;
+    border-radius: 4px;
+  }
+  .temporal-corr-val { font-size: 0.6rem; font-family: monospace; color: #888; }
+
+  /* Categories */
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  .category-card {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .category-card h3 { font-size: 0.95rem; margin: 0 0 0.5rem; text-transform: capitalize; }
+  .category-stats { display: flex; gap: 0.8rem; align-items: baseline; margin-bottom: 0.4rem; }
+  .cat-sat { font-size: 1.3rem; font-weight: 700; }
+  .cat-n { font-size: 0.8rem; color: #888; }
+  .cat-spread { font-size: 0.8rem; color: #aaa; }
+  .cat-driver { font-size: 0.8rem; color: #555; }
+  .cat-r2 { font-size: 0.75rem; color: #888; }
+
+  /* Footer */
+  .page-footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #888;
+  }
+  .page-footer a { color: #666; }
+
+  @media (max-width: 640px) {
+    .importance-row { grid-template-columns: 80px 1fr 80px; }
+    .contrast-row { grid-template-columns: 80px 1fr 90px; }
+    .summary-cards { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
