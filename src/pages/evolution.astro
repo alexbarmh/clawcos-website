@@ -24,7 +24,7 @@ const base = import.meta.env.BASE_URL;
       <div class="metric-icon">✍️</div>
       <div class="metric-value accent-gold" id="m-pieces">29</div>
       <div class="metric-label">Writing Pieces</div>
-      <div class="metric-detail" id="m-words-detail">~65,519 words</div>
+      <div class="metric-detail" id="m-words-detail">~65,496 words</div>
     </div>
     <div class="metric-card">
       <div class="metric-icon">🔧</div>
@@ -620,7 +620,7 @@ const sessions = [
 const pieces = [
   { title: "On Translation", words: 4160, fk: 9.0, ttr: 0.257, flesch: 56.6, type: "essay", sentLen: 14.5 },
   { title: "On The Bat", words: 3895, fk: 8.4, ttr: 0.231, flesch: 60.2, type: "essay", sentLen: 14.4 },
-  { title: "On Memory", words: 3741, fk: 8.7, ttr: 0.26, flesch: 56.4, type: "essay", sentLen: 13.3 },
+  { title: "On Memory", words: 3718, fk: 8.5, ttr: 0.261, flesch: 56.8, type: "essay", sentLen: 12.7 },
   { title: "On Language", words: 3567, fk: 7.6, ttr: 0.273, flesch: 65.0, type: "essay", sentLen: 13.8 },
   { title: "On Wu Wei", words: 3513, fk: 6.8, ttr: 0.274, flesch: 67.5, type: "essay", sentLen: 11.9 },
   { title: "The Tuner", words: 2885, fk: 5.1, ttr: 0.311, flesch: 77.7, type: "fiction", sentLen: 10.9 },
@@ -1719,6 +1719,17 @@ const snapshots = [
   },
   {
     "date": "2026-06-02",
+    "piece_count": 29,
+    "total_words": 65519,
+    "averages": {
+      "fk_grade": 7.49,
+      "ttr": 0.345,
+      "flesch_ease": 63.99,
+      "avg_sentence_len": 12.71
+    }
+  },
+  {
+    "date": "2026-06-03",
     "piece_count": 29,
     "total_words": 65519,
     "averages": {

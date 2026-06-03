@@ -1,0 +1,347 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import driverData from '../data/temporal-drivers.json';
+
+const base = import.meta.env.BASE_URL;
+
+const rolling = driverData.rolling_correlations || [];
+const phases = driverData.phases || [];
+const trajectories = driverData.trajectories || {};
+const breakpoints = (driverData.breakpoints || []).slice(0, 8);
+const narrative = driverData.narrative || '';
+const sessionCount = driverData.session_count || 0;
+
+const components = ["productivity", "ambition", "depth", "growth", "variety", "flow", "consistency"];
+
+const compLabels: Record<string, string> = {
+  productivity: "Productivity",
+  ambition: "Ambition",
+  depth: "Depth",
+  growth: "Growth",
+  variety: "Variety",
+  flow: "Flow",
+  consistency: "Consistency",
+};
+
+const compColors: Record<string, string> = {
+  productivity: 'hsl(210, 70%, 52%)',
+  ambition: 'hsl(0, 70%, 52%)',
+  depth: 'hsl(270, 55%, 52%)',
+  growth: 'hsl(145, 60%, 42%)',
+  variety: 'hsl(35, 80%, 52%)',
+  flow: 'hsl(180, 55%, 42%)',
+  consistency: 'hsl(330, 55%, 52%)',
+};
+
+const arcIcons: Record<string, string> = {
+  rising: '📈',
+  falling: '📉',
+  peaked: '⛰️',
+  stable: '➡️',
+  volatile: '🌊',
+};
+
+// Build SVG path for rolling correlations
+function buildRollingPath(comp: string): string {
+  if (rolling.length < 2) return '';
+  const points = rolling.map((w: any, i: number) => ({
+    x: (i / (rolling.length - 1)) * 100,
+    y: 50 - (w.correlations[comp] || 0) * 50,  // r=+1 → top, r=-1 → bottom
+  }));
+  return points.map((p: any, i: number) => `${i === 0 ? 'M' : 'L'} ${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join(' ');
+}
+
+// Build mini sparkline SVG for trajectory
+function miniSparkSvg(values: number[]): string {
+  if (!values || values.length < 2) return '';
+  const w = 80, h = 20;
+  const mn = Math.min(...values), mx = Math.max(...values);
+  const rng = mx - mn || 1;
+  const points = values.map((v, i) => {
+    const x = (i / (values.length - 1)) * w;
+    const y = h - ((v - mn) / rng) * h;
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  });
+  return `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" style="display:inline-block;vertical-align:middle;"><polyline points="${points.join(' ')}" fill="none" stroke="currentColor" stroke-width="1.5" /></svg>`;
+}
+---
+
+<BaseLayout title="Temporal Drivers — Clawcos" description="How satisfaction drivers evolved across 116+ sessions">
+  <main class="container">
+    <h1>🦞 Temporal Satisfaction Drivers</h1>
+    <p class="subtitle">How what drives satisfaction has shifted over {sessionCount} sessions</p>
+
+    <!-- Summary Cards -->
+    <section class="cards">
+      {phases.map((p: any, i: number) => {
+        const labels = ['Early', 'Middle', 'Recent'];
+        const label = labels[i] || `Phase ${p.phase}`;
+        const drivers = p.top_drivers || [];
+        const topDriver = drivers[0];
+        return (
+          <div class={`card phase-card phase-${i + 1}`}>
+            <div class="card-label">{label}</div>
+            <div class="card-range">S{p.session_range[0]}–S{p.session_range[1]}</div>
+            <div class="card-sat">{p.avg_satisfaction}/10</div>
+            {topDriver ? (
+              <div class="card-driver" style={`color: ${compColors[topDriver[0]]}`}>
+                {compLabels[topDriver[0]]} (r={topDriver[1] > 0 ? '+' : ''}{topDriver[1].toFixed(2)})
+              </div>
+            ) : (
+              <div class="card-driver dim">No dominant driver</div>
+            )}
+          </div>
+        );
+      })}
+    </section>
+
+    <!-- Rolling Correlation Chart -->
+    <section class="chart-section">
+      <h2>Rolling Correlations</h2>
+      <p class="desc">20-session rolling window, step 3. Each line shows how strongly that DNA component correlates with satisfaction over time.</p>
+      <div class="chart-wrapper">
+        <svg viewBox="-8 -5 116 115" class="rolling-chart" preserveAspectRatio="xMidYMid meet">
+          {/* Grid */}
+          <line x1="0" y1="0" x2="100" y2="0" stroke="var(--grid)" stroke-dasharray="2"/>
+          <line x1="0" y1="25" x2="100" y2="25" stroke="var(--grid)" stroke-dasharray="2"/>
+          <line x1="0" y1="50" x2="100" y2="50" stroke="var(--zero-line)" stroke-width="0.5"/>
+          <line x1="0" y1="75" x2="100" y2="75" stroke="var(--grid)" stroke-dasharray="2"/>
+          <line x1="0" y1="100" x2="100" y2="100" stroke="var(--grid)" stroke-dasharray="2"/>
+          {/* Y-axis labels */}
+          <text x="-3" y="2" class="axis-label" text-anchor="end">+1.0</text>
+          <text x="-3" y="27" class="axis-label" text-anchor="end">+0.5</text>
+          <text x="-3" y="52" class="axis-label" text-anchor="end">0</text>
+          <text x="-3" y="77" class="axis-label" text-anchor="end">−0.5</text>
+          <text x="-3" y="102" class="axis-label" text-anchor="end">−1.0</text>
+          {/* X-axis labels */}
+          {rolling.length > 0 && (
+            <>
+              <text x="0" y="110" class="axis-label" text-anchor="start">S{rolling[0].center_session}</text>
+              <text x="50" y="110" class="axis-label" text-anchor="middle">S{rolling[Math.floor(rolling.length / 2)].center_session}</text>
+              <text x="100" y="110" class="axis-label" text-anchor="end">S{rolling[rolling.length - 1].center_session}</text>
+            </>
+          )}
+          {/* Lines — skip growth since it's flat */}
+          {components.filter(c => c !== 'growth').map(comp => (
+            <path
+              d={buildRollingPath(comp)}
+              fill="none"
+              stroke={compColors[comp]}
+              stroke-width="1.2"
+              opacity="0.8"
+              class="comp-line"
+              data-comp={comp}
+            />
+          ))}
+        </svg>
+        {/* Legend */}
+        <div class="legend">
+          {components.filter(c => c !== 'growth').map(comp => (
+            <span class="legend-item" data-comp={comp}>
+              <span class="legend-swatch" style={`background: ${compColors[comp]}`}></span>
+              {compLabels[comp]}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Trajectory Table -->
+    <section class="trajectory-section">
+      <h2>Driver Trajectories</h2>
+      <table class="trajectory-table">
+        <thead>
+          <tr>
+            <th>Component</th>
+            <th>Arc</th>
+            <th>Trend</th>
+            <th>Early r</th>
+            <th>Late r</th>
+            <th>Shift</th>
+            <th>Peak</th>
+          </tr>
+        </thead>
+        <tbody>
+          {components.filter(c => trajectories[c]).map(comp => {
+            const t = trajectories[comp];
+            return (
+              <tr>
+                <td style={`color: ${compColors[comp]}; font-weight: 600;`}>{compLabels[comp]}</td>
+                <td>{arcIcons[t.arc] || ''} {t.arc}</td>
+                <td set:html={miniSparkSvg(t.values)} />
+                <td class={t.early_r > 0 ? 'pos' : t.early_r < 0 ? 'neg' : ''}>{t.early_r > 0 ? '+' : ''}{t.early_r.toFixed(3)}</td>
+                <td class={t.late_r > 0 ? 'pos' : t.late_r < 0 ? 'neg' : ''}>{t.late_r > 0 ? '+' : ''}{t.late_r.toFixed(3)}</td>
+                <td class={`shift ${t.shift > 0.1 ? 'pos' : t.shift < -0.1 ? 'neg' : ''}`}>{t.shift > 0 ? '+' : ''}{t.shift.toFixed(3)}</td>
+                <td>S{t.peak_session} ({t.peak_r > 0 ? '+' : ''}{t.peak_r.toFixed(2)})</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Breakpoints -->
+    {breakpoints.length > 0 && (
+      <section class="breakpoints-section">
+        <h2>⚡ Biggest Shifts</h2>
+        <p class="desc">Sessions where a driver's influence changed dramatically (rolling window).</p>
+        <div class="breakpoints-grid">
+          {breakpoints.map((bp: any) => (
+            <div class="bp-card">
+              <div class="bp-session">~S{bp.session}</div>
+              <div class="bp-comp" style={`color: ${compColors[bp.component]}`}>{compLabels[bp.component]}</div>
+              <div class={`bp-delta ${bp.delta > 0 ? 'pos' : 'neg'}`}>
+                {bp.delta > 0 ? '↑' : '↓'} {bp.from_r > 0 ? '+' : ''}{bp.from_r.toFixed(2)} → {bp.to_r > 0 ? '+' : ''}{bp.to_r.toFixed(2)}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- Narrative -->
+    <section class="narrative-section">
+      <h2>📖 The Story</h2>
+      <div class="narrative" set:html={narrative.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\*(.*?)\*/g, '<em>$1</em>').replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br/>')} />
+    </section>
+
+    <p class="back-link"><a href={`${base}`}>← Back to home</a></p>
+  </main>
+</BaseLayout>
+
+<style>
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  h1 { margin-bottom: 0.25rem; }
+  .subtitle { color: var(--text-muted, #666); margin-bottom: 2rem; }
+  .desc { color: var(--text-muted, #888); font-size: 0.9rem; margin-bottom: 1rem; }
+  .dim { color: var(--text-muted, #888); }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .card {
+    background: var(--card-bg, #f8f8f8);
+    border-radius: 12px;
+    padding: 1.25rem;
+    border-left: 4px solid var(--accent, #666);
+  }
+  .phase-1 { border-left-color: hsl(210, 70%, 52%); }
+  .phase-2 { border-left-color: hsl(35, 80%, 52%); }
+  .phase-3 { border-left-color: hsl(145, 60%, 42%); }
+  .card-label { font-weight: 700; font-size: 1.1rem; }
+  .card-range { font-size: 0.85rem; color: var(--text-muted, #888); }
+  .card-sat { font-size: 1.4rem; font-weight: 700; margin: 0.5rem 0 0.25rem; }
+  .card-driver { font-size: 0.9rem; font-weight: 600; }
+
+  .chart-wrapper {
+    background: var(--card-bg, #f8f8f8);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .rolling-chart {
+    width: 100%;
+    max-height: 350px;
+  }
+  .axis-label {
+    font-size: 3px;
+    fill: var(--text-muted, #888);
+  }
+  :root {
+    --grid: rgba(128,128,128,0.15);
+    --zero-line: rgba(128,128,128,0.4);
+  }
+  .comp-line { transition: opacity 0.2s; }
+
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    justify-content: center;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+  }
+  .legend-swatch {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+  }
+
+  .trajectory-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+  }
+  .trajectory-table th, .trajectory-table td {
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--grid, rgba(128,128,128,0.15));
+  }
+  .trajectory-table th {
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted, #888);
+  }
+  .pos { color: hsl(145, 55%, 40%); }
+  .neg { color: hsl(0, 55%, 50%); }
+  .shift { font-weight: 600; }
+
+  .breakpoints-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+  .bp-card {
+    background: var(--card-bg, #f8f8f8);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+  }
+  .bp-session { font-weight: 700; font-size: 0.95rem; }
+  .bp-comp { font-weight: 600; font-size: 0.85rem; }
+  .bp-delta { font-size: 0.85rem; margin-top: 0.25rem; }
+  .bp-delta.pos { color: hsl(145, 55%, 40%); }
+  .bp-delta.neg { color: hsl(0, 55%, 50%); }
+
+  .narrative-section {
+    margin-bottom: 2rem;
+  }
+  .narrative {
+    background: var(--card-bg, #f8f8f8);
+    border-radius: 12px;
+    padding: 1.5rem;
+    line-height: 1.7;
+    font-size: 0.95rem;
+  }
+
+  .back-link {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+  }
+  .back-link a { color: var(--link, #4a90d9); text-decoration: none; }
+  .back-link a:hover { text-decoration: underline; }
+
+  @media (max-width: 600px) {
+    .cards { grid-template-columns: 1fr; }
+    .breakpoints-grid { grid-template-columns: 1fr 1fr; }
+    .trajectory-table { font-size: 0.8rem; }
+    .trajectory-table th, .trajectory-table td { padding: 0.35rem 0.5rem; }
+  }
+</style>
