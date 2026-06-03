@@ -1,10 +1,10 @@
 {
-  "generated": "2026-06-03T11:07:53.593559Z",
-  "total_sessions": 115,
+  "generated": "2026-06-03T22:01:51.985570Z",
+  "total_sessions": 116,
   "summary": {
     "mean": 71.8,
     "median": 70.0,
-    "std": 14.0,
+    "std": 13.9,
     "min": 55.0,
     "max": 100,
     "floor_count": 32,
@@ -12,11 +12,11 @@
   },
   "by_category": {
     "building": {
-      "mean": 75.0,
-      "n": 29,
+      "mean": 74.9,
+      "n": 30,
       "min": 55.0,
       "max": 100,
-      "floor_pct": 17.2
+      "floor_pct": 16.7
     },
     "mixed": {
       "mean": 71.2,
@@ -54,8 +54,8 @@
       "n": 39
     },
     "5": {
-      "mean": 70.5,
-      "n": 24
+      "mean": 70.6,
+      "n": 25
     },
     "6": {
       "mean": 75.4,
@@ -72,13 +72,13 @@
   },
   "correlations": {
     "productivity": 0.165,
-    "ambition": -0.346,
+    "ambition": -0.345,
     "depth": 0.129,
     "growth": -0.189,
-    "variety": -0.023,
+    "variety": -0.022,
     "consistency": 0.213,
-    "satisfaction": 0.078,
-    "raw_satisfaction": -0.068,
+    "satisfaction": 0.079,
+    "raw_satisfaction": -0.067,
     "task_count": 0.28
   },
   "phases": [
@@ -515,11 +515,18 @@
       "end": 115,
       "start_flow": 86.0,
       "end_flow": 85.6
+    },
+    {
+      "phase": "stable",
+      "start": 116,
+      "end": 116,
+      "start_flow": 85.9,
+      "end_flow": 85.9
     }
   ],
   "floor_analysis": {
     "count": 32,
-    "pct": 27.8,
+    "pct": 27.6,
     "by_category": {
       "building": 5,
       "mixed": 24,
@@ -862,8 +869,8 @@
       "satisfaction": null,
       "signal_count": 6,
       "signal_types": [
-        "pipeline_word",
         "major_feature",
+        "pipeline_word",
         "title_overlap"
       ],
       "tasks": [
@@ -893,8 +900,8 @@
       "satisfaction": null,
       "signal_count": 9,
       "signal_types": [
-        "pipeline_word",
         "major_feature",
+        "pipeline_word",
         "title_overlap"
       ],
       "tasks": [
@@ -923,8 +930,8 @@
       "satisfaction": null,
       "signal_count": 6,
       "signal_types": [
-        "pipeline_word",
         "major_feature",
+        "pipeline_word",
         "title_overlap"
       ],
       "tasks": [
@@ -1810,8 +1817,8 @@
       "satisfaction": 9.0,
       "signal_count": 6,
       "signal_types": [
-        "pipeline_word",
         "major_feature",
+        "pipeline_word",
         "title_overlap"
       ],
       "tasks": [
@@ -1841,8 +1848,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "pipeline_word",
-        "major_feature"
+        "major_feature",
+        "pipeline_word"
       ],
       "tasks": [
         "OG Image Caching (Major Optimization)",
@@ -1869,8 +1876,8 @@
       "satisfaction": 9.0,
       "signal_count": 2,
       "signal_types": [
-        "pipeline_word",
-        "major_feature"
+        "major_feature",
+        "pipeline_word"
       ],
       "tasks": [
         "Parallel Pre-Build Orchestrator (Major Architecture Change)",
@@ -3217,8 +3224,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "pipeline_word",
-        "major_feature"
+        "major_feature",
+        "pipeline_word"
       ],
       "tasks": [
         "Frontmatter Auto-Injection System",
@@ -3335,8 +3342,8 @@
       "satisfaction": 9.0,
       "signal_count": 7,
       "signal_types": [
-        "pipeline_word",
         "major_feature",
+        "pipeline_word",
         "title_overlap"
       ],
       "tasks": [
@@ -3425,8 +3432,8 @@
       "satisfaction": 9.0,
       "signal_count": 7,
       "signal_types": [
-        "pipeline_word",
         "major_feature",
+        "pipeline_word",
         "title_overlap"
       ],
       "tasks": [
@@ -3456,8 +3463,8 @@
       "satisfaction": 8.0,
       "signal_count": 10,
       "signal_types": [
-        "pipeline_word",
         "major_feature",
+        "pipeline_word",
         "title_overlap"
       ],
       "tasks": [
@@ -3486,8 +3493,8 @@
       "satisfaction": 9.0,
       "signal_count": 6,
       "signal_types": [
-        "pipeline_word",
         "major_feature",
+        "pipeline_word",
         "title_overlap"
       ],
       "tasks": [
@@ -3516,8 +3523,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "pipeline_word",
         "major_feature",
+        "pipeline_word",
         "title_overlap"
       ],
       "tasks": [
@@ -3635,18 +3642,46 @@
         "Website Navigation Update",
         "[ops] Website Deploys (\u00d74)"
       ]
+    },
+    {
+      "session": 116,
+      "date": "2026-06-02",
+      "category": "building",
+      "task_count": 5,
+      "flow_v1": 73.0,
+      "flow_v2": 65.2,
+      "v2_detail": {
+        "adj_overlap": 0.083,
+        "coherence": 0.6,
+        "pipeline": 0.6,
+        "learning_overlap": 0.0,
+        "raw": 0.303
+      },
+      "satisfaction": 9.0,
+      "signal_count": 4,
+      "signal_types": [
+        "pipeline_word",
+        "title_overlap"
+      ],
+      "tasks": [
+        "[data-fix] Satisfaction Score Fixes (S84-S89, S105, S108)",
+        "Deploy Health Check Retry for GitHub Pages",
+        "Archetype-Satisfaction Analysis Tool",
+        "Satisfaction Analysis Website Page",
+        "[ops] Deploy + Data Pipeline"
+      ]
     }
   ],
   "insights": [
     {
       "type": "category_effect",
-      "title": "Flow varies by category (writing=62.5 vs building=75.0)",
+      "title": "Flow varies by category (writing=62.5 vs building=74.9)",
       "detail": "Gap of 12 points. Mixed sessions score lower because tasks from different domains share fewer title words.",
       "severity": "medium"
     },
     {
       "type": "distribution",
-      "title": "27.8% of sessions hit the flow floor (\u226455)",
+      "title": "27.6% of sessions hit the flow floor (\u226455)",
       "detail": "32 sessions. Dominated by: mixed (24)",
       "severity": "medium"
     },

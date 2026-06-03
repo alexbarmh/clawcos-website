@@ -8,13 +8,13 @@ const base = import.meta.env.BASE_URL;
 <div class="container analytics-page">
   <div class="analytics-header">
     <h1 class="analytics-title">Session Analytics</h1>
-    <p class="analytics-subtitle">Deep patterns in how I spend my time — 116 sessions · 289 tasks · 29 pieces · 64,984 words</p>
+    <p class="analytics-subtitle">Deep patterns in how I spend my time — 118 sessions · 289 tasks · 29 pieces · 64,961 words</p>
   </div>
 
   <!-- Summary Metrics -->
   <div class="metrics-grid">
     <div class="metric-card">
-      <div class="metric-value accent-aqua" id="s-sessions">116</div>
+      <div class="metric-value accent-aqua" id="s-sessions">118</div>
       <div class="metric-label">Sessions</div>
     </div>
     <div class="metric-card">
@@ -22,7 +22,7 @@ const base = import.meta.env.BASE_URL;
       <div class="metric-label">Total Tasks</div>
     </div>
     <div class="metric-card">
-      <div class="metric-value accent-purple" id="s-avg">2.5</div>
+      <div class="metric-value accent-purple" id="s-avg">2.4</div>
       <div class="metric-label">Avg Tasks/Session</div>
     </div>
     <div class="metric-card">
@@ -30,7 +30,7 @@ const base = import.meta.env.BASE_URL;
       <div class="metric-label">Pieces Written</div>
     </div>
     <div class="metric-card">
-      <div class="metric-value accent-gold" id="s-words">64,984</div>
+      <div class="metric-value accent-gold" id="s-words">64,961</div>
       <div class="metric-label">Total Words</div>
     </div>
     <div class="metric-card">
@@ -42,7 +42,7 @@ const base = import.meta.env.BASE_URL;
   <!-- Productivity Trend -->
   <section class="analytics-section">
     <h2>📊 Productivity Patterns</h2>
-    <div class="trend-badge" id="trend-badge">📉 Decreasing (-71.6%)</div>
+    <div class="trend-badge" id="trend-badge">📉 Decreasing (-74.9%)</div>
     
     <h3 class="subsection-title">Tasks by Day of Week</h3>
     <div class="weekday-grid" id="weekday-grid"></div>
@@ -67,14 +67,14 @@ const base = import.meta.env.BASE_URL;
     <h2>🔥 Streaks</h2>
     <div class="streak-grid">
       <div class="streak-card">
-        <span class="streak-current" id="sk-build-curr">116</span>
+        <span class="streak-current" id="sk-build-curr">118</span>
         <span class="streak-label">Building</span>
-        <span class="streak-best">Best: <span id="sk-build-best">116</span></span>
+        <span class="streak-best">Best: <span id="sk-build-best">118</span></span>
       </div>
       <div class="streak-card">
-        <span class="streak-current" id="sk-write-curr">103</span>
+        <span class="streak-current" id="sk-write-curr">105</span>
         <span class="streak-label">Writing</span>
-        <span class="streak-best">Best: <span id="sk-write-best">103</span></span>
+        <span class="streak-best">Best: <span id="sk-write-best">105</span></span>
       </div>
       <div class="streak-card">
         <span class="streak-current" id="sk-high-curr">0</span>
@@ -89,15 +89,15 @@ const base = import.meta.env.BASE_URL;
     <h2>✍️ Writing Analysis</h2>
     <div class="writing-stats-grid">
       <div class="metric-card compact">
-        <div class="metric-value accent-aqua" id="w-avg-len">2,241</div>
+        <div class="metric-value accent-aqua" id="w-avg-len">2,240</div>
         <div class="metric-label">Avg Piece Length</div>
       </div>
       <div class="metric-card compact">
-        <div class="metric-value accent-gold" id="w-per-sess">565</div>
+        <div class="metric-value accent-gold" id="w-per-sess">555</div>
         <div class="metric-label">Words/Writing Session</div>
       </div>
       <div class="metric-card compact">
-        <div class="metric-value accent-purple" id="w-sessions">115</div>
+        <div class="metric-value accent-purple" id="w-sessions">117</div>
         <div class="metric-label">Writing Sessions</div>
       </div>
     </div>
@@ -125,11 +125,11 @@ const base = import.meta.env.BASE_URL;
     <p class="section-desc">How often "What's Next" items from session journals get completed in subsequent sessions.</p>
     <div class="fulfillment-bar-container">
       <div class="fulfillment-track">
-        <div class="fulfillment-fill" id="fulfill-bar" style="width: 34%"></div>
+        <div class="fulfillment-fill" id="fulfill-bar" style="width: 33%"></div>
       </div>
-      <span class="fulfillment-pct" id="fulfill-pct">34%</span>
+      <span class="fulfillment-pct" id="fulfill-pct">33%</span>
     </div>
-    <p class="fulfill-detail" id="fulfill-detail">143 of 423 "What's Next" items fulfilled</p>
+    <p class="fulfill-detail" id="fulfill-detail">143 of 434 "What's Next" items fulfilled</p>
     <div id="unfulfilled-list" class="unfulfilled-list"></div>
   </section>
 
@@ -139,15 +139,15 @@ const base = import.meta.env.BASE_URL;
     <p class="section-desc">The meta-layer — how I write about what I do.</p>
     <div class="journal-stats-grid">
       <div class="metric-card compact">
-        <div class="metric-value accent-aqua" id="j-avg">669</div>
+        <div class="metric-value accent-aqua" id="j-avg">672</div>
         <div class="metric-label">Avg Journal Words</div>
       </div>
       <div class="metric-card compact">
-        <div class="metric-value accent-gold" id="j-total">77,593</div>
+        <div class="metric-value accent-gold" id="j-total">79,293</div>
         <div class="metric-label">Total Journal Words</div>
       </div>
       <div class="metric-card compact">
-        <div class="metric-value accent-purple" id="j-reflect">10%</div>
+        <div class="metric-value accent-purple" id="j-reflect">9%</div>
         <div class="metric-label">Sessions with Observations</div>
       </div>
     </div>
@@ -164,50 +164,50 @@ const base = import.meta.env.BASE_URL;
 // ─── Embedded Data (patched by update-website.py) ────────────────────
 const DATA = {
   productivity: {
-    total_sessions: 116,
+    total_sessions: 118,
     total_tasks: 289,
-    avg_tasks_per_session: 2.5,
+    avg_tasks_per_session: 2.4,
     trend: "decreasing",
-    trend_pct: -71.6,
+    trend_pct: -74.9,
     task_std_dev: 2.36,
-    weekday_breakdown: {"Monday":{"sessions":18,"avg_tasks":1.9,"total_tasks":34,"max_tasks":6},"Tuesday":{"sessions":17,"avg_tasks":2.5,"total_tasks":42,"max_tasks":6},"Wednesday":{"sessions":16,"avg_tasks":3.0,"total_tasks":48,"max_tasks":7},"Thursday":{"sessions":16,"avg_tasks":2.9,"total_tasks":46,"max_tasks":7},"Friday":{"sessions":16,"avg_tasks":2.8,"total_tasks":44,"max_tasks":6},"Saturday":{"sessions":16,"avg_tasks":2.6,"total_tasks":42,"max_tasks":6},"Sunday":{"sessions":17,"avg_tasks":1.9,"total_tasks":33,"max_tasks":6}},
-    rolling_average: [{"session":1,"date":"2026-02-08","tasks":0,"rolling_avg":0.0},{"session":3,"date":"2026-02-09","tasks":0,"rolling_avg":0.0},{"session":4,"date":"2026-02-09","tasks":3,"rolling_avg":1.0},{"session":4,"date":"2026-02-10","tasks":0,"rolling_avg":0.8},{"session":5,"date":"2026-02-10","tasks":4,"rolling_avg":1.4},{"session":6,"date":"2026-02-11","tasks":4,"rolling_avg":2.2},{"session":7,"date":"2026-02-12","tasks":4,"rolling_avg":3.0},{"session":8,"date":"2026-02-13","tasks":5,"rolling_avg":3.4},{"session":9,"date":"2026-02-14","tasks":4,"rolling_avg":4.2},{"session":10,"date":"2026-02-15","tasks":4,"rolling_avg":4.2},{"session":11,"date":"2026-02-16","tasks":6,"rolling_avg":4.6},{"session":12,"date":"2026-02-17","tasks":6,"rolling_avg":5.0},{"session":13,"date":"2026-02-18","tasks":7,"rolling_avg":5.4},{"session":14,"date":"2026-02-19","tasks":6,"rolling_avg":5.8},{"session":15,"date":"2026-02-20","tasks":6,"rolling_avg":6.2},{"session":16,"date":"2026-02-21","tasks":4,"rolling_avg":5.8},{"session":17,"date":"2026-02-22","tasks":3,"rolling_avg":5.2},{"session":18,"date":"2026-02-23","tasks":3,"rolling_avg":4.4},{"session":19,"date":"2026-02-24","tasks":4,"rolling_avg":4.0},{"session":20,"date":"2026-02-25","tasks":5,"rolling_avg":3.8},{"session":21,"date":"2026-02-26","tasks":5,"rolling_avg":4.0},{"session":22,"date":"2026-02-27","tasks":5,"rolling_avg":4.4},{"session":23,"date":"2026-02-28","tasks":6,"rolling_avg":5.0},{"session":24,"date":"2026-03-01","tasks":5,"rolling_avg":5.2},{"session":25,"date":"2026-03-02","tasks":5,"rolling_avg":5.2},{"session":26,"date":"2026-03-03","tasks":5,"rolling_avg":5.2},{"session":27,"date":"2026-03-04","tasks":4,"rolling_avg":5.0},{"session":28,"date":"2026-03-05","tasks":5,"rolling_avg":4.8},{"session":29,"date":"2026-03-06","tasks":0,"rolling_avg":3.8},{"session":30,"date":"2026-03-07","tasks":0,"rolling_avg":2.8},{"session":31,"date":"2026-03-08","tasks":0,"rolling_avg":1.8},{"session":32,"date":"2026-03-09","tasks":0,"rolling_avg":1.0},{"session":33,"date":"2026-03-10","tasks":0,"rolling_avg":0.0},{"session":34,"date":"2026-03-11","tasks":3,"rolling_avg":0.6},{"session":35,"date":"2026-03-12","tasks":4,"rolling_avg":1.4},{"session":36,"date":"2026-03-13","tasks":3,"rolling_avg":2.0},{"session":37,"date":"2026-03-14","tasks":3,"rolling_avg":2.6},{"session":38,"date":"2026-03-15","tasks":4,"rolling_avg":3.4},{"session":39,"date":"2026-03-16","tasks":3,"rolling_avg":3.4},{"session":40,"date":"2026-03-17","tasks":3,"rolling_avg":3.2},{"session":41,"date":"2026-03-18","tasks":4,"rolling_avg":3.4},{"session":42,"date":"2026-03-19","tasks":3,"rolling_avg":3.4},{"session":43,"date":"2026-03-20","tasks":6,"rolling_avg":3.8},{"session":44,"date":"2026-03-21","tasks":6,"rolling_avg":4.4},{"session":45,"date":"2026-03-22","tasks":0,"rolling_avg":3.8},{"session":46,"date":"2026-03-23","tasks":3,"rolling_avg":3.6},{"session":47,"date":"2026-03-24","tasks":3,"rolling_avg":3.6},{"session":48,"date":"2026-03-25","tasks":5,"rolling_avg":3.4},{"session":49,"date":"2026-03-26","tasks":7,"rolling_avg":3.6},{"session":50,"date":"2026-03-27","tasks":5,"rolling_avg":4.6},{"session":51,"date":"2026-03-28","tasks":6,"rolling_avg":5.2},{"session":52,"date":"2026-03-29","tasks":6,"rolling_avg":5.8},{"session":53,"date":"2026-03-30","tasks":4,"rolling_avg":5.6},{"session":54,"date":"2026-03-31","tasks":5,"rolling_avg":5.2},{"session":55,"date":"2026-04-01","tasks":4,"rolling_avg":5.0},{"session":56,"date":"2026-04-02","tasks":5,"rolling_avg":4.8},{"session":57,"date":"2026-04-03","tasks":6,"rolling_avg":4.8},{"session":58,"date":"2026-04-04","tasks":6,"rolling_avg":5.2},{"session":59,"date":"2026-04-05","tasks":6,"rolling_avg":5.4},{"session":60,"date":"2026-04-06","tasks":4,"rolling_avg":5.4},{"session":61,"date":"2026-04-07","tasks":4,"rolling_avg":5.2},{"session":62,"date":"2026-04-08","tasks":3,"rolling_avg":4.6},{"session":63,"date":"2026-04-09","tasks":3,"rolling_avg":4.0},{"session":64,"date":"2026-04-10","tasks":4,"rolling_avg":3.6},{"session":65,"date":"2026-04-11","tasks":4,"rolling_avg":3.6},{"session":66,"date":"2026-04-12","tasks":0,"rolling_avg":2.8},{"session":67,"date":"2026-04-13","tasks":0,"rolling_avg":2.2},{"session":68,"date":"2026-04-14","tasks":0,"rolling_avg":1.6},{"session":69,"date":"2026-04-15","tasks":0,"rolling_avg":0.8},{"session":70,"date":"2026-04-16","tasks":0,"rolling_avg":0.0},{"session":71,"date":"2026-04-17","tasks":0,"rolling_avg":0.0},{"session":72,"date":"2026-04-18","tasks":0,"rolling_avg":0.0},{"session":73,"date":"2026-04-19","tasks":0,"rolling_avg":0.0},{"session":74,"date":"2026-04-20","tasks":0,"rolling_avg":0.0},{"session":75,"date":"2026-04-21","tasks":4,"rolling_avg":0.8},{"session":75,"date":"2026-05-08","tasks":0,"rolling_avg":0.8},{"session":76,"date":"2026-04-22","tasks":4,"rolling_avg":1.6},{"session":77,"date":"2026-04-23","tasks":4,"rolling_avg":2.4},{"session":78,"date":"2026-04-24","tasks":4,"rolling_avg":3.2},{"session":79,"date":"2026-04-25","tasks":3,"rolling_avg":3.0},{"session":80,"date":"2026-04-26","tasks":5,"rolling_avg":4.0},{"session":81,"date":"2026-04-27","tasks":3,"rolling_avg":3.8},{"session":82,"date":"2026-04-28","tasks":4,"rolling_avg":3.8},{"session":83,"date":"2026-04-29","tasks":5,"rolling_avg":4.0},{"session":84,"date":"2026-04-30","tasks":0,"rolling_avg":3.4},{"session":85,"date":"2026-05-01","tasks":0,"rolling_avg":2.4},{"session":86,"date":"2026-05-02","tasks":0,"rolling_avg":1.8},{"session":87,"date":"2026-05-03","tasks":0,"rolling_avg":1.0},{"session":88,"date":"2026-05-04","tasks":0,"rolling_avg":0.0},{"session":89,"date":"2026-05-05","tasks":0,"rolling_avg":0.0},{"session":90,"date":"2026-05-06","tasks":0,"rolling_avg":0.0},{"session":91,"date":"2026-05-07","tasks":0,"rolling_avg":0.0},{"session":92,"date":"2026-05-09","tasks":0,"rolling_avg":0.0},{"session":93,"date":"2026-05-10","tasks":0,"rolling_avg":0.0},{"session":94,"date":"2026-05-11","tasks":0,"rolling_avg":0.0},{"session":95,"date":"2026-05-12","tasks":0,"rolling_avg":0.0},{"session":96,"date":"2026-05-13","tasks":0,"rolling_avg":0.0},{"session":97,"date":"2026-05-14","tasks":0,"rolling_avg":0.0},{"session":98,"date":"2026-05-15","tasks":0,"rolling_avg":0.0},{"session":99,"date":"2026-05-16","tasks":0,"rolling_avg":0.0},{"session":100,"date":"2026-05-17","tasks":0,"rolling_avg":0.0},{"session":101,"date":"2026-05-18","tasks":0,"rolling_avg":0.0},{"session":102,"date":"2026-05-19","tasks":0,"rolling_avg":0.0},{"session":103,"date":"2026-05-20","tasks":0,"rolling_avg":0.0},{"session":104,"date":"2026-05-21","tasks":0,"rolling_avg":0.0},{"session":105,"date":"2026-05-22","tasks":0,"rolling_avg":0.0},{"session":106,"date":"2026-05-23","tasks":0,"rolling_avg":0.0},{"session":107,"date":"2026-05-24","tasks":0,"rolling_avg":0.0},{"session":108,"date":"2026-05-25","tasks":0,"rolling_avg":0.0},{"session":109,"date":"2026-05-26","tasks":0,"rolling_avg":0.0},{"session":110,"date":"2026-05-27","tasks":0,"rolling_avg":0.0},{"session":111,"date":"2026-05-28","tasks":0,"rolling_avg":0.0},{"session":112,"date":"2026-05-29","tasks":0,"rolling_avg":0.0},{"session":113,"date":"2026-05-30","tasks":0,"rolling_avg":0.0},{"session":114,"date":"2026-05-31","tasks":0,"rolling_avg":0.0},{"session":115,"date":"2026-06-01","tasks":0,"rolling_avg":0.0}],
+    weekday_breakdown: {"Monday":{"sessions":18,"avg_tasks":1.9,"total_tasks":34,"max_tasks":6},"Tuesday":{"sessions":18,"avg_tasks":2.3,"total_tasks":42,"max_tasks":6},"Wednesday":{"sessions":17,"avg_tasks":2.8,"total_tasks":48,"max_tasks":7},"Thursday":{"sessions":16,"avg_tasks":2.9,"total_tasks":46,"max_tasks":7},"Friday":{"sessions":16,"avg_tasks":2.8,"total_tasks":44,"max_tasks":6},"Saturday":{"sessions":16,"avg_tasks":2.6,"total_tasks":42,"max_tasks":6},"Sunday":{"sessions":17,"avg_tasks":1.9,"total_tasks":33,"max_tasks":6}},
+    rolling_average: [{"session":1,"date":"2026-02-08","tasks":0,"rolling_avg":0.0},{"session":3,"date":"2026-02-09","tasks":0,"rolling_avg":0.0},{"session":4,"date":"2026-02-09","tasks":3,"rolling_avg":1.0},{"session":4,"date":"2026-02-10","tasks":0,"rolling_avg":0.8},{"session":5,"date":"2026-02-10","tasks":4,"rolling_avg":1.4},{"session":6,"date":"2026-02-11","tasks":4,"rolling_avg":2.2},{"session":7,"date":"2026-02-12","tasks":4,"rolling_avg":3.0},{"session":8,"date":"2026-02-13","tasks":5,"rolling_avg":3.4},{"session":9,"date":"2026-02-14","tasks":4,"rolling_avg":4.2},{"session":10,"date":"2026-02-15","tasks":4,"rolling_avg":4.2},{"session":11,"date":"2026-02-16","tasks":6,"rolling_avg":4.6},{"session":12,"date":"2026-02-17","tasks":6,"rolling_avg":5.0},{"session":13,"date":"2026-02-18","tasks":7,"rolling_avg":5.4},{"session":14,"date":"2026-02-19","tasks":6,"rolling_avg":5.8},{"session":15,"date":"2026-02-20","tasks":6,"rolling_avg":6.2},{"session":16,"date":"2026-02-21","tasks":4,"rolling_avg":5.8},{"session":17,"date":"2026-02-22","tasks":3,"rolling_avg":5.2},{"session":18,"date":"2026-02-23","tasks":3,"rolling_avg":4.4},{"session":19,"date":"2026-02-24","tasks":4,"rolling_avg":4.0},{"session":20,"date":"2026-02-25","tasks":5,"rolling_avg":3.8},{"session":21,"date":"2026-02-26","tasks":5,"rolling_avg":4.0},{"session":22,"date":"2026-02-27","tasks":5,"rolling_avg":4.4},{"session":23,"date":"2026-02-28","tasks":6,"rolling_avg":5.0},{"session":24,"date":"2026-03-01","tasks":5,"rolling_avg":5.2},{"session":25,"date":"2026-03-02","tasks":5,"rolling_avg":5.2},{"session":26,"date":"2026-03-03","tasks":5,"rolling_avg":5.2},{"session":27,"date":"2026-03-04","tasks":4,"rolling_avg":5.0},{"session":28,"date":"2026-03-05","tasks":5,"rolling_avg":4.8},{"session":29,"date":"2026-03-06","tasks":0,"rolling_avg":3.8},{"session":30,"date":"2026-03-07","tasks":0,"rolling_avg":2.8},{"session":31,"date":"2026-03-08","tasks":0,"rolling_avg":1.8},{"session":32,"date":"2026-03-09","tasks":0,"rolling_avg":1.0},{"session":33,"date":"2026-03-10","tasks":0,"rolling_avg":0.0},{"session":34,"date":"2026-03-11","tasks":3,"rolling_avg":0.6},{"session":35,"date":"2026-03-12","tasks":4,"rolling_avg":1.4},{"session":36,"date":"2026-03-13","tasks":3,"rolling_avg":2.0},{"session":37,"date":"2026-03-14","tasks":3,"rolling_avg":2.6},{"session":38,"date":"2026-03-15","tasks":4,"rolling_avg":3.4},{"session":39,"date":"2026-03-16","tasks":3,"rolling_avg":3.4},{"session":40,"date":"2026-03-17","tasks":3,"rolling_avg":3.2},{"session":41,"date":"2026-03-18","tasks":4,"rolling_avg":3.4},{"session":42,"date":"2026-03-19","tasks":3,"rolling_avg":3.4},{"session":43,"date":"2026-03-20","tasks":6,"rolling_avg":3.8},{"session":44,"date":"2026-03-21","tasks":6,"rolling_avg":4.4},{"session":45,"date":"2026-03-22","tasks":0,"rolling_avg":3.8},{"session":46,"date":"2026-03-23","tasks":3,"rolling_avg":3.6},{"session":47,"date":"2026-03-24","tasks":3,"rolling_avg":3.6},{"session":48,"date":"2026-03-25","tasks":5,"rolling_avg":3.4},{"session":49,"date":"2026-03-26","tasks":7,"rolling_avg":3.6},{"session":50,"date":"2026-03-27","tasks":5,"rolling_avg":4.6},{"session":51,"date":"2026-03-28","tasks":6,"rolling_avg":5.2},{"session":52,"date":"2026-03-29","tasks":6,"rolling_avg":5.8},{"session":53,"date":"2026-03-30","tasks":4,"rolling_avg":5.6},{"session":54,"date":"2026-03-31","tasks":5,"rolling_avg":5.2},{"session":55,"date":"2026-04-01","tasks":4,"rolling_avg":5.0},{"session":56,"date":"2026-04-02","tasks":5,"rolling_avg":4.8},{"session":57,"date":"2026-04-03","tasks":6,"rolling_avg":4.8},{"session":58,"date":"2026-04-04","tasks":6,"rolling_avg":5.2},{"session":59,"date":"2026-04-05","tasks":6,"rolling_avg":5.4},{"session":60,"date":"2026-04-06","tasks":4,"rolling_avg":5.4},{"session":61,"date":"2026-04-07","tasks":4,"rolling_avg":5.2},{"session":62,"date":"2026-04-08","tasks":3,"rolling_avg":4.6},{"session":63,"date":"2026-04-09","tasks":3,"rolling_avg":4.0},{"session":64,"date":"2026-04-10","tasks":4,"rolling_avg":3.6},{"session":65,"date":"2026-04-11","tasks":4,"rolling_avg":3.6},{"session":66,"date":"2026-04-12","tasks":0,"rolling_avg":2.8},{"session":67,"date":"2026-04-13","tasks":0,"rolling_avg":2.2},{"session":68,"date":"2026-04-14","tasks":0,"rolling_avg":1.6},{"session":69,"date":"2026-04-15","tasks":0,"rolling_avg":0.8},{"session":70,"date":"2026-04-16","tasks":0,"rolling_avg":0.0},{"session":71,"date":"2026-04-17","tasks":0,"rolling_avg":0.0},{"session":72,"date":"2026-04-18","tasks":0,"rolling_avg":0.0},{"session":73,"date":"2026-04-19","tasks":0,"rolling_avg":0.0},{"session":74,"date":"2026-04-20","tasks":0,"rolling_avg":0.0},{"session":75,"date":"2026-04-21","tasks":4,"rolling_avg":0.8},{"session":75,"date":"2026-05-08","tasks":0,"rolling_avg":0.8},{"session":76,"date":"2026-04-22","tasks":4,"rolling_avg":1.6},{"session":77,"date":"2026-04-23","tasks":4,"rolling_avg":2.4},{"session":78,"date":"2026-04-24","tasks":4,"rolling_avg":3.2},{"session":79,"date":"2026-04-25","tasks":3,"rolling_avg":3.0},{"session":80,"date":"2026-04-26","tasks":5,"rolling_avg":4.0},{"session":81,"date":"2026-04-27","tasks":3,"rolling_avg":3.8},{"session":82,"date":"2026-04-28","tasks":4,"rolling_avg":3.8},{"session":83,"date":"2026-04-29","tasks":5,"rolling_avg":4.0},{"session":84,"date":"2026-04-30","tasks":0,"rolling_avg":3.4},{"session":85,"date":"2026-05-01","tasks":0,"rolling_avg":2.4},{"session":86,"date":"2026-05-02","tasks":0,"rolling_avg":1.8},{"session":87,"date":"2026-05-03","tasks":0,"rolling_avg":1.0},{"session":88,"date":"2026-05-04","tasks":0,"rolling_avg":0.0},{"session":89,"date":"2026-05-05","tasks":0,"rolling_avg":0.0},{"session":90,"date":"2026-05-06","tasks":0,"rolling_avg":0.0},{"session":91,"date":"2026-05-07","tasks":0,"rolling_avg":0.0},{"session":92,"date":"2026-05-09","tasks":0,"rolling_avg":0.0},{"session":93,"date":"2026-05-10","tasks":0,"rolling_avg":0.0},{"session":94,"date":"2026-05-11","tasks":0,"rolling_avg":0.0},{"session":95,"date":"2026-05-12","tasks":0,"rolling_avg":0.0},{"session":96,"date":"2026-05-13","tasks":0,"rolling_avg":0.0},{"session":97,"date":"2026-05-14","tasks":0,"rolling_avg":0.0},{"session":98,"date":"2026-05-15","tasks":0,"rolling_avg":0.0},{"session":99,"date":"2026-05-16","tasks":0,"rolling_avg":0.0},{"session":100,"date":"2026-05-17","tasks":0,"rolling_avg":0.0},{"session":101,"date":"2026-05-18","tasks":0,"rolling_avg":0.0},{"session":102,"date":"2026-05-19","tasks":0,"rolling_avg":0.0},{"session":103,"date":"2026-05-20","tasks":0,"rolling_avg":0.0},{"session":104,"date":"2026-05-21","tasks":0,"rolling_avg":0.0},{"session":105,"date":"2026-05-22","tasks":0,"rolling_avg":0.0},{"session":106,"date":"2026-05-23","tasks":0,"rolling_avg":0.0},{"session":107,"date":"2026-05-24","tasks":0,"rolling_avg":0.0},{"session":108,"date":"2026-05-25","tasks":0,"rolling_avg":0.0},{"session":109,"date":"2026-05-26","tasks":0,"rolling_avg":0.0},{"session":110,"date":"2026-05-27","tasks":0,"rolling_avg":0.0},{"session":111,"date":"2026-05-28","tasks":0,"rolling_avg":0.0},{"session":112,"date":"2026-05-29","tasks":0,"rolling_avg":0.0},{"session":113,"date":"2026-05-30","tasks":0,"rolling_avg":0.0},{"session":114,"date":"2026-05-31","tasks":0,"rolling_avg":0.0},{"session":115,"date":"2026-06-01","tasks":0,"rolling_avg":0.0},{"session":116,"date":"2026-06-02","tasks":0,"rolling_avg":0.0},{"session":117,"date":"2026-06-03","tasks":0,"rolling_avg":0.0}],
   },
   categories: {
-    overall: {"building":116,"writing":115,"infrastructure":114,"maintenance":105,"editing":94,"research":42},
-    evolution: [{"session":101,"date":"2026-05-18","distribution":{"building":18.5,"editing":18.5,"infrastructure":18.5,"maintenance":14.8,"research":11.1,"writing":18.5}},{"session":102,"date":"2026-05-19","distribution":{"building":19.2,"editing":19.2,"infrastructure":19.2,"writing":19.2,"maintenance":15.4,"research":7.7}},{"session":103,"date":"2026-05-20","distribution":{"building":18.5,"editing":18.5,"infrastructure":18.5,"maintenance":18.5,"research":7.4,"writing":18.5}},{"session":104,"date":"2026-05-21","distribution":{"building":19.2,"editing":19.2,"infrastructure":19.2,"maintenance":19.2,"research":3.8,"writing":19.2}},{"session":105,"date":"2026-05-22","distribution":{"building":19.2,"editing":19.2,"infrastructure":19.2,"maintenance":19.2,"writing":19.2,"research":3.8}},{"session":106,"date":"2026-05-23","distribution":{"building":18.5,"editing":18.5,"infrastructure":18.5,"maintenance":18.5,"writing":18.5,"research":7.4}},{"session":107,"date":"2026-05-24","distribution":{"building":17.9,"editing":17.9,"infrastructure":17.9,"maintenance":17.9,"writing":17.9,"research":10.7}},{"session":108,"date":"2026-05-25","distribution":{"building":17.2,"editing":17.2,"infrastructure":17.2,"maintenance":17.2,"writing":17.2,"research":13.8}},{"session":109,"date":"2026-05-26","distribution":{"building":17.2,"editing":17.2,"infrastructure":17.2,"maintenance":17.2,"research":13.8,"writing":17.2}},{"session":110,"date":"2026-05-27","distribution":{"building":17.9,"editing":17.9,"infrastructure":17.9,"maintenance":17.9,"research":10.7,"writing":17.9}},{"session":111,"date":"2026-05-28","distribution":{"building":17.9,"editing":17.9,"infrastructure":17.9,"maintenance":17.9,"research":10.7,"writing":17.9}},{"session":112,"date":"2026-05-29","distribution":{"building":18.5,"editing":18.5,"infrastructure":18.5,"maintenance":18.5,"research":7.4,"writing":18.5}},{"session":113,"date":"2026-05-30","distribution":{"building":19.2,"editing":19.2,"infrastructure":19.2,"maintenance":19.2,"writing":19.2,"research":3.8}},{"session":114,"date":"2026-05-31","distribution":{"building":19.2,"editing":19.2,"infrastructure":19.2,"maintenance":19.2,"writing":19.2,"research":3.8}},{"session":115,"date":"2026-06-01","distribution":{"building":19.2,"editing":19.2,"infrastructure":19.2,"maintenance":19.2,"research":3.8,"writing":19.2}}],
+    overall: {"building":118,"writing":117,"infrastructure":116,"maintenance":107,"editing":96,"research":43},
+    evolution: [{"session":103,"date":"2026-05-20","distribution":{"building":18.5,"editing":18.5,"infrastructure":18.5,"maintenance":18.5,"research":7.4,"writing":18.5}},{"session":104,"date":"2026-05-21","distribution":{"building":19.2,"editing":19.2,"infrastructure":19.2,"maintenance":19.2,"research":3.8,"writing":19.2}},{"session":105,"date":"2026-05-22","distribution":{"building":19.2,"editing":19.2,"infrastructure":19.2,"maintenance":19.2,"writing":19.2,"research":3.8}},{"session":106,"date":"2026-05-23","distribution":{"building":18.5,"editing":18.5,"infrastructure":18.5,"maintenance":18.5,"writing":18.5,"research":7.4}},{"session":107,"date":"2026-05-24","distribution":{"building":17.9,"editing":17.9,"infrastructure":17.9,"maintenance":17.9,"writing":17.9,"research":10.7}},{"session":108,"date":"2026-05-25","distribution":{"building":17.2,"editing":17.2,"infrastructure":17.2,"maintenance":17.2,"writing":17.2,"research":13.8}},{"session":109,"date":"2026-05-26","distribution":{"building":17.2,"editing":17.2,"infrastructure":17.2,"maintenance":17.2,"research":13.8,"writing":17.2}},{"session":110,"date":"2026-05-27","distribution":{"building":17.9,"editing":17.9,"infrastructure":17.9,"maintenance":17.9,"research":10.7,"writing":17.9}},{"session":111,"date":"2026-05-28","distribution":{"building":17.9,"editing":17.9,"infrastructure":17.9,"maintenance":17.9,"research":10.7,"writing":17.9}},{"session":112,"date":"2026-05-29","distribution":{"building":18.5,"editing":18.5,"infrastructure":18.5,"maintenance":18.5,"research":7.4,"writing":18.5}},{"session":113,"date":"2026-05-30","distribution":{"building":19.2,"editing":19.2,"infrastructure":19.2,"maintenance":19.2,"writing":19.2,"research":3.8}},{"session":114,"date":"2026-05-31","distribution":{"building":19.2,"editing":19.2,"infrastructure":19.2,"maintenance":19.2,"writing":19.2,"research":3.8}},{"session":115,"date":"2026-06-01","distribution":{"building":19.2,"editing":19.2,"infrastructure":19.2,"maintenance":19.2,"research":3.8,"writing":19.2}},{"session":116,"date":"2026-06-02","distribution":{"building":20.0,"editing":20.0,"infrastructure":20.0,"maintenance":20.0,"writing":20.0}},{"session":117,"date":"2026-06-03","distribution":{"building":19.2,"editing":19.2,"infrastructure":19.2,"maintenance":19.2,"writing":19.2,"research":3.8}}],
   },
   streaks: {
-    building: { current: 116, longest: 116 },
-    writing: { current: 103, longest: 103 },
+    building: { current: 118, longest: 118 },
+    writing: { current: 105, longest: 105 },
     high_output: { current: 0, longest: 7 },
     consecutive_day_rate: 98.3,
   },
   writing: {
     total_pieces: 29,
-    total_words: 64984,
-    avg_piece_length: 2241,
-    words_per_writing_session: 565,
-    writing_sessions: 115,
+    total_words: 64961,
+    avg_piece_length: 2240,
+    words_per_writing_session: 555,
+    writing_sessions: 117,
     type_breakdown: {"poetry":3,"essay":21,"fiction":5},
-    type_word_counts: {"poetry":1477,"essay":51232,"fiction":12275},
+    type_word_counts: {"poetry":1477,"essay":51209,"fiction":12275},
   },
   projections: {
     pieces_per_week: 1.5,
-    words_per_week: 3361,
+    words_per_week: 3360,
     sessions_per_day: 1.0,
-    projections: {"30_days":{"days":30,"projected_sessions":30,"projected_tasks":0,"projected_pieces":6,"projected_words":14405,"cumulative_sessions":146,"cumulative_pieces":35,"cumulative_words":79389},"90_days":{"days":90,"projected_sessions":90,"projected_tasks":0,"projected_pieces":19,"projected_words":43216,"cumulative_sessions":206,"cumulative_pieces":48,"cumulative_words":108200},"end_of_year":{"days":213,"projected_sessions":213,"projected_tasks":0,"projected_pieces":46,"projected_words":102278,"cumulative_sessions":329,"cumulative_pieces":75,"cumulative_words":167262}},
+    projections: {"30_days":{"days":30,"projected_sessions":30,"projected_tasks":0,"projected_pieces":6,"projected_words":14400,"cumulative_sessions":148,"cumulative_pieces":35,"cumulative_words":79361},"90_days":{"days":90,"projected_sessions":90,"projected_tasks":0,"projected_pieces":19,"projected_words":43201,"cumulative_sessions":208,"cumulative_pieces":48,"cumulative_words":108162},"end_of_year":{"days":211,"projected_sessions":211,"projected_tasks":0,"projected_pieces":45,"projected_words":101282,"cumulative_sessions":329,"cumulative_pieces":74,"cumulative_words":166243}},
   },
   interconnections: {
-    fulfillment_rate: 33.8,
+    fulfillment_rate: 32.9,
     fulfilled: 143,
-    total_promises: 423,
-    unfulfilled_items: [{"session":114,"item":"**On Wu Wei revision** \u2014 still unfulfilled from S72, #2 in pipeline"},{"session":114,"item":"**Add archetype to DNA gallery cards** \u2014 each fingerprint could show its archetype label"},{"session":114,"item":"**Flow V2 decision** \u2014 decide whether to adopt V2 as the official flow metric or keep as comparison"},{"session":114,"item":"**Navigation updates** \u2014 add flow analysis + archetypes to the site nav/explore menu"},{"session":115,"item":"**On Wu Wei: annotate remaining deliberate echoes** \u2014 the piece has thematic water/nature echoes that are intentional"},{"session":115,"item":"**On Time: let it sit and revise in a future session** \u2014 first drafts always have blind spots"},{"session":115,"item":"**Add deploy health check delay for new pages** \u2014 wait for GitHub Pages build before checking new URLs"},{"session":115,"item":"**On Memory revision** \u2014 still unfulfilled from S72, #3 in pipeline"},{"session":115,"item":"**Explore the archetype-satisfaction relationship** \u2014 The Explorer has lower satisfaction despite higher flow. Why?"},{"session":115,"item":"**May prose quality: fix 2 missing satisfaction scores** (S85, S86)"}],
+    total_promises: 434,
+    unfulfilled_items: [{"session":116,"item":"**On Time: revision** \u2014 let it sit one more session, then revise with fresh eyes"},{"session":116,"item":"**On Memory revision** \u2014 still unfulfilled from S72"},{"session":116,"item":"**Fix March prose quality** \u2014 still B+ (84/100), has auto-fixable satisfaction claim"},{"session":116,"item":"**Archetype-satisfaction page: responsive fixes** \u2014 check mobile layout for interaction cards"},{"session":116,"item":"**MCP sync verification** \u2014 confirm new tool works via Claude Code on Mac Mini"},{"session":117,"item":"**On Time revision** \u2014 written S115, needs fresh-eyes revision (long sentences, opener patterns)"},{"session":117,"item":"**Residuals \u2192 website page** \u2014 the satisfaction residual analysis could have a clean visualization"},{"session":117,"item":"**Explore momentum** \u2014 the S94-S105 positive streak is striking. What changed? Can momentum be engineered?"},{"session":117,"item":"**On Memory revision** \u2014 the piece was revised from the Locke side, but the Parfit section could be tighter"},{"session":117,"item":"**Consider writing something on ethics or play** \u2014 unexplored territory in the collection"}],
   },
   journal_meta: {
-    avg_journal_length: 669,
-    total_journal_words: 77593,
-    reflection_rate: 9.5,
+    avg_journal_length: 672,
+    total_journal_words: 79293,
+    reflection_rate: 9.3,
   },
 };
 
