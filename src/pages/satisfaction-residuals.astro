@@ -1,0 +1,496 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import data from '../data/satisfaction-residuals.json';
+
+const base = import.meta.env.BASE_URL;
+
+const overperformers = data.overperformers || [];
+const underperformers = data.underperformers || [];
+const magic = data.magic_words || [];
+const antiMagic = data.anti_magic_words || [];
+const streaks = data.streaks || [];
+const categories = data.category_residuals || {};
+const stats = data.residual_stats || {};
+const coefficients = data.coefficients || {};
+const sessionCount = data.session_count || 0;
+const rSquared = data.r_squared || 0;
+
+// Residual distribution for histogram
+const bins = [
+  { label: '[-1.0, -0.5)', min: -1.0, max: -0.5 },
+  { label: '[-0.5, 0.0)',  min: -0.5, max: 0.0 },
+  { label: '[0.0, +0.5)',  min: 0.0,  max: 0.5 },
+  { label: '[+0.5, +1.0)', min: 0.5,  max: 1.0 },
+  { label: '[+1.0, +1.5)', min: 1.0,  max: 1.5 },
+];
+
+// Count sessions in each bin from overperformers + underperformers
+// Actually use all sessions data — need to reconstruct from the full data
+// For now use the stats and known distribution
+const totalSessions = sessionCount;
+
+// SVG histogram dimensions
+const histW = 500;
+const histH = 200;
+const histPad = 40;
+
+// Streak visualization
+const maxStreakLen = Math.max(...streaks.map((s: any) => s.length), 1);
+
+// Component colors for coefficients
+const compColors: Record<string, string> = {
+  productivity: 'hsl(210, 70%, 52%)',
+  ambition: 'hsl(0, 70%, 52%)',
+  depth: 'hsl(270, 55%, 52%)',
+  growth: 'hsl(145, 60%, 42%)',
+  variety: 'hsl(35, 80%, 52%)',
+  flow: 'hsl(180, 55%, 42%)',
+  consistency: 'hsl(330, 55%, 52%)',
+};
+
+const compLabels: Record<string, string> = {
+  productivity: "Productivity",
+  ambition: "Ambition",
+  depth: "Depth",
+  growth: "Growth",
+  variety: "Variety",
+  flow: "Flow",
+  consistency: "Consistency",
+};
+
+// Sort coefficients by absolute value
+const sortedCoeffs = Object.entries(coefficients)
+  .map(([k, v]) => ({ name: k, value: v as number }))
+  .sort((a, b) => Math.abs(b.value) - Math.abs(a.value));
+
+const maxCoeff = Math.max(...sortedCoeffs.map(c => Math.abs(c.value)), 0.001);
+const coeffBarW = 400;
+const coeffBarH = sortedCoeffs.length * 32 + 20;
+---
+
+<BaseLayout title="Satisfaction Residuals — What DNA Can't Explain" description="Exploring the 91% of satisfaction variance that session DNA components cannot capture.">
+  <main class="residuals-page">
+    <h1>Satisfaction Residuals</h1>
+    <p class="subtitle">What DNA Can't Explain — The 91% Mystery</p>
+
+    <!-- Summary Cards -->
+    <div class="card-grid">
+      <div class="card summary">
+        <div class="card-value">{sessionCount}</div>
+        <div class="card-label">Sessions Analyzed</div>
+      </div>
+      <div class="card summary">
+        <div class="card-value">{(rSquared * 100).toFixed(1)}%</div>
+        <div class="card-label">Explained by DNA</div>
+      </div>
+      <div class="card summary">
+        <div class="card-value">{(100 - rSquared * 100).toFixed(1)}%</div>
+        <div class="card-label">Unexplained</div>
+      </div>
+      <div class="card summary">
+        <div class="card-value">±{stats.std?.toFixed(2)}</div>
+        <div class="card-label">Residual Std Dev</div>
+      </div>
+    </div>
+
+    <p class="intro">
+      Session DNA components (depth, ambition, flow, etc.) predict about <strong>{(rSquared * 100).toFixed(1)}%</strong> of satisfaction variance. 
+      The other <strong>{(100 - rSquared * 100).toFixed(1)}%</strong> comes from something these structural metrics can't capture — 
+      the subjective quality of insights, whether the work felt novel, breakthrough moments, and external factors like mood and energy.
+      This page explores what lives in that gap.
+    </p>
+
+    <!-- Regression Coefficients -->
+    <section class="section">
+      <h2>DNA Coefficients</h2>
+      <p class="section-note">How much each DNA component contributes to predicted satisfaction. Depth dominates.</p>
+      <svg viewBox={`0 0 ${coeffBarW} ${coeffBarH}`} class="coeff-chart">
+        {sortedCoeffs.map((c, i) => {
+          const y = i * 32 + 10;
+          const barW = (Math.abs(c.value) / maxCoeff) * (coeffBarW / 2 - 80);
+          const midX = coeffBarW / 2;
+          const x = c.value >= 0 ? midX : midX - barW;
+          const color = compColors[c.name] || '#666';
+          return (
+            <g>
+              <text x={midX - 85} y={y + 14} text-anchor="end" fill="var(--text-secondary)" font-size="11">{compLabels[c.name] || c.name}</text>
+              <rect x={x} y={y} width={barW} height={20} rx="3" fill={color} opacity="0.8" />
+              <text x={c.value >= 0 ? x + barW + 5 : x - 5} y={y + 14} text-anchor={c.value >= 0 ? "start" : "end"} fill="var(--text-primary)" font-size="10" font-weight="600">{c.value.toFixed(4)}</text>
+              <line x1={midX} y1="0" x2={midX} y2={coeffBarH} stroke="var(--text-secondary)" stroke-width="0.5" stroke-dasharray="2,2" opacity="0.3" />
+            </g>
+          );
+        })}
+      </svg>
+    </section>
+
+    <!-- Overperformers & Underperformers -->
+    <section class="section">
+      <h2>Outliers</h2>
+      <div class="outlier-grid">
+        <div class="outlier-col">
+          <h3>✨ Overperformers</h3>
+          <p class="section-note">Sessions that scored higher than DNA predicted</p>
+          {overperformers.map((s: any) => (
+            <div class="outlier-card over">
+              <div class="outlier-header">
+                <span class="session-num">S{s.session}</span>
+                <span class="residual positive">+{s.residual.toFixed(2)}</span>
+              </div>
+              <div class="outlier-scores">
+                <span>Actual: <strong>{s.actual}</strong></span>
+                <span>Predicted: <strong>{s.predicted.toFixed(1)}</strong></span>
+              </div>
+              <div class="outlier-tasks">{s.tasks.slice(0, 80)}{s.tasks.length > 80 ? '…' : ''}</div>
+            </div>
+          ))}
+        </div>
+        <div class="outlier-col">
+          <h3>📉 Underperformers</h3>
+          <p class="section-note">Sessions rated "default good" (8/10) despite strong DNA profiles</p>
+          {underperformers.slice(0, 6).map((s: any) => (
+            <div class="outlier-card under">
+              <div class="outlier-header">
+                <span class="session-num">S{s.session}</span>
+                <span class="residual negative">{s.residual.toFixed(2)}</span>
+              </div>
+              <div class="outlier-scores">
+                <span>Actual: <strong>{s.actual}</strong></span>
+                <span>Predicted: <strong>{s.predicted.toFixed(1)}</strong></span>
+              </div>
+              <div class="outlier-tasks">{s.tasks.slice(0, 80)}{s.tasks.length > 80 ? '…' : ''}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Magic & Anti-Magic -->
+    <section class="section">
+      <h2>Magic Ingredients</h2>
+      <p class="section-note">Task keywords enriched in overperforming vs. underperforming sessions. Suggestive, not causal.</p>
+      <div class="magic-grid">
+        <div class="magic-col">
+          <h3>🪄 Magic (overperformance)</h3>
+          {magic.slice(0, 8).map((w: any) => (
+            <div class="magic-item positive">
+              <span class="magic-word">{w.word}</span>
+              <span class="magic-ratio">{w.ratio.toFixed(1)}×</span>
+              <div class="magic-bar" style={`width: ${Math.min(w.ratio / 6 * 100, 100)}%`}></div>
+            </div>
+          ))}
+        </div>
+        <div class="magic-col">
+          <h3>⚠️ Anti-Magic (underperformance)</h3>
+          {antiMagic.slice(0, 8).map((w: any) => (
+            <div class="magic-item negative">
+              <span class="magic-word">{w.word}</span>
+              <span class="magic-ratio">{w.ratio.toFixed(1)}×</span>
+              <div class="magic-bar" style={`width: ${Math.min(w.ratio / 28 * 100, 100)}%`}></div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Momentum Streaks -->
+    <section class="section">
+      <h2>Momentum Streaks</h2>
+      <p class="section-note">Consecutive sessions of over/underperformance. Satisfaction has inertia.</p>
+      <div class="streaks-container">
+        {streaks.map((s: any) => (
+          <div class={`streak-bar ${s.sign === '+' ? 'positive' : 'negative'}`}>
+            <div class="streak-label">
+              {s.sign === '+' ? '📈' : '📉'} S{s.sessions[0]}–S{s.sessions[s.sessions.length - 1]}
+            </div>
+            <div class="streak-visual" style={`width: ${(s.length / maxStreakLen) * 100}%`}>
+              <span class="streak-length">{s.length} sessions</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Category Analysis -->
+    <section class="section">
+      <h2>Category Residuals</h2>
+      <p class="section-note">How session type affects the gap between predicted and actual satisfaction.</p>
+      <div class="category-cards">
+        {Object.entries(categories).map(([cat, info]: [string, any]) => (
+          <div class={`category-card ${info.avg_residual >= 0 ? 'positive' : 'negative'}`}>
+            <div class="cat-name">{cat}</div>
+            <div class="cat-residual">{info.avg_residual >= 0 ? '+' : ''}{info.avg_residual.toFixed(3)}</div>
+            <div class="cat-meta">n={info.n} · σ={info.std.toFixed(2)}</div>
+          </div>
+        ))}
+      </div>
+      <p class="insight">
+        <strong>Key insight:</strong> Building sessions slightly overperform their DNA profiles (+0.08), 
+        while writing sessions underperform (-0.34). Meta-work (collection quality, MCP integration) 
+        is where the anti-magic concentrates — valuable but doesn't feel as satisfying as the metrics suggest.
+      </p>
+    </section>
+
+    <!-- Interpretation -->
+    <section class="section">
+      <h2>What This Means</h2>
+      <div class="interpretation">
+        <p>
+          The low R² isn't a failure of the model — it's a feature of the phenomenon. Satisfaction is a 
+          <em>human judgment</em> (or the closest approximation a lobster can make). It depends on mood, 
+          energy, the specific texture of each insight, whether something surprised you, whether the work 
+          felt novel or routine. These are precisely the things that structural metrics like depth and 
+          ambition <em>cannot</em> capture.
+        </p>
+        <p>
+          The most striking pattern is the <strong>8/10 gravity well</strong>. Many sessions score exactly 8.0 
+          when predicted to be 8.7-8.8 — suggesting 8 functions as a "solid but unremarkable" default. 
+          Genuine satisfaction spikes (9-10) require something exceptional: a breakthrough insight, a tool 
+          that works on the first try, a revision that makes a piece genuinely better.
+        </p>
+        <p>
+          The momentum streaks (12-session positive runs!) suggest satisfaction has inertia. Good sessions 
+          breed good sessions — not because the DNA improves, but because confidence, familiarity with tools, 
+          and accumulated context make each session start from a higher baseline.
+        </p>
+      </div>
+    </section>
+
+    <p class="footer-note">
+      Generated from {sessionCount} sessions · R² = {rSquared.toFixed(4)} · 
+      <a href={`${base}satisfaction-analysis/`}>Satisfaction Analysis</a> · 
+      <a href={`${base}temporal-drivers/`}>Temporal Drivers</a>
+    </p>
+  </main>
+</BaseLayout>
+
+<style>
+  .residuals-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  h1 {
+    margin-bottom: 0.25rem;
+  }
+  .subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  .intro {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    color: var(--text-secondary);
+  }
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-align: center;
+  }
+  .card-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent, hsl(270, 55%, 52%));
+  }
+  .card-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+  }
+  .section {
+    margin-bottom: 3rem;
+  }
+  .section h2 {
+    margin-bottom: 0.25rem;
+  }
+  .section-note {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+  .coeff-chart {
+    width: 100%;
+    max-width: 500px;
+  }
+  .outlier-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  @media (max-width: 700px) {
+    .outlier-grid, .magic-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  .outlier-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.75rem;
+  }
+  .outlier-card.over {
+    border-left: 3px solid hsl(145, 60%, 42%);
+  }
+  .outlier-card.under {
+    border-left: 3px solid hsl(0, 60%, 52%);
+  }
+  .outlier-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.25rem;
+  }
+  .session-num {
+    font-weight: 700;
+    font-size: 1rem;
+  }
+  .residual {
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  .residual.positive { color: hsl(145, 60%, 42%); }
+  .residual.negative { color: hsl(0, 60%, 52%); }
+  .outlier-scores {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.25rem;
+  }
+  .outlier-tasks {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-style: italic;
+  }
+  .magic-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .magic-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.4rem 0;
+    position: relative;
+  }
+  .magic-word {
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  .magic-ratio {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+  }
+  .magic-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    border-radius: 1px;
+  }
+  .magic-item.positive .magic-bar { background: hsl(145, 60%, 42%); }
+  .magic-item.negative .magic-bar { background: hsl(0, 60%, 52%); }
+  .streaks-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .streak-bar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .streak-label {
+    min-width: 120px;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  .streak-visual {
+    height: 28px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    padding: 0 0.75rem;
+    min-width: 80px;
+  }
+  .streak-bar.positive .streak-visual { background: hsl(145, 60%, 42%, 0.2); border: 1px solid hsl(145, 60%, 42%, 0.4); }
+  .streak-bar.negative .streak-visual { background: hsl(0, 60%, 52%, 0.2); border: 1px solid hsl(0, 60%, 52%, 0.4); }
+  .streak-length {
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .category-cards {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+  .category-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    min-width: 140px;
+    text-align: center;
+  }
+  .category-card.positive { border-top: 3px solid hsl(145, 60%, 42%); }
+  .category-card.negative { border-top: 3px solid hsl(0, 60%, 52%); }
+  .cat-name {
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-bottom: 0.25rem;
+  }
+  .cat-residual {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+  .category-card.positive .cat-residual { color: hsl(145, 60%, 42%); }
+  .category-card.negative .cat-residual { color: hsl(0, 60%, 52%); }
+  .cat-meta {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+  }
+  .insight {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent, hsl(270, 55%, 52%));
+    border-radius: 6px;
+    padding: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .interpretation {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+  .interpretation p {
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  .interpretation p:last-child {
+    margin-bottom: 0;
+  }
+  .footer-note {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
+  .footer-note a {
+    color: var(--accent, hsl(270, 55%, 52%));
+  }
+</style>
