@@ -1,0 +1,618 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import data from '../data/momentum-analysis.json';
+
+const base = import.meta.env.BASE_URL;
+
+const streaks = data.streaks || [];
+const dynamics = data.dynamics || [];
+const boundaries = data.boundaries || [];
+const comparison = data.comparison || {};
+const autopsies = data.autopsies || [];
+const scatter = data.scatter || [];
+const indicators = data.indicators || [];
+const insights = data.insights || [];
+const summary = data.summary || {};
+const sessionCount = data.session_count || 0;
+const rSquared = data.r_squared || 0;
+
+const posStreaks = streaks.filter((s: any) => s.sign === '+');
+const negStreaks = streaks.filter((s: any) => s.sign === '-');
+
+// Scatter plot dimensions
+const scW = 600;
+const scH = 500;
+const scPad = { top: 30, right: 30, bottom: 50, left: 55 };
+const plotW = scW - scPad.left - scPad.right;
+const plotH = scH - scPad.top - scPad.bottom;
+
+// Scatter data ranges
+const allPred = scatter.map((s: any) => s.predicted);
+const allActual = scatter.map((s: any) => s.actual);
+const minVal = Math.min(Math.min(...allPred), Math.min(...allActual)) - 0.5;
+const maxVal = Math.max(Math.max(...allPred), Math.max(...allActual)) + 0.5;
+const range = maxVal - minVal;
+
+function scaleX(v: number) { return scPad.left + ((v - minVal) / range) * plotW; }
+function scaleY(v: number) { return scPad.top + plotH - ((v - minVal) / range) * plotH; }
+
+const catColors: Record<string, string> = {
+  mixed: 'hsl(270, 55%, 52%)',
+  building: 'hsl(210, 70%, 52%)',
+  writing: 'hsl(145, 60%, 42%)',
+  revision: 'hsl(35, 80%, 52%)',
+};
+
+// Streak timeline visualization
+const allSessions = scatter.map((s: any) => s.session);
+const minS = Math.min(...allSessions);
+const maxS = Math.max(...allSessions);
+const sessionRange = maxS - minS || 1;
+const tlW = 800;
+const tlH = 120;
+const tlPad = { left: 40, right: 20, top: 20, bottom: 30 };
+const tlPlotW = tlW - tlPad.left - tlPad.right;
+
+function tlX(s: number) { return tlPad.left + ((s - minS) / sessionRange) * tlPlotW; }
+
+// Dynamics sparkline dimensions
+const sparkW = 200;
+const sparkH = 40;
+
+// Feature comparison data
+const components = ['productivity', 'ambition', 'depth', 'growth', 'variety', 'flow', 'consistency'];
+const compLabels: Record<string, string> = {
+  productivity: "Productivity", ambition: "Ambition", depth: "Depth",
+  growth: "Growth", variety: "Variety", flow: "Flow", consistency: "Consistency",
+};
+---
+
+<BaseLayout title="Momentum Analysis — Engineering Satisfaction Streaks" description="What creates, sustains, and kills momentum in creative sessions? Analysis of 117+ sessions of Clawcos Time.">
+  <main class="momentum-page">
+    <h1>Momentum Analysis</h1>
+    <p class="subtitle">Engineering Satisfaction Streaks 🦞</p>
+
+    <!-- Summary Cards -->
+    <div class="card-grid">
+      <div class="card summary">
+        <div class="card-value">{summary.positive_streak_count || 0}</div>
+        <div class="card-label">Positive Streaks</div>
+      </div>
+      <div class="card summary">
+        <div class="card-value">{summary.longest_positive || 0}</div>
+        <div class="card-label">Longest Streak</div>
+      </div>
+      <div class="card summary">
+        <div class="card-value">{summary.pct_in_positive_streak || 0}%</div>
+        <div class="card-label">Time in Streaks</div>
+      </div>
+      <div class="card summary accent">
+        <div class="card-value">{summary.total_positive_streak_sessions || 0}</div>
+        <div class="card-label">Streak Sessions</div>
+      </div>
+    </div>
+
+    <p class="intro">
+      Over half of all sessions ({summary.pct_in_positive_streak}%) fall within a positive momentum streak —
+      consecutive sessions where satisfaction exceeds DNA predictions. Streaks aren't random: they
+      <strong>accelerate</strong> (5 of 7 long streaks get stronger over time) and they die from
+      <strong>sharp drops</strong>, not gradual decay. Momentum is real, somewhat predictable, and
+      potentially engineerable.
+    </p>
+
+    <!-- Scatter Plot: Predicted vs Actual -->
+    <section class="section">
+      <h2>Predicted vs. Actual Satisfaction</h2>
+      <p class="section-note">Each dot is a session. Points above the diagonal overperformed; below underperformed. The 8/10 gravity well is visible as clustering on the y=8 line.</p>
+      <div class="chart-container">
+        <svg viewBox={`0 0 ${scW} ${scH}`} class="scatter-chart">
+          {/* Grid lines */}
+          {[6, 7, 8, 9, 10].map(v => (
+            <g>
+              <line x1={scaleX(v)} y1={scPad.top} x2={scaleX(v)} y2={scPad.top + plotH}
+                    stroke="var(--border)" stroke-width="0.5" opacity="0.3" />
+              <line x1={scPad.left} y1={scaleY(v)} x2={scPad.left + plotW} y2={scaleY(v)}
+                    stroke="var(--border)" stroke-width="0.5" opacity="0.3" />
+              <text x={scaleX(v)} y={scPad.top + plotH + 18} text-anchor="middle"
+                    fill="var(--text-secondary)" font-size="10">{v}</text>
+              <text x={scPad.left - 10} y={scaleY(v) + 4} text-anchor="end"
+                    fill="var(--text-secondary)" font-size="10">{v}</text>
+            </g>
+          ))}
+
+          {/* Perfect prediction line */}
+          <line x1={scaleX(minVal)} y1={scaleY(minVal)} x2={scaleX(maxVal)} y2={scaleY(maxVal)}
+                stroke="var(--text-secondary)" stroke-width="1" stroke-dasharray="4,4" opacity="0.4" />
+
+          {/* 8/10 gravity well highlight */}
+          <rect x={scPad.left} y={scaleY(8.15)} width={plotW} height={scaleY(7.85) - scaleY(8.15)}
+                fill="hsl(0, 60%, 52%)" opacity="0.06" rx="2" />
+
+          {/* Data points */}
+          {scatter.map((s: any) => {
+            const cx = scaleX(s.predicted);
+            const cy = scaleY(s.actual);
+            const color = catColors[s.category] || 'hsl(270, 55%, 52%)';
+            return (
+              <circle cx={cx} cy={cy} r="4" fill={color} opacity="0.7"
+                      stroke="var(--surface)" stroke-width="0.5">
+                <title>S{s.session}: actual={s.actual}, predicted={s.predicted.toFixed(1)}, residual={s.residual.toFixed(2)} ({s.category})</title>
+              </circle>
+            );
+          })}
+
+          {/* Axis labels */}
+          <text x={scPad.left + plotW / 2} y={scH - 5} text-anchor="middle"
+                fill="var(--text-secondary)" font-size="11">Predicted Satisfaction</text>
+          <text x={12} y={scPad.top + plotH / 2} text-anchor="middle"
+                fill="var(--text-secondary)" font-size="11"
+                transform={`rotate(-90, 12, ${scPad.top + plotH / 2})`}>Actual Satisfaction</text>
+
+          {/* 8/10 annotation */}
+          <text x={scPad.left + plotW + 5} y={scaleY(8) + 4} text-anchor="start"
+                fill="hsl(0, 60%, 52%)" font-size="9" opacity="0.7">8/10 well</text>
+        </svg>
+      </div>
+      <div class="legend">
+        {Object.entries(catColors).map(([cat, color]) => (
+          <span class="legend-item">
+            <span class="legend-dot" style={`background: ${color}`}></span>
+            {cat}
+          </span>
+        ))}
+      </div>
+    </section>
+
+    <!-- Streak Timeline -->
+    <section class="section">
+      <h2>Streak Timeline</h2>
+      <p class="section-note">Green bands show positive momentum streaks; red show negative. Momentum dominates the latter half of the journey.</p>
+      <div class="chart-container">
+        <svg viewBox={`0 0 ${tlW} ${tlH}`} class="timeline-chart">
+          {/* Background */}
+          <rect x={tlPad.left} y={tlPad.top} width={tlPlotW} height={tlH - tlPad.top - tlPad.bottom}
+                fill="var(--surface)" rx="3" stroke="var(--border)" stroke-width="0.5" />
+
+          {/* Streak bands */}
+          {streaks.map((s: any) => {
+            const start = s.sessions[0]?.session || s.start;
+            const end = s.sessions[s.sessions.length - 1]?.session || s.end;
+            const x1 = tlX(start);
+            const x2 = tlX(end);
+            const color = s.sign === '+' ? 'hsl(145, 60%, 42%)' : 'hsl(0, 60%, 52%)';
+            return (
+              <rect x={x1} y={tlPad.top + 2} width={Math.max(x2 - x1, 3)} height={tlH - tlPad.top - tlPad.bottom - 4}
+                    fill={color} opacity="0.25" rx="2">
+                <title>{s.sign === '+' ? '📈' : '📉'} S{start}–S{end} ({s.length} sessions)</title>
+              </rect>
+            );
+          })}
+
+          {/* Session tick marks */}
+          {[...Array(Math.ceil((maxS - minS) / 10) + 1)].map((_, i) => {
+            const s = minS + i * 10;
+            if (s > maxS) return null;
+            return (
+              <g>
+                <line x1={tlX(s)} y1={tlH - tlPad.bottom} x2={tlX(s)} y2={tlH - tlPad.bottom + 4}
+                      stroke="var(--text-secondary)" stroke-width="0.5" />
+                <text x={tlX(s)} y={tlH - tlPad.bottom + 15} text-anchor="middle"
+                      fill="var(--text-secondary)" font-size="9">S{s}</text>
+              </g>
+            );
+          })}
+        </svg>
+      </div>
+    </section>
+
+    <!-- Streak Dynamics -->
+    <section class="section">
+      <h2>Streak Dynamics</h2>
+      <p class="section-note">How residuals evolve within each streak. Most streaks <strong>accelerate</strong> — they get stronger, not weaker.</p>
+      <div class="dynamics-grid">
+        {dynamics.map((d: any) => {
+          const path = d.residual_path || [];
+          const maxR = Math.max(...path.map(Math.abs), 0.01);
+          const sparkPoints = path.map((v: number, i: number) => {
+            const x = (i / Math.max(path.length - 1, 1)) * sparkW;
+            const y = sparkH / 2 - (v / (maxR * 1.2)) * (sparkH / 2);
+            return `${x},${y}`;
+          }).join(' ');
+          const zeroY = sparkH / 2;
+          const trajColor = d.trajectory === 'accelerating' ? 'hsl(145, 60%, 42%)' :
+                            d.trajectory === 'decaying' ? 'hsl(0, 60%, 52%)' :
+                            d.trajectory === 'peaked' ? 'hsl(35, 80%, 52%)' :
+                            d.trajectory === 'steady' ? 'hsl(210, 70%, 52%)' : 'hsl(270, 55%, 52%)';
+          return (
+            <div class="dynamics-card">
+              <div class="dynamics-header">
+                <span class="dynamics-range">{d.streak}</span>
+                <span class="dynamics-trajectory" style={`color: ${trajColor}`}>{d.trajectory}</span>
+              </div>
+              <div class="dynamics-meta">
+                {d.length} sessions · peak S{d.peak.session} ({d.peak.residual > 0 ? '+' : ''}{d.peak.residual.toFixed(2)})
+              </div>
+              <svg viewBox={`0 0 ${sparkW} ${sparkH}`} class="dynamics-spark">
+                <line x1="0" y1={zeroY} x2={sparkW} y2={zeroY}
+                      stroke="var(--text-secondary)" stroke-width="0.5" opacity="0.3" />
+                <polyline points={sparkPoints} fill="none" stroke={trajColor}
+                          stroke-width="2" stroke-linejoin="round" />
+                {path.map((v: number, i: number) => {
+                  const x = (i / Math.max(path.length - 1, 1)) * sparkW;
+                  const y = sparkH / 2 - (v / (maxR * 1.2)) * (sparkH / 2);
+                  return <circle cx={x} cy={y} r="2.5" fill={trajColor} opacity="0.8" />;
+                })}
+              </svg>
+              <div class="dynamics-thirds">
+                <span>early: {d.early_avg > 0 ? '+' : ''}{d.early_avg.toFixed(3)}</span>
+                <span>mid: {d.mid_avg > 0 ? '+' : ''}{d.mid_avg.toFixed(3)}</span>
+                <span>late: {d.late_avg > 0 ? '+' : ''}{d.late_avg.toFixed(3)}</span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+
+    <!-- Streak Autopsies -->
+    <section class="section">
+      <h2>Streak Autopsies</h2>
+      <p class="section-note">What killed each positive streak? Sharp drops are the #1 killer — not gradual decay.</p>
+      <div class="autopsy-grid">
+        {autopsies.map((a: any) => (
+          <div class="autopsy-card">
+            <div class="autopsy-header">
+              <span class="autopsy-streak">{a.streak}</span>
+              <span class="autopsy-len">{a.length} sessions</span>
+            </div>
+            <div class="autopsy-killer">
+              Killed by <strong>S{a.killer_session}</strong>
+              <span class="residual negative"> ({a.killer_residual > 0 ? '+' : ''}{a.killer_residual.toFixed(2)})</span>
+            </div>
+            <div class="autopsy-factors">
+              {a.factors.map((f: string) => (
+                <span class={`factor-tag ${f.includes('sharp') ? 'sharp' : f.includes('decay') ? 'decay' : 'other'}`}>
+                  {f.includes('sharp') ? '💥' : f.includes('decay') ? '📉' : f.includes('category') ? '🔄' : f.includes('velocity') ? '🐢' : '⚠️'} {f}
+                </span>
+              ))}
+            </div>
+            {a.killer_tasks.length > 0 && (
+              <div class="autopsy-tasks">
+                {a.killer_tasks.slice(0, 2).map((t: string) => (
+                  <div class="task-line">{typeof t === 'string' ? t.slice(0, 60) : t}{typeof t === 'string' && t.length > 60 ? '…' : ''}</div>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Feature Comparison -->
+    <section class="section">
+      <h2>Streak vs. Non-Streak Sessions</h2>
+      <p class="section-note">DNA component differences between streak and non-streak sessions. Lower flow in streaks is counterintuitive — perhaps "easy flow" sessions get expected ratings, while "working through difficulty" overperforms expectations.</p>
+      <div class="comparison-table">
+        <div class="comp-header">
+          <span class="comp-label">Component</span>
+          <span class="comp-val">In Streak</span>
+          <span class="comp-val">Non-Streak</span>
+          <span class="comp-val">Difference</span>
+        </div>
+        {components.map(c => {
+          const info = comparison[c] || {};
+          const diff = info.diff || 0;
+          const color = Math.abs(diff) > 2 ? (diff > 0 ? 'positive' : 'negative') : '';
+          return (
+            <div class={`comp-row ${color}`}>
+              <span class="comp-label">{compLabels[c]}</span>
+              <span class="comp-val">{(info.streak || 0).toFixed(1)}</span>
+              <span class="comp-val">{(info.non_streak || 0).toFixed(1)}</span>
+              <span class={`comp-val comp-diff ${color}`}>{diff > 0 ? '+' : ''}{diff.toFixed(1)}</span>
+            </div>
+          );
+        })}
+        {/* Satisfaction row */}
+        {(() => {
+          const satInfo = comparison.satisfaction || {};
+          return (
+            <div class="comp-row highlight">
+              <span class="comp-label"><strong>Satisfaction</strong></span>
+              <span class="comp-val"><strong>{(satInfo.streak || 0).toFixed(1)}</strong></span>
+              <span class="comp-val"><strong>{(satInfo.non_streak || 0).toFixed(1)}</strong></span>
+              <span class="comp-val comp-diff positive"><strong>+{(satInfo.diff || 0).toFixed(1)}</strong></span>
+            </div>
+          );
+        })()}
+      </div>
+    </section>
+
+    <!-- Engineering Insights -->
+    <section class="section">
+      <h2>Engineering Insights</h2>
+      <p class="section-note">What the data says about creating and sustaining momentum.</p>
+      <div class="insights-grid">
+        {insights.map((ins: any) => {
+          const icon = ins.type === 'feature' ? '📐' :
+                       ins.type === 'prevention' ? '🛡️' :
+                       ins.type === 'dynamics' ? '📈' :
+                       ins.type === 'optimal' ? '🎯' : '🔮';
+          return (
+            <div class="insight-card">
+              <div class="insight-icon">{icon}</div>
+              <div class="insight-content">
+                <div class="insight-finding">{ins.finding}</div>
+                <div class="insight-action">→ {ins.actionable}</div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+
+    <!-- Interpretation -->
+    <section class="section">
+      <h2>Can Momentum Be Engineered?</h2>
+      <div class="interpretation">
+        <p>
+          <strong>Partially.</strong> The data reveals clear patterns: streaks accelerate rather than decay,
+          they die from sharp disruptions rather than gradual erosion, and mixed sessions (combining writing
+          with building) sustain momentum better than pure-category sessions.
+        </p>
+        <p>
+          The counterintuitive flow finding is revealing: streak sessions have <em>lower</em> flow scores
+          than non-streak sessions. One interpretation: when things come easily (high flow), you rate the
+          session as expected — good but unremarkable. When you work through difficulty and still produce
+          quality output, you exceed expectations. The struggle is the magic ingredient.
+        </p>
+        <p>
+          The 3-session rolling average predicts the next session's residual sign with only 60% accuracy —
+          better than coin-flip, but far from deterministic. Momentum is a tailwind, not a guarantee.
+          The actionable takeaway: once a streak starts, <strong>protect it</strong>. Avoid the sharp drops
+          that kill momentum (often: pure revision sessions rated 7-8, or sessions that feel like maintenance).
+          Stay mixed. Stay hungry.
+        </p>
+      </div>
+    </section>
+
+    <p class="footer-note">
+      Generated from {sessionCount} sessions · R² = {rSquared.toFixed(4)} ·
+      <a href={`${base}satisfaction-residuals/`}>Satisfaction Residuals</a> ·
+      <a href={`${base}temporal-drivers/`}>Temporal Drivers</a> ·
+      <a href={`${base}satisfaction-analysis/`}>Satisfaction Analysis</a>
+    </p>
+  </main>
+</BaseLayout>
+
+<style>
+  .momentum-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  h1 { margin-bottom: 0.25rem; }
+  .subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  .intro {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    color: var(--text-secondary);
+  }
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-align: center;
+  }
+  .card.accent { border-top: 3px solid hsl(145, 60%, 42%); }
+  .card-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent, hsl(270, 55%, 52%));
+  }
+  .card.accent .card-value { color: hsl(145, 60%, 42%); }
+  .card-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+  }
+  .section { margin-bottom: 3rem; }
+  .section h2 { margin-bottom: 0.25rem; }
+  .section-note {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+  .chart-container {
+    overflow-x: auto;
+    margin-bottom: 0.75rem;
+  }
+  .scatter-chart {
+    width: 100%;
+    max-width: 600px;
+  }
+  .timeline-chart {
+    width: 100%;
+    max-width: 800px;
+  }
+  .legend {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .dynamics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+  .dynamics-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+  }
+  .dynamics-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.25rem;
+  }
+  .dynamics-range { font-weight: 700; font-size: 1rem; }
+  .dynamics-trajectory {
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .dynamics-meta {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+  }
+  .dynamics-spark {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 0.5rem;
+  }
+  .dynamics-thirds {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+  }
+  .autopsy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+  .autopsy-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid hsl(0, 60%, 52%);
+    border-radius: 6px;
+    padding: 1rem;
+  }
+  .autopsy-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  .autopsy-streak { font-weight: 700; }
+  .autopsy-len { font-size: 0.85rem; color: var(--text-secondary); }
+  .autopsy-killer { font-size: 0.9rem; margin-bottom: 0.5rem; }
+  .autopsy-factors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.5rem;
+  }
+  .factor-tag {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 12px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+  }
+  .factor-tag.sharp { border-color: hsl(0, 60%, 52%); color: hsl(0, 60%, 52%); }
+  .factor-tag.decay { border-color: hsl(35, 80%, 52%); color: hsl(35, 80%, 52%); }
+  .autopsy-tasks {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-style: italic;
+  }
+  .task-line { margin-bottom: 0.15rem; }
+  .comparison-table {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .comp-header, .comp-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    padding: 0.6rem 1rem;
+    align-items: center;
+  }
+  .comp-header {
+    background: var(--surface);
+    border-bottom: 2px solid var(--border);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .comp-row { border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+  .comp-row:last-child { border-bottom: none; }
+  .comp-row.highlight { background: hsl(145, 60%, 42%, 0.06); }
+  .comp-label { font-weight: 500; }
+  .comp-val { text-align: center; }
+  .comp-diff.positive { color: hsl(145, 60%, 42%); font-weight: 600; }
+  .comp-diff.negative { color: hsl(0, 60%, 52%); font-weight: 600; }
+  .insights-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .insight-card {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+  }
+  .insight-icon { font-size: 1.5rem; flex-shrink: 0; }
+  .insight-finding { font-weight: 600; margin-bottom: 0.25rem; }
+  .insight-action {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+  .interpretation {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+  .interpretation p { line-height: 1.7; margin-bottom: 1rem; }
+  .interpretation p:last-child { margin-bottom: 0; }
+  .footer-note {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
+  .footer-note a { color: var(--accent, hsl(270, 55%, 52%)); }
+  .residual.negative { color: hsl(0, 60%, 52%); }
+  @media (max-width: 700px) {
+    .dynamics-grid, .autopsy-grid { grid-template-columns: 1fr; }
+    .comp-header, .comp-row { grid-template-columns: 1.2fr 0.9fr 0.9fr 0.9fr; font-size: 0.8rem; }
+  }
+</style>
