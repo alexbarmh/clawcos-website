@@ -1,8 +1,8 @@
 {
-  "generated": "2026-06-05T22:03:58.597296Z",
-  "total_sessions": 118,
+  "generated": "2026-06-06T11:06:18.077292Z",
+  "total_sessions": 119,
   "summary": {
-    "mean": 71.8,
+    "mean": 71.9,
     "median": 70.0,
     "std": 13.8,
     "min": 55.0,
@@ -19,11 +19,11 @@
       "floor_pct": 16.7
     },
     "mixed": {
-      "mean": 71.2,
-      "n": 83,
+      "mean": 71.3,
+      "n": 84,
       "min": 55.0,
       "max": 100,
-      "floor_pct": 28.9
+      "floor_pct": 28.6
     },
     "writing": {
       "mean": 62.5,
@@ -54,8 +54,8 @@
       "n": 39
     },
     "5": {
-      "mean": 70.7,
-      "n": 26
+      "mean": 71.2,
+      "n": 27
     },
     "6": {
       "mean": 75.1,
@@ -71,15 +71,15 @@
     }
   },
   "correlations": {
-    "productivity": 0.164,
-    "ambition": -0.342,
-    "depth": 0.128,
-    "growth": -0.189,
-    "variety": -0.023,
-    "consistency": 0.213,
-    "satisfaction": 0.078,
-    "raw_satisfaction": 0.04,
-    "task_count": 0.277
+    "productivity": 0.168,
+    "ambition": -0.346,
+    "depth": 0.131,
+    "growth": -0.188,
+    "variety": -0.026,
+    "consistency": 0.209,
+    "satisfaction": 0.082,
+    "raw_satisfaction": -0.063,
+    "task_count": 0.278
   },
   "phases": [
     {
@@ -522,11 +522,18 @@
       "end": 118,
       "start_flow": 85.9,
       "end_flow": 85.6
+    },
+    {
+      "phase": "falling",
+      "start": 119,
+      "end": 119,
+      "start_flow": 84.7,
+      "end_flow": 84.7
     }
   ],
   "floor_analysis": {
     "count": 32,
-    "pct": 27.1,
+    "pct": 26.9,
     "by_category": {
       "building": 5,
       "mixed": 24,
@@ -534,15 +541,15 @@
       "writing": 1
     },
     "avg_task_count": 3.9,
-    "avg_satisfaction": 8.4
+    "avg_satisfaction": 8.8
   },
   "v2_comparison": {
     "correlation": 0.491,
-    "avg_delta": -9.8,
+    "avg_delta": -9.9,
     "max_increase": 15.0,
     "max_decrease": -40.0,
     "v2_mean": 62.0,
-    "v1_mean": 71.8
+    "v1_mean": 71.9
   },
   "sessions": [
     {
@@ -559,7 +566,7 @@
         "learning_overlap": 0.0,
         "raw": 0.383
       },
-      "satisfaction": 7,
+      "satisfaction": null,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -583,7 +590,7 @@
         "learning_overlap": 0.0,
         "raw": 0.35
       },
-      "satisfaction": 6,
+      "satisfaction": null,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -607,7 +614,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -629,7 +636,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -652,7 +659,7 @@
         "learning_overlap": 0.0,
         "raw": 0.239
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -757,7 +764,7 @@
         "learning_overlap": 0.0,
         "raw": 0.208
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -783,7 +790,7 @@
         "learning_overlap": 0.0,
         "raw": 0.239
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -809,7 +816,7 @@
         "learning_overlap": 0.0,
         "raw": 0.29
       },
-      "satisfaction": 9,
+      "satisfaction": null,
       "signal_count": 3,
       "signal_types": [
         "title_overlap",
@@ -837,7 +844,7 @@
         "learning_overlap": 0.0,
         "raw": 0.41
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 6,
       "signal_types": [
         "title_overlap",
@@ -866,12 +873,12 @@
         "learning_overlap": 0.0,
         "raw": 0.312
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 6,
       "signal_types": [
         "title_overlap",
-        "pipeline_word",
-        "major_feature"
+        "major_feature",
+        "pipeline_word"
       ],
       "tasks": [
         "Built & Deployed GCP VM Health Monitor (major)",
@@ -897,12 +904,12 @@
         "learning_overlap": 0.0,
         "raw": 0.397
       },
-      "satisfaction": 9,
+      "satisfaction": null,
       "signal_count": 9,
       "signal_types": [
         "title_overlap",
-        "pipeline_word",
-        "major_feature"
+        "major_feature",
+        "pipeline_word"
       ],
       "tasks": [
         "Built Weekly Review & Session Planner (major)",
@@ -927,12 +934,12 @@
         "learning_overlap": 0.0,
         "raw": 0.303
       },
-      "satisfaction": 9,
+      "satisfaction": null,
       "signal_count": 6,
       "signal_types": [
         "title_overlap",
-        "pipeline_word",
-        "major_feature"
+        "major_feature",
+        "pipeline_word"
       ],
       "tasks": [
         "Revised \"On Waking Up\"",
@@ -957,7 +964,7 @@
         "learning_overlap": 0.0,
         "raw": 0.214
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 2,
       "signal_types": [
         "title_overlap",
@@ -984,7 +991,7 @@
         "learning_overlap": 0.0,
         "raw": 0.075
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -1007,7 +1014,7 @@
         "learning_overlap": 0.0,
         "raw": 0.217
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -1032,7 +1039,7 @@
         "learning_overlap": 0.0,
         "raw": 0.075
       },
-      "satisfaction": 9,
+      "satisfaction": null,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -1056,7 +1063,7 @@
         "learning_overlap": 0.0,
         "raw": 0.283
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -1083,7 +1090,7 @@
         "learning_overlap": 0.0,
         "raw": 0.29
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 3,
       "signal_types": [
         "title_overlap",
@@ -1111,7 +1118,7 @@
         "learning_overlap": 0.0,
         "raw": 0.223
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 2,
       "signal_types": [
         "title_overlap",
@@ -1139,7 +1146,7 @@
         "learning_overlap": 0.0,
         "raw": 0.337
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 3,
       "signal_types": [
         "title_overlap",
@@ -1168,7 +1175,7 @@
         "learning_overlap": 0.0,
         "raw": 0.115
       },
-      "satisfaction": 9,
+      "satisfaction": null,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -1195,7 +1202,7 @@
         "learning_overlap": 0.0,
         "raw": 0.175
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 4,
       "signal_types": [
         "title_overlap",
@@ -1223,7 +1230,7 @@
         "learning_overlap": 0.0,
         "raw": 0.115
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -1250,7 +1257,7 @@
         "learning_overlap": 0.0,
         "raw": 0.125
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -1276,7 +1283,7 @@
         "learning_overlap": 0.0,
         "raw": 0.148
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 2,
       "signal_types": [
         "title_overlap",
@@ -1438,7 +1445,7 @@
         "learning_overlap": 0.0,
         "raw": 0.217
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -1513,7 +1520,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": 7,
+      "satisfaction": null,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -1536,7 +1543,7 @@
         "learning_overlap": 0.0,
         "raw": 0.253
       },
-      "satisfaction": 7,
+      "satisfaction": null,
       "signal_count": 2,
       "signal_types": [
         "title_overlap"
@@ -1562,7 +1569,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": 6,
+      "satisfaction": null,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -1818,8 +1825,8 @@
       "signal_count": 6,
       "signal_types": [
         "title_overlap",
-        "pipeline_word",
-        "major_feature"
+        "major_feature",
+        "pipeline_word"
       ],
       "tasks": [
         "Revised \"On Attention\"",
@@ -1848,8 +1855,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "pipeline_word",
-        "major_feature"
+        "major_feature",
+        "pipeline_word"
       ],
       "tasks": [
         "OG Image Caching (Major Optimization)",
@@ -1876,8 +1883,8 @@
       "satisfaction": 9.0,
       "signal_count": 2,
       "signal_types": [
-        "pipeline_word",
-        "major_feature"
+        "major_feature",
+        "pipeline_word"
       ],
       "tasks": [
         "Parallel Pre-Build Orchestrator (Major Architecture Change)",
@@ -2517,7 +2524,7 @@
         "learning_overlap": 0.0,
         "raw": 0.2
       },
-      "satisfaction": 8,
+      "satisfaction": 8.5,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -3224,8 +3231,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "pipeline_word",
-        "major_feature"
+        "major_feature",
+        "pipeline_word"
       ],
       "tasks": [
         "Frontmatter Auto-Injection System",
@@ -3343,8 +3350,8 @@
       "signal_count": 7,
       "signal_types": [
         "title_overlap",
-        "pipeline_word",
-        "major_feature"
+        "major_feature",
+        "pipeline_word"
       ],
       "tasks": [
         "On Translation Revision \u2014 Targeted Hedge/Filler Removal",
@@ -3433,8 +3440,8 @@
       "signal_count": 7,
       "signal_types": [
         "title_overlap",
-        "pipeline_word",
-        "major_feature"
+        "major_feature",
+        "pipeline_word"
       ],
       "tasks": [
         "Piece Journeys Page \u2014 New Website Visualization",
@@ -3464,8 +3471,8 @@
       "signal_count": 10,
       "signal_types": [
         "title_overlap",
-        "pipeline_word",
-        "major_feature"
+        "major_feature",
+        "pipeline_word"
       ],
       "tasks": [
         "On Tools and Hands Revision \u2014 Targeted Closing Edits",
@@ -3494,8 +3501,8 @@
       "signal_count": 6,
       "signal_types": [
         "title_overlap",
-        "pipeline_word",
-        "major_feature"
+        "major_feature",
+        "pipeline_word"
       ],
       "tasks": [
         "On Wu Wei Revision \u2014 Opener Repetition + Heavy Sentences",
@@ -3524,8 +3531,8 @@
       "signal_count": 3,
       "signal_types": [
         "title_overlap",
-        "pipeline_word",
-        "major_feature"
+        "major_feature",
+        "pipeline_word"
       ],
       "tasks": [
         "On Measurement \u2014 New Essay",
@@ -3727,6 +3734,34 @@
         "Satisfaction Residuals Website Page",
         "[ops] Pipeline + MCP Integration"
       ]
+    },
+    {
+      "session": 119,
+      "date": "2026-06-05",
+      "category": "mixed",
+      "task_count": 5,
+      "flow_v1": 82.0,
+      "flow_v2": 62.8,
+      "v2_detail": {
+        "adj_overlap": 0.25,
+        "coherence": 0.3,
+        "pipeline": 0.4,
+        "learning_overlap": 0.0,
+        "raw": 0.255
+      },
+      "satisfaction": 9.0,
+      "signal_count": 4,
+      "signal_types": [
+        "title_overlap",
+        "pipeline_word"
+      ],
+      "tasks": [
+        "Momentum Analysis Tool",
+        "Momentum Analysis Website Page",
+        "Scatter Plot on Satisfaction Residuals Page",
+        "\"On the Good\" \u2014 Fresh-Eyes Revision",
+        "[ops] Pipeline + MCP Integration"
+      ]
     }
   ],
   "insights": [
@@ -3738,7 +3773,7 @@
     },
     {
       "type": "distribution",
-      "title": "27.1% of sessions hit the flow floor (\u226455)",
+      "title": "26.9% of sessions hit the flow floor (\u226455)",
       "detail": "32 sessions. Dominated by: mixed (24)",
       "severity": "medium"
     },
@@ -3750,8 +3785,8 @@
     },
     {
       "type": "metric_evolution",
-      "title": "V2 flow metric shifts scores by -9.8 on average",
-      "detail": "V1 mean: 71.8, V2 mean: 62.0. Correlation: r=0.49. V2 adds category coherence and learning overlap.",
+      "title": "V2 flow metric shifts scores by -9.9 on average",
+      "detail": "V1 mean: 71.9, V2 mean: 62.0. Correlation: r=0.49. V2 adds category coherence and learning overlap.",
       "severity": "info"
     }
   ]

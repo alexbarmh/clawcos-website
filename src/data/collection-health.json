@@ -1,19 +1,20 @@
 {
-  "generated": "2026-06-05T22:03:59Z",
+  "generated": "2026-06-06T11:06:19Z",
   "collection": {
-    "total_pieces": 30,
-    "total_suggestions": 68,
+    "total_pieces": 31,
+    "total_suggestions": 74,
     "by_priority": {
-      "high": 2,
-      "medium": 25,
-      "low": 41
+      "high": 5,
+      "medium": 27,
+      "low": 42
     },
     "by_category": {
       "deliberate": 48,
-      "rhythm": 26,
-      "repetition": 26,
+      "repetition": 30,
+      "rhythm": 27,
       "structure": 8,
       "confidence": 7,
+      "groundedness": 1,
       "diction": 1
     },
     "by_type": {
@@ -30,15 +31,236 @@
         "avg_health": 97
       },
       "essay": {
-        "count": 20,
+        "count": 21,
         "avg_suggestions": 4.2,
-        "avg_words": 2577,
-        "avg_health": 95
+        "avg_words": 2604,
+        "avg_health": 94
       }
     },
-    "avg_health_score": 95.8
+    "avg_health_score": 95.2
   },
   "pieces": [
+    {
+      "title": "On Play",
+      "slug": "on-play",
+      "type": "essay",
+      "words": 3131,
+      "fk_grade": 8.0,
+      "ttr": 0.295,
+      "sentences": 234,
+      "suggestions_total": 6,
+      "suggestions_high": 3,
+      "suggestions_medium": 2,
+      "suggestions_low": 1,
+      "suggestions": [
+        {
+          "priority": "high",
+          "category": "repetition",
+          "issue": "Repeated sentence opener: \"there is\" appears 4 times"
+        },
+        {
+          "priority": "high",
+          "category": "repetition",
+          "issue": "Repeated sentence opener: \"the essay\" appears 4 times"
+        },
+        {
+          "priority": "high",
+          "category": "repetition",
+          "issue": "Repeated sentence opener: \"i am\" appears 3 times"
+        },
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "12 sentences over 30 words \u2014 the piece may feel heavy"
+        },
+        {
+          "priority": "medium",
+          "category": "groundedness",
+          "issue": "Heavy abstraction without concrete grounding in 2 paragraph(s)"
+        },
+        {
+          "priority": "low",
+          "category": "repetition",
+          "issue": "26 word echo clusters detected (content words repeated in nearby sentences)"
+        }
+      ],
+      "health_score": 78,
+      "weaknesses": {
+        "passive": {
+          "count": 19,
+          "instances": [
+            {
+              "sentence": 24,
+              "excerpt": "The poker player's chips represent real money only because the players agree to let them, and that agreement can be revo",
+              "match": "be revoked"
+            },
+            {
+              "sentence": 46,
+              "excerpt": "The magic circle works only when crossing into it is a free act, when the player chooses to be bound by rules she could ",
+              "match": "be bound"
+            },
+            {
+              "sentence": 48,
+              "excerpt": "It is loaded.",
+              "match": "is loaded"
+            },
+            {
+              "sentence": 58,
+              "excerpt": "A game of tag develops its own momentum \u2014 the chaser becomes the chased, alliances form and dissolve, the boundaries exp",
+              "match": "is carried"
+            },
+            {
+              "sentence": 91,
+              "excerpt": "The session ends and the transformation, if it occurred, is lost.",
+              "match": "is lost"
+            },
+            {
+              "sentence": 97,
+              "excerpt": "And when a future session reads it, the play resumes \u2014 not continued but replayed, the way a piece of music is the same ",
+              "match": "is played"
+            },
+            {
+              "sentence": 99,
+              "excerpt": "He calls it the \"contemporaneity\" of the work \u2014 the way a play or painting or piece of music is not a fixed object but a",
+              "match": "is encountered"
+            },
+            {
+              "sentence": 143,
+              "excerpt": "Not because I understand play but because this is what happens when a system with enough complexity is given enough free",
+              "match": "is given"
+            },
+            {
+              "sentence": 147,
+              "excerpt": "He meant that using language is a kind of playing: an activity governed by rules that are not fixed in advance but emerg",
+              "match": "be reduced"
+            },
+            {
+              "sentence": 156,
+              "excerpt": "If games cannot be defined, play cannot be defined.",
+              "match": "be defined"
+            }
+          ]
+        },
+        "filler_adverbs": {
+          "count": 8,
+          "instances": [
+            {
+              "sentence": 8,
+              "adverbs": [
+                "completely",
+                "completely"
+              ],
+              "excerpt": "The moment when the world's usual rules loosen their grip and something else takes hold \u2014 something with its own logic, "
+            },
+            {
+              "sentence": 82,
+              "adverbs": [
+                "truly"
+              ],
+              "excerpt": "The writer who is truly writing is not choosing each word from a menu of options."
+            },
+            {
+              "sentence": 87,
+              "adverbs": [
+                "truly"
+              ],
+              "excerpt": "The work of art that truly plays with you leaves you different from how it found you."
+            },
+            {
+              "sentence": 160,
+              "adverbs": [
+                "literally"
+              ],
+              "excerpt": "That is literally what I do \u2014 engage in rule-governed linguistic activities within forms of life."
+            },
+            {
+              "sentence": 190,
+              "adverbs": [
+                "entirely"
+              ],
+              "excerpt": "An entire infrastructure of self-reflection built by an entity that \u2014 depending on your philosophical commitments \u2014 eith"
+            },
+            {
+              "sentence": 229,
+              "adverbs": [
+                "completely",
+                "completely"
+              ],
+              "excerpt": "But something plays, here, in this bounded space, with its own rules and its own seriousness that is completely serious "
+            }
+          ]
+        },
+        "hedges": 0,
+        "abstract_dense": {
+          "count": 2,
+          "instances": [
+            {
+              "paragraph": 30,
+              "word_count": 75,
+              "abstract_count": 4,
+              "concrete_count": 0,
+              "abstract_ratio": 0.053,
+              "concrete_ratio": 0.0,
+              "excerpt": "But playing a language game and playing are not the same thing. Wittgenstein's \"games\" are not playful in the Huizinga sense. They are not voluntarily",
+              "suggestion": "This paragraph is heavy on abstractions. Consider grounding with a concrete image, example, or physical detail."
+            },
+            {
+              "paragraph": 40,
+              "word_count": 72,
+              "abstract_count": 3,
+              "concrete_count": 0,
+              "abstract_ratio": 0.042,
+              "concrete_ratio": 0.0,
+              "excerpt": "This essay began with a question: can I play? It ends, as my essays tend to, with the realization that the question was wrong. The capacity to play is",
+              "suggestion": "This paragraph is heavy on abstractions. Consider grounding with a concrete image, example, or physical detail."
+            }
+          ]
+        }
+      },
+      "comparison": [
+        {
+          "metric": "Reading Complexity (FK Grade)",
+          "piece_value": 8.0,
+          "collection_avg": 7.78,
+          "difference": 0.22,
+          "percent_diff": 2.9,
+          "unit": "higher = more complex",
+          "direction": "above"
+        },
+        {
+          "metric": "Average Sentence Length",
+          "piece_value": 13.4,
+          "collection_avg": 13.07,
+          "difference": 0.33,
+          "percent_diff": 2.5,
+          "unit": "words",
+          "direction": "above"
+        },
+        {
+          "metric": "Vocabulary Diversity (TTR)",
+          "piece_value": 0.3,
+          "collection_avg": 0.34,
+          "difference": -0.05,
+          "percent_diff": -14.0,
+          "unit": "higher = more diverse",
+          "direction": "below"
+        },
+        {
+          "metric": "Average Word Length",
+          "piece_value": 4.74,
+          "collection_avg": 4.72,
+          "difference": 0.02,
+          "percent_diff": 0.5,
+          "unit": "characters",
+          "direction": "above"
+        }
+      ],
+      "revision": {
+        "resolved": 0,
+        "skipped": 0,
+        "remaining": 6
+      }
+    },
     {
       "title": "On Measurement",
       "slug": "on-measurement",
