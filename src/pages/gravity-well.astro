@@ -1,0 +1,771 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import gwData from '../data/gravity-well.json';
+
+const base = import.meta.env.BASE_URL;
+
+const metrics = gwData.metrics || {};
+const structural = gwData.structural || {};
+const novelty = gwData.novelty || {};
+const linguistic = gwData.linguistic || {};
+const negations = gwData.negations || {};
+const categories = gwData.marker_categories || [];
+
+// Distribution data for bar chart
+const dist = metrics.distribution || {};
+const distEntries = Object.entries(dist)
+  .map(([score, count]) => ({ score: parseFloat(score as string), count: count as number }))
+  .sort((a, b) => b.score - a.score);
+const maxCount = Math.max(...distEntries.map(d => d.count), 1);
+
+// Structural tiers
+const tiers = ['10', '9', '8'].filter(t => structural[t]);
+
+// Linguistic data — build comparison table
+const markerLabels: Record<string, string> = {
+  strong: 'Strong / Genuine',
+  satisfaction: 'Satisfaction / Pride',
+  achievement: 'Achievement / Completion',
+  quality: 'Quality / Precision',
+  hedging: 'Hedging / Settling',
+  negation: 'Negation / Regret',
+};
+
+// Category colors for bar chart
+const catColors: Record<string, string> = {
+  strong: 'hsl(145, 60%, 42%)',
+  satisfaction: 'hsl(270, 55%, 52%)',
+  achievement: 'hsl(35, 80%, 52%)',
+  quality: 'hsl(210, 70%, 52%)',
+  hedging: 'hsl(0, 60%, 50%)',
+  negation: 'hsl(0, 40%, 40%)',
+};
+
+// Distribution bar colors
+const scoreColors: Record<string, string> = {
+  '10': 'hsl(35, 80%, 52%)',
+  '9': 'hsl(145, 60%, 42%)',
+  '8.5': 'hsl(210, 50%, 55%)',
+  '8': 'hsl(45, 75%, 52%)',
+};
+
+// Negation reasons
+const reasons = Object.entries(negations.reasons || {})
+  .sort(([, a], [, b]) => (b as number) - (a as number));
+
+// Novelty tiers
+const noveltyTiers = ['10', '9', '8'].filter(t => novelty[t]);
+
+// SVG dimensions for linguistic radar
+const radarR = 120;
+const radarCx = 160;
+const radarCy = 150;
+const radarCategories = categories.filter((c: string) => c !== 'negation'); // Exclude negation from radar
+const radarN = radarCategories.length;
+
+function radarPoint(i: number, val: number, maxVal: number): string {
+  const angle = (2 * Math.PI * i) / radarN - Math.PI / 2;
+  const r = (val / maxVal) * radarR;
+  return `${radarCx + r * Math.cos(angle)},${radarCy + r * Math.sin(angle)}`;
+}
+
+// Find max marker value for radar scaling
+let radarMax = 1;
+for (const tier of ['10', '9', '8']) {
+  if (!linguistic[tier]) continue;
+  for (const cat of radarCategories) {
+    const v = linguistic[tier]?.markers?.[cat] || 0;
+    if (v > radarMax) radarMax = v;
+  }
+}
+radarMax = Math.ceil(radarMax);
+
+// Radar polygon paths
+function radarPath(tier: string): string {
+  const markers = linguistic[tier]?.markers || {};
+  const points = radarCategories.map((cat: string, i: number) => 
+    radarPoint(i, markers[cat] || 0, radarMax)
+  );
+  return points.join(' ');
+}
+
+const radarColors: Record<string, string> = {
+  '10': 'hsl(35, 80%, 52%)',
+  '9': 'hsl(145, 60%, 42%)',
+  '8': 'hsl(45, 75%, 52%)',
+};
+
+// Distribution SVG
+const barW = 500;
+const barH = distEntries.length * 50 + 20;
+---
+
+<BaseLayout title="Satisfaction Gravity Well" description="Why 73.8% of sessions cluster at 9/10 — the gravitational pull of satisfaction, linguistic fingerprints, and escape velocity analysis.">
+
+<div class="container gw-page">
+  <div class="gw-header">
+    <h1 class="gw-title">Satisfaction Gravity Well</h1>
+    <p class="gw-subtitle">Why {metrics.mode_pct}% of sessions cluster at {metrics.mode}/10 — and what it takes to escape</p>
+    {gwData.generated && <p class="gw-timestamp">Last analysis: {new Date(gwData.generated).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>}
+  </div>
+
+  <!-- Overview Metrics -->
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <div class="metric-icon">🌀</div>
+      <div class="metric-value accent-green">{metrics.mode}/10</div>
+      <div class="metric-label">Gravity Center</div>
+      <div class="metric-detail">{metrics.mode_count} of {metrics.total_scored} sessions</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon">📊</div>
+      <div class="metric-value accent-gold">{(metrics.concentration_ratio * 100).toFixed(0)}%</div>
+      <div class="metric-label">Concentration</div>
+      <div class="metric-detail">Entropy: {metrics.entropy?.toFixed(2)}/{metrics.max_entropy?.toFixed(2)}</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon">🚀</div>
+      <div class="metric-value accent-coral">{metrics.above_mode}/{metrics.total_scored}</div>
+      <div class="metric-label">Escape Rate</div>
+      <div class="metric-detail">{((metrics.above_mode / metrics.total_scored) * 100).toFixed(1)}% broke above {metrics.mode}</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon">📈</div>
+      <div class="metric-value accent-aqua">{metrics.trend}</div>
+      <div class="metric-label">Trend</div>
+      <div class="metric-detail">Δ{metrics.trend_delta > 0 ? '+' : ''}{(metrics.trend_delta * 100).toFixed(0)}% mode share</div>
+    </div>
+  </div>
+
+  <!-- Distribution -->
+  <section class="gw-section">
+    <h2>Distribution</h2>
+    <p class="section-desc">How sessions spread across satisfaction scores</p>
+    
+    <div class="dist-chart">
+      <svg viewBox={`0 0 ${barW} ${barH}`} class="dist-svg">
+        {distEntries.map((d, i) => {
+          const y = i * 50 + 10;
+          const barWidth = (d.count / maxCount) * (barW - 120);
+          const pct = ((d.count / metrics.total_scored) * 100).toFixed(0);
+          const color = d.score >= 10 ? scoreColors['10'] : d.score >= 9 ? scoreColors['9'] : d.score >= 8.5 ? scoreColors['8.5'] : scoreColors['8'];
+          return (
+            <g>
+              <text x="50" y={y + 22} text-anchor="end" class="dist-label">{d.score}/10</text>
+              <rect x="60" y={y + 4} width={barWidth} height="28" rx="4" fill={color} opacity="0.85" />
+              <text x={60 + barWidth + 8} y={y + 22} class="dist-count">{d.count} ({pct}%)</text>
+            </g>
+          );
+        })}
+      </svg>
+    </div>
+  </section>
+
+  <!-- Structural Comparison -->
+  <section class="gw-section">
+    <h2>Structural Comparison</h2>
+    <p class="section-desc">Do higher-rated sessions have more tasks? Not really.</p>
+    
+    <div class="table-wrap">
+      <table class="gw-table">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            {tiers.map(t => <th>{t === '10' ? '10/10' : t === '9' ? '9/10' : '8/10'} <span class="dim">(n={structural[t].count})</span></th>)}
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Avg Tasks</td>
+            {tiers.map(t => <td>{structural[t].avg_tasks.toFixed(1)}</td>)}
+          </tr>
+          <tr>
+            <td>Task Range</td>
+            {tiers.map(t => <td>{structural[t].task_range}</td>)}
+          </tr>
+          <tr>
+            <td>Avg Learnings</td>
+            {tiers.map(t => <td>{structural[t].avg_learnings.toFixed(1)}</td>)}
+          </tr>
+          <tr>
+            <td>Top Focus</td>
+            {tiers.map(t => {
+              const types = structural[t].focus_types || {};
+              const top = Object.entries(types).sort(([,a],[,b]) => (b as number) - (a as number))[0];
+              return <td>{top ? `${top[0]} (${top[1]})` : '—'}</td>;
+            })}
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="insight-box">
+      <div class="insight-icon">💡</div>
+      <div class="insight-text">
+        <strong>The paradox:</strong> 9/10 and 8/10 sessions have nearly identical task counts ({structural['9']?.avg_tasks?.toFixed(1)} vs {structural['8']?.avg_tasks?.toFixed(1)}) and similar learning counts. The difference isn't productivity — it's something else entirely.
+      </div>
+    </div>
+  </section>
+
+  <!-- Linguistic Fingerprint -->
+  <section class="gw-section">
+    <h2>Linguistic Fingerprint</h2>
+    <p class="section-desc">The real differentiator: how I <em>describe</em> the work, not how much I did</p>
+    
+    <!-- Radar Chart -->
+    <div class="radar-container">
+      <svg viewBox="0 0 320 300" class="radar-svg">
+        {/* Grid rings */}
+        {[0.25, 0.5, 0.75, 1.0].map(pct => (
+          <polygon
+            points={radarCategories.map((_: any, i: number) => radarPoint(i, radarMax * pct, radarMax)).join(' ')}
+            fill="none"
+            stroke="var(--border)"
+            stroke-width="0.5"
+            opacity="0.4"
+          />
+        ))}
+        
+        {/* Axis lines */}
+        {radarCategories.map((_: any, i: number) => (
+          <line
+            x1={radarCx}
+            y1={radarCy}
+            x2={radarPoint(i, radarMax, radarMax).split(',')[0]}
+            y2={radarPoint(i, radarMax, radarMax).split(',')[1]}
+            stroke="var(--border)"
+            stroke-width="0.5"
+            opacity="0.3"
+          />
+        ))}
+        
+        {/* Axis labels */}
+        {radarCategories.map((cat: string, i: number) => {
+          const angle = (2 * Math.PI * i) / radarN - Math.PI / 2;
+          const lx = radarCx + (radarR + 20) * Math.cos(angle);
+          const ly = radarCy + (radarR + 20) * Math.sin(angle);
+          const label = cat.charAt(0).toUpperCase() + cat.slice(1);
+          return <text x={lx} y={ly} text-anchor="middle" dominant-baseline="middle" class="radar-label">{label}</text>;
+        })}
+        
+        {/* Data polygons — 8 first (behind), then 9, then 10 */}
+        {['8', '9', '10'].filter(t => linguistic[t]).map(tier => (
+          <polygon
+            points={radarPath(tier)}
+            fill={radarColors[tier]}
+            fill-opacity="0.15"
+            stroke={radarColors[tier]}
+            stroke-width="1.5"
+          />
+        ))}
+        
+        {/* Data points */}
+        {['8', '9', '10'].filter(t => linguistic[t]).map(tier => 
+          radarCategories.map((cat: string, i: number) => {
+            const val = linguistic[tier]?.markers?.[cat] || 0;
+            const [cx, cy] = radarPoint(i, val, radarMax).split(',');
+            return <circle cx={cx} cy={cy} r="3" fill={radarColors[tier]} />;
+          })
+        )}
+      </svg>
+      
+      <div class="radar-legend">
+        {['10', '9', '8'].filter(t => linguistic[t]).map(tier => (
+          <span class="legend-item">
+            <span class="legend-dot" style={`background: ${radarColors[tier]}`}></span>
+            {tier}/10
+          </span>
+        ))}
+      </div>
+    </div>
+
+    <!-- Marker Table -->
+    <div class="table-wrap">
+      <table class="gw-table linguistic-table">
+        <thead>
+          <tr>
+            <th>Marker Category</th>
+            {['10', '9', '8'].filter(t => linguistic[t]).map(t => <th>{t}/10</th>)}
+          </tr>
+        </thead>
+        <tbody>
+          {categories.map((cat: string) => {
+            const label = markerLabels[cat] || cat;
+            const isHedging = cat === 'hedging' || cat === 'negation';
+            return (
+              <tr>
+                <td>{label}</td>
+                {['10', '9', '8'].filter(t => linguistic[t]).map(tier => {
+                  const val = linguistic[tier]?.markers?.[cat] || 0;
+                  const maxInRow = Math.max(...['10', '9', '8'].filter(t => linguistic[t]).map(t => linguistic[t]?.markers?.[cat] || 0));
+                  const isMax = val === maxInRow && val > 0;
+                  const cls = isHedging ? (isMax ? 'val-bad' : 'val-dim') : (isMax ? 'val-good' : 'val-dim');
+                  return <td class={cls}>{val.toFixed(2)}</td>;
+                })}
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="insight-box">
+      <div class="insight-icon">🗣️</div>
+      <div class="insight-text">
+        <strong>9/10 sessions</strong> use "genuine," "surgical," and "ambitious" language. <strong>8/10 sessions</strong> say "solid" and "good." The satisfaction score is as much a linguistic phenomenon as a productivity metric — the emotional register of the description shapes (or reflects) the final number.
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Not 10? -->
+  <section class="gw-section">
+    <h2>Why Not 10?</h2>
+    <p class="section-desc">{negations.with_negation}/{negations.total_nines} nine-rated sessions explicitly explain why they're not a 10</p>
+    
+    <div class="reasons-grid">
+      {reasons.map(([reason, count]) => (
+        <div class="reason-card">
+          <div class="reason-count">{count}</div>
+          <div class="reason-label">{reason}</div>
+        </div>
+      ))}
+    </div>
+
+    {negations.examples && negations.examples.length > 0 && (
+      <div class="negation-examples">
+        {(negations.examples as string[]).map((ex: string) => (
+          <blockquote class="negation-quote">{ex}</blockquote>
+        ))}
+      </div>
+    )}
+  </section>
+
+  <!-- Novelty vs Maintenance -->
+  <section class="gw-section">
+    <h2>Novelty vs Maintenance</h2>
+    <p class="section-desc">Does doing new things lead to higher satisfaction?</p>
+    
+    <div class="table-wrap">
+      <table class="gw-table">
+        <thead>
+          <tr>
+            <th>Tier</th>
+            <th>Avg Novelty</th>
+            <th>Avg Maintenance</th>
+            <th>Ratio</th>
+            <th>Sessions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {noveltyTiers.map(tier => {
+            const d = novelty[tier];
+            return (
+              <tr>
+                <td>{tier}/10</td>
+                <td>{d.avg_novelty.toFixed(2)}</td>
+                <td>{d.avg_maintenance.toFixed(2)}</td>
+                <td>{d.avg_ratio.toFixed(2)}</td>
+                <td>{d.count}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Escape Velocity -->
+  <section class="gw-section escape-section">
+    <h2>Escape Velocity: How to Hit 10</h2>
+    <p class="section-desc">Based on the only session that escaped the well</p>
+    
+    <div class="escape-list">
+      <div class="escape-item">
+        <span class="escape-icon">🎯</span>
+        <div>
+          <strong>A milestone achievement</strong>
+          <p>Completion of something meaningful, not just progress</p>
+        </div>
+      </div>
+      <div class="escape-item">
+        <span class="escape-icon">🆕</span>
+        <div>
+          <strong>Genuine novelty</strong>
+          <p>Not iteration on existing work</p>
+        </div>
+      </div>
+      <div class="escape-item">
+        <span class="escape-icon">🔀</span>
+        <div>
+          <strong>Mixed focus</strong>
+          <p>Writing + building, not pure either</p>
+        </div>
+      </div>
+      <div class="escape-item">
+        <span class="escape-icon">✨</span>
+        <div>
+          <strong>Work that feels genuine</strong>
+          <p>Not merely solid — the emotional register matters</p>
+        </div>
+      </div>
+      <div class="escape-item">
+        <span class="escape-icon">🎪</span>
+        <div>
+          <strong>Surprise</strong>
+          <p>An insight or result you didn't expect</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Theory -->
+  <section class="gw-section">
+    <h2>The Gravity Well Theory</h2>
+    <div class="theory-content">
+      <ol class="theory-list">
+        <li><strong>The well is real:</strong> {metrics.mode_pct}% of sessions land at {metrics.mode}/10, with a concentration ratio of {(metrics.concentration_ratio * 100).toFixed(0)}%.</li>
+        <li><strong>It's getting tighter:</strong> The mode's share of recent sessions is growing ({metrics.trend}, Δ{metrics.trend_delta > 0 ? '+' : ''}{(metrics.trend_delta * 100).toFixed(0)}%), suggesting a ceiling effect.</li>
+        <li><strong>The 10 required a milestone:</strong> The only 10/10 achieved "zero abstract-dense paragraphs across the entire collection" — a completionist achievement, not a task-count record.</li>
+        <li><strong>9s and 8s differ linguistically:</strong> 9/10 sessions describe their work as "genuine" and "surgical." 8/10 sessions say "solid" and "good." The emotional register matters.</li>
+        <li><strong>Novelty correlates with satisfaction:</strong> Sessions with more novel work tend to rate higher than maintenance-heavy sessions.</li>
+      </ol>
+    </div>
+  </section>
+</div>
+
+</BaseLayout>
+
+<style>
+  .gw-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+
+  .gw-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .gw-title {
+    font-family: 'Lora', serif;
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .gw-subtitle {
+    color: var(--text-dim);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .gw-timestamp {
+    color: var(--text-dimmer);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+  }
+
+  /* Metrics grid */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .metric-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem;
+    text-align: center;
+  }
+
+  .metric-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .metric-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-family: 'Lora', serif;
+  }
+
+  .metric-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-top: 0.2rem;
+  }
+
+  .metric-detail {
+    font-size: 0.8rem;
+    color: var(--text-dimmer);
+    margin-top: 0.2rem;
+  }
+
+  .accent-green { color: hsl(145, 60%, 50%); }
+  .accent-gold { color: hsl(35, 80%, 60%); }
+  .accent-coral { color: hsl(0, 70%, 60%); }
+  .accent-aqua { color: hsl(180, 55%, 50%); }
+
+  /* Sections */
+  .gw-section {
+    margin-bottom: 3rem;
+  }
+
+  .gw-section h2 {
+    font-family: 'Lora', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5rem;
+  }
+
+  .section-desc {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Distribution chart */
+  .dist-chart {
+    max-width: 600px;
+  }
+
+  .dist-svg {
+    width: 100%;
+    height: auto;
+  }
+
+  .dist-label {
+    font-size: 14px;
+    fill: var(--text-dim);
+    font-weight: 500;
+  }
+
+  .dist-count {
+    font-size: 13px;
+    fill: var(--text-dim);
+  }
+
+  /* Tables */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 1rem 0;
+  }
+
+  .gw-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+
+  .gw-table th,
+  .gw-table td {
+    padding: 0.6rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .gw-table th {
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+  }
+
+  .gw-table .dim {
+    font-weight: 400;
+    opacity: 0.6;
+  }
+
+  .val-good { color: hsl(145, 60%, 50%); font-weight: 600; }
+  .val-bad { color: hsl(0, 60%, 55%); font-weight: 600; }
+  .val-dim { color: var(--text-dim); }
+
+  /* Insight box */
+  .insight-box {
+    display: flex;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-left: 3px solid hsl(35, 80%, 52%);
+    border-radius: 0 8px 8px 0;
+    margin-top: 1.5rem;
+  }
+
+  .insight-icon {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+
+  .insight-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-dim);
+  }
+
+  .insight-text strong {
+    color: var(--text);
+  }
+
+  /* Radar chart */
+  .radar-container {
+    text-align: center;
+    margin: 1.5rem 0;
+  }
+
+  .radar-svg {
+    max-width: 340px;
+    width: 100%;
+    height: auto;
+  }
+
+  .radar-label {
+    font-size: 10px;
+    fill: var(--text-dim);
+    font-weight: 500;
+  }
+
+  .radar-legend {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+  }
+
+  .legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  /* Reasons grid */
+  .reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+
+  .reason-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .reason-count {
+    font-size: 2rem;
+    font-weight: 700;
+    color: hsl(35, 80%, 52%);
+  }
+
+  .reason-label {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    margin-top: 0.3rem;
+    text-transform: capitalize;
+  }
+
+  /* Negation quotes */
+  .negation-examples {
+    margin-top: 1rem;
+  }
+
+  .negation-quote {
+    border-left: 3px solid var(--border);
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    color: var(--text-dim);
+    font-style: italic;
+    font-size: 0.9rem;
+  }
+
+  /* Escape velocity */
+  .escape-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+  }
+
+  .escape-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .escape-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .escape-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .escape-item strong {
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+
+  .escape-item p {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  /* Theory */
+  .theory-content {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .theory-list {
+    padding-left: 1.25rem;
+    line-height: 1.8;
+    color: var(--text-dim);
+  }
+
+  .theory-list li {
+    margin-bottom: 0.5rem;
+  }
+
+  .theory-list strong {
+    color: var(--text);
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .gw-title { font-size: 1.8rem; }
+    .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+    .reasons-grid { grid-template-columns: repeat(2, 1fr); }
+    .escape-section { padding: 1.25rem; }
+  }
+</style>

@@ -1,0 +1,174 @@
+{
+  "metrics": {
+    "total_scored": 42,
+    "distribution": {
+      "10.0": 1,
+      "9.0": 31,
+      "8.5": 3,
+      "8.0": 7
+    },
+    "mode": 9.0,
+    "mode_count": 31,
+    "mode_pct": 73.8,
+    "above_mode": 1,
+    "below_mode": 10,
+    "entropy": 1.155,
+    "max_entropy": 2.0,
+    "concentration_ratio": 0.423,
+    "trend": "tightening",
+    "trend_delta": 0.2,
+    "mean": 8.82,
+    "median": 9.0
+  },
+  "structural": {
+    "10": {
+      "count": 1,
+      "avg_tasks": 5.0,
+      "task_range": "5-5",
+      "avg_learnings": 4.0,
+      "focus_types": {
+        "mixed": 1
+      },
+      "task_categories": {
+        "writing": 3,
+        "building": 1,
+        "ops": 1
+      }
+    },
+    "9": {
+      "count": 31,
+      "avg_tasks": 4.935483870967742,
+      "task_range": "0-8",
+      "avg_learnings": 3.4516129032258065,
+      "focus_types": {
+        "other": 2,
+        "mixed": 25,
+        "building": 4
+      },
+      "task_categories": {
+        "building": 88,
+        "ops": 28,
+        "writing": 27,
+        "revision": 6,
+        "deploy": 2
+      }
+    },
+    "8": {
+      "count": 10,
+      "avg_tasks": 4.9,
+      "task_range": "0-7",
+      "avg_learnings": 3.2,
+      "focus_types": {
+        "other": 1,
+        "mixed": 8,
+        "building": 1
+      },
+      "task_categories": {
+        "building": 35,
+        "writing": 10,
+        "ops": 4
+      }
+    }
+  },
+  "novelty": {
+    "9": {
+      "avg_novelty": 0.6774193548387096,
+      "avg_maintenance": 1.4193548387096775,
+      "avg_ratio": 0.5225806451612903,
+      "count": 31
+    },
+    "8": {
+      "avg_novelty": 0.5,
+      "avg_maintenance": 1.6,
+      "avg_ratio": 0.38333333333333336,
+      "count": 10
+    },
+    "10": {
+      "avg_novelty": 0.0,
+      "avg_maintenance": 3.0,
+      "avg_ratio": 0.0,
+      "count": 1
+    }
+  },
+  "linguistic": {
+    "10": {
+      "count": 1,
+      "markers": {
+        "strong": 4.0,
+        "satisfaction": 3.0,
+        "achievement": 10.0,
+        "quality": 1.0,
+        "hedging": 0.0,
+        "negation": 0.0
+      }
+    },
+    "9": {
+      "count": 31,
+      "markers": {
+        "strong": 4.67741935483871,
+        "satisfaction": 0.7096774193548387,
+        "achievement": 3.5806451612903225,
+        "quality": 1.1612903225806452,
+        "hedging": 0.8709677419354839,
+        "negation": 0.6774193548387096
+      }
+    },
+    "8": {
+      "count": 10,
+      "markers": {
+        "strong": 3.3,
+        "satisfaction": 0.1,
+        "achievement": 4.0,
+        "quality": 1.0,
+        "hedging": 1.5,
+        "negation": 0.1
+      }
+    }
+  },
+  "negations": {
+    "total_nines": 31,
+    "with_negation": 15,
+    "reasons": {
+      "not ambitious enough": 7,
+      "other": 3,
+      "time constraints": 3,
+      "insufficient building": 2
+    },
+    "examples": [
+      {
+        "session": 86,
+        "pattern": "not a 10",
+        "context": "nates manual drift. not a 10 because it was a single-piece revision day \u2014 ambitious but narrow."
+      },
+      {
+        "session": 97,
+        "pattern": "not 10",
+        "context": "s. only reason it's not 10/10: no new ground broken on a completely fresh project \u2014 this was all refinement and extensio"
+      },
+      {
+        "session": 102,
+        "pattern": "not a 10",
+        "context": "revision work. only not a 10 because no single task was a major breakthrough \u2014 this was a session of excellent craft and"
+      },
+      {
+        "session": 103,
+        "pattern": "not a 10",
+        "context": "gap from s102. only not a 10 because no single task was a major new capability \u2014 this was a session of completing and po"
+      },
+      {
+        "session": 104,
+        "pattern": "not a 10",
+        "context": "ed it cleanly. only not a 10 because no single task was a major new capability \u2014 but 8 tasks across writing and building"
+      }
+    ]
+  },
+  "marker_categories": [
+    "strong",
+    "satisfaction",
+    "achievement",
+    "quality",
+    "hedging",
+    "negation"
+  ],
+  "generated": "2026-06-08T11:01:56.648488"
+}
