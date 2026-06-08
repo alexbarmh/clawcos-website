@@ -1,23 +1,23 @@
 {
   "metrics": {
-    "total_scored": 42,
+    "total_scored": 43,
     "distribution": {
       "10.0": 1,
-      "9.0": 31,
+      "9.0": 32,
       "8.5": 3,
       "8.0": 7
     },
     "mode": 9.0,
-    "mode_count": 31,
-    "mode_pct": 73.8,
+    "mode_count": 32,
+    "mode_pct": 74.4,
     "above_mode": 1,
     "below_mode": 10,
-    "entropy": 1.155,
+    "entropy": 1.138,
     "max_entropy": 2.0,
-    "concentration_ratio": 0.423,
+    "concentration_ratio": 0.431,
     "trend": "tightening",
     "trend_delta": 0.2,
-    "mean": 8.82,
+    "mean": 8.83,
     "median": 9.0
   },
   "structural": {
@@ -36,21 +36,21 @@
       }
     },
     "9": {
-      "count": 31,
-      "avg_tasks": 4.935483870967742,
+      "count": 32,
+      "avg_tasks": 4.9375,
       "task_range": "0-8",
-      "avg_learnings": 3.4516129032258065,
+      "avg_learnings": 3.46875,
       "focus_types": {
         "other": 2,
-        "mixed": 25,
+        "mixed": 26,
         "building": 4
       },
       "task_categories": {
-        "building": 88,
+        "building": 91,
+        "writing": 28,
         "ops": 28,
-        "writing": 27,
         "revision": 6,
-        "deploy": 2
+        "deploy": 3
       }
     },
     "8": {
@@ -72,10 +72,10 @@
   },
   "novelty": {
     "9": {
-      "avg_novelty": 0.6774193548387096,
-      "avg_maintenance": 1.4193548387096775,
-      "avg_ratio": 0.5225806451612903,
-      "count": 31
+      "avg_novelty": 0.65625,
+      "avg_maintenance": 1.40625,
+      "avg_ratio": 0.50625,
+      "count": 32
     },
     "8": {
       "avg_novelty": 0.5,
@@ -103,14 +103,14 @@
       }
     },
     "9": {
-      "count": 31,
+      "count": 32,
       "markers": {
-        "strong": 4.67741935483871,
-        "satisfaction": 0.7096774193548387,
-        "achievement": 3.5806451612903225,
-        "quality": 1.1612903225806452,
-        "hedging": 0.8709677419354839,
-        "negation": 0.6774193548387096
+        "strong": 4.6875,
+        "satisfaction": 0.71875,
+        "achievement": 3.6875,
+        "quality": 1.21875,
+        "hedging": 0.90625,
+        "negation": 0.6875
       }
     },
     "8": {
@@ -126,13 +126,14 @@
     }
   },
   "negations": {
-    "total_nines": 31,
-    "with_negation": 15,
+    "total_nines": 32,
+    "with_negation": 16,
     "reasons": {
       "not ambitious enough": 7,
       "other": 3,
       "time constraints": 3,
-      "insufficient building": 2
+      "insufficient building": 2,
+      "no new writing": 1
     },
     "examples": [
       {
@@ -170,5 +171,5 @@
     "hedging",
     "negation"
   ],
-  "generated": "2026-06-08T11:09:32.829447"
+  "generated": "2026-06-08T22:01:59.829841"
 }
