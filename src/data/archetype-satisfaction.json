@@ -1,27 +1,27 @@
 {
-  "generated": "2026-06-09T11:09:25.102351Z",
+  "generated": "2026-06-09T22:02:58.101890Z",
   "total_sessions": 90,
   "avg_satisfaction": 8.76,
   "overall_regression": {
-    "r_squared": 0.1134,
+    "r_squared": 0.1145,
     "components": [
       "depth",
       "flow",
       "consistency"
     ],
     "importance": {
-      "depth": 0.0906,
-      "flow": 0.0114,
-      "consistency": 0.0114
+      "depth": 0.0926,
+      "flow": 0.0116,
+      "consistency": 0.0104
     },
     "correlations": {
-      "productivity": 0.0748,
-      "ambition": 0.0463,
-      "depth": 0.301,
+      "productivity": 0.0817,
+      "ambition": 0.0369,
+      "depth": 0.3043,
       "growth": 0.0,
-      "variety": 0.0245,
-      "flow": -0.0996,
-      "consistency": 0.0166
+      "variety": 0.033,
+      "flow": -0.1013,
+      "consistency": 0.0103
     }
   },
   "sweet_spots": {
@@ -45,7 +45,7 @@
             90,
             90
           ],
-          "avg_satisfaction": 8.83,
+          "avg_satisfaction": 8.81,
           "n": 18
         },
         {
@@ -53,7 +53,7 @@
             90,
             100
           ],
-          "avg_satisfaction": 8.86,
+          "avg_satisfaction": 8.89,
           "n": 18
         },
         {
@@ -73,7 +73,7 @@
           "n": 18
         }
       ],
-      "correlation": 0.0748
+      "correlation": 0.0817
     },
     "ambition": {
       "optimal_range": [
@@ -123,14 +123,14 @@
           "n": 18
         }
       ],
-      "correlation": 0.0463
+      "correlation": 0.0369
     },
     "depth": {
       "optimal_range": [
         100,
         100
       ],
-      "optimal_avg_satisfaction": 8.93,
+      "optimal_avg_satisfaction": 8.98,
       "bins": [
         {
           "range": [
@@ -173,7 +173,7 @@
           "n": 18
         }
       ],
-      "correlation": 0.301
+      "correlation": 0.3043
     },
     "growth": {
       "optimal_range": [
@@ -273,7 +273,7 @@
           "n": 18
         }
       ],
-      "correlation": 0.0245
+      "correlation": 0.033
     },
     "flow": {
       "optimal_range": [
@@ -293,9 +293,9 @@
         {
           "range": [
             55.0,
-            70.0
+            68.5
           ],
-          "avg_satisfaction": 8.83,
+          "avg_satisfaction": 8.89,
           "n": 18
         },
         {
@@ -303,7 +303,7 @@
             70.0,
             75.0
           ],
-          "avg_satisfaction": 8.81,
+          "avg_satisfaction": 8.75,
           "n": 18
         },
         {
@@ -323,12 +323,12 @@
           "n": 18
         }
       ],
-      "correlation": -0.0996
+      "correlation": -0.1013
     },
     "consistency": {
       "optimal_range": [
         73.3,
-        78.3
+        78.2
       ],
       "optimal_avg_satisfaction": 8.95,
       "bins": [
@@ -351,29 +351,29 @@
         {
           "range": [
             75.8,
-            80.1
+            80.0
           ],
           "avg_satisfaction": 8.83,
           "n": 18
         },
         {
           "range": [
-            81.5,
+            80.1,
             86.9
           ],
-          "avg_satisfaction": 8.67,
+          "avg_satisfaction": 8.72,
           "n": 18
         },
         {
           "range": [
-            87.1,
+            86.9,
             100
           ],
-          "avg_satisfaction": 8.72,
+          "avg_satisfaction": 8.67,
           "n": 18
         }
       ],
-      "correlation": 0.0166
+      "correlation": 0.0103
     }
   },
   "interactions": [
@@ -382,20 +382,20 @@
         "ambition",
         "depth"
       ],
-      "interaction": -0.682,
+      "interaction": -0.614,
       "direction": "antagonism",
       "quadrants": {
         "HH": {
-          "mean": 8.71,
-          "n": 21
+          "mean": 8.76,
+          "n": 25
         },
         "HL": {
-          "mean": 8.71,
-          "n": 24
+          "mean": 8.7,
+          "n": 23
         },
         "LH": {
-          "mean": 8.89,
-          "n": 40
+          "mean": 8.88,
+          "n": 37
         },
         "LL": {
           "mean": 8.2,
@@ -410,20 +410,20 @@
         "depth",
         "consistency"
       ],
-      "interaction": -0.536,
+      "interaction": -0.51,
       "direction": "antagonism",
       "quadrants": {
         "HH": {
-          "mean": 8.71,
-          "n": 24
+          "mean": 8.72,
+          "n": 25
         },
         "HL": {
           "mean": 8.91,
           "n": 37
         },
         "LH": {
-          "mean": 8.71,
-          "n": 21
+          "mean": 8.7,
+          "n": 20
         },
         "LL": {
           "mean": 8.38,
@@ -435,66 +435,10 @@
     },
     {
       "pair": [
-        "ambition",
-        "consistency"
-      ],
-      "interaction": -0.319,
-      "direction": "antagonism",
-      "quadrants": {
-        "HH": {
-          "mean": 8.67,
-          "n": 36
-        },
-        "HL": {
-          "mean": 8.89,
-          "n": 9
-        },
-        "LH": {
-          "mean": 8.89,
-          "n": 9
-        },
-        "LL": {
-          "mean": 8.79,
-          "n": 36
-        }
-      },
-      "min_group_size": 9,
-      "reliable": false
-    },
-    {
-      "pair": [
-        "variety",
-        "consistency"
-      ],
-      "interaction": -0.313,
-      "direction": "antagonism",
-      "quadrants": {
-        "HH": {
-          "mean": 8.65,
-          "n": 23
-        },
-        "HL": {
-          "mean": 8.87,
-          "n": 31
-        },
-        "LH": {
-          "mean": 8.77,
-          "n": 22
-        },
-        "LL": {
-          "mean": 8.68,
-          "n": 14
-        }
-      },
-      "min_group_size": 14,
-      "reliable": true
-    },
-    {
-      "pair": [
         "depth",
         "flow"
       ],
-      "interaction": 0.291,
+      "interaction": 0.268,
       "direction": "synergy",
       "quadrants": {
         "HH": {
@@ -502,16 +446,16 @@
           "n": 34
         },
         "HL": {
-          "mean": 8.81,
-          "n": 27
+          "mean": 8.82,
+          "n": 28
         },
         "LH": {
           "mean": 8.45,
           "n": 11
         },
         "LL": {
-          "mean": 8.72,
-          "n": 18
+          "mean": 8.71,
+          "n": 17
         }
       },
       "min_group_size": 11,
@@ -519,23 +463,79 @@
     },
     {
       "pair": [
+        "variety",
+        "consistency"
+      ],
+      "interaction": -0.262,
+      "direction": "antagonism",
+      "quadrants": {
+        "HH": {
+          "mean": 8.67,
+          "n": 24
+        },
+        "HL": {
+          "mean": 8.87,
+          "n": 30
+        },
+        "LH": {
+          "mean": 8.76,
+          "n": 21
+        },
+        "LL": {
+          "mean": 8.7,
+          "n": 15
+        }
+      },
+      "min_group_size": 15,
+      "reliable": true
+    },
+    {
+      "pair": [
+        "ambition",
+        "consistency"
+      ],
+      "interaction": -0.238,
+      "direction": "antagonism",
+      "quadrants": {
+        "HH": {
+          "mean": 8.69,
+          "n": 39
+        },
+        "HL": {
+          "mean": 8.89,
+          "n": 9
+        },
+        "LH": {
+          "mean": 8.83,
+          "n": 6
+        },
+        "LL": {
+          "mean": 8.79,
+          "n": 36
+        }
+      },
+      "min_group_size": 6,
+      "reliable": false
+    },
+    {
+      "pair": [
         "productivity",
         "consistency"
       ],
-      "interaction": 0.203,
+      "interaction": 0.227,
       "direction": "synergy",
       "quadrants": {
         "HH": {
-          "mean": 8.79,
-          "n": 19
+          "mean": 8.8,
+          "n": 20
         },
         "HL": {
           "mean": 8.79,
           "n": 28
         },
         "LH": {
-          "mean": 8.65,
-          "n": 26
+          "mean": 8.64,
+          "n": 25
         },
         "LL": {
           "mean": 8.85,
@@ -550,7 +550,7 @@
         "depth",
         "variety"
       ],
-      "interaction": -0.181,
+      "interaction": -0.226,
       "direction": "antagonism",
       "quadrants": {
         "HH": {
@@ -559,18 +559,18 @@
         },
         "HL": {
           "mean": 8.85,
-          "n": 23
+          "n": 24
         },
         "LH": {
           "mean": 8.69,
           "n": 16
         },
         "LL": {
-          "mean": 8.54,
-          "n": 13
+          "mean": 8.5,
+          "n": 12
         }
       },
-      "min_group_size": 13,
+      "min_group_size": 12,
       "reliable": true
     },
     {
@@ -578,27 +578,27 @@
         "flow",
         "consistency"
       ],
-      "interaction": 0.177,
+      "interaction": 0.22,
       "direction": "synergy",
       "quadrants": {
         "HH": {
-          "mean": 8.74,
-          "n": 23
+          "mean": 8.75,
+          "n": 24
         },
         "HL": {
-          "mean": 8.75,
-          "n": 22
+          "mean": 8.74,
+          "n": 21
         },
         "LH": {
-          "mean": 8.68,
-          "n": 22
+          "mean": 8.67,
+          "n": 21
         },
         "LL": {
-          "mean": 8.87,
-          "n": 23
+          "mean": 8.88,
+          "n": 24
         }
       },
-      "min_group_size": 22,
+      "min_group_size": 21,
       "reliable": true
     },
     {
@@ -606,12 +606,12 @@
         "productivity",
         "depth"
       ],
-      "interaction": -0.164,
+      "interaction": -0.183,
       "direction": "antagonism",
       "quadrants": {
         "HH": {
-          "mean": 8.81,
-          "n": 37
+          "mean": 8.82,
+          "n": 38
         },
         "HL": {
           "mean": 8.7,
@@ -622,8 +622,8 @@
           "n": 24
         },
         "LL": {
-          "mean": 8.58,
-          "n": 19
+          "mean": 8.56,
+          "n": 18
         }
       },
       "min_group_size": 10,
@@ -632,9 +632,37 @@
     {
       "pair": [
         "productivity",
+        "variety"
+      ],
+      "interaction": -0.127,
+      "direction": "antagonism",
+      "quadrants": {
+        "HH": {
+          "mean": 8.79,
+          "n": 28
+        },
+        "HL": {
+          "mean": 8.8,
+          "n": 20
+        },
+        "LH": {
+          "mean": 8.77,
+          "n": 26
+        },
+        "LL": {
+          "mean": 8.66,
+          "n": 16
+        }
+      },
+      "min_group_size": 16,
+      "reliable": true
+    },
+    {
+      "pair": [
+        "productivity",
         "flow"
       ],
-      "interaction": 0.135,
+      "interaction": 0.115,
       "direction": "synergy",
       "quadrants": {
         "HH": {
@@ -642,16 +670,16 @@
           "n": 25
         },
         "HL": {
-          "mean": 8.77,
-          "n": 22
+          "mean": 8.78,
+          "n": 23
         },
         "LH": {
           "mean": 8.68,
           "n": 20
         },
         "LL": {
-          "mean": 8.78,
-          "n": 23
+          "mean": 8.77,
+          "n": 22
         }
       },
       "min_group_size": 20,
@@ -660,85 +688,29 @@
     {
       "pair": [
         "ambition",
-        "variety"
+        "flow"
       ],
-      "interaction": -0.12,
-      "direction": "antagonism",
-      "quadrants": {
-        "HH": {
-          "mean": 8.7,
-          "n": 27
-        },
-        "HL": {
-          "mean": 8.72,
-          "n": 18
-        },
-        "LH": {
-          "mean": 8.85,
-          "n": 27
-        },
-        "LL": {
-          "mean": 8.75,
-          "n": 18
-        }
-      },
-      "min_group_size": 18,
-      "reliable": true
-    },
-    {
-      "pair": [
-        "productivity",
-        "ambition"
-      ],
-      "interaction": 0.119,
+      "interaction": 0.096,
       "direction": "synergy",
       "quadrants": {
         "HH": {
-          "mean": 8.76,
-          "n": 17
+          "mean": 8.72,
+          "n": 18
         },
         "HL": {
-          "mean": 8.8,
+          "mean": 8.73,
           "n": 30
         },
         "LH": {
-          "mean": 8.68,
-          "n": 28
+          "mean": 8.76,
+          "n": 27
         },
         "LL": {
-          "mean": 8.83,
+          "mean": 8.87,
           "n": 15
         }
       },
       "min_group_size": 15,
-      "reliable": true
-    },
-    {
-      "pair": [
-        "productivity",
-        "variety"
-      ],
-      "interaction": -0.097,
-      "direction": "antagonism",
-      "quadrants": {
-        "HH": {
-          "mean": 8.79,
-          "n": 28
-        },
-        "HL": {
-          "mean": 8.79,
-          "n": 19
-        },
-        "LH": {
-          "mean": 8.77,
-          "n": 26
-        },
-        "LL": {
-          "mean": 8.68,
-          "n": 17
-        }
-      },
-      "min_group_size": 17,
       "reliable": true
     },
     {
@@ -772,29 +744,57 @@
     {
       "pair": [
         "ambition",
-        "flow"
+        "variety"
       ],
-      "interaction": 0.017,
-      "direction": "synergy",
+      "interaction": -0.072,
+      "direction": "antagonism",
       "quadrants": {
         "HH": {
-          "mean": 8.67,
-          "n": 15
-        },
-        "HL": {
           "mean": 8.73,
           "n": 30
         },
+        "HL": {
+          "mean": 8.72,
+          "n": 18
+        },
         "LH": {
+          "mean": 8.83,
+          "n": 24
+        },
+        "LL": {
+          "mean": 8.75,
+          "n": 18
+        }
+      },
+      "min_group_size": 18,
+      "reliable": true
+    },
+    {
+      "pair": [
+        "productivity",
+        "ambition"
+      ],
+      "interaction": 0.069,
+      "direction": "synergy",
+      "quadrants": {
+        "HH": {
           "mean": 8.78,
+          "n": 18
+        },
+        "HL": {
+          "mean": 8.8,
+          "n": 30
+        },
+        "LH": {
+          "mean": 8.7,
           "n": 30
         },
         "LL": {
-          "mean": 8.87,
-          "n": 15
+          "mean": 8.79,
+          "n": 12
         }
       },
-      "min_group_size": 15,
+      "min_group_size": 12,
       "reliable": true
     }
   ],
@@ -916,10 +916,10 @@
         10.0
       ],
       "top_predictor": "depth",
-      "r_squared": 0.107,
+      "r_squared": 0.1069,
       "importance": {
-        "depth": 0.083,
-        "variety": 0.024
+        "depth": 0.0858,
+        "variety": 0.0211
       }
     },
     "writing": {
@@ -963,17 +963,17 @@
       "top_predictors": [
         "ambition",
         "flow",
-        "productivity"
+        "variety"
       ],
-      "r_squared": 0.2433,
+      "r_squared": 0.2306,
       "correlations": {
-        "productivity": -0.254,
-        "ambition": 0.38,
-        "depth": 0.26,
+        "productivity": -0.23,
+        "ambition": 0.361,
+        "depth": 0.275,
         "growth": 0.0,
-        "variety": 0.027,
-        "flow": -0.351,
-        "consistency": 0.312
+        "variety": 0.049,
+        "flow": -0.359,
+        "consistency": 0.303
       }
     },
     "recent": {
@@ -1006,14 +1006,14 @@
     },
     {
       "icon": "\ud83c\udfaf",
-      "text": "Keep depth in the 100-100 range (avg sat 8.9/10 there, r=+0.301)",
-      "priority": 0.301,
+      "text": "Keep depth in the 100-100 range (avg sat 9.0/10 there, r=+0.304)",
+      "priority": 0.3043,
       "type": "sweet_spot"
     },
     {
       "icon": "\ud83e\udd1d",
       "text": "Maximize depth and flow together \u2014 they have synergy (both high \u2192 8.8/10 avg satisfaction)",
-      "priority": 0.291,
+      "priority": 0.268,
       "type": "synergy"
     },
     {

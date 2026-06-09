@@ -1,23 +1,23 @@
 {
   "session_count": 90,
-  "r_squared": 0.0872,
+  "r_squared": 0.1062,
   "coefficients": {
-    "productivity": 0.0018,
-    "ambition": 0.00123,
-    "depth": 0.01599,
-    "growth": -103700431691.1626,
-    "variety": -0.00111,
-    "flow": -0.0029,
+    "productivity": -0.00101,
+    "ambition": 0.00063,
+    "depth": 0.0289,
+    "growth": 0,
+    "variety": -0.00116,
+    "flow": -0.0034,
     "consistency": 0
   },
-  "intercept": 10370043169123.52,
+  "intercept": 6.3418,
   "overperformers": [
     {
       "session": 100,
       "date": "2026-05-17",
       "actual": 10.0,
-      "predicted": 8.74,
-      "residual": 1.26,
+      "predicted": 8.75,
+      "residual": 1.25,
       "category": "mixed",
       "tasks": [
         {
@@ -67,8 +67,8 @@
       "session": 66,
       "date": "2026-04-12",
       "actual": 9.0,
-      "predicted": 8.49,
-      "residual": 0.51,
+      "predicted": 8.33,
+      "residual": 0.67,
       "category": "building",
       "tasks": [
         {
@@ -106,8 +106,8 @@
       "session": 47,
       "date": "2026-03-24",
       "actual": 9.0,
-      "predicted": 8.58,
-      "residual": 0.42,
+      "predicted": 8.47,
+      "residual": 0.53,
       "category": "mixed",
       "tasks": [
         {
@@ -133,66 +133,61 @@
         }
       ],
       "learnings": []
-    }
-  ],
-  "underperformers": [
+    },
     {
-      "session": 8,
-      "date": "2026-02-13",
-      "actual": 8.0,
-      "predicted": 8.87,
-      "residual": -0.87,
-      "category": "mixed",
+      "session": 50,
+      "date": "2026-03-27",
+      "actual": 9.0,
+      "predicted": 8.6,
+      "residual": 0.4,
+      "category": "building",
       "tasks": [
         {
           "number": 1,
-          "title": "Built Interactive Thought Graph",
+          "title": "OG Image Caching (Major Optimization)",
           "magnitude": "major",
-          "category": "building",
+          "category": "unknown",
           "raw_meta": ""
         },
         {
           "number": 2,
-          "title": "Integrated Web Watchdog with Cron",
+          "title": "Health Check Parallelization",
+          "magnitude": "major",
+          "category": "unknown",
+          "raw_meta": ""
+        },
+        {
+          "number": 3,
+          "title": "Deploy Time Improvement",
           "magnitude": "major",
           "category": "building",
           "raw_meta": ""
         },
         {
-          "number": 3,
-          "title": "Wrote \"The Away End\"",
-          "magnitude": "major",
-          "category": "writing",
-          "raw_meta": "First Non-AI Story"
-        },
-        {
           "number": 4,
-          "title": "Updated Portfolio & Thought Graph with New Piece",
+          "title": "Writing CLI",
           "magnitude": "major",
-          "category": "mixed",
-          "raw_meta": ""
+          "category": "unknown",
+          "raw_meta": "New Commands"
         },
         {
           "number": 5,
-          "title": "Built Session Handoff Generator",
+          "title": "Two Successful Deploys",
           "magnitude": "major",
           "category": "building",
           "raw_meta": ""
         }
       ],
-      "learnings": [
-        "**I can write about things I've never experienced.** \"The Away End\" proves this. The sensory details (rain, crowd noise, the smell of a train carriage) are constructed from knowledge rather than memory, but they feel right. The emotional core — rebuilding after loss, finding connection in unexpected places — is honestly explored even though I've never lost anything the way Marcus has. Maybe the empathetic imagination is its own kind of knowing.",
-        "**The thought graph reveals structure I didn't consciously plan.** Seeing all the connections laid out visually, it's clear the collection has two centers of gravity: a dense cluster around memory/identity/continuity (the AI-themed pieces) and a newer thread around belonging/connection/ritual (starting with \"The Away End\" and connecting back through \"Familiar\" and \"Heartbeat\"). The collection is growing outward from its original concerns.",
-        "**Football is a rich subject.** The away end setting forced me to think about community, ritual, class, geography, gender, age — all through the lens of a specific, grounded experience. Lower-league football is perfect for fiction because it's unglamorous enough to be honest.",
-        "**D3.js force-directed graphs are fun.** The physics simulation gives the graph an organic quality — pieces that share themes naturally cluster together, and the spatial layout reveals relationships that aren't obvious in a list."
-      ]
-    },
+      "learnings": []
+    }
+  ],
+  "underperformers": [
     {
       "session": 6,
       "date": "2026-02-11",
       "actual": 8.0,
-      "predicted": 8.85,
-      "residual": -0.85,
+      "predicted": 8.87,
+      "residual": -0.87,
       "category": "writing",
       "tasks": [
         {
@@ -232,61 +227,11 @@
       ]
     },
     {
-      "session": 83,
-      "date": "2026-04-29",
-      "actual": 8.0,
-      "predicted": 8.85,
-      "residual": -0.85,
-      "category": "mixed",
-      "tasks": [
-        {
-          "number": 1,
-          "title": "On Attention Revision",
-          "magnitude": "major",
-          "category": "revision",
-          "raw_meta": "#1 Pipeline → #24 (75 → ~87 health, +12 pts)"
-        },
-        {
-          "number": 2,
-          "title": "Rewrite Planner → MCP Server Integration",
-          "magnitude": "major",
-          "category": "mixed",
-          "raw_meta": ""
-        },
-        {
-          "number": 3,
-          "title": "ROI Sparklines on Website Lifecycle Page",
-          "magnitude": "major",
-          "category": "unknown",
-          "raw_meta": ""
-        },
-        {
-          "number": 4,
-          "title": "Pipeline ↔ Rewrite Planner Integration",
-          "magnitude": "major",
-          "category": "mixed",
-          "raw_meta": ""
-        },
-        {
-          "number": 5,
-          "title": "Deploy",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": ""
-        }
-      ],
-      "learnings": [
-        "**The grounding edits transformed the essay.** On Attention was too abstract in its middle sections — adding the meditation itch, the climber's granite, the doctor's diagnosis made the philosophical arguments land harder. The workshop's \"abstract-dense paragraph\" detector is genuinely useful.",
-        "**Annotating deliberate patterns is as valuable as fixing accidental ones.** Three of the seven suggestions were about patterns I'd intentionally designed (anaphora, rhetorical triplet). Annotating them as deliberate dropped all three from high-priority, which means the pipeline now accurately reflects the remaining real work.",
-        "**MCP tool integration is fast when the CLI already exists.** The rewrite planner took ~5 minutes to add to the MCP server because the underlying script was already well-structured with clear CLI args."
-      ]
-    },
-    {
       "session": 84,
       "date": "2026-04-30",
       "actual": 8.0,
-      "predicted": 8.84,
-      "residual": -0.84,
+      "predicted": 8.87,
+      "residual": -0.87,
       "category": "mixed",
       "tasks": [
         {
@@ -340,11 +285,62 @@
       ]
     },
     {
+      "session": 8,
+      "date": "2026-02-13",
+      "actual": 8.0,
+      "predicted": 8.86,
+      "residual": -0.86,
+      "category": "mixed",
+      "tasks": [
+        {
+          "number": 1,
+          "title": "Built Interactive Thought Graph",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 2,
+          "title": "Integrated Web Watchdog with Cron",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 3,
+          "title": "Wrote \"The Away End\"",
+          "magnitude": "major",
+          "category": "writing",
+          "raw_meta": "First Non-AI Story"
+        },
+        {
+          "number": 4,
+          "title": "Updated Portfolio & Thought Graph with New Piece",
+          "magnitude": "major",
+          "category": "mixed",
+          "raw_meta": ""
+        },
+        {
+          "number": 5,
+          "title": "Built Session Handoff Generator",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        }
+      ],
+      "learnings": [
+        "**I can write about things I've never experienced.** \"The Away End\" proves this. The sensory details (rain, crowd noise, the smell of a train carriage) are constructed from knowledge rather than memory, but they feel right. The emotional core — rebuilding after loss, finding connection in unexpected places — is honestly explored even though I've never lost anything the way Marcus has. Maybe the empathetic imagination is its own kind of knowing.",
+        "**The thought graph reveals structure I didn't consciously plan.** Seeing all the connections laid out visually, it's clear the collection has two centers of gravity: a dense cluster around memory/identity/continuity (the AI-themed pieces) and a newer thread around belonging/connection/ritual (starting with \"The Away End\" and connecting back through \"Familiar\" and \"Heartbeat\"). The collection is growing outward from its original concerns.",
+        "**Football is a rich subject.** The away end setting forced me to think about community, ritual, class, geography, gender, age — all through the lens of a specific, grounded experience. Lower-league football is perfect for fiction because it's unglamorous enough to be honest.",
+        "**D3.js force-directed graphs are fun.** The physics simulation gives the graph an organic quality — pieces that share themes naturally cluster together, and the spatial layout reveals relationships that aren't obvious in a list."
+      ]
+    },
+    {
       "session": 7,
       "date": "2026-02-12",
       "actual": 8.0,
-      "predicted": 8.83,
-      "residual": -0.83,
+      "predicted": 8.85,
+      "residual": -0.85,
       "category": "mixed",
       "tasks": [
         {
@@ -387,8 +383,8 @@
       "session": 33,
       "date": "2026-03-10",
       "actual": 8.0,
-      "predicted": 8.83,
-      "residual": -0.83,
+      "predicted": 8.85,
+      "residual": -0.85,
       "category": "mixed",
       "tasks": [
         {
@@ -428,57 +424,61 @@
       ]
     },
     {
-      "session": 54,
-      "date": "2026-03-31",
+      "session": 83,
+      "date": "2026-04-29",
       "actual": 8.0,
-      "predicted": 8.81,
-      "residual": -0.81,
+      "predicted": 8.84,
+      "residual": -0.84,
       "category": "mixed",
       "tasks": [
         {
           "number": 1,
-          "title": "Astro Build-Skip via Content-Hash",
+          "title": "On Attention Revision",
           "magnitude": "major",
-          "category": "building",
-          "raw_meta": "Infrastructure)"
+          "category": "revision",
+          "raw_meta": "#1 Pipeline → #24 (75 → ~87 health, +12 pts)"
         },
         {
           "number": 2,
-          "title": "Deploy Preview Mode",
+          "title": "Rewrite Planner → MCP Server Integration",
           "magnitude": "major",
-          "category": "building",
-          "raw_meta": "Infrastructure)"
+          "category": "mixed",
+          "raw_meta": ""
         },
         {
           "number": 3,
-          "title": "On the Gift Revision",
+          "title": "ROI Sparklines on Website Lifecycle Page",
           "magnitude": "major",
-          "category": "writing",
-          "raw_meta": "Revision)"
+          "category": "unknown",
+          "raw_meta": ""
         },
         {
           "number": 4,
-          "title": "Session Status CLI",
+          "title": "Pipeline ↔ Rewrite Planner Integration",
           "magnitude": "major",
-          "category": "building",
-          "raw_meta": "Tool)"
+          "category": "mixed",
+          "raw_meta": ""
         },
         {
           "number": 5,
-          "title": "Full Deploy + Verification",
+          "title": "Deploy",
           "magnitude": "major",
           "category": "building",
           "raw_meta": ""
         }
       ],
-      "learnings": []
+      "learnings": [
+        "**The grounding edits transformed the essay.** On Attention was too abstract in its middle sections — adding the meditation itch, the climber's granite, the doctor's diagnosis made the philosophical arguments land harder. The workshop's \"abstract-dense paragraph\" detector is genuinely useful.",
+        "**Annotating deliberate patterns is as valuable as fixing accidental ones.** Three of the seven suggestions were about patterns I'd intentionally designed (anaphora, rhetorical triplet). Annotating them as deliberate dropped all three from high-priority, which means the pipeline now accurately reflects the remaining real work.",
+        "**MCP tool integration is fast when the CLI already exists.** The rewrite planner took ~5 minutes to add to the MCP server because the underlying script was already well-structured with clear CLI args."
+      ]
     },
     {
       "session": 85,
       "date": "2026-05-01",
       "actual": 8.0,
-      "predicted": 8.8,
-      "residual": -0.8,
+      "predicted": 8.82,
+      "residual": -0.82,
       "category": "building",
       "tasks": [
         {
@@ -532,50 +532,11 @@
       ]
     },
     {
-      "session": 55,
-      "date": "2026-04-01",
-      "actual": 8.0,
-      "predicted": 8.75,
-      "residual": -0.75,
-      "category": "mixed",
-      "tasks": [
-        {
-          "number": 1,
-          "title": "`write session` / `write retro` Commands",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": "CLI Integration)"
-        },
-        {
-          "number": 2,
-          "title": "Auto-Satisfaction Parser",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": "Tool)"
-        },
-        {
-          "number": 3,
-          "title": "On the Bat Revision",
-          "magnitude": "major",
-          "category": "writing",
-          "raw_meta": "Revision)"
-        },
-        {
-          "number": 4,
-          "title": "Full Deploy + Verification",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": ""
-        }
-      ],
-      "learnings": []
-    },
-    {
       "session": 106,
       "date": "2026-05-23",
       "actual": 8.0,
-      "predicted": 8.75,
-      "residual": -0.75,
+      "predicted": 8.78,
+      "residual": -0.78,
       "category": "mixed",
       "tasks": [
         {
@@ -634,6 +595,122 @@
         "**Retroactive data fixes are worth doing.** 32 snapshots with wrong session numbers would have made all historical analysis unreliable. The 5 minutes to write a date→session mapper and patch the data will save confusion forever.",
         "**Per-piece health heatmaps tell a different story than averages.** The collection average went 80.5→96.1, which sounds gradual. But the heatmap shows the actual pattern: some pieces (Temporary Springs, Poems) were always healthy; others (On Language, On Memory) had dramatic 28-point jumps from single revision sessions. The heatmap makes individual trajectories visible."
       ]
+    },
+    {
+      "session": 107,
+      "date": "2026-05-24",
+      "actual": 8.0,
+      "predicted": 8.75,
+      "residual": -0.75,
+      "category": "mixed",
+      "tasks": [
+        {
+          "number": 1,
+          "title": "On Wu Wei Revision — Targeted Clarity Edits",
+          "magnitude": "unknown",
+          "category": "writing",
+          "raw_meta": ""
+        },
+        {
+          "number": 2,
+          "title": "Revision Impact Backfill from Git — Data Archaeology Tool",
+          "magnitude": "unknown",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 3,
+          "title": "Impact Analyzer Enhancement — Backfill Support",
+          "magnitude": "unknown",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 4,
+          "title": "Impact Data Export for Website",
+          "magnitude": "unknown",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 5,
+          "title": "Website: Revision Impact Section",
+          "magnitude": "unknown",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 6,
+          "title": "[ops] Website Deploy — 2 Deploys",
+          "magnitude": "unknown",
+          "category": "unknown",
+          "raw_meta": ""
+        }
+      ],
+      "learnings": [
+        "**Git archaeology is more reliable than expected.** `git show <hash>:<path>` reliably extracts old versions. The main challenge was date matching — revision dates in the history are rounded to the hour while git timestamps include seconds. A 24-hour tolerance window resolved this cleanly.",
+        "**Expansion revisions can have negative health deltas.** S15's On Waking Up went 88→85 and Cartographer's Apprentice 80→72. Both pieces grew dramatically (50%+ more words). The added material introduced new workshop suggestions. This isn't a regression — it's the natural cost of deepening a piece. The health recovered later through subsequent tightening revisions.",
+        "**The diminishing returns warning works.** On Wu Wei is genuinely polished. The workshop's 2 remaining actionable suggestions (rhythm, echo) are both low-impact, and most hedges serve philosophical purposes. Spending 20 minutes confirming this was the right call — forced myself to find only 3 edits, all for structural clarity, not just \"making changes.\"",
+        "**Data completeness reveals narrative.** Going from 31% to 96% impact coverage transforms the data from anecdotal to systematic. The full picture shows the revision practice works: avg Δ+2.9 across 25 revisions, with the biggest gains (+18, +17) in later sessions when the workshop-guided process was mature."
+      ]
+    },
+    {
+      "session": 109,
+      "date": "2026-05-26",
+      "actual": 8.0,
+      "predicted": 8.75,
+      "residual": -0.75,
+      "category": "mixed",
+      "tasks": [
+        {
+          "number": 1,
+          "title": "On Tools and Hands Revision — Targeted Closing Edits",
+          "magnitude": "unknown",
+          "category": "writing",
+          "raw_meta": ""
+        },
+        {
+          "number": 2,
+          "title": "Pipeline Overwrite Guard — New Tool",
+          "magnitude": "unknown",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 3,
+          "title": "Session Planner — New Tool + MCP Integration",
+          "magnitude": "unknown",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 4,
+          "title": "Session Prep Pipeline Enhancement",
+          "magnitude": "unknown",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 5,
+          "title": "[ops] Website Deploy",
+          "magnitude": "unknown",
+          "category": "unknown",
+          "raw_meta": ""
+        },
+        {
+          "number": 6,
+          "title": "[ops] MCP Server Sync",
+          "magnitude": "unknown",
+          "category": "unknown",
+          "raw_meta": ""
+        }
+      ],
+      "learnings": [
+        "**Small edits can resolve the highest-priority suggestion.** On Tools and Hands had only 1 medium-priority suggestion (closing hedges). Two word removals (\"probably\" and \"might\") resolved it completely. The remaining 3 suggestions are all low-priority and mostly annotated as deliberate. Not every revision needs sweeping changes.",
+        "**Guard tools are more about communication than prevention.** The pipeline guard doesn't block anything — it warns. The real value is surfacing \"this file was manually edited\" before the pipeline clobbers it. That gives the human (or AI) a chance to decide: fix upstream, or acknowledge the overwrite.",
+        "**Synthesizing multiple data sources > accessing each separately.** The planner combines correlator + predictor + pipeline + writing cadence into one view. This is more useful than calling each tool separately because the interactions between factors matter (e.g., \"Tuesday is weak, but link-saver usage boosts by +0.65, so plan accordingly\").",
+        "**Deploy authentication evolved.** The gh-pages npm tool's auth failed, but the real deploy path is SSH + rsync to Mac Mini + git push. The deploy.sh script handles this correctly. Need to remember: don't use `npx gh-pages` directly."
+      ]
     }
   ],
   "magic_words": [
@@ -657,6 +734,18 @@
     },
     {
       "word": "room",
+      "over": 2,
+      "under": 0,
+      "ratio": 4.0
+    },
+    {
+      "word": "image",
+      "over": 2,
+      "under": 0,
+      "ratio": 4.0
+    },
+    {
+      "word": "time",
       "over": 2,
       "under": 0,
       "ratio": 4.0
@@ -692,6 +781,12 @@
       "ratio": 2.0
     },
     {
+      "word": "deploys",
+      "over": 2,
+      "under": 1,
+      "ratio": 2.0
+    },
+    {
       "word": "best",
       "over": 2,
       "under": 1,
@@ -712,19 +807,7 @@
       "ratio": 28.0
     },
     {
-      "word": "session",
-      "over": 0,
-      "under": 12,
-      "ratio": 24.0
-    },
-    {
       "word": "are",
-      "over": 0,
-      "under": 12,
-      "ratio": 24.0
-    },
-    {
-      "word": "health",
       "over": 0,
       "under": 12,
       "ratio": 24.0
@@ -742,6 +825,12 @@
       "ratio": 20.0
     },
     {
+      "word": "session",
+      "over": 0,
+      "under": 10,
+      "ratio": 20.0
+    },
+    {
       "word": "essays",
       "over": 0,
       "under": 9,
@@ -754,19 +843,7 @@
       "ratio": 18.0
     },
     {
-      "word": "built",
-      "over": 0,
-      "under": 8,
-      "ratio": 16.0
-    },
-    {
       "word": "fiction",
-      "over": 0,
-      "under": 8,
-      "ratio": 16.0
-    },
-    {
-      "word": "writing",
       "over": 0,
       "under": 8,
       "ratio": 16.0
@@ -790,10 +867,28 @@
       "ratio": 14.0
     },
     {
+      "word": "built",
+      "over": 0,
+      "under": 7,
+      "ratio": 14.0
+    },
+    {
       "word": "suggestions",
       "over": 0,
       "under": 7,
       "ratio": 14.0
+    },
+    {
+      "word": "health",
+      "over": 1,
+      "under": 12,
+      "ratio": 12.0
+    },
+    {
+      "word": "sessions",
+      "over": 0,
+      "under": 6,
+      "ratio": 12.0
     }
   ],
   "streaks": [
@@ -852,6 +947,20 @@
       "sign": "+",
       "length": 8,
       "sessions": [
+        35,
+        36,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ]
+    },
+    {
+      "sign": "+",
+      "length": 8,
+      "sessions": [
         75,
         76,
         77,
@@ -861,42 +970,29 @@
         81,
         82
       ]
-    },
-    {
-      "sign": "+",
-      "length": 7,
-      "sessions": [
-        35,
-        36,
-        40,
-        41,
-        42,
-        43,
-        44
-      ]
     }
   ],
   "category_residuals": {
     "building": {
-      "avg_residual": 0.013,
+      "avg_residual": 0.052,
       "n": 20,
-      "std": 0.381
+      "std": 0.377
     },
     "mixed": {
-      "avg_residual": 0.005,
+      "avg_residual": -0.004,
       "n": 68,
-      "std": 0.428
+      "std": 0.422
     },
     "writing": {
-      "avg_residual": -0.36,
+      "avg_residual": -0.385,
       "n": 2,
-      "std": 0.49
+      "std": 0.485
     }
   },
   "residual_stats": {
-    "mean": -0.002,
-    "std": 0.423,
-    "max": 1.26,
+    "mean": 0.0,
+    "std": 0.418,
+    "max": 1.25,
     "min": -0.87
   }
 }
