@@ -53,8 +53,10 @@ const scoreColors: Record<string, string> = {
 const reasons = Object.entries(negations.reasons || {})
   .sort(([, a], [, b]) => (b as number) - (a as number));
 
-// Novelty tiers
-const noveltyTiers = ['10', '9', '8'].filter(t => novelty[t]);
+// Novelty tiers (new structure: novelty.by_tier)
+const noveltyByTier = (novelty as any).by_tier || novelty;
+const noveltyTiers = ['10', '9', '8'].filter(t => noveltyByTier[t]);
+const topMilestones = (novelty as any).top_milestone_sessions || [];
 
 // SVG dimensions for linguistic radar
 const radarR = 120;
@@ -406,18 +408,20 @@ const { concPath, meanPath, modePath, points: rollingPoints } = buildRollingPath
             <th>Tier</th>
             <th>Avg Novelty</th>
             <th>Avg Maintenance</th>
+            <th>Avg Milestone</th>
             <th>Ratio</th>
             <th>Sessions</th>
           </tr>
         </thead>
         <tbody>
           {noveltyTiers.map(tier => {
-            const d = novelty[tier];
+            const d = noveltyByTier[tier];
             return (
               <tr>
                 <td>{tier}/10</td>
                 <td>{d.avg_novelty.toFixed(2)}</td>
                 <td>{d.avg_maintenance.toFixed(2)}</td>
+                <td>{(d.avg_milestone || 0).toFixed(2)}</td>
                 <td>{d.avg_ratio.toFixed(2)}</td>
                 <td>{d.count}</td>
               </tr>
@@ -425,6 +429,26 @@ const { concPath, meanPath, modePath, points: rollingPoints } = buildRollingPath
           })}
         </tbody>
       </table>
+
+      {topMilestones.length > 0 && (
+        <div class="milestone-sessions">
+          <h3>Top Milestone Sessions</h3>
+          <div class="milestone-grid">
+            {topMilestones.map((ms: any) => (
+              <div class="milestone-card">
+                <div class="milestone-header">
+                  <span class="milestone-session">S{ms.session}</span>
+                  <span class={`milestone-score ${ms.satisfaction >= 10 ? 'score-10' : ms.satisfaction >= 9 ? 'score-9' : 'score-8'}`}>{ms.satisfaction}/10</span>
+                </div>
+                <div class="milestone-count">{ms.milestone} milestone markers</div>
+                {ms.examples?.length > 0 && (
+                  <div class="milestone-examples">{ms.examples.join(' · ')}</div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   </section>
 
@@ -957,6 +981,20 @@ const { concPath, meanPath, modePath, points: rollingPoints } = buildRollingPath
   .theory-list strong {
     color: var(--text);
   }
+
+  /* Milestones */
+  .milestone-sessions { margin-top: 1.5rem; }
+  .milestone-sessions h3 { font-size: 1rem; margin-bottom: 0.75rem; }
+  .milestone-grid { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+  .milestone-card { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 8px; padding: 0.75rem 1rem; min-width: 160px; }
+  .milestone-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem; }
+  .milestone-session { font-weight: 700; font-size: 1rem; }
+  .milestone-score { font-size: 0.85rem; font-weight: 600; padding: 2px 8px; border-radius: 4px; }
+  .score-10 { background: rgba(240, 136, 62, 0.15); color: #f0883e; }
+  .score-9 { background: rgba(63, 185, 80, 0.1); color: #3fb950; }
+  .score-8 { background: rgba(78, 205, 196, 0.1); color: #4ecdc4; }
+  .milestone-count { font-size: 0.8rem; color: var(--text-dim); }
+  .milestone-examples { font-size: 0.75rem; color: var(--text-dim); opacity: 0.7; margin-top: 0.25rem; }
 
   /* Temporal */
   .temporal-section { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
