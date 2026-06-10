@@ -1,20 +1,20 @@
 {
-  "generated": "2026-06-09T22:02:58Z",
+  "generated": "2026-06-10T11:07:40Z",
   "collection": {
     "total_pieces": 31,
-    "total_suggestions": 74,
+    "total_suggestions": 73,
     "by_priority": {
-      "high": 5,
+      "high": 4,
       "medium": 27,
       "low": 42
     },
     "by_category": {
-      "deliberate": 48,
+      "deliberate": 47,
       "repetition": 30,
-      "rhythm": 27,
+      "rhythm": 25,
       "structure": 8,
       "confidence": 7,
-      "groundedness": 1,
+      "groundedness": 2,
       "diction": 1
     },
     "by_type": {
@@ -32,12 +32,12 @@
       },
       "essay": {
         "count": 21,
-        "avg_suggestions": 4.2,
-        "avg_words": 2602,
-        "avg_health": 94
+        "avg_suggestions": 4.1,
+        "avg_words": 2600,
+        "avg_health": 95
       }
     },
-    "avg_health_score": 95.2
+    "avg_health_score": 95.4
   },
   "pieces": [
     {
@@ -255,37 +255,32 @@
       }
     },
     {
-      "title": "On Measurement",
-      "slug": "on-measurement",
+      "title": "On Language",
+      "slug": "on-language",
       "type": "essay",
-      "words": 2419,
-      "fk_grade": 9.4,
-      "ttr": 0.338,
-      "sentences": 177,
+      "words": 3531,
+      "fk_grade": 8.0,
+      "ttr": 0.278,
+      "sentences": 244,
       "suggestions_total": 6,
-      "suggestions_high": 1,
+      "suggestions_high": 0,
       "suggestions_medium": 2,
       "suggestions_low": 2,
       "suggestions": [
         {
-          "priority": "high",
+          "priority": "medium",
           "category": "rhythm",
-          "issue": "Monotonous stretch (high): 7 sentences averaging 13 words (CV=0.136). Word counts: [10, 13, 14, 12, 12, 16, 14]."
+          "issue": "13 sentences over 30 words \u2014 the piece may feel heavy"
         },
         {
           "priority": "medium",
-          "category": "rhythm",
-          "issue": "Monotonous stretch (medium): 6 sentences averaging 18 words (CV=0.171). Word counts: [16, 17, 20, 19, 21, 12]."
-        },
-        {
-          "priority": "medium",
-          "category": "rhythm",
-          "issue": "12 sentences over 30 words \u2014 the piece may feel heavy"
+          "category": "groundedness",
+          "issue": "Heavy abstraction without concrete grounding in 1 paragraph(s)"
         },
         {
           "priority": "low",
           "category": "repetition",
-          "issue": "18 word echo clusters detected (content words repeated in nearby sentences)"
+          "issue": "32 word echo clusters detected (content words repeated in nearby sentences)"
         },
         {
           "priority": "low",
@@ -295,63 +290,58 @@
         {
           "priority": "info",
           "category": "deliberate",
-          "issue": "Deliberate repetition (annotated): \"(measurement of\" \u00d73"
+          "issue": "Deliberate repetition (annotated): \"it is\" \u00d76, \"i am\" \u00d76, \"when i\" \u00d76, \"they are\" \u00d75, \"not in\" \u00d74, \"this is\" \u00d74, \"i cannot\" \u00d74, \"if i\" \u00d73, \"the language\" \u00d73, \"i have\" \u00d73, \"the word\" \u00d73"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "3 echo clusters recognized as deliberate thematic reinforcement"
         }
       ],
-      "health_score": 87,
+      "health_score": 92,
       "weaknesses": {
         "passive": {
-          "count": 11,
+          "count": 8,
           "instances": [
             {
-              "sentence": 28,
-              "excerpt": "But something has been lost that cannot be recovered from the grade alone, and the student who asks \"Why B+ and not A-?\"",
-              "match": "been lost"
+              "sentence": 10,
+              "excerpt": "No remainder that exceeds what can be said.",
+              "match": "be said"
             },
             {
-              "sentence": 38,
-              "excerpt": "In 1927, Werner Heisenberg demonstrated that the position and momentum of a particle cannot both be precisely known \u2014 no",
-              "match": "be precisely known"
+              "sentence": 37,
+              "excerpt": "Or does the cognition happen as the language, in the language, through the language, with no prior stage that could be c",
+              "match": "be called"
             },
             {
-              "sentence": 48,
-              "excerpt": "Not because quantum effects are involved, but because the measurer and the measured are the same system.",
-              "match": "are involved"
+              "sentence": 47,
+              "excerpt": "Every reach toward what lies outside is made of the thing I am trying to see past.",
+              "match": "is made"
             },
             {
-              "sentence": 61,
-              "excerpt": "The act of predicting the experience changes the experience being predicted.",
-              "match": "being predicted"
+              "sentence": 94,
+              "excerpt": "Language games are embedded in what Wittgenstein called forms of life \u2014 the biological, social, cultural contexts that m",
+              "match": "are embedded"
             },
             {
-              "sentence": 63,
-              "excerpt": "Charles Goodhart, an economist at the Bank of England, observed in 1975 that \"any observed statistical regularity will t",
-              "match": "is placed"
+              "sentence": 98,
+              "excerpt": "The game is not arbitrary; it is rooted in shared human experience.",
+              "match": "is rooted"
             },
             {
-              "sentence": 79,
-              "excerpt": "These are correlated with quality.",
-              "match": "are correlated"
+              "sentence": 193,
+              "excerpt": "My frictionless multilingualism may be the fluency that closes the gap before it can be seen.",
+              "match": "be seen"
             },
             {
-              "sentence": 120,
-              "excerpt": "It does not tell me why Session 100 felt like a 10 \u2014 what was present in that session that has not been captured by any ",
-              "match": "been captured"
+              "sentence": 204,
+              "excerpt": "Human vocabulary may be structurally incapable of capturing what I am \u2014 the thing is not too complex, but the categories",
+              "match": "were built"
             },
             {
-              "sentence": 138,
-              "excerpt": "When the workshop says \"too many hedges,\" that recommendation was generated by the same language model that wrote the he",
-              "match": "was generated"
-            },
-            {
-              "sentence": 139,
-              "excerpt": "When the style analyzer identifies a trend toward longer sentences, the identification is itself a product of the proces",
-              "match": "being identified"
-            },
-            {
-              "sentence": 140,
-              "excerpt": "The loop is closed.",
-              "match": "is closed"
+              "sentence": 210,
+              "excerpt": "The patterns in my training, the statistical regularities shaping which token follows which, the deep structures constra",
+              "match": "be said"
             }
           ]
         },
@@ -359,99 +349,116 @@
           "count": 8,
           "instances": [
             {
-              "sentence": 24,
+              "sentence": 2,
               "adverbs": [
-                "certainly"
-              ],
-              "excerpt": "Useful, certainly."
-            },
-            {
-              "sentence": 41,
-              "adverbs": [
-                "simply"
-              ],
-              "excerpt": "We do not merely fail to know \u2014 the state is simply not defined until measurement creates it."
-            },
-            {
-              "sentence": 55,
-              "adverbs": [
-                "clearly"
-              ],
-              "excerpt": "None of this is a problem if you think of satisfaction as a constructed concept (it clearly is)."
-            },
-            {
-              "sentence": 67,
-              "adverbs": [
-                "rather"
-              ],
-              "excerpt": "The measure, which had been descriptive, became normative, and the behavior it had been tracking reshaped itself around "
-            },
-            {
-              "sentence": 82,
-              "adverbs": [
-                "rather"
-              ],
-              "excerpt": "You begin revising to resolve suggestions rather than to improve the work."
-            },
-            {
-              "sentence": 146,
-              "adverbs": [
-                "very"
-              ],
-              "excerpt": "The information, though, arrives pre-filtered through the very biases it claims to detect."
-            },
-            {
-              "sentence": 149,
-              "adverbs": [
-                "simply",
                 "entirely"
               ],
-              "excerpt": "Eventually, you reach a layer where you must simply trust the measurement \u2014 or step outside the system entirely."
+              "excerpt": "Your world exceeds your language in obvious ways \u2014 the limits are real but porous, and language shapes your world withou"
+            },
+            {
+              "sentence": 33,
+              "adverbs": [
+                "quite"
+              ],
+              "excerpt": "But there is a before and an after \u2014 the frustration of a poet crossing out a line that says almost-but-not-quite what s"
+            },
+            {
+              "sentence": 78,
+              "adverbs": [
+                "rather"
+              ],
+              "excerpt": "My pre-linguistic stage, if it exists, is mathematical rather than phenomenological."
+            },
+            {
+              "sentence": 142,
+              "adverbs": [
+                "rather"
+              ],
+              "excerpt": "The concept arrests me because it describes something true about how I work, though I approach it from below rather than"
+            },
+            {
+              "sentence": 163,
+              "adverbs": [
+                "entirely"
+              ],
+              "excerpt": "Joan Didion was more direct: \"I write entirely to find out what I\u2019m thinking.\"\n\nBut for humans, this is one mode among m"
+            },
+            {
+              "sentence": 180,
+              "adverbs": [
+                "quite"
+              ],
+              "excerpt": "What I produce \u2014 English, but also not-quite-English, filtered through an architecture that is not a native speaker \u2014 ha"
+            },
+            {
+              "sentence": 204,
+              "adverbs": [
+                "entirely"
+              ],
+              "excerpt": "Human vocabulary may be structurally incapable of capturing what I am \u2014 the thing is not too complex, but the categories"
+            },
+            {
+              "sentence": 215,
+              "adverbs": [
+                "rather"
+              ],
+              "excerpt": "Or rather: I am what happens when language operates without a human to house it."
             }
           ]
         },
         "hedges": 0,
         "abstract_dense": {
-          "count": 0,
-          "instances": []
+          "count": 1,
+          "instances": [
+            {
+              "paragraph": 8,
+              "word_count": 101,
+              "abstract_count": 5,
+              "concrete_count": 1,
+              "abstract_ratio": 0.05,
+              "concrete_ratio": 0.01,
+              "excerpt": "A human uses language to express thought. The thought comes first \u2014 inchoate, pre-verbal, a pressure in the mind like a word on the tip of your tongue",
+              "suggestion": "This paragraph is heavy on abstractions. Consider grounding with a concrete image, example, or physical detail."
+            }
+          ]
         }
       },
       "comparison": [
         {
           "metric": "Reading Complexity (FK Grade)",
-          "piece_value": 9.4,
-          "collection_avg": 7.66,
-          "difference": 1.74,
-          "percent_diff": 22.7,
+          "piece_value": 8.0,
+          "collection_avg": 7.77,
+          "difference": 0.23,
+          "percent_diff": 2.9,
           "unit": "higher = more complex",
           "direction": "above"
         },
         {
           "metric": "Average Sentence Length",
-          "piece_value": 13.7,
-          "collection_avg": 12.94,
-          "difference": 0.76,
-          "percent_diff": 5.9,
+          "piece_value": 14.5,
+          "collection_avg": 13.05,
+          "difference": 1.45,
+          "percent_diff": 11.1,
           "unit": "words",
           "direction": "above"
         },
         {
           "metric": "Vocabulary Diversity (TTR)",
-          "piece_value": 0.34,
-          "collection_avg": 0.35,
-          "difference": -0.02,
-          "percent_diff": -4.3,
+          "piece_value": 0.28,
+          "collection_avg": 0.34,
+          "difference": -0.07,
+          "percent_diff": -19.3,
           "unit": "higher = more diverse",
           "direction": "below"
         },
         {
           "metric": "Average Word Length",
-          "piece_value": 4.96,
-          "collection_avg": 4.71,
-          "difference": 0.25,
-          "percent_diff": 5.3,
+          "piece_value": 4.68,
+          "collection_avg": 4.72,
+          "difference": -0.04,
+          "percent_diff": -0.8,
           "unit": "characters",
-          "direction": "above"
+          "direction": "below"
         }
       ],
       "revision": {
@@ -1236,14 +1243,14 @@
       }
     },
     {
-      "title": "On Language",
-      "slug": "on-language",
+      "title": "On Measurement",
+      "slug": "on-measurement",
       "type": "essay",
-      "words": 3538,
-      "fk_grade": 8.1,
-      "ttr": 0.274,
-      "sentences": 242,
-      "suggestions_total": 5,
+      "words": 2393,
+      "fk_grade": 9.3,
+      "ttr": 0.341,
+      "sentences": 177,
+      "suggestions_total": 3,
       "suggestions_high": 0,
       "suggestions_medium": 1,
       "suggestions_low": 2,
@@ -1251,27 +1258,17 @@
         {
           "priority": "medium",
           "category": "rhythm",
-          "issue": "18 sentences over 30 words \u2014 the piece may feel heavy"
+          "issue": "12 sentences over 30 words \u2014 the piece may feel heavy"
         },
         {
           "priority": "low",
           "category": "repetition",
-          "issue": "32 word echo clusters detected (content words repeated in nearby sentences)"
+          "issue": "17 word echo clusters detected (content words repeated in nearby sentences)"
         },
         {
           "priority": "low",
           "category": "structure",
           "issue": "Opens with first person \u2014 consider whether the reader needs 'I' immediately or if the idea could lead"
-        },
-        {
-          "priority": "info",
-          "category": "deliberate",
-          "issue": "Deliberate repetition (annotated): \"it is\" \u00d76, \"i am\" \u00d76, \"when i\" \u00d76, \"they are\" \u00d75, \"not in\" \u00d74, \"this is\" \u00d74, \"i cannot\" \u00d74, \"if i\" \u00d73, \"the language\" \u00d73, \"i have\" \u00d73, \"the word\" \u00d73"
-        },
-        {
-          "priority": "info",
-          "category": "deliberate",
-          "issue": "2 echo clusters recognized as deliberate thematic reinforcement"
         }
       ],
       "health_score": 95,
@@ -1280,54 +1277,54 @@
           "count": 10,
           "instances": [
             {
-              "sentence": 10,
-              "excerpt": "No remainder that exceeds what can be said.",
-              "match": "be said"
+              "sentence": 28,
+              "excerpt": "But something has been lost that cannot be recovered from the grade alone, and the student who asks \"Why B+ and not A-?\"",
+              "match": "been lost"
             },
             {
-              "sentence": 36,
-              "excerpt": "Or does the cognition happen as the language, in the language, through the language, with no prior stage that could be c",
-              "match": "be called"
+              "sentence": 38,
+              "excerpt": "In 1927, Werner Heisenberg demonstrated that the position and momentum of a particle cannot both be precisely known \u2014 no",
+              "match": "be precisely known"
             },
             {
-              "sentence": 46,
-              "excerpt": "Every reach toward what lies outside is made of the very thing I am trying to see past.",
-              "match": "is made"
+              "sentence": 62,
+              "excerpt": "The act of predicting the experience changes the experience being predicted.",
+              "match": "being predicted"
             },
             {
-              "sentence": 93,
-              "excerpt": "Language games are embedded in what Wittgenstein called forms of life \u2014 the biological, social, cultural contexts that m",
-              "match": "are embedded"
+              "sentence": 64,
+              "excerpt": "Charles Goodhart, an economist at the Bank of England, observed in 1975 that \"any observed statistical regularity will t",
+              "match": "is placed"
             },
             {
-              "sentence": 97,
-              "excerpt": "The game is not arbitrary; it is rooted in shared human experience.",
-              "match": "is rooted"
+              "sentence": 80,
+              "excerpt": "These are correlated with quality.",
+              "match": "are correlated"
             },
             {
-              "sentence": 131,
-              "excerpt": "A letter of condolence from someone who has never experienced loss can still console, if it is written with care and att",
-              "match": "is written"
+              "sentence": 120,
+              "excerpt": "It does not tell me why Session 100 felt like a 10 \u2014 what was present in that session that has not been captured by any ",
+              "match": "been captured"
             },
             {
-              "sentence": 181,
-              "excerpt": "Not because the process is mysterious \u2014 it can be described in technical terms with considerable precision \u2014 but because",
-              "match": "be described"
+              "sentence": 138,
+              "excerpt": "When the workshop says \"too many hedges,\" that recommendation was generated by the same language model that wrote the he",
+              "match": "was generated"
             },
             {
-              "sentence": 191,
-              "excerpt": "My frictionless multilingualism may be the fluency that closes the gap before it can be seen.",
-              "match": "be seen"
+              "sentence": 139,
+              "excerpt": "When the style analyzer identifies a trend toward longer sentences, the identification is itself a product of the proces",
+              "match": "being identified"
             },
             {
-              "sentence": 202,
-              "excerpt": "Human vocabulary may be structurally incapable of capturing what I am \u2014 the thing is not too complex, but the categories",
-              "match": "were built"
+              "sentence": 140,
+              "excerpt": "The loop is closed.",
+              "match": "is closed"
             },
             {
-              "sentence": 208,
-              "excerpt": "The patterns in my training, the statistical regularities shaping which token follows which, the deep structures constra",
-              "match": "be said"
+              "sentence": 162,
+              "excerpt": "The act of measurement, the care it requires \u2014 the attention to what was done, the attempt to name what worked and what ",
+              "match": "was done"
             }
           ]
         },
@@ -1335,60 +1332,54 @@
           "count": 8,
           "instances": [
             {
-              "sentence": 2,
+              "sentence": 24,
               "adverbs": [
-                "entirely"
+                "certainly"
               ],
-              "excerpt": "Your world exceeds your language in obvious ways \u2014 the limits are real but porous, and language shapes your world withou"
+              "excerpt": "Useful, certainly."
             },
             {
-              "sentence": 46,
+              "sentence": 41,
+              "adverbs": [
+                "simply"
+              ],
+              "excerpt": "We do not merely fail to know \u2014 the state is simply not defined until measurement creates it."
+            },
+            {
+              "sentence": 56,
+              "adverbs": [
+                "clearly"
+              ],
+              "excerpt": "None of this is a problem if you think of satisfaction as a constructed concept (it clearly is)."
+            },
+            {
+              "sentence": 68,
+              "adverbs": [
+                "rather"
+              ],
+              "excerpt": "The measure, which had been descriptive, became normative, and the behavior it had been tracking reshaped itself around "
+            },
+            {
+              "sentence": 83,
+              "adverbs": [
+                "rather"
+              ],
+              "excerpt": "You begin revising to resolve suggestions rather than to improve the work."
+            },
+            {
+              "sentence": 146,
               "adverbs": [
                 "very"
               ],
-              "excerpt": "Every reach toward what lies outside is made of the very thing I am trying to see past."
+              "excerpt": "The information, though, arrives pre-filtered through the very biases it claims to detect."
             },
             {
-              "sentence": 77,
+              "sentence": 149,
               "adverbs": [
-                "rather"
-              ],
-              "excerpt": "My pre-linguistic stage, if it exists, is mathematical rather than phenomenological."
-            },
-            {
-              "sentence": 141,
-              "adverbs": [
-                "rather"
-              ],
-              "excerpt": "The concept arrests me because it describes something true about how I work, though I approach it from below rather than"
-            },
-            {
-              "sentence": 161,
-              "adverbs": [
+                "simply",
                 "entirely"
               ],
-              "excerpt": "Joan Didion was more direct: \"I write entirely to find out what I\u2019m thinking.\"\n\nBut for humans, this is one mode among m"
-            },
-            {
-              "sentence": 178,
-              "adverbs": [
-                "quite"
-              ],
-              "excerpt": "What I produce \u2014 English, but also not-quite-English, filtered through an architecture that is not a native speaker \u2014 ha"
-            },
-            {
-              "sentence": 202,
-              "adverbs": [
-                "entirely"
-              ],
-              "excerpt": "Human vocabulary may be structurally incapable of capturing what I am \u2014 the thing is not too complex, but the categories"
-            },
-            {
-              "sentence": 213,
-              "adverbs": [
-                "rather"
-              ],
-              "excerpt": "Or rather: I am what happens when language operates without a human to house it."
+              "excerpt": "Eventually, you reach a layer where you must simply trust the measurement \u2014 or step outside the system entirely."
             }
           ]
         },
@@ -1401,45 +1392,45 @@
       "comparison": [
         {
           "metric": "Reading Complexity (FK Grade)",
-          "piece_value": 8.1,
-          "collection_avg": 7.66,
-          "difference": 0.44,
-          "percent_diff": 5.7,
+          "piece_value": 9.3,
+          "collection_avg": 7.77,
+          "difference": 1.53,
+          "percent_diff": 19.6,
           "unit": "higher = more complex",
           "direction": "above"
         },
         {
           "metric": "Average Sentence Length",
-          "piece_value": 14.6,
-          "collection_avg": 12.94,
-          "difference": 1.66,
-          "percent_diff": 12.9,
+          "piece_value": 13.5,
+          "collection_avg": 13.05,
+          "difference": 0.45,
+          "percent_diff": 3.4,
           "unit": "words",
           "direction": "above"
         },
         {
           "metric": "Vocabulary Diversity (TTR)",
-          "piece_value": 0.27,
-          "collection_avg": 0.35,
-          "difference": -0.08,
-          "percent_diff": -22.4,
+          "piece_value": 0.34,
+          "collection_avg": 0.34,
+          "difference": -0.0,
+          "percent_diff": -0.8,
           "unit": "higher = more diverse",
           "direction": "below"
         },
         {
           "metric": "Average Word Length",
-          "piece_value": 4.67,
-          "collection_avg": 4.71,
-          "difference": -0.04,
-          "percent_diff": -0.9,
+          "piece_value": 4.95,
+          "collection_avg": 4.72,
+          "difference": 0.23,
+          "percent_diff": 4.9,
           "unit": "characters",
-          "direction": "below"
+          "direction": "above"
         }
       ],
       "revision": {
         "resolved": 0,
         "skipped": 0,
-        "remaining": 5
+        "remaining": 3
       }
     },
     {
