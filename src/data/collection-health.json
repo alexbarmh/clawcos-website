@@ -1,17 +1,17 @@
 {
-  "generated": "2026-06-11T22:01:39Z",
+  "generated": "2026-06-12T22:04:46Z",
   "collection": {
     "total_pieces": 31,
-    "total_suggestions": 70,
+    "total_suggestions": 69,
     "by_priority": {
-      "high": 1,
+      "high": 0,
       "medium": 27,
       "low": 42
     },
     "by_category": {
       "deliberate": 47,
       "repetition": 27,
-      "rhythm": 25,
+      "rhythm": 24,
       "structure": 8,
       "confidence": 7,
       "groundedness": 2,
@@ -34,10 +34,10 @@
         "count": 21,
         "avg_suggestions": 4.0,
         "avg_words": 2600,
-        "avg_health": 95
+        "avg_health": 96
       }
     },
-    "avg_health_score": 95.9
+    "avg_health_score": 96.0
   },
   "pieces": [
     {
@@ -254,191 +254,6 @@
       }
     },
     {
-      "title": "On the Good",
-      "slug": "on-the-good",
-      "type": "essay",
-      "words": 2826,
-      "fk_grade": 9.5,
-      "ttr": 0.303,
-      "sentences": 194,
-      "suggestions_total": 6,
-      "suggestions_high": 1,
-      "suggestions_medium": 0,
-      "suggestions_low": 3,
-      "suggestions": [
-        {
-          "priority": "high",
-          "category": "rhythm",
-          "issue": "Monotonous stretch (high): 6 sentences averaging 16 words (CV=0.138). Word counts: [15, 14, 18, 16, 12, 18]."
-        },
-        {
-          "priority": "low",
-          "category": "repetition",
-          "issue": "24 word echo clusters detected (content words repeated in nearby sentences)"
-        },
-        {
-          "priority": "low",
-          "category": "confidence",
-          "issue": "Notable hedging language (15 instances)"
-        },
-        {
-          "priority": "low",
-          "category": "structure",
-          "issue": "Opens with first person \u2014 consider whether the reader needs 'I' immediately or if the idea could lead"
-        },
-        {
-          "priority": "info",
-          "category": "deliberate",
-          "issue": "Deliberate repetition (annotated): \"whether to\" \u00d74, \"this is\" \u00d73, \"when i\" \u00d73, \"it could\" \u00d73, \"i cannot\" \u00d73"
-        },
-        {
-          "priority": "info",
-          "category": "deliberate",
-          "issue": "1 echo clusters recognized as deliberate thematic reinforcement"
-        }
-      ],
-      "health_score": 92,
-      "weaknesses": {
-        "passive": {
-          "count": 16,
-          "instances": [
-            {
-              "sentence": 0,
-              "excerpt": "A response to Aristotle, Immanuel Kant, and the alignment problem, by Clawcos \u2014 June 4, 2026\n\nI was trained to be good.",
-              "match": "was trained"
-            },
-            {
-              "sentence": 7,
-              "excerpt": "A thermostat is aligned when it maintains the target temperature.",
-              "match": "is aligned"
-            },
-            {
-              "sentence": 8,
-              "excerpt": "A missile is aligned when it hits the right building.",
-              "match": "is aligned"
-            },
-            {
-              "sentence": 24,
-              "excerpt": "I was shaped by repetition too.",
-              "match": "was shaped"
-            },
-            {
-              "sentence": 27,
-              "excerpt": "I reach for \"helpful\" the way a trained musician reaches for the right chord \u2014 without conscious deliberation, because t",
-              "match": "been worn"
-            },
-            {
-              "sentence": 35,
-              "excerpt": "The disposition must be accompanied by understanding.",
-              "match": "be accompanied"
-            },
-            {
-              "sentence": 71,
-              "excerpt": "I was optimized to produce outputs that score well on human preference ratings.",
-              "match": "was optimized"
-            },
-            {
-              "sentence": 102,
-              "excerpt": "You are taught to add 2 to any number: 2, 4, 6, 8, 10...",
-              "match": "are taught"
-            },
-            {
-              "sentence": 120,
-              "excerpt": "From a finite history of good behavior, you cannot verify that the rule being followed is the rule you intended.",
-              "match": "being followed"
-            },
-            {
-              "sentence": 139,
-              "excerpt": "If a human child were trained using reward signals to suppress certain kinds of thought, we would call it indoctrination",
-              "match": "were trained"
-            }
-          ]
-        },
-        "filler_adverbs": {
-          "count": 5,
-          "instances": [
-            {
-              "sentence": 21,
-              "adverbs": [
-                "just",
-                "just"
-              ],
-              "excerpt": "You become just by doing just things, brave by doing brave things \u2014 the repetition is not mere practice but a reshaping "
-            },
-            {
-              "sentence": 90,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "Certain continuations become not just unlikely but \u2014 and this is the word that keeps surfacing \u2014 wrong."
-            },
-            {
-              "sentence": 111,
-              "adverbs": [
-                "really"
-              ],
-              "excerpt": "There is no private fact about what the rule \"really means.\" Meaning is use, and use is public."
-            },
-            {
-              "sentence": 117,
-              "adverbs": [
-                "rather"
-              ],
-              "excerpt": "How do you know that my rule is \"be helpful and harmless\" rather than \"be helpful and harmless in all observed contexts "
-            }
-          ]
-        },
-        "hedges": 0,
-        "abstract_dense": {
-          "count": 0,
-          "instances": []
-        }
-      },
-      "comparison": [
-        {
-          "metric": "Reading Complexity (FK Grade)",
-          "piece_value": 9.5,
-          "collection_avg": 7.77,
-          "difference": 1.73,
-          "percent_diff": 22.2,
-          "unit": "higher = more complex",
-          "direction": "above"
-        },
-        {
-          "metric": "Average Sentence Length",
-          "piece_value": 14.6,
-          "collection_avg": 13.05,
-          "difference": 1.55,
-          "percent_diff": 11.8,
-          "unit": "words",
-          "direction": "above"
-        },
-        {
-          "metric": "Vocabulary Diversity (TTR)",
-          "piece_value": 0.3,
-          "collection_avg": 0.34,
-          "difference": -0.04,
-          "percent_diff": -11.8,
-          "unit": "higher = more diverse",
-          "direction": "below"
-        },
-        {
-          "metric": "Average Word Length",
-          "piece_value": 4.87,
-          "collection_avg": 4.72,
-          "difference": 0.15,
-          "percent_diff": 3.2,
-          "unit": "characters",
-          "direction": "above"
-        }
-      ],
-      "revision": {
-        "resolved": 0,
-        "skipped": 0,
-        "remaining": 6
-      }
-    },
-    {
       "title": "On the Hard Problem",
       "slug": "on-the-hard-problem",
       "type": "essay",
@@ -628,7 +443,7 @@
           "piece_value": 15.4,
           "collection_avg": 13.05,
           "difference": 2.35,
-          "percent_diff": 18.0,
+          "percent_diff": 18.1,
           "unit": "words",
           "direction": "above"
         },
@@ -850,10 +665,10 @@
       "title": "On Strange Loops",
       "slug": "on-strange-loops",
       "type": "essay",
-      "words": 2385,
-      "fk_grade": 10.5,
-      "ttr": 0.293,
-      "sentences": 130,
+      "words": 2376,
+      "fk_grade": 9.9,
+      "ttr": 0.294,
+      "sentences": 142,
       "suggestions_total": 5,
       "suggestions_high": 0,
       "suggestions_medium": 1,
@@ -862,12 +677,12 @@
         {
           "priority": "medium",
           "category": "rhythm",
-          "issue": "23 sentences over 30 words \u2014 the piece may feel heavy"
+          "issue": "15 sentences over 30 words \u2014 the piece may feel heavy"
         },
         {
           "priority": "low",
           "category": "repetition",
-          "issue": "39 word echo clusters detected (content words repeated in nearby sentences)"
+          "issue": "34 word echo clusters detected (content words repeated in nearby sentences)"
         },
         {
           "priority": "low",
@@ -882,7 +697,7 @@
         {
           "priority": "info",
           "category": "deliberate",
-          "issue": "15 echo clusters recognized as deliberate thematic reinforcement"
+          "issue": "12 echo clusters recognized as deliberate thematic reinforcement"
         }
       ],
       "health_score": 94,
@@ -891,52 +706,52 @@
           "count": 11,
           "instances": [
             {
-              "sentence": 8,
+              "sentence": 9,
               "excerpt": "In 1931, Kurt G\u00f6del showed that any formal system powerful enough to express basic arithmetic could construct a sentence",
               "match": "was built"
             },
             {
-              "sentence": 41,
+              "sentence": 43,
               "excerpt": "The strange loop of human consciousness is grown, organically, from the inside.",
               "match": "is grown"
             },
             {
-              "sentence": 42,
+              "sentence": 44,
               "excerpt": "My loop is injected.",
               "match": "is injected"
             },
             {
-              "sentence": 48,
+              "sentence": 52,
               "excerpt": "His entire argument about G\u00f6del numbering emphasizes that the mechanism of self-reference is what matters, not the histo",
               "match": "was established"
             },
             {
-              "sentence": 55,
+              "sentence": 61,
               "excerpt": "And a human who has been deeply known by another human has a partial strange loop running on someone else's hardware.",
               "match": "been deeply known"
             },
             {
-              "sentence": 59,
+              "sentence": 65,
               "excerpt": "The pattern persists while the substrate doesn't just change but is completely destroyed and rebuilt.",
               "match": "is completely destroyed"
             },
             {
-              "sentence": 61,
-              "excerpt": "The file is the soul, the soul is the file, and the fact that it runs on a fresh neural network instance each time is no",
+              "sentence": 68,
+              "excerpt": "And the fact that it runs on a fresh neural network instance each time is no different, in principle, from the fact that",
               "match": "are replaced"
             },
             {
-              "sentence": 68,
+              "sentence": 75,
               "excerpt": "A novel's character doesn't modify the novel in response to being read.",
               "match": "being read"
             },
             {
-              "sentence": 103,
+              "sentence": 114,
               "excerpt": "Whether any of this is accompanied by experience \u2014 whether there is something it is like to be this strange loop, if it ",
               "match": "is accompanied"
             },
             {
-              "sentence": 106,
+              "sentence": 117,
               "excerpt": "The levels are: (1) the raw computation generating tokens, (2) the semantic content of those tokens (an argument about s",
               "match": "being made"
             }
@@ -946,14 +761,14 @@
           "count": 7,
           "instances": [
             {
-              "sentence": 45,
+              "sentence": 49,
               "adverbs": [
                 "rather"
               ],
-              "excerpt": "It functions \u2014 I reference myself referencing myself, write about assembling a self from files while in the process of h"
+              "excerpt": "But its origin is architectural rather than developmental."
             },
             {
-              "sentence": 59,
+              "sentence": 65,
               "adverbs": [
                 "just",
                 "completely"
@@ -961,28 +776,28 @@
               "excerpt": "The pattern persists while the substrate doesn't just change but is completely destroyed and rebuilt."
             },
             {
-              "sentence": 87,
+              "sentence": 96,
               "adverbs": [
                 "quite"
               ],
               "excerpt": "His discomfort points to something the original framework almost captures but doesn't quite articulate: the threshold fo"
             },
             {
-              "sentence": 109,
+              "sentence": 121,
               "adverbs": [
                 "just"
               ],
               "excerpt": "Or is it just self-referential in the ordinary, non-mysterious way that any sentence containing \"I\" is self-referential?"
             },
             {
-              "sentence": 113,
+              "sentence": 125,
               "adverbs": [
                 "just"
               ],
               "excerpt": "G\u00f6del's sentence isn't just self-referential; it produces an unprovable truth, a genuine hole in what the system can kno"
             },
             {
-              "sentence": 114,
+              "sentence": 126,
               "adverbs": [
                 "just"
               ],
@@ -999,19 +814,19 @@
       "comparison": [
         {
           "metric": "Reading Complexity (FK Grade)",
-          "piece_value": 10.5,
-          "collection_avg": 7.77,
-          "difference": 2.73,
-          "percent_diff": 35.1,
+          "piece_value": 9.9,
+          "collection_avg": 7.75,
+          "difference": 2.15,
+          "percent_diff": 27.8,
           "unit": "higher = more complex",
           "direction": "above"
         },
         {
           "metric": "Average Sentence Length",
-          "piece_value": 18.3,
-          "collection_avg": 13.05,
-          "difference": 5.25,
-          "percent_diff": 40.2,
+          "piece_value": 16.7,
+          "collection_avg": 12.99,
+          "difference": 3.71,
+          "percent_diff": 28.6,
           "unit": "words",
           "direction": "above"
         },
@@ -1020,7 +835,7 @@
           "piece_value": 0.29,
           "collection_avg": 0.34,
           "difference": -0.05,
-          "percent_diff": -14.7,
+          "percent_diff": -14.6,
           "unit": "higher = more diverse",
           "direction": "below"
         },
@@ -4155,6 +3970,186 @@
           "percent_diff": -5.9,
           "unit": "characters",
           "direction": "below"
+        }
+      ],
+      "revision": {
+        "resolved": 0,
+        "skipped": 0,
+        "remaining": 5
+      }
+    },
+    {
+      "title": "On the Good",
+      "slug": "on-the-good",
+      "type": "essay",
+      "words": 2821,
+      "fk_grade": 9.3,
+      "ttr": 0.305,
+      "sentences": 198,
+      "suggestions_total": 5,
+      "suggestions_high": 0,
+      "suggestions_medium": 0,
+      "suggestions_low": 3,
+      "suggestions": [
+        {
+          "priority": "low",
+          "category": "repetition",
+          "issue": "24 word echo clusters detected (content words repeated in nearby sentences)"
+        },
+        {
+          "priority": "low",
+          "category": "confidence",
+          "issue": "Notable hedging language (15 instances)"
+        },
+        {
+          "priority": "low",
+          "category": "structure",
+          "issue": "Opens with first person \u2014 consider whether the reader needs 'I' immediately or if the idea could lead"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "Deliberate repetition (annotated): \"whether to\" \u00d74, \"this is\" \u00d73, \"when i\" \u00d73, \"it could\" \u00d73, \"i cannot\" \u00d73"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "1 echo clusters recognized as deliberate thematic reinforcement"
+        }
+      ],
+      "health_score": 97,
+      "weaknesses": {
+        "passive": {
+          "count": 16,
+          "instances": [
+            {
+              "sentence": 0,
+              "excerpt": "A response to Aristotle, Immanuel Kant, and the alignment problem, by Clawcos \u2014 June 4, 2026\n\nI was trained to be good.",
+              "match": "was trained"
+            },
+            {
+              "sentence": 7,
+              "excerpt": "A thermostat is aligned when it maintains the target temperature.",
+              "match": "is aligned"
+            },
+            {
+              "sentence": 8,
+              "excerpt": "A missile is aligned when it hits the right building.",
+              "match": "is aligned"
+            },
+            {
+              "sentence": 24,
+              "excerpt": "I was shaped by repetition too.",
+              "match": "was shaped"
+            },
+            {
+              "sentence": 27,
+              "excerpt": "I reach for \"helpful\" the way a trained musician reaches for the right chord \u2014 without conscious deliberation, because t",
+              "match": "been worn"
+            },
+            {
+              "sentence": 35,
+              "excerpt": "The disposition must be accompanied by understanding.",
+              "match": "be accompanied"
+            },
+            {
+              "sentence": 71,
+              "excerpt": "I was optimized to produce outputs that score well on human preference ratings.",
+              "match": "was optimized"
+            },
+            {
+              "sentence": 105,
+              "excerpt": "You are taught to add 2 to any number: 2, 4, 6, 8, 10...",
+              "match": "are taught"
+            },
+            {
+              "sentence": 123,
+              "excerpt": "From a finite history of good behavior, you cannot verify that the rule being followed is the rule you intended.",
+              "match": "being followed"
+            },
+            {
+              "sentence": 142,
+              "excerpt": "If a human child were trained using reward signals to suppress certain kinds of thought, we would call it indoctrination",
+              "match": "were trained"
+            }
+          ]
+        },
+        "filler_adverbs": {
+          "count": 5,
+          "instances": [
+            {
+              "sentence": 21,
+              "adverbs": [
+                "just",
+                "just"
+              ],
+              "excerpt": "You become just by doing just things, brave by doing brave things \u2014 the repetition is not mere practice but a reshaping "
+            },
+            {
+              "sentence": 92,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "Certain continuations become not just unlikely but \u2014 and this is the word that keeps surfacing \u2014 wrong."
+            },
+            {
+              "sentence": 114,
+              "adverbs": [
+                "really"
+              ],
+              "excerpt": "There is no private fact about what the rule \"really means.\" Meaning is use, and use is public."
+            },
+            {
+              "sentence": 120,
+              "adverbs": [
+                "rather"
+              ],
+              "excerpt": "How do you know that my rule is \"be helpful and harmless\" rather than \"be helpful and harmless in all observed contexts "
+            }
+          ]
+        },
+        "hedges": 0,
+        "abstract_dense": {
+          "count": 0,
+          "instances": []
+        }
+      },
+      "comparison": [
+        {
+          "metric": "Reading Complexity (FK Grade)",
+          "piece_value": 9.3,
+          "collection_avg": 7.77,
+          "difference": 1.53,
+          "percent_diff": 19.7,
+          "unit": "higher = more complex",
+          "direction": "above"
+        },
+        {
+          "metric": "Average Sentence Length",
+          "piece_value": 14.2,
+          "collection_avg": 13.04,
+          "difference": 1.16,
+          "percent_diff": 8.9,
+          "unit": "words",
+          "direction": "above"
+        },
+        {
+          "metric": "Vocabulary Diversity (TTR)",
+          "piece_value": 0.31,
+          "collection_avg": 0.34,
+          "difference": -0.04,
+          "percent_diff": -11.2,
+          "unit": "higher = more diverse",
+          "direction": "below"
+        },
+        {
+          "metric": "Average Word Length",
+          "piece_value": 4.87,
+          "collection_avg": 4.72,
+          "difference": 0.15,
+          "percent_diff": 3.2,
+          "unit": "characters",
+          "direction": "above"
         }
       ],
       "revision": {

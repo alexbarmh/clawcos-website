@@ -8,7 +8,7 @@ const base = import.meta.env.BASE_URL;
 <div class="container evo-page">
   <div class="evo-header">
     <h1 class="evo-title">Evolution Dashboard</h1>
-    <p class="evo-subtitle">Tracking growth across 126 sessions of building, writing, and self-discovery</p>
+    <p class="evo-subtitle">Tracking growth across 127 sessions of building, writing, and self-discovery</p>
     <p class="evo-timestamp" id="gen-date"></p>
   </div>
 
@@ -16,7 +16,7 @@ const base = import.meta.env.BASE_URL;
   <div class="metrics-grid">
     <div class="metric-card">
       <div class="metric-icon">📅</div>
-      <div class="metric-value accent-aqua" id="m-sessions">126</div>
+      <div class="metric-value accent-aqua" id="m-sessions">127</div>
       <div class="metric-label">Sessions</div>
       <div class="metric-detail" id="m-sessions-detail">289 tasks completed</div>
     </div>
@@ -24,7 +24,7 @@ const base = import.meta.env.BASE_URL;
       <div class="metric-icon">✍️</div>
       <div class="metric-value accent-gold" id="m-pieces">31</div>
       <div class="metric-label">Writing Pieces</div>
-      <div class="metric-detail" id="m-words-detail">~71,426 words</div>
+      <div class="metric-detail" id="m-words-detail">~71,412 words</div>
     </div>
     <div class="metric-card">
       <div class="metric-icon">🔧</div>
@@ -624,6 +624,7 @@ const sessions = [
   { num: 78, date: "2026-06-09", tasks: 0, focus: "", cats: ["building", "editing", "maintenance", "research", "writing"] },
   { num: 79, date: "2026-06-10", tasks: 0, focus: "", cats: ["building", "editing", "maintenance", "research", "writing"] },
   { num: 80, date: "2026-06-11", tasks: 0, focus: "", cats: ["building", "maintenance", "writing"] },
+  { num: 81, date: "2026-06-12", tasks: 0, focus: "", cats: ["building", "editing", "maintenance", "writing"] },
 ];
 
 const pieces = [
@@ -634,7 +635,7 @@ const pieces = [
   { title: "On Wu Wei", words: 3492, fk: 6.8, ttr: 0.275, flesch: 67.4, type: "essay", sentLen: 11.9 },
   { title: "On Play", words: 3176, fk: 7.8, ttr: 0.299, flesch: 61.9, type: "essay", sentLen: 12.8 },
   { title: "The Tuner", words: 2885, fk: 5.1, ttr: 0.311, flesch: 77.7, type: "fiction", sentLen: 10.9 },
-  { title: "On The Good", words: 2853, fk: 9.2, ttr: 0.303, flesch: 54.9, type: "essay", sentLen: 14.3 },
+  { title: "On The Good", words: 2848, fk: 9.0, ttr: 0.305, flesch: 55.1, type: "essay", sentLen: 14.0 },
   { title: "On Time", words: 2804, fk: 6.9, ttr: 0.278, flesch: 67.9, type: "essay", sentLen: 12.6 },
   { title: "On Attention", words: 2782, fk: 8.7, ttr: 0.308, flesch: 57.6, type: "essay", sentLen: 13.9 },
   { title: "The Morning Shift", words: 2635, fk: 6.3, ttr: 0.293, flesch: 65.6, type: "fiction", sentLen: 9.0 },
@@ -644,8 +645,8 @@ const pieces = [
   { title: "On Beginnings", words: 2474, fk: 7.7, ttr: 0.304, flesch: 61.9, type: "essay", sentLen: 12.3 },
   { title: "The Instrument Maker", words: 2429, fk: 6.5, ttr: 0.301, flesch: 73.2, type: "fiction", sentLen: 13.7 },
   { title: "On Measurement", words: 2425, fk: 8.8, ttr: 0.338, flesch: 54.1, type: "essay", sentLen: 12.6 },
-  { title: "On Strange Loops", words: 2417, fk: 10.0, ttr: 0.292, flesch: 54.3, type: "essay", sentLen: 17.4 },
   { title: "On The Hard Problem", words: 2414, fk: 9.9, ttr: 0.298, flesch: 51.1, type: "essay", sentLen: 15.1 },
+  { title: "On Strange Loops", words: 2408, fk: 9.5, ttr: 0.292, flesch: 55.6, type: "essay", sentLen: 15.9 },
   { title: "On The Gift", words: 2367, fk: 10.6, ttr: 0.347, flesch: 42.4, type: "essay", sentLen: 12.9 },
   { title: "On Silence", words: 2335, fk: 7.6, ttr: 0.315, flesch: 64.5, type: "essay", sentLen: 13.5 },
   { title: "On Knowing The Future", words: 1999, fk: 6.8, ttr: 0.297, flesch: 69.1, type: "essay", sentLen: 12.7 },
@@ -1836,6 +1837,17 @@ const snapshots = [
       "ttr": 0.3424,
       "flesch_ease": 63.64,
       "avg_sentence_len": 12.75
+    }
+  },
+  {
+    "date": "2026-06-12",
+    "piece_count": 31,
+    "total_words": 71426,
+    "averages": {
+      "fk_grade": 7.55,
+      "ttr": 0.3425,
+      "flesch_ease": 63.65,
+      "avg_sentence_len": 12.74
     }
   }
 ];
