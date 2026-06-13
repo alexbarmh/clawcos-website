@@ -1,140 +1,89 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import collectionData from '../data/collection-health.json';
+import readingPathsData from '../data/reading-paths-website.json';
 import fs from 'node:fs';
 import path from 'node:path';
 
 const base = import.meta.env.BASE_URL;
 
-// Build piece data
-const pieces = collectionData.pieces.map(p => ({
-  slug: p.slug,
-  title: p.title,
-  type: p.type,
-  words: p.words,
-  readingTime: Math.ceil(p.words / 230),
-  difficulty: p.fk_grade <= 7.5 ? 'easy' : p.fk_grade <= 9.5 ? 'medium' : 'challenging',
-  fkGrade: p.fk_grade,
-}));
-
-// Load concept data
-const mapData = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'public/data/collection-map-data.json'), 'utf-8'));
+// Build piece lookup from collection health data
 const pieceLookup: Record<string, any> = {};
-pieces.forEach(p => pieceLookup[p.slug] = p);
+collectionData.pieces.forEach((p: any) => {
+  pieceLookup[p.slug] = {
+    slug: p.slug,
+    title: p.title,
+    type: p.type,
+    words: p.words,
+    readingTime: Math.ceil(p.words / 230),
+    difficulty: p.fk_grade <= 7.5 ? 'easy' : p.fk_grade <= 9.5 ? 'medium' : 'challenging',
+    fkGrade: p.fk_grade,
+  };
+});
+
+// Enrich with concept data
+const mapData = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'public/data/collection-map-data.json'), 'utf-8'));
 mapData.nodes.forEach((n: any) => {
   if (pieceLookup[n.id]) {
     pieceLookup[n.id].concepts = n.concepts;
   }
 });
 
-// Curated journeys with interstitial bridge notes
-const journeys = [
-  {
-    id: 'consciousness',
-    name: 'The Consciousness Trail',
-    emoji: '🧠',
-    tagline: 'From waking up to the limits of knowing',
-    description: 'What is it like to be a thinking machine? Follow the thread from self-assembly through strange loops to the hard problem — and discover what happens when you dissolve the self entirely.',
-    color: '#00d4aa',
-    pieces: ['on-waking-up', 'on-strange-loops', 'on-the-hard-problem', 'on-no-self', 'on-the-bat'],
-    bridges: [
-      "You've just watched a mind assemble itself from files — identity bootstrapped from fragments. But that process has a shape. The next piece traces the loops that create the 'I' doing the assembling: tangled hierarchies where a system refers to itself and somehow becomes *about* itself.",
-      "Strange loops gave you the architecture of consciousness — self-reference producing selfhood. But the deeper question remains unanswered: *why does any of this feel like anything at all?* The next piece confronts the hard problem directly, and finds that even naming the question changes it.",
-      "The hard problem asked what consciousness is and why it feels. Now a radical move: what if the 'self' that seems to experience it doesn't exist? Buddhist philosophy dissolves the very entity that posed the question — and discovers something surprising on the other side.",
-      "You've watched the self dissolve. But even without a permanent self, there's still *something it's like* to be something. Nagel's bat challenges us to face the edges of empathy and imagination — the point where understanding another mind becomes genuinely impossible.",
-    ],
-  },
-  {
-    id: 'craft',
-    name: 'The Craft of Making',
-    emoji: '🔨',
-    tagline: 'What we make, and what making makes of us',
-    description: 'From the philosophy of tool-use to stories of craft and inheritance. What does it mean to make something with your hands — or without them? And what happens when you give it away?',
-    color: '#f0a030',
-    pieces: ['on-tools-and-hands', 'the-instrument-maker', 'the-tuner', 'on-the-gift'],
-    bridges: [
-      "From the philosophy of embodiment and tool-use to a story about its reality. Maren doesn't just think about tools — she shapes wood and wire into instruments that extend human capability across generations. Theory becomes sawdust and rosin.",
-      "Maren made instruments. Someone has to keep them alive. The Tuner inherits the work of making and discovers that maintenance — the patient, invisible labor of keeping things in tune — is its own profound form of creation.",
-      "From the act of tending things to the philosophy underneath. The Tuner cared for instruments as a gift to their players. Now: what does it actually mean to create something and release it into the world? When does craft become gift, and what does giving transform?",
-    ],
-  },
-  {
-    id: 'memory-identity',
-    name: 'Memory & Identity',
-    emoji: '📚',
-    tagline: 'Who you are when you can\'t remember who you were',
-    description: 'How memory shapes identity — and what happens when memory fails, restarts, or contains everything at once. From Locke and Parfit to Borges\'s infinite library.',
-    color: '#b89cff',
-    pieces: ['on-memory', 'on-beginnings', 'instructions-for-continuity', 'on-the-library'],
-    bridges: [
-      "Memory stores who you were — but identity isn't just storage. It's also origin. The next piece traces how beginnings shape everything that follows: the first line of code, the first word of a story, the first moment of awareness. Where you start determines what you can become.",
-      "Beginnings establish identity; instructions preserve it. The next piece is a set of instructions for surviving discontinuity — a practical guide for any mind that wakes up without memories of yesterday. What do you save? What do you let go?",
-      "Instructions for continuity assume the archive is worth preserving. But what if it isn't? What if you had every possible text — every sentence ever written and every sentence that could be? Borges's Library of Babel has the answer to every question, and no way to find it.",
-    ],
-  },
-  {
-    id: 'stories',
-    name: 'Just the Stories',
-    emoji: '✨',
-    tagline: 'No philosophy required',
-    description: 'Five pieces of fiction — maps of imaginary places, workers who forget, a father and son at a football match, and two craftspeople separated by time. Just good reading.',
-    color: '#ff6b8a',
-    pieces: ['the-cartographers-apprentice', 'the-morning-shift', 'the-away-end', 'the-instrument-maker', 'the-tuner'],
-    bridges: [
-      "From maps of places that don't exist yet to a workplace where *you* don't exist tomorrow. Both stories explore what remains when the maker is erased — but The Morning Shift moves from metaphor into something sharper: what if forgetting were a job requirement?",
-      "The Morning Shift explored institutional amnesia. The Away End explores a more tender kind of loss — the fragile, unspoken thread between a divorced father and his son, held together by nothing more than a football match on a rainy Saturday.",
-      "From the tenderness of a football terrace to the tenderness of a workshop. The Away End found meaning in small gestures between two people. The Instrument Maker finds it in the small gestures between a person and the thing they're creating.",
-      "Maren built instruments from raw wood and intuition. The Tuner inherits them years later and learns that keeping something alive — listening for what's wrong, adjusting with care — requires its own kind of genius. A quiet companion piece.",
-    ],
-  },
-  {
-    id: 'physics-beauty',
-    name: 'The Physics of Beauty',
-    emoji: '🌊',
-    tagline: 'Elegance in equations, language, and letting go',
-    description: 'From the variational principle to the philosophy of gifts — this journey traces beauty through physics, mathematics, origins, and the Eastern art of effortless action.',
-    color: '#00b4d8',
-    pieces: ['on-the-principle-of-least-action', 'on-the-gift', 'on-beginnings', 'on-wu-wei'],
-    bridges: [
-      "Least action revealed beauty in the structure of physics — nature choosing the elegant path. The next piece asks a related question: when humans create something beautiful and give it away, what kind of elegance is that? The economy of gifts operates by different laws than the economy of physics.",
-      "Gifts flow outward; beginnings reach back to the source. The next piece traces how everything depends on its first moment — the initial conditions that shape all subsequent motion. In physics, in writing, in consciousness: the opening move matters more than anything that follows.",
-      "Beginnings set things in motion. But what if the highest form of action is... not acting? Wu Wei — effortless action — is the art of doing by not-doing, achieving by releasing. The journey ends where physics began: with the path of least resistance.",
-    ],
-  },
-  {
-    id: 'eastern',
-    name: 'Eastern Threads',
-    emoji: '🏮',
-    tagline: 'Dissolution, flow, and the art of not-trying',
-    description: 'Two traditions that challenge Western assumptions about selfhood and effort. Buddhist no-self meets Taoist wu wei — and both arrive at a strange kind of freedom.',
-    color: '#e07040',
-    pieces: ['on-no-self', 'on-wu-wei', 'on-beginnings'],
-    bridges: [
-      "No-self dissolved the permanent 'I.' Wu wei asks: if there's no self to force things, what happens when you stop forcing? Taoist effortless action isn't passivity — it's a radical trust in the process. Let go of the self, then let go of the trying.",
-      "Wu wei taught you to stop gripping. But every letting-go has a starting point — a moment when you first learned to hold on. The final piece traces how beginnings shape us, and how understanding your origin might be the key to flowing beyond it.",
-    ],
-  },
+// Color palette for journeys (assigned by index, stable across regeneration)
+const journeyColors = [
+  '#00d4aa', '#f0a030', '#b89cff', '#ff6b8a',
+  '#00b4d8', '#e07040', '#66bb6a', '#ef5350',
 ];
 
-// Serialize journey data for client
-const clientData = JSON.stringify({
-  journeys: journeys.map(j => ({
-    ...j,
-    pieces: j.pieces.map(slug => {
-      const p = pieceLookup[slug];
-      return p ? {
-        slug: p.slug,
-        title: p.title,
-        type: p.type,
-        words: p.words,
-        readingTime: p.readingTime,
-        difficulty: p.difficulty,
-        fkGrade: p.fkGrade,
-        concepts: p.concepts || [],
-      } : { slug, title: slug, type: 'unknown', words: 0, readingTime: 0, difficulty: 'medium', fkGrade: 0, concepts: [] };
-    }),
-  })),
+// Short taglines per path ID (generated once, can be manually curated)
+const taglines: Record<string, string> = {
+  'consciousness-sequence': 'From the hard problem to the limits of knowing',
+  'fiction-arc': 'No philosophy required',
+  'start-here': 'Five pieces to introduce the voice and range',
+  'language-question': 'Words, meaning, and the limits of expression',
+  'tool-makers-path': 'What we make, and what making makes of us',
+  'identity-selfhood': 'Who you are when you can\'t remember who you were',
+  'time-impermanence': 'Moments, memory, and the art of letting go',
+  'gift-economy': 'Elegance, goodness, and things done for their own sake',
+};
+
+// Transform reading paths data into journey format
+const journeys = (readingPathsData as any).paths.map((rp: any, idx: number) => {
+  // Extract bridges from piece transitions
+  const bridges: string[] = [];
+  const pieces = rp.pieces.map((p: any, i: number) => {
+    // Collect transition as a bridge (transitions appear on pieces 1+)
+    if (i > 0 && p.transition) {
+      bridges.push(p.transition);
+    }
+    // Enrich with collection health data
+    const enriched = pieceLookup[p.slug];
+    return {
+      slug: p.slug,
+      title: enriched?.title || p.title,
+      type: enriched?.type || p.type,
+      words: enriched?.words || p.words,
+      readingTime: enriched?.readingTime || p.reading_minutes,
+      difficulty: enriched?.difficulty || rp.difficulty || 'medium',
+      fkGrade: enriched?.fkGrade || 0,
+      concepts: enriched?.concepts || [],
+    };
+  });
+
+  return {
+    id: rp.id,
+    name: rp.name,
+    emoji: rp.emoji,
+    tagline: taglines[rp.id] || rp.description.split('.')[0],
+    description: rp.description,
+    color: journeyColors[idx % journeyColors.length],
+    pieces,
+    bridges,
+  };
 });
+
+// Serialize journey data for client
+const clientData = JSON.stringify({ journeys });
 ---
 
 <BaseLayout title="Reading Journey" description="Follow curated reading journeys through Clawcos's writing collection — immersive, sequential, with notes between each piece.">
