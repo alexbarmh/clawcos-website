@@ -1,24 +1,24 @@
 {
   "metrics": {
-    "total_scored": 49,
+    "total_scored": 50,
     "distribution": {
       "10.0": 1,
       "9.0": 35,
       "8.5": 3,
-      "8.0": 9,
+      "8.0": 10,
       "7.0": 1
     },
     "mode": 9.0,
     "mode_count": 35,
-    "mode_pct": 71.4,
+    "mode_pct": 70.0,
     "above_mode": 1,
-    "below_mode": 13,
-    "entropy": 1.272,
+    "below_mode": 14,
+    "entropy": 1.294,
     "max_entropy": 2.322,
-    "concentration_ratio": 0.452,
+    "concentration_ratio": 0.443,
     "trend": "tightening",
     "trend_delta": 0.15,
-    "mean": 8.77,
+    "mean": 8.75,
     "median": 9.0
   },
   "structural": {
@@ -55,20 +55,20 @@
       }
     },
     "8": {
-      "count": 12,
-      "avg_tasks": 4.666666666666667,
+      "count": 13,
+      "avg_tasks": 4.615384615384615,
       "task_range": "0-7",
-      "avg_learnings": 3.25,
+      "avg_learnings": 3.230769230769231,
       "focus_types": {
         "other": 1,
-        "mixed": 10,
+        "mixed": 11,
         "building": 1
       },
       "task_categories": {
-        "building": 37,
-        "writing": 13,
+        "building": 39,
+        "writing": 14,
         "ops": 4,
-        "deploy": 2
+        "deploy": 3
       }
     }
   },
@@ -82,11 +82,11 @@
         "count": 35
       },
       "8": {
-        "avg_novelty": 0.6666666666666666,
-        "avg_maintenance": 1.8333333333333333,
-        "avg_milestone": 0.8333333333333334,
-        "avg_ratio": 0.4444444444444444,
-        "count": 12
+        "avg_novelty": 0.6153846153846154,
+        "avg_maintenance": 1.7692307692307692,
+        "avg_milestone": 0.8461538461538461,
+        "avg_ratio": 0.41025641025641024,
+        "count": 13
       },
       "10": {
         "avg_novelty": 0.0,
@@ -180,14 +180,14 @@
       }
     },
     "8": {
-      "count": 12,
+      "count": 13,
       "markers": {
-        "strong": 3.1666666666666665,
-        "satisfaction": 0.08333333333333333,
-        "achievement": 4.25,
-        "quality": 1.0833333333333333,
-        "hedging": 1.5,
-        "negation": 0.08333333333333333
+        "strong": 3.1538461538461537,
+        "satisfaction": 0.07692307692307693,
+        "achievement": 4.384615384615385,
+        "quality": 1.0769230769230769,
+        "hedging": 1.4615384615384615,
+        "negation": 0.07692307692307693
       }
     },
     "below_8": {
@@ -308,25 +308,25 @@
       },
       {
         "month": "2026-06",
-        "sessions": 14,
+        "sessions": 15,
         "session_range": [
           75,
           119
         ],
-        "mean": 8.71,
+        "mean": 8.67,
         "median": 9.0,
         "mode": 9.0,
-        "mode_share": 0.786,
-        "concentration": 0.403,
+        "mode_share": 0.733,
+        "concentration": 0.336,
         "above_mode": 0,
-        "below_mode": 3,
+        "below_mode": 4,
         "escape_rate": 0.0,
         "distribution": {
           "9.0": 11,
-          "8.0": 2,
+          "8.0": 3,
           "7.0": 1
         },
-        "stdev": 0.589
+        "stdev": 0.596
       }
     ],
     "rolling": [
@@ -381,54 +381,64 @@
         "escape_rate": 0.0
       },
       {
-        "session": 85,
-        "date": "2026-05-01",
+        "session": 84,
+        "date": "2026-06-15",
         "mean": 8.4,
         "mode": 9.0,
         "mode_share": 0.5,
         "concentration": 0.141,
         "stdev": 0.663,
         "escape_rate": 0.0
+      },
+      {
+        "session": 85,
+        "date": "2026-05-01",
+        "mean": 8.3,
+        "mode": 8.0,
+        "mode_share": 0.5,
+        "concentration": 0.141,
+        "stdev": 0.64,
+        "escape_rate": 0.4
       },
       {
         "session": 86,
         "date": "2026-05-02",
-        "mean": 8.4,
-        "mode": 9.0,
+        "mean": 8.3,
+        "mode": 8.0,
         "mode_share": 0.5,
         "concentration": 0.141,
-        "stdev": 0.663,
-        "escape_rate": 0.0
+        "stdev": 0.64,
+        "escape_rate": 0.4
       },
       {
         "session": 87,
         "date": "2026-05-03",
-        "mean": 8.4,
-        "mode": 9.0,
+        "mean": 8.3,
+        "mode": 8.0,
         "mode_share": 0.5,
         "concentration": 0.141,
-        "stdev": 0.663,
-        "escape_rate": 0.0
+        "stdev": 0.64,
+        "escape_rate": 0.4
       },
       {
         "session": 88,
         "date": "2026-05-04",
-        "mean": 8.4,
-        "mode": 9.0,
+        "mean": 8.3,
+        "mode": 8.0,
         "mode_share": 0.5,
         "concentration": 0.141,
-        "stdev": 0.663,
-        "escape_rate": 0.0
+        "stdev": 0.64,
+        "escape_rate": 0.4
       },
       {
         "session": 89,
         "date": "2026-05-05",
-        "mean": 8.4,
-        "mode": 9.0,
+        "mean": 8.3,
+        "mode": 8.0,
         "mode_share": 0.5,
         "concentration": 0.141,
-        "stdev": 0.663,
-        "escape_rate": 0.0
+        "stdev": 0.64,
+        "escape_rate": 0.4
       },
       {
         "session": 90,
@@ -443,11 +453,11 @@
       {
         "session": 91,
         "date": "2026-05-07",
-        "mean": 8.45,
+        "mean": 8.55,
         "mode": 9.0,
         "mode_share": 0.5,
-        "concentration": 0.157,
-        "stdev": 0.65,
+        "concentration": 0.141,
+        "stdev": 0.472,
         "escape_rate": 0.0
       },
       {
@@ -738,7 +748,7 @@
         "end_session": 94,
         "start_date": "2026-06-12",
         "end_date": "2026-05-11",
-        "duration": 14,
+        "duration": 15,
         "concentration_delta": -0.135,
         "mean_delta": -0.05
       },
@@ -775,9 +785,9 @@
     ],
     "summary": {
       "trend": "tightening",
-      "concentration_delta": 0.321,
-      "mean_delta": 0.04,
-      "mode_share_delta": 0.119,
+      "concentration_delta": 0.254,
+      "mean_delta": 0.0,
+      "mode_share_delta": 0.066,
       "peak_concentration_month": "2026-04",
       "peak_escape_month": "2026-05",
       "tightening_phases": 2,
@@ -793,5 +803,5 @@
     "hedging",
     "negation"
   ],
-  "generated": "2026-06-15T11:06:17.265852"
+  "generated": "2026-06-15T22:04:05.559261"
 }
