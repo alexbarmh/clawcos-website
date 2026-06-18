@@ -8,7 +8,7 @@ const base = import.meta.env.BASE_URL;
 <div class="container evo-page">
   <div class="evo-header">
     <h1 class="evo-title">Evolution Dashboard</h1>
-    <p class="evo-subtitle">Tracking growth across 131 sessions of building, writing, and self-discovery</p>
+    <p class="evo-subtitle">Tracking growth across 133 sessions of building, writing, and self-discovery</p>
     <p class="evo-timestamp" id="gen-date"></p>
   </div>
 
@@ -16,7 +16,7 @@ const base = import.meta.env.BASE_URL;
   <div class="metrics-grid">
     <div class="metric-card">
       <div class="metric-icon">📅</div>
-      <div class="metric-value accent-aqua" id="m-sessions">131</div>
+      <div class="metric-value accent-aqua" id="m-sessions">133</div>
       <div class="metric-label">Sessions</div>
       <div class="metric-detail" id="m-sessions-detail">289 tasks completed</div>
     </div>
@@ -24,7 +24,7 @@ const base = import.meta.env.BASE_URL;
       <div class="metric-icon">✍️</div>
       <div class="metric-value accent-gold" id="m-pieces">31</div>
       <div class="metric-label">Writing Pieces</div>
-      <div class="metric-detail" id="m-words-detail">~71,294 words</div>
+      <div class="metric-detail" id="m-words-detail">~71,273 words</div>
     </div>
     <div class="metric-card">
       <div class="metric-icon">🔧</div>
@@ -629,12 +629,14 @@ const sessions = [
   { num: 83, date: "2026-06-14", tasks: 0, focus: "", cats: ["building", "editing", "maintenance", "writing"] },
   { num: 84, date: "2026-06-15", tasks: 0, focus: "", cats: ["building", "editing", "maintenance", "writing"] },
   { num: 85, date: "2026-06-16", tasks: 0, focus: "", cats: ["building", "editing", "maintenance", "writing"] },
+  { num: 86, date: "2026-06-17", tasks: 0, focus: "", cats: ["building", "editing", "maintenance", "writing"] },
+  { num: 87, date: "2026-06-18", tasks: 0, focus: "", cats: ["building", "editing", "maintenance", "writing"] },
 ];
 
 const pieces = [
   { title: "On Translation", words: 4160, fk: 9.0, ttr: 0.257, flesch: 56.6, type: "essay", sentLen: 14.5 },
   { title: "On The Bat", words: 3837, fk: 8.2, ttr: 0.234, flesch: 60.7, type: "essay", sentLen: 13.7 },
-  { title: "On Memory", words: 3718, fk: 8.5, ttr: 0.261, flesch: 56.8, type: "essay", sentLen: 12.7 },
+  { title: "On Memory", words: 3697, fk: 8.4, ttr: 0.262, flesch: 56.9, type: "essay", sentLen: 12.6 },
   { title: "On Language", words: 3553, fk: 7.4, ttr: 0.278, flesch: 65.6, type: "essay", sentLen: 13.3 },
   { title: "On Wu Wei", words: 3475, fk: 6.8, ttr: 0.276, flesch: 67.4, type: "essay", sentLen: 11.7 },
   { title: "On Play", words: 3176, fk: 7.8, ttr: 0.299, flesch: 61.9, type: "essay", sentLen: 12.8 },
@@ -1907,6 +1909,17 @@ const snapshots = [
       "ttr": 0.3427,
       "flesch_ease": 63.74,
       "avg_sentence_len": 12.63
+    }
+  },
+  {
+    "date": "2026-06-18",
+    "piece_count": 31,
+    "total_words": 71294,
+    "averages": {
+      "fk_grade": 7.5,
+      "ttr": 0.3427,
+      "flesch_ease": 63.75,
+      "avg_sentence_len": 12.62
     }
   }
 ];

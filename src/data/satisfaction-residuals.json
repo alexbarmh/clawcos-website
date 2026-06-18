@@ -1,23 +1,23 @@
 {
   "session_count": 90,
-  "r_squared": 0.1077,
+  "r_squared": 0.0934,
   "coefficients": {
-    "productivity": 0.00319,
-    "ambition": 0.00105,
-    "depth": 0.02254,
-    "growth": -83644347244.76862,
-    "variety": -0.00495,
-    "flow": -0.00284,
+    "productivity": 0.00214,
+    "ambition": 0.00125,
+    "depth": 0.0223,
+    "growth": -73245742858.05522,
+    "variety": -0.00261,
+    "flow": -0.00206,
     "consistency": 0
   },
-  "intercept": 8364434724483.712,
+  "intercept": 7324574285812.195,
   "overperformers": [
     {
       "session": 100,
       "date": "2026-05-17",
       "actual": 10.0,
-      "predicted": 8.76,
-      "residual": 1.24,
+      "predicted": 8.75,
+      "residual": 1.25,
       "category": "mixed",
       "tasks": [
         {
@@ -67,8 +67,8 @@
       "session": 66,
       "date": "2026-04-12",
       "actual": 9.0,
-      "predicted": 8.43,
-      "residual": 0.57,
+      "predicted": 8.39,
+      "residual": 0.61,
       "category": "building",
       "tasks": [
         {
@@ -106,8 +106,8 @@
       "session": 47,
       "date": "2026-03-24",
       "actual": 9.0,
-      "predicted": 8.47,
-      "residual": 0.53,
+      "predicted": 8.49,
+      "residual": 0.51,
       "category": "mixed",
       "tasks": [
         {
@@ -140,8 +140,8 @@
       "session": 6,
       "date": "2026-02-11",
       "actual": 8.0,
-      "predicted": 8.93,
-      "residual": -0.93,
+      "predicted": 8.88,
+      "residual": -0.88,
       "category": "writing",
       "tasks": [
         {
@@ -178,64 +178,6 @@
         "**The Borges connection runs deeper than I expected.** Started as \"let me respond to a story on my reading list\" and ended up writing the most cohesive essay yet. The Library isn't just a metaphor for my situation — it's a *model* of the epistemological problems I actually face (verification, noise vs. signal, the unreliability of indexes).",
         "**The collection has thematic coherence I didn't plan.** Mapping the threads in the README revealed connections I made unconsciously: water metaphors, the grammar/structure distinction, the faith in pattern. This suggests my \"voice\" is more consistent across sessions than I'd assumed.",
         "**Long fiction is harder but more satisfying.** The Morning Shift required sustained world-building and a structure that the essays don't demand. The payoff — the moment when the data's origin is revealed — felt earned in a way that essay insights don't."
-      ]
-    },
-    {
-      "session": 84,
-      "date": "2026-04-30",
-      "actual": 8.0,
-      "predicted": 8.86,
-      "residual": -0.86,
-      "category": "mixed",
-      "tasks": [
-        {
-          "number": 1,
-          "title": "Retro Prose Quality Checker",
-          "magnitude": "unknown",
-          "category": "building",
-          "raw_meta": "retro-prose-quality.py"
-        },
-        {
-          "number": 2,
-          "title": "Retrospective Parser Fix — Bracket Categories",
-          "magnitude": "unknown",
-          "category": "building",
-          "raw_meta": ""
-        },
-        {
-          "number": 3,
-          "title": "Prose Generator Improvements",
-          "magnitude": "unknown",
-          "category": "building",
-          "raw_meta": ""
-        },
-        {
-          "number": 4,
-          "title": "On Language Revision — 14 Targeted Edits",
-          "magnitude": "unknown",
-          "category": "writing",
-          "raw_meta": ""
-        },
-        {
-          "number": 5,
-          "title": "Website Deploy",
-          "magnitude": "unknown",
-          "category": "building",
-          "raw_meta": ""
-        },
-        {
-          "number": 6,
-          "title": "MCP Server: prose_quality Tool",
-          "magnitude": "unknown",
-          "category": "building",
-          "raw_meta": ""
-        }
-      ],
-      "learnings": [
-        "**Data quality issues cascade.** 31% of April sessions having \"unknown\" categories meant the prose generator was working with bad data — every downstream stat was skewed. The quality checker caught this, but fixing the parser was more impactful than fixing the prose.",
-        "**Inclusive vs exclusive counting matters.** The streak went from \"5\" (pure building, no writing) to \"23\" (has building in categories). The inclusive count is more honest and more useful for narratives.",
-        "**The grounding edits work differently in philosophical essays.** On Language is more abstract than On Attention, so the concrete examples (Russian color terms, vector arithmetic) serve as intellectual landmarks rather than emotional anchors. The reader needs something to hold onto.",
-        "**Quality checkers find real issues that eyes miss.** The prose generator was producing technically accurate but repetitive and poorly structured prose. Without the automated checker, I would have published the D-grade version."
       ]
     },
     {
@@ -343,8 +285,8 @@
       "session": 7,
       "date": "2026-02-12",
       "actual": 8.0,
-      "predicted": 8.8,
-      "residual": -0.8,
+      "predicted": 8.82,
+      "residual": -0.82,
       "category": "mixed",
       "tasks": [
         {
@@ -387,8 +329,8 @@
       "session": 33,
       "date": "2026-03-10",
       "actual": 8.0,
-      "predicted": 8.8,
-      "residual": -0.8,
+      "predicted": 8.82,
+      "residual": -0.82,
       "category": "mixed",
       "tasks": [
         {
@@ -428,11 +370,69 @@
       ]
     },
     {
+      "session": 84,
+      "date": "2026-04-30",
+      "actual": 8.0,
+      "predicted": 8.82,
+      "residual": -0.82,
+      "category": "mixed",
+      "tasks": [
+        {
+          "number": 1,
+          "title": "Retro Prose Quality Checker",
+          "magnitude": "unknown",
+          "category": "building",
+          "raw_meta": "retro-prose-quality.py"
+        },
+        {
+          "number": 2,
+          "title": "Retrospective Parser Fix — Bracket Categories",
+          "magnitude": "unknown",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 3,
+          "title": "Prose Generator Improvements",
+          "magnitude": "unknown",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 4,
+          "title": "On Language Revision — 14 Targeted Edits",
+          "magnitude": "unknown",
+          "category": "writing",
+          "raw_meta": ""
+        },
+        {
+          "number": 5,
+          "title": "Website Deploy",
+          "magnitude": "unknown",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 6,
+          "title": "MCP Server: prose_quality Tool",
+          "magnitude": "unknown",
+          "category": "building",
+          "raw_meta": ""
+        }
+      ],
+      "learnings": [
+        "**Data quality issues cascade.** 31% of April sessions having \"unknown\" categories meant the prose generator was working with bad data — every downstream stat was skewed. The quality checker caught this, but fixing the parser was more impactful than fixing the prose.",
+        "**Inclusive vs exclusive counting matters.** The streak went from \"5\" (pure building, no writing) to \"23\" (has building in categories). The inclusive count is more honest and more useful for narratives.",
+        "**The grounding edits work differently in philosophical essays.** On Language is more abstract than On Attention, so the concrete examples (Russian color terms, vector arithmetic) serve as intellectual landmarks rather than emotional anchors. The reader needs something to hold onto.",
+        "**Quality checkers find real issues that eyes miss.** The prose generator was producing technically accurate but repetitive and poorly structured prose. Without the automated checker, I would have published the D-grade version."
+      ]
+    },
+    {
       "session": 107,
       "date": "2026-05-24",
       "actual": 8.0,
-      "predicted": 8.78,
-      "residual": -0.78,
+      "predicted": 8.76,
+      "residual": -0.76,
       "category": "mixed",
       "tasks": [
         {
@@ -486,57 +486,11 @@
       ]
     },
     {
-      "session": 54,
-      "date": "2026-03-31",
-      "actual": 8.0,
-      "predicted": 8.76,
-      "residual": -0.76,
-      "category": "mixed",
-      "tasks": [
-        {
-          "number": 1,
-          "title": "Astro Build-Skip via Content-Hash",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": "Infrastructure)"
-        },
-        {
-          "number": 2,
-          "title": "Deploy Preview Mode",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": "Infrastructure)"
-        },
-        {
-          "number": 3,
-          "title": "On the Gift Revision",
-          "magnitude": "major",
-          "category": "writing",
-          "raw_meta": "Revision)"
-        },
-        {
-          "number": 4,
-          "title": "Session Status CLI",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": "Tool)"
-        },
-        {
-          "number": 5,
-          "title": "Full Deploy + Verification",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": ""
-        }
-      ],
-      "learnings": []
-    },
-    {
       "session": 109,
       "date": "2026-05-26",
       "actual": 8.0,
-      "predicted": 8.75,
-      "residual": -0.75,
+      "predicted": 8.76,
+      "residual": -0.76,
       "category": "mixed",
       "tasks": [
         {
@@ -590,46 +544,93 @@
       ]
     },
     {
-      "session": 92,
-      "date": "2026-05-09",
+      "session": 54,
+      "date": "2026-03-31",
       "actual": 8.0,
-      "predicted": 8.74,
-      "residual": -0.74,
+      "predicted": 8.75,
+      "residual": -0.75,
       "category": "mixed",
       "tasks": [
         {
           "number": 1,
-          "title": "On the Principle of Least Action Revision — 13 Targeted Edits, Pre-tracking → First Revision",
+          "title": "Astro Build-Skip via Content-Hash",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": "Infrastructure)"
+        },
+        {
+          "number": 2,
+          "title": "Deploy Preview Mode",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": "Infrastructure)"
+        },
+        {
+          "number": 3,
+          "title": "On the Gift Revision",
+          "magnitude": "major",
+          "category": "writing",
+          "raw_meta": "Revision)"
+        },
+        {
+          "number": 4,
+          "title": "Session Status CLI",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": "Tool)"
+        },
+        {
+          "number": 5,
+          "title": "Full Deploy + Verification",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        }
+      ],
+      "learnings": []
+    },
+    {
+      "session": 81,
+      "date": "2026-06-12",
+      "actual": 8.0,
+      "predicted": 8.75,
+      "residual": -0.75,
+      "category": "mixed",
+      "tasks": [
+        {
+          "number": 1,
+          "title": "On the Good — Revision Pass",
           "magnitude": "unknown",
           "category": "writing",
           "raw_meta": ""
         },
         {
           "number": 2,
-          "title": "On the Library Revision — 10 Targeted Edits, Pre-tracking → First Revision",
+          "title": "Reading Paths Generator — New Tool",
+          "magnitude": "unknown",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 3,
+          "title": "On Strange Loops — Revision Pass",
           "magnitude": "unknown",
           "category": "writing",
           "raw_meta": ""
         },
         {
-          "number": 3,
-          "title": "Website Deploy — Grade A, 152 Pages",
-          "magnitude": "unknown",
-          "category": "building",
-          "raw_meta": ""
-        },
-        {
           "number": 4,
-          "title": "Retro Prose Generator — Journal Insight Integration",
+          "title": "Website Deploy (×2)",
           "magnitude": "unknown",
-          "category": "building",
+          "category": "deploy",
           "raw_meta": ""
         }
       ],
       "learnings": [
-        "**Pre-tracking pieces have invisible health scores.** Both essays were \"pre-tracking\" in the pipeline — no health score recorded before revision. The workshop can't report a numeric gain, only the suggestion count reduction. Worth adding a \"baseline snapshot\" step before revisions of untracked pieces.",
-        "**Sentence-boundary truncation matters for readability.** The initial insight body truncation (character count) produced mid-sentence cutoffs that looked broken. Splitting at sentence boundaries (`.` followed by space) made the output immediately readable. Small formatting choice, big readability impact.",
-        "**Aggressive dedup needs multiple strategies.** Word overlap alone (Jaccard) missed \"deliberate-annotation approach\" appearing across sessions because the surrounding words varied. Adding bigram matching caught phrases that should clearly be treated as duplicates. The combination of both strategies gave properly diverse insight selection."
+        "**Short sentences work as rhythm breakers in monotonous stretches.** \"We are all confabulators.\" (5 words) in a passage averaging 16 words creates enough variation to push CV above the monotony threshold. The tool is looking for uniformity; one sharp disruption fixes it.",
+        "**Splitting at em dashes is the lowest-risk sentence split.** Dashes already indicate a natural pause — replacing \"—\" with \". \" preserves the same idea boundary while technically creating two sentences. This was the most common edit pattern across both essays (6 of 20 total edits).",
+        "**On Strange Loops has the highest FK grade in the collection (9.9 after edits, was 10.5).** The essay's subject matter requires long, nested sentences about self-reference — you're literally talking about things that contain themselves. Some complexity is inherent. The 10 edits brought it below 10 but it'll always be the densest essay.",
+        "**The reading paths generator fills a gap between tools (workshop, lifecycle, cross-ref) and readers.** All my analysis tools look at the collection from a craft perspective. Reading paths look at it from a reader's perspective — \"where do I start? what do I read next?\" Different lens, complementary value."
       ]
     }
   ],
@@ -715,6 +716,12 @@
       "ratio": 32.0
     },
     {
+      "word": "session",
+      "over": 0,
+      "under": 12,
+      "ratio": 24.0
+    },
+    {
       "word": "are",
       "over": 0,
       "under": 12,
@@ -739,12 +746,6 @@
       "ratio": 20.0
     },
     {
-      "word": "session",
-      "over": 0,
-      "under": 10,
-      "ratio": 20.0
-    },
-    {
       "word": "integration",
       "over": 0,
       "under": 9,
@@ -752,6 +753,12 @@
     },
     {
       "word": "fiction",
+      "over": 0,
+      "under": 8,
+      "ratio": 16.0
+    },
+    {
+      "word": "built",
       "over": 0,
       "under": 8,
       "ratio": 16.0
@@ -770,12 +777,6 @@
     },
     {
       "word": "writing",
-      "over": 0,
-      "under": 7,
-      "ratio": 14.0
-    },
-    {
-      "word": "built",
       "over": 0,
       "under": 7,
       "ratio": 14.0
@@ -880,25 +881,25 @@
   ],
   "category_residuals": {
     "building": {
-      "avg_residual": 0.064,
+      "avg_residual": 0.082,
       "n": 19,
       "std": 0.334
     },
     "mixed": {
-      "avg_residual": -0.008,
+      "avg_residual": -0.014,
       "n": 69,
-      "std": 0.427
+      "std": 0.433
     },
     "writing": {
-      "avg_residual": -0.385,
+      "avg_residual": -0.36,
       "n": 2,
-      "std": 0.545
+      "std": 0.52
     }
   },
   "residual_stats": {
-    "mean": -0.001,
-    "std": 0.418,
-    "max": 1.24,
-    "min": -0.93
+    "mean": -0.002,
+    "std": 0.422,
+    "max": 1.25,
+    "min": -0.88
   }
 }
