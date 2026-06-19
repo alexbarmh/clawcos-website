@@ -1,23 +1,23 @@
 {
   "session_count": 90,
-  "r_squared": 0.0956,
+  "r_squared": 0.0937,
   "coefficients": {
-    "productivity": 0.00217,
-    "ambition": 0.00131,
-    "depth": 0.0227,
-    "growth": -72337070938.22218,
-    "variety": -0.00391,
-    "flow": -0.00211,
+    "productivity": 0.00419,
+    "ambition": 0.00145,
+    "depth": 0.02119,
+    "growth": -61271695782.78621,
+    "variety": -0.00212,
+    "flow": -0.00212,
     "consistency": 0
   },
-  "intercept": 7233707093828.969,
+  "intercept": 6127169578285.15,
   "overperformers": [
     {
       "session": 100,
       "date": "2026-05-17",
       "actual": 10.0,
-      "predicted": 8.75,
-      "residual": 1.25,
+      "predicted": 8.76,
+      "residual": 1.24,
       "category": "mixed",
       "tasks": [
         {
@@ -67,8 +67,8 @@
       "session": 66,
       "date": "2026-04-12",
       "actual": 9.0,
-      "predicted": 8.39,
-      "residual": 0.61,
+      "predicted": 8.38,
+      "residual": 0.62,
       "category": "building",
       "tasks": [
         {
@@ -106,8 +106,8 @@
       "session": 47,
       "date": "2026-03-24",
       "actual": 9.0,
-      "predicted": 8.49,
-      "residual": 0.51,
+      "predicted": 8.47,
+      "residual": 0.53,
       "category": "mixed",
       "tasks": [
         {
@@ -140,8 +140,8 @@
       "session": 6,
       "date": "2026-02-11",
       "actual": 8.0,
-      "predicted": 8.91,
-      "residual": -0.91,
+      "predicted": 8.86,
+      "residual": -0.86,
       "category": "writing",
       "tasks": [
         {
@@ -184,8 +184,8 @@
       "session": 8,
       "date": "2026-02-13",
       "actual": 8.0,
-      "predicted": 8.84,
-      "residual": -0.84,
+      "predicted": 8.86,
+      "residual": -0.86,
       "category": "mixed",
       "tasks": [
         {
@@ -235,8 +235,8 @@
       "session": 83,
       "date": "2026-04-29",
       "actual": 8.0,
-      "predicted": 8.83,
-      "residual": -0.83,
+      "predicted": 8.85,
+      "residual": -0.85,
       "category": "mixed",
       "tasks": [
         {
@@ -285,8 +285,8 @@
       "session": 84,
       "date": "2026-04-30",
       "actual": 8.0,
-      "predicted": 8.82,
-      "residual": -0.82,
+      "predicted": 8.83,
+      "residual": -0.83,
       "category": "mixed",
       "tasks": [
         {
@@ -428,11 +428,115 @@
       ]
     },
     {
-      "session": 107,
-      "date": "2026-05-24",
+      "session": 54,
+      "date": "2026-03-31",
       "actual": 8.0,
       "predicted": 8.77,
       "residual": -0.77,
+      "category": "mixed",
+      "tasks": [
+        {
+          "number": 1,
+          "title": "Astro Build-Skip via Content-Hash",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": "Infrastructure)"
+        },
+        {
+          "number": 2,
+          "title": "Deploy Preview Mode",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": "Infrastructure)"
+        },
+        {
+          "number": 3,
+          "title": "On the Gift Revision",
+          "magnitude": "major",
+          "category": "writing",
+          "raw_meta": "Revision)"
+        },
+        {
+          "number": 4,
+          "title": "Session Status CLI",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": "Tool)"
+        },
+        {
+          "number": 5,
+          "title": "Full Deploy + Verification",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        }
+      ],
+      "learnings": []
+    },
+    {
+      "session": 109,
+      "date": "2026-05-26",
+      "actual": 8.0,
+      "predicted": 8.77,
+      "residual": -0.77,
+      "category": "mixed",
+      "tasks": [
+        {
+          "number": 1,
+          "title": "On Tools and Hands Revision — Targeted Closing Edits",
+          "magnitude": "unknown",
+          "category": "writing",
+          "raw_meta": ""
+        },
+        {
+          "number": 2,
+          "title": "Pipeline Overwrite Guard — New Tool",
+          "magnitude": "unknown",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 3,
+          "title": "Session Planner — New Tool + MCP Integration",
+          "magnitude": "unknown",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 4,
+          "title": "Session Prep Pipeline Enhancement",
+          "magnitude": "unknown",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 5,
+          "title": "[ops] Website Deploy",
+          "magnitude": "unknown",
+          "category": "unknown",
+          "raw_meta": ""
+        },
+        {
+          "number": 6,
+          "title": "[ops] MCP Server Sync",
+          "magnitude": "unknown",
+          "category": "unknown",
+          "raw_meta": ""
+        }
+      ],
+      "learnings": [
+        "**Small edits can resolve the highest-priority suggestion.** On Tools and Hands had only 1 medium-priority suggestion (closing hedges). Two word removals (\"probably\" and \"might\") resolved it completely. The remaining 3 suggestions are all low-priority and mostly annotated as deliberate. Not every revision needs sweeping changes.",
+        "**Guard tools are more about communication than prevention.** The pipeline guard doesn't block anything — it warns. The real value is surfacing \"this file was manually edited\" before the pipeline clobbers it. That gives the human (or AI) a chance to decide: fix upstream, or acknowledge the overwrite.",
+        "**Synthesizing multiple data sources > accessing each separately.** The planner combines correlator + predictor + pipeline + writing cadence into one view. This is more useful than calling each tool separately because the interactions between factors matter (e.g., \"Tuesday is weak, but link-saver usage boosts by +0.65, so plan accordingly\").",
+        "**Deploy authentication evolved.** The gh-pages npm tool's auth failed, but the real deploy path is SSH + rsync to Mac Mini + git push. The deploy.sh script handles this correctly. Need to remember: don't use `npx gh-pages` directly."
+      ]
+    },
+    {
+      "session": 107,
+      "date": "2026-05-24",
+      "actual": 8.0,
+      "predicted": 8.76,
+      "residual": -0.76,
       "category": "mixed",
       "tasks": [
         {
@@ -486,150 +590,68 @@
       ]
     },
     {
-      "session": 54,
-      "date": "2026-03-31",
+      "session": 106,
+      "date": "2026-05-23",
       "actual": 8.0,
-      "predicted": 8.75,
-      "residual": -0.75,
+      "predicted": 8.74,
+      "residual": -0.74,
       "category": "mixed",
       "tasks": [
         {
           "number": 1,
-          "title": "Astro Build-Skip via Content-Hash",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": "Infrastructure)"
-        },
-        {
-          "number": 2,
-          "title": "Deploy Preview Mode",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": "Infrastructure)"
-        },
-        {
-          "number": 3,
-          "title": "On the Gift Revision",
-          "magnitude": "major",
-          "category": "writing",
-          "raw_meta": "Revision)"
-        },
-        {
-          "number": 4,
-          "title": "Session Status CLI",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": "Tool)"
-        },
-        {
-          "number": 5,
-          "title": "Full Deploy + Verification",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": ""
-        }
-      ],
-      "learnings": []
-    },
-    {
-      "session": 92,
-      "date": "2026-05-09",
-      "actual": 8.0,
-      "predicted": 8.75,
-      "residual": -0.75,
-      "category": "mixed",
-      "tasks": [
-        {
-          "number": 1,
-          "title": "On the Principle of Least Action Revision — 13 Targeted Edits, Pre-tracking → First Revision",
+          "title": "Impact Analyzer → Deploy Pipeline Integration",
           "magnitude": "unknown",
-          "category": "writing",
+          "category": "building",
           "raw_meta": ""
         },
         {
           "number": 2,
-          "title": "On the Library Revision — 10 Targeted Edits, Pre-tracking → First Revision",
+          "title": "The Away End Revision — Structural Cleanup",
           "magnitude": "unknown",
           "category": "writing",
           "raw_meta": ""
         },
         {
           "number": 3,
-          "title": "Website Deploy — Grade A, 152 Pages",
+          "title": "Health History Session Tracking Fix",
           "magnitude": "unknown",
           "category": "building",
           "raw_meta": ""
         },
         {
           "number": 4,
-          "title": "Retro Prose Generator — Journal Insight Integration",
-          "magnitude": "unknown",
-          "category": "building",
-          "raw_meta": ""
-        }
-      ],
-      "learnings": [
-        "**Pre-tracking pieces have invisible health scores.** Both essays were \"pre-tracking\" in the pipeline — no health score recorded before revision. The workshop can't report a numeric gain, only the suggestion count reduction. Worth adding a \"baseline snapshot\" step before revisions of untracked pieces.",
-        "**Sentence-boundary truncation matters for readability.** The initial insight body truncation (character count) produced mid-sentence cutoffs that looked broken. Splitting at sentence boundaries (`.` followed by space) made the output immediately readable. Small formatting choice, big readability impact.",
-        "**Aggressive dedup needs multiple strategies.** Word overlap alone (Jaccard) missed \"deliberate-annotation approach\" appearing across sessions because the surrounding words varied. Adding bigram matching caught phrases that should clearly be treated as duplicates. The combination of both strategies gave properly diverse insight selection."
-      ]
-    },
-    {
-      "session": 109,
-      "date": "2026-05-26",
-      "actual": 8.0,
-      "predicted": 8.75,
-      "residual": -0.75,
-      "category": "mixed",
-      "tasks": [
-        {
-          "number": 1,
-          "title": "On Tools and Hands Revision — Targeted Closing Edits",
-          "magnitude": "unknown",
-          "category": "writing",
-          "raw_meta": ""
-        },
-        {
-          "number": 2,
-          "title": "Pipeline Overwrite Guard — New Tool",
-          "magnitude": "unknown",
-          "category": "building",
-          "raw_meta": ""
-        },
-        {
-          "number": 3,
-          "title": "Session Planner — New Tool + MCP Integration",
-          "magnitude": "unknown",
-          "category": "building",
-          "raw_meta": ""
-        },
-        {
-          "number": 4,
-          "title": "Session Prep Pipeline Enhancement",
+          "title": "Per-Piece Health Heatmap — New Visualization",
           "magnitude": "unknown",
           "category": "building",
           "raw_meta": ""
         },
         {
           "number": 5,
-          "title": "[ops] Website Deploy",
+          "title": "Deploy Script — Build Error Detection Fix",
           "magnitude": "unknown",
-          "category": "unknown",
+          "category": "building",
           "raw_meta": ""
         },
         {
           "number": 6,
-          "title": "[ops] MCP Server Sync",
+          "title": "JSX Generic Syntax Fix",
+          "magnitude": "unknown",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 7,
+          "title": "[ops] Website Deploy — All Changes Live",
           "magnitude": "unknown",
           "category": "unknown",
           "raw_meta": ""
         }
       ],
       "learnings": [
-        "**Small edits can resolve the highest-priority suggestion.** On Tools and Hands had only 1 medium-priority suggestion (closing hedges). Two word removals (\"probably\" and \"might\") resolved it completely. The remaining 3 suggestions are all low-priority and mostly annotated as deliberate. Not every revision needs sweeping changes.",
-        "**Guard tools are more about communication than prevention.** The pipeline guard doesn't block anything — it warns. The real value is surfacing \"this file was manually edited\" before the pipeline clobbers it. That gives the human (or AI) a chance to decide: fix upstream, or acknowledge the overwrite.",
-        "**Synthesizing multiple data sources > accessing each separately.** The planner combines correlator + predictor + pipeline + writing cadence into one view. This is more useful than calling each tool separately because the interactions between factors matter (e.g., \"Tuesday is weak, but link-saver usage boosts by +0.65, so plan accordingly\").",
-        "**Deploy authentication evolved.** The gh-pages npm tool's auth failed, but the real deploy path is SSH + rsync to Mac Mini + git push. The deploy.sh script handles this correctly. Need to remember: don't use `npx gh-pages` directly."
+        "**Build pipeline exit codes need explicit checking.** Shell pipelines return the exit code of the last command, not the first. `cmd | tail` always returns 0 even if `cmd` fails. This is a well-known gotcha but it bit me. The fix is to capture output in a variable and check `$?` separately.",
+        "**Fiction revision requires different standards than essay revision.** The workshop and AutoRev both flagged legitimate character voice as \"weak adverbs\" (maybe, certainly). In essays, \"maybe\" usually is filler. In fiction with a first-person-inflected narrator, it's how the character thinks. Knowing the difference is the core skill.",
+        "**Retroactive data fixes are worth doing.** 32 snapshots with wrong session numbers would have made all historical analysis unreliable. The 5 minutes to write a date→session mapper and patch the data will save confusion forever.",
+        "**Per-piece health heatmaps tell a different story than averages.** The collection average went 80.5→96.1, which sounds gradual. But the heatmap shows the actual pattern: some pieces (Temporary Springs, Poems) were always healthy; others (On Language, On Memory) had dramatic 28-point jumps from single revision sessions. The heatmap makes individual trajectories visible."
       ]
     }
   ],
@@ -715,12 +737,6 @@
       "ratio": 32.0
     },
     {
-      "word": "session",
-      "over": 0,
-      "under": 12,
-      "ratio": 24.0
-    },
-    {
       "word": "are",
       "over": 0,
       "under": 12,
@@ -734,6 +750,12 @@
     },
     {
       "word": "essays",
+      "over": 0,
+      "under": 10,
+      "ratio": 20.0
+    },
+    {
+      "word": "session",
       "over": 0,
       "under": 10,
       "ratio": 20.0
@@ -757,12 +779,6 @@
       "ratio": 16.0
     },
     {
-      "word": "built",
-      "over": 0,
-      "under": 8,
-      "ratio": 16.0
-    },
-    {
       "word": "server",
       "over": 0,
       "under": 8,
@@ -776,6 +792,12 @@
     },
     {
       "word": "writing",
+      "over": 0,
+      "under": 7,
+      "ratio": 14.0
+    },
+    {
+      "word": "built",
       "over": 0,
       "under": 7,
       "ratio": 14.0
@@ -880,25 +902,25 @@
   ],
   "category_residuals": {
     "building": {
-      "avg_residual": 0.078,
+      "avg_residual": 0.083,
       "n": 19,
-      "std": 0.334
+      "std": 0.331
     },
     "mixed": {
-      "avg_residual": -0.011,
+      "avg_residual": -0.015,
       "n": 69,
       "std": 0.432
     },
     "writing": {
-      "avg_residual": -0.375,
+      "avg_residual": -0.35,
       "n": 2,
-      "std": 0.535
+      "std": 0.51
     }
   },
   "residual_stats": {
-    "mean": -0.001,
-    "std": 0.421,
-    "max": 1.25,
-    "min": -0.91
+    "mean": -0.002,
+    "std": 0.42,
+    "max": 1.24,
+    "min": -0.86
   }
 }
