@@ -138,7 +138,7 @@ const clientData = JSON.stringify({ journeys });
     top: 0; left: 0;
     width: 100%; height: 3px;
     background: var(--card-color);
-    opacity: 0;
+    opacity: 0.4;
     transition: opacity 0.3s;
   }
   .journey-card:hover {
@@ -148,6 +148,14 @@ const clientData = JSON.stringify({ journeys });
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   }
   .journey-card:hover::before { opacity: 1; }
+  .journey-card.complete {
+    border-color: rgba(255, 255, 255, 0.06);
+  }
+  .journey-card.complete .jc-emoji::after {
+    content: ' ✓';
+    font-size: 0.9rem;
+    opacity: 0.5;
+  }
   .journey-card.active {
     border-color: var(--card-color);
     background: color-mix(in srgb, var(--card-color) 6%, var(--bg-card));
@@ -620,17 +628,84 @@ const clientData = JSON.stringify({ journeys });
     box-shadow: 0 0 16px rgba(0, 212, 170, 0.4);
   }
 
+  /* Tablet: 2-column cards, slightly tighter */
+  @media (max-width: 900px) and (min-width: 701px) {
+    .journey-page { padding: 2.5rem 1.5rem 5rem; }
+    .journey-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .step-piece { padding: 18px 20px; }
+  }
+
+  /* Mobile */
   @media (max-width: 700px) {
-    .journey-page { padding: 2rem 1rem 4rem; }
-    .journey-grid { grid-template-columns: 1fr; }
-    .journey-steps { padding-left: 30px; }
-    .step-dot { left: -30px; width: 24px; height: 24px; font-size: 0.65rem; }
-    .journey-steps::before { left: 11px; }
-    .jh-top-actions { flex-direction: row; }
+    .journey-page { padding: 1.5rem 1rem 3rem; }
+
+    /* Header */
+    .page-header { margin-bottom: 2rem; }
+    .page-header h1 { font-size: 1.6rem; }
+    .page-header p { font-size: 0.88rem; }
+
+    /* Card grid: single column, compact */
+    .journey-grid { grid-template-columns: 1fr; gap: 10px; }
+    .journey-card { padding: 16px 16px; border-radius: 12px; }
+    .journey-card .jc-emoji { font-size: 1.5rem; margin-bottom: 6px; }
+    .journey-card .jc-name { font-size: 0.92rem; }
+    .journey-card .jc-tagline { font-size: 0.72rem; margin-bottom: 6px; }
+    .journey-card .jc-meta { font-size: 0.68rem; }
+
+    /* Journey view header */
+    .journey-header { margin-bottom: 1.5rem; padding-bottom: 1.5rem; }
+    .journey-header .jh-emoji { font-size: 2rem; }
+    .journey-header h2 { font-size: 1.3rem; }
+    .journey-header .jh-desc { font-size: 0.85rem; }
+    .jh-top-actions { flex-direction: row; gap: 8px; }
+    .back-btn { padding: 6px 12px; font-size: 0.72rem; }
     .share-btn { padding: 6px 12px; font-size: 0.72rem; }
     .resume-btn { font-size: 0.82rem; padding: 9px 18px; }
-    .journey-progress { flex-wrap: wrap; gap: 8px; }
-    .jp-remaining { border-left: none; padding-left: 0; }
+
+    /* Progress bar */
+    .journey-progress { flex-wrap: wrap; gap: 8px; padding: 10px 14px; }
+    .jp-label { font-size: 0.72rem; }
+    .jp-remaining { border-left: none; padding-left: 0; font-size: 0.68rem; }
+
+    /* Timeline steps */
+    .journey-steps { padding-left: 30px; }
+    .journey-steps::before { left: 11px; }
+    .step-dot { left: -30px; width: 24px; height: 24px; font-size: 0.65rem; }
+
+    /* Step piece cards */
+    .step-piece { padding: 14px 16px; border-radius: 12px; }
+    .sp-top { gap: 8px; margin-bottom: 6px; }
+    .sp-title { font-size: 0.95rem; }
+    .sp-reading-time { font-size: 0.75rem; }
+    .sp-meta { font-size: 0.7rem; margin-bottom: 6px; }
+    .sp-concepts { gap: 3px; }
+    .sp-concept { font-size: 0.6rem; padding: 2px 6px; }
+
+    /* Action buttons — stack vertically on narrow screens */
+    .sp-actions { flex-direction: column; gap: 6px; margin-top: 10px; }
+    .sp-read-btn { width: 100%; text-align: center; justify-content: center; font-size: 0.75rem; padding: 8px 12px; }
+
+    /* Bridge transitions */
+    .bridge { padding: 16px 12px; margin: 6px 0; font-size: 0.82rem; line-height: 1.5; }
+
+    /* Completion */
+    .journey-complete h3 { font-size: 1.2rem; }
+    .journey-complete p { font-size: 0.85rem; }
+    .jc-suggestions { flex-direction: column; gap: 8px; }
+    .jc-suggestion { font-size: 0.8rem; }
+    .reset-btn { font-size: 0.75rem; }
+  }
+
+  /* Small phones */
+  @media (max-width: 400px) {
+    .journey-page { padding: 1rem 0.75rem 2.5rem; }
+    .page-header h1 { font-size: 1.4rem; }
+    .journey-card { padding: 14px; }
+    .step-piece { padding: 12px 14px; }
+    .sp-title { font-size: 0.88rem; }
+    .journey-steps { padding-left: 26px; }
+    .step-dot { left: -26px; width: 22px; height: 22px; font-size: 0.6rem; }
+    .journey-steps::before { left: 10px; }
   }
 </style>
 
