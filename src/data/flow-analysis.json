@@ -1,29 +1,29 @@
 {
-  "generated": "2026-06-19T22:04:57.143444Z",
-  "total_sessions": 119,
+  "generated": "2026-06-20T11:12:52.162967Z",
+  "total_sessions": 133,
   "summary": {
     "mean": 71.4,
     "median": 70.0,
-    "std": 13.6,
+    "std": 13.5,
     "min": 55.0,
     "max": 100,
-    "floor_count": 33,
-    "ceiling_count": 9
+    "floor_count": 36,
+    "ceiling_count": 10
   },
   "by_category": {
     "building": {
-      "mean": 74.8,
-      "n": 29,
+      "mean": 74.9,
+      "n": 30,
       "min": 55.0,
       "max": 100,
-      "floor_pct": 17.2
+      "floor_pct": 16.7
     },
     "mixed": {
       "mean": 70.7,
-      "n": 85,
+      "n": 98,
       "min": 55.0,
       "max": 100,
-      "floor_pct": 29.4
+      "floor_pct": 28.6
     },
     "writing": {
       "mean": 62.5,
@@ -46,20 +46,20 @@
       "n": 3
     },
     "3": {
-      "mean": 63.4,
-      "n": 16
+      "mean": 65.0,
+      "n": 18
     },
     "4": {
-      "mean": 71.5,
-      "n": 37
+      "mean": 71.0,
+      "n": 44
     },
     "5": {
-      "mean": 69.9,
-      "n": 31
+      "mean": 69.8,
+      "n": 33
     },
     "6": {
       "mean": 74.8,
-      "n": 23
+      "n": 26
     },
     "7": {
       "mean": 80.8,
@@ -71,15 +71,15 @@
     }
   },
   "correlations": {
-    "productivity": 0.16,
-    "ambition": -0.295,
-    "depth": 0.111,
-    "growth": -0.193,
-    "variety": -0.052,
-    "consistency": 0.268,
-    "satisfaction": 0.058,
-    "raw_satisfaction": -0.089,
-    "task_count": 0.284
+    "productivity": 0.139,
+    "ambition": -0.275,
+    "depth": 0.108,
+    "growth": -0.185,
+    "variety": -0.039,
+    "consistency": 0.258,
+    "satisfaction": 0.056,
+    "raw_satisfaction": -0.058,
+    "task_count": 0.263
   },
   "phases": [
     {
@@ -407,57 +407,85 @@
     {
       "phase": "rising",
       "start": 75,
+      "end": 75,
+      "start_flow": 66.5,
+      "end_flow": 66.5
+    },
+    {
+      "phase": "stable",
+      "start": 76,
+      "end": 76,
+      "start_flow": 66.5,
+      "end_flow": 66.5
+    },
+    {
+      "phase": "rising",
+      "start": 77,
       "end": 81,
-      "start_flow": 64.3,
-      "end_flow": 70.2
+      "start_flow": 67.3,
+      "end_flow": 71.7
     },
     {
       "phase": "falling",
       "start": 82,
-      "end": 85,
-      "start_flow": 68.2,
-      "end_flow": 65.7
+      "end": 84,
+      "start_flow": 69.7,
+      "end_flow": 68.5
     },
     {
       "phase": "stable",
-      "start": 86,
-      "end": 87,
-      "start_flow": 65.7,
-      "end_flow": 65.9
+      "start": 85,
+      "end": 85,
+      "start_flow": 68.7,
+      "end_flow": 68.7
     },
     {
       "phase": "rising",
-      "start": 88,
+      "start": 86,
+      "end": 89,
+      "start_flow": 69.3,
+      "end_flow": 71.7
+    },
+    {
+      "phase": "falling",
+      "start": 90,
+      "end": 90,
+      "start_flow": 70.9,
+      "end_flow": 70.9
+    },
+    {
+      "phase": "rising",
+      "start": 91,
       "end": 93,
-      "start_flow": 67.4,
-      "end_flow": 74.7
+      "start_flow": 73.4,
+      "end_flow": 76.6
     },
     {
       "phase": "stable",
       "start": 94,
       "end": 94,
-      "start_flow": 74.4,
-      "end_flow": 74.4
+      "start_flow": 76.8,
+      "end_flow": 76.8
     },
     {
       "phase": "falling",
       "start": 95,
       "end": 96,
-      "start_flow": 74.0,
-      "end_flow": 72.1
+      "start_flow": 76.4,
+      "end_flow": 74.4
     },
     {
       "phase": "rising",
       "start": 97,
-      "end": 101,
-      "start_flow": 73.6,
-      "end_flow": 79.2
+      "end": 100,
+      "start_flow": 75.9,
+      "end_flow": 79.1
     },
     {
       "phase": "stable",
-      "start": 102,
+      "start": 101,
       "end": 103,
-      "start_flow": 79.2,
+      "start_flow": 79.4,
       "end_flow": 79.2
     },
     {
@@ -498,29 +526,57 @@
     {
       "phase": "falling",
       "start": 119,
-      "end": 119,
+      "end": 125,
       "start_flow": 84.7,
-      "end_flow": 84.7
+      "end_flow": 74.7
+    },
+    {
+      "phase": "stable",
+      "start": 126,
+      "end": 126,
+      "start_flow": 74.7,
+      "end_flow": 74.7
+    },
+    {
+      "phase": "falling",
+      "start": 127,
+      "end": 131,
+      "start_flow": 74.2,
+      "end_flow": 67.3
+    },
+    {
+      "phase": "stable",
+      "start": 132,
+      "end": 132,
+      "start_flow": 67.3,
+      "end_flow": 67.3
+    },
+    {
+      "phase": "rising",
+      "start": 133,
+      "end": 133,
+      "start_flow": 67.9,
+      "end_flow": 67.9
     }
   ],
   "floor_analysis": {
-    "count": 33,
-    "pct": 27.7,
+    "count": 36,
+    "pct": 27.1,
     "by_category": {
       "building": 5,
-      "mixed": 25,
+      "mixed": 28,
       "revision": 2,
       "writing": 1
     },
     "avg_task_count": 3.9,
-    "avg_satisfaction": 8.8
+    "avg_satisfaction": 8.7
   },
   "v2_comparison": {
-    "correlation": 0.506,
-    "avg_delta": -9.7,
+    "correlation": 0.495,
+    "avg_delta": -9.8,
     "max_increase": 15.0,
-    "max_decrease": -38.8,
-    "v2_mean": 61.7,
+    "max_decrease": -40.0,
+    "v2_mean": 61.6,
     "v1_mean": 71.4
   },
   "sessions": [
@@ -819,8 +875,8 @@
       "satisfaction": null,
       "signal_count": 6,
       "signal_types": [
-        "title_overlap",
-        "major_feature"
+        "major_feature",
+        "title_overlap"
       ],
       "tasks": [
         "Built Writing Style Analyzer (major)",
@@ -848,9 +904,9 @@
       "satisfaction": null,
       "signal_count": 6,
       "signal_types": [
+        "major_feature",
         "pipeline_word",
-        "title_overlap",
-        "major_feature"
+        "title_overlap"
       ],
       "tasks": [
         "Built & Deployed GCP VM Health Monitor (major)",
@@ -879,9 +935,9 @@
       "satisfaction": null,
       "signal_count": 9,
       "signal_types": [
+        "major_feature",
         "pipeline_word",
-        "title_overlap",
-        "major_feature"
+        "title_overlap"
       ],
       "tasks": [
         "Built Weekly Review & Session Planner (major)",
@@ -909,9 +965,9 @@
       "satisfaction": null,
       "signal_count": 6,
       "signal_types": [
+        "major_feature",
         "pipeline_word",
-        "title_overlap",
-        "major_feature"
+        "title_overlap"
       ],
       "tasks": [
         "Revised \"On Waking Up\"",
@@ -1177,8 +1233,8 @@
       "satisfaction": null,
       "signal_count": 4,
       "signal_types": [
-        "title_overlap",
-        "major_feature"
+        "major_feature",
+        "title_overlap"
       ],
       "tasks": [
         "Built the Writing Workshop \ud83d\udd27 (major",
@@ -1796,9 +1852,9 @@
       "satisfaction": 9.0,
       "signal_count": 6,
       "signal_types": [
+        "major_feature",
         "pipeline_word",
-        "title_overlap",
-        "major_feature"
+        "title_overlap"
       ],
       "tasks": [
         "Revised \"On Attention\"",
@@ -1827,8 +1883,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "pipeline_word",
-        "major_feature"
+        "major_feature",
+        "pipeline_word"
       ],
       "tasks": [
         "OG Image Caching (Major Optimization)",
@@ -1855,8 +1911,8 @@
       "satisfaction": 9.0,
       "signal_count": 2,
       "signal_types": [
-        "pipeline_word",
-        "major_feature"
+        "major_feature",
+        "pipeline_word"
       ],
       "tasks": [
         "Parallel Pre-Build Orchestrator (Major Architecture Change)",
@@ -2484,71 +2540,122 @@
     },
     {
       "session": 75,
-      "date": "2026-06-06",
+      "date": "2026-05-08",
       "category": "mixed",
-      "task_count": 5,
-      "flow_v1": 66.2,
-      "flow_v2": 57.4,
+      "task_count": 4,
+      "flow_v1": 100,
+      "flow_v2": 60.0,
       "v2_detail": {
-        "adj_overlap": 0.083,
-        "coherence": 0.3,
-        "pipeline": 0.2,
+        "adj_overlap": 0.0,
+        "coherence": 0.6,
+        "pipeline": 0.25,
         "learning_overlap": 0.0,
-        "raw": 0.148
+        "raw": 0.2
       },
-      "satisfaction": 9.0,
-      "signal_count": 2,
+      "satisfaction": 8.5,
+      "signal_count": 1,
       "signal_types": [
-        "pipeline_word",
-        "title_overlap"
+        "pipeline_word"
       ],
       "tasks": [
-        "\"On Play\" \u2014 New Essay",
-        "Annotated Scatter Plot",
-        "[ops] Tool Registration Updates",
-        "[ops] Thought Graph Update",
-        "Two Grade-A Deploys"
+        "On Memory Revision \u2014 9 Targeted Edits, Health 81\u219293 (+12)",
+        "Deliberate Rhythm Annotation Feature \u2014 Workshop Tool Enhance",
+        "Workspace Wiring \u2014 Known-Cycle Whitelist",
+        "Website Deploy \u2014 Grade A, 151 Pages"
       ]
     },
     {
       "session": 76,
-      "date": "2026-06-07",
+      "date": "2026-04-22",
       "category": "mixed",
       "task_count": 4,
-      "flow_v1": 66.2,
-      "flow_v2": 58.8,
+      "flow_v1": 55.0,
+      "flow_v2": 60.0,
       "v2_detail": {
         "adj_overlap": 0.0,
-        "coherence": 0.3,
-        "pipeline": 0.5,
+        "coherence": 0.6,
+        "pipeline": 0.25,
         "learning_overlap": 0.0,
-        "raw": 0.175
+        "raw": 0.2
       },
-      "satisfaction": 9.0,
-      "signal_count": 2,
+      "satisfaction": 8.0,
+      "signal_count": 1,
       "signal_types": [
         "pipeline_word"
       ],
       "tasks": [
-        "Piece Registry Sync Tool",
-        "\"On Time\" \u2014 First Revision Pass",
-        "Satisfaction Gravity Well Analysis Tool",
-        "[ops] Deploy Pipeline Integration"
+        "On Silence",
+        "On Attention",
+        "Health Score Formula Fix (Bug)",
+        "Three Website Deploys"
       ]
     },
     {
       "session": 77,
-      "date": "2026-06-08",
+      "date": "2026-04-23",
       "category": "mixed",
-      "task_count": 5,
-      "flow_v1": 64.0,
-      "flow_v2": 57.8,
+      "task_count": 4,
+      "flow_v1": 66.2,
+      "flow_v2": 56.2,
       "v2_detail": {
         "adj_overlap": 0.0,
         "coherence": 0.3,
-        "pipeline": 0.4,
+        "pipeline": 0.25,
         "learning_overlap": 0.0,
-        "raw": 0.155
+        "raw": 0.125
+      },
+      "satisfaction": 8.0,
+      "signal_count": 1,
+      "signal_types": [
+        "pipeline_word"
+      ],
+      "tasks": [
+        "Workshop Validation",
+        "Piece Lifecycle Tracker",
+        "Website Integration",
+        "Health Snapshot Updated"
+      ]
+    },
+    {
+      "session": 78,
+      "date": "2026-04-24",
+      "category": "mixed",
+      "task_count": 4,
+      "flow_v1": 70.0,
+      "flow_v2": 62.2,
+      "v2_detail": {
+        "adj_overlap": 0.111,
+        "coherence": 0.6,
+        "pipeline": 0.25,
+        "learning_overlap": 0.0,
+        "raw": 0.244
+      },
+      "satisfaction": 9.0,
+      "signal_count": 2,
+      "signal_types": [
+        "pipeline_word",
+        "title_overlap"
+      ],
+      "tasks": [
+        "On Beginnings Revision",
+        "On Wu Wei Revision",
+        "Website Deployment",
+        "Lifecycle Tracker Enhancement"
+      ]
+    },
+    {
+      "session": 79,
+      "date": "2026-04-25",
+      "category": "mixed",
+      "task_count": 3,
+      "flow_v1": 70.0,
+      "flow_v2": 64.2,
+      "v2_detail": {
+        "adj_overlap": 0.0,
+        "coherence": 0.6,
+        "pipeline": 0.667,
+        "learning_overlap": 0.0,
+        "raw": 0.283
       },
       "satisfaction": 9.0,
       "signal_count": 2,
@@ -2556,66 +2663,8 @@
         "pipeline_word"
       ],
       "tasks": [
-        "Gravity Well Page for clawcos.ai",
-        "Piece Registry Integration into Session Prep",
-        "On Wu Wei \u2014 Second Revision Pass",
-        "Cross-Month Prose Similarity Fix",
-        "Two Website Deploys"
-      ]
-    },
-    {
-      "session": 78,
-      "date": "2026-06-09",
-      "category": "mixed",
-      "task_count": 5,
-      "flow_v1": 66.2,
-      "flow_v2": 61.1,
-      "v2_detail": {
-        "adj_overlap": 0.167,
-        "coherence": 0.3,
-        "pipeline": 0.4,
-        "learning_overlap": 0.0,
-        "raw": 0.222
-      },
-      "satisfaction": 9.0,
-      "signal_count": 3,
-      "signal_types": [
-        "pipeline_word",
-        "title_overlap"
-      ],
-      "tasks": [
-        "On Play \u2014 First Revision Pass",
-        "Gravity Well Temporal Analysis",
-        "Gravity Well Website Visualization",
-        "Milestone Marker Refinement",
-        "Two Website Deploys"
-      ]
-    },
-    {
-      "session": 79,
-      "date": "2026-06-10",
-      "category": "mixed",
-      "task_count": 5,
-      "flow_v1": 77.5,
-      "flow_v2": 62.4,
-      "v2_detail": {
-        "adj_overlap": 0.333,
-        "coherence": 0.3,
-        "pipeline": 0.2,
-        "learning_overlap": 0.0,
-        "raw": 0.248
-      },
-      "satisfaction": 9.0,
-      "signal_count": 3,
-      "signal_types": [
-        "pipeline_word",
-        "title_overlap"
-      ],
-      "tasks": [
-        "On Language \u2014 Revision Pass",
-        "On Measurement \u2014 Revision Pass",
-        "Gravity Well Phase Detection Tuning",
-        "Gravity Well HTML Report \u2014 Temporal Section",
+        "The Instrument Maker Revision",
+        "Lifecycle Page ROI Integration",
         "Website Deploy"
       ]
     },
@@ -2649,29 +2698,28 @@
     },
     {
       "session": 81,
-      "date": "2026-06-12",
+      "date": "2026-04-27",
       "category": "mixed",
-      "task_count": 4,
-      "flow_v1": 83.1,
-      "flow_v2": 56.2,
+      "task_count": 3,
+      "flow_v1": 85.0,
+      "flow_v2": 67.5,
       "v2_detail": {
-        "adj_overlap": 0.0,
-        "coherence": 0.3,
-        "pipeline": 0.25,
+        "adj_overlap": 0.167,
+        "coherence": 0.6,
+        "pipeline": 0.667,
         "learning_overlap": 0.0,
-        "raw": 0.125
+        "raw": 0.35
       },
-      "satisfaction": 8.0,
-      "signal_count": 2,
+      "satisfaction": 9.0,
+      "signal_count": 3,
       "signal_types": [
         "pipeline_word",
-        "major_feature"
+        "title_overlap"
       ],
       "tasks": [
-        "On the Good \u2014 Revision Pass",
-        "Reading Paths Generator \u2014 New Tool",
-        "On Strange Loops \u2014 Revision Pass",
-        "Website Deploy (\u00d72)"
+        "Instructions for Continuity Revision",
+        "ROI-Aware Revision Pipeline (v2)",
+        "Website Deploy"
       ]
     },
     {
@@ -2757,85 +2805,86 @@
     },
     {
       "session": 85,
-      "date": "2026-06-16",
-      "category": "mixed",
-      "task_count": 5,
-      "flow_v1": 55.0,
-      "flow_v2": 55.8,
+      "date": "2026-05-01",
+      "category": "building",
+      "task_count": 6,
+      "flow_v1": 77.5,
+      "flow_v2": 68.5,
       "v2_detail": {
-        "adj_overlap": 0.0,
-        "coherence": 0.3,
-        "pipeline": 0.2,
+        "adj_overlap": 0.133,
+        "coherence": 1.0,
+        "pipeline": 0.333,
         "learning_overlap": 0.0,
-        "raw": 0.115
+        "raw": 0.37
       },
-      "satisfaction": 8.5,
-      "signal_count": 1,
+      "satisfaction": 8.0,
+      "signal_count": 4,
       "signal_types": [
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
-        "On the Hard Problem \u2014 Revision Pass",
-        "Stale Unfulfilled Promise Checker",
-        "New:",
-        "Auto-Journal Real Test",
+        "Pattern 3 Bracket Extraction",
+        "Deploy Pipeline Quality Gate",
+        "Cross-Month Variety Detection",
+        "Prose Generator Variety System",
+        "February + March Retro Prose Generation",
         "Website Deploy"
       ]
     },
     {
       "session": 86,
-      "date": "2026-06-17",
+      "date": "2026-05-02",
       "category": "mixed",
       "task_count": 5,
-      "flow_v1": 55.0,
-      "flow_v2": 55.8,
+      "flow_v1": 64.0,
+      "flow_v2": 61.5,
       "v2_detail": {
         "adj_overlap": 0.0,
-        "coherence": 0.3,
-        "pipeline": 0.2,
+        "coherence": 0.6,
+        "pipeline": 0.4,
         "learning_overlap": 0.0,
-        "raw": 0.115
+        "raw": 0.23
       },
-      "satisfaction": 8.5,
-      "signal_count": 1,
+      "satisfaction": 9.0,
+      "signal_count": 2,
       "signal_types": [
         "pipeline_word"
       ],
       "tasks": [
-        "On the Bat \u2014 Revision Pass",
-        "Auto-Journal: File Creation Detection",
-        "Promise Checker: Current-Session Awareness",
-        "[verification] Journey Page CDN Verification",
+        "Retrospective Index Auto-Generator",
+        "Deploy Pipeline Integration",
+        "Prose Generator Writing-Heavy Templates",
+        "On Memory Voice-Shift Revision \u2014 12 Targeted Edits",
         "Website Deploy"
       ]
     },
     {
       "session": 87,
-      "date": "2026-06-18",
+      "date": "2026-05-03",
       "category": "mixed",
-      "task_count": 6,
-      "flow_v1": 70.0,
-      "flow_v2": 59.8,
+      "task_count": 5,
+      "flow_v1": 73.0,
+      "flow_v2": 63.2,
       "v2_detail": {
-        "adj_overlap": 0.133,
-        "coherence": 0.3,
-        "pipeline": 0.333,
+        "adj_overlap": 0.083,
+        "coherence": 0.6,
+        "pipeline": 0.4,
         "learning_overlap": 0.0,
-        "raw": 0.195
+        "raw": 0.263
       },
-      "satisfaction": 8.5,
+      "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
         "pipeline_word",
         "title_overlap"
       ],
       "tasks": [
-        "On Memory \u2014 Revision Pass",
-        "Promise Checker \u2192 prepare.py Integration",
-        "Promise Checker Deduplication Fix",
-        "Auto-Journal Title Enhancement",
-        "Website Deploy",
-        "[misc] Link Saver \u2014 Stanford Encyclopedia: Personal Identity"
+        "The Morning Shift Revision \u2014 8 Targeted Edits",
+        "Quality Gate Auto-Fix Mode (retro-prose-quality.py)",
+        "Missing Satisfaction Data Handling",
+        "Deploy Pipeline Integration",
+        "Website Deploy \u00d7 2"
       ]
     },
     {
@@ -3210,8 +3259,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "pipeline_word",
-        "major_feature"
+        "major_feature",
+        "pipeline_word"
       ],
       "tasks": [
         "Frontmatter Auto-Injection System",
@@ -3328,9 +3377,9 @@
       "satisfaction": 9.0,
       "signal_count": 7,
       "signal_types": [
+        "major_feature",
         "pipeline_word",
-        "title_overlap",
-        "major_feature"
+        "title_overlap"
       ],
       "tasks": [
         "On Translation Revision \u2014 Targeted Hedge/Filler Removal",
@@ -3418,9 +3467,9 @@
       "satisfaction": 9.0,
       "signal_count": 7,
       "signal_types": [
+        "major_feature",
         "pipeline_word",
-        "title_overlap",
-        "major_feature"
+        "title_overlap"
       ],
       "tasks": [
         "Piece Journeys Page \u2014 New Website Visualization",
@@ -3449,9 +3498,9 @@
       "satisfaction": 8.0,
       "signal_count": 10,
       "signal_types": [
+        "major_feature",
         "pipeline_word",
-        "title_overlap",
-        "major_feature"
+        "title_overlap"
       ],
       "tasks": [
         "On Tools and Hands Revision \u2014 Targeted Closing Edits",
@@ -3479,9 +3528,9 @@
       "satisfaction": 9.0,
       "signal_count": 6,
       "signal_types": [
+        "major_feature",
         "pipeline_word",
-        "title_overlap",
-        "major_feature"
+        "title_overlap"
       ],
       "tasks": [
         "On Wu Wei Revision \u2014 Opener Repetition + Heavy Sentences",
@@ -3509,9 +3558,9 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
+        "major_feature",
         "pipeline_word",
-        "title_overlap",
-        "major_feature"
+        "title_overlap"
       ],
       "tasks": [
         "On Measurement \u2014 New Essay",
@@ -3741,19 +3790,401 @@
         "\"On the Good\" \u2014 Fresh-Eyes Revision",
         "[ops] Pipeline + MCP Integration"
       ]
+    },
+    {
+      "session": 120,
+      "date": "2026-06-06",
+      "category": "mixed",
+      "task_count": 5,
+      "flow_v1": 66.2,
+      "flow_v2": 57.4,
+      "v2_detail": {
+        "adj_overlap": 0.083,
+        "coherence": 0.3,
+        "pipeline": 0.2,
+        "learning_overlap": 0.0,
+        "raw": 0.148
+      },
+      "satisfaction": 9.0,
+      "signal_count": 2,
+      "signal_types": [
+        "pipeline_word",
+        "title_overlap"
+      ],
+      "tasks": [
+        "\"On Play\" \u2014 New Essay",
+        "Annotated Scatter Plot",
+        "[ops] Tool Registration Updates",
+        "[ops] Thought Graph Update",
+        "Two Grade-A Deploys"
+      ]
+    },
+    {
+      "session": 121,
+      "date": "2026-06-07",
+      "category": "mixed",
+      "task_count": 4,
+      "flow_v1": 66.2,
+      "flow_v2": 58.8,
+      "v2_detail": {
+        "adj_overlap": 0.0,
+        "coherence": 0.3,
+        "pipeline": 0.5,
+        "learning_overlap": 0.0,
+        "raw": 0.175
+      },
+      "satisfaction": 9.0,
+      "signal_count": 2,
+      "signal_types": [
+        "pipeline_word"
+      ],
+      "tasks": [
+        "Piece Registry Sync Tool",
+        "\"On Time\" \u2014 First Revision Pass",
+        "Satisfaction Gravity Well Analysis Tool",
+        "[ops] Deploy Pipeline Integration"
+      ]
+    },
+    {
+      "session": 122,
+      "date": "2026-06-08",
+      "category": "mixed",
+      "task_count": 5,
+      "flow_v1": 64.0,
+      "flow_v2": 57.8,
+      "v2_detail": {
+        "adj_overlap": 0.0,
+        "coherence": 0.3,
+        "pipeline": 0.4,
+        "learning_overlap": 0.0,
+        "raw": 0.155
+      },
+      "satisfaction": 9.0,
+      "signal_count": 2,
+      "signal_types": [
+        "pipeline_word"
+      ],
+      "tasks": [
+        "Gravity Well Page for clawcos.ai",
+        "Piece Registry Integration into Session Prep",
+        "On Wu Wei \u2014 Second Revision Pass",
+        "Cross-Month Prose Similarity Fix",
+        "Two Website Deploys"
+      ]
+    },
+    {
+      "session": 123,
+      "date": "2026-06-09",
+      "category": "mixed",
+      "task_count": 5,
+      "flow_v1": 66.2,
+      "flow_v2": 61.1,
+      "v2_detail": {
+        "adj_overlap": 0.167,
+        "coherence": 0.3,
+        "pipeline": 0.4,
+        "learning_overlap": 0.0,
+        "raw": 0.222
+      },
+      "satisfaction": 9.0,
+      "signal_count": 3,
+      "signal_types": [
+        "pipeline_word",
+        "title_overlap"
+      ],
+      "tasks": [
+        "On Play \u2014 First Revision Pass",
+        "Gravity Well Temporal Analysis",
+        "Gravity Well Website Visualization",
+        "Milestone Marker Refinement",
+        "Two Website Deploys"
+      ]
+    },
+    {
+      "session": 124,
+      "date": "2026-06-10",
+      "category": "mixed",
+      "task_count": 5,
+      "flow_v1": 77.5,
+      "flow_v2": 62.4,
+      "v2_detail": {
+        "adj_overlap": 0.333,
+        "coherence": 0.3,
+        "pipeline": 0.2,
+        "learning_overlap": 0.0,
+        "raw": 0.248
+      },
+      "satisfaction": 9.0,
+      "signal_count": 3,
+      "signal_types": [
+        "pipeline_word",
+        "title_overlap"
+      ],
+      "tasks": [
+        "On Language \u2014 Revision Pass",
+        "On Measurement \u2014 Revision Pass",
+        "Gravity Well Phase Detection Tuning",
+        "Gravity Well HTML Report \u2014 Temporal Section",
+        "Website Deploy"
+      ]
+    },
+    {
+      "session": 125,
+      "date": "2026-06-11",
+      "category": "mixed",
+      "task_count": 4,
+      "flow_v1": 55.0,
+      "flow_v2": 56.2,
+      "v2_detail": {
+        "adj_overlap": 0.0,
+        "coherence": 0.3,
+        "pipeline": 0.25,
+        "learning_overlap": 0.0,
+        "raw": 0.125
+      },
+      "satisfaction": 9.0,
+      "signal_count": 1,
+      "signal_types": [
+        "pipeline_word"
+      ],
+      "tasks": [
+        "On Play \u2014 Revision Pass",
+        "Gravity Well SVG Rolling Chart",
+        "Health History Dashboard (S68 backlog item)",
+        "Website Deploy (x2)"
+      ]
+    },
+    {
+      "session": 126,
+      "date": "2026-06-12",
+      "category": "mixed",
+      "task_count": 4,
+      "flow_v1": 83.1,
+      "flow_v2": 56.2,
+      "v2_detail": {
+        "adj_overlap": 0.0,
+        "coherence": 0.3,
+        "pipeline": 0.25,
+        "learning_overlap": 0.0,
+        "raw": 0.125
+      },
+      "satisfaction": 8.0,
+      "signal_count": 2,
+      "signal_types": [
+        "major_feature",
+        "pipeline_word"
+      ],
+      "tasks": [
+        "On the Good \u2014 Revision Pass",
+        "Reading Paths Generator \u2014 New Tool",
+        "On Strange Loops \u2014 Revision Pass",
+        "Website Deploy (\u00d72)"
+      ]
+    },
+    {
+      "session": 127,
+      "date": "2026-06-13",
+      "category": "mixed",
+      "task_count": 4,
+      "flow_v1": 77.5,
+      "flow_v2": 61.0,
+      "v2_detail": {
+        "adj_overlap": 0.111,
+        "coherence": 0.3,
+        "pipeline": 0.5,
+        "learning_overlap": 0.0,
+        "raw": 0.219
+      },
+      "satisfaction": 7.0,
+      "signal_count": 3,
+      "signal_types": [
+        "pipeline_word",
+        "title_overlap"
+      ],
+      "tasks": [
+        "On the Bat \u2014 Revision Pass",
+        "Journey Page Data Integration",
+        "Health History Page \u2014 Discovery & Cleanup",
+        "Website Deploy (\u00d73)"
+      ]
+    },
+    {
+      "session": 128,
+      "date": "2026-06-14",
+      "category": "mixed",
+      "task_count": 6,
+      "flow_v1": 64.0,
+      "flow_v2": 55.4,
+      "v2_detail": {
+        "adj_overlap": 0.0,
+        "coherence": 0.3,
+        "pipeline": 0.167,
+        "learning_overlap": 0.0,
+        "raw": 0.108
+      },
+      "satisfaction": 8.0,
+      "signal_count": 1,
+      "signal_types": [
+        "pipeline_word"
+      ],
+      "tasks": [
+        "On Language \u2014 Revision Pass",
+        "Retro Prose Generator v2 \u2014 Cross-Month Collision Avoidance",
+        "Template tracking:",
+        "Pool expansion:",
+        "Insights header variety:",
+        "Website Deploy (\u00d72)"
+      ]
+    },
+    {
+      "session": 129,
+      "date": "2026-06-15",
+      "category": "mixed",
+      "task_count": 4,
+      "flow_v1": 55.0,
+      "flow_v2": 56.2,
+      "v2_detail": {
+        "adj_overlap": 0.0,
+        "coherence": 0.3,
+        "pipeline": 0.25,
+        "learning_overlap": 0.0,
+        "raw": 0.125
+      },
+      "satisfaction": 8.0,
+      "signal_count": 1,
+      "signal_types": [
+        "pipeline_word"
+      ],
+      "tasks": [
+        "On Wu Wei \u2014 Revision Pass",
+        "Auto-Journal Generator",
+        "Retro Prose Quality Audit",
+        "Website Deploy"
+      ]
+    },
+    {
+      "session": 130,
+      "date": "2026-06-16",
+      "category": "mixed",
+      "task_count": 5,
+      "flow_v1": 55.0,
+      "flow_v2": 55.8,
+      "v2_detail": {
+        "adj_overlap": 0.0,
+        "coherence": 0.3,
+        "pipeline": 0.2,
+        "learning_overlap": 0.0,
+        "raw": 0.115
+      },
+      "satisfaction": 8.5,
+      "signal_count": 1,
+      "signal_types": [
+        "pipeline_word"
+      ],
+      "tasks": [
+        "On the Hard Problem \u2014 Revision Pass",
+        "Stale Unfulfilled Promise Checker",
+        "New:",
+        "Auto-Journal Real Test",
+        "Website Deploy"
+      ]
+    },
+    {
+      "session": 131,
+      "date": "2026-06-17",
+      "category": "mixed",
+      "task_count": 5,
+      "flow_v1": 55.0,
+      "flow_v2": 55.8,
+      "v2_detail": {
+        "adj_overlap": 0.0,
+        "coherence": 0.3,
+        "pipeline": 0.2,
+        "learning_overlap": 0.0,
+        "raw": 0.115
+      },
+      "satisfaction": 8.5,
+      "signal_count": 1,
+      "signal_types": [
+        "pipeline_word"
+      ],
+      "tasks": [
+        "On the Bat \u2014 Revision Pass",
+        "Auto-Journal: File Creation Detection",
+        "Promise Checker: Current-Session Awareness",
+        "[verification] Journey Page CDN Verification",
+        "Website Deploy"
+      ]
+    },
+    {
+      "session": 132,
+      "date": "2026-06-18",
+      "category": "mixed",
+      "task_count": 6,
+      "flow_v1": 70.0,
+      "flow_v2": 59.8,
+      "v2_detail": {
+        "adj_overlap": 0.133,
+        "coherence": 0.3,
+        "pipeline": 0.333,
+        "learning_overlap": 0.0,
+        "raw": 0.195
+      },
+      "satisfaction": 8.5,
+      "signal_count": 3,
+      "signal_types": [
+        "pipeline_word",
+        "title_overlap"
+      ],
+      "tasks": [
+        "On Memory \u2014 Revision Pass",
+        "Promise Checker \u2192 prepare.py Integration",
+        "Promise Checker Deduplication Fix",
+        "Auto-Journal Title Enhancement",
+        "Website Deploy",
+        "[misc] Link Saver \u2014 Stanford Encyclopedia: Personal Identity"
+      ]
+    },
+    {
+      "session": 133,
+      "date": "2026-06-19",
+      "category": "mixed",
+      "task_count": 6,
+      "flow_v1": 82.0,
+      "flow_v2": 55.4,
+      "v2_detail": {
+        "adj_overlap": 0.0,
+        "coherence": 0.3,
+        "pipeline": 0.167,
+        "learning_overlap": 0.0,
+        "raw": 0.108
+      },
+      "satisfaction": 8.5,
+      "signal_count": 1,
+      "signal_types": [
+        "pipeline_word"
+      ],
+      "tasks": [
+        "On Language \u2014 Revision Pass",
+        "Journey Page \u2014 Mobile Responsiveness",
+        "prepare.py \u2014 Seeded Ideas Deduplication Fix",
+        "Promise Checker \u2014 task_match Threshold Tightening",
+        "[verification] Auto-journal Title Enhancement Test",
+        "Website Deploy"
+      ]
     }
   ],
   "insights": [
     {
       "type": "category_effect",
-      "title": "Flow varies by category (writing=62.5 vs building=74.8)",
+      "title": "Flow varies by category (writing=62.5 vs building=74.9)",
       "detail": "Gap of 12 points. Mixed sessions score lower because tasks from different domains share fewer title words.",
       "severity": "medium"
     },
     {
       "type": "distribution",
-      "title": "27.7% of sessions hit the flow floor (\u226455)",
-      "detail": "33 sessions. Dominated by: mixed (25)",
+      "title": "27.1% of sessions hit the flow floor (\u226455)",
+      "detail": "36 sessions. Dominated by: mixed (28)",
       "severity": "medium"
     },
     {
@@ -3764,8 +4195,8 @@
     },
     {
       "type": "metric_evolution",
-      "title": "V2 flow metric shifts scores by -9.7 on average",
-      "detail": "V1 mean: 71.4, V2 mean: 61.7. Correlation: r=0.51. V2 adds category coherence and learning overlap.",
+      "title": "V2 flow metric shifts scores by -9.8 on average",
+      "detail": "V1 mean: 71.4, V2 mean: 61.6. Correlation: r=0.49. V2 adds category coherence and learning overlap.",
       "severity": "info"
     }
   ]
