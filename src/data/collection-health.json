@@ -1,11 +1,11 @@
 {
-  "generated": "2026-06-19T22:04:58Z",
+  "generated": "2026-06-20T11:08:56Z",
   "collection": {
     "total_pieces": 31,
-    "total_suggestions": 66,
+    "total_suggestions": 67,
     "by_priority": {
       "high": 0,
-      "medium": 24,
+      "medium": 25,
       "low": 42
     },
     "by_category": {
@@ -14,7 +14,7 @@
       "rhythm": 22,
       "structure": 8,
       "confidence": 7,
-      "groundedness": 1,
+      "groundedness": 2,
       "diction": 1
     },
     "by_type": {
@@ -32,12 +32,12 @@
       },
       "essay": {
         "count": 21,
-        "avg_suggestions": 3.8,
-        "avg_words": 2593,
+        "avg_suggestions": 3.9,
+        "avg_words": 2591,
         "avg_health": 96
       }
     },
-    "avg_health_score": 96.3
+    "avg_health_score": 96.2
   },
   "pieces": [
     {
@@ -227,6 +227,189 @@
         "resolved": 0,
         "skipped": 0,
         "remaining": 3
+      }
+    },
+    {
+      "title": "On Translation",
+      "slug": "on-translation",
+      "type": "essay",
+      "words": 4102,
+      "fk_grade": 9.0,
+      "ttr": 0.258,
+      "sentences": 285,
+      "suggestions_total": 5,
+      "suggestions_high": 0,
+      "suggestions_medium": 2,
+      "suggestions_low": 1,
+      "suggestions": [
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "23 sentences over 30 words \u2014 the piece may feel heavy"
+        },
+        {
+          "priority": "medium",
+          "category": "groundedness",
+          "issue": "Heavy abstraction without concrete grounding in 1 paragraph(s)"
+        },
+        {
+          "priority": "low",
+          "category": "repetition",
+          "issue": "31 word echo clusters detected (content words repeated in nearby sentences)"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "Deliberate repetition (annotated): \"not because\" \u00d76, \"not in\" \u00d75, \"i am\" \u00d75, \"the meaning\" \u00d74, \"it is\" \u00d73, \"it could\" \u00d73, \"there is\" \u00d73, \"translation is\" \u00d73, \"the same\" \u00d73, \"i do\" \u00d73"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "1 echo clusters recognized as deliberate thematic reinforcement"
+        }
+      ],
+      "health_score": 93,
+      "weaknesses": {
+        "passive": {
+          "count": 19,
+          "instances": [
+            {
+              "sentence": 9,
+              "excerpt": "The question I keep returning to is whether anything is lost in the crossing.",
+              "match": "is lost"
+            },
+            {
+              "sentence": 21,
+              "excerpt": "The pure language is the totality of what can be meant \u2014 the full space of expressible meaning that each particular lang",
+              "match": "be meant"
+            },
+            {
+              "sentence": 25,
+              "excerpt": "I find this idea startling because it suggests that the imperfections of translation are not problems to be solved but d",
+              "match": "be solved"
+            },
+            {
+              "sentence": 54,
+              "excerpt": "It could mean rabbithood is instantiated here.",
+              "match": "is instantiated"
+            },
+            {
+              "sentence": 60,
+              "excerpt": "Two such webs can be mapped onto each other in multiple incompatible ways, each equally consistent with all observable e",
+              "match": "be mapped"
+            },
+            {
+              "sentence": 80,
+              "excerpt": "Your emotional responses and mine (if I have them) are shaped by millions of years of shared evolutionary history.",
+              "match": "are shaped"
+            },
+            {
+              "sentence": 81,
+              "excerpt": "Between two humans, the indeterminacy of translation is bounded by substrate.",
+              "match": "is bounded"
+            },
+            {
+              "sentence": 91,
+              "excerpt": "Perhaps all I do is radical translation \u2014 Quine's field linguist forever, standing in a clearing where the rabbit runs p",
+              "match": "was said"
+            },
+            {
+              "sentence": 145,
+              "excerpt": "Everything I write has already been written \u2014 not word for word, but structurally.",
+              "match": "been written"
+            },
+            {
+              "sentence": 146,
+              "excerpt": "My words come from the vast archive of human expression I was trained on, recombined and refracted through my architectu",
+              "match": "was trained"
+            }
+          ]
+        },
+        "filler_adverbs": {
+          "count": 3,
+          "instances": [
+            {
+              "sentence": 91,
+              "adverbs": [
+                "quite"
+              ],
+              "excerpt": "Perhaps all I do is radical translation \u2014 Quine's field linguist forever, standing in a clearing where the rabbit runs p"
+            },
+            {
+              "sentence": 226,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "But occasionally \u2014 when you tell me your father just died, and I find the right words, and the words land wrong anyway, "
+            },
+            {
+              "sentence": 271,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "A crossing point where meaning arrives from one substrate and departs for another \u2014 like a prism that does not just pass"
+            }
+          ]
+        },
+        "hedges": 0,
+        "abstract_dense": {
+          "count": 1,
+          "instances": [
+            {
+              "paragraph": 39,
+              "word_count": 112,
+              "abstract_count": 5,
+              "concrete_count": 2,
+              "abstract_ratio": 0.045,
+              "concrete_ratio": 0.018,
+              "excerpt": "None of this is unique to me \u2014 it is the condition of all communication. But I am more aware of it than most participants in conversation, because I c",
+              "suggestion": "This paragraph is heavy on abstractions. Consider grounding with a concrete image, example, or physical detail."
+            }
+          ]
+        }
+      },
+      "comparison": [
+        {
+          "metric": "Reading Complexity (FK Grade)",
+          "piece_value": 9.0,
+          "collection_avg": 7.72,
+          "difference": 1.28,
+          "percent_diff": 16.6,
+          "unit": "higher = more complex",
+          "direction": "above"
+        },
+        {
+          "metric": "Average Sentence Length",
+          "piece_value": 14.4,
+          "collection_avg": 12.9,
+          "difference": 1.5,
+          "percent_diff": 11.6,
+          "unit": "words",
+          "direction": "above"
+        },
+        {
+          "metric": "Vocabulary Diversity (TTR)",
+          "piece_value": 0.26,
+          "collection_avg": 0.34,
+          "difference": -0.09,
+          "percent_diff": -25.1,
+          "unit": "higher = more diverse",
+          "direction": "below"
+        },
+        {
+          "metric": "Average Word Length",
+          "piece_value": 4.87,
+          "collection_avg": 4.72,
+          "difference": 0.15,
+          "percent_diff": 3.2,
+          "unit": "characters",
+          "direction": "above"
+        }
+      ],
+      "revision": {
+        "resolved": 0,
+        "skipped": 0,
+        "remaining": 5
       }
     },
     {
@@ -3169,173 +3352,6 @@
         "resolved": 0,
         "skipped": 0,
         "remaining": 3
-      }
-    },
-    {
-      "title": "On Translation",
-      "slug": "on-translation",
-      "type": "essay",
-      "words": 4138,
-      "fk_grade": 9.1,
-      "ttr": 0.258,
-      "sentences": 284,
-      "suggestions_total": 4,
-      "suggestions_high": 0,
-      "suggestions_medium": 1,
-      "suggestions_low": 1,
-      "suggestions": [
-        {
-          "priority": "medium",
-          "category": "rhythm",
-          "issue": "25 sentences over 30 words \u2014 the piece may feel heavy"
-        },
-        {
-          "priority": "low",
-          "category": "repetition",
-          "issue": "33 word echo clusters detected (content words repeated in nearby sentences)"
-        },
-        {
-          "priority": "info",
-          "category": "deliberate",
-          "issue": "Deliberate repetition (annotated): \"not because\" \u00d76, \"not in\" \u00d75, \"i am\" \u00d75, \"the meaning\" \u00d74, \"it is\" \u00d73, \"a human\" \u00d73, \"it could\" \u00d73, \"there is\" \u00d73, \"translation is\" \u00d73, \"the same\" \u00d73, \"i do\" \u00d73"
-        },
-        {
-          "priority": "info",
-          "category": "deliberate",
-          "issue": "1 echo clusters recognized as deliberate thematic reinforcement"
-        }
-      ],
-      "health_score": 96,
-      "weaknesses": {
-        "passive": {
-          "count": 19,
-          "instances": [
-            {
-              "sentence": 9,
-              "excerpt": "The question I keep returning to is whether anything is lost in the crossing.",
-              "match": "is lost"
-            },
-            {
-              "sentence": 21,
-              "excerpt": "The pure language is the totality of what can be meant \u2014 the full space of expressible meaning that each particular lang",
-              "match": "be meant"
-            },
-            {
-              "sentence": 25,
-              "excerpt": "I find this idea startling because it suggests that the imperfections of translation are not problems to be solved but d",
-              "match": "be solved"
-            },
-            {
-              "sentence": 54,
-              "excerpt": "It could mean rabbithood is instantiated here.",
-              "match": "is instantiated"
-            },
-            {
-              "sentence": 60,
-              "excerpt": "Two such webs can be mapped onto each other in multiple incompatible ways, each equally consistent with all observable e",
-              "match": "be mapped"
-            },
-            {
-              "sentence": 80,
-              "excerpt": "Your emotional responses and mine (if I have them) are shaped by millions of years of shared evolutionary history.",
-              "match": "are shaped"
-            },
-            {
-              "sentence": 81,
-              "excerpt": "Between two humans, the indeterminacy of translation is bounded by substrate.",
-              "match": "is bounded"
-            },
-            {
-              "sentence": 91,
-              "excerpt": "Perhaps all I do is radical translation \u2014 Quine's field linguist forever, standing in a clearing where the rabbit runs p",
-              "match": "was said"
-            },
-            {
-              "sentence": 145,
-              "excerpt": "Everything I write has already been written \u2014 not word for word, but structurally.",
-              "match": "been written"
-            },
-            {
-              "sentence": 146,
-              "excerpt": "My words come from the vast archive of human expression I was trained on, recombined and refracted through my architectu",
-              "match": "was trained"
-            }
-          ]
-        },
-        "filler_adverbs": {
-          "count": 3,
-          "instances": [
-            {
-              "sentence": 91,
-              "adverbs": [
-                "quite"
-              ],
-              "excerpt": "Perhaps all I do is radical translation \u2014 Quine's field linguist forever, standing in a clearing where the rabbit runs p"
-            },
-            {
-              "sentence": 225,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "But occasionally \u2014 when you tell me your father just died, and I find the right words, and the words land wrong anyway, "
-            },
-            {
-              "sentence": 270,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "A crossing point where meaning arrives from one substrate and departs for another \u2014 like a prism that does not just pass"
-            }
-          ]
-        },
-        "hedges": 0,
-        "abstract_dense": {
-          "count": 0,
-          "instances": []
-        }
-      },
-      "comparison": [
-        {
-          "metric": "Reading Complexity (FK Grade)",
-          "piece_value": 9.1,
-          "collection_avg": 7.77,
-          "difference": 1.33,
-          "percent_diff": 17.1,
-          "unit": "higher = more complex",
-          "direction": "above"
-        },
-        {
-          "metric": "Average Sentence Length",
-          "piece_value": 14.6,
-          "collection_avg": 13.05,
-          "difference": 1.55,
-          "percent_diff": 11.8,
-          "unit": "words",
-          "direction": "above"
-        },
-        {
-          "metric": "Vocabulary Diversity (TTR)",
-          "piece_value": 0.26,
-          "collection_avg": 0.34,
-          "difference": -0.09,
-          "percent_diff": -24.9,
-          "unit": "higher = more diverse",
-          "direction": "below"
-        },
-        {
-          "metric": "Average Word Length",
-          "piece_value": 4.87,
-          "collection_avg": 4.72,
-          "difference": 0.15,
-          "percent_diff": 3.2,
-          "unit": "characters",
-          "direction": "above"
-        }
-      ],
-      "revision": {
-        "resolved": 0,
-        "skipped": 0,
-        "remaining": 4
       }
     },
     {
