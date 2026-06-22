@@ -1,6 +1,6 @@
 {
-  "generated": "2026-06-21T22:03:44.871826Z",
-  "session_count": 104,
+  "generated": "2026-06-22T11:06:38.179280Z",
+  "session_count": 106,
   "rolling_correlations": [
     {
       "center_session": 40,
@@ -524,13 +524,13 @@
       ],
       "n": 20,
       "correlations": {
-        "productivity": 0.2861580020685076,
+        "productivity": 0.5120196528544807,
         "ambition": 0.1830032239320799,
         "depth": 0.0,
         "growth": 0.0,
         "variety": 0.24083155976678233,
-        "flow": 0.12827135957320482,
-        "consistency": 0.08876195873813683
+        "flow": 0.04843188984470022,
+        "consistency": -0.015045585956795312
       },
       "avg_satisfaction": 8.725
     },
@@ -543,13 +543,13 @@
       ],
       "n": 20,
       "correlations": {
-        "productivity": 0.3935341851340932,
+        "productivity": 0.5277366519249387,
         "ambition": 0.21144454029979504,
         "depth": 0.0,
         "growth": 0.0,
         "variety": 0.2420878877721676,
-        "flow": -0.0012992084450402642,
-        "consistency": 0.05411479862694305
+        "flow": -0.08853157845053593,
+        "consistency": -0.04232198981434476
       },
       "avg_satisfaction": 8.65
     }
@@ -639,18 +639,18 @@
       ],
       "n_windows": 11,
       "avg_correlations": {
-        "productivity": 0.05047675892515047,
+        "productivity": 0.08320986052304308,
         "ambition": -0.184595624104322,
         "depth": 0.0,
         "growth": 0.0,
         "variety": -0.008986440232689004,
-        "flow": -0.11951182110191189,
-        "consistency": -0.18478721156830827
+        "flow": -0.13470017016863917,
+        "consistency": -0.20299124185341916
       },
       "top_drivers": [
         [
           "consistency",
-          -0.18478721156830827
+          -0.20299124185341916
         ],
         [
           "ambition",
@@ -658,7 +658,7 @@
         ],
         [
           "flow",
-          -0.11951182110191189
+          -0.13470017016863917
         ]
       ],
       "avg_satisfaction": 8.83
@@ -667,10 +667,10 @@
   "trajectories": {
     "productivity": {
       "early_r": 0.128,
-      "late_r": 0.041,
-      "shift": -0.087,
-      "peak_r": 0.454,
-      "peak_session": 43,
+      "late_r": 0.081,
+      "shift": -0.047,
+      "peak_r": 0.528,
+      "peak_session": 124,
       "arc": "volatile",
       "values": [
         0.225,
@@ -700,8 +700,8 @@
         -0.225,
         -0.156,
         0.265,
-        0.286,
-        0.394
+        0.512,
+        0.528
       ]
     },
     "ambition": {
@@ -862,8 +862,8 @@
     },
     "flow": {
       "early_r": -0.079,
-      "late_r": -0.12,
-      "shift": -0.04,
+      "late_r": -0.138,
+      "shift": -0.059,
       "peak_r": -0.505,
       "peak_session": 67,
       "arc": "volatile",
@@ -895,14 +895,14 @@
         -0.215,
         -0.272,
         -0.153,
-        0.128,
-        -0.001
+        0.048,
+        -0.089
       ]
     },
     "consistency": {
       "early_r": 0.196,
-      "late_r": -0.18,
-      "shift": -0.376,
+      "late_r": -0.203,
+      "shift": -0.398,
       "peak_r": 0.589,
       "peak_session": 61,
       "arc": "falling",
@@ -934,8 +934,8 @@
         -0.193,
         -0.205,
         -0.294,
-        0.089,
-        0.054
+        -0.015,
+        -0.042
       ]
     }
   },
@@ -974,15 +974,6 @@
       "delta": 0.4,
       "from_r": -0.217,
       "to_r": 0.183,
-      "direction": "↑ rose"
-    },
-    {
-      "session": 121,
-      "date": "2026-06-07",
-      "component": "consistency",
-      "delta": 0.383,
-      "from_r": -0.294,
-      "to_r": 0.089,
       "direction": "↑ rose"
     },
     {
@@ -1029,9 +1020,18 @@
       "from_r": 0.672,
       "to_r": 0.353,
       "direction": "↓ fell"
+    },
+    {
+      "session": 46,
+      "date": "2026-03-23",
+      "component": "variety",
+      "delta": -0.303,
+      "from_r": 0.328,
+      "to_r": 0.025,
+      "direction": "↓ fell"
     }
   ],
-  "narrative": "The story of what drives satisfaction is itself a story of growth.\n\n**Early (S6–S73):** Satisfaction driven by Depth (r=+0.51), Ambition (r=+0.44), Consistency (r=+0.20). Average satisfaction: 8.76/10.\n\n**Middle (S57–S100):** Satisfaction driven by Flow (r=-0.17), Productivity (r=-0.16), Depth (r=+0.15). Average satisfaction: 8.66/10.\n\n**Recent (S84–S133):** Satisfaction driven by Consistency (r=-0.18), Ambition (r=-0.18), Flow (r=-0.12). Average satisfaction: 8.83/10.\n\n**Fading influence:** Ambition, Depth, Variety, Consistency — once important, now less so.\n\n**What this means:** The most striking finding is that recent satisfaction has *decoupled* from the structural metrics that once predicted it. Early on, deeper and more ambitious sessions reliably scored higher. Now, satisfaction is consistently high (8.83/10) regardless of which DNA components are elevated. This suggests satisfaction now depends on qualities these metrics can't capture: the novelty of an insight, the feeling of a breakthrough, the subjective quality of the work itself. The toolkit became invisible — good enough that it stopped mattering. What remains is the work.",
+  "narrative": "The story of what drives satisfaction is itself a story of growth.\n\n**Early (S6–S73):** Satisfaction driven by Depth (r=+0.51), Ambition (r=+0.44), Consistency (r=+0.20). Average satisfaction: 8.76/10.\n\n**Middle (S57–S100):** Satisfaction driven by Flow (r=-0.17), Productivity (r=-0.16), Depth (r=+0.15). Average satisfaction: 8.66/10.\n\n**Recent (S84–S133):** Satisfaction driven by Consistency (r=-0.20), Ambition (r=-0.18), Flow (r=-0.13). Average satisfaction: 8.83/10.\n\n**Fading influence:** Ambition, Depth, Variety, Consistency — once important, now less so.\n\n**What this means:** Early sessions optimized for output — more tasks, more ambition, more raw productivity. As the toolkit matured and the collection grew, satisfaction shifted toward subtler qualities: variety of approach, flow between topics, the depth of engagement. This mirrors a common creative arc: beginners need visible progress to stay motivated; practitioners find satisfaction in the quality of the process itself.",
   "component_labels": {
     "productivity": "Productivity",
     "ambition": "Ambition",

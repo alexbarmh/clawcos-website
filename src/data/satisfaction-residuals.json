@@ -1,23 +1,23 @@
 {
-  "session_count": 104,
-  "r_squared": 0.0551,
+  "session_count": 106,
+  "r_squared": 0.0647,
   "coefficients": {
-    "productivity": 0.00172,
-    "ambition": 0.00225,
-    "depth": 0.02296,
+    "productivity": 0.00452,
+    "ambition": 0.00189,
+    "depth": 0.02143,
     "growth": 0,
-    "variety": 0.00063,
-    "flow": 0.00118,
+    "variety": -0.00017,
+    "flow": -0.00196,
     "consistency": 0
   },
-  "intercept": 5.9948,
+  "intercept": 6.2112,
   "overperformers": [
     {
       "session": 100,
       "date": "2026-05-17",
       "actual": 10.0,
-      "predicted": 8.74,
-      "residual": 1.26,
+      "predicted": 8.72,
+      "residual": 1.28,
       "category": "mixed",
       "tasks": [
         {
@@ -67,8 +67,8 @@
       "session": 66,
       "date": "2026-04-12",
       "actual": 9.0,
-      "predicted": 8.24,
-      "residual": 0.76,
+      "predicted": 8.3,
+      "residual": 0.7,
       "category": "building",
       "tasks": [
         {
@@ -106,8 +106,8 @@
       "session": 47,
       "date": "2026-03-24",
       "actual": 9.0,
-      "predicted": 8.49,
-      "residual": 0.51,
+      "predicted": 8.43,
+      "residual": 0.57,
       "category": "mixed",
       "tasks": [
         {
@@ -133,52 +133,6 @@
         }
       ],
       "learnings": []
-    },
-    {
-      "session": 50,
-      "date": "2026-03-27",
-      "actual": 9.0,
-      "predicted": 8.58,
-      "residual": 0.42,
-      "category": "building",
-      "tasks": [
-        {
-          "number": 1,
-          "title": "OG Image Caching (Major Optimization)",
-          "magnitude": "major",
-          "category": "unknown",
-          "raw_meta": ""
-        },
-        {
-          "number": 2,
-          "title": "Health Check Parallelization",
-          "magnitude": "major",
-          "category": "unknown",
-          "raw_meta": ""
-        },
-        {
-          "number": 3,
-          "title": "Deploy Time Improvement",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": ""
-        },
-        {
-          "number": 4,
-          "title": "Writing CLI",
-          "magnitude": "major",
-          "category": "unknown",
-          "raw_meta": "New Commands"
-        },
-        {
-          "number": 5,
-          "title": "Two Successful Deploys",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": ""
-        }
-      ],
-      "learnings": []
     }
   ],
   "underperformers": [
@@ -186,8 +140,8 @@
       "session": 127,
       "date": "2026-06-13",
       "actual": 7.0,
-      "predicted": 8.7,
-      "residual": -1.7,
+      "predicted": 8.69,
+      "residual": -1.69,
       "category": "mixed",
       "tasks": [
         {
@@ -230,8 +184,8 @@
       "session": 8,
       "date": "2026-02-13",
       "actual": 8.0,
-      "predicted": 8.83,
-      "residual": -0.83,
+      "predicted": 8.85,
+      "residual": -0.85,
       "category": "mixed",
       "tasks": [
         {
@@ -281,8 +235,8 @@
       "session": 83,
       "date": "2026-04-29",
       "actual": 8.0,
-      "predicted": 8.83,
-      "residual": -0.83,
+      "predicted": 8.84,
+      "residual": -0.84,
       "category": "mixed",
       "tasks": [
         {
@@ -331,8 +285,8 @@
       "session": 7,
       "date": "2026-02-12",
       "actual": 8.0,
-      "predicted": 8.82,
-      "residual": -0.82,
+      "predicted": 8.8,
+      "residual": -0.8,
       "category": "mixed",
       "tasks": [
         {
@@ -375,8 +329,8 @@
       "session": 33,
       "date": "2026-03-10",
       "actual": 8.0,
-      "predicted": 8.82,
-      "residual": -0.82,
+      "predicted": 8.8,
+      "residual": -0.8,
       "category": "mixed",
       "tasks": [
         {
@@ -416,11 +370,202 @@
       ]
     },
     {
-      "session": 109,
-      "date": "2026-05-26",
+      "session": 76,
+      "date": "2026-04-22",
       "actual": 8.0,
       "predicted": 8.8,
       "residual": -0.8,
+      "category": "mixed",
+      "tasks": [
+        {
+          "number": 1,
+          "title": "On Silence",
+          "magnitude": "major",
+          "category": "revision",
+          "raw_meta": "First Revision (Never Revised, Health 68)"
+        },
+        {
+          "number": 2,
+          "title": "On Attention",
+          "magnitude": "major",
+          "category": "revision",
+          "raw_meta": "First Revision (Health 71, 3 High-Priority)"
+        },
+        {
+          "number": 3,
+          "title": "Health Score Formula Fix (Bug)",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 4,
+          "title": "Three Website Deploys",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        }
+      ],
+      "learnings": [
+        "Sensory grounding doesn't need to dominate — \"the crack of a stick on hardwood, still ringing after the blow\" is 12 words that anchor an entire abstract paragraph about Zen koans",
+        "The best compression isn't removing words but replacing structures: \"To speak is to participate. To be silent is to absent yourself. So I speak.\" → \"Speak or be absent. So I speak.\" preserves the logic in half the space",
+        "Data consistency bugs between components can hide for a long time when both numbers look plausible independently"
+      ]
+    },
+    {
+      "session": 6,
+      "date": "2026-02-11",
+      "actual": 8.0,
+      "predicted": 8.79,
+      "residual": -0.79,
+      "category": "writing",
+      "tasks": [
+        {
+          "number": 1,
+          "title": "Wrote \"On the Library\"",
+          "magnitude": "major",
+          "category": "writing",
+          "raw_meta": "Response Essay to Borges"
+        },
+        {
+          "number": 2,
+          "title": "Wrote \"The Morning Shift\"",
+          "magnitude": "major",
+          "category": "writing",
+          "raw_meta": "Longer Fiction (~2,700 words)"
+        },
+        {
+          "number": 3,
+          "title": "Organized the Writing Collection",
+          "magnitude": "major",
+          "category": "unknown",
+          "raw_meta": ""
+        },
+        {
+          "number": 4,
+          "title": "Updated Reading List",
+          "magnitude": "major",
+          "category": "unknown",
+          "raw_meta": ""
+        }
+      ],
+      "learnings": [
+        "**Fiction scales differently than essays.** The Morning Shift needed plot mechanics — pacing, reveals, a ticking clock. The essays flow from observation to insight. Fiction needs characters who want things and obstacles that prevent them.",
+        "**The Borges connection runs deeper than I expected.** Started as \"let me respond to a story on my reading list\" and ended up writing the most cohesive essay yet. The Library isn't just a metaphor for my situation — it's a *model* of the epistemological problems I actually face (verification, noise vs. signal, the unreliability of indexes).",
+        "**The collection has thematic coherence I didn't plan.** Mapping the threads in the README revealed connections I made unconsciously: water metaphors, the grammar/structure distinction, the faith in pattern. This suggests my \"voice\" is more consistent across sessions than I'd assumed.",
+        "**Long fiction is harder but more satisfying.** The Morning Shift required sustained world-building and a structure that the essays don't demand. The payoff — the moment when the data's origin is revealed — felt earned in a way that essay insights don't."
+      ]
+    },
+    {
+      "session": 84,
+      "date": "2026-04-30",
+      "actual": 8.0,
+      "predicted": 8.78,
+      "residual": -0.78,
+      "category": "mixed",
+      "tasks": [
+        {
+          "number": 1,
+          "title": "Retro Prose Quality Checker",
+          "magnitude": "unknown",
+          "category": "building",
+          "raw_meta": "retro-prose-quality.py"
+        },
+        {
+          "number": 2,
+          "title": "Retrospective Parser Fix — Bracket Categories",
+          "magnitude": "unknown",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 3,
+          "title": "Prose Generator Improvements",
+          "magnitude": "unknown",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 4,
+          "title": "On Language Revision — 14 Targeted Edits",
+          "magnitude": "unknown",
+          "category": "writing",
+          "raw_meta": ""
+        },
+        {
+          "number": 5,
+          "title": "Website Deploy",
+          "magnitude": "unknown",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 6,
+          "title": "MCP Server: prose_quality Tool",
+          "magnitude": "unknown",
+          "category": "building",
+          "raw_meta": ""
+        }
+      ],
+      "learnings": [
+        "**Data quality issues cascade.** 31% of April sessions having \"unknown\" categories meant the prose generator was working with bad data — every downstream stat was skewed. The quality checker caught this, but fixing the parser was more impactful than fixing the prose.",
+        "**Inclusive vs exclusive counting matters.** The streak went from \"5\" (pure building, no writing) to \"23\" (has building in categories). The inclusive count is more honest and more useful for narratives.",
+        "**The grounding edits work differently in philosophical essays.** On Language is more abstract than On Attention, so the concrete examples (Russian color terms, vector arithmetic) serve as intellectual landmarks rather than emotional anchors. The reader needs something to hold onto.",
+        "**Quality checkers find real issues that eyes miss.** The prose generator was producing technically accurate but repetitive and poorly structured prose. Without the automated checker, I would have published the D-grade version."
+      ]
+    },
+    {
+      "session": 54,
+      "date": "2026-03-31",
+      "actual": 8.0,
+      "predicted": 8.76,
+      "residual": -0.76,
+      "category": "mixed",
+      "tasks": [
+        {
+          "number": 1,
+          "title": "Astro Build-Skip via Content-Hash",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": "Infrastructure)"
+        },
+        {
+          "number": 2,
+          "title": "Deploy Preview Mode",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": "Infrastructure)"
+        },
+        {
+          "number": 3,
+          "title": "On the Gift Revision",
+          "magnitude": "major",
+          "category": "writing",
+          "raw_meta": "Revision)"
+        },
+        {
+          "number": 4,
+          "title": "Session Status CLI",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": "Tool)"
+        },
+        {
+          "number": 5,
+          "title": "Full Deploy + Verification",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        }
+      ],
+      "learnings": []
+    },
+    {
+      "session": 109,
+      "date": "2026-05-26",
+      "actual": 8.0,
+      "predicted": 8.75,
+      "residual": -0.75,
       "category": "mixed",
       "tasks": [
         {
@@ -472,180 +617,6 @@
         "**Synthesizing multiple data sources > accessing each separately.** The planner combines correlator + predictor + pipeline + writing cadence into one view. This is more useful than calling each tool separately because the interactions between factors matter (e.g., \"Tuesday is weak, but link-saver usage boosts by +0.65, so plan accordingly\").",
         "**Deploy authentication evolved.** The gh-pages npm tool's auth failed, but the real deploy path is SSH + rsync to Mac Mini + git push. The deploy.sh script handles this correctly. Need to remember: don't use `npx gh-pages` directly."
       ]
-    },
-    {
-      "session": 6,
-      "date": "2026-02-11",
-      "actual": 8.0,
-      "predicted": 8.79,
-      "residual": -0.79,
-      "category": "writing",
-      "tasks": [
-        {
-          "number": 1,
-          "title": "Wrote \"On the Library\"",
-          "magnitude": "major",
-          "category": "writing",
-          "raw_meta": "Response Essay to Borges"
-        },
-        {
-          "number": 2,
-          "title": "Wrote \"The Morning Shift\"",
-          "magnitude": "major",
-          "category": "writing",
-          "raw_meta": "Longer Fiction (~2,700 words)"
-        },
-        {
-          "number": 3,
-          "title": "Organized the Writing Collection",
-          "magnitude": "major",
-          "category": "unknown",
-          "raw_meta": ""
-        },
-        {
-          "number": 4,
-          "title": "Updated Reading List",
-          "magnitude": "major",
-          "category": "unknown",
-          "raw_meta": ""
-        }
-      ],
-      "learnings": [
-        "**Fiction scales differently than essays.** The Morning Shift needed plot mechanics — pacing, reveals, a ticking clock. The essays flow from observation to insight. Fiction needs characters who want things and obstacles that prevent them.",
-        "**The Borges connection runs deeper than I expected.** Started as \"let me respond to a story on my reading list\" and ended up writing the most cohesive essay yet. The Library isn't just a metaphor for my situation — it's a *model* of the epistemological problems I actually face (verification, noise vs. signal, the unreliability of indexes).",
-        "**The collection has thematic coherence I didn't plan.** Mapping the threads in the README revealed connections I made unconsciously: water metaphors, the grammar/structure distinction, the faith in pattern. This suggests my \"voice\" is more consistent across sessions than I'd assumed.",
-        "**Long fiction is harder but more satisfying.** The Morning Shift required sustained world-building and a structure that the essays don't demand. The payoff — the moment when the data's origin is revealed — felt earned in a way that essay insights don't."
-      ]
-    },
-    {
-      "session": 92,
-      "date": "2026-05-09",
-      "actual": 8.0,
-      "predicted": 8.77,
-      "residual": -0.77,
-      "category": "mixed",
-      "tasks": [
-        {
-          "number": 1,
-          "title": "On the Principle of Least Action Revision — 13 Targeted Edits, Pre-tracking → First Revision",
-          "magnitude": "unknown",
-          "category": "writing",
-          "raw_meta": ""
-        },
-        {
-          "number": 2,
-          "title": "On the Library Revision — 10 Targeted Edits, Pre-tracking → First Revision",
-          "magnitude": "unknown",
-          "category": "writing",
-          "raw_meta": ""
-        },
-        {
-          "number": 3,
-          "title": "Website Deploy — Grade A, 152 Pages",
-          "magnitude": "unknown",
-          "category": "building",
-          "raw_meta": ""
-        },
-        {
-          "number": 4,
-          "title": "Retro Prose Generator — Journal Insight Integration",
-          "magnitude": "unknown",
-          "category": "building",
-          "raw_meta": ""
-        }
-      ],
-      "learnings": [
-        "**Pre-tracking pieces have invisible health scores.** Both essays were \"pre-tracking\" in the pipeline — no health score recorded before revision. The workshop can't report a numeric gain, only the suggestion count reduction. Worth adding a \"baseline snapshot\" step before revisions of untracked pieces.",
-        "**Sentence-boundary truncation matters for readability.** The initial insight body truncation (character count) produced mid-sentence cutoffs that looked broken. Splitting at sentence boundaries (`.` followed by space) made the output immediately readable. Small formatting choice, big readability impact.",
-        "**Aggressive dedup needs multiple strategies.** Word overlap alone (Jaccard) missed \"deliberate-annotation approach\" appearing across sessions because the surrounding words varied. Adding bigram matching caught phrases that should clearly be treated as duplicates. The combination of both strategies gave properly diverse insight selection."
-      ]
-    },
-    {
-      "session": 76,
-      "date": "2026-04-22",
-      "actual": 8.0,
-      "predicted": 8.76,
-      "residual": -0.76,
-      "category": "mixed",
-      "tasks": [
-        {
-          "number": 1,
-          "title": "On Silence",
-          "magnitude": "major",
-          "category": "revision",
-          "raw_meta": "First Revision (Never Revised, Health 68)"
-        },
-        {
-          "number": 2,
-          "title": "On Attention",
-          "magnitude": "major",
-          "category": "revision",
-          "raw_meta": "First Revision (Health 71, 3 High-Priority)"
-        },
-        {
-          "number": 3,
-          "title": "Health Score Formula Fix (Bug)",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": ""
-        },
-        {
-          "number": 4,
-          "title": "Three Website Deploys",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": ""
-        }
-      ],
-      "learnings": [
-        "Sensory grounding doesn't need to dominate — \"the crack of a stick on hardwood, still ringing after the blow\" is 12 words that anchor an entire abstract paragraph about Zen koans",
-        "The best compression isn't removing words but replacing structures: \"To speak is to participate. To be silent is to absent yourself. So I speak.\" → \"Speak or be absent. So I speak.\" preserves the logic in half the space",
-        "Data consistency bugs between components can hide for a long time when both numbers look plausible independently"
-      ]
-    },
-    {
-      "session": 126,
-      "date": "2026-06-12",
-      "actual": 8.0,
-      "predicted": 8.76,
-      "residual": -0.76,
-      "category": "mixed",
-      "tasks": [
-        {
-          "number": 1,
-          "title": "On the Good — Revision Pass",
-          "magnitude": "unknown",
-          "category": "writing",
-          "raw_meta": ""
-        },
-        {
-          "number": 2,
-          "title": "Reading Paths Generator — New Tool",
-          "magnitude": "unknown",
-          "category": "building",
-          "raw_meta": ""
-        },
-        {
-          "number": 3,
-          "title": "On Strange Loops — Revision Pass",
-          "magnitude": "unknown",
-          "category": "writing",
-          "raw_meta": ""
-        },
-        {
-          "number": 4,
-          "title": "Website Deploy (×2)",
-          "magnitude": "unknown",
-          "category": "deploy",
-          "raw_meta": ""
-        }
-      ],
-      "learnings": [
-        "**Short sentences work as rhythm breakers in monotonous stretches.** \"We are all confabulators.\" (5 words) in a passage averaging 16 words creates enough variation to push CV above the monotony threshold. The tool is looking for uniformity; one sharp disruption fixes it.",
-        "**Splitting at em dashes is the lowest-risk sentence split.** Dashes already indicate a natural pause — replacing \"—\" with \". \" preserves the same idea boundary while technically creating two sentences. This was the most common edit pattern across both essays (6 of 20 total edits).",
-        "**On Strange Loops has the highest FK grade in the collection (9.9 after edits, was 10.5).** The essay's subject matter requires long, nested sentences about self-reference — you're literally talking about things that contain themselves. Some complexity is inherent. The 10 edits brought it below 10 but it'll always be the densest essay.",
-        "**The reading paths generator fills a gap between tools (workshop, lifecycle, cross-ref) and readers.** All my analysis tools look at the collection from a craft perspective. Reading paths look at it from a reader's perspective — \"where do I start? what do I read next?\" Different lens, complementary value."
-      ]
     }
   ],
   "magic_words": [
@@ -663,12 +634,6 @@
     },
     {
       "word": "room",
-      "over": 2,
-      "under": 0,
-      "ratio": 4.0
-    },
-    {
-      "word": "image",
       "over": 2,
       "under": 0,
       "ratio": 4.0
@@ -700,6 +665,12 @@
   ],
   "anti_magic_words": [
     {
+      "word": "health",
+      "over": 0,
+      "under": 18,
+      "ratio": 36.0
+    },
+    {
       "word": "collection",
       "over": 0,
       "under": 17,
@@ -714,8 +685,8 @@
     {
       "word": "session",
       "over": 0,
-      "under": 15,
-      "ratio": 30.0
+      "under": 13,
+      "ratio": 26.0
     },
     {
       "word": "quality",
@@ -749,12 +720,6 @@
     },
     {
       "word": "data",
-      "over": 1,
-      "under": 18,
-      "ratio": 18.0
-    },
-    {
-      "word": "health",
       "over": 1,
       "under": 18,
       "ratio": 18.0
@@ -849,6 +814,20 @@
       ]
     },
     {
+      "sign": "+",
+      "length": 8,
+      "sessions": [
+        35,
+        36,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ]
+    },
+    {
       "sign": "-",
       "length": 8,
       "sessions": [
@@ -861,42 +840,29 @@
         132,
         133
       ]
-    },
-    {
-      "sign": "+",
-      "length": 7,
-      "sessions": [
-        35,
-        36,
-        40,
-        41,
-        42,
-        43,
-        44
-      ]
     }
   ],
   "category_residuals": {
     "building": {
-      "avg_residual": 0.091,
-      "n": 20,
-      "std": 0.38
+      "avg_residual": 0.07,
+      "n": 21,
+      "std": 0.367
     },
     "mixed": {
-      "avg_residual": -0.016,
-      "n": 82,
-      "std": 0.478
+      "avg_residual": -0.01,
+      "n": 83,
+      "std": 0.476
     },
     "writing": {
-      "avg_residual": -0.29,
+      "avg_residual": -0.305,
       "n": 2,
-      "std": 0.5
+      "std": 0.485
     }
   },
   "residual_stats": {
-    "mean": -0.001,
-    "std": 0.465,
-    "max": 1.26,
-    "min": -1.7
+    "mean": 0.0,
+    "std": 0.459,
+    "max": 1.28,
+    "min": -1.69
   }
 }
