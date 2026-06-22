@@ -1,23 +1,23 @@
 {
   "metrics": {
-    "total_scored": 56,
+    "total_scored": 57,
     "distribution": {
       "10.0": 1,
       "9.0": 36,
-      "8.5": 8,
+      "8.5": 9,
       "8.0": 10,
       "7.0": 1
     },
     "mode": 9.0,
     "mode_count": 36,
-    "mode_pct": 64.3,
+    "mode_pct": 63.2,
     "above_mode": 1,
-    "below_mode": 19,
-    "entropy": 1.462,
+    "below_mode": 20,
+    "entropy": 1.484,
     "max_entropy": 2.322,
-    "concentration_ratio": 0.37,
+    "concentration_ratio": 0.361,
     "trend": "loosening",
-    "trend_delta": -0.1,
+    "trend_delta": -0.15,
     "mean": 8.73,
     "median": 9.0
   },
@@ -58,22 +58,24 @@
       }
     },
     "8": {
-      "count": 18,
-      "avg_tasks": 4.777777777777778,
+      "count": 19,
+      "avg_tasks": 4.7894736842105265,
       "task_range": "0-7",
-      "avg_learnings": 3.3333333333333335,
+      "avg_learnings": 3.3684210526315788,
       "focus_types": {
         "other": 1,
-        "mixed": 15,
+        "mixed": 16,
         "building": 2
       },
       "task_categories": {
-        "building": 54,
+        "building": 56,
         "writing": 18,
         "deploy": 7,
         "ops": 4,
         "verification": 2,
-        "misc": 1
+        "revision": 2,
+        "misc": 1,
+        "maintenance": 1
       }
     }
   },
@@ -87,11 +89,11 @@
         "count": 36
       },
       "8": {
-        "avg_novelty": 0.5,
-        "avg_maintenance": 1.7777777777777777,
-        "avg_milestone": 0.7777777777777778,
-        "avg_ratio": 0.31481481481481477,
-        "count": 18
+        "avg_novelty": 0.5263157894736842,
+        "avg_maintenance": 1.7894736842105263,
+        "avg_milestone": 0.7894736842105263,
+        "avg_ratio": 0.3245614035087719,
+        "count": 19
       },
       "10": {
         "avg_novelty": 0.0,
@@ -185,14 +187,14 @@
       }
     },
     "8": {
-      "count": 18,
+      "count": 19,
       "markers": {
-        "strong": 2.9444444444444446,
-        "satisfaction": 0.05555555555555555,
-        "achievement": 4.166666666666667,
-        "quality": 1.1111111111111112,
-        "hedging": 1.3333333333333333,
-        "negation": 0.1111111111111111
+        "strong": 3.1578947368421053,
+        "satisfaction": 0.05263157894736842,
+        "achievement": 4.315789473684211,
+        "quality": 1.0526315789473684,
+        "hedging": 1.3157894736842106,
+        "negation": 0.10526315789473684
       }
     },
     "below_8": {
@@ -313,26 +315,26 @@
       },
       {
         "month": "2026-06",
-        "sessions": 21,
+        "sessions": 22,
         "session_range": [
           115,
-          135
+          136
         ],
         "mean": 8.64,
         "median": 9.0,
         "mode": 9.0,
-        "mode_share": 0.571,
-        "concentration": 0.218,
+        "mode_share": 0.545,
+        "concentration": 0.209,
         "above_mode": 0,
-        "below_mode": 9,
+        "below_mode": 10,
         "escape_rate": 0.0,
         "distribution": {
           "9.0": 12,
-          "8.5": 5,
+          "8.5": 6,
           "8.0": 3,
           "7.0": 1
         },
-        "stdev": 0.515
+        "stdev": 0.504
       }
     ],
     "rolling": [
@@ -805,6 +807,16 @@
         "concentration": 0.157,
         "stdev": 0.512,
         "escape_rate": 0.1
+      },
+      {
+        "session": 136,
+        "date": "2026-06-22",
+        "mean": 8.3,
+        "mode": 8.5,
+        "mode_share": 0.6,
+        "concentration": 0.215,
+        "stdev": 0.51,
+        "escape_rate": 0.1
       }
     ],
     "phases": [
@@ -851,9 +863,9 @@
     ],
     "summary": {
       "trend": "tightening",
-      "concentration_delta": 0.136,
+      "concentration_delta": 0.127,
       "mean_delta": -0.03,
-      "mode_share_delta": -0.096,
+      "mode_share_delta": -0.122,
       "peak_concentration_month": "2026-04",
       "peak_escape_month": "2026-05",
       "tightening_phases": 2,
@@ -869,5 +881,5 @@
     "hedging",
     "negation"
   ],
-  "generated": "2026-06-22T11:06:37.083035"
+  "generated": "2026-06-22T22:03:30.237781"
 }
