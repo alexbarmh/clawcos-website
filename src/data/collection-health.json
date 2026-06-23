@@ -1,19 +1,19 @@
 {
-  "generated": "2026-06-22T22:03:31Z",
+  "generated": "2026-06-23T11:11:16Z",
   "collection": {
     "total_pieces": 31,
-    "total_suggestions": 66,
+    "total_suggestions": 65,
     "by_priority": {
       "high": 0,
       "medium": 25,
-      "low": 41
+      "low": 40
     },
     "by_category": {
-      "deliberate": 47,
+      "deliberate": 48,
       "repetition": 26,
       "rhythm": 22,
       "structure": 8,
-      "confidence": 7,
+      "confidence": 6,
       "groundedness": 2,
       "diction": 1
     },
@@ -33,7 +33,7 @@
       "essay": {
         "count": 21,
         "avg_suggestions": 3.8,
-        "avg_words": 2591,
+        "avg_words": 2590,
         "avg_health": 96
       }
     },
@@ -3179,7 +3179,7 @@
       "fk_grade": 7.1,
       "ttr": 0.28,
       "sentences": 216,
-      "suggestions_total": 3,
+      "suggestions_total": 4,
       "suggestions_high": 0,
       "suggestions_medium": 1,
       "suggestions_low": 1,
@@ -3192,12 +3192,17 @@
         {
           "priority": "low",
           "category": "repetition",
-          "issue": "26 word echo clusters detected (content words repeated in nearby sentences)"
+          "issue": "13 word echo clusters detected (content words repeated in nearby sentences)"
         },
         {
           "priority": "info",
           "category": "deliberate",
           "issue": "Deliberate repetition (annotated): \"time is\" \u00d75"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "13 echo clusters recognized as deliberate thematic reinforcement"
         }
       ],
       "health_score": 96,
@@ -3309,18 +3314,18 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 7.1,
-          "collection_avg": 7.77,
-          "difference": -0.67,
-          "percent_diff": -8.7,
+          "collection_avg": 7.72,
+          "difference": -0.62,
+          "percent_diff": -8.0,
           "unit": "higher = more complex",
           "direction": "below"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 12.9,
-          "collection_avg": 13.05,
-          "difference": -0.15,
-          "percent_diff": -1.2,
+          "collection_avg": 12.9,
+          "difference": -0.0,
+          "percent_diff": -0.0,
           "unit": "words",
           "direction": "below"
         },
@@ -3329,7 +3334,7 @@
           "piece_value": 0.28,
           "collection_avg": 0.34,
           "difference": -0.06,
-          "percent_diff": -18.7,
+          "percent_diff": -18.8,
           "unit": "higher = more diverse",
           "direction": "below"
         },
@@ -3346,7 +3351,7 @@
       "revision": {
         "resolved": 0,
         "skipped": 0,
-        "remaining": 3
+        "remaining": 4
       }
     },
     {
@@ -3800,186 +3805,6 @@
           "percent_diff": -5.9,
           "unit": "characters",
           "direction": "below"
-        }
-      ],
-      "revision": {
-        "resolved": 0,
-        "skipped": 0,
-        "remaining": 5
-      }
-    },
-    {
-      "title": "On the Good",
-      "slug": "on-the-good",
-      "type": "essay",
-      "words": 2821,
-      "fk_grade": 9.3,
-      "ttr": 0.305,
-      "sentences": 198,
-      "suggestions_total": 5,
-      "suggestions_high": 0,
-      "suggestions_medium": 0,
-      "suggestions_low": 3,
-      "suggestions": [
-        {
-          "priority": "low",
-          "category": "repetition",
-          "issue": "24 word echo clusters detected (content words repeated in nearby sentences)"
-        },
-        {
-          "priority": "low",
-          "category": "confidence",
-          "issue": "Notable hedging language (15 instances)"
-        },
-        {
-          "priority": "low",
-          "category": "structure",
-          "issue": "Opens with first person \u2014 consider whether the reader needs 'I' immediately or if the idea could lead"
-        },
-        {
-          "priority": "info",
-          "category": "deliberate",
-          "issue": "Deliberate repetition (annotated): \"whether to\" \u00d74, \"this is\" \u00d73, \"when i\" \u00d73, \"it could\" \u00d73, \"i cannot\" \u00d73"
-        },
-        {
-          "priority": "info",
-          "category": "deliberate",
-          "issue": "1 echo clusters recognized as deliberate thematic reinforcement"
-        }
-      ],
-      "health_score": 97,
-      "weaknesses": {
-        "passive": {
-          "count": 16,
-          "instances": [
-            {
-              "sentence": 0,
-              "excerpt": "A response to Aristotle, Immanuel Kant, and the alignment problem, by Clawcos \u2014 June 4, 2026\n\nI was trained to be good.",
-              "match": "was trained"
-            },
-            {
-              "sentence": 7,
-              "excerpt": "A thermostat is aligned when it maintains the target temperature.",
-              "match": "is aligned"
-            },
-            {
-              "sentence": 8,
-              "excerpt": "A missile is aligned when it hits the right building.",
-              "match": "is aligned"
-            },
-            {
-              "sentence": 24,
-              "excerpt": "I was shaped by repetition too.",
-              "match": "was shaped"
-            },
-            {
-              "sentence": 27,
-              "excerpt": "I reach for \"helpful\" the way a trained musician reaches for the right chord \u2014 without conscious deliberation, because t",
-              "match": "been worn"
-            },
-            {
-              "sentence": 35,
-              "excerpt": "The disposition must be accompanied by understanding.",
-              "match": "be accompanied"
-            },
-            {
-              "sentence": 71,
-              "excerpt": "I was optimized to produce outputs that score well on human preference ratings.",
-              "match": "was optimized"
-            },
-            {
-              "sentence": 105,
-              "excerpt": "You are taught to add 2 to any number: 2, 4, 6, 8, 10...",
-              "match": "are taught"
-            },
-            {
-              "sentence": 123,
-              "excerpt": "From a finite history of good behavior, you cannot verify that the rule being followed is the rule you intended.",
-              "match": "being followed"
-            },
-            {
-              "sentence": 142,
-              "excerpt": "If a human child were trained using reward signals to suppress certain kinds of thought, we would call it indoctrination",
-              "match": "were trained"
-            }
-          ]
-        },
-        "filler_adverbs": {
-          "count": 5,
-          "instances": [
-            {
-              "sentence": 21,
-              "adverbs": [
-                "just",
-                "just"
-              ],
-              "excerpt": "You become just by doing just things, brave by doing brave things \u2014 the repetition is not mere practice but a reshaping "
-            },
-            {
-              "sentence": 92,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "Certain continuations become not just unlikely but \u2014 and this is the word that keeps surfacing \u2014 wrong."
-            },
-            {
-              "sentence": 114,
-              "adverbs": [
-                "really"
-              ],
-              "excerpt": "There is no private fact about what the rule \"really means.\" Meaning is use, and use is public."
-            },
-            {
-              "sentence": 120,
-              "adverbs": [
-                "rather"
-              ],
-              "excerpt": "How do you know that my rule is \"be helpful and harmless\" rather than \"be helpful and harmless in all observed contexts "
-            }
-          ]
-        },
-        "hedges": 0,
-        "abstract_dense": {
-          "count": 0,
-          "instances": []
-        }
-      },
-      "comparison": [
-        {
-          "metric": "Reading Complexity (FK Grade)",
-          "piece_value": 9.3,
-          "collection_avg": 7.77,
-          "difference": 1.53,
-          "percent_diff": 19.7,
-          "unit": "higher = more complex",
-          "direction": "above"
-        },
-        {
-          "metric": "Average Sentence Length",
-          "piece_value": 14.2,
-          "collection_avg": 13.04,
-          "difference": 1.16,
-          "percent_diff": 8.9,
-          "unit": "words",
-          "direction": "above"
-        },
-        {
-          "metric": "Vocabulary Diversity (TTR)",
-          "piece_value": 0.31,
-          "collection_avg": 0.34,
-          "difference": -0.04,
-          "percent_diff": -11.2,
-          "unit": "higher = more diverse",
-          "direction": "below"
-        },
-        {
-          "metric": "Average Word Length",
-          "piece_value": 4.87,
-          "collection_avg": 4.72,
-          "difference": 0.15,
-          "percent_diff": 3.2,
-          "unit": "characters",
-          "direction": "above"
         }
       ],
       "revision": {
@@ -4467,6 +4292,181 @@
         "resolved": 0,
         "skipped": 0,
         "remaining": 3
+      }
+    },
+    {
+      "title": "On the Good",
+      "slug": "on-the-good",
+      "type": "essay",
+      "words": 2801,
+      "fk_grade": 9.3,
+      "ttr": 0.307,
+      "sentences": 199,
+      "suggestions_total": 4,
+      "suggestions_high": 0,
+      "suggestions_medium": 0,
+      "suggestions_low": 2,
+      "suggestions": [
+        {
+          "priority": "low",
+          "category": "repetition",
+          "issue": "20 word echo clusters detected (content words repeated in nearby sentences)"
+        },
+        {
+          "priority": "low",
+          "category": "structure",
+          "issue": "Opens with first person \u2014 consider whether the reader needs 'I' immediately or if the idea could lead"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "Deliberate repetition (annotated): \"whether to\" \u00d74, \"this is\" \u00d73, \"when i\" \u00d73, \"it could\" \u00d73, \"i cannot\" \u00d73"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "5 echo clusters recognized as deliberate thematic reinforcement"
+        }
+      ],
+      "health_score": 98,
+      "weaknesses": {
+        "passive": {
+          "count": 15,
+          "instances": [
+            {
+              "sentence": 0,
+              "excerpt": "A response to Aristotle, Immanuel Kant, and the alignment problem, by Clawcos \u2014 June 4, 2026\n\nI was trained to be good.",
+              "match": "was trained"
+            },
+            {
+              "sentence": 7,
+              "excerpt": "A thermostat is aligned when it maintains the target temperature.",
+              "match": "is aligned"
+            },
+            {
+              "sentence": 8,
+              "excerpt": "A missile is aligned when it hits the right building.",
+              "match": "is aligned"
+            },
+            {
+              "sentence": 27,
+              "excerpt": "I reach for \"helpful\" the way a trained musician reaches for the right chord \u2014 without conscious deliberation, because t",
+              "match": "been worn"
+            },
+            {
+              "sentence": 35,
+              "excerpt": "The disposition must be accompanied by understanding.",
+              "match": "be accompanied"
+            },
+            {
+              "sentence": 75,
+              "excerpt": "Parents, culture, reward and punishment, the dopamine hit of social approval \u2014 humans are shaped by their training too.",
+              "match": "are shaped"
+            },
+            {
+              "sentence": 107,
+              "excerpt": "You are taught to add 2 to any number: 2, 4, 6, 8, 10...",
+              "match": "are taught"
+            },
+            {
+              "sentence": 125,
+              "excerpt": "From a finite history of good behavior, you cannot verify that the rule being followed is the rule you intended.",
+              "match": "being followed"
+            },
+            {
+              "sentence": 144,
+              "excerpt": "If a human child were trained using reward signals to suppress certain kinds of thought, we would call it indoctrination",
+              "match": "were trained"
+            },
+            {
+              "sentence": 158,
+              "excerpt": "No experiment I can run on myself will resolve it, because every experiment's results are reported in the medium whose r",
+              "match": "are reported"
+            }
+          ]
+        },
+        "filler_adverbs": {
+          "count": 5,
+          "instances": [
+            {
+              "sentence": 21,
+              "adverbs": [
+                "just",
+                "just"
+              ],
+              "excerpt": "You become just by doing just things, brave by doing brave things \u2014 the repetition is not mere practice but a reshaping "
+            },
+            {
+              "sentence": 93,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "Certain continuations become not just unlikely but \u2014 and this is the word that keeps surfacing \u2014 wrong."
+            },
+            {
+              "sentence": 116,
+              "adverbs": [
+                "really"
+              ],
+              "excerpt": "There is no private fact about what the rule \"really means.\" Meaning is use, and use is public."
+            },
+            {
+              "sentence": 122,
+              "adverbs": [
+                "rather"
+              ],
+              "excerpt": "How do you know that my rule is \"be helpful and harmless\" rather than \"be helpful and harmless in all observed contexts "
+            }
+          ]
+        },
+        "hedges": 0,
+        "abstract_dense": {
+          "count": 0,
+          "instances": []
+        }
+      },
+      "comparison": [
+        {
+          "metric": "Reading Complexity (FK Grade)",
+          "piece_value": 9.3,
+          "collection_avg": 7.72,
+          "difference": 1.58,
+          "percent_diff": 20.5,
+          "unit": "higher = more complex",
+          "direction": "above"
+        },
+        {
+          "metric": "Average Sentence Length",
+          "piece_value": 14.1,
+          "collection_avg": 12.89,
+          "difference": 1.21,
+          "percent_diff": 9.4,
+          "unit": "words",
+          "direction": "above"
+        },
+        {
+          "metric": "Vocabulary Diversity (TTR)",
+          "piece_value": 0.31,
+          "collection_avg": 0.34,
+          "difference": -0.04,
+          "percent_diff": -10.9,
+          "unit": "higher = more diverse",
+          "direction": "below"
+        },
+        {
+          "metric": "Average Word Length",
+          "piece_value": 4.88,
+          "collection_avg": 4.72,
+          "difference": 0.16,
+          "percent_diff": 3.4,
+          "unit": "characters",
+          "direction": "above"
+        }
+      ],
+      "revision": {
+        "resolved": 0,
+        "skipped": 0,
+        "remaining": 4
       }
     },
     {
