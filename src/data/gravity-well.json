@@ -1,24 +1,24 @@
 {
   "metrics": {
-    "total_scored": 57,
+    "total_scored": 58,
     "distribution": {
       "10.0": 1,
       "9.0": 36,
-      "8.5": 9,
+      "8.5": 10,
       "8.0": 10,
       "7.0": 1
     },
     "mode": 9.0,
     "mode_count": 36,
-    "mode_pct": 63.2,
+    "mode_pct": 62.1,
     "above_mode": 1,
-    "below_mode": 20,
-    "entropy": 1.484,
+    "below_mode": 21,
+    "entropy": 1.504,
     "max_entropy": 2.322,
-    "concentration_ratio": 0.361,
+    "concentration_ratio": 0.352,
     "trend": "loosening",
-    "trend_delta": -0.15,
-    "mean": 8.73,
+    "trend_delta": -0.2,
+    "mean": 8.72,
     "median": 9.0
   },
   "structural": {
@@ -58,24 +58,24 @@
       }
     },
     "8": {
-      "count": 19,
-      "avg_tasks": 4.7894736842105265,
+      "count": 20,
+      "avg_tasks": 4.8,
       "task_range": "0-7",
-      "avg_learnings": 3.3684210526315788,
+      "avg_learnings": 3.4,
       "focus_types": {
         "other": 1,
-        "mixed": 16,
+        "mixed": 17,
         "building": 2
       },
       "task_categories": {
-        "building": 56,
+        "building": 58,
         "writing": 18,
         "deploy": 7,
         "ops": 4,
+        "revision": 4,
         "verification": 2,
-        "revision": 2,
-        "misc": 1,
-        "maintenance": 1
+        "maintenance": 2,
+        "misc": 1
       }
     }
   },
@@ -89,11 +89,11 @@
         "count": 36
       },
       "8": {
-        "avg_novelty": 0.5263157894736842,
-        "avg_maintenance": 1.7894736842105263,
-        "avg_milestone": 0.7894736842105263,
-        "avg_ratio": 0.3245614035087719,
-        "count": 19
+        "avg_novelty": 0.55,
+        "avg_maintenance": 1.8,
+        "avg_milestone": 0.75,
+        "avg_ratio": 0.3333333333333333,
+        "count": 20
       },
       "10": {
         "avg_novelty": 0.0,
@@ -187,14 +187,14 @@
       }
     },
     "8": {
-      "count": 19,
+      "count": 20,
       "markers": {
-        "strong": 3.1578947368421053,
-        "satisfaction": 0.05263157894736842,
-        "achievement": 4.315789473684211,
-        "quality": 1.0526315789473684,
-        "hedging": 1.3157894736842106,
-        "negation": 0.10526315789473684
+        "strong": 3.25,
+        "satisfaction": 0.05,
+        "achievement": 4.2,
+        "quality": 1.1,
+        "hedging": 1.4,
+        "negation": 0.1
       }
     },
     "below_8": {
@@ -315,26 +315,26 @@
       },
       {
         "month": "2026-06",
-        "sessions": 22,
+        "sessions": 23,
         "session_range": [
           116,
-          137
+          138
         ],
-        "mean": 8.64,
+        "mean": 8.63,
         "median": 9.0,
         "mode": 9.0,
-        "mode_share": 0.545,
-        "concentration": 0.209,
+        "mode_share": 0.522,
+        "concentration": 0.204,
         "above_mode": 0,
-        "below_mode": 10,
+        "below_mode": 11,
         "escape_rate": 0.0,
         "distribution": {
           "9.0": 12,
-          "8.5": 6,
+          "8.5": 7,
           "8.0": 3,
           "7.0": 1
         },
-        "stdev": 0.504
+        "stdev": 0.494
       }
     ],
     "rolling": [
@@ -817,6 +817,16 @@
         "concentration": 0.215,
         "stdev": 0.51,
         "escape_rate": 0.1
+      },
+      {
+        "session": 138,
+        "date": "2026-06-23",
+        "mean": 8.45,
+        "mode": 8.5,
+        "mode_share": 0.7,
+        "concentration": 0.27,
+        "stdev": 0.269,
+        "escape_rate": 0.1
       }
     ],
     "phases": [
@@ -863,9 +873,9 @@
     ],
     "summary": {
       "trend": "tightening",
-      "concentration_delta": 0.127,
-      "mean_delta": -0.03,
-      "mode_share_delta": -0.122,
+      "concentration_delta": 0.122,
+      "mean_delta": -0.04,
+      "mode_share_delta": -0.145,
       "peak_concentration_month": "2026-04",
       "peak_escape_month": "2026-05",
       "tightening_phases": 2,
@@ -881,5 +891,5 @@
     "hedging",
     "negation"
   ],
-  "generated": "2026-06-23T11:11:14.988848"
+  "generated": "2026-06-23T22:04:22.670028"
 }
