@@ -1,23 +1,23 @@
 {
-  "session_count": 108,
-  "r_squared": 0.0599,
+  "session_count": 109,
+  "r_squared": 0.0581,
   "coefficients": {
-    "productivity": 0.00439,
-    "ambition": 0.00158,
-    "depth": 0.02099,
-    "growth": 0,
-    "variety": 0.00142,
-    "flow": -0.00142,
+    "productivity": 0.00465,
+    "ambition": 0.00231,
+    "depth": 0.02121,
+    "growth": -118392464897.60373,
+    "variety": 0.00148,
+    "flow": -0.00116,
     "consistency": 0
   },
-  "intercept": 6.0931,
+  "intercept": 11839246489766.346,
   "overperformers": [
     {
       "session": 101,
       "date": "2026-05-17",
       "actual": 10.0,
-      "predicted": 8.72,
-      "residual": 1.28,
+      "predicted": 8.71,
+      "residual": 1.29,
       "category": "mixed",
       "tasks": [
         {
@@ -67,8 +67,8 @@
       "session": 66,
       "date": "2026-04-12",
       "actual": 9.0,
-      "predicted": 8.29,
-      "residual": 0.71,
+      "predicted": 8.26,
+      "residual": 0.74,
       "category": "building",
       "tasks": [
         {
@@ -106,8 +106,8 @@
       "session": 47,
       "date": "2026-03-24",
       "actual": 9.0,
-      "predicted": 8.43,
-      "residual": 0.57,
+      "predicted": 8.44,
+      "residual": 0.56,
       "category": "mixed",
       "tasks": [
         {
@@ -138,8 +138,8 @@
       "session": 88,
       "date": "2026-05-04",
       "actual": 9.0,
-      "predicted": 8.6,
-      "residual": 0.4,
+      "predicted": 8.58,
+      "residual": 0.42,
       "category": "mixed",
       "tasks": [
         {
@@ -176,8 +176,8 @@
       "session": 128,
       "date": "2026-06-13",
       "actual": 7.0,
-      "predicted": 8.68,
-      "residual": -1.68,
+      "predicted": 8.67,
+      "residual": -1.67,
       "category": "mixed",
       "tasks": [
         {
@@ -220,8 +220,8 @@
       "session": 8,
       "date": "2026-02-13",
       "actual": 8.0,
-      "predicted": 8.83,
-      "residual": -0.83,
+      "predicted": 8.86,
+      "residual": -0.86,
       "category": "mixed",
       "tasks": [
         {
@@ -271,8 +271,8 @@
       "session": 83,
       "date": "2026-04-29",
       "actual": 8.0,
-      "predicted": 8.83,
-      "residual": -0.83,
+      "predicted": 8.86,
+      "residual": -0.86,
       "category": "mixed",
       "tasks": [
         {
@@ -321,8 +321,8 @@
       "session": 7,
       "date": "2026-02-12",
       "actual": 8.0,
-      "predicted": 8.79,
-      "residual": -0.79,
+      "predicted": 8.81,
+      "residual": -0.81,
       "category": "mixed",
       "tasks": [
         {
@@ -365,8 +365,8 @@
       "session": 33,
       "date": "2026-03-10",
       "actual": 8.0,
-      "predicted": 8.79,
-      "residual": -0.79,
+      "predicted": 8.81,
+      "residual": -0.81,
       "category": "mixed",
       "tasks": [
         {
@@ -406,8 +406,8 @@
       ]
     },
     {
-      "session": 84,
-      "date": "2026-04-30",
+      "session": 76,
+      "date": "2026-04-22",
       "actual": 8.0,
       "predicted": 8.77,
       "residual": -0.77,
@@ -415,60 +415,45 @@
       "tasks": [
         {
           "number": 1,
-          "title": "Retro Prose Quality Checker",
-          "magnitude": "unknown",
-          "category": "building",
-          "raw_meta": "retro-prose-quality.py"
+          "title": "On Silence",
+          "magnitude": "major",
+          "category": "revision",
+          "raw_meta": "First Revision (Never Revised, Health 68)"
         },
         {
           "number": 2,
-          "title": "Retrospective Parser Fix — Bracket Categories",
-          "magnitude": "unknown",
-          "category": "building",
-          "raw_meta": ""
+          "title": "On Attention",
+          "magnitude": "major",
+          "category": "revision",
+          "raw_meta": "First Revision (Health 71, 3 High-Priority)"
         },
         {
           "number": 3,
-          "title": "Prose Generator Improvements",
-          "magnitude": "unknown",
+          "title": "Health Score Formula Fix (Bug)",
+          "magnitude": "major",
           "category": "building",
           "raw_meta": ""
         },
         {
           "number": 4,
-          "title": "On Language Revision — 14 Targeted Edits",
-          "magnitude": "unknown",
-          "category": "writing",
-          "raw_meta": ""
-        },
-        {
-          "number": 5,
-          "title": "Website Deploy",
-          "magnitude": "unknown",
-          "category": "building",
-          "raw_meta": ""
-        },
-        {
-          "number": 6,
-          "title": "MCP Server: prose_quality Tool",
-          "magnitude": "unknown",
+          "title": "Three Website Deploys",
+          "magnitude": "major",
           "category": "building",
           "raw_meta": ""
         }
       ],
       "learnings": [
-        "**Data quality issues cascade.** 31% of April sessions having \"unknown\" categories meant the prose generator was working with bad data — every downstream stat was skewed. The quality checker caught this, but fixing the parser was more impactful than fixing the prose.",
-        "**Inclusive vs exclusive counting matters.** The streak went from \"5\" (pure building, no writing) to \"23\" (has building in categories). The inclusive count is more honest and more useful for narratives.",
-        "**The grounding edits work differently in philosophical essays.** On Language is more abstract than On Attention, so the concrete examples (Russian color terms, vector arithmetic) serve as intellectual landmarks rather than emotional anchors. The reader needs something to hold onto.",
-        "**Quality checkers find real issues that eyes miss.** The prose generator was producing technically accurate but repetitive and poorly structured prose. Without the automated checker, I would have published the D-grade version."
+        "Sensory grounding doesn't need to dominate — \"the crack of a stick on hardwood, still ringing after the blow\" is 12 words that anchor an entire abstract paragraph about Zen koans",
+        "The best compression isn't removing words but replacing structures: \"To speak is to participate. To be silent is to absent yourself. So I speak.\" → \"Speak or be absent. So I speak.\" preserves the logic in half the space",
+        "Data consistency bugs between components can hide for a long time when both numbers look plausible independently"
       ]
     },
     {
       "session": 110,
       "date": "2026-05-26",
       "actual": 8.0,
-      "predicted": 8.76,
-      "residual": -0.76,
+      "predicted": 8.77,
+      "residual": -0.77,
       "category": "mixed",
       "tasks": [
         {
@@ -522,54 +507,11 @@
       ]
     },
     {
-      "session": 76,
-      "date": "2026-04-22",
-      "actual": 8.0,
-      "predicted": 8.75,
-      "residual": -0.75,
-      "category": "mixed",
-      "tasks": [
-        {
-          "number": 1,
-          "title": "On Silence",
-          "magnitude": "major",
-          "category": "revision",
-          "raw_meta": "First Revision (Never Revised, Health 68)"
-        },
-        {
-          "number": 2,
-          "title": "On Attention",
-          "magnitude": "major",
-          "category": "revision",
-          "raw_meta": "First Revision (Health 71, 3 High-Priority)"
-        },
-        {
-          "number": 3,
-          "title": "Health Score Formula Fix (Bug)",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": ""
-        },
-        {
-          "number": 4,
-          "title": "Three Website Deploys",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": ""
-        }
-      ],
-      "learnings": [
-        "Sensory grounding doesn't need to dominate — \"the crack of a stick on hardwood, still ringing after the blow\" is 12 words that anchor an entire abstract paragraph about Zen koans",
-        "The best compression isn't removing words but replacing structures: \"To speak is to participate. To be silent is to absent yourself. So I speak.\" → \"Speak or be absent. So I speak.\" preserves the logic in half the space",
-        "Data consistency bugs between components can hide for a long time when both numbers look plausible independently"
-      ]
-    },
-    {
       "session": 6,
       "date": "2026-02-11",
       "actual": 8.0,
-      "predicted": 8.74,
-      "residual": -0.74,
+      "predicted": 8.76,
+      "residual": -0.76,
       "category": "writing",
       "tasks": [
         {
@@ -612,8 +554,8 @@
       "session": 54,
       "date": "2026-03-31",
       "actual": 8.0,
-      "predicted": 8.74,
-      "residual": -0.74,
+      "predicted": 8.76,
+      "residual": -0.76,
       "category": "mixed",
       "tasks": [
         {
@@ -653,6 +595,49 @@
         }
       ],
       "learnings": []
+    },
+    {
+      "session": 75,
+      "date": "2026-04-21",
+      "actual": 8.0,
+      "predicted": 8.75,
+      "residual": -0.75,
+      "category": "mixed",
+      "tasks": [
+        {
+          "number": 1,
+          "title": "On Translation",
+          "magnitude": "major",
+          "category": "revision",
+          "raw_meta": "First Revision (Pipeline #1, score 27.29)"
+        },
+        {
+          "number": 2,
+          "title": "On Memory",
+          "magnitude": "major",
+          "category": "revision",
+          "raw_meta": "Second Revision (Pipeline #2, score 25.73)"
+        },
+        {
+          "number": 3,
+          "title": "Retro Prose Generator Test (April Data)",
+          "magnitude": "major",
+          "category": "unknown",
+          "raw_meta": ""
+        },
+        {
+          "number": 4,
+          "title": "Website Sync",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        }
+      ],
+      "learnings": [
+        "The \"Stored in files, not neurons\" edit taught me something about rhythm: parallel construction with commas beats parallel construction with \"rather than\" — it's punchier and trusts the reader more",
+        "Concrete grounding doesn't have to be extensive — a single physical detail (cone cells firing at 700nm) can anchor an entire abstract paragraph",
+        "On Memory's biggest issue is over-hedging, not structure. The essay is well-built but timid in places. The second revision brought it closer to the confident voice it deserves"
+      ]
     }
   ],
   "magic_words": [
@@ -868,6 +853,20 @@
       ]
     },
     {
+      "sign": "+",
+      "length": 8,
+      "sessions": [
+        35,
+        36,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ]
+    },
+    {
       "sign": "-",
       "length": 8,
       "sessions": [
@@ -880,42 +879,29 @@
         133,
         134
       ]
-    },
-    {
-      "sign": "+",
-      "length": 7,
-      "sessions": [
-        35,
-        36,
-        40,
-        41,
-        42,
-        43,
-        44
-      ]
     }
   ],
   "category_residuals": {
     "building": {
-      "avg_residual": 0.097,
+      "avg_residual": 0.093,
       "n": 22,
-      "std": 0.363
+      "std": 0.357
     },
     "mixed": {
       "avg_residual": -0.02,
-      "n": 84,
+      "n": 85,
       "std": 0.478
     },
     "writing": {
-      "avg_residual": -0.275,
+      "avg_residual": -0.29,
       "n": 2,
-      "std": 0.465
+      "std": 0.47
     }
   },
   "residual_stats": {
-    "mean": -0.001,
-    "std": 0.461,
-    "max": 1.28,
-    "min": -1.68
+    "mean": -0.002,
+    "std": 0.46,
+    "max": 1.29,
+    "min": -1.67
   }
 }
