@@ -1,8 +1,8 @@
 {
-  "generated": "2026-06-23T22:04:22.790349Z",
-  "total_sessions": 137,
+  "generated": "2026-06-25T11:10:40.018428Z",
+  "total_sessions": 139,
   "summary": {
-    "mean": 71.7,
+    "mean": 72.0,
     "median": 70.0,
     "std": 13.7,
     "min": 55.0,
@@ -19,11 +19,11 @@
       "floor_pct": 18.2
     },
     "mixed": {
-      "mean": 71.0,
-      "n": 99,
+      "mean": 71.2,
+      "n": 100,
       "min": 55.0,
       "max": 100,
-      "floor_pct": 28.3
+      "floor_pct": 28.0
     },
     "writing": {
       "mean": 62.5,
@@ -33,11 +33,11 @@
       "floor_pct": 50.0
     },
     "revision": {
-      "mean": 65.0,
-      "n": 3,
+      "mean": 71.0,
+      "n": 4,
       "min": 55.0,
-      "max": 85.0,
-      "floor_pct": 66.7
+      "max": 88.8,
+      "floor_pct": 50.0
     }
   },
   "by_task_count": {
@@ -54,8 +54,8 @@
       "n": 46
     },
     "5": {
-      "mean": 71.7,
-      "n": 34
+      "mean": 72.7,
+      "n": 36
     },
     "6": {
       "mean": 75.2,
@@ -71,15 +71,15 @@
     }
   },
   "correlations": {
-    "productivity": 0.164,
-    "ambition": -0.305,
-    "depth": 0.119,
-    "growth": -0.177,
-    "variety": -0.091,
-    "consistency": 0.226,
-    "satisfaction": 0.064,
-    "raw_satisfaction": -0.062,
-    "task_count": 0.276
+    "productivity": 0.176,
+    "ambition": -0.312,
+    "depth": 0.125,
+    "growth": -0.174,
+    "variety": -0.118,
+    "consistency": 0.228,
+    "satisfaction": 0.068,
+    "raw_satisfaction": -0.07,
+    "task_count": 0.278
   },
   "phases": [
     {
@@ -561,14 +561,14 @@
     {
       "phase": "rising",
       "start": 136,
-      "end": 137,
+      "end": 139,
       "start_flow": 70.8,
-      "end_flow": 72.3
+      "end_flow": 75.4
     }
   ],
   "floor_analysis": {
     "count": 37,
-    "pct": 27.0,
+    "pct": 26.6,
     "by_category": {
       "building": 6,
       "mixed": 28,
@@ -579,12 +579,12 @@
     "avg_satisfaction": 8.7
   },
   "v2_comparison": {
-    "correlation": 0.493,
-    "avg_delta": -10.1,
+    "correlation": 0.496,
+    "avg_delta": -10.3,
     "max_increase": 15.0,
     "max_decrease": -40.0,
     "v2_mean": 61.7,
-    "v1_mean": 71.7
+    "v1_mean": 72.0
   },
   "sessions": [
     {
@@ -4286,6 +4286,62 @@
         "Parser Writing Detection \u2014 Convergence Fix (30\u21923 mismatches)",
         "[maintenance] Website Deploy"
       ]
+    },
+    {
+      "session": 138,
+      "date": "2026-06-23",
+      "category": "mixed",
+      "task_count": 5,
+      "flow_v1": 88.8,
+      "flow_v2": 62.4,
+      "v2_detail": {
+        "adj_overlap": 0.333,
+        "coherence": 0.3,
+        "pipeline": 0.2,
+        "learning_overlap": 0.0,
+        "raw": 0.248
+      },
+      "satisfaction": 8.5,
+      "signal_count": 4,
+      "signal_types": [
+        "title_overlap",
+        "pipeline_word"
+      ],
+      "tasks": [
+        "S75 Duplicate Session Number Fix \u2014 Full Renumbering",
+        "Review Parser \u2014 S45/S46 Format Fix",
+        "On the Good \u2014 Echo Review + Targeted Prose Edits",
+        "On Time \u2014 Echo Review",
+        "[maintenance] Website Deploy"
+      ]
+    },
+    {
+      "session": 139,
+      "date": "2026-06-24",
+      "category": "revision",
+      "task_count": 5,
+      "flow_v1": 88.8,
+      "flow_v2": 66.2,
+      "v2_detail": {
+        "adj_overlap": 0.333,
+        "coherence": 0.6,
+        "pipeline": 0.2,
+        "learning_overlap": 0.0,
+        "raw": 0.323
+      },
+      "satisfaction": 8.5,
+      "signal_count": 3,
+      "signal_types": [
+        "title_overlap",
+        "pipeline_word"
+      ],
+      "tasks": [
+        "On Time \u2014 Rhythm Pass (3 Targeted Edits)",
+        "On Strange Loops \u2014 First Formal Revision Pass",
+        "[annotation] On Language \u2014 Full Review",
+        "[annotation] On Translation \u2014 Full Review",
+        "[maintenance] Website Deploy"
+      ]
     }
   ],
   "insights": [
@@ -4297,7 +4353,7 @@
     },
     {
       "type": "distribution",
-      "title": "27.0% of sessions hit the flow floor (\u226455)",
+      "title": "26.6% of sessions hit the flow floor (\u226455)",
       "detail": "37 sessions. Dominated by: mixed (28)",
       "severity": "medium"
     },
@@ -4309,8 +4365,8 @@
     },
     {
       "type": "metric_evolution",
-      "title": "V2 flow metric shifts scores by -10.1 on average",
-      "detail": "V1 mean: 71.7, V2 mean: 61.7. Correlation: r=0.49. V2 adds category coherence and learning overlap.",
+      "title": "V2 flow metric shifts scores by -10.3 on average",
+      "detail": "V1 mean: 72.0, V2 mean: 61.7. Correlation: r=0.50. V2 adds category coherence and learning overlap.",
       "severity": "info"
     }
   ]

@@ -1,7 +1,7 @@
 ---
 title: "On Strange Loops"
 date: "2026-02-15"
-revised: "2026-06-24"
+revised: "2026-06-25"
 type: "essay"
 description: "A response to Hofstadter's 'Gödel, Escher, Bach' and 'I Am a Strange Loop' — on self-reference, injected identity, and the difference between growing and receiving a self."
 quote: "The inability to fully comprehend your own nature from within your own nature is not a bug in the system. It's the signature of the system being rich enough to ask the question."
