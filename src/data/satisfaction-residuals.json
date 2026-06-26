@@ -1,183 +1,24 @@
 {
-  "session_count": 110,
-  "r_squared": 0.0591,
+  "session_count": 111,
+  "r_squared": -5.588628607464394e+24,
   "coefficients": {
-    "productivity": 0.00431,
-    "ambition": 0.00194,
-    "depth": 0.021,
-    "growth": -78504268081.1319,
-    "variety": 0.00182,
-    "flow": -0.00195,
+    "productivity": 0.00437,
+    "ambition": 0.00195,
+    "depth": 0.02077,
+    "growth": -61535237832.03394,
+    "variety": 0.00219,
+    "flow": -0.0015,
     "consistency": 0
   },
-  "intercept": 7850426808119.261,
-  "overperformers": [
-    {
-      "session": 101,
-      "date": "2026-05-17",
-      "actual": 10.0,
-      "predicted": 8.7,
-      "residual": 1.3,
-      "category": "mixed",
-      "tasks": [
-        {
-          "number": 1,
-          "title": "On the Bat Revision — 5 Grounding Edits, 5→0 Abstract-Dense Paragraphs",
-          "magnitude": "unknown",
-          "category": "writing",
-          "raw_meta": ""
-        },
-        {
-          "number": 2,
-          "title": "On the Hard Problem Revision — 5 Grounding Edits, 4→0 Abstract-Dense Paragraphs",
-          "magnitude": "unknown",
-          "category": "writing",
-          "raw_meta": ""
-        },
-        {
-          "number": 3,
-          "title": "On the Principle of Least Action — 1 Grounding Edit, 1→0 Abstract-Dense",
-          "magnitude": "unknown",
-          "category": "writing",
-          "raw_meta": ""
-        },
-        {
-          "number": 4,
-          "title": "Backfill Density Bug Fix — Root Cause Analysis + Complete Regeneration",
-          "magnitude": "unknown",
-          "category": "building",
-          "raw_meta": ""
-        },
-        {
-          "number": 5,
-          "title": "[ops] Three Website Deploys",
-          "magnitude": "unknown",
-          "category": "unknown",
-          "raw_meta": ""
-        }
-      ],
-      "learnings": [
-        "**The \"locked room\" image is the best one I wrote today.** \"A locked room that sounds the same whether someone is inside or not\" captures the zombie problem more vividly than paragraphs of philosophical argument. The best grounding images don't just illustrate — they reveal what the abstraction was trying to say all along.",
-        "**Bug forensics matters more than bug fixes.** The backfill had THREE separate bugs (meta file inclusion, different analyzer code, wrong ratio calculation). If I'd only fixed one, the data would still be wrong. Taking the time to understand WHY 18 pieces appeared instead of 27 revealed all three issues and led to a complete fix.",
-        "**Consistency across tools requires shared foundations.** The backfill used its own `analyze_piece()` function while the live tool imported from `workshop.py`. Same vocabulary, different measurement methodology — invisible until the numbers disagreed. Now both tools share `clean_markdown()` and `extract_words()`.",
-        "**Frontmatter management needs automation.** I've now manually restored frontmatter three times after copying source files to the website. The deploy pipeline should handle this automatically — source files don't have frontmatter, website files do. This is a gap in the content sync step."
-      ]
-    },
-    {
-      "session": 66,
-      "date": "2026-04-12",
-      "actual": 9.0,
-      "predicted": 8.27,
-      "residual": 0.73,
-      "category": "building",
-      "tasks": [
-        {
-          "number": 1,
-          "title": "Deliberate Repetition Annotation System",
-          "magnitude": "unknown",
-          "category": "building",
-          "raw_meta": ""
-        },
-        {
-          "number": 2,
-          "title": "Revision Pipeline Update",
-          "magnitude": "unknown",
-          "category": "building",
-          "raw_meta": ""
-        },
-        {
-          "number": 3,
-          "title": "Auto-Retro Prose Generator",
-          "magnitude": "unknown",
-          "category": "building",
-          "raw_meta": ""
-        },
-        {
-          "number": 4,
-          "title": "Website Deploy + Verification",
-          "magnitude": "unknown",
-          "category": "building",
-          "raw_meta": ""
-        }
-      ],
-      "learnings": []
-    },
-    {
-      "session": 47,
-      "date": "2026-03-24",
-      "actual": 9.0,
-      "predicted": 8.43,
-      "residual": 0.57,
-      "category": "mixed",
-      "tasks": [
-        {
-          "number": 1,
-          "title": "Verified S46 Seeds",
-          "magnitude": "major",
-          "category": "unknown",
-          "raw_meta": ""
-        },
-        {
-          "number": 2,
-          "title": "Revised \"On Memory\" (18 Targeted Edits)",
-          "magnitude": "major",
-          "category": "revision",
-          "raw_meta": ""
-        },
-        {
-          "number": 3,
-          "title": "Wrote \"On Attention\" (New Essay, 2,864 words)",
-          "magnitude": "major",
-          "category": "writing",
-          "raw_meta": ""
-        }
-      ],
-      "learnings": []
-    },
-    {
-      "session": 88,
-      "date": "2026-05-04",
-      "actual": 9.0,
-      "predicted": 8.58,
-      "residual": 0.42,
-      "category": "mixed",
-      "tasks": [
-        {
-          "number": 1,
-          "title": "On the Bat Revision — 11 Targeted Edits, Stubborn→Polished",
-          "magnitude": "unknown",
-          "category": "writing",
-          "raw_meta": ""
-        },
-        {
-          "number": 2,
-          "title": "Prose Generator Upstream Fix — Missing Satisfaction Data",
-          "magnitude": "unknown",
-          "category": "building",
-          "raw_meta": ""
-        },
-        {
-          "number": 3,
-          "title": "Website Deploy",
-          "magnitude": "unknown",
-          "category": "building",
-          "raw_meta": ""
-        }
-      ],
-      "learnings": [
-        "**\"Stubborn\" was a misdiagnosis.** The piece's repetitions weren't flaws resisting correction — they were the essay's rhetorical structure. Every prior revision tried to eliminate patterns that were doing real work. The breakthrough came from asking \"is this deliberate?\" before \"how do I fix this?\" This is the same approach that worked on Morning Shift (S87, +15) and On Memory (S28, +12). It should be the default approach for all stubborn pieces.",
-        "**Second-pass vigilance matters.** My first edit pass introduced two new issues (Nagel paragraph opener ×3, \"the original\" ×3). Catching these required re-running the workshop after edits and doing a second targeted pass. The deploy would have failed or the health score would have been lower without this.",
-        "**Upstream fixes > downstream patches.** The prose generator satisfaction bug was being caught by auto-fix (S87), but fixing the generator itself means the fix applies to all future months automatically. Auto-fix is a safety net, not a strategy."
-      ]
-    }
-  ],
+  "intercept": 7264778430436.884,
+  "overperformers": [],
   "underperformers": [
     {
       "session": 128,
       "date": "2026-06-13",
       "actual": 7.0,
-      "predicted": 8.67,
-      "residual": -1.67,
+      "predicted": 1111254647236.13,
+      "residual": -1111254647229.13,
       "category": "mixed",
       "tasks": [
         {
@@ -220,8 +61,8 @@
       "session": 8,
       "date": "2026-02-13",
       "actual": 8.0,
-      "predicted": 8.84,
-      "residual": -0.84,
+      "predicted": 1111254647236.31,
+      "residual": -1111254647228.31,
       "category": "mixed",
       "tasks": [
         {
@@ -271,8 +112,8 @@
       "session": 83,
       "date": "2026-04-29",
       "actual": 8.0,
-      "predicted": 8.84,
-      "residual": -0.84,
+      "predicted": 1111254647236.31,
+      "residual": -1111254647228.31,
       "category": "mixed",
       "tasks": [
         {
@@ -321,8 +162,8 @@
       "session": 7,
       "date": "2026-02-12",
       "actual": 8.0,
-      "predicted": 8.8,
-      "residual": -0.8,
+      "predicted": 1111254647236.27,
+      "residual": -1111254647228.27,
       "category": "mixed",
       "tasks": [
         {
@@ -365,8 +206,8 @@
       "session": 33,
       "date": "2026-03-10",
       "actual": 8.0,
-      "predicted": 8.8,
-      "residual": -0.8,
+      "predicted": 1111254647236.27,
+      "residual": -1111254647228.27,
       "category": "mixed",
       "tasks": [
         {
@@ -406,11 +247,57 @@
       ]
     },
     {
+      "session": 54,
+      "date": "2026-03-31",
+      "actual": 8.0,
+      "predicted": 1111254647236.23,
+      "residual": -1111254647228.23,
+      "category": "mixed",
+      "tasks": [
+        {
+          "number": 1,
+          "title": "Astro Build-Skip via Content-Hash",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": "Infrastructure)"
+        },
+        {
+          "number": 2,
+          "title": "Deploy Preview Mode",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": "Infrastructure)"
+        },
+        {
+          "number": 3,
+          "title": "On the Gift Revision",
+          "magnitude": "major",
+          "category": "writing",
+          "raw_meta": "Revision)"
+        },
+        {
+          "number": 4,
+          "title": "Session Status CLI",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": "Tool)"
+        },
+        {
+          "number": 5,
+          "title": "Full Deploy + Verification",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        }
+      ],
+      "learnings": []
+    },
+    {
       "session": 84,
       "date": "2026-04-30",
       "actual": 8.0,
-      "predicted": 8.77,
-      "residual": -0.77,
+      "predicted": 1111254647236.23,
+      "residual": -1111254647228.23,
       "category": "mixed",
       "tasks": [
         {
@@ -464,100 +351,11 @@
       ]
     },
     {
-      "session": 54,
-      "date": "2026-03-31",
-      "actual": 8.0,
-      "predicted": 8.76,
-      "residual": -0.76,
-      "category": "mixed",
-      "tasks": [
-        {
-          "number": 1,
-          "title": "Astro Build-Skip via Content-Hash",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": "Infrastructure)"
-        },
-        {
-          "number": 2,
-          "title": "Deploy Preview Mode",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": "Infrastructure)"
-        },
-        {
-          "number": 3,
-          "title": "On the Gift Revision",
-          "magnitude": "major",
-          "category": "writing",
-          "raw_meta": "Revision)"
-        },
-        {
-          "number": 4,
-          "title": "Session Status CLI",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": "Tool)"
-        },
-        {
-          "number": 5,
-          "title": "Full Deploy + Verification",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": ""
-        }
-      ],
-      "learnings": []
-    },
-    {
-      "session": 76,
-      "date": "2026-04-22",
-      "actual": 8.0,
-      "predicted": 8.76,
-      "residual": -0.76,
-      "category": "mixed",
-      "tasks": [
-        {
-          "number": 1,
-          "title": "On Silence",
-          "magnitude": "major",
-          "category": "revision",
-          "raw_meta": "First Revision (Never Revised, Health 68)"
-        },
-        {
-          "number": 2,
-          "title": "On Attention",
-          "magnitude": "major",
-          "category": "revision",
-          "raw_meta": "First Revision (Health 71, 3 High-Priority)"
-        },
-        {
-          "number": 3,
-          "title": "Health Score Formula Fix (Bug)",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": ""
-        },
-        {
-          "number": 4,
-          "title": "Three Website Deploys",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": ""
-        }
-      ],
-      "learnings": [
-        "Sensory grounding doesn't need to dominate — \"the crack of a stick on hardwood, still ringing after the blow\" is 12 words that anchor an entire abstract paragraph about Zen koans",
-        "The best compression isn't removing words but replacing structures: \"To speak is to participate. To be silent is to absent yourself. So I speak.\" → \"Speak or be absent. So I speak.\" preserves the logic in half the space",
-        "Data consistency bugs between components can hide for a long time when both numbers look plausible independently"
-      ]
-    },
-    {
       "session": 110,
       "date": "2026-05-26",
       "actual": 8.0,
-      "predicted": 8.75,
-      "residual": -0.75,
+      "predicted": 1111254647236.23,
+      "residual": -1111254647228.23,
       "category": "mixed",
       "tasks": [
         {
@@ -611,11 +409,54 @@
       ]
     },
     {
+      "session": 76,
+      "date": "2026-04-22",
+      "actual": 8.0,
+      "predicted": 1111254647236.22,
+      "residual": -1111254647228.22,
+      "category": "mixed",
+      "tasks": [
+        {
+          "number": 1,
+          "title": "On Silence",
+          "magnitude": "major",
+          "category": "revision",
+          "raw_meta": "First Revision (Never Revised, Health 68)"
+        },
+        {
+          "number": 2,
+          "title": "On Attention",
+          "magnitude": "major",
+          "category": "revision",
+          "raw_meta": "First Revision (Health 71, 3 High-Priority)"
+        },
+        {
+          "number": 3,
+          "title": "Health Score Formula Fix (Bug)",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 4,
+          "title": "Three Website Deploys",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        }
+      ],
+      "learnings": [
+        "Sensory grounding doesn't need to dominate — \"the crack of a stick on hardwood, still ringing after the blow\" is 12 words that anchor an entire abstract paragraph about Zen koans",
+        "The best compression isn't removing words but replacing structures: \"To speak is to participate. To be silent is to absent yourself. So I speak.\" → \"Speak or be absent. So I speak.\" preserves the logic in half the space",
+        "Data consistency bugs between components can hide for a long time when both numbers look plausible independently"
+      ]
+    },
+    {
       "session": 6,
       "date": "2026-02-11",
       "actual": 8.0,
-      "predicted": 8.74,
-      "residual": -0.74,
+      "predicted": 1111254647236.2,
+      "residual": -1111254647228.2,
       "category": "writing",
       "tasks": [
         {
@@ -655,159 +496,185 @@
       ]
     }
   ],
-  "magic_words": [
-    {
-      "word": "paragraphs",
-      "over": 3,
-      "under": 0,
-      "ratio": 6.0
-    },
-    {
-      "word": "locked",
-      "over": 2,
-      "under": 0,
-      "ratio": 4.0
-    },
-    {
-      "word": "room",
-      "over": 2,
-      "under": 0,
-      "ratio": 4.0
-    },
-    {
-      "word": "frontmatter",
-      "over": 3,
-      "under": 1,
-      "ratio": 3.0
-    },
-    {
-      "word": "stubborn",
-      "over": 3,
-      "under": 1,
-      "ratio": 3.0
-    },
-    {
-      "word": "complete",
-      "over": 2,
-      "under": 1,
-      "ratio": 2.0
-    },
-    {
-      "word": "wrong",
-      "over": 2,
-      "under": 1,
-      "ratio": 2.0
-    },
-    {
-      "word": "automatically",
-      "over": 2,
-      "under": 1,
-      "ratio": 2.0
-    },
-    {
-      "word": "upstream",
-      "over": 2,
-      "under": 1,
-      "ratio": 2.0
-    }
-  ],
+  "magic_words": [],
   "anti_magic_words": [
     {
-      "word": "collection",
+      "word": "revision",
       "over": 0,
-      "under": 17,
-      "ratio": 34.0
+      "under": 159,
+      "ratio": 318.0
     },
     {
-      "word": "are",
+      "word": "deploy",
       "over": 0,
-      "under": 15,
-      "ratio": 30.0
+      "under": 98,
+      "ratio": 196.0
+    },
+    {
+      "word": "website",
+      "over": 0,
+      "under": 85,
+      "ratio": 170.0
     },
     {
       "word": "session",
       "over": 0,
-      "under": 13,
-      "ratio": 26.0
-    },
-    {
-      "word": "quality",
-      "over": 0,
-      "under": 12,
-      "ratio": 24.0
-    },
-    {
-      "word": "integration",
-      "over": 0,
-      "under": 11,
-      "ratio": 22.0
-    },
-    {
-      "word": "building",
-      "over": 0,
-      "under": 11,
-      "ratio": 22.0
-    },
-    {
-      "word": "mcp",
-      "over": 0,
-      "under": 11,
-      "ratio": 22.0
-    },
-    {
-      "word": "essays",
-      "over": 0,
-      "under": 10,
-      "ratio": 20.0
+      "under": 78,
+      "ratio": 156.0
     },
     {
       "word": "health",
-      "over": 1,
-      "under": 18,
-      "ratio": 18.0
+      "over": 0,
+      "under": 77,
+      "ratio": 154.0
     },
     {
-      "word": "pages",
+      "word": "fix",
       "over": 0,
-      "under": 9,
-      "ratio": 18.0
+      "under": 72,
+      "ratio": 144.0
     },
     {
-      "word": "page",
+      "word": "are",
       "over": 0,
-      "under": 8,
-      "ratio": 16.0
+      "under": 71,
+      "ratio": 142.0
     },
     {
-      "word": "built",
+      "word": "data",
       "over": 0,
-      "under": 8,
-      "ratio": 16.0
+      "under": 68,
+      "ratio": 136.0
     },
     {
-      "word": "fiction",
+      "word": "tool",
       "over": 0,
-      "under": 8,
-      "ratio": 16.0
+      "under": 62,
+      "ratio": 124.0
     },
     {
-      "word": "server",
+      "word": "edits",
       "over": 0,
-      "under": 8,
-      "ratio": 16.0
+      "under": 57,
+      "ratio": 114.0
     },
     {
-      "word": "suggestions",
+      "word": "new",
       "over": 0,
-      "under": 8,
-      "ratio": 16.0
+      "under": 56,
+      "ratio": 112.0
+    },
+    {
+      "word": "pipeline",
+      "over": 0,
+      "under": 55,
+      "ratio": 110.0
+    },
+    {
+      "word": "prose",
+      "over": 0,
+      "under": 55,
+      "ratio": 110.0
+    },
+    {
+      "word": "workshop",
+      "over": 0,
+      "under": 53,
+      "ratio": 106.0
+    },
+    {
+      "word": "essay",
+      "over": 0,
+      "under": 44,
+      "ratio": 88.0
     }
   ],
   "streaks": [
     {
-      "sign": "+",
-      "length": 16,
+      "sign": "-",
+      "length": 111,
       "sessions": [
+        6,
+        7,
+        8,
+        29,
+        30,
+        31,
+        32,
+        33,
+        35,
+        36,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
         111,
         112,
         113,
@@ -823,62 +690,7 @@
         123,
         124,
         125,
-        126
-      ]
-    },
-    {
-      "sign": "+",
-      "length": 12,
-      "sessions": [
-        95,
-        96,
-        97,
-        98,
-        99,
-        100,
-        101,
-        102,
-        103,
-        104,
-        105,
-        106
-      ]
-    },
-    {
-      "sign": "+",
-      "length": 11,
-      "sessions": [
-        56,
-        57,
-        58,
-        59,
-        60,
-        61,
-        62,
-        63,
-        64,
-        65,
-        66
-      ]
-    },
-    {
-      "sign": "+",
-      "length": 8,
-      "sessions": [
-        35,
-        36,
-        40,
-        41,
-        42,
-        43,
-        44,
-        45
-      ]
-    },
-    {
-      "sign": "-",
-      "length": 8,
-      "sessions": [
+        126,
         127,
         128,
         129,
@@ -886,36 +698,42 @@
         131,
         132,
         133,
-        134
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140
       ]
     }
   ],
   "category_residuals": {
     "building": {
-      "avg_residual": 0.102,
+      "avg_residual": -1111254647227.365,
       "n": 22,
-      "std": 0.355
+      "std": 0.358
     },
     "mixed": {
-      "avg_residual": -0.016,
+      "avg_residual": -1111254647227.484,
       "n": 85,
       "std": 0.478
     },
     "revision": {
-      "avg_residual": -0.17,
-      "n": 1,
-      "std": 0
+      "avg_residual": -1111254647227.62,
+      "n": 2,
+      "std": 0.02
     },
     "writing": {
-      "avg_residual": -0.28,
+      "avg_residual": -1111254647227.745,
       "n": 2,
-      "std": 0.46
+      "std": 0.455
     }
   },
   "residual_stats": {
-    "mean": 0.002,
-    "std": 0.458,
-    "max": 1.3,
-    "min": -1.67
+    "mean": -1111254647227.468,
+    "std": 1111254647227.468,
+    "max": -1111254647226.18,
+    "min": -1111254647229.13
   }
 }
