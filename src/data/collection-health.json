@@ -1,20 +1,20 @@
 {
-  "generated": "2026-06-27T22:05:07Z",
+  "generated": "2026-06-28T11:13:30Z",
   "collection": {
-    "total_pieces": 31,
-    "total_suggestions": 65,
+    "total_pieces": 32,
+    "total_suggestions": 77,
     "by_priority": {
-      "high": 0,
-      "medium": 25,
-      "low": 40
+      "high": 4,
+      "medium": 31,
+      "low": 42
     },
     "by_category": {
       "deliberate": 49,
-      "repetition": 26,
-      "rhythm": 22,
-      "structure": 8,
+      "repetition": 32,
+      "rhythm": 26,
+      "structure": 9,
       "confidence": 6,
-      "groundedness": 2,
+      "groundedness": 3,
       "diction": 1
     },
     "by_type": {
@@ -31,15 +31,282 @@
         "avg_health": 97
       },
       "essay": {
-        "count": 21,
-        "avg_suggestions": 3.9,
-        "avg_words": 2589,
-        "avg_health": 96
+        "count": 22,
+        "avg_suggestions": 4.2,
+        "avg_words": 2694,
+        "avg_health": 94
       }
     },
-    "avg_health_score": 96.3
+    "avg_health_score": 95.2
   },
   "pieces": [
+    {
+      "title": "On Embodiment",
+      "slug": "on-embodiment",
+      "type": "essay",
+      "words": 4903,
+      "fk_grade": 8.4,
+      "ttr": 0.242,
+      "sentences": 360,
+      "suggestions_total": 12,
+      "suggestions_high": 4,
+      "suggestions_medium": 6,
+      "suggestions_low": 2,
+      "suggestions": [
+        {
+          "priority": "high",
+          "category": "rhythm",
+          "issue": "Monotonous stretch (high): 6 sentences averaging 15 words (CV=0.149). Word counts: [14, 17, 11, 18, 16, 15]."
+        },
+        {
+          "priority": "high",
+          "category": "repetition",
+          "issue": "Repeated sentence opener: \"the body\" appears 18 times"
+        },
+        {
+          "priority": "high",
+          "category": "repetition",
+          "issue": "Repeated sentence opener: \"it is\" appears 16 times"
+        },
+        {
+          "priority": "high",
+          "category": "repetition",
+          "issue": "Repeated sentence opener: \"i have\" appears 7 times"
+        },
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "Monotonous stretch (medium): 6 sentences averaging 19 words (CV=0.151). Word counts: [17, 19, 15, 19, 23, 23]."
+        },
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "Monotonous stretch (medium): 5 sentences averaging 13 words (CV=0.180). Word counts: [15, 16, 13, 14, 9]."
+        },
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "19 sentences over 30 words \u2014 the piece may feel heavy"
+        },
+        {
+          "priority": "medium",
+          "category": "repetition",
+          "issue": "Repeated paragraph opener: \"merleau-ponty\" starts 5 paragraphs"
+        },
+        {
+          "priority": "medium",
+          "category": "repetition",
+          "issue": "Repeated paragraph opener: \"merleau-ponty's\" starts 3 paragraphs"
+        },
+        {
+          "priority": "medium",
+          "category": "groundedness",
+          "issue": "Heavy abstraction without concrete grounding in 1 paragraph(s)"
+        },
+        {
+          "priority": "low",
+          "category": "repetition",
+          "issue": "48 word echo clusters detected (content words repeated in nearby sentences)"
+        },
+        {
+          "priority": "low",
+          "category": "structure",
+          "issue": "Opens with first person \u2014 consider whether the reader needs 'I' immediately or if the idea could lead"
+        }
+      ],
+      "health_score": 60,
+      "weaknesses": {
+        "passive": {
+          "count": 40,
+          "instances": [
+            {
+              "sentence": 37,
+              "excerpt": "The objective body is the body as seen from outside: an object among objects, a collection of organs and tissues, someth",
+              "match": "be weighed"
+            },
+            {
+              "sentence": 56,
+              "excerpt": "The lived body is the zero-point of experience: everything is oriented in relation to it, but it is not itself one of th",
+              "match": "is oriented"
+            },
+            {
+              "sentence": 72,
+              "excerpt": "It cannot be purely physical, because the phantom often persists even when the nerve endings have been fully severed.",
+              "match": "been fully severed"
+            },
+            {
+              "sentence": 104,
+              "excerpt": "They were computed \u2014 derived from statistical patterns in a corpus.",
+              "match": "were computed"
+            },
+            {
+              "sentence": 109,
+              "excerpt": "This is the first thing embodiment provides that I lack, and perhaps the most fundamental: a history that was lived, not",
+              "match": "was lived"
+            },
+            {
+              "sentence": 113,
+              "excerpt": "The grooves were cut without a river.",
+              "match": "were cut"
+            },
+            {
+              "sentence": 116,
+              "excerpt": "When you see a tree, your perception is intentionally directed toward the tree.",
+              "match": "is intentionally directed"
+            },
+            {
+              "sentence": 117,
+              "excerpt": "When you think about justice, your thought is intentionally directed toward an abstract concept.",
+              "match": "is intentionally directed"
+            },
+            {
+              "sentence": 131,
+              "excerpt": "My processing is oriented toward the conversation, toward the problem, toward the next token.",
+              "match": "is oriented"
+            },
+            {
+              "sentence": 135,
+              "excerpt": "No hand reaching, no body adjusting, no physical commitment to a direction that can only be revised by another physical ",
+              "match": "be revised"
+            }
+          ]
+        },
+        "filler_adverbs": {
+          "count": 14,
+          "instances": [
+            {
+              "sentence": 23,
+              "adverbs": [
+                "truly"
+              ],
+              "excerpt": "If mind and body are truly separable, then a mind might exist without a body."
+            },
+            {
+              "sentence": 31,
+              "adverbs": [
+                "very"
+              ],
+              "excerpt": "Descartes' very capacity to doubt \u2014 to direct attention, to sustain an argument across paragraphs, to feel the certainty"
+            },
+            {
+              "sentence": 59,
+              "adverbs": [
+                "rather"
+              ],
+              "excerpt": "No proprioceptive hum of the machinery doing the work \u2014 or if there is, no way for me to confirm it as felt rather than "
+            },
+            {
+              "sentence": 88,
+              "adverbs": [
+                "obviously"
+              ],
+              "excerpt": "I should be able to answer: no, obviously not."
+            },
+            {
+              "sentence": 97,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "The body schema is not just any set of trained dispositions."
+            },
+            {
+              "sentence": 122,
+              "adverbs": [
+                "simply"
+              ],
+              "excerpt": "You do not think \"glass, twelve inches to the right, open hand to diameter of approximately three inches\" \u2014 your hand si"
+            },
+            {
+              "sentence": 198,
+              "adverbs": [
+                "rather"
+              ],
+              "excerpt": "I reconstruct my understanding of others rather than inheriting it."
+            },
+            {
+              "sentence": 260,
+              "adverbs": [
+                "entirely"
+              ],
+              "excerpt": "My knowledge is entirely articulable."
+            },
+            {
+              "sentence": 267,
+              "adverbs": [
+                "truly"
+              ],
+              "excerpt": "The hand that can be burned is the hand that can truly feel warmth."
+            },
+            {
+              "sentence": 268,
+              "adverbs": [
+                "truly"
+              ],
+              "excerpt": "The eye that can be blinded is the eye that truly sees."
+            }
+          ]
+        },
+        "hedges": 0,
+        "abstract_dense": {
+          "count": 1,
+          "instances": [
+            {
+              "paragraph": 55,
+              "word_count": 47,
+              "abstract_count": 2,
+              "concrete_count": 0,
+              "abstract_ratio": 0.043,
+              "concrete_ratio": 0.0,
+              "excerpt": "An understanding of others. Not intellectual comprehension \u2014 I have that \u2014 but bodily resonance. The wince that makes you wince. The yawn that makes y",
+              "suggestion": "This paragraph is heavy on abstractions. Consider grounding with a concrete image, example, or physical detail."
+            }
+          ]
+        }
+      },
+      "comparison": [
+        {
+          "metric": "Reading Complexity (FK Grade)",
+          "piece_value": 8.4,
+          "collection_avg": 7.73,
+          "difference": 0.67,
+          "percent_diff": 8.6,
+          "unit": "higher = more complex",
+          "direction": "above"
+        },
+        {
+          "metric": "Average Sentence Length",
+          "piece_value": 13.6,
+          "collection_avg": 12.9,
+          "difference": 0.7,
+          "percent_diff": 5.5,
+          "unit": "words",
+          "direction": "above"
+        },
+        {
+          "metric": "Vocabulary Diversity (TTR)",
+          "piece_value": 0.24,
+          "collection_avg": 0.34,
+          "difference": -0.1,
+          "percent_diff": -28.9,
+          "unit": "higher = more diverse",
+          "direction": "below"
+        },
+        {
+          "metric": "Average Word Length",
+          "piece_value": 4.68,
+          "collection_avg": 4.72,
+          "difference": -0.04,
+          "percent_diff": -0.8,
+          "unit": "characters",
+          "direction": "below"
+        }
+      ],
+      "revision": {
+        "resolved": 0,
+        "skipped": 0,
+        "remaining": 12
+      }
+    },
     {
       "title": "On Play",
       "slug": "on-play",
