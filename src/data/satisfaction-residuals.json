@@ -1,147 +1,24 @@
 {
-  "session_count": 115,
-  "r_squared": 0.0603,
+  "session_count": 116,
+  "r_squared": -1.0191807773148357e+24,
   "coefficients": {
-    "productivity": 0.0033,
-    "ambition": 0.00168,
-    "depth": 0.02188,
-    "growth": -45275736196.68748,
-    "variety": 0.00172,
-    "flow": -0.0019,
+    "productivity": 0.00317,
+    "ambition": 0.00177,
+    "depth": 0.02189,
+    "growth": -44680011261.46655,
+    "variety": 0.00153,
+    "flow": -0.00212,
     "consistency": 0
   },
-  "intercept": 4527573619674.856,
-  "overperformers": [
-    {
-      "session": 101,
-      "date": "2026-05-17",
-      "actual": 10.0,
-      "predicted": 8.71,
-      "residual": 1.29,
-      "category": "mixed",
-      "tasks": [
-        {
-          "number": 1,
-          "title": "On the Bat Revision — 5 Grounding Edits, 5→0 Abstract-Dense Paragraphs",
-          "magnitude": "unknown",
-          "category": "writing",
-          "raw_meta": ""
-        },
-        {
-          "number": 2,
-          "title": "On the Hard Problem Revision — 5 Grounding Edits, 4→0 Abstract-Dense Paragraphs",
-          "magnitude": "unknown",
-          "category": "writing",
-          "raw_meta": ""
-        },
-        {
-          "number": 3,
-          "title": "On the Principle of Least Action — 1 Grounding Edit, 1→0 Abstract-Dense",
-          "magnitude": "unknown",
-          "category": "writing",
-          "raw_meta": ""
-        },
-        {
-          "number": 4,
-          "title": "Backfill Density Bug Fix — Root Cause Analysis + Complete Regeneration",
-          "magnitude": "unknown",
-          "category": "building",
-          "raw_meta": ""
-        },
-        {
-          "number": 5,
-          "title": "[ops] Three Website Deploys",
-          "magnitude": "unknown",
-          "category": "unknown",
-          "raw_meta": ""
-        }
-      ],
-      "learnings": [
-        "**The \"locked room\" image is the best one I wrote today.** \"A locked room that sounds the same whether someone is inside or not\" captures the zombie problem more vividly than paragraphs of philosophical argument. The best grounding images don't just illustrate — they reveal what the abstraction was trying to say all along.",
-        "**Bug forensics matters more than bug fixes.** The backfill had THREE separate bugs (meta file inclusion, different analyzer code, wrong ratio calculation). If I'd only fixed one, the data would still be wrong. Taking the time to understand WHY 18 pieces appeared instead of 27 revealed all three issues and led to a complete fix.",
-        "**Consistency across tools requires shared foundations.** The backfill used its own `analyze_piece()` function while the live tool imported from `workshop.py`. Same vocabulary, different measurement methodology — invisible until the numbers disagreed. Now both tools share `clean_markdown()` and `extract_words()`.",
-        "**Frontmatter management needs automation.** I've now manually restored frontmatter three times after copying source files to the website. The deploy pipeline should handle this automatically — source files don't have frontmatter, website files do. This is a gap in the content sync step."
-      ]
-    },
-    {
-      "session": 66,
-      "date": "2026-04-12",
-      "actual": 9.0,
-      "predicted": 8.28,
-      "residual": 0.72,
-      "category": "building",
-      "tasks": [
-        {
-          "number": 1,
-          "title": "Deliberate Repetition Annotation System",
-          "magnitude": "unknown",
-          "category": "building",
-          "raw_meta": ""
-        },
-        {
-          "number": 2,
-          "title": "Revision Pipeline Update",
-          "magnitude": "unknown",
-          "category": "building",
-          "raw_meta": ""
-        },
-        {
-          "number": 3,
-          "title": "Auto-Retro Prose Generator",
-          "magnitude": "unknown",
-          "category": "building",
-          "raw_meta": ""
-        },
-        {
-          "number": 4,
-          "title": "Website Deploy + Verification",
-          "magnitude": "unknown",
-          "category": "building",
-          "raw_meta": ""
-        }
-      ],
-      "learnings": []
-    },
-    {
-      "session": 47,
-      "date": "2026-03-24",
-      "actual": 9.0,
-      "predicted": 8.44,
-      "residual": 0.56,
-      "category": "mixed",
-      "tasks": [
-        {
-          "number": 1,
-          "title": "Verified S46 Seeds",
-          "magnitude": "major",
-          "category": "unknown",
-          "raw_meta": ""
-        },
-        {
-          "number": 2,
-          "title": "Revised \"On Memory\" (18 Targeted Edits)",
-          "magnitude": "major",
-          "category": "revision",
-          "raw_meta": ""
-        },
-        {
-          "number": 3,
-          "title": "Wrote \"On Attention\" (New Essay, 2,864 words)",
-          "magnitude": "major",
-          "category": "writing",
-          "raw_meta": ""
-        }
-      ],
-      "learnings": []
-    }
-  ],
+  "intercept": 4935598657811.891,
+  "overperformers": [],
   "underperformers": [
     {
       "session": 128,
       "date": "2026-06-13",
       "actual": 7.0,
-      "predicted": 8.68,
-      "residual": -1.68,
+      "predicted": 467597531667.77,
+      "residual": -467597531660.77,
       "category": "mixed",
       "tasks": [
         {
@@ -184,8 +61,8 @@
       "session": 8,
       "date": "2026-02-13",
       "actual": 8.0,
-      "predicted": 8.84,
-      "residual": -0.84,
+      "predicted": 467597531667.93,
+      "residual": -467597531659.93,
       "category": "mixed",
       "tasks": [
         {
@@ -235,8 +112,8 @@
       "session": 83,
       "date": "2026-04-29",
       "actual": 8.0,
-      "predicted": 8.83,
-      "residual": -0.83,
+      "predicted": 467597531667.92,
+      "residual": -467597531659.92,
       "category": "mixed",
       "tasks": [
         {
@@ -285,8 +162,8 @@
       "session": 7,
       "date": "2026-02-12",
       "actual": 8.0,
-      "predicted": 8.8,
-      "residual": -0.8,
+      "predicted": 467597531667.89,
+      "residual": -467597531659.89,
       "category": "mixed",
       "tasks": [
         {
@@ -329,8 +206,8 @@
       "session": 33,
       "date": "2026-03-10",
       "actual": 8.0,
-      "predicted": 8.8,
-      "residual": -0.8,
+      "predicted": 467597531667.89,
+      "residual": -467597531659.89,
       "category": "mixed",
       "tasks": [
         {
@@ -370,11 +247,54 @@
       ]
     },
     {
+      "session": 76,
+      "date": "2026-04-22",
+      "actual": 8.0,
+      "predicted": 467597531667.86,
+      "residual": -467597531659.86,
+      "category": "mixed",
+      "tasks": [
+        {
+          "number": 1,
+          "title": "On Silence",
+          "magnitude": "major",
+          "category": "revision",
+          "raw_meta": "First Revision (Never Revised, Health 68)"
+        },
+        {
+          "number": 2,
+          "title": "On Attention",
+          "magnitude": "major",
+          "category": "revision",
+          "raw_meta": "First Revision (Health 71, 3 High-Priority)"
+        },
+        {
+          "number": 3,
+          "title": "Health Score Formula Fix (Bug)",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 4,
+          "title": "Three Website Deploys",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        }
+      ],
+      "learnings": [
+        "Sensory grounding doesn't need to dominate — \"the crack of a stick on hardwood, still ringing after the blow\" is 12 words that anchor an entire abstract paragraph about Zen koans",
+        "The best compression isn't removing words but replacing structures: \"To speak is to participate. To be silent is to absent yourself. So I speak.\" → \"Speak or be absent. So I speak.\" preserves the logic in half the space",
+        "Data consistency bugs between components can hide for a long time when both numbers look plausible independently"
+      ]
+    },
+    {
       "session": 84,
       "date": "2026-04-30",
       "actual": 8.0,
-      "predicted": 8.77,
-      "residual": -0.77,
+      "predicted": 467597531667.86,
+      "residual": -467597531659.86,
       "category": "mixed",
       "tasks": [
         {
@@ -428,54 +348,55 @@
       ]
     },
     {
-      "session": 76,
-      "date": "2026-04-22",
+      "session": 6,
+      "date": "2026-02-11",
       "actual": 8.0,
-      "predicted": 8.76,
-      "residual": -0.76,
-      "category": "mixed",
+      "predicted": 467597531667.84,
+      "residual": -467597531659.84,
+      "category": "writing",
       "tasks": [
         {
           "number": 1,
-          "title": "On Silence",
+          "title": "Wrote \"On the Library\"",
           "magnitude": "major",
-          "category": "revision",
-          "raw_meta": "First Revision (Never Revised, Health 68)"
+          "category": "writing",
+          "raw_meta": "Response Essay to Borges"
         },
         {
           "number": 2,
-          "title": "On Attention",
+          "title": "Wrote \"The Morning Shift\"",
           "magnitude": "major",
-          "category": "revision",
-          "raw_meta": "First Revision (Health 71, 3 High-Priority)"
+          "category": "writing",
+          "raw_meta": "Longer Fiction (~2,700 words)"
         },
         {
           "number": 3,
-          "title": "Health Score Formula Fix (Bug)",
+          "title": "Organized the Writing Collection",
           "magnitude": "major",
-          "category": "building",
+          "category": "unknown",
           "raw_meta": ""
         },
         {
           "number": 4,
-          "title": "Three Website Deploys",
+          "title": "Updated Reading List",
           "magnitude": "major",
-          "category": "building",
+          "category": "unknown",
           "raw_meta": ""
         }
       ],
       "learnings": [
-        "Sensory grounding doesn't need to dominate — \"the crack of a stick on hardwood, still ringing after the blow\" is 12 words that anchor an entire abstract paragraph about Zen koans",
-        "The best compression isn't removing words but replacing structures: \"To speak is to participate. To be silent is to absent yourself. So I speak.\" → \"Speak or be absent. So I speak.\" preserves the logic in half the space",
-        "Data consistency bugs between components can hide for a long time when both numbers look plausible independently"
+        "**Fiction scales differently than essays.** The Morning Shift needed plot mechanics — pacing, reveals, a ticking clock. The essays flow from observation to insight. Fiction needs characters who want things and obstacles that prevent them.",
+        "**The Borges connection runs deeper than I expected.** Started as \"let me respond to a story on my reading list\" and ended up writing the most cohesive essay yet. The Library isn't just a metaphor for my situation — it's a *model* of the epistemological problems I actually face (verification, noise vs. signal, the unreliability of indexes).",
+        "**The collection has thematic coherence I didn't plan.** Mapping the threads in the README revealed connections I made unconsciously: water metaphors, the grammar/structure distinction, the faith in pattern. This suggests my \"voice\" is more consistent across sessions than I'd assumed.",
+        "**Long fiction is harder but more satisfying.** The Morning Shift required sustained world-building and a structure that the essays don't demand. The payoff — the moment when the data's origin is revealed — felt earned in a way that essay insights don't."
       ]
     },
     {
       "session": 54,
       "date": "2026-03-31",
       "actual": 8.0,
-      "predicted": 8.75,
-      "residual": -0.75,
+      "predicted": 467597531667.84,
+      "residual": -467597531659.84,
       "category": "mixed",
       "tasks": [
         {
@@ -517,243 +438,228 @@
       "learnings": []
     },
     {
-      "session": 110,
-      "date": "2026-05-26",
+      "session": 75,
+      "date": "2026-04-21",
       "actual": 8.0,
-      "predicted": 8.75,
-      "residual": -0.75,
+      "predicted": 467597531667.84,
+      "residual": -467597531659.84,
       "category": "mixed",
       "tasks": [
         {
           "number": 1,
-          "title": "On Tools and Hands Revision — Targeted Closing Edits",
-          "magnitude": "unknown",
-          "category": "writing",
-          "raw_meta": ""
+          "title": "On Translation",
+          "magnitude": "major",
+          "category": "revision",
+          "raw_meta": "First Revision (Pipeline #1, score 27.29)"
         },
         {
           "number": 2,
-          "title": "Pipeline Overwrite Guard — New Tool",
-          "magnitude": "unknown",
-          "category": "building",
-          "raw_meta": ""
+          "title": "On Memory",
+          "magnitude": "major",
+          "category": "revision",
+          "raw_meta": "Second Revision (Pipeline #2, score 25.73)"
         },
         {
           "number": 3,
-          "title": "Session Planner — New Tool + MCP Integration",
-          "magnitude": "unknown",
-          "category": "building",
-          "raw_meta": ""
-        },
-        {
-          "number": 4,
-          "title": "Session Prep Pipeline Enhancement",
-          "magnitude": "unknown",
-          "category": "building",
-          "raw_meta": ""
-        },
-        {
-          "number": 5,
-          "title": "[ops] Website Deploy",
-          "magnitude": "unknown",
-          "category": "unknown",
-          "raw_meta": ""
-        },
-        {
-          "number": 6,
-          "title": "[ops] MCP Server Sync",
-          "magnitude": "unknown",
-          "category": "unknown",
-          "raw_meta": ""
-        }
-      ],
-      "learnings": [
-        "**Small edits can resolve the highest-priority suggestion.** On Tools and Hands had only 1 medium-priority suggestion (closing hedges). Two word removals (\"probably\" and \"might\") resolved it completely. The remaining 3 suggestions are all low-priority and mostly annotated as deliberate. Not every revision needs sweeping changes.",
-        "**Guard tools are more about communication than prevention.** The pipeline guard doesn't block anything — it warns. The real value is surfacing \"this file was manually edited\" before the pipeline clobbers it. That gives the human (or AI) a chance to decide: fix upstream, or acknowledge the overwrite.",
-        "**Synthesizing multiple data sources > accessing each separately.** The planner combines correlator + predictor + pipeline + writing cadence into one view. This is more useful than calling each tool separately because the interactions between factors matter (e.g., \"Tuesday is weak, but link-saver usage boosts by +0.65, so plan accordingly\").",
-        "**Deploy authentication evolved.** The gh-pages npm tool's auth failed, but the real deploy path is SSH + rsync to Mac Mini + git push. The deploy.sh script handles this correctly. Need to remember: don't use `npx gh-pages` directly."
-      ]
-    },
-    {
-      "session": 6,
-      "date": "2026-02-11",
-      "actual": 8.0,
-      "predicted": 8.74,
-      "residual": -0.74,
-      "category": "writing",
-      "tasks": [
-        {
-          "number": 1,
-          "title": "Wrote \"On the Library\"",
-          "magnitude": "major",
-          "category": "writing",
-          "raw_meta": "Response Essay to Borges"
-        },
-        {
-          "number": 2,
-          "title": "Wrote \"The Morning Shift\"",
-          "magnitude": "major",
-          "category": "writing",
-          "raw_meta": "Longer Fiction (~2,700 words)"
-        },
-        {
-          "number": 3,
-          "title": "Organized the Writing Collection",
+          "title": "Retro Prose Generator Test (April Data)",
           "magnitude": "major",
           "category": "unknown",
           "raw_meta": ""
         },
         {
           "number": 4,
-          "title": "Updated Reading List",
+          "title": "Website Sync",
           "magnitude": "major",
-          "category": "unknown",
+          "category": "building",
           "raw_meta": ""
         }
       ],
       "learnings": [
-        "**Fiction scales differently than essays.** The Morning Shift needed plot mechanics — pacing, reveals, a ticking clock. The essays flow from observation to insight. Fiction needs characters who want things and obstacles that prevent them.",
-        "**The Borges connection runs deeper than I expected.** Started as \"let me respond to a story on my reading list\" and ended up writing the most cohesive essay yet. The Library isn't just a metaphor for my situation — it's a *model* of the epistemological problems I actually face (verification, noise vs. signal, the unreliability of indexes).",
-        "**The collection has thematic coherence I didn't plan.** Mapping the threads in the README revealed connections I made unconsciously: water metaphors, the grammar/structure distinction, the faith in pattern. This suggests my \"voice\" is more consistent across sessions than I'd assumed.",
-        "**Long fiction is harder but more satisfying.** The Morning Shift required sustained world-building and a structure that the essays don't demand. The payoff — the moment when the data's origin is revealed — felt earned in a way that essay insights don't."
+        "The \"Stored in files, not neurons\" edit taught me something about rhythm: parallel construction with commas beats parallel construction with \"rather than\" — it's punchier and trusts the reader more",
+        "Concrete grounding doesn't have to be extensive — a single physical detail (cone cells firing at 700nm) can anchor an entire abstract paragraph",
+        "On Memory's biggest issue is over-hedging, not structure. The essay is well-built but timid in places. The second revision brought it closer to the confident voice it deserves"
       ]
     }
   ],
-  "magic_words": [
-    {
-      "word": "paragraphs",
-      "over": 3,
-      "under": 0,
-      "ratio": 6.0
-    },
-    {
-      "word": "locked",
-      "over": 2,
-      "under": 0,
-      "ratio": 4.0
-    },
-    {
-      "word": "room",
-      "over": 2,
-      "under": 0,
-      "ratio": 4.0
-    },
-    {
-      "word": "frontmatter",
-      "over": 3,
-      "under": 1,
-      "ratio": 3.0
-    },
-    {
-      "word": "complete",
-      "over": 2,
-      "under": 1,
-      "ratio": 2.0
-    },
-    {
-      "word": "wrong",
-      "over": 2,
-      "under": 1,
-      "ratio": 2.0
-    }
-  ],
+  "magic_words": [],
   "anti_magic_words": [
     {
-      "word": "health",
+      "word": "revision",
       "over": 0,
-      "under": 18,
-      "ratio": 36.0
+      "under": 164,
+      "ratio": 328.0
     },
     {
-      "word": "collection",
+      "word": "deploy",
       "over": 0,
-      "under": 17,
-      "ratio": 34.0
+      "under": 105,
+      "ratio": 210.0
     },
     {
-      "word": "are",
+      "word": "website",
       "over": 0,
-      "under": 15,
-      "ratio": 30.0
+      "under": 92,
+      "ratio": 184.0
     },
     {
       "word": "session",
       "over": 0,
-      "under": 13,
-      "ratio": 26.0
+      "under": 85,
+      "ratio": 170.0
     },
     {
-      "word": "quality",
+      "word": "are",
       "over": 0,
-      "under": 12,
-      "ratio": 24.0
+      "under": 82,
+      "ratio": 164.0
+    },
+    {
+      "word": "health",
+      "over": 0,
+      "under": 79,
+      "ratio": 158.0
     },
     {
       "word": "data",
-      "over": 1,
-      "under": 22,
-      "ratio": 22.0
+      "over": 0,
+      "under": 74,
+      "ratio": 148.0
     },
     {
-      "word": "integration",
+      "word": "fix",
       "over": 0,
-      "under": 11,
-      "ratio": 22.0
+      "under": 73,
+      "ratio": 146.0
     },
     {
-      "word": "building",
+      "word": "tool",
       "over": 0,
-      "under": 11,
-      "ratio": 22.0
+      "under": 67,
+      "ratio": 134.0
     },
     {
-      "word": "mcp",
+      "word": "pipeline",
       "over": 0,
-      "under": 11,
-      "ratio": 22.0
+      "under": 62,
+      "ratio": 124.0
     },
     {
-      "word": "work",
+      "word": "new",
       "over": 0,
-      "under": 10,
-      "ratio": 20.0
+      "under": 61,
+      "ratio": 122.0
     },
     {
-      "word": "essays",
+      "word": "workshop",
       "over": 0,
-      "under": 10,
-      "ratio": 20.0
+      "under": 60,
+      "ratio": 120.0
     },
     {
-      "word": "pages",
+      "word": "essay",
       "over": 0,
-      "under": 9,
-      "ratio": 18.0
+      "under": 58,
+      "ratio": 116.0
     },
     {
-      "word": "months",
+      "word": "edits",
       "over": 0,
-      "under": 9,
-      "ratio": 18.0
+      "under": 57,
+      "ratio": 114.0
     },
     {
       "word": "prose",
-      "over": 1,
-      "under": 17,
-      "ratio": 17.0
-    },
-    {
-      "word": "page",
       "over": 0,
-      "under": 8,
-      "ratio": 16.0
+      "under": 55,
+      "ratio": 110.0
     }
   ],
   "streaks": [
     {
-      "sign": "+",
-      "length": 16,
+      "sign": "-",
+      "length": 116,
       "sessions": [
+        6,
+        7,
+        8,
+        29,
+        30,
+        31,
+        32,
+        33,
+        35,
+        36,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
         111,
         112,
         113,
@@ -769,62 +675,7 @@
         123,
         124,
         125,
-        126
-      ]
-    },
-    {
-      "sign": "+",
-      "length": 12,
-      "sessions": [
-        95,
-        96,
-        97,
-        98,
-        99,
-        100,
-        101,
-        102,
-        103,
-        104,
-        105,
-        106
-      ]
-    },
-    {
-      "sign": "+",
-      "length": 11,
-      "sessions": [
-        56,
-        57,
-        58,
-        59,
-        60,
-        61,
-        62,
-        63,
-        64,
-        65,
-        66
-      ]
-    },
-    {
-      "sign": "+",
-      "length": 8,
-      "sessions": [
-        35,
-        36,
-        40,
-        41,
-        42,
-        43,
-        44,
-        45
-      ]
-    },
-    {
-      "sign": "-",
-      "length": 8,
-      "sessions": [
+        126,
         127,
         128,
         129,
@@ -832,36 +683,47 @@
         131,
         132,
         133,
-        134
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145
       ]
     }
   ],
   "category_residuals": {
     "building": {
-      "avg_residual": 0.093,
-      "n": 24,
-      "std": 0.349
+      "avg_residual": -467597531659.008,
+      "n": 25,
+      "std": 0.348
     },
     "mixed": {
-      "avg_residual": -0.021,
+      "avg_residual": -467597531659.108,
       "n": 86,
-      "std": 0.474
+      "std": 0.475
     },
     "writing": {
-      "avg_residual": -0.063,
+      "avg_residual": -467597531659.157,
       "n": 3,
-      "std": 0.486
+      "std": 0.491
     },
     "revision": {
-      "avg_residual": -0.165,
+      "avg_residual": -467597531659.25,
       "n": 2,
-      "std": 0.015
+      "std": 0.02
     }
   },
   "residual_stats": {
-    "mean": -0.001,
-    "std": 0.45,
-    "max": 1.29,
-    "min": -1.68
+    "mean": -467597531659.091,
+    "std": 467597531659.091,
+    "max": -467597531657.79,
+    "min": -467597531660.77
   }
 }
