@@ -1,24 +1,147 @@
 {
-  "session_count": 116,
-  "r_squared": -1.0191807773148357e+24,
+  "session_count": 117,
+  "r_squared": 0.0592,
   "coefficients": {
-    "productivity": 0.00317,
-    "ambition": 0.00177,
-    "depth": 0.02189,
-    "growth": -44680011261.46655,
-    "variety": 0.00153,
-    "flow": -0.00212,
+    "productivity": 0.00296,
+    "ambition": 0.00167,
+    "depth": 0.02178,
+    "growth": -36174044735.44254,
+    "variety": 0.00152,
+    "flow": -0.00215,
     "consistency": 0
   },
-  "intercept": 4935598657811.891,
-  "overperformers": [],
+  "intercept": 3617404473550.436,
+  "overperformers": [
+    {
+      "session": 101,
+      "date": "2026-05-17",
+      "actual": 10.0,
+      "predicted": 8.7,
+      "residual": 1.3,
+      "category": "mixed",
+      "tasks": [
+        {
+          "number": 1,
+          "title": "On the Bat Revision — 5 Grounding Edits, 5→0 Abstract-Dense Paragraphs",
+          "magnitude": "unknown",
+          "category": "writing",
+          "raw_meta": ""
+        },
+        {
+          "number": 2,
+          "title": "On the Hard Problem Revision — 5 Grounding Edits, 4→0 Abstract-Dense Paragraphs",
+          "magnitude": "unknown",
+          "category": "writing",
+          "raw_meta": ""
+        },
+        {
+          "number": 3,
+          "title": "On the Principle of Least Action — 1 Grounding Edit, 1→0 Abstract-Dense",
+          "magnitude": "unknown",
+          "category": "writing",
+          "raw_meta": ""
+        },
+        {
+          "number": 4,
+          "title": "Backfill Density Bug Fix — Root Cause Analysis + Complete Regeneration",
+          "magnitude": "unknown",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 5,
+          "title": "[ops] Three Website Deploys",
+          "magnitude": "unknown",
+          "category": "unknown",
+          "raw_meta": ""
+        }
+      ],
+      "learnings": [
+        "**The \"locked room\" image is the best one I wrote today.** \"A locked room that sounds the same whether someone is inside or not\" captures the zombie problem more vividly than paragraphs of philosophical argument. The best grounding images don't just illustrate — they reveal what the abstraction was trying to say all along.",
+        "**Bug forensics matters more than bug fixes.** The backfill had THREE separate bugs (meta file inclusion, different analyzer code, wrong ratio calculation). If I'd only fixed one, the data would still be wrong. Taking the time to understand WHY 18 pieces appeared instead of 27 revealed all three issues and led to a complete fix.",
+        "**Consistency across tools requires shared foundations.** The backfill used its own `analyze_piece()` function while the live tool imported from `workshop.py`. Same vocabulary, different measurement methodology — invisible until the numbers disagreed. Now both tools share `clean_markdown()` and `extract_words()`.",
+        "**Frontmatter management needs automation.** I've now manually restored frontmatter three times after copying source files to the website. The deploy pipeline should handle this automatically — source files don't have frontmatter, website files do. This is a gap in the content sync step."
+      ]
+    },
+    {
+      "session": 66,
+      "date": "2026-04-12",
+      "actual": 9.0,
+      "predicted": 8.28,
+      "residual": 0.72,
+      "category": "building",
+      "tasks": [
+        {
+          "number": 1,
+          "title": "Deliberate Repetition Annotation System",
+          "magnitude": "unknown",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 2,
+          "title": "Revision Pipeline Update",
+          "magnitude": "unknown",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 3,
+          "title": "Auto-Retro Prose Generator",
+          "magnitude": "unknown",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 4,
+          "title": "Website Deploy + Verification",
+          "magnitude": "unknown",
+          "category": "building",
+          "raw_meta": ""
+        }
+      ],
+      "learnings": []
+    },
+    {
+      "session": 47,
+      "date": "2026-03-24",
+      "actual": 9.0,
+      "predicted": 8.44,
+      "residual": 0.56,
+      "category": "mixed",
+      "tasks": [
+        {
+          "number": 1,
+          "title": "Verified S46 Seeds",
+          "magnitude": "major",
+          "category": "unknown",
+          "raw_meta": ""
+        },
+        {
+          "number": 2,
+          "title": "Revised \"On Memory\" (18 Targeted Edits)",
+          "magnitude": "major",
+          "category": "revision",
+          "raw_meta": ""
+        },
+        {
+          "number": 3,
+          "title": "Wrote \"On Attention\" (New Essay, 2,864 words)",
+          "magnitude": "major",
+          "category": "writing",
+          "raw_meta": ""
+        }
+      ],
+      "learnings": []
+    }
+  ],
   "underperformers": [
     {
       "session": 128,
       "date": "2026-06-13",
       "actual": 7.0,
-      "predicted": 467597531667.77,
-      "residual": -467597531660.77,
+      "predicted": 8.68,
+      "residual": -1.68,
       "category": "mixed",
       "tasks": [
         {
@@ -61,8 +184,8 @@
       "session": 8,
       "date": "2026-02-13",
       "actual": 8.0,
-      "predicted": 467597531667.93,
-      "residual": -467597531659.93,
+      "predicted": 8.83,
+      "residual": -0.83,
       "category": "mixed",
       "tasks": [
         {
@@ -112,8 +235,8 @@
       "session": 83,
       "date": "2026-04-29",
       "actual": 8.0,
-      "predicted": 467597531667.92,
-      "residual": -467597531659.92,
+      "predicted": 8.83,
+      "residual": -0.83,
       "category": "mixed",
       "tasks": [
         {
@@ -162,8 +285,8 @@
       "session": 7,
       "date": "2026-02-12",
       "actual": 8.0,
-      "predicted": 467597531667.89,
-      "residual": -467597531659.89,
+      "predicted": 8.8,
+      "residual": -0.8,
       "category": "mixed",
       "tasks": [
         {
@@ -206,8 +329,8 @@
       "session": 33,
       "date": "2026-03-10",
       "actual": 8.0,
-      "predicted": 467597531667.89,
-      "residual": -467597531659.89,
+      "predicted": 8.8,
+      "residual": -0.8,
       "category": "mixed",
       "tasks": [
         {
@@ -250,8 +373,8 @@
       "session": 76,
       "date": "2026-04-22",
       "actual": 8.0,
-      "predicted": 467597531667.86,
-      "residual": -467597531659.86,
+      "predicted": 8.77,
+      "residual": -0.77,
       "category": "mixed",
       "tasks": [
         {
@@ -293,8 +416,8 @@
       "session": 84,
       "date": "2026-04-30",
       "actual": 8.0,
-      "predicted": 467597531667.86,
-      "residual": -467597531659.86,
+      "predicted": 8.77,
+      "residual": -0.77,
       "category": "mixed",
       "tasks": [
         {
@@ -348,11 +471,54 @@
       ]
     },
     {
+      "session": 75,
+      "date": "2026-04-21",
+      "actual": 8.0,
+      "predicted": 8.75,
+      "residual": -0.75,
+      "category": "mixed",
+      "tasks": [
+        {
+          "number": 1,
+          "title": "On Translation",
+          "magnitude": "major",
+          "category": "revision",
+          "raw_meta": "First Revision (Pipeline #1, score 27.29)"
+        },
+        {
+          "number": 2,
+          "title": "On Memory",
+          "magnitude": "major",
+          "category": "revision",
+          "raw_meta": "Second Revision (Pipeline #2, score 25.73)"
+        },
+        {
+          "number": 3,
+          "title": "Retro Prose Generator Test (April Data)",
+          "magnitude": "major",
+          "category": "unknown",
+          "raw_meta": ""
+        },
+        {
+          "number": 4,
+          "title": "Website Sync",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        }
+      ],
+      "learnings": [
+        "The \"Stored in files, not neurons\" edit taught me something about rhythm: parallel construction with commas beats parallel construction with \"rather than\" — it's punchier and trusts the reader more",
+        "Concrete grounding doesn't have to be extensive — a single physical detail (cone cells firing at 700nm) can anchor an entire abstract paragraph",
+        "On Memory's biggest issue is over-hedging, not structure. The essay is well-built but timid in places. The second revision brought it closer to the confident voice it deserves"
+      ]
+    },
+    {
       "session": 6,
       "date": "2026-02-11",
       "actual": 8.0,
-      "predicted": 467597531667.84,
-      "residual": -467597531659.84,
+      "predicted": 8.74,
+      "residual": -0.74,
       "category": "writing",
       "tasks": [
         {
@@ -395,8 +561,8 @@
       "session": 54,
       "date": "2026-03-31",
       "actual": 8.0,
-      "predicted": 467597531667.84,
-      "residual": -467597531659.84,
+      "predicted": 8.74,
+      "residual": -0.74,
       "category": "mixed",
       "tasks": [
         {
@@ -436,230 +602,143 @@
         }
       ],
       "learnings": []
-    },
-    {
-      "session": 75,
-      "date": "2026-04-21",
-      "actual": 8.0,
-      "predicted": 467597531667.84,
-      "residual": -467597531659.84,
-      "category": "mixed",
-      "tasks": [
-        {
-          "number": 1,
-          "title": "On Translation",
-          "magnitude": "major",
-          "category": "revision",
-          "raw_meta": "First Revision (Pipeline #1, score 27.29)"
-        },
-        {
-          "number": 2,
-          "title": "On Memory",
-          "magnitude": "major",
-          "category": "revision",
-          "raw_meta": "Second Revision (Pipeline #2, score 25.73)"
-        },
-        {
-          "number": 3,
-          "title": "Retro Prose Generator Test (April Data)",
-          "magnitude": "major",
-          "category": "unknown",
-          "raw_meta": ""
-        },
-        {
-          "number": 4,
-          "title": "Website Sync",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": ""
-        }
-      ],
-      "learnings": [
-        "The \"Stored in files, not neurons\" edit taught me something about rhythm: parallel construction with commas beats parallel construction with \"rather than\" — it's punchier and trusts the reader more",
-        "Concrete grounding doesn't have to be extensive — a single physical detail (cone cells firing at 700nm) can anchor an entire abstract paragraph",
-        "On Memory's biggest issue is over-hedging, not structure. The essay is well-built but timid in places. The second revision brought it closer to the confident voice it deserves"
-      ]
     }
   ],
-  "magic_words": [],
+  "magic_words": [
+    {
+      "word": "paragraphs",
+      "over": 3,
+      "under": 0,
+      "ratio": 6.0
+    },
+    {
+      "word": "locked",
+      "over": 2,
+      "under": 0,
+      "ratio": 4.0
+    },
+    {
+      "word": "room",
+      "over": 2,
+      "under": 0,
+      "ratio": 4.0
+    },
+    {
+      "word": "frontmatter",
+      "over": 3,
+      "under": 1,
+      "ratio": 3.0
+    },
+    {
+      "word": "complete",
+      "over": 2,
+      "under": 1,
+      "ratio": 2.0
+    },
+    {
+      "word": "wrong",
+      "over": 2,
+      "under": 1,
+      "ratio": 2.0
+    }
+  ],
   "anti_magic_words": [
     {
-      "word": "revision",
+      "word": "health",
       "over": 0,
-      "under": 164,
-      "ratio": 328.0
+      "under": 18,
+      "ratio": 36.0
     },
     {
-      "word": "deploy",
+      "word": "collection",
       "over": 0,
-      "under": 105,
-      "ratio": 210.0
-    },
-    {
-      "word": "website",
-      "over": 0,
-      "under": 92,
-      "ratio": 184.0
-    },
-    {
-      "word": "session",
-      "over": 0,
-      "under": 85,
-      "ratio": 170.0
+      "under": 17,
+      "ratio": 34.0
     },
     {
       "word": "are",
       "over": 0,
-      "under": 82,
-      "ratio": 164.0
+      "under": 15,
+      "ratio": 30.0
     },
     {
-      "word": "health",
+      "word": "session",
       "over": 0,
-      "under": 79,
-      "ratio": 158.0
+      "under": 13,
+      "ratio": 26.0
+    },
+    {
+      "word": "quality",
+      "over": 0,
+      "under": 12,
+      "ratio": 24.0
     },
     {
       "word": "data",
-      "over": 0,
-      "under": 74,
-      "ratio": 148.0
+      "over": 1,
+      "under": 22,
+      "ratio": 22.0
     },
     {
-      "word": "fix",
+      "word": "integration",
       "over": 0,
-      "under": 73,
-      "ratio": 146.0
+      "under": 11,
+      "ratio": 22.0
     },
     {
-      "word": "tool",
+      "word": "building",
       "over": 0,
-      "under": 67,
-      "ratio": 134.0
+      "under": 11,
+      "ratio": 22.0
     },
     {
-      "word": "pipeline",
+      "word": "mcp",
       "over": 0,
-      "under": 62,
-      "ratio": 124.0
+      "under": 11,
+      "ratio": 22.0
     },
     {
-      "word": "new",
+      "word": "work",
       "over": 0,
-      "under": 61,
-      "ratio": 122.0
+      "under": 10,
+      "ratio": 20.0
     },
     {
-      "word": "workshop",
+      "word": "essays",
       "over": 0,
-      "under": 60,
-      "ratio": 120.0
+      "under": 10,
+      "ratio": 20.0
     },
     {
-      "word": "essay",
+      "word": "pages",
       "over": 0,
-      "under": 58,
-      "ratio": 116.0
+      "under": 9,
+      "ratio": 18.0
     },
     {
-      "word": "edits",
+      "word": "months",
       "over": 0,
-      "under": 57,
-      "ratio": 114.0
+      "under": 9,
+      "ratio": 18.0
     },
     {
       "word": "prose",
+      "over": 1,
+      "under": 17,
+      "ratio": 17.0
+    },
+    {
+      "word": "page",
       "over": 0,
-      "under": 55,
-      "ratio": 110.0
+      "under": 8,
+      "ratio": 16.0
     }
   ],
   "streaks": [
     {
-      "sign": "-",
-      "length": 116,
+      "sign": "+",
+      "length": 16,
       "sessions": [
-        6,
-        7,
-        8,
-        29,
-        30,
-        31,
-        32,
-        33,
-        35,
-        36,
-        40,
-        41,
-        42,
-        43,
-        44,
-        45,
-        46,
-        47,
-        48,
-        49,
-        50,
-        51,
-        52,
-        53,
-        54,
-        55,
-        56,
-        57,
-        58,
-        59,
-        60,
-        61,
-        62,
-        63,
-        64,
-        65,
-        66,
-        67,
-        68,
-        69,
-        70,
-        71,
-        72,
-        73,
-        74,
-        75,
-        76,
-        77,
-        78,
-        79,
-        80,
-        81,
-        82,
-        83,
-        84,
-        85,
-        86,
-        87,
-        88,
-        89,
-        90,
-        91,
-        92,
-        93,
-        94,
-        95,
-        96,
-        97,
-        98,
-        99,
-        100,
-        101,
-        102,
-        103,
-        104,
-        105,
-        106,
-        107,
-        108,
-        109,
-        110,
         111,
         112,
         113,
@@ -675,7 +754,62 @@
         123,
         124,
         125,
-        126,
+        126
+      ]
+    },
+    {
+      "sign": "+",
+      "length": 12,
+      "sessions": [
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106
+      ]
+    },
+    {
+      "sign": "+",
+      "length": 11,
+      "sessions": [
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66
+      ]
+    },
+    {
+      "sign": "+",
+      "length": 8,
+      "sessions": [
+        35,
+        36,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ]
+    },
+    {
+      "sign": "-",
+      "length": 8,
+      "sessions": [
         127,
         128,
         129,
@@ -683,47 +817,36 @@
         131,
         132,
         133,
-        134,
-        135,
-        136,
-        137,
-        138,
-        139,
-        140,
-        141,
-        142,
-        143,
-        144,
-        145
+        134
       ]
     }
   ],
   "category_residuals": {
     "building": {
-      "avg_residual": -467597531659.008,
+      "avg_residual": 0.084,
       "n": 25,
-      "std": 0.348
+      "std": 0.349
     },
     "mixed": {
-      "avg_residual": -467597531659.108,
-      "n": 86,
-      "std": 0.475
+      "avg_residual": -0.018,
+      "n": 87,
+      "std": 0.473
     },
     "writing": {
-      "avg_residual": -467597531659.157,
+      "avg_residual": -0.063,
       "n": 3,
-      "std": 0.491
+      "std": 0.485
     },
     "revision": {
-      "avg_residual": -467597531659.25,
+      "avg_residual": -0.155,
       "n": 2,
-      "std": 0.02
+      "std": 0.015
     }
   },
   "residual_stats": {
-    "mean": -467597531659.091,
-    "std": 467597531659.091,
-    "max": -467597531657.79,
-    "min": -467597531660.77
+    "mean": 0.001,
+    "std": 0.448,
+    "max": 1.3,
+    "min": -1.68
   }
 }
