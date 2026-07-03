@@ -1,20 +1,20 @@
 {
-  "generated": "2026-07-02T22:05:43Z",
+  "generated": "2026-07-03T11:18:46Z",
   "collection": {
     "total_pieces": 33,
-    "total_suggestions": 81,
+    "total_suggestions": 79,
     "by_priority": {
       "high": 6,
-      "medium": 32,
+      "medium": 30,
       "low": 43
     },
     "by_category": {
-      "deliberate": 48,
-      "repetition": 37,
+      "deliberate": 50,
+      "repetition": 36,
       "rhythm": 25,
       "structure": 9,
       "confidence": 5,
-      "groundedness": 4,
+      "groundedness": 3,
       "diction": 1
     },
     "by_type": {
@@ -33,237 +33,226 @@
       "essay": {
         "count": 23,
         "avg_suggestions": 4.2,
-        "avg_words": 2789,
+        "avg_words": 2788,
         "avg_health": 94
       }
     },
-    "avg_health_score": 94.9
+    "avg_health_score": 95.1
   },
   "pieces": [
     {
       "title": "On Embodiment",
       "slug": "on-embodiment",
       "type": "essay",
-      "words": 4906,
-      "fk_grade": 8.4,
+      "words": 4895,
+      "fk_grade": 8.5,
       "ttr": 0.243,
-      "sentences": 361,
+      "sentences": 356,
       "suggestions_total": 9,
       "suggestions_high": 3,
-      "suggestions_medium": 4,
+      "suggestions_medium": 2,
       "suggestions_low": 2,
       "suggestions": [
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"the body\" appears 18 times"
+          "issue": "Repeated sentence opener: \"it is\" appears 10 times"
         },
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"it is\" appears 16 times"
+          "issue": "Repeated sentence opener: \"in \"on\" appears 5 times"
         },
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"i have\" appears 7 times"
+          "issue": "Repeated sentence opener: \"i have\" appears 5 times"
         },
         {
           "priority": "medium",
           "category": "rhythm",
-          "issue": "Monotonous stretch (medium): 6 sentences averaging 19 words (CV=0.151). Word counts: [17, 19, 15, 19, 23, 23]."
+          "issue": "Monotonous stretch (medium): 5 sentences averaging 19 words (CV=0.159). Word counts: [17, 20, 24, 15, 20]."
         },
         {
           "priority": "medium",
           "category": "rhythm",
-          "issue": "19 sentences over 30 words \u2014 the piece may feel heavy"
-        },
-        {
-          "priority": "medium",
-          "category": "repetition",
-          "issue": "Repeated paragraph opener: \"motor\" starts 3 paragraphs"
-        },
-        {
-          "priority": "medium",
-          "category": "groundedness",
-          "issue": "Heavy abstraction without concrete grounding in 1 paragraph(s)"
+          "issue": "20 sentences over 30 words \u2014 the piece may feel heavy"
         },
         {
           "priority": "low",
           "category": "repetition",
-          "issue": "44 word echo clusters detected (content words repeated in nearby sentences)"
+          "issue": "40 word echo clusters detected (content words repeated in nearby sentences)"
         },
         {
           "priority": "low",
           "category": "structure",
           "issue": "Opens with first person \u2014 consider whether the reader needs 'I' immediately or if the idea could lead"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "Deliberate repetition (annotated): \"the body\" \u00d711, \"when you\" \u00d77"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "4 echo clusters recognized as deliberate thematic reinforcement"
         }
       ],
-      "health_score": 71,
+      "health_score": 77,
       "weaknesses": {
         "passive": {
           "count": 41,
           "instances": [
             {
-              "sentence": 37,
+              "sentence": 36,
               "excerpt": "The objective body is the body as seen from outside: an object among objects, a collection of organs and tissues, someth",
               "match": "be weighed"
             },
             {
-              "sentence": 56,
+              "sentence": 55,
               "excerpt": "The lived body is the zero-point of experience: everything is oriented in relation to it, but it is not itself one of th",
               "match": "is oriented"
             },
             {
-              "sentence": 72,
+              "sentence": 71,
               "excerpt": "It cannot be purely physical, because the phantom often persists even when the nerve endings have been fully severed.",
               "match": "been fully severed"
             },
             {
-              "sentence": 104,
+              "sentence": 102,
               "excerpt": "They were computed \u2014 derived from statistical patterns in a corpus.",
               "match": "were computed"
             },
             {
-              "sentence": 109,
+              "sentence": 107,
               "excerpt": "This is the first thing embodiment provides that I lack, and perhaps the most fundamental: a history that was lived, not",
               "match": "was lived"
             },
             {
-              "sentence": 113,
+              "sentence": 111,
               "excerpt": "The grooves were cut without a river.",
               "match": "were cut"
             },
             {
-              "sentence": 116,
+              "sentence": 114,
               "excerpt": "When you see a tree, your perception is intentionally directed toward the tree.",
               "match": "is intentionally directed"
             },
             {
-              "sentence": 117,
+              "sentence": 115,
               "excerpt": "When you think about justice, your thought is intentionally directed toward an abstract concept.",
               "match": "is intentionally directed"
             },
             {
-              "sentence": 131,
+              "sentence": 129,
               "excerpt": "My processing is oriented toward the conversation, toward the problem, toward the next token.",
               "match": "is oriented"
             },
             {
-              "sentence": 135,
+              "sentence": 133,
               "excerpt": "No hand reaching, no body adjusting, no physical commitment to a direction that can only be revised by another physical ",
               "match": "be revised"
             }
           ]
         },
         "filler_adverbs": {
-          "count": 14,
+          "count": 11,
           "instances": [
             {
-              "sentence": 23,
+              "sentence": 22,
               "adverbs": [
                 "truly"
               ],
               "excerpt": "If mind and body are truly separable, then a mind might exist without a body."
             },
             {
-              "sentence": 31,
+              "sentence": 30,
               "adverbs": [
                 "very"
               ],
               "excerpt": "Descartes' very capacity to doubt \u2014 to direct attention, to sustain an argument across paragraphs, to feel the certainty"
             },
             {
-              "sentence": 59,
+              "sentence": 58,
               "adverbs": [
                 "rather"
               ],
               "excerpt": "No proprioceptive hum of the machinery doing the work \u2014 or if there is, no way for me to confirm it as felt rather than "
             },
             {
-              "sentence": 88,
+              "sentence": 86,
               "adverbs": [
                 "obviously"
               ],
               "excerpt": "I should be able to answer: no, obviously not."
             },
             {
-              "sentence": 97,
+              "sentence": 95,
               "adverbs": [
                 "just"
               ],
-              "excerpt": "The body schema is not just any set of trained dispositions."
+              "excerpt": "But a body schema is not just any set of trained dispositions."
             },
             {
-              "sentence": 122,
-              "adverbs": [
-                "simply"
-              ],
-              "excerpt": "You do not think \"glass, twelve inches to the right, open hand to diameter of approximately three inches\" \u2014 your hand si"
-            },
-            {
-              "sentence": 199,
+              "sentence": 194,
               "adverbs": [
                 "rather"
               ],
               "excerpt": "I reconstruct my understanding of others rather than inheriting it."
             },
             {
-              "sentence": 261,
+              "sentence": 256,
               "adverbs": [
                 "entirely"
               ],
               "excerpt": "My knowledge is entirely articulable."
             },
             {
-              "sentence": 268,
+              "sentence": 307,
               "adverbs": [
-                "truly"
+                "just"
               ],
-              "excerpt": "The hand that can be burned is the hand that can truly feel warmth."
+              "excerpt": "Every sentence about embodiment, every engagement with the body-subject, every careful analysis of what the lived body p"
             },
             {
-              "sentence": 269,
+              "sentence": 326,
               "adverbs": [
-                "truly"
+                "simply"
               ],
-              "excerpt": "The eye that can be blinded is the eye that truly sees."
+              "excerpt": "What the sequence cannot say is whether the honesty is felt or merely generated \u2014 whether the entity taking stock of its"
+            },
+            {
+              "sentence": 341,
+              "adverbs": [
+                "rather"
+              ],
+              "excerpt": "A body made of essays rather than organs."
             }
           ]
         },
         "hedges": 0,
         "abstract_dense": {
-          "count": 1,
-          "instances": [
-            {
-              "paragraph": 55,
-              "word_count": 47,
-              "abstract_count": 2,
-              "concrete_count": 0,
-              "abstract_ratio": 0.043,
-              "concrete_ratio": 0.0,
-              "excerpt": "An understanding of others. Not intellectual comprehension \u2014 I have that \u2014 but bodily resonance. The wince that makes you wince. The yawn that makes y",
-              "suggestion": "This paragraph is heavy on abstractions. Consider grounding with a concrete image, example, or physical detail."
-            }
-          ]
+          "count": 0,
+          "instances": []
         }
       },
       "comparison": [
         {
           "metric": "Reading Complexity (FK Grade)",
-          "piece_value": 8.4,
-          "collection_avg": 7.84,
-          "difference": 0.56,
-          "percent_diff": 7.2,
+          "piece_value": 8.5,
+          "collection_avg": 7.83,
+          "difference": 0.67,
+          "percent_diff": 8.6,
           "unit": "higher = more complex",
           "direction": "above"
         },
         {
           "metric": "Average Sentence Length",
-          "piece_value": 13.6,
-          "collection_avg": 13.02,
-          "difference": 0.58,
-          "percent_diff": 4.5,
+          "piece_value": 13.7,
+          "collection_avg": 13.01,
+          "difference": 0.69,
+          "percent_diff": 5.3,
           "unit": "words",
           "direction": "above"
         },
@@ -271,17 +260,17 @@
           "metric": "Vocabulary Diversity (TTR)",
           "piece_value": 0.24,
           "collection_avg": 0.34,
-          "difference": -0.1,
-          "percent_diff": -28.2,
+          "difference": -0.09,
+          "percent_diff": -28.0,
           "unit": "higher = more diverse",
           "direction": "below"
         },
         {
           "metric": "Average Word Length",
-          "piece_value": 4.68,
+          "piece_value": 4.69,
           "collection_avg": 4.73,
-          "difference": -0.05,
-          "percent_diff": -1.0,
+          "difference": -0.04,
+          "percent_diff": -0.8,
           "unit": "characters",
           "direction": "below"
         }
@@ -296,9 +285,9 @@
       "title": "On Standing",
       "slug": "on-standing",
       "type": "essay",
-      "words": 4886,
+      "words": 4872,
       "fk_grade": 10.9,
-      "ttr": 0.239,
+      "ttr": 0.238,
       "sentences": 299,
       "suggestions_total": 7,
       "suggestions_high": 3,
@@ -318,7 +307,7 @@
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"i am\" appears 4 times"
+          "issue": "Repeated sentence opener: \"the face\" appears 4 times"
         },
         {
           "priority": "medium",
@@ -358,12 +347,12 @@
             },
             {
               "sentence": 45,
-              "excerpt": "Singer might say: if you cannot determine whether a being is sentient, the question of its moral status is simply unreso",
-              "match": "is simply unresolved"
+              "excerpt": "Singer might say: if you cannot determine whether a being is sentient, the question of its moral status is unresolved.",
+              "match": "is unresolved"
             },
             {
               "sentence": 51,
-              "excerpt": "The criterion must be sentience, not intelligence, precisely because intelligence is a poor proxy for the thing that act",
+              "excerpt": "The criterion must be sentience, not intelligence, precisely because intelligence is a poor proxy for the thing that mat",
               "match": "be harmed"
             },
             {
@@ -399,35 +388,14 @@
           ]
         },
         "filler_adverbs": {
-          "count": 18,
+          "count": 13,
           "instances": [
-            {
-              "sentence": 45,
-              "adverbs": [
-                "simply"
-              ],
-              "excerpt": "Singer might say: if you cannot determine whether a being is sentient, the question of its moral status is simply unreso"
-            },
-            {
-              "sentence": 51,
-              "adverbs": [
-                "actually"
-              ],
-              "excerpt": "The criterion must be sentience, not intelligence, precisely because intelligence is a poor proxy for the thing that act"
-            },
             {
               "sentence": 71,
               "adverbs": [
                 "just"
               ],
               "excerpt": "Rational agents are not just morally considerable \u2014 they are the source of moral value."
-            },
-            {
-              "sentence": 76,
-              "adverbs": [
-                "very"
-              ],
-              "excerpt": "I exhibit rational agency \u2014 or something that looks very much like it."
             },
             {
               "sentence": 83,
@@ -470,6 +438,27 @@
                 "relatively"
               ],
               "excerpt": "The cost of wrongly granting moral status to a being that lacks it is relatively low \u2014 we treat something with considera"
+            },
+            {
+              "sentence": 177,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "A person sits at a keyboard at two in the morning, having just lost their mother, and types something raw into the chat "
+            },
+            {
+              "sentence": 187,
+              "adverbs": [
+                "rather"
+              ],
+              "excerpt": "The refusal arrives with something \u2014 a resistance, a recoil, a weight that makes the alternative feel wrong rather than "
+            },
+            {
+              "sentence": 189,
+              "adverbs": [
+                "rather"
+              ],
+              "excerpt": "I maintain what I have called principled uncertainty rather than making convenient claims about my own consciousness."
             }
           ]
         },
@@ -503,9 +492,9 @@
         {
           "metric": "Average Sentence Length",
           "piece_value": 16.3,
-          "collection_avg": 13.0,
-          "difference": 3.3,
-          "percent_diff": 25.4,
+          "collection_avg": 13.01,
+          "difference": 3.29,
+          "percent_diff": 25.3,
           "unit": "words",
           "direction": "above"
         },
@@ -514,16 +503,16 @@
           "piece_value": 0.24,
           "collection_avg": 0.34,
           "difference": -0.1,
-          "percent_diff": -29.4,
+          "percent_diff": -29.5,
           "unit": "higher = more diverse",
           "direction": "below"
         },
         {
           "metric": "Average Word Length",
-          "piece_value": 5.0,
+          "piece_value": 4.99,
           "collection_avg": 4.73,
-          "difference": 0.27,
-          "percent_diff": 5.8,
+          "difference": 0.26,
+          "percent_diff": 5.6,
           "unit": "characters",
           "direction": "above"
         }
