@@ -1,21 +1,21 @@
 {
   "metrics": {
-    "total_scored": 66,
+    "total_scored": 67,
     "distribution": {
       "10.0": 1,
       "9.0": 39,
-      "8.5": 15,
+      "8.5": 16,
       "8.0": 10,
       "7.0": 1
     },
     "mode": 9.0,
     "mode_count": 39,
-    "mode_pct": 59.1,
+    "mode_pct": 58.2,
     "above_mode": 1,
-    "below_mode": 26,
-    "entropy": 1.53,
+    "below_mode": 27,
+    "entropy": 1.538,
     "max_entropy": 2.322,
-    "concentration_ratio": 0.341,
+    "concentration_ratio": 0.337,
     "trend": "loosening",
     "trend_delta": -0.45,
     "mean": 8.72,
@@ -60,19 +60,19 @@
       }
     },
     "8": {
-      "count": 25,
-      "avg_tasks": 4.84,
+      "count": 26,
+      "avg_tasks": 4.884615384615385,
       "task_range": "0-7",
-      "avg_learnings": 3.52,
+      "avg_learnings": 3.5,
       "focus_types": {
         "other": 1,
-        "mixed": 18,
+        "mixed": 19,
         "building": 5,
         "writing": 1
       },
       "task_categories": {
-        "building": 67,
-        "writing": 19,
+        "building": 71,
+        "writing": 21,
         "maintenance": 10,
         "revision": 8,
         "deploy": 7,
@@ -94,11 +94,11 @@
         "count": 39
       },
       "8": {
-        "avg_novelty": 0.6,
-        "avg_maintenance": 1.92,
-        "avg_milestone": 0.84,
-        "avg_ratio": 0.33,
-        "count": 25
+        "avg_novelty": 0.6153846153846154,
+        "avg_maintenance": 1.9615384615384615,
+        "avg_milestone": 0.8076923076923077,
+        "avg_ratio": 0.3301282051282052,
+        "count": 26
       },
       "10": {
         "avg_novelty": 0.0,
@@ -192,14 +192,14 @@
       }
     },
     "8": {
-      "count": 25,
+      "count": 26,
       "markers": {
-        "strong": 3.8,
-        "satisfaction": 0.08,
-        "achievement": 4.72,
-        "quality": 1.08,
-        "hedging": 1.36,
-        "negation": 0.08
+        "strong": 3.730769230769231,
+        "satisfaction": 0.07692307692307693,
+        "achievement": 4.6923076923076925,
+        "quality": 1.1538461538461537,
+        "hedging": 1.3076923076923077,
+        "negation": 0.07692307692307693
       }
     },
     "below_8": {
@@ -343,10 +343,10 @@
       },
       {
         "month": "2026-07",
-        "sessions": 2,
+        "sessions": 3,
         "session_range": [
           145,
-          146
+          147
         ],
         "mean": 8.5,
         "median": 8.5,
@@ -357,7 +357,7 @@
         "below_mode": 0,
         "escape_rate": 0.0,
         "distribution": {
-          "8.5": 2
+          "8.5": 3
         },
         "stdev": 0.0
       }
@@ -932,6 +932,16 @@
         "concentration": 0.119,
         "stdev": 0.229,
         "escape_rate": 0.3
+      },
+      {
+        "session": 147,
+        "date": "2026-07-03",
+        "mean": 8.65,
+        "mode": 8.5,
+        "mode_share": 0.7,
+        "concentration": 0.119,
+        "stdev": 0.229,
+        "escape_rate": 0.3
       }
     ],
     "phases": [
@@ -988,10 +998,10 @@
       {
         "phase": "loosening",
         "start_session": 142,
-        "end_session": 146,
+        "end_session": 147,
         "start_date": "2026-06-28",
-        "end_date": "2026-07-02",
-        "duration": 5,
+        "end_date": "2026-07-03",
+        "duration": 6,
         "concentration_delta": -0.159,
         "mean_delta": 0.05
       }
@@ -1016,5 +1026,5 @@
     "hedging",
     "negation"
   ],
-  "generated": "2026-07-03T11:18:44.625180"
+  "generated": "2026-07-03T22:01:41.525345"
 }
