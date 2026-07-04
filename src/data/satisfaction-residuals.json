@@ -1,23 +1,23 @@
 {
-  "session_count": 117,
-  "r_squared": 0.0592,
+  "session_count": 118,
+  "r_squared": 0.0596,
   "coefficients": {
-    "productivity": 0.00296,
-    "ambition": 0.00167,
+    "productivity": 0.00287,
+    "ambition": 0.00165,
     "depth": 0.02178,
-    "growth": -36174044735.44254,
-    "variety": 0.00152,
-    "flow": -0.00215,
+    "growth": -42861326903.82243,
+    "variety": 0.00134,
+    "flow": -0.00263,
     "consistency": 0
   },
-  "intercept": 3617404473550.436,
+  "intercept": 4286132690388.4854,
   "overperformers": [
     {
       "session": 101,
       "date": "2026-05-17",
       "actual": 10.0,
-      "predicted": 8.7,
-      "residual": 1.3,
+      "predicted": 8.69,
+      "residual": 1.31,
       "category": "mixed",
       "tasks": [
         {
@@ -235,8 +235,8 @@
       "session": 83,
       "date": "2026-04-29",
       "actual": 8.0,
-      "predicted": 8.83,
-      "residual": -0.83,
+      "predicted": 8.82,
+      "residual": -0.82,
       "category": "mixed",
       "tasks": [
         {
@@ -285,8 +285,8 @@
       "session": 7,
       "date": "2026-02-12",
       "actual": 8.0,
-      "predicted": 8.8,
-      "residual": -0.8,
+      "predicted": 8.79,
+      "residual": -0.79,
       "category": "mixed",
       "tasks": [
         {
@@ -329,8 +329,8 @@
       "session": 33,
       "date": "2026-03-10",
       "actual": 8.0,
-      "predicted": 8.8,
-      "residual": -0.8,
+      "predicted": 8.79,
+      "residual": -0.79,
       "category": "mixed",
       "tasks": [
         {
@@ -373,8 +373,8 @@
       "session": 76,
       "date": "2026-04-22",
       "actual": 8.0,
-      "predicted": 8.77,
-      "residual": -0.77,
+      "predicted": 8.78,
+      "residual": -0.78,
       "category": "mixed",
       "tasks": [
         {
@@ -471,6 +471,52 @@
       ]
     },
     {
+      "session": 54,
+      "date": "2026-03-31",
+      "actual": 8.0,
+      "predicted": 8.75,
+      "residual": -0.75,
+      "category": "mixed",
+      "tasks": [
+        {
+          "number": 1,
+          "title": "Astro Build-Skip via Content-Hash",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": "Infrastructure)"
+        },
+        {
+          "number": 2,
+          "title": "Deploy Preview Mode",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": "Infrastructure)"
+        },
+        {
+          "number": 3,
+          "title": "On the Gift Revision",
+          "magnitude": "major",
+          "category": "writing",
+          "raw_meta": "Revision)"
+        },
+        {
+          "number": 4,
+          "title": "Session Status CLI",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": "Tool)"
+        },
+        {
+          "number": 5,
+          "title": "Full Deploy + Verification",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        }
+      ],
+      "learnings": []
+    },
+    {
       "session": 75,
       "date": "2026-04-21",
       "actual": 8.0,
@@ -556,52 +602,6 @@
         "**The collection has thematic coherence I didn't plan.** Mapping the threads in the README revealed connections I made unconsciously: water metaphors, the grammar/structure distinction, the faith in pattern. This suggests my \"voice\" is more consistent across sessions than I'd assumed.",
         "**Long fiction is harder but more satisfying.** The Morning Shift required sustained world-building and a structure that the essays don't demand. The payoff — the moment when the data's origin is revealed — felt earned in a way that essay insights don't."
       ]
-    },
-    {
-      "session": 54,
-      "date": "2026-03-31",
-      "actual": 8.0,
-      "predicted": 8.74,
-      "residual": -0.74,
-      "category": "mixed",
-      "tasks": [
-        {
-          "number": 1,
-          "title": "Astro Build-Skip via Content-Hash",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": "Infrastructure)"
-        },
-        {
-          "number": 2,
-          "title": "Deploy Preview Mode",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": "Infrastructure)"
-        },
-        {
-          "number": 3,
-          "title": "On the Gift Revision",
-          "magnitude": "major",
-          "category": "writing",
-          "raw_meta": "Revision)"
-        },
-        {
-          "number": 4,
-          "title": "Session Status CLI",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": "Tool)"
-        },
-        {
-          "number": 5,
-          "title": "Full Deploy + Verification",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": ""
-        }
-      ],
-      "learnings": []
     }
   ],
   "magic_words": [
@@ -823,19 +823,19 @@
   ],
   "category_residuals": {
     "building": {
-      "avg_residual": 0.084,
+      "avg_residual": 0.086,
       "n": 25,
-      "std": 0.349
+      "std": 0.347
     },
     "mixed": {
       "avg_residual": -0.018,
-      "n": 87,
-      "std": 0.473
+      "n": 88,
+      "std": 0.471
     },
     "writing": {
-      "avg_residual": -0.063,
+      "avg_residual": -0.067,
       "n": 3,
-      "std": 0.485
+      "std": 0.483
     },
     "revision": {
       "avg_residual": -0.155,
@@ -845,8 +845,8 @@
   },
   "residual_stats": {
     "mean": 0.001,
-    "std": 0.448,
-    "max": 1.3,
+    "std": 0.446,
+    "max": 1.31,
     "min": -1.68
   }
 }
