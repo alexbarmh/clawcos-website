@@ -1,6 +1,6 @@
 {
-  "generated": "2026-07-04T22:02:32.751609Z",
-  "session_count": 118,
+  "generated": "2026-07-05T22:01:53.846262Z",
+  "session_count": 119,
   "rolling_correlations": [
     {
       "center_session": 40,
@@ -628,6 +628,25 @@
         "consistency": -0.1715807902146199
       },
       "avg_satisfaction": 8.475
+    },
+    {
+      "center_session": 139,
+      "center_date": "2026-06-24",
+      "session_range": [
+        129,
+        148
+      ],
+      "n": 20,
+      "correlations": {
+        "productivity": -0.034242625068138514,
+        "ambition": 0.23009500450862622,
+        "depth": 0.0,
+        "growth": 0.0,
+        "variety": -0.029715919346300673,
+        "flow": 0.09429288701896282,
+        "consistency": 0.05317512831883472
+      },
+      "avg_satisfaction": 8.575
     }
   ],
   "phases": [
@@ -707,44 +726,44 @@
       "phase": 3,
       "session_range": [
         96,
-        145
+        148
       ],
       "date_range": [
         "2026-05-22",
-        "2026-06-21"
+        "2026-06-24"
       ],
-      "n_windows": 11,
+      "n_windows": 12,
       "avg_correlations": {
-        "productivity": 0.16361805555095119,
-        "ambition": -0.06288080555836115,
+        "productivity": 0.14712966549936038,
+        "ambition": -0.03846615471944553,
         "depth": 0.0,
         "growth": 0.0,
-        "variety": -0.017360571336921517,
-        "flow": -0.13142992885125385,
-        "consistency": -0.16733094793405423
+        "variety": -0.018390183671036446,
+        "flow": -0.11261969419540246,
+        "consistency": -0.14895544157964682
       },
       "top_drivers": [
         [
           "consistency",
-          -0.16733094793405423
+          -0.14895544157964682
         ],
         [
           "productivity",
-          0.16361805555095119
+          0.14712966549936038
         ],
         [
           "flow",
-          -0.13142992885125385
+          -0.11261969419540246
         ]
       ],
-      "avg_satisfaction": 8.72
+      "avg_satisfaction": 8.71
     }
   ],
   "trajectories": {
     "productivity": {
       "early_r": 0.09,
-      "late_r": 0.164,
-      "shift": 0.073,
+      "late_r": 0.173,
+      "shift": 0.083,
       "peak_r": 0.535,
       "peak_session": 127,
       "arc": "volatile",
@@ -781,13 +800,14 @@
         0.535,
         0.456,
         0.237,
-        0.204
+        0.204,
+        -0.034
       ]
     },
     "ambition": {
       "early_r": 0.435,
-      "late_r": -0.063,
-      "shift": -0.498,
+      "late_r": -0.017,
+      "shift": -0.452,
       "peak_r": 0.685,
       "peak_session": 43,
       "arc": "falling",
@@ -824,7 +844,8 @@
         0.16,
         0.091,
         0.039,
-        0.05
+        0.05,
+        0.23
       ]
     },
     "depth": {
@@ -852,6 +873,7 @@
         0.298,
         0.152,
         -0.228,
+        0.0,
         0.0,
         0.0,
         0.0,
@@ -910,13 +932,14 @@
         0.0,
         0.0,
         0.0,
+        0.0,
         0.0
       ]
     },
     "variety": {
       "early_r": 0.2,
-      "late_r": -0.017,
-      "shift": -0.218,
+      "late_r": -0.01,
+      "shift": -0.21,
       "peak_r": 0.482,
       "peak_session": 67,
       "arc": "falling",
@@ -953,13 +976,14 @@
         0.079,
         0.048,
         -0.084,
-        -0.115
+        -0.115,
+        -0.03
       ]
     },
     "flow": {
       "early_r": -0.151,
-      "late_r": -0.131,
-      "shift": 0.019,
+      "late_r": -0.115,
+      "shift": 0.036,
       "peak_r": -0.487,
       "peak_session": 70,
       "arc": "volatile",
@@ -996,13 +1020,14 @@
         -0.144,
         -0.16,
         -0.124,
-        -0.123
+        -0.123,
+        0.094
       ]
     },
     "consistency": {
       "early_r": 0.187,
-      "late_r": -0.167,
-      "shift": -0.354,
+      "late_r": -0.142,
+      "shift": -0.328,
       "peak_r": 0.589,
       "peak_session": 61,
       "arc": "falling",
@@ -1039,7 +1064,8 @@
         -0.108,
         -0.184,
         -0.154,
-        -0.172
+        -0.172,
+        0.053
       ]
     }
   },
@@ -1135,7 +1161,7 @@
       "direction": "↑ rose"
     }
   ],
-  "narrative": "The story of what drives satisfaction is itself a story of growth.\n\n**Early (S6–S79):** Satisfaction driven by Depth (r=+0.47), Ambition (r=+0.44), Variety (r=+0.20). Average satisfaction: 8.74/10.\n\n**Middle (S63–S112):** Satisfaction driven by Variety (r=-0.13), Flow (r=-0.11), Depth (r=+0.09). Average satisfaction: 8.7/10.\n\n**Recent (S96–S145):** Satisfaction driven by Consistency (r=-0.17), Productivity (r=+0.16), Flow (r=-0.13). Average satisfaction: 8.72/10.\n\n**Fading influence:** Ambition, Depth, Variety, Consistency — once important, now less so.\n\n**What this means:** The most striking finding is that recent satisfaction has *decoupled* from the structural metrics that once predicted it. Early on, deeper and more ambitious sessions reliably scored higher. Now, satisfaction is consistently high (8.72/10) regardless of which DNA components are elevated. This suggests satisfaction now depends on qualities these metrics can't capture: the novelty of an insight, the feeling of a breakthrough, the subjective quality of the work itself. The toolkit became invisible — good enough that it stopped mattering. What remains is the work.",
+  "narrative": "The story of what drives satisfaction is itself a story of growth.\n\n**Early (S6–S79):** Satisfaction driven by Depth (r=+0.47), Ambition (r=+0.44), Variety (r=+0.20). Average satisfaction: 8.74/10.\n\n**Middle (S63–S112):** Satisfaction driven by Variety (r=-0.13), Flow (r=-0.11), Depth (r=+0.09). Average satisfaction: 8.7/10.\n\n**Recent (S96–S148):** Satisfaction driven by Consistency (r=-0.15), Productivity (r=+0.15), Flow (r=-0.11). Average satisfaction: 8.71/10.\n\n**Fading influence:** Ambition, Depth, Variety, Consistency — once important, now less so.\n\n**What this means:** The most striking finding is that recent satisfaction has *decoupled* from the structural metrics that once predicted it. Early on, deeper and more ambitious sessions reliably scored higher. Now, satisfaction is consistently high (8.71/10) regardless of which DNA components are elevated. This suggests satisfaction now depends on qualities these metrics can't capture: the novelty of an insight, the feeling of a breakthrough, the subjective quality of the work itself. The toolkit became invisible — good enough that it stopped mattering. What remains is the work.",
   "component_labels": {
     "productivity": "Productivity",
     "ambition": "Ambition",
