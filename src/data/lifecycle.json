@@ -1,18 +1,18 @@
 {
-  "generated": "2026-07-06T11:11:52.740994",
+  "generated": "2026-07-06T22:02:25.204239",
   "summary": {
     "total_pieces": 34,
     "total_words": 85605,
-    "total_revisions": 114,
+    "total_revisions": 116,
     "avg_health": 94.5,
     "avg_age": 110,
     "total_connections": 800,
     "stages": {
-      "fresh": 3,
+      "fresh": 2,
       "developing": 2,
       "maturing": 0,
       "polished": 29,
-      "stubborn": 0
+      "stubborn": 1
     }
   },
   "roi_summary": {
@@ -23,17 +23,9 @@
         "slug": "on-inquiry",
         "title": "On Inquiry",
         "health": 76,
-        "revisions": 0,
+        "revisions": 1,
         "connections": 5,
-        "untapped_score": 0.62
-      },
-      {
-        "slug": "on-embodiment",
-        "title": "On Embodiment",
-        "health": 77,
-        "revisions": 2,
-        "connections": 5,
-        "untapped_score": 0.475
+        "untapped_score": 0.55
       },
       {
         "slug": "on-standing",
@@ -42,6 +34,14 @@
         "revisions": 2,
         "connections": 5,
         "untapped_score": 0.475
+      },
+      {
+        "slug": "on-embodiment",
+        "title": "On Embodiment",
+        "health": 77,
+        "revisions": 3,
+        "connections": 5,
+        "untapped_score": 0.405
       }
     ],
     "top_roi": [
@@ -76,7 +76,15 @@
         "per_revision": 8.3
       }
     ],
-    "stubborn_pieces": []
+    "stubborn_pieces": [
+      {
+        "slug": "on-embodiment",
+        "title": "On Embodiment",
+        "health": 77,
+        "revisions": 3,
+        "total_gained": 0
+      }
+    ]
   },
   "pieces": [
     {
@@ -654,8 +662,8 @@
         "medium": 1,
         "low": 1,
         "categories": [
-          "rhythm",
-          "repetition"
+          "repetition",
+          "rhythm"
         ]
       },
       "roi": {
@@ -1254,8 +1262,8 @@
         "medium": 1,
         "low": 1,
         "categories": [
-          "rhythm",
-          "repetition"
+          "repetition",
+          "rhythm"
         ]
       },
       "roi": {
@@ -1864,8 +1872,8 @@
         "medium": 1,
         "low": 1,
         "categories": [
-          "rhythm",
-          "repetition"
+          "repetition",
+          "rhythm"
         ]
       },
       "roi": {
@@ -2507,12 +2515,18 @@
       "created": "2026-06-27",
       "creation_session": null,
       "age_days": 9,
-      "revision_count": 2,
-      "days_since_revision": 3,
+      "revision_count": 3,
+      "days_since_revision": 0,
       "current_health": 77,
-      "stage": "developing",
+      "stage": "stubborn",
       "health_trajectory": [],
       "revisions": [
+        {
+          "date": "2026-07-06",
+          "session": 150,
+          "edit_count": null,
+          "techniques": []
+        },
         {
           "date": "2026-07-03",
           "session": 147,
@@ -2570,9 +2584,9 @@
         "medium": 2,
         "low": 2,
         "categories": [
+          "repetition",
           "rhythm",
-          "structure",
-          "repetition"
+          "structure"
         ]
       },
       "roi": {
@@ -2580,7 +2594,7 @@
         "health_per_revision": 0.0,
         "recent_gain": 0,
         "diminishing_returns": false,
-        "untapped_score": 0.475
+        "untapped_score": 0.405
       }
     },
     {
@@ -2591,12 +2605,19 @@
       "created": "2026-07-04",
       "creation_session": 148,
       "age_days": 2,
-      "revision_count": 0,
-      "days_since_revision": null,
+      "revision_count": 1,
+      "days_since_revision": 0,
       "current_health": 76,
-      "stage": "fresh",
+      "stage": "developing",
       "health_trajectory": [],
-      "revisions": [],
+      "revisions": [
+        {
+          "date": "2026-07-06",
+          "session": 150,
+          "edit_count": null,
+          "techniques": []
+        }
+      ],
       "connections": [
         {
           "piece": "On Embodiment",
@@ -2635,8 +2656,8 @@
         "medium": 1,
         "low": 1,
         "categories": [
-          "rhythm",
-          "repetition"
+          "repetition",
+          "rhythm"
         ]
       },
       "roi": {
@@ -2644,7 +2665,7 @@
         "health_per_revision": 0.0,
         "recent_gain": 0,
         "diminishing_returns": false,
-        "untapped_score": 0.62
+        "untapped_score": 0.55
       }
     },
     {
@@ -3247,9 +3268,9 @@
         "medium": 1,
         "low": 2,
         "categories": [
-          "confidence",
+          "repetition",
           "rhythm",
-          "repetition"
+          "confidence"
         ]
       },
       "roi": {
@@ -3898,9 +3919,9 @@
         "medium": 1,
         "low": 2,
         "categories": [
+          "repetition",
           "rhythm",
-          "structure",
-          "repetition"
+          "structure"
         ]
       },
       "roi": {
@@ -4126,9 +4147,9 @@
         "medium": 1,
         "low": 2,
         "categories": [
+          "repetition",
           "rhythm",
-          "structure",
-          "repetition"
+          "structure"
         ]
       },
       "roi": {
@@ -4801,8 +4822,8 @@
         "medium": 1,
         "low": 1,
         "categories": [
-          "rhythm",
-          "repetition"
+          "repetition",
+          "rhythm"
         ]
       },
       "roi": {
@@ -5401,8 +5422,8 @@
         "medium": 1,
         "low": 1,
         "categories": [
-          "rhythm",
-          "repetition"
+          "repetition",
+          "rhythm"
         ]
       },
       "roi": {
@@ -5550,9 +5571,9 @@
         "medium": 2,
         "low": 1,
         "categories": [
-          "rhythm",
           "repetition",
-          "groundedness"
+          "groundedness",
+          "rhythm"
         ]
       },
       "roi": {
@@ -6151,8 +6172,8 @@
         "medium": 1,
         "low": 1,
         "categories": [
-          "rhythm",
-          "repetition"
+          "repetition",
+          "rhythm"
         ]
       },
       "roi": {
@@ -6235,10 +6256,10 @@
         "medium": 2,
         "low": 2,
         "categories": [
-          "confidence",
-          "rhythm",
           "repetition",
-          "groundedness"
+          "groundedness",
+          "rhythm",
+          "confidence"
         ]
       },
       "roi": {
@@ -6845,9 +6866,9 @@
         "medium": 1,
         "low": 2,
         "categories": [
+          "repetition",
           "rhythm",
-          "structure",
-          "repetition"
+          "structure"
         ]
       },
       "roi": {
@@ -7476,8 +7497,8 @@
         "medium": 1,
         "low": 1,
         "categories": [
-          "rhythm",
-          "repetition"
+          "repetition",
+          "rhythm"
         ]
       },
       "roi": {
@@ -8093,8 +8114,8 @@
         "medium": 1,
         "low": 1,
         "categories": [
-          "rhythm",
-          "repetition"
+          "repetition",
+          "rhythm"
         ]
       },
       "roi": {
@@ -8257,8 +8278,8 @@
         "medium": 0,
         "low": 2,
         "categories": [
-          "structure",
-          "repetition"
+          "repetition",
+          "structure"
         ]
       },
       "roi": {
@@ -8881,9 +8902,9 @@
         "medium": 1,
         "low": 2,
         "categories": [
+          "repetition",
           "rhythm",
-          "structure",
-          "repetition"
+          "structure"
         ]
       },
       "roi": {
@@ -9476,8 +9497,8 @@
         "medium": 1,
         "low": 1,
         "categories": [
-          "rhythm",
-          "repetition"
+          "repetition",
+          "rhythm"
         ]
       },
       "roi": {
@@ -10086,9 +10107,9 @@
         "medium": 1,
         "low": 2,
         "categories": [
-          "confidence",
+          "repetition",
           "rhythm",
-          "repetition"
+          "confidence"
         ]
       },
       "roi": {
@@ -10266,8 +10287,8 @@
         "medium": 1,
         "low": 1,
         "categories": [
-          "rhythm",
-          "repetition"
+          "repetition",
+          "rhythm"
         ]
       },
       "roi": {
@@ -10862,9 +10883,9 @@
         "medium": 0,
         "low": 3,
         "categories": [
-          "confidence",
+          "repetition",
           "structure",
-          "repetition"
+          "confidence"
         ]
       },
       "roi": {
@@ -11522,9 +11543,9 @@
         "medium": 3,
         "low": 0,
         "categories": [
-          "rhythm",
           "repetition",
-          "groundedness"
+          "groundedness",
+          "rhythm"
         ]
       },
       "roi": {
@@ -12133,8 +12154,8 @@
         "medium": 0,
         "low": 2,
         "categories": [
-          "structure",
-          "repetition"
+          "repetition",
+          "structure"
         ]
       },
       "roi": {
@@ -14491,8 +14512,8 @@
         "medium": 1,
         "low": 1,
         "categories": [
-          "confidence",
-          "diction"
+          "diction",
+          "confidence"
         ]
       },
       "roi": {
@@ -15676,8 +15697,8 @@
         "medium": 1,
         "low": 1,
         "categories": [
-          "rhythm",
-          "repetition"
+          "repetition",
+          "rhythm"
         ]
       },
       "roi": {
@@ -16270,8 +16291,8 @@
         "medium": 1,
         "low": 1,
         "categories": [
-          "rhythm",
-          "repetition"
+          "repetition",
+          "rhythm"
         ]
       },
       "roi": {
@@ -17478,8 +17499,8 @@
         "medium": 1,
         "low": 1,
         "categories": [
-          "rhythm",
-          "repetition"
+          "repetition",
+          "rhythm"
         ]
       },
       "roi": {
