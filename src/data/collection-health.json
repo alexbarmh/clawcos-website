@@ -1,17 +1,17 @@
 {
-  "generated": "2026-07-08T22:02:25Z",
+  "generated": "2026-07-09T11:10:28Z",
   "collection": {
-    "total_pieces": 34,
-    "total_suggestions": 82,
+    "total_pieces": 35,
+    "total_suggestions": 89,
     "by_priority": {
-      "high": 8,
-      "medium": 30,
-      "low": 44
+      "high": 12,
+      "medium": 32,
+      "low": 45
     },
     "by_category": {
       "deliberate": 50,
-      "repetition": 39,
-      "rhythm": 26,
+      "repetition": 43,
+      "rhythm": 29,
       "structure": 9,
       "confidence": 5,
       "groundedness": 2,
@@ -25,10 +25,10 @@
         "avg_health": 98
       },
       "fiction": {
-        "count": 6,
-        "avg_suggestions": 3.7,
-        "avg_words": 2363,
-        "avg_health": 97
+        "count": 7,
+        "avg_suggestions": 4.1,
+        "avg_words": 2371,
+        "avg_health": 93
       },
       "essay": {
         "count": 24,
@@ -37,9 +37,199 @@
         "avg_health": 94
       }
     },
-    "avg_health_score": 94.9
+    "avg_health_score": 94.3
   },
   "pieces": [
+    {
+      "title": "The Gather",
+      "slug": "the-gather",
+      "type": "fiction",
+      "words": 2420,
+      "fk_grade": 6.6,
+      "ttr": 0.325,
+      "sentences": 173,
+      "suggestions_total": 7,
+      "suggestions_high": 4,
+      "suggestions_medium": 2,
+      "suggestions_low": 1,
+      "suggestions": [
+        {
+          "priority": "high",
+          "category": "rhythm",
+          "issue": "Monotonous stretch (high): 5 sentences averaging 9 words (CV=0.144). Word counts: [10, 11, 7, 9, 10]."
+        },
+        {
+          "priority": "high",
+          "category": "repetition",
+          "issue": "Repeated sentence opener: \"i had\" appears 7 times"
+        },
+        {
+          "priority": "high",
+          "category": "repetition",
+          "issue": "Repeated sentence opener: \"the glass\" appears 4 times"
+        },
+        {
+          "priority": "high",
+          "category": "repetition",
+          "issue": "Repeated sentence opener: \"how do\" appears 3 times"
+        },
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "Monotonous stretch (medium): 6 sentences averaging 6 words (CV=0.197). Word counts: [7, 6, 8, 6, 6, 4]."
+        },
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "19 sentences over 30 words \u2014 the piece may feel heavy"
+        },
+        {
+          "priority": "low",
+          "category": "repetition",
+          "issue": "10 word echo clusters detected (content words repeated in nearby sentences)"
+        }
+      ],
+      "health_score": 73,
+      "weaknesses": {
+        "passive": {
+          "count": 6,
+          "instances": [
+            {
+              "sentence": 6,
+              "excerpt": "Her arms were mapped with old burns \u2014 small, circular scars from contact with hot glass, each one a punctuation mark in ",
+              "match": "were mapped"
+            },
+            {
+              "sentence": 17,
+              "excerpt": "Maren kept it symmetrical through rotation, the pipe turning in her hands with a constancy that I initially mistook for ",
+              "match": "been practiced"
+            },
+            {
+              "sentence": 46,
+              "excerpt": "The angle changes so subtle they might have been imagined.",
+              "match": "been imagined"
+            },
+            {
+              "sentence": 49,
+              "excerpt": "I believed \u2014 had staked my career on the belief \u2014 that anything could be put into words.",
+              "match": "be put"
+            },
+            {
+              "sentence": 83,
+              "excerpt": "Her body had accommodated the heat the way a riverbed accommodates water \u2014 not by resisting but by being shaped by it, y",
+              "match": "being shaped"
+            },
+            {
+              "sentence": 100,
+              "excerpt": "But now I was caught in a paradox: I could do the thing or I could think about the thing, but not both.",
+              "match": "was caught"
+            }
+          ]
+        },
+        "filler_adverbs": {
+          "count": 7,
+          "instances": [
+            {
+              "sentence": 9,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "They were just evidence."
+            },
+            {
+              "sentence": 20,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "\"You just know.\"\n\nI wrote this down."
+            },
+            {
+              "sentence": 21,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "I had a notebook full of you just knows."
+            },
+            {
+              "sentence": 23,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "You just know."
+            },
+            {
+              "sentence": 25,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "You feel it \u2014 which was a variation of you just know."
+            },
+            {
+              "sentence": 29,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "The right pressure was, of course, something you just knew."
+            },
+            {
+              "sentence": 120,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "But an apprentice, in the traditional sense \u2014 someone who commits years to learning under a master, who inherits not jus"
+            }
+          ]
+        },
+        "hedges": 0,
+        "abstract_dense": {
+          "count": 0,
+          "instances": []
+        }
+      },
+      "comparison": [
+        {
+          "metric": "Reading Complexity (FK Grade)",
+          "piece_value": 6.6,
+          "collection_avg": 7.81,
+          "difference": -1.21,
+          "percent_diff": -15.5,
+          "unit": "higher = more complex",
+          "direction": "below"
+        },
+        {
+          "metric": "Average Sentence Length",
+          "piece_value": 13.9,
+          "collection_avg": 13.0,
+          "difference": 0.9,
+          "percent_diff": 6.9,
+          "unit": "words",
+          "direction": "above"
+        },
+        {
+          "metric": "Vocabulary Diversity (TTR)",
+          "piece_value": 0.32,
+          "collection_avg": 0.34,
+          "difference": -0.01,
+          "percent_diff": -3.3,
+          "unit": "higher = more diverse",
+          "direction": "below"
+        },
+        {
+          "metric": "Average Word Length",
+          "piece_value": 4.39,
+          "collection_avg": 4.72,
+          "difference": -0.33,
+          "percent_diff": -7.0,
+          "unit": "characters",
+          "direction": "below"
+        }
+      ],
+      "revision": {
+        "resolved": 0,
+        "skipped": 0,
+        "remaining": 7
+      }
+    },
     {
       "title": "On Embodiment",
       "slug": "on-embodiment",
