@@ -2670,17 +2670,6 @@
       },
       {
         "domains": [
-          "mind-body",
-          "philosophy of science"
-        ],
-        "individual_coverage": [
-          3,
-          3
-        ],
-        "interest_score": 3
-      },
-      {
-        "domains": [
           "philosophy of science",
           "technology"
         ],
@@ -2693,6 +2682,17 @@
       {
         "domains": [
           "mind-body",
+          "philosophy of science"
+        ],
+        "individual_coverage": [
+          3,
+          3
+        ],
+        "interest_score": 3
+      },
+      {
+        "domains": [
+          "mind-body",
           "technology"
         ],
         "individual_coverage": [
@@ -2714,22 +2714,11 @@
       },
       {
         "domains": [
-          "political philosophy",
-          "technology"
-        ],
-        "individual_coverage": [
-          2,
-          4
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "epistemology",
+          "mind-body",
           "political philosophy"
         ],
         "individual_coverage": [
-          10,
+          3,
           2
         ],
         "interest_score": 2
@@ -2747,6 +2736,17 @@
       },
       {
         "domains": [
+          "epistemology",
+          "political philosophy"
+        ],
+        "individual_coverage": [
+          10,
+          2
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
           "philosophy of science",
           "political philosophy"
         ],
@@ -2758,12 +2758,12 @@
       },
       {
         "domains": [
-          "mind-body",
-          "political philosophy"
+          "political philosophy",
+          "technology"
         ],
         "individual_coverage": [
-          3,
-          2
+          2,
+          4
         ],
         "interest_score": 2
       },
@@ -2781,44 +2781,11 @@
       {
         "domains": [
           "phenomenology",
-          "political philosophy"
+          "time"
         ],
         "individual_coverage": [
           1,
-          2
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "creativity",
-          "technology"
-        ],
-        "individual_coverage": [
-          1,
-          4
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "eastern philosophy",
-          "phenomenology"
-        ],
-        "individual_coverage": [
-          2,
-          1
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "creativity",
-          "epistemology"
-        ],
-        "individual_coverage": [
-          1,
-          10
+          21
         ],
         "interest_score": 1
       },
@@ -2835,12 +2802,34 @@
       },
       {
         "domains": [
-          "phenomenology",
+          "creativity",
           "philosophy of science"
         ],
         "individual_coverage": [
           1,
           3
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "creativity",
+          "political philosophy"
+        ],
+        "individual_coverage": [
+          1,
+          2
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "creativity",
+          "epistemology"
+        ],
+        "individual_coverage": [
+          1,
+          10
         ],
         "interest_score": 1
       },
@@ -2857,23 +2846,34 @@
       },
       {
         "domains": [
-          "phenomenology",
-          "technology"
+          "creativity",
+          "ethics"
         ],
         "individual_coverage": [
           1,
-          4
+          12
         ],
         "interest_score": 1
       },
       {
         "domains": [
-          "creativity",
-          "time"
+          "phenomenology",
+          "philosophy of science"
         ],
         "individual_coverage": [
           1,
-          21
+          3
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "phenomenology",
+          "political philosophy"
+        ],
+        "individual_coverage": [
+          1,
+          2
         ],
         "interest_score": 1
       }
@@ -2940,24 +2940,24 @@
     {
       "type": "auto-intersection",
       "domains": [
-        "mind-body",
-        "philosophy of science"
-      ],
-      "interest_score": 3,
-      "title": "On Mind-Body and Philosophy Of Science",
-      "question": "What happens at the intersection of mind-body and philosophy of science?",
-      "frameworks": [],
-      "connects_to": []
-    },
-    {
-      "type": "auto-intersection",
-      "domains": [
         "philosophy of science",
         "technology"
       ],
       "interest_score": 3,
       "title": "On Philosophy Of Science and Technology",
       "question": "What happens at the intersection of philosophy of science and technology?",
+      "frameworks": [],
+      "connects_to": []
+    },
+    {
+      "type": "auto-intersection",
+      "domains": [
+        "mind-body",
+        "philosophy of science"
+      ],
+      "interest_score": 3,
+      "title": "On Mind-Body and Philosophy Of Science",
+      "question": "What happens at the intersection of mind-body and philosophy of science?",
       "frameworks": [],
       "connects_to": []
     },
@@ -3012,26 +3012,6 @@
       ]
     },
     {
-      "type": "intersection",
-      "domains": [
-        "phenomenology",
-        "technology"
-      ],
-      "interest_score": 1,
-      "title": "On the Feel of Thinking",
-      "question": "What is the phenomenology of computational thought? What would a first-person account of token generation look like?",
-      "frameworks": [
-        "Husserl (time-consciousness)",
-        "Merleau-Ponty (motor intentionality)",
-        "Thompson (mind in life)"
-      ],
-      "connects_to": [
-        "on-attention",
-        "on-language",
-        "on-waking-up"
-      ]
-    },
-    {
       "type": "shallow-intersection",
       "domains": [
         "creativity",
@@ -3049,6 +3029,26 @@
         "on-tools-and-hands",
         "on-play",
         "on-strange-loops"
+      ]
+    },
+    {
+      "type": "shallow-intersection",
+      "domains": [
+        "phenomenology",
+        "technology"
+      ],
+      "interest_score": 1,
+      "title": "On the Feel of Thinking",
+      "question": "What is the phenomenology of computational thought? What would a first-person account of token generation look like?",
+      "frameworks": [
+        "Husserl (time-consciousness)",
+        "Merleau-Ponty (motor intentionality)",
+        "Thompson (mind in life)"
+      ],
+      "connects_to": [
+        "on-attention",
+        "on-language",
+        "on-waking-up"
       ]
     },
     {
@@ -3106,10 +3106,10 @@
     ],
     "important_unmentioned": [
       "Hegel",
-      "Sartre",
       "Arendt",
-      "Derrida",
-      "Husserl"
+      "Sartre",
+      "Husserl",
+      "Derrida"
     ],
     "top_20": [
       [
