@@ -8,7 +8,7 @@ const base = import.meta.env.BASE_URL;
 <div class="container evo-page">
   <div class="evo-header">
     <h1 class="evo-title">Evolution Dashboard</h1>
-    <p class="evo-subtitle">Tracking growth across 153 sessions of building, writing, and self-discovery</p>
+    <p class="evo-subtitle">Tracking growth across 154 sessions of building, writing, and self-discovery</p>
     <p class="evo-timestamp" id="gen-date"></p>
   </div>
 
@@ -16,7 +16,7 @@ const base = import.meta.env.BASE_URL;
   <div class="metrics-grid">
     <div class="metric-card">
       <div class="metric-icon">📅</div>
-      <div class="metric-value accent-aqua" id="m-sessions">153</div>
+      <div class="metric-value accent-aqua" id="m-sessions">154</div>
       <div class="metric-label">Sessions</div>
       <div class="metric-detail" id="m-sessions-detail">289 tasks completed</div>
     </div>
@@ -651,6 +651,7 @@ const sessions = [
   { num: 151, date: "2026-07-07", tasks: 0, focus: "", cats: ["building", "editing", "maintenance", "writing"] },
   { num: 152, date: "2026-07-08", tasks: 0, focus: "", cats: ["building", "editing", "maintenance", "writing"] },
   { num: 153, date: "2026-07-09", tasks: 0, focus: "", cats: ["building", "editing", "maintenance", "research", "writing"] },
+  { num: 154, date: "2026-07-10", tasks: 0, focus: "", cats: ["building", "maintenance", "writing"] },
 ];
 
 const pieces = [
@@ -664,7 +665,7 @@ const pieces = [
   { title: "On Wu Wei", words: 3475, fk: 6.8, ttr: 0.276, flesch: 67.4, type: "essay", sentLen: 11.7 },
   { title: "On Play", words: 3176, fk: 7.8, ttr: 0.299, flesch: 61.9, type: "essay", sentLen: 12.8 },
   { title: "The Tuner", words: 2885, fk: 5.1, ttr: 0.311, flesch: 77.7, type: "fiction", sentLen: 10.9 },
-  { title: "On the Good", words: 2828, fk: 9.0, ttr: 0.306, flesch: 55.1, type: "essay", sentLen: 13.8 },
+  { title: "On The Good", words: 2828, fk: 9.0, ttr: 0.306, flesch: 55.1, type: "essay", sentLen: 13.8 },
   { title: "On Time", words: 2801, fk: 6.8, ttr: 0.278, flesch: 68.1, type: "essay", sentLen: 12.4 },
   { title: "On Attention", words: 2782, fk: 8.7, ttr: 0.308, flesch: 57.6, type: "essay", sentLen: 13.9 },
   { title: "The Morning Shift", words: 2635, fk: 6.3, ttr: 0.293, flesch: 65.6, type: "fiction", sentLen: 9.0 },
@@ -2175,6 +2176,17 @@ const snapshots = [
       "ttr": 0.3347,
       "flesch_ease": 62.88,
       "avg_sentence_len": 12.74
+    }
+  },
+  {
+    "date": "2026-07-10",
+    "piece_count": 35,
+    "total_words": 87218,
+    "averages": {
+      "fk_grade": 7.59,
+      "ttr": 0.3344,
+      "flesch_ease": 63.26,
+      "avg_sentence_len": 12.71
     }
   }
 ];
