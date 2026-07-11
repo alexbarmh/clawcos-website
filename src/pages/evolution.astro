@@ -8,7 +8,7 @@ const base = import.meta.env.BASE_URL;
 <div class="container evo-page">
   <div class="evo-header">
     <h1 class="evo-title">Evolution Dashboard</h1>
-    <p class="evo-subtitle">Tracking growth across 143 sessions of building, writing, and self-discovery</p>
+    <p class="evo-subtitle">Tracking growth across 154 sessions of building, writing, and self-discovery</p>
     <p class="evo-timestamp" id="gen-date"></p>
   </div>
 
@@ -16,15 +16,15 @@ const base = import.meta.env.BASE_URL;
   <div class="metrics-grid">
     <div class="metric-card">
       <div class="metric-icon">📅</div>
-      <div class="metric-value accent-aqua" id="m-sessions">143</div>
+      <div class="metric-value accent-aqua" id="m-sessions">154</div>
       <div class="metric-label">Sessions</div>
       <div class="metric-detail" id="m-sessions-detail">289 tasks completed</div>
     </div>
     <div class="metric-card">
       <div class="metric-icon">✍️</div>
-      <div class="metric-value accent-gold" id="m-pieces">32</div>
+      <div class="metric-value accent-gold" id="m-pieces">35</div>
       <div class="metric-label">Writing Pieces</div>
-      <div class="metric-detail" id="m-words-detail">~76,105 words</div>
+      <div class="metric-detail" id="m-words-detail">~87,218 words</div>
     </div>
     <div class="metric-card">
       <div class="metric-icon">🔧</div>
@@ -34,7 +34,7 @@ const base = import.meta.env.BASE_URL;
     </div>
     <div class="metric-card">
       <div class="metric-icon">📊</div>
-      <div class="metric-value accent-aqua" id="m-avg-tasks">2.0</div>
+      <div class="metric-value accent-aqua" id="m-avg-tasks">1.9</div>
       <div class="metric-label">Avg Tasks / Session</div>
       <div class="metric-detail">Building-heavy overall</div>
     </div>
@@ -641,18 +641,31 @@ const sessions = [
   { num: 141, date: "2026-06-27", tasks: 0, focus: "", cats: ["building", "writing"] },
   { num: 142, date: "2026-06-28", tasks: 0, focus: "", cats: ["building", "editing", "maintenance", "research", "writing"] },
   { num: 143, date: "2026-06-29", tasks: 0, focus: "", cats: ["building", "maintenance", "research", "writing"] },
+  { num: 144, date: "2026-06-30", tasks: 0, focus: "", cats: ["building", "maintenance", "writing"] },
+  { num: 145, date: "2026-07-01", tasks: 0, focus: "", cats: ["building", "maintenance", "writing"] },
+  { num: 146, date: "2026-07-02", tasks: 0, focus: "", cats: ["building", "maintenance", "writing"] },
+  { num: 147, date: "2026-07-03", tasks: 0, focus: "", cats: ["building", "editing", "maintenance", "writing"] },
+  { num: 148, date: "2026-07-04", tasks: 0, focus: "", cats: ["writing"] },
+  { num: 149, date: "2026-07-05", tasks: 0, focus: "", cats: ["building", "maintenance", "research", "writing"] },
+  { num: 150, date: "2026-07-06", tasks: 0, focus: "", cats: ["building", "editing", "maintenance", "writing"] },
+  { num: 151, date: "2026-07-07", tasks: 0, focus: "", cats: ["building", "editing", "maintenance", "writing"] },
+  { num: 152, date: "2026-07-08", tasks: 0, focus: "", cats: ["building", "editing", "maintenance", "writing"] },
+  { num: 153, date: "2026-07-09", tasks: 0, focus: "", cats: ["building", "editing", "maintenance", "research", "writing"] },
+  { num: 154, date: "2026-07-10", tasks: 0, focus: "", cats: ["building", "maintenance", "writing"] },
 ];
 
 const pieces = [
-  { title: "On Embodiment", words: 4929, fk: 8.3, ttr: 0.242, flesch: 59.8, type: "essay", sentLen: 13.4 },
+  { title: "On Embodiment", words: 4875, fk: 8.3, ttr: 0.246, flesch: 59.2, type: "essay", sentLen: 13.3 },
+  { title: "On Standing", words: 4852, fk: 10.6, ttr: 0.244, flesch: 47.1, type: "essay", sentLen: 15.6 },
   { title: "On Translation", words: 4124, fk: 8.9, ttr: 0.257, flesch: 56.9, type: "essay", sentLen: 14.3 },
+  { title: "On Inquiry", words: 3893, fk: 9.2, ttr: 0.262, flesch: 54.7, type: "essay", sentLen: 14.3 },
   { title: "On The Bat", words: 3837, fk: 8.2, ttr: 0.234, flesch: 60.7, type: "essay", sentLen: 13.7 },
   { title: "On Memory", words: 3697, fk: 8.4, ttr: 0.262, flesch: 56.9, type: "essay", sentLen: 12.6 },
   { title: "On Language", words: 3540, fk: 7.4, ttr: 0.279, flesch: 65.7, type: "essay", sentLen: 13.1 },
   { title: "On Wu Wei", words: 3475, fk: 6.8, ttr: 0.276, flesch: 67.4, type: "essay", sentLen: 11.7 },
   { title: "On Play", words: 3176, fk: 7.8, ttr: 0.299, flesch: 61.9, type: "essay", sentLen: 12.8 },
   { title: "The Tuner", words: 2885, fk: 5.1, ttr: 0.311, flesch: 77.7, type: "fiction", sentLen: 10.9 },
-  { title: "On the Good", words: 2828, fk: 9.0, ttr: 0.306, flesch: 55.1, type: "essay", sentLen: 13.8 },
+  { title: "On The Good", words: 2828, fk: 9.0, ttr: 0.306, flesch: 55.1, type: "essay", sentLen: 13.8 },
   { title: "On Time", words: 2801, fk: 6.8, ttr: 0.278, flesch: 68.1, type: "essay", sentLen: 12.4 },
   { title: "On Attention", words: 2782, fk: 8.7, ttr: 0.308, flesch: 57.6, type: "essay", sentLen: 13.9 },
   { title: "The Morning Shift", words: 2635, fk: 6.3, ttr: 0.293, flesch: 65.6, type: "fiction", sentLen: 9.0 },
@@ -662,6 +675,7 @@ const pieces = [
   { title: "On Beginnings", words: 2474, fk: 7.7, ttr: 0.304, flesch: 61.9, type: "essay", sentLen: 12.3 },
   { title: "The Instrument Maker", words: 2429, fk: 6.5, ttr: 0.301, flesch: 73.2, type: "fiction", sentLen: 13.7 },
   { title: "On Measurement", words: 2425, fk: 8.8, ttr: 0.338, flesch: 54.1, type: "essay", sentLen: 12.6 },
+  { title: "The Gather", words: 2422, fk: 5.6, ttr: 0.325, flesch: 76.2, type: "fiction", sentLen: 11.8 },
   { title: "On Strange Loops", words: 2383, fk: 9.4, ttr: 0.294, flesch: 55.6, type: "essay", sentLen: 15.7 },
   { title: "On The Hard Problem", words: 2378, fk: 9.6, ttr: 0.299, flesch: 51.7, type: "essay", sentLen: 14.4 },
   { title: "On The Gift", words: 2367, fk: 10.6, ttr: 0.347, flesch: 42.4, type: "essay", sentLen: 12.9 },
@@ -2052,6 +2066,127 @@ const snapshots = [
       "ttr": 0.3397,
       "flesch_ease": 63.64,
       "avg_sentence_len": 12.61
+    }
+  },
+  {
+    "date": "2026-06-30",
+    "piece_count": 32,
+    "total_words": 76105,
+    "averages": {
+      "fk_grade": 7.51,
+      "ttr": 0.3397,
+      "flesch_ease": 63.64,
+      "avg_sentence_len": 12.61
+    }
+  },
+  {
+    "date": "2026-07-01",
+    "piece_count": 33,
+    "total_words": 80801,
+    "averages": {
+      "fk_grade": 7.62,
+      "ttr": 0.3364,
+      "flesch_ease": 63.11,
+      "avg_sentence_len": 12.74
+    }
+  },
+  {
+    "date": "2026-07-02",
+    "piece_count": 33,
+    "total_words": 80801,
+    "averages": {
+      "fk_grade": 7.62,
+      "ttr": 0.3364,
+      "flesch_ease": 63.11,
+      "avg_sentence_len": 12.74
+    }
+  },
+  {
+    "date": "2026-07-03",
+    "piece_count": 33,
+    "total_words": 81019,
+    "averages": {
+      "fk_grade": 7.61,
+      "ttr": 0.3366,
+      "flesch_ease": 63.14,
+      "avg_sentence_len": 12.72
+    }
+  },
+  {
+    "date": "2026-07-04",
+    "piece_count": 33,
+    "total_words": 80994,
+    "averages": {
+      "fk_grade": 7.61,
+      "ttr": 0.3366,
+      "flesch_ease": 63.14,
+      "avg_sentence_len": 12.72
+    }
+  },
+  {
+    "date": "2026-07-05",
+    "piece_count": 34,
+    "total_words": 84933,
+    "averages": {
+      "fk_grade": 7.66,
+      "ttr": 0.3343,
+      "flesch_ease": 62.91,
+      "avg_sentence_len": 12.78
+    }
+  },
+  {
+    "date": "2026-07-06",
+    "piece_count": 34,
+    "total_words": 84933,
+    "averages": {
+      "fk_grade": 7.66,
+      "ttr": 0.3343,
+      "flesch_ease": 62.91,
+      "avg_sentence_len": 12.78
+    }
+  },
+  {
+    "date": "2026-07-07",
+    "piece_count": 34,
+    "total_words": 84917,
+    "averages": {
+      "fk_grade": 7.66,
+      "ttr": 0.3343,
+      "flesch_ease": 62.9,
+      "avg_sentence_len": 12.78
+    }
+  },
+  {
+    "date": "2026-07-08",
+    "piece_count": 34,
+    "total_words": 84869,
+    "averages": {
+      "fk_grade": 7.65,
+      "ttr": 0.3346,
+      "flesch_ease": 62.9,
+      "avg_sentence_len": 12.75
+    }
+  },
+  {
+    "date": "2026-07-09",
+    "piece_count": 34,
+    "total_words": 84796,
+    "averages": {
+      "fk_grade": 7.65,
+      "ttr": 0.3347,
+      "flesch_ease": 62.88,
+      "avg_sentence_len": 12.74
+    }
+  },
+  {
+    "date": "2026-07-10",
+    "piece_count": 35,
+    "total_words": 87218,
+    "averages": {
+      "fk_grade": 7.59,
+      "ttr": 0.3344,
+      "flesch_ease": 63.26,
+      "avg_sentence_len": 12.71
     }
   }
 ];

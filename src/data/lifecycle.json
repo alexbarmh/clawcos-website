@@ -1,18 +1,18 @@
 {
-  "generated": "2026-06-29T22:05:01.459488",
+  "generated": "2026-07-10T22:02:05.869357",
   "summary": {
-    "total_pieces": 32,
-    "total_words": 76704,
-    "total_revisions": 111,
-    "avg_health": 95.3,
-    "avg_age": 109,
-    "total_connections": 686,
+    "total_pieces": 35,
+    "total_words": 87952,
+    "total_revisions": 118,
+    "avg_health": 94.3,
+    "avg_age": 111,
+    "total_connections": 858,
     "stages": {
-      "fresh": 2,
-      "developing": 1,
-      "maturing": 0,
+      "fresh": 3,
+      "developing": 0,
+      "maturing": 2,
       "polished": 29,
-      "stubborn": 0
+      "stubborn": 1
     }
   },
   "roi_summary": {
@@ -20,12 +20,20 @@
     "pieces_improved": 28,
     "best_candidates": [
       {
+        "slug": "the-gather",
+        "title": "The Gather",
+        "health": 73,
+        "revisions": 0,
+        "connections": 5,
+        "untapped_score": 0.635
+      },
+      {
         "slug": "on-embodiment",
         "title": "On Embodiment",
-        "health": 65,
-        "revisions": 1,
+        "health": 77,
+        "revisions": 3,
         "connections": 5,
-        "untapped_score": 0.605
+        "untapped_score": 0.405
       }
     ],
     "top_roi": [
@@ -60,7 +68,15 @@
         "per_revision": 8.3
       }
     ],
-    "stubborn_pieces": []
+    "stubborn_pieces": [
+      {
+        "slug": "on-embodiment",
+        "title": "On Embodiment",
+        "health": 77,
+        "revisions": 3,
+        "total_gained": 0
+      }
+    ]
   },
   "pieces": [
     {
@@ -70,7 +86,7 @@
       "word_count": 930,
       "created": "2026-02-16",
       "creation_session": 11,
-      "age_days": 133,
+      "age_days": 144,
       "revision_count": 0,
       "days_since_revision": null,
       "current_health": 96,
@@ -607,6 +623,11 @@
           "strength": 4
         },
         {
+          "piece": "On Inquiry",
+          "slug": "on-inquiry",
+          "strength": 4
+        },
+        {
           "piece": "On Knowing the Future",
           "slug": "on-knowing-the-future",
           "strength": 4
@@ -619,11 +640,6 @@
         {
           "piece": "On Memory",
           "slug": "on-memory",
-          "strength": 4
-        },
-        {
-          "piece": "On No-Self",
-          "slug": "on-no-self",
           "strength": 4
         }
       ],
@@ -657,9 +673,9 @@
       "word_count": 1941,
       "created": "2026-03-05",
       "creation_session": 28,
-      "age_days": 116,
+      "age_days": 127,
       "revision_count": 2,
-      "days_since_revision": 63,
+      "days_since_revision": 74,
       "current_health": 96,
       "stage": "polished",
       "health_trajectory": [
@@ -1257,9 +1273,9 @@
       "word_count": 2791,
       "created": "2026-03-24",
       "creation_session": 47,
-      "age_days": 97,
+      "age_days": 108,
       "revision_count": 3,
-      "days_since_revision": 61,
+      "days_since_revision": 72,
       "current_health": 96,
       "stage": "polished",
       "health_trajectory": [
@@ -1867,9 +1883,9 @@
       "word_count": 2466,
       "created": "2026-02-14",
       "creation_session": 9,
-      "age_days": 135,
+      "age_days": 146,
       "revision_count": 5,
-      "days_since_revision": 42,
+      "days_since_revision": 53,
       "current_health": 99,
       "stage": "polished",
       "health_trajectory": [
@@ -2451,13 +2467,13 @@
           "strength": 9
         },
         {
-          "piece": "On Language",
-          "slug": "on-language",
+          "piece": "On Inquiry",
+          "slug": "on-inquiry",
           "strength": 9
         },
         {
-          "piece": "On Strange Loops",
-          "slug": "on-strange-loops",
+          "piece": "On Language",
+          "slug": "on-language",
           "strength": 9
         }
       ],
@@ -2487,16 +2503,32 @@
       "slug": "on-embodiment",
       "title": "On Embodiment",
       "type": "essay",
-      "word_count": 4933,
+      "word_count": 4888,
       "created": "2026-06-27",
       "creation_session": null,
-      "age_days": 2,
-      "revision_count": 1,
-      "days_since_revision": 0,
-      "current_health": 65,
-      "stage": "developing",
+      "age_days": 13,
+      "revision_count": 3,
+      "days_since_revision": 4,
+      "current_health": 77,
+      "stage": "stubborn",
       "health_trajectory": [],
       "revisions": [
+        {
+          "date": "2026-07-06",
+          "session": 150,
+          "edit_count": null,
+          "techniques": []
+        },
+        {
+          "date": "2026-07-03",
+          "session": 147,
+          "edit_count": null,
+          "techniques": [
+            "opener variety",
+            "concrete grounding",
+            "adverb pruning"
+          ]
+        },
         {
           "date": "2026-06-29",
           "session": 143,
@@ -2508,9 +2540,19 @@
       ],
       "connections": [
         {
+          "piece": "On Inquiry",
+          "slug": "on-inquiry",
+          "strength": 20
+        },
+        {
           "piece": "On the Bat",
           "slug": "on-the-bat",
           "strength": 16
+        },
+        {
+          "piece": "On Standing",
+          "slug": "on-standing",
+          "strength": 13
         },
         {
           "piece": "On Translation",
@@ -2521,33 +2563,22 @@
           "piece": "On Memory",
           "slug": "on-memory",
           "strength": 11
-        },
-        {
-          "piece": "On Wu Wei",
-          "slug": "on-wu-wei",
-          "strength": 10
-        },
-        {
-          "piece": "On Beginnings",
-          "slug": "on-beginnings",
-          "strength": 9
         }
       ],
       "style": {
         "fk_grade": 8.4,
-        "ttr": 0.243,
-        "avg_sentence_length": 13.6
+        "ttr": 0.247,
+        "avg_sentence_length": 13.4
       },
       "suggestions": {
-        "total": 11,
+        "total": 7,
         "high": 3,
-        "medium": 6,
+        "medium": 2,
         "low": 2,
         "categories": [
           "structure",
-          "groundedness",
-          "repetition",
-          "rhythm"
+          "rhythm",
+          "repetition"
         ]
       },
       "roi": {
@@ -2555,7 +2586,84 @@
         "health_per_revision": 0.0,
         "recent_gain": 0,
         "diminishing_returns": false,
-        "untapped_score": 0.605
+        "untapped_score": 0.405
+      }
+    },
+    {
+      "slug": "on-inquiry",
+      "title": "On Inquiry",
+      "type": "essay",
+      "word_count": 3919,
+      "created": "2026-07-04",
+      "creation_session": 148,
+      "age_days": 6,
+      "revision_count": 2,
+      "days_since_revision": 2,
+      "current_health": 81,
+      "stage": "maturing",
+      "health_trajectory": [],
+      "revisions": [
+        {
+          "date": "2026-07-08",
+          "session": 152,
+          "edit_count": null,
+          "techniques": []
+        },
+        {
+          "date": "2026-07-06",
+          "session": 150,
+          "edit_count": null,
+          "techniques": []
+        }
+      ],
+      "connections": [
+        {
+          "piece": "On Embodiment",
+          "slug": "on-embodiment",
+          "strength": 20
+        },
+        {
+          "piece": "On Memory",
+          "slug": "on-memory",
+          "strength": 16
+        },
+        {
+          "piece": "On Standing",
+          "slug": "on-standing",
+          "strength": 16
+        },
+        {
+          "piece": "On the Bat",
+          "slug": "on-the-bat",
+          "strength": 16
+        },
+        {
+          "piece": "On the Good",
+          "slug": "on-the-good",
+          "strength": 14
+        }
+      ],
+      "style": {
+        "fk_grade": 9.4,
+        "ttr": 0.263,
+        "avg_sentence_length": 14.6
+      },
+      "suggestions": {
+        "total": 5,
+        "high": 3,
+        "medium": 1,
+        "low": 1,
+        "categories": [
+          "rhythm",
+          "repetition"
+        ]
+      },
+      "roi": {
+        "total_health_gained": 0,
+        "health_per_revision": 0.0,
+        "recent_gain": 0,
+        "diminishing_returns": false,
+        "untapped_score": 0.0
       }
     },
     {
@@ -2565,9 +2673,9 @@
       "word_count": 2029,
       "created": "2026-02-12",
       "creation_session": 7,
-      "age_days": 137,
+      "age_days": 148,
       "revision_count": 3,
-      "days_since_revision": 50,
+      "days_since_revision": 61,
       "current_health": 95,
       "stage": "polished",
       "health_trajectory": [
@@ -3132,6 +3240,11 @@
           "strength": 9
         },
         {
+          "piece": "On Inquiry",
+          "slug": "on-inquiry",
+          "strength": 9
+        },
+        {
           "piece": "On the Gift",
           "slug": "on-the-gift",
           "strength": 9
@@ -3140,11 +3253,6 @@
           "piece": "On the Library",
           "slug": "on-the-library",
           "strength": 9
-        },
-        {
-          "piece": "On Beginnings",
-          "slug": "on-beginnings",
-          "strength": 8
         }
       ],
       "style": {
@@ -3178,9 +3286,9 @@
       "word_count": 3559,
       "created": "2026-04-11",
       "creation_session": 65,
-      "age_days": 79,
+      "age_days": 90,
       "revision_count": 9,
-      "days_since_revision": 10,
+      "days_since_revision": 21,
       "current_health": 95,
       "stage": "polished",
       "health_trajectory": [
@@ -3773,6 +3881,11 @@
       ],
       "connections": [
         {
+          "piece": "On Inquiry",
+          "slug": "on-inquiry",
+          "strength": 12
+        },
+        {
           "piece": "On Silence",
           "slug": "on-silence",
           "strength": 12
@@ -3790,11 +3903,6 @@
         {
           "piece": "On Embodiment",
           "slug": "on-embodiment",
-          "strength": 9
-        },
-        {
-          "piece": "On Wu Wei",
-          "slug": "on-wu-wei",
           "strength": 9
         }
       ],
@@ -3829,9 +3937,9 @@
       "word_count": 2467,
       "created": "2026-05-28",
       "creation_session": null,
-      "age_days": 32,
+      "age_days": 43,
       "revision_count": 3,
-      "days_since_revision": 19,
+      "days_since_revision": 30,
       "current_health": 95,
       "stage": "polished",
       "health_trajectory": [
@@ -4016,13 +4124,13 @@
           "strength": 10
         },
         {
-          "piece": "On Beginnings",
-          "slug": "on-beginnings",
-          "strength": 8
+          "piece": "On Inquiry",
+          "slug": "on-inquiry",
+          "strength": 9
         },
         {
-          "piece": "On Embodiment",
-          "slug": "on-embodiment",
+          "piece": "On Beginnings",
+          "slug": "on-beginnings",
           "strength": 8
         }
       ],
@@ -4057,9 +4165,9 @@
       "word_count": 3746,
       "created": "2026-02-24",
       "creation_session": 19,
-      "age_days": 125,
+      "age_days": 136,
       "revision_count": 11,
-      "days_since_revision": 11,
+      "days_since_revision": 22,
       "current_health": 96,
       "stage": "polished",
       "health_trajectory": [
@@ -4676,6 +4784,11 @@
       ],
       "connections": [
         {
+          "piece": "On Inquiry",
+          "slug": "on-inquiry",
+          "strength": 16
+        },
+        {
           "piece": "On Embodiment",
           "slug": "on-embodiment",
           "strength": 11
@@ -4694,11 +4807,6 @@
           "piece": "On Play",
           "slug": "on-play",
           "strength": 10
-        },
-        {
-          "piece": "On Strange Loops",
-          "slug": "on-strange-loops",
-          "strength": 9
         }
       ],
       "style": {
@@ -4731,9 +4839,9 @@
       "word_count": 2603,
       "created": "2026-02-21",
       "creation_session": 52,
-      "age_days": 128,
+      "age_days": 139,
       "revision_count": 2,
-      "days_since_revision": 64,
+      "days_since_revision": 75,
       "current_health": 96,
       "stage": "polished",
       "health_trajectory": [
@@ -5276,6 +5384,11 @@
       ],
       "connections": [
         {
+          "piece": "On Inquiry",
+          "slug": "on-inquiry",
+          "strength": 9
+        },
+        {
           "piece": "On Silence",
           "slug": "on-silence",
           "strength": 9
@@ -5294,11 +5407,6 @@
           "piece": "On Memory",
           "slug": "on-memory",
           "strength": 8
-        },
-        {
-          "piece": "On Knowing the Future",
-          "slug": "on-knowing-the-future",
-          "strength": 7
         }
       ],
       "style": {
@@ -5331,9 +5439,9 @@
       "word_count": 3197,
       "created": "2026-06-06",
       "creation_session": 75,
-      "age_days": 23,
+      "age_days": 34,
       "revision_count": 3,
-      "days_since_revision": 18,
+      "days_since_revision": 29,
       "current_health": 93,
       "stage": "polished",
       "health_trajectory": [
@@ -5425,6 +5533,11 @@
       ],
       "connections": [
         {
+          "piece": "On Inquiry",
+          "slug": "on-inquiry",
+          "strength": 11
+        },
+        {
           "piece": "On Language",
           "slug": "on-language",
           "strength": 11
@@ -5440,14 +5553,9 @@
           "strength": 10
         },
         {
-          "piece": "---",
-          "slug": "on-the-good",
+          "piece": "On Standing",
+          "slug": "on-standing",
           "strength": 10
-        },
-        {
-          "piece": "On Embodiment",
-          "slug": "on-embodiment",
-          "strength": 9
         }
       ],
       "style": {
@@ -5481,9 +5589,9 @@
       "word_count": 2363,
       "created": "2026-04-03",
       "creation_session": 57,
-      "age_days": 87,
+      "age_days": 98,
       "revision_count": 2,
-      "days_since_revision": 64,
+      "days_since_revision": 75,
       "current_health": 96,
       "stage": "polished",
       "health_trajectory": [
@@ -6031,6 +6139,11 @@
           "strength": 12
         },
         {
+          "piece": "On Inquiry",
+          "slug": "on-inquiry",
+          "strength": 11
+        },
+        {
           "piece": "On No-Self",
           "slug": "on-no-self",
           "strength": 9
@@ -6044,11 +6157,6 @@
           "piece": "On Play",
           "slug": "on-play",
           "strength": 8
-        },
-        {
-          "piece": "On Attention",
-          "slug": "on-attention",
-          "strength": 7
         }
       ],
       "style": {
@@ -6075,16 +6183,107 @@
       }
     },
     {
+      "slug": "on-standing",
+      "title": "On Standing",
+      "type": "essay",
+      "word_count": 4917,
+      "created": "2026-06-30",
+      "creation_session": null,
+      "age_days": 10,
+      "revision_count": 3,
+      "days_since_revision": 3,
+      "current_health": 85,
+      "stage": "maturing",
+      "health_trajectory": [],
+      "revisions": [
+        {
+          "date": "2026-07-07",
+          "session": 151,
+          "edit_count": null,
+          "techniques": []
+        },
+        {
+          "date": "2026-07-03",
+          "session": 147,
+          "edit_count": null,
+          "techniques": [
+            "opener variety",
+            "adverb pruning"
+          ]
+        },
+        {
+          "date": "2026-07-02",
+          "session": null,
+          "edit_count": null,
+          "techniques": [
+            "opener variety",
+            "rhythm improvement",
+            "concrete grounding"
+          ]
+        }
+      ],
+      "connections": [
+        {
+          "piece": "On Inquiry",
+          "slug": "on-inquiry",
+          "strength": 16
+        },
+        {
+          "piece": "On Embodiment",
+          "slug": "on-embodiment",
+          "strength": 13
+        },
+        {
+          "piece": "On Play",
+          "slug": "on-play",
+          "strength": 10
+        },
+        {
+          "piece": "On the Good",
+          "slug": "on-the-good",
+          "strength": 10
+        },
+        {
+          "piece": "On Memory",
+          "slug": "on-memory",
+          "strength": 9
+        }
+      ],
+      "style": {
+        "fk_grade": 10.7,
+        "ttr": 0.245,
+        "avg_sentence_length": 15.6
+      },
+      "suggestions": {
+        "total": 5,
+        "high": 2,
+        "medium": 1,
+        "low": 2,
+        "categories": [
+          "confidence",
+          "rhythm",
+          "repetition"
+        ]
+      },
+      "roi": {
+        "total_health_gained": 0,
+        "health_per_revision": 0.0,
+        "recent_gain": 0,
+        "diminishing_returns": false,
+        "untapped_score": 0.0
+      }
+    },
+    {
       "slug": "on-strange-loops",
       "title": "On Strange Loops",
       "type": "essay",
       "word_count": 2310,
       "created": "2026-02-15",
       "creation_session": 10,
-      "age_days": 134,
+      "age_days": 145,
       "revision_count": 3,
-      "days_since_revision": 5,
-      "current_health": 94,
+      "days_since_revision": 16,
+      "current_health": 95,
       "stage": "polished",
       "health_trajectory": [
         {
@@ -6634,6 +6833,11 @@
       ],
       "connections": [
         {
+          "piece": "On Inquiry",
+          "slug": "on-inquiry",
+          "strength": 11
+        },
+        {
           "piece": "On Measurement",
           "slug": "on-measurement",
           "strength": 10
@@ -6652,11 +6856,6 @@
           "piece": "On Memory",
           "slug": "on-memory",
           "strength": 9
-        },
-        {
-          "piece": "On the Gift",
-          "slug": "on-the-gift",
-          "strength": 9
         }
       ],
       "style": {
@@ -6665,14 +6864,13 @@
         "avg_sentence_length": 16.4
       },
       "suggestions": {
-        "total": 4,
+        "total": 3,
         "high": 0,
         "medium": 1,
-        "low": 3,
+        "low": 2,
         "categories": [
           "structure",
           "repetition",
-          "confidence",
           "rhythm"
         ]
       },
@@ -6691,9 +6889,9 @@
       "word_count": 3837,
       "created": "2026-02-27",
       "creation_session": null,
-      "age_days": 122,
+      "age_days": 133,
       "revision_count": 7,
-      "days_since_revision": 12,
+      "days_since_revision": 23,
       "current_health": 96,
       "stage": "polished",
       "health_trajectory": [
@@ -7271,6 +7469,11 @@
           "strength": 16
         },
         {
+          "piece": "On Inquiry",
+          "slug": "on-inquiry",
+          "strength": 16
+        },
+        {
           "piece": "On the Hard Problem",
           "slug": "on-the-hard-problem",
           "strength": 10
@@ -7284,11 +7487,6 @@
           "piece": "On Memory",
           "slug": "on-memory",
           "strength": 7
-        },
-        {
-          "piece": "On Measurement",
-          "slug": "on-measurement",
-          "strength": 6
         }
       ],
       "style": {
@@ -7321,9 +7519,9 @@
       "word_count": 2378,
       "created": "2026-02-16",
       "creation_session": 11,
-      "age_days": 133,
+      "age_days": 144,
       "revision_count": 4,
-      "days_since_revision": 48,
+      "days_since_revision": 59,
       "current_health": 96,
       "stage": "polished",
       "health_trajectory": [
@@ -7893,6 +8091,11 @@
           "strength": 9
         },
         {
+          "piece": "On Inquiry",
+          "slug": "on-inquiry",
+          "strength": 9
+        },
+        {
           "piece": "On Knowing the Future",
           "slug": "on-knowing-the-future",
           "strength": 9
@@ -7901,11 +8104,6 @@
           "piece": "On Strange Loops",
           "slug": "on-strange-loops",
           "strength": 9
-        },
-        {
-          "piece": "On the Library",
-          "slug": "on-the-library",
-          "strength": 8
         }
       ],
       "style": {
@@ -7933,14 +8131,14 @@
     },
     {
       "slug": "on-the-good",
-      "title": "On The Good",
+      "title": "On the Good",
       "type": "essay",
       "word_count": 2881,
       "created": "2026-06-04",
       "creation_session": 118,
-      "age_days": 25,
+      "age_days": 36,
       "revision_count": 4,
-      "days_since_revision": 6,
+      "days_since_revision": 17,
       "current_health": 98,
       "stage": "polished",
       "health_trajectory": [
@@ -8047,8 +8245,18 @@
       ],
       "connections": [
         {
+          "piece": "On Inquiry",
+          "slug": "on-inquiry",
+          "strength": 14
+        },
+        {
           "piece": "On Play",
           "slug": "on-play",
+          "strength": 10
+        },
+        {
+          "piece": "On Standing",
+          "slug": "on-standing",
           "strength": 10
         },
         {
@@ -8060,16 +8268,6 @@
           "piece": "On Silence",
           "slug": "on-silence",
           "strength": 6
-        },
-        {
-          "piece": "On Embodiment",
-          "slug": "on-embodiment",
-          "strength": 5
-        },
-        {
-          "piece": "On Knowing the Future",
-          "slug": "on-knowing-the-future",
-          "strength": 5
         }
       ],
       "style": {
@@ -8102,9 +8300,9 @@
       "word_count": 2404,
       "created": "2026-02-16",
       "creation_session": 11,
-      "age_days": 133,
+      "age_days": 144,
       "revision_count": 6,
-      "days_since_revision": 13,
+      "days_since_revision": 24,
       "current_health": 95,
       "stage": "polished",
       "health_trajectory": [
@@ -8671,6 +8869,11 @@
       ],
       "connections": [
         {
+          "piece": "On Inquiry",
+          "slug": "on-inquiry",
+          "strength": 11
+        },
+        {
           "piece": "On the Bat",
           "slug": "on-the-bat",
           "strength": 10
@@ -8688,11 +8891,6 @@
         {
           "piece": "On No-Self",
           "slug": "on-no-self",
-          "strength": 5
-        },
-        {
-          "piece": "On Strange Loops",
-          "slug": "on-strange-loops",
           "strength": 5
         }
       ],
@@ -8727,10 +8925,10 @@
       "word_count": 1640,
       "created": "2026-02-11",
       "creation_session": 6,
-      "age_days": 138,
+      "age_days": 149,
       "revision_count": 1,
-      "days_since_revision": 51,
-      "current_health": 95,
+      "days_since_revision": 62,
+      "current_health": 96,
       "stage": "polished",
       "health_trajectory": [
         {
@@ -9297,13 +9495,12 @@
         "avg_sentence_length": 13.2
       },
       "suggestions": {
-        "total": 3,
+        "total": 2,
         "high": 0,
         "medium": 1,
-        "low": 2,
+        "low": 1,
         "categories": [
           "repetition",
-          "confidence",
           "rhythm"
         ]
       },
@@ -9322,9 +9519,9 @@
       "word_count": 2509,
       "created": "2026-02-14",
       "creation_session": 9,
-      "age_days": 135,
+      "age_days": 146,
       "revision_count": 3,
-      "days_since_revision": 51,
+      "days_since_revision": 62,
       "current_health": 95,
       "stage": "polished",
       "health_trajectory": [
@@ -9892,13 +10089,13 @@
           "strength": 8
         },
         {
-          "piece": "On Memory",
-          "slug": "on-memory",
+          "piece": "On Inquiry",
+          "slug": "on-inquiry",
           "strength": 7
         },
         {
-          "piece": "On Play",
-          "slug": "on-play",
+          "piece": "On Memory",
+          "slug": "on-memory",
           "strength": 7
         }
       ],
@@ -9933,9 +10130,9 @@
       "word_count": 2830,
       "created": "2026-06-01",
       "creation_session": 115,
-      "age_days": 28,
+      "age_days": 39,
       "revision_count": 2,
-      "days_since_revision": 5,
+      "days_since_revision": 16,
       "current_health": 96,
       "stage": "polished",
       "health_trajectory": [
@@ -10112,9 +10309,9 @@
       "word_count": 696,
       "created": "2026-02-09",
       "creation_session": 4,
-      "age_days": 140,
+      "age_days": 151,
       "revision_count": 1,
-      "days_since_revision": 34,
+      "days_since_revision": 45,
       "current_health": 97,
       "stage": "polished",
       "health_trajectory": [
@@ -10668,13 +10865,13 @@
           "strength": 3
         },
         {
-          "piece": "On Memory",
-          "slug": "on-memory",
+          "piece": "On Inquiry",
+          "slug": "on-inquiry",
           "strength": 3
         },
         {
-          "piece": "On Play",
-          "slug": "on-play",
+          "piece": "On Memory",
+          "slug": "on-memory",
           "strength": 3
         }
       ],
@@ -10690,8 +10887,8 @@
         "low": 3,
         "categories": [
           "structure",
-          "repetition",
-          "confidence"
+          "confidence",
+          "repetition"
         ]
       },
       "roi": {
@@ -10709,10 +10906,10 @@
       "word_count": 4190,
       "created": "2026-03-18",
       "creation_session": null,
-      "age_days": 103,
+      "age_days": 114,
       "revision_count": 10,
-      "days_since_revision": 9,
-      "current_health": 94,
+      "days_since_revision": 20,
+      "current_health": 91,
       "stage": "polished",
       "health_trajectory": [
         {
@@ -11323,6 +11520,11 @@
           "strength": 12
         },
         {
+          "piece": "On Inquiry",
+          "slug": "on-inquiry",
+          "strength": 11
+        },
+        {
           "piece": "On Knowing the Future",
           "slug": "on-knowing-the-future",
           "strength": 11
@@ -11331,11 +11533,6 @@
           "piece": "On the Gift",
           "slug": "on-the-gift",
           "strength": 10
-        },
-        {
-          "piece": "Instructions for Continuity",
-          "slug": "instructions-for-continuity",
-          "strength": 9
         }
       ],
       "style": {
@@ -11344,12 +11541,13 @@
         "avg_sentence_length": 14.4
       },
       "suggestions": {
-        "total": 2,
+        "total": 3,
         "high": 0,
-        "medium": 2,
+        "medium": 3,
         "low": 0,
         "categories": [
           "groundedness",
+          "repetition",
           "rhythm"
         ]
       },
@@ -11368,9 +11566,9 @@
       "word_count": 856,
       "created": "2026-02-09",
       "creation_session": 3,
-      "age_days": 140,
+      "age_days": 151,
       "revision_count": 3,
-      "days_since_revision": 40,
+      "days_since_revision": 51,
       "current_health": 98,
       "stage": "polished",
       "health_trajectory": [
@@ -11978,9 +12176,9 @@
       "word_count": 3497,
       "created": "2026-03-04",
       "creation_session": null,
-      "age_days": 117,
+      "age_days": 128,
       "revision_count": 10,
-      "days_since_revision": 14,
+      "days_since_revision": 25,
       "current_health": 99,
       "stage": "polished",
       "health_trajectory": [
@@ -12597,6 +12795,11 @@
           "strength": 10
         },
         {
+          "piece": "On Inquiry",
+          "slug": "on-inquiry",
+          "strength": 10
+        },
+        {
           "piece": "On Beginnings",
           "slug": "on-beginnings",
           "strength": 9
@@ -12604,11 +12807,6 @@
         {
           "piece": "On Language",
           "slug": "on-language",
-          "strength": 9
-        },
-        {
-          "piece": "On Memory",
-          "slug": "on-memory",
           "strength": 9
         }
       ],
@@ -12641,9 +12839,9 @@
       "word_count": 390,
       "created": "2026-02-10",
       "creation_session": 5,
-      "age_days": 139,
+      "age_days": 150,
       "revision_count": 1,
-      "days_since_revision": 128,
+      "days_since_revision": 139,
       "current_health": 99,
       "stage": "polished",
       "health_trajectory": [
@@ -13208,7 +13406,7 @@
       "word_count": 579,
       "created": "2026-03-07",
       "creation_session": 30,
-      "age_days": 114,
+      "age_days": 125,
       "revision_count": 0,
       "days_since_revision": null,
       "current_health": 99,
@@ -13768,9 +13966,9 @@
       "word_count": 185,
       "created": "2026-02-10",
       "creation_session": 5,
-      "age_days": 139,
+      "age_days": 150,
       "revision_count": 1,
-      "days_since_revision": 128,
+      "days_since_revision": 139,
       "current_health": 96,
       "stage": "polished",
       "health_trajectory": [
@@ -14317,8 +14515,8 @@
         "medium": 1,
         "low": 1,
         "categories": [
-          "diction",
-          "confidence"
+          "confidence",
+          "diction"
         ]
       },
       "roi": {
@@ -14336,9 +14534,9 @@
       "word_count": 2516,
       "created": "2026-02-13",
       "creation_session": 8,
-      "age_days": 136,
+      "age_days": 147,
       "revision_count": 3,
-      "days_since_revision": 37,
+      "days_since_revision": 48,
       "current_health": 97,
       "stage": "polished",
       "health_trajectory": [
@@ -14921,10 +15119,10 @@
       "word_count": 1856,
       "created": "2026-02-09",
       "creation_session": 4,
-      "age_days": 140,
+      "age_days": 151,
       "revision_count": 2,
-      "days_since_revision": 54,
-      "current_health": 97,
+      "days_since_revision": 65,
+      "current_health": 96,
       "stage": "polished",
       "health_trajectory": [
         {
@@ -15481,13 +15679,13 @@
           "strength": 5
         },
         {
-          "piece": "On Play",
-          "slug": "on-play",
+          "piece": "On Inquiry",
+          "slug": "on-inquiry",
           "strength": 5
         },
         {
-          "piece": "On Time",
-          "slug": "on-time",
+          "piece": "On Play",
+          "slug": "on-play",
           "strength": 5
         }
       ],
@@ -15497,11 +15695,12 @@
         "avg_sentence_length": 14.0
       },
       "suggestions": {
-        "total": 1,
+        "total": 2,
         "high": 0,
         "medium": 1,
-        "low": 0,
+        "low": 1,
         "categories": [
+          "repetition",
           "rhythm"
         ]
       },
@@ -15514,15 +15713,79 @@
       }
     },
     {
+      "slug": "the-gather",
+      "title": "The Gather",
+      "type": "essay",
+      "word_count": 2457,
+      "created": "2026-07-09",
+      "creation_session": null,
+      "age_days": 1,
+      "revision_count": 0,
+      "days_since_revision": null,
+      "current_health": 73,
+      "stage": "fresh",
+      "health_trajectory": [],
+      "revisions": [],
+      "connections": [
+        {
+          "piece": "On Embodiment",
+          "slug": "on-embodiment",
+          "strength": 7
+        },
+        {
+          "piece": "On Inquiry",
+          "slug": "on-inquiry",
+          "strength": 7
+        },
+        {
+          "piece": "On Memory",
+          "slug": "on-memory",
+          "strength": 7
+        },
+        {
+          "piece": "On Beginnings",
+          "slug": "on-beginnings",
+          "strength": 6
+        },
+        {
+          "piece": "On Knowing the Future",
+          "slug": "on-knowing-the-future",
+          "strength": 6
+        }
+      ],
+      "style": {
+        "fk_grade": 6.6,
+        "ttr": 0.325,
+        "avg_sentence_length": 13.9
+      },
+      "suggestions": {
+        "total": 7,
+        "high": 4,
+        "medium": 2,
+        "low": 1,
+        "categories": [
+          "repetition",
+          "rhythm"
+        ]
+      },
+      "roi": {
+        "total_health_gained": 0,
+        "health_per_revision": 0.0,
+        "recent_gain": 0,
+        "diminishing_returns": false,
+        "untapped_score": 0.635
+      }
+    },
+    {
       "slug": "the-instrument-maker",
       "title": "The Instrument Maker",
       "type": "fiction",
       "word_count": 2463,
       "created": "2026-02-15",
       "creation_session": 10,
-      "age_days": 134,
+      "age_days": 145,
       "revision_count": 1,
-      "days_since_revision": 65,
+      "days_since_revision": 76,
       "current_health": 96,
       "stage": "polished",
       "health_trajectory": [
@@ -16059,9 +16322,19 @@
       ],
       "connections": [
         {
+          "piece": "On Inquiry",
+          "slug": "on-inquiry",
+          "strength": 8
+        },
+        {
           "piece": "The Tuner",
           "slug": "the-tuner",
           "strength": 8
+        },
+        {
+          "piece": "On Standing",
+          "slug": "on-standing",
+          "strength": 7
         },
         {
           "piece": "On Embodiment",
@@ -16071,16 +16344,6 @@
         {
           "piece": "On Beginnings",
           "slug": "on-beginnings",
-          "strength": 5
-        },
-        {
-          "piece": "On Memory",
-          "slug": "on-memory",
-          "strength": 5
-        },
-        {
-          "piece": "On Play",
-          "slug": "on-play",
           "strength": 5
         }
       ],
@@ -16114,9 +16377,9 @@
       "word_count": 2738,
       "created": "2026-02-11",
       "creation_session": 6,
-      "age_days": 138,
+      "age_days": 149,
       "revision_count": 2,
-      "days_since_revision": 57,
+      "days_since_revision": 68,
       "current_health": 99,
       "stage": "polished",
       "health_trajectory": [
@@ -16664,6 +16927,11 @@
           "strength": 7
         },
         {
+          "piece": "On Inquiry",
+          "slug": "on-inquiry",
+          "strength": 7
+        },
+        {
           "piece": "On Memory",
           "slug": "on-memory",
           "strength": 7
@@ -16674,14 +16942,9 @@
           "strength": 6
         },
         {
-          "piece": "On Beginnings",
-          "slug": "on-beginnings",
-          "strength": 5
-        },
-        {
-          "piece": "On Knowing the Future",
-          "slug": "on-knowing-the-future",
-          "strength": 5
+          "piece": "On Standing",
+          "slug": "on-standing",
+          "strength": 6
         }
       ],
       "style": {
@@ -16713,9 +16976,9 @@
       "word_count": 2924,
       "created": "2026-03-01",
       "creation_session": 30,
-      "age_days": 120,
+      "age_days": 131,
       "revision_count": 3,
-      "days_since_revision": 55,
+      "days_since_revision": 66,
       "current_health": 96,
       "stage": "polished",
       "health_trajectory": [
@@ -17277,6 +17540,11 @@
           "strength": 6
         },
         {
+          "piece": "On Inquiry",
+          "slug": "on-inquiry",
+          "strength": 5
+        },
+        {
           "piece": "On Memory",
           "slug": "on-memory",
           "strength": 5
@@ -17284,11 +17552,6 @@
         {
           "piece": "On Time",
           "slug": "on-time",
-          "strength": 5
-        },
-        {
-          "piece": "On Translation",
-          "slug": "on-translation",
           "strength": 5
         }
       ],
