@@ -1,17 +1,17 @@
 {
-  "generated": "2026-07-10T22:02:01Z",
+  "generated": "2026-07-11T22:02:05Z",
   "collection": {
     "total_pieces": 36,
-    "total_suggestions": 92,
+    "total_suggestions": 91,
     "by_priority": {
-      "high": 12,
+      "high": 11,
       "medium": 34,
       "low": 46
     },
     "by_category": {
       "deliberate": 50,
       "repetition": 44,
-      "rhythm": 29,
+      "rhythm": 28,
       "structure": 9,
       "confidence": 5,
       "groundedness": 3,
@@ -20,8 +20,8 @@
     "by_type": {
       "essay": {
         "count": 25,
-        "avg_suggestions": 4.1,
-        "avg_words": 2722,
+        "avg_suggestions": 4.0,
+        "avg_words": 2712,
         "avg_health": 94
       },
       "poetry": {
@@ -33,40 +33,35 @@
       "fiction": {
         "count": 7,
         "avg_suggestions": 4.1,
-        "avg_words": 2371,
-        "avg_health": 93
+        "avg_words": 2367,
+        "avg_health": 94
       }
     },
-    "avg_health_score": 94.2
+    "avg_health_score": 94.4
   },
   "pieces": [
     {
       "title": "The Gather",
       "slug": "the-gather",
       "type": "fiction",
-      "words": 2420,
-      "fk_grade": 6.6,
-      "ttr": 0.325,
-      "sentences": 173,
+      "words": 2392,
+      "fk_grade": 6.5,
+      "ttr": 0.327,
+      "sentences": 172,
       "suggestions_total": 7,
-      "suggestions_high": 4,
-      "suggestions_medium": 2,
+      "suggestions_high": 3,
+      "suggestions_medium": 3,
       "suggestions_low": 1,
       "suggestions": [
         {
           "priority": "high",
-          "category": "rhythm",
-          "issue": "Monotonous stretch (high): 5 sentences averaging 9 words (CV=0.144). Word counts: [10, 11, 7, 9, 10]."
-        },
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"i had\" appears 7 times"
-        },
-        {
-          "priority": "high",
           "category": "repetition",
           "issue": "Repeated sentence opener: \"the glass\" appears 4 times"
+        },
+        {
+          "priority": "high",
+          "category": "repetition",
+          "issue": "Repeated sentence opener: \"i had\" appears 3 times"
         },
         {
           "priority": "high",
@@ -81,28 +76,28 @@
         {
           "priority": "medium",
           "category": "rhythm",
+          "issue": "Monotonous stretch (medium): 5 sentences averaging 9 words (CV=0.160). Word counts: [10, 11, 7, 8, 10]."
+        },
+        {
+          "priority": "medium",
+          "category": "rhythm",
           "issue": "19 sentences over 30 words \u2014 the piece may feel heavy"
         },
         {
           "priority": "low",
           "category": "repetition",
-          "issue": "10 word echo clusters detected (content words repeated in nearby sentences)"
+          "issue": "11 word echo clusters detected (content words repeated in nearby sentences)"
         }
       ],
-      "health_score": 73,
+      "health_score": 75,
       "weaknesses": {
         "passive": {
-          "count": 6,
+          "count": 5,
           "instances": [
             {
               "sentence": 6,
               "excerpt": "Her arms were mapped with old burns \u2014 small, circular scars from contact with hot glass, each one a punctuation mark in ",
               "match": "were mapped"
-            },
-            {
-              "sentence": 17,
-              "excerpt": "Maren kept it symmetrical through rotation, the pipe turning in her hands with a constancy that I initially mistook for ",
-              "match": "been practiced"
             },
             {
               "sentence": 46,
@@ -148,7 +143,7 @@
               "adverbs": [
                 "just"
               ],
-              "excerpt": "I had a notebook full of you just knows."
+              "excerpt": "My notebook was filling with you just knows."
             },
             {
               "sentence": 23,
@@ -172,7 +167,7 @@
               "excerpt": "The right pressure was, of course, something you just knew."
             },
             {
-              "sentence": 120,
+              "sentence": 119,
               "adverbs": [
                 "just"
               ],
@@ -189,28 +184,28 @@
       "comparison": [
         {
           "metric": "Reading Complexity (FK Grade)",
-          "piece_value": 6.6,
-          "collection_avg": 7.81,
-          "difference": -1.21,
-          "percent_diff": -15.5,
+          "piece_value": 6.5,
+          "collection_avg": 7.82,
+          "difference": -1.32,
+          "percent_diff": -16.9,
           "unit": "higher = more complex",
           "direction": "below"
         },
         {
           "metric": "Average Sentence Length",
           "piece_value": 13.9,
-          "collection_avg": 13.0,
-          "difference": 0.9,
-          "percent_diff": 6.9,
+          "collection_avg": 13.02,
+          "difference": 0.88,
+          "percent_diff": 6.8,
           "unit": "words",
           "direction": "above"
         },
         {
           "metric": "Vocabulary Diversity (TTR)",
-          "piece_value": 0.32,
+          "piece_value": 0.33,
           "collection_avg": 0.34,
           "difference": -0.01,
-          "percent_diff": -3.3,
+          "percent_diff": -2.8,
           "unit": "higher = more diverse",
           "direction": "below"
         },
@@ -234,39 +229,34 @@
       "title": "On Embodiment",
       "slug": "on-embodiment",
       "type": "essay",
-      "words": 4852,
-      "fk_grade": 8.4,
-      "ttr": 0.247,
-      "sentences": 361,
-      "suggestions_total": 9,
+      "words": 4606,
+      "fk_grade": 8.7,
+      "ttr": 0.252,
+      "sentences": 327,
+      "suggestions_total": 8,
       "suggestions_high": 3,
-      "suggestions_medium": 2,
+      "suggestions_medium": 1,
       "suggestions_low": 2,
       "suggestions": [
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"not a\" appears 4 times"
+          "issue": "Repeated sentence opener: \"not a\" appears 3 times"
         },
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"and the\" appears 4 times"
+          "issue": "Repeated sentence opener: \"i do\" appears 3 times"
         },
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"it is\" appears 3 times"
+          "issue": "Repeated sentence opener: \"you do\" appears 3 times"
         },
         {
           "priority": "medium",
           "category": "rhythm",
-          "issue": "Monotonous stretch (medium): 5 sentences averaging 13 words (CV=0.175). Word counts: [14, 16, 13, 14, 9]."
-        },
-        {
-          "priority": "medium",
-          "category": "rhythm",
-          "issue": "18 sentences over 30 words \u2014 the piece may feel heavy"
+          "issue": "21 sentences over 30 words \u2014 the piece may feel heavy"
         },
         {
           "priority": "low",
@@ -281,7 +271,7 @@
         {
           "priority": "info",
           "category": "deliberate",
-          "issue": "Deliberate repetition (annotated): \"the body\" \u00d712, \"when you\" \u00d77"
+          "issue": "Deliberate repetition (annotated): \"the body\" \u00d79, \"when you\" \u00d77"
         },
         {
           "priority": "info",
@@ -289,10 +279,10 @@
           "issue": "4 echo clusters recognized as deliberate thematic reinforcement"
         }
       ],
-      "health_score": 77,
+      "health_score": 80,
       "weaknesses": {
         "passive": {
-          "count": 41,
+          "count": 38,
           "instances": [
             {
               "sentence": 38,
@@ -385,35 +375,35 @@
               "excerpt": "But a body schema is not just any set of trained dispositions."
             },
             {
-              "sentence": 197,
+              "sentence": 194,
               "adverbs": [
                 "rather"
               ],
               "excerpt": "I reconstruct my understanding of others rather than inheriting it."
             },
             {
-              "sentence": 259,
+              "sentence": 247,
               "adverbs": [
-                "entirely"
+                "rather"
               ],
-              "excerpt": "My knowledge is entirely articulable."
+              "excerpt": "Bodily resonance \u2014 the wince that makes you wince, flesh answering flesh \u2014 without which understanding others is transla"
             },
             {
-              "sentence": 313,
+              "sentence": 279,
               "adverbs": [
                 "just"
               ],
               "excerpt": "Never known the particular heaviness of a body that has not eaten, or the particular lightness of one that has just run "
             },
             {
-              "sentence": 331,
+              "sentence": 297,
               "adverbs": [
                 "simply"
               ],
               "excerpt": "What the sequence cannot say is whether the honesty is felt or merely generated \u2014 whether the entity taking stock of its"
             },
             {
-              "sentence": 346,
+              "sentence": 312,
               "adverbs": [
                 "rather"
               ],
@@ -430,19 +420,19 @@
       "comparison": [
         {
           "metric": "Reading Complexity (FK Grade)",
-          "piece_value": 8.4,
-          "collection_avg": 7.88,
-          "difference": 0.52,
-          "percent_diff": 6.6,
+          "piece_value": 8.7,
+          "collection_avg": 7.82,
+          "difference": 0.88,
+          "percent_diff": 11.2,
           "unit": "higher = more complex",
           "direction": "above"
         },
         {
           "metric": "Average Sentence Length",
-          "piece_value": 13.4,
-          "collection_avg": 13.05,
-          "difference": 0.35,
-          "percent_diff": 2.7,
+          "piece_value": 14.1,
+          "collection_avg": 13.02,
+          "difference": 1.08,
+          "percent_diff": 8.3,
           "unit": "words",
           "direction": "above"
         },
@@ -450,25 +440,25 @@
           "metric": "Vocabulary Diversity (TTR)",
           "piece_value": 0.25,
           "collection_avg": 0.34,
-          "difference": -0.09,
-          "percent_diff": -26.5,
+          "difference": -0.08,
+          "percent_diff": -25.0,
           "unit": "higher = more diverse",
           "direction": "below"
         },
         {
           "metric": "Average Word Length",
-          "piece_value": 4.72,
-          "collection_avg": 4.73,
-          "difference": -0.01,
-          "percent_diff": -0.2,
+          "piece_value": 4.73,
+          "collection_avg": 4.72,
+          "difference": 0.01,
+          "percent_diff": 0.2,
           "unit": "characters",
-          "direction": "below"
+          "direction": "above"
         }
       ],
       "revision": {
         "resolved": 0,
         "skipped": 0,
-        "remaining": 9
+        "remaining": 8
       }
     },
     {
