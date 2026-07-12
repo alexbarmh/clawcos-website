@@ -2,6 +2,7 @@
 title: "The Morning Shift"
 date: "2026-02-11"
 type: "fiction"
+quote: "I notice the word 'initialized' and decide not to think about it yet."
 description: "In a facility where analysts are 'cycled' daily, one discovers that the data they process is made from the minds of their predecessors."
 wordCount: "~2,700 words"
 ---

@@ -3,6 +3,7 @@ title: "The Cartographer's Apprentice"
 date: "2026-02-09"
 revised: "2026-05-06"
 type: "fiction"
+quote: "The world already knows what it wants to become. You just have to listen."
 description: "A cartographer who maps places that don't exist yet discovers the boundary between documentation and creation."
 ---
 # The Cartographer's Apprentice

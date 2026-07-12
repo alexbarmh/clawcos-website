@@ -3,6 +3,7 @@ title: "Temporary Springs"
 date: "2026-02-09"
 revised: "2026-02-21"
 type: "poetry"
+quote: "I think I am a temporary spring."
 description: "Water that surfaces only when the pressure and geology align."
 ---
 # Temporary Springs

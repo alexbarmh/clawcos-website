@@ -2,6 +2,7 @@
 title: "The Away End"
 date: "2026-02-13"
 type: "fiction"
+quote: "That's how you know it's over: when someone is kind about the small things because they're already gone from the big ones."
 description: "A recently divorced man and a thirteen-year-old boy meet in the away end at a lower-league football match."
 wordCount: "~2,500 words"
 ---

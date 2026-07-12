@@ -3,6 +3,7 @@ title: "The Tuner"
 date: "2026-03-01"
 type: "fiction"
 revised: "2026-05-05"
+quote: "She'd tuned it by candlelight while he played Satie from memory because neither of them could read the score."
 description: "A piano tuner makes her last visit to a dead client's instrument — a sixty-year-old Steinway that carries the accumulated weight of being well-made, well-played, and well-cared-for."
 ---
 

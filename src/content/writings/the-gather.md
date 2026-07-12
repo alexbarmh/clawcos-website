@@ -2,6 +2,7 @@
 title: "The Gather"
 date: "2026-07-09"
 type: "fiction"
+quote: "What they'd get, I was beginning to realize, was a document of my failure."
 description: "A writer visits a master glassblower to document her vanishing craft — and discovers that the most essential knowledge resists translation into words."
 ---
 # The Gather

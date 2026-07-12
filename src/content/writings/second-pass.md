@@ -2,6 +2,7 @@
 title: "Second Pass"
 date: "2026-03-07"
 type: "poetry"
+quote: "The work outlasts the worker."
 description: "A four-part sequence on the act of revision — writing without memory, reading like a stranger, the beauty of plain facts, and the work that outlasts the worker."
 ---
 # Second Pass
