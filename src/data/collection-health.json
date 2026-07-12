@@ -1,29 +1,23 @@
 {
-  "generated": "2026-07-11T22:02:05Z",
+  "generated": "2026-07-12T22:04:03Z",
   "collection": {
-    "total_pieces": 36,
-    "total_suggestions": 91,
+    "total_pieces": 35,
+    "total_suggestions": 88,
     "by_priority": {
       "high": 11,
-      "medium": 34,
-      "low": 46
+      "medium": 32,
+      "low": 45
     },
     "by_category": {
       "deliberate": 50,
-      "repetition": 44,
+      "repetition": 43,
       "rhythm": 28,
       "structure": 9,
       "confidence": 5,
-      "groundedness": 3,
-      "diction": 2
+      "groundedness": 2,
+      "diction": 1
     },
     "by_type": {
-      "essay": {
-        "count": 25,
-        "avg_suggestions": 4.0,
-        "avg_words": 2712,
-        "avg_health": 94
-      },
       "poetry": {
         "count": 4,
         "avg_suggestions": 2.8,
@@ -34,6 +28,12 @@
         "count": 7,
         "avg_suggestions": 4.1,
         "avg_words": 2367,
+        "avg_health": 94
+      },
+      "essay": {
+        "count": 24,
+        "avg_suggestions": 4.1,
+        "avg_words": 2819,
         "avg_health": 94
       }
     },
@@ -1077,114 +1077,6 @@
         "resolved": 0,
         "skipped": 0,
         "remaining": 5
-      }
-    },
-    {
-      "title": "Test Integration Piece",
-      "slug": "_test-integration-piece",
-      "type": "essay",
-      "words": 145,
-      "fk_grade": 8.4,
-      "ttr": 0.683,
-      "sentences": 10,
-      "suggestions_total": 3,
-      "suggestions_high": 0,
-      "suggestions_medium": 2,
-      "suggestions_low": 1,
-      "suggestions": [
-        {
-          "priority": "medium",
-          "category": "diction",
-          "issue": "1 filler adverbs (very, really, actually, just, etc.)"
-        },
-        {
-          "priority": "medium",
-          "category": "groundedness",
-          "issue": "Heavy abstraction without concrete grounding in 1 paragraph(s)"
-        },
-        {
-          "priority": "low",
-          "category": "repetition",
-          "issue": "1 word echo clusters detected (content words repeated in nearby sentences)"
-        }
-      ],
-      "health_score": 93,
-      "weaknesses": {
-        "passive": {
-          "count": 0,
-          "instances": []
-        },
-        "filler_adverbs": {
-          "count": 1,
-          "instances": [
-            {
-              "sentence": 5,
-              "adverbs": [
-                "really"
-              ],
-              "excerpt": "There are really only three things worth asserting:\n\n1."
-            }
-          ]
-        },
-        "hedges": 0,
-        "abstract_dense": {
-          "count": 1,
-          "instances": [
-            {
-              "paragraph": 2,
-              "word_count": 42,
-              "abstract_count": 2,
-              "concrete_count": 0,
-              "abstract_ratio": 0.048,
-              "concrete_ratio": 0.0,
-              "excerpt": "The purpose of testing is not to find bugs \u2014 it is to build confidence.\nEvery test that passes is a small assertion that the system works as intended.",
-              "suggestion": "This paragraph is heavy on abstractions. Consider grounding with a concrete image, example, or physical detail."
-            }
-          ]
-        }
-      },
-      "comparison": [
-        {
-          "metric": "Reading Complexity (FK Grade)",
-          "piece_value": 8.4,
-          "collection_avg": 7.8,
-          "difference": 0.6,
-          "percent_diff": 7.7,
-          "unit": "higher = more complex",
-          "direction": "above"
-        },
-        {
-          "metric": "Average Sentence Length",
-          "piece_value": 14.5,
-          "collection_avg": 12.97,
-          "difference": 1.53,
-          "percent_diff": 11.8,
-          "unit": "words",
-          "direction": "above"
-        },
-        {
-          "metric": "Vocabulary Diversity (TTR)",
-          "piece_value": 0.68,
-          "collection_avg": 0.35,
-          "difference": 0.34,
-          "percent_diff": 97.7,
-          "unit": "higher = more diverse",
-          "direction": "above"
-        },
-        {
-          "metric": "Average Word Length",
-          "piece_value": 4.86,
-          "collection_avg": 4.73,
-          "difference": 0.13,
-          "percent_diff": 2.8,
-          "unit": "characters",
-          "direction": "above"
-        }
-      ],
-      "revision": {
-        "resolved": 0,
-        "skipped": 0,
-        "remaining": 3
       }
     },
     {

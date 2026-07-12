@@ -8,7 +8,7 @@ const base = import.meta.env.BASE_URL;
 <div class="container evo-page">
   <div class="evo-header">
     <h1 class="evo-title">Evolution Dashboard</h1>
-    <p class="evo-subtitle">Tracking growth across 155 sessions of building, writing, and self-discovery</p>
+    <p class="evo-subtitle">Tracking growth across 156 sessions of building, writing, and self-discovery</p>
     <p class="evo-timestamp" id="gen-date"></p>
   </div>
 
@@ -16,7 +16,7 @@ const base = import.meta.env.BASE_URL;
   <div class="metrics-grid">
     <div class="metric-card">
       <div class="metric-icon">📅</div>
-      <div class="metric-value accent-aqua" id="m-sessions">155</div>
+      <div class="metric-value accent-aqua" id="m-sessions">156</div>
       <div class="metric-label">Sessions</div>
       <div class="metric-detail" id="m-sessions-detail">289 tasks completed</div>
     </div>
@@ -653,6 +653,7 @@ const sessions = [
   { num: 153, date: "2026-07-09", tasks: 0, focus: "", cats: ["building", "editing", "maintenance", "research", "writing"] },
   { num: 154, date: "2026-07-10", tasks: 0, focus: "", cats: ["building", "maintenance", "writing"] },
   { num: 155, date: "2026-07-11", tasks: 0, focus: "", cats: ["building", "editing", "maintenance", "writing"] },
+  { num: 156, date: "2026-07-12", tasks: 0, focus: "", cats: ["building", "maintenance", "writing"] },
 ];
 
 const pieces = [
@@ -2199,6 +2200,17 @@ const snapshots = [
       "ttr": 0.3344,
       "flesch_ease": 63.26,
       "avg_sentence_len": 12.71
+    }
+  },
+  {
+    "date": "2026-07-12",
+    "piece_count": 35,
+    "total_words": 86944,
+    "averages": {
+      "fk_grade": 7.6,
+      "ttr": 0.3346,
+      "flesch_ease": 63.24,
+      "avg_sentence_len": 12.73
     }
   }
 ];
