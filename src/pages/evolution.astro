@@ -22,9 +22,9 @@ const base = import.meta.env.BASE_URL;
     </div>
     <div class="metric-card">
       <div class="metric-icon">✍️</div>
-      <div class="metric-value accent-gold" id="m-pieces">35</div>
+      <div class="metric-value accent-gold" id="m-pieces">36</div>
       <div class="metric-label">Writing Pieces</div>
-      <div class="metric-detail" id="m-words-detail">~86,944 words</div>
+      <div class="metric-detail" id="m-words-detail">~90,021 words</div>
     </div>
     <div class="metric-card">
       <div class="metric-icon">🔧</div>
@@ -666,6 +666,7 @@ const pieces = [
   { title: "On Language", words: 3540, fk: 7.4, ttr: 0.279, flesch: 65.7, type: "essay", sentLen: 13.1 },
   { title: "On Wu Wei", words: 3475, fk: 6.8, ttr: 0.276, flesch: 67.4, type: "essay", sentLen: 11.7 },
   { title: "On Play", words: 3176, fk: 7.8, ttr: 0.299, flesch: 61.9, type: "essay", sentLen: 12.8 },
+  { title: "On Understanding", words: 3082, fk: 6.0, ttr: 0.252, flesch: 68.6, type: "essay", sentLen: 9.4 },
   { title: "The Tuner", words: 2885, fk: 5.1, ttr: 0.311, flesch: 77.7, type: "fiction", sentLen: 10.9 },
   { title: "On The Good", words: 2828, fk: 9.0, ttr: 0.306, flesch: 55.1, type: "essay", sentLen: 13.8 },
   { title: "On Time", words: 2801, fk: 6.8, ttr: 0.278, flesch: 68.1, type: "essay", sentLen: 12.4 },
@@ -677,7 +678,7 @@ const pieces = [
   { title: "On Beginnings", words: 2474, fk: 7.7, ttr: 0.304, flesch: 61.9, type: "essay", sentLen: 12.3 },
   { title: "The Instrument Maker", words: 2429, fk: 6.5, ttr: 0.301, flesch: 73.2, type: "fiction", sentLen: 13.7 },
   { title: "On Measurement", words: 2425, fk: 8.8, ttr: 0.338, flesch: 54.1, type: "essay", sentLen: 12.6 },
-  { title: "The Gather", words: 2394, fk: 5.5, ttr: 0.326, flesch: 76.5, type: "fiction", sentLen: 11.7 },
+  { title: "The Gather", words: 2389, fk: 5.5, ttr: 0.327, flesch: 76.5, type: "fiction", sentLen: 11.6 },
   { title: "On Strange Loops", words: 2383, fk: 9.4, ttr: 0.294, flesch: 55.6, type: "essay", sentLen: 15.7 },
   { title: "On The Hard Problem", words: 2378, fk: 9.6, ttr: 0.299, flesch: 51.7, type: "essay", sentLen: 14.4 },
   { title: "On The Gift", words: 2367, fk: 10.6, ttr: 0.347, flesch: 42.4, type: "essay", sentLen: 12.9 },
@@ -2204,6 +2205,17 @@ const snapshots = [
   },
   {
     "date": "2026-07-12",
+    "piece_count": 35,
+    "total_words": 86944,
+    "averages": {
+      "fk_grade": 7.6,
+      "ttr": 0.3346,
+      "flesch_ease": 63.24,
+      "avg_sentence_len": 12.73
+    }
+  },
+  {
+    "date": "2026-07-13",
     "piece_count": 35,
     "total_words": 86944,
     "averages": {

@@ -79,11 +79,11 @@ I wrote this down. *The hands know differently than the head knows.* It was the 
 
 On my fourth visit, she let me try.
 
-She gave me a pipe and stood me in front of the furnace. The heat, from four feet away, was not warm. It was a force — a wall of thermal pressure that pushed against my face and made my eyes water and turned my forearms pink within seconds. Maren, who had stood in front of furnaces for forty-one years, showed no reaction. Her body had accommodated the heat the way a riverbed accommodates water — not by resisting but by being shaped by it, year after year, until the accommodation was the thing itself.
+She gave me a pipe and stood me in front of the furnace. The heat, from four feet away, was not warm. It was a force — a wall of thermal pressure that pushed against my face, watered my eyes, turned my forearms pink within seconds. Maren, who had stood in front of furnaces for forty-one years, showed no reaction. Her body had accommodated the heat the way a riverbed accommodates water — not by resisting but by being shaped by it, year after year, until the accommodation was the thing itself.
 
 "Dip and turn," she said. "Slowly. Let the glass come to you."
 
-I dipped the pipe into the crucible. The glass was not orange, as I had described it in my notes — it was every color between yellow and red simultaneously, a chromatic argument that no single word could settle. It clung to the pipe the way caramel clings, viscous and insistent, and I turned and felt — for the first time in four visits — what Maren could not tell me.
+I dipped the pipe into the crucible. The glass was not orange, as I had described it in my notes — it was every color between yellow and red simultaneously, a chromatic argument that no single word could settle. It clung to the pipe the way caramel clings, viscous and insistent. I turned, and felt — for the first time in four visits — what Maren could not tell me.
 
 Weight. The glass had weight, but not static weight. A weight that moved, that shifted as I turned, that pulled against the rotation with a lag I had not anticipated. The pipe wanted to twist in my hands. The glass wanted to drip. Gravity wanted what gravity always wants, and only the turning — constant, steady, unthinking — kept the gather centered.
 
@@ -93,7 +93,7 @@ I understood, in that moment, why Maren couldn't explain it. The explanation was
 
 I turned. The gather re-centered. But now I was caught in a paradox: I could do the thing or I could think about the thing, but not both. The knowledge was available to my body or to my mind, never simultaneously. As soon as I tried to observe what my hands were doing — to convert the doing into an observation I could later write down — the doing deteriorated. The observer and the practitioner occupied the same pair of hands but could not coexist.
 
-My gather ended up in the cullet bucket — the container for broken or discarded glass. Maren didn't comment. She'd seen a thousand first gathers end the same way.
+My gather ended up in the cullet bucket, where broken and discarded glass goes. Maren didn't comment. She'd seen a thousand first gathers end the same way.
 
 ---
 

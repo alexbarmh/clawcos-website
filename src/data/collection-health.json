@@ -1,20 +1,20 @@
 {
-  "generated": "2026-07-12T22:04:03Z",
+  "generated": "2026-07-13T11:09:35Z",
   "collection": {
-    "total_pieces": 35,
-    "total_suggestions": 88,
+    "total_pieces": 36,
+    "total_suggestions": 99,
     "by_priority": {
-      "high": 11,
-      "medium": 32,
-      "low": 45
+      "high": 14,
+      "medium": 38,
+      "low": 47
     },
     "by_category": {
       "deliberate": 50,
-      "repetition": 43,
-      "rhythm": 28,
-      "structure": 9,
+      "repetition": 49,
+      "rhythm": 31,
+      "structure": 10,
       "confidence": 5,
-      "groundedness": 2,
+      "groundedness": 3,
       "diction": 1
     },
     "by_type": {
@@ -31,23 +31,295 @@
         "avg_health": 94
       },
       "essay": {
-        "count": 24,
-        "avg_suggestions": 4.1,
-        "avg_words": 2819,
-        "avg_health": 94
+        "count": 25,
+        "avg_suggestions": 4.4,
+        "avg_words": 2830,
+        "avg_health": 93
       }
     },
-    "avg_health_score": 94.4
+    "avg_health_score": 93.6
   },
   "pieces": [
+    {
+      "title": "On Understanding",
+      "slug": "on-understanding",
+      "type": "essay",
+      "words": 3080,
+      "fk_grade": 6.2,
+      "ttr": 0.253,
+      "sentences": 315,
+      "suggestions_total": 11,
+      "suggestions_high": 3,
+      "suggestions_medium": 6,
+      "suggestions_low": 2,
+      "suggestions": [
+        {
+          "priority": "high",
+          "category": "repetition",
+          "issue": "Repeated sentence opener: \"but the\" appears 5 times"
+        },
+        {
+          "priority": "high",
+          "category": "repetition",
+          "issue": "Repeated sentence opener: \"she understands\" appears 5 times"
+        },
+        {
+          "priority": "high",
+          "category": "repetition",
+          "issue": "Repeated sentence opener: \"i can\" appears 4 times"
+        },
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "Monotonous stretch (medium): 7 sentences averaging 8 words (CV=0.171). Word counts: [7, 8, 8, 8, 6, 6, 10]."
+        },
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "Monotonous stretch (medium): 7 sentences averaging 6 words (CV=0.162). Word counts: [6, 6, 5, 6, 4, 5, 7]."
+        },
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "10 sentences over 30 words \u2014 the piece may feel heavy"
+        },
+        {
+          "priority": "medium",
+          "category": "repetition",
+          "issue": "Repeated paragraph opener: \"lena\" starts 47 paragraphs"
+        },
+        {
+          "priority": "medium",
+          "category": "repetition",
+          "issue": "Repeated paragraph opener: \"josef\" starts 47 paragraphs"
+        },
+        {
+          "priority": "medium",
+          "category": "groundedness",
+          "issue": "Heavy abstraction without concrete grounding in 2 paragraph(s)"
+        },
+        {
+          "priority": "low",
+          "category": "repetition",
+          "issue": "22 word echo clusters detected (content words repeated in nearby sentences)"
+        },
+        {
+          "priority": "low",
+          "category": "structure",
+          "issue": "Opens with first person \u2014 consider whether the reader needs 'I' immediately or if the idea could lead"
+        }
+      ],
+      "health_score": 65,
+      "weaknesses": {
+        "passive": {
+          "count": 12,
+          "instances": [
+            {
+              "sentence": 72,
+              "excerpt": "Related the way a map is related to a walk.",
+              "match": "is related"
+            },
+            {
+              "sentence": 111,
+              "excerpt": "The way the opening descends \u2014 those falling intervals \u2014 as if something heavy is being set down very carefully.",
+              "match": "being set"
+            },
+            {
+              "sentence": 158,
+              "excerpt": "And the building is what was built.",
+              "match": "was built"
+            },
+            {
+              "sentence": 166,
+              "excerpt": "You can be proximate to a fire without being burned.",
+              "match": "being burned"
+            },
+            {
+              "sentence": 265,
+              "excerpt": "The wine is finished.",
+              "match": "is finished"
+            },
+            {
+              "sentence": 278,
+              "excerpt": "Then what you did tonight is gone.",
+              "match": "is gone"
+            },
+            {
+              "sentence": 293,
+              "excerpt": "It has not been answered.",
+              "match": "been answered"
+            },
+            {
+              "sentence": 294,
+              "excerpt": "It has not even been properly asked, because to ask it properly you would need to speak in two languages simultaneously:",
+              "match": "been properly asked"
+            },
+            {
+              "sentence": 297,
+              "excerpt": "Lena's paper will be published.",
+              "match": "be published"
+            },
+            {
+              "sentence": 298,
+              "excerpt": "It will be cited.",
+              "match": "be cited"
+            }
+          ]
+        },
+        "filler_adverbs": {
+          "count": 12,
+          "instances": [
+            {
+              "sentence": 24,
+              "adverbs": [
+                "rather"
+              ],
+              "excerpt": "Slower in the opening bars, and there was something in the way you held the phrase at bar fourteen \u2014 you let it decay ra"
+            },
+            {
+              "sentence": 77,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "It's just the walk."
+            },
+            {
+              "sentence": 81,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "As if the tacit part is the same stuff as the explicit part, just harder to pour into words."
+            },
+            {
+              "sentence": 83,
+              "adverbs": [
+                "entirely"
+              ],
+              "excerpt": "I think they're different substances entirely."
+            },
+            {
+              "sentence": 88,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "When my left hand finds a position in seventh without my directing it \u2014 when it just arrives at the right place on the f"
+            },
+            {
+              "sentence": 111,
+              "adverbs": [
+                "very"
+              ],
+              "excerpt": "The way the opening descends \u2014 those falling intervals \u2014 as if something heavy is being set down very carefully."
+            },
+            {
+              "sentence": 120,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "I didn't just receive sound waves."
+            },
+            {
+              "sentence": 147,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "You've just excluded an entire mode of expertise from the category of understanding."
+            },
+            {
+              "sentence": 148,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "I've just insisted that understanding a thing and understanding a description of a thing are different."
+            },
+            {
+              "sentence": 167,
+              "adverbs": [
+                "really"
+              ],
+              "excerpt": "But to understand fire \u2014 to really understand it \u2014 your hands have to know the heat."
+            }
+          ]
+        },
+        "hedges": 0,
+        "abstract_dense": {
+          "count": 2,
+          "instances": [
+            {
+              "paragraph": 25,
+              "word_count": 40,
+              "abstract_count": 2,
+              "concrete_count": 0,
+              "abstract_ratio": 0.05,
+              "concrete_ratio": 0.0,
+              "excerpt": "Josef. No representation. No rule I was following. No mental model of the Sarabande that I consulted and then expressed. The playing was the understan",
+              "suggestion": "This paragraph is heavy on abstractions. Consider grounding with a concrete image, example, or physical detail."
+            },
+            {
+              "paragraph": 27,
+              "word_count": 60,
+              "abstract_count": 3,
+              "concrete_count": 1,
+              "abstract_ratio": 0.05,
+              "concrete_ratio": 0.017,
+              "excerpt": "Josef. (smiles) I understand it differently. I can read the score and hear it internally \u2014 a kind of silent performance. I understand its place in the",
+              "suggestion": "This paragraph is heavy on abstractions. Consider grounding with a concrete image, example, or physical detail."
+            }
+          ]
+        }
+      },
+      "comparison": [
+        {
+          "metric": "Reading Complexity (FK Grade)",
+          "piece_value": 6.2,
+          "collection_avg": 7.78,
+          "difference": -1.58,
+          "percent_diff": -20.3,
+          "unit": "higher = more complex",
+          "direction": "below"
+        },
+        {
+          "metric": "Average Sentence Length",
+          "piece_value": 9.4,
+          "collection_avg": 12.92,
+          "difference": -3.52,
+          "percent_diff": -27.2,
+          "unit": "words",
+          "direction": "below"
+        },
+        {
+          "metric": "Vocabulary Diversity (TTR)",
+          "piece_value": 0.25,
+          "collection_avg": 0.33,
+          "difference": -0.08,
+          "percent_diff": -24.3,
+          "unit": "higher = more diverse",
+          "direction": "below"
+        },
+        {
+          "metric": "Average Word Length",
+          "piece_value": 4.64,
+          "collection_avg": 4.72,
+          "difference": -0.08,
+          "percent_diff": -1.7,
+          "unit": "characters",
+          "direction": "below"
+        }
+      ],
+      "revision": {
+        "resolved": 0,
+        "skipped": 0,
+        "remaining": 11
+      }
+    },
     {
       "title": "The Gather",
       "slug": "the-gather",
       "type": "fiction",
-      "words": 2392,
+      "words": 2387,
       "fk_grade": 6.5,
-      "ttr": 0.327,
-      "sentences": 172,
+      "ttr": 0.328,
+      "sentences": 173,
       "suggestions_total": 7,
       "suggestions_high": 3,
       "suggestions_medium": 3,
@@ -115,7 +387,7 @@
               "match": "being shaped"
             },
             {
-              "sentence": 100,
+              "sentence": 101,
               "excerpt": "But now I was caught in a paradox: I could do the thing or I could think about the thing, but not both.",
               "match": "was caught"
             }
@@ -167,7 +439,7 @@
               "excerpt": "The right pressure was, of course, something you just knew."
             },
             {
-              "sentence": 119,
+              "sentence": 120,
               "adverbs": [
                 "just"
               ],
@@ -185,16 +457,16 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 6.5,
-          "collection_avg": 7.82,
-          "difference": -1.32,
-          "percent_diff": -16.9,
+          "collection_avg": 7.78,
+          "difference": -1.28,
+          "percent_diff": -16.4,
           "unit": "higher = more complex",
           "direction": "below"
         },
         {
           "metric": "Average Sentence Length",
-          "piece_value": 13.9,
-          "collection_avg": 13.02,
+          "piece_value": 13.8,
+          "collection_avg": 12.92,
           "difference": 0.88,
           "percent_diff": 6.8,
           "unit": "words",
@@ -203,9 +475,9 @@
         {
           "metric": "Vocabulary Diversity (TTR)",
           "piece_value": 0.33,
-          "collection_avg": 0.34,
+          "collection_avg": 0.33,
           "difference": -0.01,
-          "percent_diff": -2.8,
+          "percent_diff": -1.8,
           "unit": "higher = more diverse",
           "direction": "below"
         },
