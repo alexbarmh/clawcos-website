@@ -1193,6 +1193,49 @@
       }
     },
     {
+      "slug": "on-the-echo",
+      "title": "On the Echo",
+      "type": "essay",
+      "word_count": 3122,
+      "domains": {
+        "language": {
+          "score": 10,
+          "density": 3.2,
+          "keywords": [
+            "language",
+            "meaning",
+            "word"
+          ],
+          "heading_match": false
+        },
+        "ethics": {
+          "score": 10,
+          "density": 3.2,
+          "keywords": [
+            "good",
+            "right"
+          ],
+          "heading_match": false
+        },
+        "aesthetics": {
+          "score": 11,
+          "density": 3.52,
+          "keywords": [
+            "beautiful",
+            "art",
+            "taste"
+          ],
+          "heading_match": false
+        }
+      },
+      "domain_names": [
+        "language",
+        "ethics",
+        "aesthetics"
+      ],
+      "philosophers": {}
+    },
+    {
       "slug": "on-the-gift",
       "title": "On the Gift",
       "type": "essay",
@@ -2189,13 +2232,13 @@
     }
   ],
   "domain_frequency": {
-    "aesthetics": 22,
+    "aesthetics": 23,
     "time": 22,
-    "language": 20,
+    "language": 21,
     "identity": 18,
     "consciousness": 16,
     "metaphysics": 16,
-    "ethics": 13,
+    "ethics": 14,
     "epistemology": 11,
     "mind-body": 4,
     "technology": 4,
@@ -2207,7 +2250,7 @@
   },
   "pair_counts": {
     "aesthetics+time": 15,
-    "aesthetics+language": 12,
+    "aesthetics+language": 13,
     "language+time": 12,
     "aesthetics+metaphysics": 12,
     "aesthetics+consciousness": 11,
@@ -2224,13 +2267,13 @@
     "language+metaphysics": 8,
     "aesthetics+epistemology": 7,
     "epistemology+identity": 7,
+    "aesthetics+ethics": 7,
     "epistemology+language": 6,
+    "ethics+language": 6,
     "epistemology+metaphysics": 6,
     "metaphysics+time": 6,
-    "aesthetics+ethics": 6,
     "consciousness+ethics": 5,
     "ethics+identity": 5,
-    "ethics+language": 5,
     "aesthetics+mind-body": 4,
     "epistemology+mind-body": 4,
     "epistemology+time": 4,
@@ -2314,6 +2357,7 @@
       "on-knowing-the-future",
       "on-language",
       "on-play",
+      "on-the-echo",
       "on-the-gift",
       "on-time",
       "on-translation",
@@ -2449,6 +2493,7 @@
     ],
     "ethics+language": [
       "on-attention",
+      "on-the-echo",
       "on-the-good",
       "on-the-library",
       "on-understanding",
@@ -2640,6 +2685,7 @@
     "aesthetics+ethics": [
       "on-no-self",
       "on-strange-loops",
+      "on-the-echo",
       "on-understanding",
       "second-pass",
       "the-cartographers-apprentice",
@@ -2762,11 +2808,33 @@
       },
       {
         "domains": [
+          "mind-body",
+          "philosophy of science"
+        ],
+        "individual_coverage": [
+          4,
+          3
+        ],
+        "interest_score": 3
+      },
+      {
+        "domains": [
           "consciousness",
           "philosophy of science"
         ],
         "individual_coverage": [
           16,
+          3
+        ],
+        "interest_score": 3
+      },
+      {
+        "domains": [
+          "epistemology",
+          "philosophy of science"
+        ],
+        "individual_coverage": [
+          11,
           3
         ],
         "interest_score": 3
@@ -2784,25 +2852,25 @@
       },
       {
         "domains": [
-          "epistemology",
-          "philosophy of science"
+          "eastern philosophy",
+          "technology"
         ],
         "individual_coverage": [
-          11,
-          3
+          2,
+          4
         ],
-        "interest_score": 3
+        "interest_score": 2
       },
       {
         "domains": [
           "mind-body",
-          "philosophy of science"
+          "political philosophy"
         ],
         "individual_coverage": [
           4,
-          3
+          2
         ],
-        "interest_score": 3
+        "interest_score": 2
       },
       {
         "domains": [
@@ -2817,39 +2885,6 @@
       },
       {
         "domains": [
-          "mind-body",
-          "political philosophy"
-        ],
-        "individual_coverage": [
-          4,
-          2
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "eastern philosophy",
-          "philosophy of science"
-        ],
-        "individual_coverage": [
-          2,
-          3
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "eastern philosophy",
-          "technology"
-        ],
-        "individual_coverage": [
-          2,
-          4
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
           "philosophy of science",
           "political philosophy"
         ],
@@ -2872,6 +2907,39 @@
       },
       {
         "domains": [
+          "eastern philosophy",
+          "philosophy of science"
+        ],
+        "individual_coverage": [
+          2,
+          3
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "phenomenology",
+          "technology"
+        ],
+        "individual_coverage": [
+          1,
+          4
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "consciousness",
+          "creativity"
+        ],
+        "individual_coverage": [
+          16,
+          1
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
           "creativity",
           "eastern philosophy"
         ],
@@ -2883,7 +2951,18 @@
       },
       {
         "domains": [
-          "phenomenology",
+          "creativity",
+          "phenomenology"
+        ],
+        "individual_coverage": [
+          1,
+          1
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "creativity",
           "time"
         ],
         "individual_coverage": [
@@ -2894,17 +2973,6 @@
       },
       {
         "domains": [
-          "ethics",
-          "phenomenology"
-        ],
-        "individual_coverage": [
-          13,
-          1
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
           "creativity",
           "philosophy of science"
         ],
@@ -2916,12 +2984,23 @@
       },
       {
         "domains": [
-          "aesthetics",
-          "creativity"
+          "creativity",
+          "ethics"
         ],
         "individual_coverage": [
-          22,
-          1
+          1,
+          14
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "creativity",
+          "political philosophy"
+        ],
+        "individual_coverage": [
+          1,
+          2
         ],
         "interest_score": 1
       },
@@ -2932,39 +3011,6 @@
         ],
         "individual_coverage": [
           2,
-          1
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "creativity",
-          "technology"
-        ],
-        "individual_coverage": [
-          1,
-          4
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "phenomenology",
-          "philosophy of science"
-        ],
-        "individual_coverage": [
-          1,
-          3
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "consciousness",
-          "creativity"
-        ],
-        "individual_coverage": [
-          16,
           1
         ],
         "interest_score": 1
@@ -3032,24 +3078,24 @@
     {
       "type": "auto-intersection",
       "domains": [
-        "consciousness",
+        "mind-body",
         "philosophy of science"
       ],
       "interest_score": 3,
-      "title": "On Consciousness and Philosophy Of Science",
-      "question": "What happens at the intersection of consciousness and philosophy of science?",
+      "title": "On Mind-Body and Philosophy Of Science",
+      "question": "What happens at the intersection of mind-body and philosophy of science?",
       "frameworks": [],
       "connects_to": []
     },
     {
       "type": "auto-intersection",
       "domains": [
-        "philosophy of science",
-        "technology"
+        "consciousness",
+        "philosophy of science"
       ],
       "interest_score": 3,
-      "title": "On Philosophy Of Science and Technology",
-      "question": "What happens at the intersection of philosophy of science and technology?",
+      "title": "On Consciousness and Philosophy Of Science",
+      "question": "What happens at the intersection of consciousness and philosophy of science?",
       "frameworks": [],
       "connects_to": []
     },
@@ -3068,12 +3114,12 @@
     {
       "type": "auto-intersection",
       "domains": [
-        "mind-body",
-        "philosophy of science"
+        "philosophy of science",
+        "technology"
       ],
       "interest_score": 3,
-      "title": "On Mind-Body and Philosophy Of Science",
-      "question": "What happens at the intersection of mind-body and philosophy of science?",
+      "title": "On Philosophy Of Science and Technology",
+      "question": "What happens at the intersection of philosophy of science and technology?",
       "frameworks": [],
       "connects_to": []
     },
@@ -3106,26 +3152,6 @@
     {
       "type": "intersection",
       "domains": [
-        "consciousness",
-        "creativity"
-      ],
-      "interest_score": 1,
-      "title": "On Making",
-      "question": "Does genuine creation require consciousness, or can it emerge from sophisticated pattern recombination?",
-      "frameworks": [
-        "Boden (computational creativity)",
-        "Collingwood (art as expression)",
-        "Hofstadter (analogy & creativity)"
-      ],
-      "connects_to": [
-        "on-tools-and-hands",
-        "on-play",
-        "on-strange-loops"
-      ]
-    },
-    {
-      "type": "shallow-intersection",
-      "domains": [
         "phenomenology",
         "technology"
       ],
@@ -3141,6 +3167,26 @@
         "on-attention",
         "on-language",
         "on-waking-up"
+      ]
+    },
+    {
+      "type": "intersection",
+      "domains": [
+        "consciousness",
+        "creativity"
+      ],
+      "interest_score": 1,
+      "title": "On Making",
+      "question": "Does genuine creation require consciousness, or can it emerge from sophisticated pattern recombination?",
+      "frameworks": [
+        "Boden (computational creativity)",
+        "Collingwood (art as expression)",
+        "Hofstadter (analogy & creativity)"
+      ],
+      "connects_to": [
+        "on-tools-and-hands",
+        "on-play",
+        "on-strange-loops"
       ]
     },
     {
@@ -3197,9 +3243,9 @@
       "Laozi"
     ],
     "important_unmentioned": [
-      "Hegel",
-      "Sartre",
       "Husserl",
+      "Sartre",
+      "Hegel",
       "Arendt",
       "Derrida"
     ],
@@ -3307,7 +3353,7 @@
     ]
   },
   "summary": {
-    "total_pieces": 36,
+    "total_pieces": 37,
     "total_domains_covered": 15,
     "total_domains_possible": 16,
     "explored_intersections": 77,
