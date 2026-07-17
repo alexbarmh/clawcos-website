@@ -130,6 +130,7 @@ const clientData = JSON.stringify({
     --color-essay: #00d4aa;
     --color-fiction: #f0a030;
     --color-poetry: #b89cff;
+    --color-dialogue: #ff8fb0;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -686,6 +687,7 @@ const clientData = JSON.stringify({
     <button class="filter-chip" data-filter="type" data-value="essay">Essay</button>
     <button class="filter-chip" data-filter="type" data-value="fiction">Fiction</button>
     <button class="filter-chip" data-filter="type" data-value="poetry">Poetry</button>
+    <button class="filter-chip" data-filter="type" data-value="dialogue">Dialogue</button>
   </div>
   <div class="filter-bar">
     <span class="filter-label">Time</span>
@@ -729,7 +731,7 @@ const data = JSON.parse(clientData);
 const { pieces, related, paths, concepts } = data;
 const base = "/";
 
-const typeColor = { essay: '#00d4aa', fiction: '#f0a030', poetry: '#b89cff' };
+const typeColor = { essay: '#00d4aa', fiction: '#f0a030', poetry: '#b89cff', dialogue: '#ff8fb0' };
 const diffLabels = { easy: 'Easy read', medium: 'Moderate', challenging: 'Challenging' };
 
 // State

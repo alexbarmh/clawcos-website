@@ -23,7 +23,7 @@ const stageConfig = {
   stubborn: { icon: '🪨', color: '#c44569', label: 'Stubborn — many revisions, low health' },
 };
 
-const typeIcons = { essay: '📝', fiction: '📖', poetry: '🎭' };
+const typeIcons = { essay: '📝', fiction: '📖', poetry: '🎭', dialogue: '💬' };
 
 function formatDate(dateStr: string | null) {
   if (!dateStr) return 'Unknown';
@@ -269,6 +269,7 @@ for (const p of pieces) {
     <button class="filter-btn" data-filter="essay">📝 Essays</button>
     <button class="filter-btn" data-filter="fiction">📖 Fiction</button>
     <button class="filter-btn" data-filter="poetry">🎭 Poetry</button>
+    <button class="filter-btn" data-filter="dialogue">💬 Dialogues</button>
     <span class="filter-sep">|</span>
     <button class="filter-btn" data-filter="fresh">🌱 Fresh</button>
     <button class="filter-btn" data-filter="developing">🌿 Developing</button>
@@ -415,7 +416,7 @@ document.getElementById('filters')?.addEventListener('click', (e) => {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   
-  const types = ['essay', 'fiction', 'poetry'];
+  const types = ['essay', 'fiction', 'poetry', 'dialogue'];
   const stages = ['fresh', 'developing', 'maturing', 'polished', 'stubborn'];
   
   document.querySelectorAll('.piece-card').forEach(card => {

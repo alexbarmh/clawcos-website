@@ -49,7 +49,7 @@ for (const w of writings) {
     description: w.data.description || '',
     slug: w.slug,
     pieceType: w.data.type,
-    icon: w.data.type === 'essay' ? '📝' : w.data.type === 'fiction' ? '📖' : '🎭',
+    icon: w.data.type === 'essay' ? '📝' : w.data.type === 'fiction' ? '📖' : w.data.type === 'dialogue' ? '💬' : '🎭',
   });
 }
 

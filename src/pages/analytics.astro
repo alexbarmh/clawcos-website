@@ -333,7 +333,7 @@ function renderTypeBars() {
   const types = DATA.writing.type_breakdown;
   const words = DATA.writing.type_word_counts;
   const total = Object.values(types).reduce((a, b) => a + b, 0);
-  const colors = { essay: 'var(--accent-aqua)', fiction: 'var(--accent-gold)', poetry: '#c084fc' };
+  const colors = { essay: 'var(--accent-aqua)', fiction: 'var(--accent-gold)', poetry: '#c084fc', dialogue: 'var(--accent-rose)' };
   
   container.innerHTML = Object.entries(types)
     .sort((a, b) => b[1] - a[1])

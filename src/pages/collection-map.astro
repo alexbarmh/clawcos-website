@@ -47,6 +47,7 @@ const base = import.meta.env.BASE_URL;
     --color-essay: #00d4aa;
     --color-fiction: #f0a030;
     --color-poetry: #b89cff;
+    --color-dialogue: #ff8fb0;
     --color-link-default: rgba(255, 255, 255, 0.06);
     --color-link-hover: rgba(0, 212, 170, 0.5);
     --color-suggestion: rgba(240, 160, 48, 0.3);
@@ -310,6 +311,7 @@ const base = import.meta.env.BASE_URL;
   .type-badge.essay { background: rgba(0, 212, 170, 0.12); color: var(--color-essay); }
   .type-badge.fiction { background: rgba(240, 160, 48, 0.12); color: var(--color-fiction); }
   .type-badge.poetry { background: rgba(184, 156, 255, 0.12); color: var(--color-poetry); }
+  .type-badge.dialogue { background: rgba(255, 143, 176, 0.12); color: var(--color-dialogue); }
   
   .panel-meta {
     font-size: 0.78rem;
@@ -675,6 +677,7 @@ const base = import.meta.env.BASE_URL;
     <div class="legend-item"><div class="legend-dot" style="background:var(--color-essay)"></div> Essay</div>
     <div class="legend-item"><div class="legend-dot" style="background:var(--color-fiction)"></div> Fiction</div>
     <div class="legend-item"><div class="legend-dot" style="background:var(--color-poetry)"></div> Poetry</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--color-dialogue)"></div> Dialogue</div>
     <h3 style="margin-top:10px">Edges</h3>
     <div class="legend-item"><div class="legend-line" style="background:rgba(0,212,170,0.4)"></div> Thematic link</div>
     <div class="legend-item"><div class="legend-line" style="background:var(--color-suggestion);border-style:dashed"></div> Suggested</div>
@@ -719,7 +722,8 @@ document.getElementById('stat-suggestions').textContent = suggestions.length;
 const typeColor = {
   essay: '#00d4aa',
   fiction: '#f0a030',
-  poetry: '#b89cff'
+  poetry: '#b89cff',
+  dialogue: '#ff8fb0'
 };
 
 // Concept colors for edge highlighting
@@ -1360,15 +1364,17 @@ document.getElementById('close-edge').addEventListener('click', (e) => {
 // === Genre Cluster Mode ===
 let genreClustered = false;
 const genreCenters = {
-  essay:   { x: width * 0.32, y: height * 0.52 },
-  fiction: { x: width * 0.68, y: height * 0.32 },
-  poetry:  { x: width * 0.68, y: height * 0.72 }
+  essay:    { x: width * 0.30, y: height * 0.40 },
+  dialogue: { x: width * 0.30, y: height * 0.70 },
+  fiction:  { x: width * 0.70, y: height * 0.35 },
+  poetry:   { x: width * 0.70, y: height * 0.72 }
 };
 
 // Genre cluster labels (hidden until cluster mode)
 const genreLabels = g.append('g').attr('class', 'genre-labels').style('display', 'none');
 const genreLabelData = [
   { type: 'essay', label: 'Essays', color: typeColor.essay },
+  { type: 'dialogue', label: 'Dialogues', color: typeColor.dialogue },
   { type: 'fiction', label: 'Fiction', color: typeColor.fiction },
   { type: 'poetry', label: 'Poetry', color: typeColor.poetry }
 ];

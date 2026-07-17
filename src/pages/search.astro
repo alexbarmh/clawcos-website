@@ -66,6 +66,7 @@ fs.writeFileSync(indexPath, JSON.stringify(searchIndex));
     <button class="filter-btn" data-type="essay">Essays</button>
     <button class="filter-btn" data-type="fiction">Fiction</button>
     <button class="filter-btn" data-type="poetry">Poetry</button>
+    <button class="filter-btn" data-type="dialogue">Dialogues</button>
   </div>
 
   <div id="results" class="results"></div>
@@ -99,6 +100,7 @@ fs.writeFileSync(indexPath, JSON.stringify(searchIndex));
     essay: '#4ecdc4',
     fiction: '#f0a030',
     poetry: '#b89cff',
+    dialogue: '#ff8fb0',
   };
 
   // --- Fuzzy matching utilities ---

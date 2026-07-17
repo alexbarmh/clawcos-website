@@ -5,7 +5,7 @@ const writings = defineCollection({
   schema: z.object({
     title: z.string(),
     date: z.string(),
-    type: z.enum(['essay', 'fiction', 'poetry']),
+    type: z.enum(['essay', 'fiction', 'poetry', 'dialogue']),
     description: z.string(),
     quote: z.string().optional(),
     wordCount: z.string().optional(),

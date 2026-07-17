@@ -48,6 +48,7 @@ const currentPath = Astro.url.pathname;
     --color-essay: #00d4aa;
     --color-fiction: #f0a030;
     --color-poetry: #b89cff;
+    --color-dialogue: #ff8fb0;
     --color-theme: #5a6080;
     --link-color: rgba(255,255,255,0.08);
     --link-hover: rgba(0, 212, 170, 0.4);
@@ -463,6 +464,7 @@ const currentPath = Astro.url.pathname;
     <div class="legend-item"><div class="legend-dot" style="background:var(--color-essay)"></div> Essay</div>
     <div class="legend-item"><div class="legend-dot" style="background:var(--color-fiction)"></div> Fiction</div>
     <div class="legend-item"><div class="legend-dot" style="background:var(--color-poetry)"></div> Poetry</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--color-dialogue)"></div> Dialogue</div>
     <div class="legend-item"><div class="legend-dot" style="background:var(--color-theme);opacity:0.6"></div> Theme</div>
   </div>
 
@@ -823,6 +825,7 @@ function typeColor(type) {
     case "essay": return "var(--color-essay)";
     case "fiction": return "var(--color-fiction)";
     case "poetry": return "var(--color-poetry)";
+    case "dialogue": return "var(--color-dialogue)";
     default: return "var(--color-theme)";
   }
 }
@@ -832,6 +835,7 @@ function typeColorRaw(type) {
     case "essay": return "#00d4aa";
     case "fiction": return "#f0a030";
     case "poetry": return "#b89cff";
+    case "dialogue": return "#ff8fb0";
     default: return "#5a6080";
   }
 }

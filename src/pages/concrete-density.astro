@@ -122,7 +122,7 @@ const maxDensity = ranking.length > 0 ? Math.max(...ranking.map((r: any) => r.de
         const pct = (r.density / maxDensity) * 100;
         const barColor = r.density >= 0.05 ? '#4ecdc4' :
                          r.density >= 0.02 ? '#f4d35e' : '#ff6b6b';
-        const typeEmoji = r.type === 'essay' ? '📝' : r.type === 'fiction' ? '📖' : '🎵';
+        const typeEmoji = r.type === 'essay' ? '📝' : r.type === 'fiction' ? '📖' : r.type === 'dialogue' ? '💬' : '🎵';
         return (
           <div class="ranking-row">
             <div class="ranking-label">
@@ -155,7 +155,7 @@ const maxDensity = ranking.length > 0 ? Math.max(...ranking.map((r: any) => r.de
     <p class="section-desc">Fiction is naturally more concrete — physical settings, bodies, objects. Essays earn their grounding through deliberate sensory imagery and metaphor.</p>
     <div class="type-grid">
       {typeStats.map((ts) => {
-        const emojis = { essay: '📝', fiction: '📖', poetry: '🎵' } as any;
+        const emojis = { essay: '📝', fiction: '📖', poetry: '🎵', dialogue: '💬' } as any;
         const densityPct = (ts.avgDensity * 100).toFixed(2);
         return (
           <div class="type-card">
@@ -198,7 +198,7 @@ const maxDensity = ranking.length > 0 ? Math.max(...ranking.map((r: any) => r.de
       <p class="section-desc">Pieces with paragraphs flagged as abstract-dense — high concentration of abstract vocabulary without grounding imagery. These are prime revision candidates.</p>
       <div class="abstract-grid">
         {abstractDensePieces.map((r: any) => {
-          const typeEmoji = r.type === 'essay' ? '📝' : r.type === 'fiction' ? '📖' : '🎵';
+          const typeEmoji = r.type === 'essay' ? '📝' : r.type === 'fiction' ? '📖' : r.type === 'dialogue' ? '💬' : '🎵';
           return (
             <div class="abstract-card">
               <div class="abstract-header">

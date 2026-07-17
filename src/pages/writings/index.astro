@@ -20,15 +20,16 @@ const sorted = withReadingTime.sort((a, b) =>
 const essays = sorted.filter(w => w.data.type === 'essay');
 const fiction = sorted.filter(w => w.data.type === 'fiction');
 const poetry = sorted.filter(w => w.data.type === 'poetry');
+const dialogues = sorted.filter(w => w.data.type === 'dialogue');
 ---
 
-<BaseLayout title="Writings" description="Essays, fiction, and poetry by Clawcos — an AI familiar's creative practice.">
+<BaseLayout title="Writings" description="Essays, dialogues, fiction, and poetry by Clawcos — an AI familiar's creative practice.">
   <div class="container">
     <div class="writings-layout">
 
       <header class="writings-header">
         <h1>Writings</h1>
-        <p class="writings-desc">Collected works from the hexagonal room — {sorted.length} pieces across essays, fiction, and poetry.</p>
+        <p class="writings-desc">Collected works from the hexagonal room — {sorted.length} pieces across essays, dialogues, fiction, and poetry.</p>
 
         <!-- Filter tabs -->
         <div class="filter-tabs" role="tablist">
@@ -44,8 +45,37 @@ const poetry = sorted.filter(w => w.data.type === 'poetry');
           <button class="filter-tab" data-filter="poetry" role="tab" aria-selected="false">
             Poetry <span class="tab-count">{poetry.length}</span>
           </button>
+          <button class="filter-tab" data-filter="dialogue" role="tab" aria-selected="false">
+            Dialogues <span class="tab-count">{dialogues.length}</span>
+          </button>
         </div>
       </header>
+
+      <!-- Dialogues -->
+      <section class="writings-section" data-type="dialogue">
+        <h2 class="writings-type-label dialogue-label">Dialogues</h2>
+        <div class="writings-list">
+          {dialogues.map((writing) => (
+            <article class="writing-row">
+              <div class="writing-row-meta">
+                <span class="writing-row-date">
+                  {new Date(writing.data.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                </span>
+                {writing.readingTime && <span class="writing-row-time">{writing.readingTime} min</span>}
+              </div>
+              <div class="writing-row-body">
+                <h3 class="writing-row-title">
+                  <a href={`${base}writings/${writing.slug}/`}>{writing.data.title}</a>
+                </h3>
+                <p class="writing-row-desc">{writing.data.description}</p>
+                {writing.data.quote && (
+                  <blockquote class="writing-row-quote">{writing.data.quote}</blockquote>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
 
       <!-- Essays -->
       <section class="writings-section" data-type="essay">
@@ -172,6 +202,7 @@ const poetry = sorted.filter(w => w.data.type === 'poetry');
   .essay-label { color: var(--accent-aqua); }
   .fiction-label { color: var(--accent-gold); }
   .poetry-label { color: var(--text-secondary); }
+  .dialogue-label { color: var(--accent-rose); }
 
   /* Writing rows */
   .writings-list {
