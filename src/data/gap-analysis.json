@@ -2808,6 +2808,17 @@
       },
       {
         "domains": [
+          "mind-body",
+          "philosophy of science"
+        ],
+        "individual_coverage": [
+          4,
+          3
+        ],
+        "interest_score": 3
+      },
+      {
+        "domains": [
           "philosophy of science",
           "technology"
         ],
@@ -2841,28 +2852,6 @@
       },
       {
         "domains": [
-          "mind-body",
-          "philosophy of science"
-        ],
-        "individual_coverage": [
-          4,
-          3
-        ],
-        "interest_score": 3
-      },
-      {
-        "domains": [
-          "mind-body",
-          "political philosophy"
-        ],
-        "individual_coverage": [
-          4,
-          2
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
           "eastern philosophy",
           "technology"
         ],
@@ -2874,23 +2863,34 @@
       },
       {
         "domains": [
-          "philosophy of science",
-          "political philosophy"
-        ],
-        "individual_coverage": [
-          3,
-          2
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
           "eastern philosophy",
           "philosophy of science"
         ],
         "individual_coverage": [
           2,
           3
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "mind-body",
+          "political philosophy"
+        ],
+        "individual_coverage": [
+          4,
+          2
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "philosophy of science",
+          "political philosophy"
+        ],
+        "individual_coverage": [
+          3,
+          2
         ],
         "interest_score": 2
       },
@@ -2919,11 +2919,22 @@
       {
         "domains": [
           "creativity",
-          "political philosophy"
+          "epistemology"
         ],
         "individual_coverage": [
           1,
-          2
+          11
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "phenomenology",
+          "time"
+        ],
+        "individual_coverage": [
+          1,
+          22
         ],
         "interest_score": 1
       },
@@ -2941,22 +2952,11 @@
       {
         "domains": [
           "creativity",
-          "phenomenology"
+          "ethics"
         ],
         "individual_coverage": [
           1,
-          1
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "creativity",
-          "technology"
-        ],
-        "individual_coverage": [
-          1,
-          4
+          14
         ],
         "interest_score": 1
       },
@@ -2973,22 +2973,33 @@
       },
       {
         "domains": [
-          "phenomenology",
-          "philosophy of science"
+          "creativity",
+          "eastern philosophy"
         ],
         "individual_coverage": [
           1,
-          3
+          2
         ],
         "interest_score": 1
       },
       {
         "domains": [
-          "aesthetics",
+          "creativity",
+          "mind-body"
+        ],
+        "individual_coverage": [
+          1,
+          4
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "consciousness",
           "creativity"
         ],
         "individual_coverage": [
-          23,
+          16,
           1
         ],
         "interest_score": 1
@@ -2996,22 +3007,11 @@
       {
         "domains": [
           "creativity",
-          "ethics"
+          "phenomenology"
         ],
         "individual_coverage": [
           1,
-          14
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "creativity",
-          "epistemology"
-        ],
-        "individual_coverage": [
-          1,
-          11
+          1
         ],
         "interest_score": 1
       }
@@ -3078,6 +3078,18 @@
     {
       "type": "auto-intersection",
       "domains": [
+        "mind-body",
+        "philosophy of science"
+      ],
+      "interest_score": 3,
+      "title": "On Mind-Body and Philosophy Of Science",
+      "question": "What happens at the intersection of mind-body and philosophy of science?",
+      "frameworks": [],
+      "connects_to": []
+    },
+    {
+      "type": "auto-intersection",
+      "domains": [
         "philosophy of science",
         "technology"
       ],
@@ -3112,18 +3124,6 @@
       "connects_to": []
     },
     {
-      "type": "auto-intersection",
-      "domains": [
-        "mind-body",
-        "philosophy of science"
-      ],
-      "interest_score": 3,
-      "title": "On Mind-Body and Philosophy Of Science",
-      "question": "What happens at the intersection of mind-body and philosophy of science?",
-      "frameworks": [],
-      "connects_to": []
-    },
-    {
       "type": "deepen",
       "domains": [
         "eastern philosophy"
@@ -3150,10 +3150,10 @@
       ]
     },
     {
-      "type": "shallow-intersection",
+      "type": "intersection",
       "domains": [
-        "creativity",
-        "consciousness"
+        "consciousness",
+        "creativity"
       ],
       "interest_score": 1,
       "title": "On Making",
@@ -3243,11 +3243,11 @@
       "Laozi"
     ],
     "important_unmentioned": [
-      "Arendt",
-      "Hegel",
       "Derrida",
+      "Arendt",
+      "Husserl",
       "Sartre",
-      "Husserl"
+      "Hegel"
     ],
     "top_20": [
       [
