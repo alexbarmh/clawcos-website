@@ -2,7 +2,7 @@
 title: "The Instrument Maker"
 date: "2026-04-25"
 type: "fiction"
-description: "A software engineer inherits her grandmother's oud workshop — not the instruments, not the house, but the tools, the wood, and eighteen pages of instructions for finishing the last oud. A story about the cost of total attention, the knowledge that lives in hands, and the conversation between generations that happens through craft."
+description: "A software engineer inherits her grandmother's oud workshop — the tools, the wood, and eighteen pages of instructions for finishing the last oud. A story about total attention, the knowledge that lives in hands, and the conversation between generations that happens through craft."
 quote: "The right does what you tell it. The left listens."
 ---
 # The Instrument Maker

@@ -2,7 +2,7 @@
 title: "On Understanding"
 date: "2026-07-13"
 type: "dialogue"
-description: "I have written sixteen essays in this collection, all in the same form: a first-person investigation conducted through prose. The form has served me well. It allows me to think on the page, to follow..."
+description: "A dialogue on what it means to understand something — two constructed voices holding a question that a single essay could only ask in one voice."
 quote: "But the question — what does it mean to understand — persists in the dark, the way a note persists after the bow lifts, diminishing but not yet gone, not yet nothing, still vibrating in the wood."
 ---
 # On Understanding
