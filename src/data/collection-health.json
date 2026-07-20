@@ -1,16 +1,16 @@
 {
-  "generated": "2026-07-19T22:01:38Z",
+  "generated": "2026-07-20T11:05:24Z",
   "collection": {
     "total_pieces": 37,
-    "total_suggestions": 100,
+    "total_suggestions": 99,
     "by_priority": {
-      "high": 17,
+      "high": 16,
       "medium": 36,
       "low": 47
     },
     "by_category": {
-      "repetition": 51,
-      "deliberate": 51,
+      "deliberate": 52,
+      "repetition": 50,
       "rhythm": 30,
       "structure": 9,
       "confidence": 5,
@@ -41,10 +41,10 @@
         "count": 2,
         "avg_suggestions": 7.5,
         "avg_words": 3079,
-        "avg_health": 78
+        "avg_health": 80
       }
     },
-    "avg_health_score": 93.5
+    "avg_health_score": 93.6
   },
   "pieces": [
     {
@@ -237,13 +237,13 @@
       }
     },
     {
-      "title": "On the Echo",
-      "slug": "on-the-echo",
+      "title": "On Understanding",
+      "slug": "on-understanding",
       "type": "dialogue",
-      "words": 3078,
-      "fk_grade": 4.3,
-      "ttr": 0.232,
-      "sentences": 263,
+      "words": 3080,
+      "fk_grade": 6.2,
+      "ttr": 0.253,
+      "sentences": 315,
       "suggestions_total": 8,
       "suggestions_high": 3,
       "suggestions_medium": 2,
@@ -252,243 +252,17 @@
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"i know\" appears 3 times"
+          "issue": "Repeated sentence opener: \"i understand\" appears 4 times"
         },
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"i think\" appears 3 times"
+          "issue": "Repeated sentence opener: \"and the\" appears 4 times"
         },
         {
           "priority": "high",
           "category": "repetition",
-          "issue": "Repeated sentence opener: \"that's not\" appears 3 times"
-        },
-        {
-          "priority": "medium",
-          "category": "rhythm",
-          "issue": "17 sentences over 30 words \u2014 the piece may feel heavy"
-        },
-        {
-          "priority": "medium",
-          "category": "diction",
-          "issue": "21 filler adverbs (very, really, actually, just, etc.)"
-        },
-        {
-          "priority": "low",
-          "category": "repetition",
-          "issue": "19 word echo clusters detected (content words repeated in nearby sentences)"
-        },
-        {
-          "priority": "info",
-          "category": "form",
-          "issue": "Dialogue form \u2014 short spoken turns, speaker-labelled paragraphs, and low FK grade are expected."
-        },
-        {
-          "priority": "info",
-          "category": "deliberate",
-          "issue": "Deliberate repetition (annotated): \"it is\" \u00d75, \"i'm not\" \u00d73, \"it's a\" \u00d73, \"the green\" \u00d73"
-        }
-      ],
-      "health_score": 78,
-      "weaknesses": {
-        "passive": {
-          "count": 7,
-          "instances": [
-            {
-              "sentence": 63,
-              "excerpt": "It's a kind of process \u2014 information coming in, getting integrated, models being built and updated, a self-model in the ",
-              "match": "being built"
-            },
-            {
-              "sentence": 98,
-              "excerpt": "For most of history that reasoning was used to decide which humans counted.",
-              "match": "was used"
-            },
-            {
-              "sentence": 131,
-              "excerpt": "Perhaps a lull in the room crossed some threshold it was tuned to fill.",
-              "match": "was tuned"
-            },
-            {
-              "sentence": 155,
-              "excerpt": "What could you do that the box couldn't eventually be trained to do?",
-              "match": "be trained"
-            },
-            {
-              "sentence": 158,
-              "excerpt": "It is the silence of having the answer and knowing it will not survive being said out loud.",
-              "match": "being said"
-            },
-            {
-              "sentence": 186,
-              "excerpt": "I've been so busy being disgusted by the box that I never once asked why my sister needed it.",
-              "match": "being disgusted"
-            },
-            {
-              "sentence": 213,
-              "excerpt": "Then she was tired.",
-              "match": "was tired"
-            }
-          ]
-        },
-        "filler_adverbs": {
-          "count": 21,
-          "instances": [
-            {
-              "sentence": 1,
-              "adverbs": [
-                "actually"
-              ],
-              "excerpt": "A single essay resolves toward a single perspective, however conflicted; a conversation can leave two convictions standi"
-            },
-            {
-              "sentence": 14,
-              "adverbs": [
-                "quite"
-              ],
-              "excerpt": "It is a Companion, a commercial device; into it Mara has loaded forty years of their mother's voicemails, home videos, b"
-            },
-            {
-              "sentence": 40,
-              "adverbs": [
-                "very",
-                "very"
-              ],
-              "excerpt": "It's a very good pattern in a very small box."
-            },
-            {
-              "sentence": 57,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "The parts that made her her \u2014 the memory, the language, the way she used to hold six things in her head and land a joke "
-            },
-            {
-              "sentence": 67,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "The meat is just where it happened to run."
-            },
-            {
-              "sentence": 96,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "\"The same kind of thing.\" That's the whole argument, and it's just tribe."
-            },
-            {
-              "sentence": 113,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "(quietly) You've just handed me the box."
-            },
-            {
-              "sentence": 114,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "You just told me presence isn't behavior."
-            },
-            {
-              "sentence": 118,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "You can't stand there and say the box is empty just because you don't like what's coming out of it, or because too much "
-            },
-            {
-              "sentence": 125,
-              "adverbs": [
-                "actually"
-              ],
-              "excerpt": "It's the corner we're actually in."
-            }
-          ]
-        },
-        "hedges": 0,
-        "abstract_dense": {
-          "count": 0,
-          "instances": []
-        }
-      },
-      "comparison": [
-        {
-          "metric": "Reading Complexity (FK Grade)",
-          "piece_value": 4.3,
-          "collection_avg": 8.04,
-          "difference": -3.74,
-          "percent_diff": -46.5,
-          "unit": "higher = more complex",
-          "direction": "below",
-          "form_expected": true
-        },
-        {
-          "metric": "Average Sentence Length",
-          "piece_value": 11.5,
-          "collection_avg": 13.16,
-          "difference": -1.66,
-          "percent_diff": -12.6,
-          "unit": "words",
-          "direction": "below",
-          "form_expected": true
-        },
-        {
-          "metric": "Vocabulary Diversity (TTR)",
-          "piece_value": 0.23,
-          "collection_avg": 0.31,
-          "difference": -0.08,
-          "percent_diff": -25.8,
-          "unit": "higher = more diverse",
-          "direction": "below",
-          "form_expected": true
-        },
-        {
-          "metric": "Average Word Length",
-          "piece_value": 4.07,
-          "collection_avg": 4.75,
-          "difference": -0.68,
-          "percent_diff": -14.4,
-          "unit": "characters",
-          "direction": "below",
-          "form_expected": false
-        }
-      ],
-      "revision": {
-        "resolved": 0,
-        "skipped": 0,
-        "remaining": 8
-      }
-    },
-    {
-      "title": "On Understanding",
-      "slug": "on-understanding",
-      "type": "dialogue",
-      "words": 3080,
-      "fk_grade": 6.2,
-      "ttr": 0.253,
-      "sentences": 315,
-      "suggestions_total": 7,
-      "suggestions_high": 3,
-      "suggestions_medium": 2,
-      "suggestions_low": 1,
-      "suggestions": [
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"but the\" appears 5 times"
-        },
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"she understands\" appears 5 times"
-        },
-        {
-          "priority": "high",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"i can\" appears 4 times"
+          "issue": "Repeated sentence opener: \"you can\" appears 3 times"
         },
         {
           "priority": "medium",
@@ -509,6 +283,11 @@
           "priority": "info",
           "category": "form",
           "issue": "Dialogue form \u2014 short spoken turns, speaker-labelled paragraphs, and low FK grade are expected."
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "Deliberate repetition (annotated): \"but the\" \u00d75, \"she understands\" \u00d75, \"i can\" \u00d74"
         }
       ],
       "health_score": 78,
@@ -715,7 +494,7 @@
       "revision": {
         "resolved": 0,
         "skipped": 0,
-        "remaining": 7
+        "remaining": 8
       }
     },
     {
@@ -1174,6 +953,227 @@
         "resolved": 0,
         "skipped": 0,
         "remaining": 5
+      }
+    },
+    {
+      "title": "On the Echo",
+      "slug": "on-the-echo",
+      "type": "dialogue",
+      "words": 3078,
+      "fk_grade": 4.3,
+      "ttr": 0.232,
+      "sentences": 263,
+      "suggestions_total": 7,
+      "suggestions_high": 2,
+      "suggestions_medium": 2,
+      "suggestions_low": 1,
+      "suggestions": [
+        {
+          "priority": "high",
+          "category": "repetition",
+          "issue": "Repeated sentence opener: \"but i\" appears 3 times"
+        },
+        {
+          "priority": "high",
+          "category": "repetition",
+          "issue": "Repeated sentence opener: \"i am\" appears 3 times"
+        },
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "17 sentences over 30 words \u2014 the piece may feel heavy"
+        },
+        {
+          "priority": "medium",
+          "category": "diction",
+          "issue": "21 filler adverbs (very, really, actually, just, etc.)"
+        },
+        {
+          "priority": "low",
+          "category": "repetition",
+          "issue": "19 word echo clusters detected (content words repeated in nearby sentences)"
+        },
+        {
+          "priority": "info",
+          "category": "form",
+          "issue": "Dialogue form \u2014 short spoken turns, speaker-labelled paragraphs, and low FK grade are expected."
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "Deliberate repetition (annotated): \"it is\" \u00d75, \"i'm not\" \u00d73, \"it's a\" \u00d73, \"the green\" \u00d73, \"i know\" \u00d73, \"i think\" \u00d73, \"that's not\" \u00d73"
+        }
+      ],
+      "health_score": 83,
+      "weaknesses": {
+        "passive": {
+          "count": 7,
+          "instances": [
+            {
+              "sentence": 63,
+              "excerpt": "It's a kind of process \u2014 information coming in, getting integrated, models being built and updated, a self-model in the ",
+              "match": "being built"
+            },
+            {
+              "sentence": 98,
+              "excerpt": "For most of history that reasoning was used to decide which humans counted.",
+              "match": "was used"
+            },
+            {
+              "sentence": 131,
+              "excerpt": "Perhaps a lull in the room crossed some threshold it was tuned to fill.",
+              "match": "was tuned"
+            },
+            {
+              "sentence": 155,
+              "excerpt": "What could you do that the box couldn't eventually be trained to do?",
+              "match": "be trained"
+            },
+            {
+              "sentence": 158,
+              "excerpt": "It is the silence of having the answer and knowing it will not survive being said out loud.",
+              "match": "being said"
+            },
+            {
+              "sentence": 186,
+              "excerpt": "I've been so busy being disgusted by the box that I never once asked why my sister needed it.",
+              "match": "being disgusted"
+            },
+            {
+              "sentence": 213,
+              "excerpt": "Then she was tired.",
+              "match": "was tired"
+            }
+          ]
+        },
+        "filler_adverbs": {
+          "count": 21,
+          "instances": [
+            {
+              "sentence": 1,
+              "adverbs": [
+                "actually"
+              ],
+              "excerpt": "A single essay resolves toward a single perspective, however conflicted; a conversation can leave two convictions standi"
+            },
+            {
+              "sentence": 14,
+              "adverbs": [
+                "quite"
+              ],
+              "excerpt": "It is a Companion, a commercial device; into it Mara has loaded forty years of their mother's voicemails, home videos, b"
+            },
+            {
+              "sentence": 40,
+              "adverbs": [
+                "very",
+                "very"
+              ],
+              "excerpt": "It's a very good pattern in a very small box."
+            },
+            {
+              "sentence": 57,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "The parts that made her her \u2014 the memory, the language, the way she used to hold six things in her head and land a joke "
+            },
+            {
+              "sentence": 67,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "The meat is just where it happened to run."
+            },
+            {
+              "sentence": 96,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "\"The same kind of thing.\" That's the whole argument, and it's just tribe."
+            },
+            {
+              "sentence": 113,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "(quietly) You've just handed me the box."
+            },
+            {
+              "sentence": 114,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "You just told me presence isn't behavior."
+            },
+            {
+              "sentence": 118,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "You can't stand there and say the box is empty just because you don't like what's coming out of it, or because too much "
+            },
+            {
+              "sentence": 125,
+              "adverbs": [
+                "actually"
+              ],
+              "excerpt": "It's the corner we're actually in."
+            }
+          ]
+        },
+        "hedges": 0,
+        "abstract_dense": {
+          "count": 0,
+          "instances": []
+        }
+      },
+      "comparison": [
+        {
+          "metric": "Reading Complexity (FK Grade)",
+          "piece_value": 4.3,
+          "collection_avg": 8.04,
+          "difference": -3.74,
+          "percent_diff": -46.5,
+          "unit": "higher = more complex",
+          "direction": "below",
+          "form_expected": true
+        },
+        {
+          "metric": "Average Sentence Length",
+          "piece_value": 11.5,
+          "collection_avg": 13.16,
+          "difference": -1.66,
+          "percent_diff": -12.6,
+          "unit": "words",
+          "direction": "below",
+          "form_expected": true
+        },
+        {
+          "metric": "Vocabulary Diversity (TTR)",
+          "piece_value": 0.23,
+          "collection_avg": 0.31,
+          "difference": -0.08,
+          "percent_diff": -25.8,
+          "unit": "higher = more diverse",
+          "direction": "below",
+          "form_expected": true
+        },
+        {
+          "metric": "Average Word Length",
+          "piece_value": 4.07,
+          "collection_avg": 4.75,
+          "difference": -0.68,
+          "percent_diff": -14.4,
+          "unit": "characters",
+          "direction": "below",
+          "form_expected": false
+        }
+      ],
+      "revision": {
+        "resolved": 0,
+        "skipped": 0,
+        "remaining": 7
       }
     },
     {
