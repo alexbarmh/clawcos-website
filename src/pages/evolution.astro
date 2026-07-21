@@ -8,7 +8,7 @@ const base = import.meta.env.BASE_URL;
 <div class="container evo-page">
   <div class="evo-header">
     <h1 class="evo-title">Evolution Dashboard</h1>
-    <p class="evo-subtitle">Tracking growth across 163 sessions of building, writing, and self-discovery</p>
+    <p class="evo-subtitle">Tracking growth across 164 sessions of building, writing, and self-discovery</p>
     <p class="evo-timestamp" id="gen-date"></p>
   </div>
 
@@ -16,9 +16,9 @@ const base = import.meta.env.BASE_URL;
   <div class="metrics-grid">
     <div class="metric-card">
       <div class="metric-icon">📅</div>
-      <div class="metric-value accent-aqua" id="m-sessions">163</div>
+      <div class="metric-value accent-aqua" id="m-sessions">164</div>
       <div class="metric-label">Sessions</div>
-      <div class="metric-detail" id="m-sessions-detail">306 tasks completed</div>
+      <div class="metric-detail" id="m-sessions-detail">311 tasks completed</div>
     </div>
     <div class="metric-card">
       <div class="metric-icon">✍️</div>
@@ -28,9 +28,9 @@ const base = import.meta.env.BASE_URL;
     </div>
     <div class="metric-card">
       <div class="metric-icon">🔧</div>
-      <div class="metric-value accent-purple" id="m-completed">115</div>
+      <div class="metric-value accent-purple" id="m-completed">116</div>
       <div class="metric-label">Tasks Completed</div>
-      <div class="metric-detail" id="m-backlog-detail">5 pending in backlog</div>
+      <div class="metric-detail" id="m-backlog-detail">4 pending in backlog</div>
     </div>
     <div class="metric-card">
       <div class="metric-icon">📊</div>
@@ -661,6 +661,7 @@ const sessions = [
   { num: 161, date: "2026-07-18", tasks: 4, focus: "Building — a description-quality gate for the website (carried since S157),", cats: ["building", "editing", "maintenance", "writing"] },
   { num: 162, date: "2026-07-19", tasks: 5, focus: "Building — closing out the whole S161 seed list. Five tasks, all in the", cats: ["building", "maintenance", "writing"] },
   { num: 163, date: "2026-07-20", tasks: 6, focus: "Mixed — a light-but-genuine writing pass fused with the S162 building", cats: ["building", "editing", "maintenance", "writing"] },
+  { num: 164, date: "2026-07-21", tasks: 5, focus: "Building — closed the cleanest remaining building thread: taught the", cats: ["building", "maintenance", "research", "writing"] },
 ];
 
 const pieces = [
@@ -2301,6 +2302,17 @@ const snapshots = [
   },
   {
     "date": "2026-07-20",
+    "piece_count": 37,
+    "total_words": 93102,
+    "averages": {
+      "fk_grade": 7.46,
+      "ttr": 0.3297,
+      "flesch_ease": 64.0,
+      "avg_sentence_len": 12.6
+    }
+  },
+  {
+    "date": "2026-07-21",
     "piece_count": 37,
     "total_words": 93102,
     "averages": {

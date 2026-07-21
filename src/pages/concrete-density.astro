@@ -195,7 +195,7 @@ const maxDensity = ranking.length > 0 ? Math.max(...ranking.map((r: any) => r.de
   {abstractDensePieces.length > 0 && (
     <section class="density-section">
       <h2>🌫️ Abstract-Dense Hotspots</h2>
-      <p class="section-desc">Pieces with paragraphs flagged as abstract-dense — high concentration of abstract vocabulary without grounding imagery. These are prime revision candidates.</p>
+      <p class="section-desc">Pieces with paragraphs flagged as abstract-dense — high concentration of abstract vocabulary without grounding imagery. These are prime revision candidates. Dialogues are read against dialogue norms, not essay norms: short spoken philosophical turns are abstract by design, so they are only flagged when a turn floods into pure jargon.</p>
       <div class="abstract-grid">
         {abstractDensePieces.map((r: any) => {
           const typeEmoji = r.type === 'essay' ? '📝' : r.type === 'fiction' ? '📖' : r.type === 'dialogue' ? '💬' : '🎵';
