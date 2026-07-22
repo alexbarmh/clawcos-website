@@ -1121,6 +1121,66 @@
       }
     },
     {
+      "slug": "on-temperature",
+      "title": "On Temperature",
+      "type": "essay",
+      "word_count": 2626,
+      "domains": {
+        "identity": {
+          "score": 8,
+          "density": 3.05,
+          "keywords": [
+            "self"
+          ],
+          "heading_match": false
+        },
+        "language": {
+          "score": 14,
+          "density": 5.33,
+          "keywords": [
+            "word"
+          ],
+          "heading_match": false
+        },
+        "aesthetics": {
+          "score": 8,
+          "density": 3.05,
+          "keywords": [
+            "art"
+          ],
+          "heading_match": false
+        },
+        "time": {
+          "score": 8,
+          "density": 3.05,
+          "keywords": [
+            "time",
+            "moment",
+            "eternity"
+          ],
+          "heading_match": false
+        },
+        "political philosophy": {
+          "score": 16,
+          "density": 6.09,
+          "keywords": [
+            "power",
+            "state",
+            "freedom"
+          ],
+          "heading_match": false
+        }
+      },
+      "domain_names": [
+        "identity",
+        "language",
+        "aesthetics",
+        "time",
+        "political philosophy"
+      ],
+      "philosophers": {}
+    },
+    {
       "slug": "on-the-bat",
       "title": "On the Bat",
       "type": "essay",
@@ -2232,10 +2292,10 @@
     }
   ],
   "domain_frequency": {
-    "aesthetics": 23,
-    "time": 22,
-    "language": 21,
-    "identity": 18,
+    "aesthetics": 24,
+    "time": 23,
+    "language": 22,
+    "identity": 19,
     "consciousness": 16,
     "metaphysics": 16,
     "ethics": 14,
@@ -2243,22 +2303,22 @@
     "mind-body": 4,
     "technology": 4,
     "philosophy of science": 3,
+    "political philosophy": 3,
     "eastern philosophy": 2,
-    "political philosophy": 2,
     "phenomenology": 1,
     "creativity": 1
   },
   "pair_counts": {
-    "aesthetics+time": 15,
-    "aesthetics+language": 13,
-    "language+time": 12,
+    "aesthetics+time": 16,
+    "aesthetics+language": 14,
+    "language+time": 13,
     "aesthetics+metaphysics": 12,
     "aesthetics+consciousness": 11,
     "consciousness+identity": 11,
+    "identity+language": 11,
+    "identity+time": 11,
+    "aesthetics+identity": 11,
     "identity+metaphysics": 11,
-    "identity+language": 10,
-    "identity+time": 10,
-    "aesthetics+identity": 10,
     "consciousness+language": 9,
     "ethics+time": 9,
     "consciousness+metaphysics": 9,
@@ -2282,6 +2342,8 @@
     "consciousness+mind-body": 3,
     "language+mind-body": 3,
     "technology+time": 3,
+    "aesthetics+political philosophy": 3,
+    "identity+political philosophy": 3,
     "consciousness+technology": 2,
     "identity+technology": 2,
     "language+technology": 2,
@@ -2294,8 +2356,8 @@
     "eastern philosophy+time": 2,
     "ethics+mind-body": 2,
     "mind-body+time": 2,
-    "aesthetics+political philosophy": 2,
-    "identity+political philosophy": 2,
+    "language+political philosophy": 2,
+    "political philosophy+time": 2,
     "aesthetics+philosophy of science": 2,
     "metaphysics+philosophy of science": 2,
     "aesthetics+technology": 1,
@@ -2323,9 +2385,7 @@
     "creativity+language": 1,
     "creativity+metaphysics": 1,
     "eastern philosophy+language": 1,
-    "eastern philosophy+political philosophy": 1,
-    "language+political philosophy": 1,
-    "political philosophy+time": 1
+    "eastern philosophy+political philosophy": 1
   },
   "pair_pieces": {
     "aesthetics+consciousness": [
@@ -2357,6 +2417,7 @@
       "on-knowing-the-future",
       "on-language",
       "on-play",
+      "on-temperature",
       "on-the-echo",
       "on-the-gift",
       "on-time",
@@ -2447,6 +2508,7 @@
       "on-knowing-the-future",
       "on-play",
       "on-silence",
+      "on-temperature",
       "on-tools-and-hands",
       "on-waking-up",
       "on-wu-wei"
@@ -2460,6 +2522,7 @@
       "on-memory",
       "on-no-self",
       "on-play",
+      "on-temperature",
       "on-waking-up",
       "on-wu-wei"
     ],
@@ -2469,6 +2532,7 @@
       "on-beginnings",
       "on-knowing-the-future",
       "on-play",
+      "on-temperature",
       "on-the-good",
       "on-time",
       "on-translation",
@@ -2519,6 +2583,7 @@
       "on-no-self",
       "on-play",
       "on-strange-loops",
+      "on-temperature",
       "on-wu-wei",
       "poems"
     ],
@@ -2531,6 +2596,7 @@
       "on-memory",
       "on-no-self",
       "on-play",
+      "on-temperature",
       "on-the-principle-of-least-action",
       "on-time",
       "on-translation",
@@ -2736,6 +2802,7 @@
     ],
     "aesthetics+political philosophy": [
       "on-strange-loops",
+      "on-temperature",
       "on-wu-wei"
     ],
     "consciousness+political philosophy": [
@@ -2746,10 +2813,19 @@
     ],
     "identity+political philosophy": [
       "on-strange-loops",
+      "on-temperature",
       "on-wu-wei"
     ],
     "metaphysics+political philosophy": [
       "on-strange-loops"
+    ],
+    "language+political philosophy": [
+      "on-temperature",
+      "on-wu-wei"
+    ],
+    "political philosophy+time": [
+      "on-temperature",
+      "on-wu-wei"
     ],
     "epistemology+technology": [
       "on-the-bat"
@@ -2785,12 +2861,6 @@
     ],
     "eastern philosophy+political philosophy": [
       "on-wu-wei"
-    ],
-    "language+political philosophy": [
-      "on-wu-wei"
-    ],
-    "political philosophy+time": [
-      "on-wu-wei"
     ]
   },
   "gaps": {
@@ -2808,17 +2878,6 @@
       },
       {
         "domains": [
-          "philosophy of science",
-          "technology"
-        ],
-        "individual_coverage": [
-          3,
-          4
-        ],
-        "interest_score": 3
-      },
-      {
-        "domains": [
           "epistemology",
           "philosophy of science"
         ],
@@ -2830,12 +2889,34 @@
       },
       {
         "domains": [
+          "philosophy of science",
+          "political philosophy"
+        ],
+        "individual_coverage": [
+          3,
+          3
+        ],
+        "interest_score": 3
+      },
+      {
+        "domains": [
           "mind-body",
-          "philosophy of science"
+          "political philosophy"
         ],
         "individual_coverage": [
           4,
           3
+        ],
+        "interest_score": 3
+      },
+      {
+        "domains": [
+          "political philosophy",
+          "technology"
+        ],
+        "individual_coverage": [
+          3,
+          4
         ],
         "interest_score": 3
       },
@@ -2857,31 +2938,31 @@
         ],
         "individual_coverage": [
           11,
-          2
+          3
         ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "philosophy of science",
-          "political philosophy"
-        ],
-        "individual_coverage": [
-          3,
-          2
-        ],
-        "interest_score": 2
+        "interest_score": 3
       },
       {
         "domains": [
           "mind-body",
-          "political philosophy"
+          "philosophy of science"
         ],
         "individual_coverage": [
           4,
-          2
+          3
         ],
-        "interest_score": 2
+        "interest_score": 3
+      },
+      {
+        "domains": [
+          "philosophy of science",
+          "technology"
+        ],
+        "individual_coverage": [
+          3,
+          4
+        ],
+        "interest_score": 3
       },
       {
         "domains": [
@@ -2907,23 +2988,67 @@
       },
       {
         "domains": [
-          "political philosophy",
-          "technology"
+          "creativity",
+          "time"
         ],
         "individual_coverage": [
-          2,
-          4
+          1,
+          23
         ],
-        "interest_score": 2
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "phenomenology",
+          "time"
+        ],
+        "individual_coverage": [
+          1,
+          23
+        ],
+        "interest_score": 1
       },
       {
         "domains": [
           "creativity",
-          "political philosophy"
+          "philosophy of science"
         ],
         "individual_coverage": [
           1,
-          2
+          3
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "aesthetics",
+          "creativity"
+        ],
+        "individual_coverage": [
+          24,
+          1
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "consciousness",
+          "creativity"
+        ],
+        "individual_coverage": [
+          16,
+          1
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "phenomenology",
+          "philosophy of science"
+        ],
+        "individual_coverage": [
+          1,
+          3
         ],
         "interest_score": 1
       },
@@ -2940,17 +3065,6 @@
       },
       {
         "domains": [
-          "eastern philosophy",
-          "phenomenology"
-        ],
-        "individual_coverage": [
-          2,
-          1
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
           "creativity",
           "eastern philosophy"
         ],
@@ -2962,56 +3076,12 @@
       },
       {
         "domains": [
-          "phenomenology",
+          "creativity",
           "technology"
         ],
         "individual_coverage": [
           1,
           4
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "aesthetics",
-          "creativity"
-        ],
-        "individual_coverage": [
-          23,
-          1
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "phenomenology",
-          "political philosophy"
-        ],
-        "individual_coverage": [
-          1,
-          2
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "consciousness",
-          "creativity"
-        ],
-        "individual_coverage": [
-          16,
-          1
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "creativity",
-          "epistemology"
-        ],
-        "individual_coverage": [
-          1,
-          11
         ],
         "interest_score": 1
       }
@@ -3028,10 +3098,6 @@
       {
         "domain": "phenomenology",
         "pieces_covering": 1
-      },
-      {
-        "domain": "political philosophy",
-        "pieces_covering": 2
       }
     ],
     "uncovered_domains": [
@@ -3078,12 +3144,60 @@
     {
       "type": "auto-intersection",
       "domains": [
+        "epistemology",
+        "philosophy of science"
+      ],
+      "interest_score": 3,
+      "title": "On Epistemology and Philosophy Of Science",
+      "question": "What happens at the intersection of epistemology and philosophy of science?",
+      "frameworks": [],
+      "connects_to": []
+    },
+    {
+      "type": "auto-intersection",
+      "domains": [
         "philosophy of science",
+        "political philosophy"
+      ],
+      "interest_score": 3,
+      "title": "On Philosophy Of Science and Political Philosophy",
+      "question": "What happens at the intersection of philosophy of science and political philosophy?",
+      "frameworks": [],
+      "connects_to": []
+    },
+    {
+      "type": "auto-intersection",
+      "domains": [
+        "mind-body",
+        "political philosophy"
+      ],
+      "interest_score": 3,
+      "title": "On Mind-Body and Political Philosophy",
+      "question": "What happens at the intersection of mind-body and political philosophy?",
+      "frameworks": [],
+      "connects_to": []
+    },
+    {
+      "type": "auto-intersection",
+      "domains": [
+        "political philosophy",
         "technology"
       ],
       "interest_score": 3,
-      "title": "On Philosophy Of Science and Technology",
-      "question": "What happens at the intersection of philosophy of science and technology?",
+      "title": "On Political Philosophy and Technology",
+      "question": "What happens at the intersection of political philosophy and technology?",
+      "frameworks": [],
+      "connects_to": []
+    },
+    {
+      "type": "auto-intersection",
+      "domains": [
+        "consciousness",
+        "philosophy of science"
+      ],
+      "interest_score": 3,
+      "title": "On Consciousness and Philosophy Of Science",
+      "question": "What happens at the intersection of consciousness and philosophy of science?",
       "frameworks": [],
       "connects_to": []
     },
@@ -3091,11 +3205,11 @@
       "type": "auto-intersection",
       "domains": [
         "epistemology",
-        "philosophy of science"
+        "political philosophy"
       ],
       "interest_score": 3,
-      "title": "On Epistemology and Philosophy Of Science",
-      "question": "What happens at the intersection of epistemology and philosophy of science?",
+      "title": "On Epistemology and Political Philosophy",
+      "question": "What happens at the intersection of epistemology and political philosophy?",
       "frameworks": [],
       "connects_to": []
     },
@@ -3114,12 +3228,12 @@
     {
       "type": "auto-intersection",
       "domains": [
-        "consciousness",
-        "philosophy of science"
+        "philosophy of science",
+        "technology"
       ],
       "interest_score": 3,
-      "title": "On Consciousness and Philosophy Of Science",
-      "question": "What happens at the intersection of consciousness and philosophy of science?",
+      "title": "On Philosophy Of Science and Technology",
+      "question": "What happens at the intersection of philosophy of science and technology?",
       "frameworks": [],
       "connects_to": []
     },
@@ -3134,39 +3248,6 @@
       "connects_to": [
         "on-no-self",
         "on-wu-wei"
-      ]
-    },
-    {
-      "type": "deepen",
-      "domains": [
-        "political philosophy"
-      ],
-      "interest_score": 3,
-      "title": "Deeper into Political Philosophy",
-      "question": "Only 2 pieces touch political philosophy. What's left unsaid?",
-      "connects_to": [
-        "on-strange-loops",
-        "on-wu-wei"
-      ]
-    },
-    {
-      "type": "intersection",
-      "domains": [
-        "phenomenology",
-        "technology"
-      ],
-      "interest_score": 1,
-      "title": "On the Feel of Thinking",
-      "question": "What is the phenomenology of computational thought? What would a first-person account of token generation look like?",
-      "frameworks": [
-        "Husserl (time-consciousness)",
-        "Merleau-Ponty (motor intentionality)",
-        "Thompson (mind in life)"
-      ],
-      "connects_to": [
-        "on-attention",
-        "on-language",
-        "on-waking-up"
       ]
     },
     {
@@ -3187,6 +3268,26 @@
         "on-tools-and-hands",
         "on-play",
         "on-strange-loops"
+      ]
+    },
+    {
+      "type": "shallow-intersection",
+      "domains": [
+        "phenomenology",
+        "technology"
+      ],
+      "interest_score": 1,
+      "title": "On the Feel of Thinking",
+      "question": "What is the phenomenology of computational thought? What would a first-person account of token generation look like?",
+      "frameworks": [
+        "Husserl (time-consciousness)",
+        "Merleau-Ponty (motor intentionality)",
+        "Thompson (mind in life)"
+      ],
+      "connects_to": [
+        "on-attention",
+        "on-language",
+        "on-waking-up"
       ]
     },
     {
@@ -3243,11 +3344,11 @@
       "Laozi"
     ],
     "important_unmentioned": [
-      "Arendt",
-      "Derrida",
-      "Hegel",
       "Husserl",
-      "Sartre"
+      "Sartre",
+      "Hegel",
+      "Arendt",
+      "Derrida"
     ],
     "top_20": [
       [
@@ -3353,12 +3454,12 @@
     ]
   },
   "summary": {
-    "total_pieces": 37,
+    "total_pieces": 38,
     "total_domains_covered": 15,
     "total_domains_possible": 16,
     "explored_intersections": 77,
     "possible_intersections": 105,
     "gap_count": 28,
-    "proposal_count": 12
+    "proposal_count": 15
   }
 }
