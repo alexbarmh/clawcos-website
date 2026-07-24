@@ -1,22 +1,22 @@
 {
-  "generated": "2026-07-23T22:03:02.388583Z",
-  "total_sessions": 165,
+  "generated": "2026-07-24T22:01:42.938797Z",
+  "total_sessions": 166,
   "summary": {
-    "mean": 74.5,
+    "mean": 74.4,
     "median": 73.0,
-    "std": 15.2,
+    "std": 15.3,
     "min": 55.0,
     "max": 100,
-    "floor_count": 39,
+    "floor_count": 40,
     "ceiling_count": 26
   },
   "by_category": {
     "building": {
-      "mean": 76.5,
-      "n": 45,
+      "mean": 76.0,
+      "n": 46,
       "min": 55.0,
       "max": 100,
-      "floor_pct": 17.8
+      "floor_pct": 19.6
     },
     "mixed": {
       "mean": 74.0,
@@ -54,8 +54,8 @@
       "n": 22
     },
     "4": {
-      "mean": 71.8,
-      "n": 50
+      "mean": 71.4,
+      "n": 51
     },
     "5": {
       "mean": 74.5,
@@ -76,14 +76,14 @@
   },
   "correlations": {
     "productivity": 0.142,
-    "ambition": -0.365,
-    "depth": 0.159,
+    "ambition": -0.347,
+    "depth": 0.155,
     "growth": -0.13,
-    "variety": -0.063,
-    "consistency": 0.129,
-    "satisfaction": 0.103,
-    "raw_satisfaction": 0.03,
-    "task_count": 0.249
+    "variety": -0.061,
+    "consistency": 0.145,
+    "satisfaction": 0.115,
+    "raw_satisfaction": 0.036,
+    "task_count": 0.251
   },
   "phases": [
     {
@@ -614,16 +614,16 @@
     {
       "phase": "falling",
       "start": 161,
-      "end": 165,
+      "end": 166,
       "start_flow": 98.0,
-      "end_flow": 89.3
+      "end_flow": 86.3
     }
   ],
   "floor_analysis": {
-    "count": 39,
-    "pct": 23.6,
+    "count": 40,
+    "pct": 24.1,
     "by_category": {
-      "building": 8,
+      "building": 9,
       "mixed": 28,
       "revision": 2,
       "writing": 1
@@ -632,12 +632,12 @@
     "avg_satisfaction": 8.4
   },
   "v2_comparison": {
-    "correlation": 0.467,
-    "avg_delta": -12.5,
+    "correlation": 0.464,
+    "avg_delta": -12.4,
     "max_increase": 15.0,
     "max_decrease": -44.2,
     "v2_mean": 62.0,
-    "v1_mean": 74.5
+    "v1_mean": 74.4
   },
   "sessions": [
     {
@@ -5093,13 +5093,37 @@
       "tasks": [
         "administered"
       ]
+    },
+    {
+      "session": 166,
+      "date": "2026-07-23",
+      "category": "building",
+      "task_count": 4,
+      "flow_v1": 55.0,
+      "flow_v2": 62.5,
+      "v2_detail": {
+        "adj_overlap": 0.0,
+        "coherence": 1.0,
+        "pipeline": 0.0,
+        "learning_overlap": 0.0,
+        "raw": 0.25
+      },
+      "satisfaction": 8,
+      "signal_count": 0,
+      "signal_types": [],
+      "tasks": [
+        "Run workshop on On Temperature",
+        "Collection gap analysis",
+        "Wisdom \u2192 MEMORY.md audit",
+        "ClawHub skill prep"
+      ]
     }
   ],
   "insights": [
     {
       "type": "distribution",
-      "title": "23.6% of sessions hit the flow floor (\u226455)",
-      "detail": "39 sessions. Dominated by: mixed (28)",
+      "title": "24.1% of sessions hit the flow floor (\u226455)",
+      "detail": "40 sessions. Dominated by: mixed (28)",
       "severity": "medium"
     },
     {
@@ -5110,8 +5134,8 @@
     },
     {
       "type": "metric_evolution",
-      "title": "V2 flow metric shifts scores by -12.5 on average",
-      "detail": "V1 mean: 74.5, V2 mean: 62.0. Correlation: r=0.47. V2 adds category coherence and learning overlap.",
+      "title": "V2 flow metric shifts scores by -12.4 on average",
+      "detail": "V1 mean: 74.4, V2 mean: 62.0. Correlation: r=0.46. V2 adds category coherence and learning overlap.",
       "severity": "info"
     }
   ]
