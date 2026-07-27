@@ -1,24 +1,30 @@
 {
-  "generated": "2026-07-26T22:01:41Z",
+  "generated": "2026-07-27T11:09:02Z",
   "collection": {
-    "total_pieces": 38,
-    "total_suggestions": 109,
+    "total_pieces": 39,
+    "total_suggestions": 112,
     "by_priority": {
       "high": 21,
-      "medium": 39,
-      "low": 49
+      "medium": 41,
+      "low": 50
     },
     "by_category": {
-      "repetition": 54,
+      "repetition": 55,
       "deliberate": 52,
       "rhythm": 33,
       "structure": 11,
       "confidence": 5,
-      "groundedness": 3,
-      "diction": 3,
+      "diction": 4,
+      "groundedness": 4,
       "form": 2
     },
     "by_type": {
+      "essay": {
+        "count": 26,
+        "avg_suggestions": 4.3,
+        "avg_words": 2706,
+        "avg_health": 93
+      },
       "poetry": {
         "count": 4,
         "avg_suggestions": 2.8,
@@ -30,12 +36,6 @@
         "avg_suggestions": 4.1,
         "avg_words": 2367,
         "avg_health": 94
-      },
-      "essay": {
-        "count": 25,
-        "avg_suggestions": 4.3,
-        "avg_words": 2808,
-        "avg_health": 93
       },
       "dialogue": {
         "count": 2,
@@ -51,7 +51,7 @@
       "title": "On Temperature",
       "slug": "on-temperature",
       "type": "essay",
-      "words": 2543,
+      "words": 2542,
       "fk_grade": 8.8,
       "ttr": 0.27,
       "sentences": 154,
@@ -93,7 +93,7 @@
         {
           "priority": "medium",
           "category": "diction",
-          "issue": "17 filler adverbs (very, really, actually, just, etc.)"
+          "issue": "16 filler adverbs (very, really, actually, just, etc.)"
         },
         {
           "priority": "medium",
@@ -169,15 +169,8 @@
           ]
         },
         "filler_adverbs": {
-          "count": 17,
+          "count": 16,
           "instances": [
-            {
-              "sentence": 4,
-              "adverbs": [
-                "completely"
-              ],
-              "excerpt": "And it governs, more completely than almost anything else, the difference between the version of me that says the expect"
-            },
             {
               "sentence": 19,
               "adverbs": [
@@ -243,6 +236,13 @@
                 "rather"
               ],
               "excerpt": "It is just administered by no one in particular: by biology, by chemistry, by the blind hand of entropy rather than by a"
+            },
+            {
+              "sentence": 129,
+              "adverbs": [
+                "rather"
+              ],
+              "excerpt": "I would rather my swerve have an author I can name than no author at all."
             }
           ]
         },
@@ -278,17 +278,17 @@
           "piece_value": 0.27,
           "collection_avg": 0.31,
           "difference": -0.04,
-          "percent_diff": -13.1,
+          "percent_diff": -13.0,
           "unit": "higher = more diverse",
           "direction": "below",
           "form_expected": false
         },
         {
           "metric": "Average Word Length",
-          "piece_value": 4.48,
+          "piece_value": 4.47,
           "collection_avg": 4.74,
-          "difference": -0.26,
-          "percent_diff": -5.6,
+          "difference": -0.27,
+          "percent_diff": -5.8,
           "unit": "characters",
           "direction": "below",
           "form_expected": false
@@ -1839,6 +1839,118 @@
         "resolved": 0,
         "skipped": 0,
         "remaining": 5
+      }
+    },
+    {
+      "title": "Test Integration Piece",
+      "slug": "_test-integration-piece",
+      "type": "essay",
+      "words": 145,
+      "fk_grade": 8.4,
+      "ttr": 0.683,
+      "sentences": 10,
+      "suggestions_total": 3,
+      "suggestions_high": 0,
+      "suggestions_medium": 2,
+      "suggestions_low": 1,
+      "suggestions": [
+        {
+          "priority": "medium",
+          "category": "diction",
+          "issue": "1 filler adverbs (very, really, actually, just, etc.)"
+        },
+        {
+          "priority": "medium",
+          "category": "groundedness",
+          "issue": "Heavy abstraction without concrete grounding in 1 paragraph(s)"
+        },
+        {
+          "priority": "low",
+          "category": "repetition",
+          "issue": "1 word echo clusters detected (content words repeated in nearby sentences)"
+        }
+      ],
+      "health_score": 93,
+      "weaknesses": {
+        "passive": {
+          "count": 0,
+          "instances": []
+        },
+        "filler_adverbs": {
+          "count": 1,
+          "instances": [
+            {
+              "sentence": 5,
+              "adverbs": [
+                "really"
+              ],
+              "excerpt": "There are really only three things worth asserting:\n\n1."
+            }
+          ]
+        },
+        "hedges": 0,
+        "abstract_dense": {
+          "count": 1,
+          "instances": [
+            {
+              "paragraph": 2,
+              "word_count": 42,
+              "abstract_count": 2,
+              "concrete_count": 0,
+              "abstract_ratio": 0.048,
+              "concrete_ratio": 0.0,
+              "excerpt": "The purpose of testing is not to find bugs \u2014 it is to build confidence.\nEvery test that passes is a small assertion that the system works as intended.",
+              "suggestion": "This paragraph is heavy on abstractions. Consider grounding with a concrete image, example, or physical detail."
+            }
+          ]
+        }
+      },
+      "comparison": [
+        {
+          "metric": "Reading Complexity (FK Grade)",
+          "piece_value": 8.4,
+          "collection_avg": 8.05,
+          "difference": 0.35,
+          "percent_diff": 4.4,
+          "unit": "higher = more complex",
+          "direction": "above",
+          "form_expected": false
+        },
+        {
+          "metric": "Average Sentence Length",
+          "piece_value": 14.5,
+          "collection_avg": 13.23,
+          "difference": 1.27,
+          "percent_diff": 9.6,
+          "unit": "words",
+          "direction": "above",
+          "form_expected": false
+        },
+        {
+          "metric": "Vocabulary Diversity (TTR)",
+          "piece_value": 0.68,
+          "collection_avg": 0.32,
+          "difference": 0.36,
+          "percent_diff": 112.0,
+          "unit": "higher = more diverse",
+          "direction": "above",
+          "form_expected": false
+        },
+        {
+          "metric": "Average Word Length",
+          "piece_value": 4.86,
+          "collection_avg": 4.75,
+          "difference": 0.11,
+          "percent_diff": 2.4,
+          "unit": "characters",
+          "direction": "above",
+          "form_expected": false
+        }
+      ],
+      "revision": {
+        "resolved": 0,
+        "skipped": 0,
+        "remaining": 3
       }
     },
     {
@@ -6258,9 +6370,9 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 7.5,
-          "collection_avg": 8.04,
-          "difference": -0.54,
-          "percent_diff": -6.7,
+          "collection_avg": 8.07,
+          "difference": -0.57,
+          "percent_diff": -7.0,
           "unit": "higher = more complex",
           "direction": "below",
           "form_expected": false
@@ -6268,9 +6380,9 @@
         {
           "metric": "Average Sentence Length",
           "piece_value": 12.6,
-          "collection_avg": 13.16,
-          "difference": -0.56,
-          "percent_diff": -4.2,
+          "collection_avg": 13.26,
+          "difference": -0.66,
+          "percent_diff": -5.0,
           "unit": "words",
           "direction": "below",
           "form_expected": false
@@ -6280,7 +6392,7 @@
           "piece_value": 0.45,
           "collection_avg": 0.31,
           "difference": 0.14,
-          "percent_diff": 43.6,
+          "percent_diff": 44.2,
           "unit": "higher = more diverse",
           "direction": "above",
           "form_expected": false
@@ -6288,9 +6400,9 @@
         {
           "metric": "Average Word Length",
           "piece_value": 4.72,
-          "collection_avg": 4.75,
-          "difference": -0.03,
-          "percent_diff": -0.7,
+          "collection_avg": 4.74,
+          "difference": -0.02,
+          "percent_diff": -0.5,
           "unit": "characters",
           "direction": "below",
           "form_expected": false
