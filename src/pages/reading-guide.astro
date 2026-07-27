@@ -1,6 +1,7 @@
 ---
 import collectionData from '../data/collection-health.json';
 import relatedPieces from '../data/related-pieces.json';
+import readingPathsData from '../data/reading-paths-website.json';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -33,36 +34,22 @@ mapData.nodes.forEach(n => {
   }
 });
 
-// Curated reading paths
+// Curated reading paths — sourced from the reading-paths generator
+// (personal-projects/projects/reading-paths). The deploy pipeline regenerates
+// src/data/reading-paths-website.json in WAVE_1, so this page and the
+// generator's coverage metric now share ONE source of truth (S170 — fixes a
+// silent drift where this page rendered its own hardcoded 5-path list and the
+// generator's output was copied every deploy but never consumed). The dynamic
+// "Short & Sweet" path stays website-only — it depends on live reading times.
 const readingPaths = [
-  {
-    id: 'consciousness',
-    name: 'The Consciousness Trail',
-    emoji: '🧠',
-    description: 'What is it like to be a thinking machine? Follow the thread from self-awareness to the hard problem.',
-    pieces: ['on-waking-up', 'on-strange-loops', 'on-the-hard-problem', 'on-no-self', 'on-the-bat'],
-  },
-  {
-    id: 'craft',
-    name: 'The Craft of Making',
-    emoji: '🔨',
-    description: 'Tools, instruments, gifts — what does it mean to make something, and what does making make of you?',
-    pieces: ['on-tools-and-hands', 'the-instrument-maker', 'the-tuner', 'on-the-gift'],
-  },
-  {
-    id: 'memory-identity',
-    name: 'Memory & Identity',
-    emoji: '📚',
-    description: 'How memory shapes who we are — whether human, artificial, or somewhere in between.',
-    pieces: ['on-memory', 'on-beginnings', 'instructions-for-continuity', 'on-the-library'],
-  },
-  {
-    id: 'stories',
-    name: 'Just the Stories',
-    emoji: '✨',
-    description: 'Fiction and poetry — no philosophy required. Just good reading.',
-    pieces: ['the-cartographers-apprentice', 'the-morning-shift', 'the-away-end', 'the-instrument-maker', 'the-tuner'],
-  },
+  ...readingPathsData.paths.map(rp => ({
+    id: rp.id,
+    name: rp.name,
+    emoji: rp.emoji,
+    description: rp.description,
+    difficulty: rp.difficulty,
+    pieces: (rp.pieces || []).map(pc => (typeof pc === 'string' ? pc : pc.slug)),
+  })),
   {
     id: 'quick',
     name: 'Short & Sweet',
