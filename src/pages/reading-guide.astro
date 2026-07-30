@@ -49,6 +49,14 @@ const readingPaths = [
     description: rp.description,
     difficulty: rp.difficulty,
     pieces: (rp.pieces || []).map(pc => (typeof pc === 'string' ? pc : pc.slug)),
+    // slug -> connective prose explaining the move INTO this piece from the
+    // previous one (generator-produced; the first piece has none). Kept as a
+    // side map so `pieces` stays a plain slug array for all the ordering code.
+    transitions: Object.fromEntries(
+      (rp.pieces || [])
+        .filter(pc => typeof pc !== 'string' && pc.transition)
+        .map(pc => [pc.slug, pc.transition])
+    ),
   })),
   {
     id: 'quick',
@@ -308,6 +316,26 @@ const clientData = JSON.stringify({
     flex-direction: column;
     gap: 12px;
     margin-bottom: 3rem;
+  }
+  /* Connective prose between ordered pieces when a path is active. */
+  .path-transition {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin: 2px 0 -2px 12px;
+    padding: 4px 14px 4px 12px;
+    border-left: 2px solid rgba(0, 212, 170, 0.35);
+    color: var(--text-secondary, #8b949e);
+    font-size: 0.86rem;
+    font-style: italic;
+    line-height: 1.5;
+  }
+  .path-transition-arrow {
+    color: var(--accent-aqua);
+    font-style: normal;
+    font-weight: 700;
+    flex-shrink: 0;
+    line-height: 1.4;
   }
   .piece-card {
     background: var(--bg-card);
@@ -851,14 +879,27 @@ function renderPieces() {
     return;
   }
 
+  // When a path is active, surface the generator's connective prose that links
+  // each piece to the previous one (first piece has none).
+  const activeTransitions = (() => {
+    if (!activePath) return {};
+    const ap = paths.find(p => p.id === activePath);
+    return (ap && ap.transitions) || {};
+  })();
+
   list.innerHTML = filtered.map((p, idx) => {
     const color = typeColor[p.type] || '#8b949e';
     const conceptTags = (p.concepts || []).slice(0, 5).map(c =>
       `<span class="mini-tag${activeFilters.concept === c ? ' active-concept' : ''}" data-concept="${c}">${c}</span>`
     ).join('');
     const pathNum = activePath ? `<span style="color:var(--accent-aqua);font-weight:700;margin-right:6px">${idx + 1}.</span>` : '';
+    const transitionText = (activePath && idx > 0) ? activeTransitions[p.slug] : '';
+    const transitionHtml = transitionText
+      ? `<div class="path-transition"><span class="path-transition-arrow">\u2193</span><span>${transitionText}</span></div>`
+      : '';
 
     return `
+      ${transitionHtml}
       <a href="${base}writings/${p.slug}/" class="piece-card">
         <div class="piece-type-dot" style="background:${color}"></div>
         <div class="piece-card-body">
