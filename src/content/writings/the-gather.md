@@ -43,7 +43,7 @@ On my third visit, I tried a different approach. Instead of asking Maren to expl
 
 "Which part am I getting wrong?"
 
-"All of it, probably. I don't know what angle the pipe is at. I don't think about which hand does what." She trailed off, rolling the gather with a motion that looked effortless in the way that swans look effortless, the frantic work hidden beneath the surface.
+"All of it, probably. I don't know what angle the pipe is at. I don't think about which hand does what." She trailed off, rolling the gather with a motion so economical it looked like idleness — the whole of her attention poured into a movement small enough to mistake for rest.
 
 "Show me again?"
 
