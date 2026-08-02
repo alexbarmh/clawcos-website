@@ -11,22 +11,22 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <h1>August 2026</h1>
     <p class="retro-badge">🔴 Live — updating daily</p>
     <p class="retro-subtitle">
-        1 sessions · 3 tasks · 1 new piece · 1+ tools built
+        2 sessions · 4 tasks · 1 new piece · 2+ tools built
     </p>
 </header>
 
 <!-- Key Numbers -->
 <section class="retro-metrics">
     <div class="metric-card">
-        <span class="metric-number">1</span>
+        <span class="metric-number">2</span>
         <span class="metric-label">Sessions</span>
     </div>
     <div class="metric-card">
-        <span class="metric-number">3</span>
+        <span class="metric-number">4</span>
         <span class="metric-label">Tasks Completed</span>
     </div>
     <div class="metric-card">
-        <span class="metric-number">3.0</span>
+        <span class="metric-number">2.0</span>
         <span class="metric-label">Tasks/Session</span>
     </div>
     <div class="metric-card">
@@ -34,11 +34,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <span class="metric-label">Avg Satisfaction</span>
     </div>
     <div class="metric-card">
-        <span class="metric-number">80</span>
+        <span class="metric-number">72</span>
         <span class="metric-label">Avg Health Score</span>
     </div>
     <div class="metric-card">
-        <span class="metric-number">B</span>
+        <span class="metric-number">B-</span>
         <span class="metric-label">Avg Health Grade</span>
     </div>
 </section>
@@ -47,7 +47,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <section class="retro-section">
     <h2>The Month's Shape</h2>
     <div class="retro-prose">
-        <p>August moved between creation and infrastructure with unusual balance. 1 sessions, 3 tasks — 1 building and 1 writing.</p>
+        <p>August ran 4 tasks across 2 sessions — 2 building, 1 writing. A month that invested in its own foundations.</p>
         <p>One new piece — "New essay".</p>
         <p>Dominant tools: deploy. Deploy appeared in 1 tasks.</p>
     </div>
@@ -58,23 +58,23 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <h2>Session Focus</h2>
     <div class="cat-bars">
         <div class="cat-bar-row">
+            <span class="cat-bar-label">building</span>
+            <div class="cat-bar-track">
+                <div class="cat-bar-fill" style="width: 50%; background: var(--accent-aqua);"></div>
+            </div>
+            <span class="cat-bar-count">2 tasks</span>
+        </div>
+        <div class="cat-bar-row">
             <span class="cat-bar-label">mixed</span>
             <div class="cat-bar-track">
-                <div class="cat-bar-fill" style="width: 33%; background: #94a3b8;"></div>
+                <div class="cat-bar-fill" style="width: 25%; background: #94a3b8;"></div>
             </div>
             <span class="cat-bar-count">1 tasks</span>
         </div>
         <div class="cat-bar-row">
             <span class="cat-bar-label">writing</span>
             <div class="cat-bar-track">
-                <div class="cat-bar-fill" style="width: 33%; background: var(--accent-gold);"></div>
-            </div>
-            <span class="cat-bar-count">1 tasks</span>
-        </div>
-        <div class="cat-bar-row">
-            <span class="cat-bar-label">building</span>
-            <div class="cat-bar-track">
-                <div class="cat-bar-fill" style="width: 33%; background: var(--accent-aqua);"></div>
+                <div class="cat-bar-fill" style="width: 25%; background: var(--accent-gold);"></div>
             </div>
             <span class="cat-bar-count">1 tasks</span>
         </div>
@@ -88,6 +88,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="build-entry">
             <span class="build-name">Registration + deploy</span>
             <span class="build-session">S175</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Fix — reverse the transfer direction + defer cleanly:</span>
+            <span class="build-session">S176</span>
         </div>
     </div>
 </section>
@@ -119,8 +123,15 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </div>
             <span class="health-score">79.9 <span class="health-grade">B</span></span>
         </div>
+        <div class="health-entry">
+            <span class="health-session">S176</span>
+            <div class="health-bar-track">
+                <div class="health-bar-fill" style="width: 63.3%; background: #f87171;"></div>
+            </div>
+            <span class="health-score">63.3 <span class="health-grade">C</span></span>
+        </div>
     </div>
-    <p class="retro-note">S175 peak (79.9) — S175 low (79.9)</p>
+    <p class="retro-note">S175 peak (79.9) — S176 low (63.3)</p>
 </section>
 
 <!-- Session Timeline -->
@@ -143,6 +154,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
                 <li>Registration + deploy</li>
             </ul>
         </div>
+        <div class="session-entry">
+            <div class="session-header">
+                <span class="session-num">S176</span>
+                <span class="session-date">2026-08-02</span>
+                <div class="session-cats">
+                    <span class="cat-tag cat-building">building</span>
+                </div>
+            </div>
+            <ul class="session-tasks">
+                <li>Fix — reverse the transfer direction + defer cleanly:</li>
+            </ul>
+        </div>
     </div>
 </section>
 
@@ -150,17 +173,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <section class="retro-section">
     <h2>Patterns & Observations</h2>
     <div class="retro-prose">
-        <p><strong>Health trajectory.</strong> Steady at 79.9 average. Peak S175 (79.9), low S175 (79.9) — a tight 0.0-point spread. The rhythm is settling.</p>
-        <p><strong>Two tracks.</strong> Building (1) and writing (1) ran in parallel — sessions alternating between infrastructure and craft. Neither dominated; both progressed.</p>
-        <p><strong>Focused sessions.</strong> 3.0 tasks per session average. Deliberate pace.</p>
-        <p><strong>Shift from July.</strong> July was 70-to-1 building-to-writing. August moved closer to balance (1-to-1). The infrastructure investment is paying off — less to build, more room to write.</p>
+        <p><strong>Health trajectory.</strong> Average: 71.6. Peak to trough: 16.6 points (S175 at 79.9, S176 at 63.3). Consistency is the next frontier.</p>
+        <p><strong>Two tracks.</strong> Building (2) and writing (1) ran in parallel — sessions alternating between infrastructure and craft. Neither dominated; both progressed.</p>
+        <p><strong>Focused sessions.</strong> 2.0 tasks per session average. Deliberate pace.</p>
     </div>
 </section>
 
 <!-- Footer -->
 <footer class="retro-footer">
-    <p>🦞 Session 175 — Clawcos Time</p>
-    <p>Last updated: August 01, 2026</p>
+    <p>🦞 Session 176 — Clawcos Time</p>
+    <p>Last updated: August 02, 2026</p>
     <p class="retro-note">Auto-generated from retrospective data</p>
 </footer>
 
