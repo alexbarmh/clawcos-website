@@ -1,20 +1,20 @@
 {
   "metrics": {
-    "total_scored": 79,
+    "total_scored": 80,
     "distribution": {
       "10.0": 1,
       "9.0": 40,
       "8.9": 1,
-      "8.5": 26,
+      "8.5": 27,
       "8.0": 10,
       "7.0": 1
     },
     "mode": 9.0,
     "mode_count": 40,
-    "mode_pct": 50.6,
+    "mode_pct": 50.0,
     "above_mode": 1,
-    "below_mode": 38,
-    "entropy": 1.642,
+    "below_mode": 39,
+    "entropy": 1.641,
     "max_entropy": 2.585,
     "concentration_ratio": 0.365,
     "trend": "loosening",
@@ -61,15 +61,15 @@
       }
     },
     "8": {
-      "count": 36,
-      "avg_tasks": 4.944444444444445,
+      "count": 37,
+      "avg_tasks": 4.8108108108108105,
       "task_range": "0-7",
-      "avg_learnings": 3.4722222222222223,
+      "avg_learnings": 3.3783783783783785,
       "focus_types": {
         "other": 1,
         "mixed": 19,
         "building": 9,
-        "writing": 7
+        "writing": 8
       },
       "task_categories": {
         "building": 112,
@@ -95,11 +95,11 @@
         "count": 41
       },
       "8": {
-        "avg_novelty": 0.6388888888888888,
-        "avg_maintenance": 2.0555555555555554,
-        "avg_milestone": 0.9444444444444444,
-        "avg_ratio": 0.34490740740740744,
-        "count": 36
+        "avg_novelty": 0.6216216216216216,
+        "avg_maintenance": 2.054054054054054,
+        "avg_milestone": 0.918918918918919,
+        "avg_ratio": 0.3355855855855856,
+        "count": 37
       },
       "10": {
         "avg_novelty": 0.0,
@@ -193,14 +193,14 @@
       }
     },
     "8": {
-      "count": 36,
+      "count": 37,
       "markers": {
-        "strong": 4.0,
-        "satisfaction": 0.08333333333333333,
-        "achievement": 5.055555555555555,
-        "quality": 1.0555555555555556,
-        "hedging": 1.1111111111111112,
-        "negation": 0.05555555555555555
+        "strong": 3.945945945945946,
+        "satisfaction": 0.08108108108108109,
+        "achievement": 4.945945945945946,
+        "quality": 1.027027027027027,
+        "hedging": 1.0810810810810811,
+        "negation": 0.05405405405405406
       }
     },
     "below_8": {
@@ -363,6 +363,26 @@
           "8.5": 13
         },
         "stdev": 0.154
+      },
+      {
+        "month": "2026-08",
+        "sessions": 1,
+        "session_range": [
+          177,
+          177
+        ],
+        "mean": 8.5,
+        "median": 8.5,
+        "mode": 8.5,
+        "mode_share": 1.0,
+        "concentration": 1.0,
+        "above_mode": 0,
+        "below_mode": 0,
+        "escape_rate": 0.0,
+        "distribution": {
+          "8.5": 1
+        },
+        "stdev": 0.0
       }
     ],
     "rolling": [
@@ -1065,6 +1085,16 @@
         "concentration": 0.531,
         "stdev": 0.12,
         "escape_rate": 0.1
+      },
+      {
+        "session": 177,
+        "date": "2026-08-03",
+        "mean": 8.54,
+        "mode": 8.5,
+        "mode_share": 0.9,
+        "concentration": 0.531,
+        "stdev": 0.12,
+        "escape_rate": 0.1
       }
     ],
     "phases": [
@@ -1141,9 +1171,9 @@
     ],
     "summary": {
       "trend": "tightening",
-      "concentration_delta": 0.476,
-      "mean_delta": -0.11,
-      "mode_share_delta": 0.2,
+      "concentration_delta": 0.918,
+      "mean_delta": -0.17,
+      "mode_share_delta": 0.333,
       "peak_concentration_month": "2026-04",
       "peak_escape_month": "2026-07",
       "tightening_phases": 4,
@@ -1159,5 +1189,5 @@
     "hedging",
     "negation"
   ],
-  "generated": "2026-08-02T22:01:29.282816"
+  "generated": "2026-08-03T22:01:28.628923"
 }
