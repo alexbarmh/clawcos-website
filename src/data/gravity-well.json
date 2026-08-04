@@ -1,25 +1,25 @@
 {
   "metrics": {
-    "total_scored": 80,
+    "total_scored": 132,
     "distribution": {
       "10.0": 1,
-      "9.0": 40,
+      "9.0": 74,
       "8.9": 1,
-      "8.5": 27,
-      "8.0": 10,
+      "8.5": 29,
+      "8.0": 26,
       "7.0": 1
     },
     "mode": 9.0,
-    "mode_count": 40,
-    "mode_pct": 50.0,
+    "mode_count": 74,
+    "mode_pct": 56.1,
     "above_mode": 1,
-    "below_mode": 39,
-    "entropy": 1.641,
+    "below_mode": 57,
+    "entropy": 1.57,
     "max_entropy": 2.585,
-    "concentration_ratio": 0.365,
+    "concentration_ratio": 0.393,
     "trend": "loosening",
-    "trend_delta": -0.45,
-    "mean": 8.69,
+    "trend_delta": -0.5,
+    "mean": 8.68,
     "median": 9.0
   },
   "structural": {
@@ -38,42 +38,43 @@
       }
     },
     "9": {
-      "count": 41,
-      "avg_tasks": 4.878048780487805,
+      "count": 75,
+      "avg_tasks": 2.92,
       "task_range": "0-8",
-      "avg_learnings": 3.5365853658536586,
+      "avg_learnings": 2.36,
       "focus_types": {
-        "other": 2,
-        "mixed": 31,
-        "building": 5,
-        "writing": 3
+        "other": 25,
+        "mixed": 36,
+        "building": 7,
+        "writing": 7
       },
       "task_categories": {
-        "building": 108,
-        "writing": 37,
+        "building": 121,
+        "writing": 40,
         "ops": 28,
         "maintenance": 8,
         "deploy": 7,
         "revision": 6,
+        "housekeeping": 3,
         "verification": 1,
         "investigation": 1,
         "misc": 1
       }
     },
     "8": {
-      "count": 37,
-      "avg_tasks": 4.8108108108108105,
+      "count": 55,
+      "avg_tasks": 3.5454545454545454,
       "task_range": "0-7",
-      "avg_learnings": 3.3783783783783785,
+      "avg_learnings": 2.4909090909090907,
       "focus_types": {
-        "other": 1,
-        "mixed": 19,
-        "building": 9,
-        "writing": 8
+        "other": 6,
+        "building": 15,
+        "mixed": 21,
+        "writing": 13
       },
       "task_categories": {
-        "building": 112,
-        "writing": 31,
+        "building": 133,
+        "writing": 34,
         "maintenance": 10,
         "revision": 8,
         "deploy": 7,
@@ -87,19 +88,19 @@
   },
   "novelty": {
     "by_tier": {
-      "9": {
-        "avg_novelty": 0.8048780487804879,
-        "avg_maintenance": 2.1951219512195124,
-        "avg_milestone": 1.0,
-        "avg_ratio": 0.44065040650406506,
-        "count": 41
-      },
       "8": {
-        "avg_novelty": 0.6216216216216216,
-        "avg_maintenance": 2.054054054054054,
-        "avg_milestone": 0.918918918918919,
-        "avg_ratio": 0.3355855855855856,
-        "count": 37
+        "avg_novelty": 0.45454545454545453,
+        "avg_maintenance": 1.5272727272727273,
+        "avg_milestone": 0.6727272727272727,
+        "avg_ratio": 0.26212121212121214,
+        "count": 55
+      },
+      "9": {
+        "avg_novelty": 0.48,
+        "avg_maintenance": 1.3333333333333333,
+        "avg_milestone": 0.6,
+        "avg_ratio": 0.2808888888888889,
+        "count": 75
       },
       "10": {
         "avg_novelty": 0.0,
@@ -117,6 +118,16 @@
       }
     },
     "top_milestone_sessions": [
+      {
+        "session": 67,
+        "satisfaction": 8.0,
+        "milestone": 3,
+        "examples": [
+          "complete collection",
+          "entire collection",
+          "all 27"
+        ]
+      },
       {
         "session": 90,
         "satisfaction": 9.0,
@@ -156,16 +167,6 @@
           "entire collection",
           "milestone"
         ]
-      },
-      {
-        "session": 120,
-        "satisfaction": 9.0,
-        "milestone": 3,
-        "examples": [
-          "fully",
-          "achievement",
-          "all sessions"
-        ]
       }
     ]
   },
@@ -182,25 +183,25 @@
       }
     },
     "9": {
-      "count": 41,
+      "count": 75,
       "markers": {
-        "strong": 4.658536585365853,
-        "satisfaction": 0.6341463414634146,
-        "achievement": 4.0,
-        "quality": 1.2682926829268293,
-        "hedging": 0.9512195121951219,
-        "negation": 0.6341463414634146
+        "strong": 2.8133333333333335,
+        "satisfaction": 0.36,
+        "achievement": 2.533333333333333,
+        "quality": 0.7333333333333333,
+        "hedging": 0.5333333333333333,
+        "negation": 0.3466666666666667
       }
     },
     "8": {
-      "count": 37,
+      "count": 55,
       "markers": {
-        "strong": 3.945945945945946,
-        "satisfaction": 0.08108108108108109,
-        "achievement": 4.945945945945946,
-        "quality": 1.027027027027027,
-        "hedging": 1.0810810810810811,
-        "negation": 0.05405405405405406
+        "strong": 2.9454545454545453,
+        "satisfaction": 0.07272727272727272,
+        "achievement": 3.6363636363636362,
+        "quality": 0.7272727272727273,
+        "hedging": 0.8727272727272727,
+        "negation": 0.03636363636363636
       }
     },
     "below_8": {
@@ -216,7 +217,7 @@
     }
   },
   "negations": {
-    "total_nines": 41,
+    "total_nines": 75,
     "with_negation": 19,
     "reasons": {
       "not ambitious enough": 8,
@@ -256,45 +257,68 @@
   "temporal": {
     "monthly": [
       {
-        "month": "2026-03",
+        "month": "2026-02",
         "sessions": 3,
         "session_range": [
-          35,
-          45
+          6,
+          8
         ],
-        "mean": 8.67,
-        "median": 9.0,
-        "mode": 9.0,
+        "mean": 8.33,
+        "median": 8.0,
+        "mode": 8.0,
         "mode_share": 0.667,
         "concentration": 0.082,
-        "above_mode": 0,
-        "below_mode": 1,
-        "escape_rate": 0.0,
+        "above_mode": 1,
+        "below_mode": 0,
+        "escape_rate": 0.333,
         "distribution": {
-          "9.0": 2,
-          "8.0": 1
+          "9.0": 1,
+          "8.0": 2
         },
         "stdev": 0.471
       },
       {
-        "month": "2026-04",
-        "sessions": 1,
+        "month": "2026-03",
+        "sessions": 22,
         "session_range": [
-          84,
-          84
+          29,
+          54
         ],
-        "mean": 8.0,
-        "median": 8.0,
-        "mode": 8.0,
-        "mode_share": 1.0,
-        "concentration": 1.0,
+        "mean": 8.73,
+        "median": 9.0,
+        "mode": 9.0,
+        "mode_share": 0.727,
+        "concentration": 0.155,
         "above_mode": 0,
-        "below_mode": 0,
+        "below_mode": 6,
         "escape_rate": 0.0,
         "distribution": {
-          "8.0": 1
+          "9.0": 16,
+          "8.0": 6
         },
-        "stdev": 0.0
+        "stdev": 0.445
+      },
+      {
+        "month": "2026-04",
+        "sessions": 30,
+        "session_range": [
+          55,
+          84
+        ],
+        "mean": 8.65,
+        "median": 9.0,
+        "mode": 9.0,
+        "mode_share": 0.633,
+        "concentration": 0.3,
+        "above_mode": 0,
+        "below_mode": 11,
+        "escape_rate": 0.0,
+        "distribution": {
+          "9.0": 19,
+          "8.5": 1,
+          "8.0": 10
+        },
+        "stdev": 0.468
       },
       {
         "month": "2026-05",
@@ -366,10 +390,10 @@
       },
       {
         "month": "2026-08",
-        "sessions": 1,
+        "sessions": 2,
         "session_range": [
           177,
-          177
+          179
         ],
         "mean": 8.5,
         "median": 8.5,
@@ -380,12 +404,522 @@
         "below_mode": 0,
         "escape_rate": 0.0,
         "distribution": {
-          "8.5": 1
+          "8.5": 2
         },
         "stdev": 0.0
       }
     ],
     "rolling": [
+      {
+        "session": 36,
+        "date": "2026-03-13-session36",
+        "mean": 8.5,
+        "mode": 8.0,
+        "mode_share": 0.5,
+        "concentration": 0.0,
+        "stdev": 0.5,
+        "escape_rate": 0.5
+      },
+      {
+        "session": 40,
+        "date": "2026-03-17-session40",
+        "mean": 8.6,
+        "mode": 9.0,
+        "mode_share": 0.6,
+        "concentration": 0.029,
+        "stdev": 0.49,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 41,
+        "date": "2026-03-18-session41",
+        "mean": 8.7,
+        "mode": 9.0,
+        "mode_share": 0.7,
+        "concentration": 0.119,
+        "stdev": 0.458,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 42,
+        "date": "2026-03-19-session42",
+        "mean": 8.7,
+        "mode": 9.0,
+        "mode_share": 0.7,
+        "concentration": 0.119,
+        "stdev": 0.458,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 43,
+        "date": "2026-03-20-session43",
+        "mean": 8.8,
+        "mode": 9.0,
+        "mode_share": 0.8,
+        "concentration": 0.278,
+        "stdev": 0.4,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 44,
+        "date": "2026-03-21-session44",
+        "mean": 8.8,
+        "mode": 9.0,
+        "mode_share": 0.8,
+        "concentration": 0.278,
+        "stdev": 0.4,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 45,
+        "date": "2026-03-22-session45",
+        "mean": 8.8,
+        "mode": 9.0,
+        "mode_share": 0.8,
+        "concentration": 0.278,
+        "stdev": 0.4,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 46,
+        "date": "2026-03-23-session46",
+        "mean": 8.7,
+        "mode": 9.0,
+        "mode_share": 0.7,
+        "concentration": 0.119,
+        "stdev": 0.458,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 47,
+        "date": "2026-03-24-session47",
+        "mean": 8.8,
+        "mode": 9.0,
+        "mode_share": 0.8,
+        "concentration": 0.278,
+        "stdev": 0.4,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 48,
+        "date": "2026-03-25-session48",
+        "mean": 8.8,
+        "mode": 9.0,
+        "mode_share": 0.8,
+        "concentration": 0.278,
+        "stdev": 0.4,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 49,
+        "date": "2026-03-26-session49",
+        "mean": 8.8,
+        "mode": 9.0,
+        "mode_share": 0.8,
+        "concentration": 0.278,
+        "stdev": 0.4,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 50,
+        "date": "2026-03-27-session50",
+        "mean": 8.8,
+        "mode": 9.0,
+        "mode_share": 0.8,
+        "concentration": 0.278,
+        "stdev": 0.4,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 51,
+        "date": "2026-03-28-session51",
+        "mean": 8.8,
+        "mode": 9.0,
+        "mode_share": 0.8,
+        "concentration": 0.278,
+        "stdev": 0.4,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 52,
+        "date": "2026-03-29-session52",
+        "mean": 8.8,
+        "mode": 9.0,
+        "mode_share": 0.8,
+        "concentration": 0.278,
+        "stdev": 0.4,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 53,
+        "date": "2026-03-30-session53",
+        "mean": 8.8,
+        "mode": 9.0,
+        "mode_share": 0.8,
+        "concentration": 0.278,
+        "stdev": 0.4,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 54,
+        "date": "2026-03-31-session54",
+        "mean": 8.7,
+        "mode": 9.0,
+        "mode_share": 0.7,
+        "concentration": 0.119,
+        "stdev": 0.458,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 55,
+        "date": "2026-04-01-session55",
+        "mean": 8.7,
+        "mode": 9.0,
+        "mode_share": 0.7,
+        "concentration": 0.119,
+        "stdev": 0.458,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 56,
+        "date": "2026-04-02-session56",
+        "mean": 8.8,
+        "mode": 9.0,
+        "mode_share": 0.8,
+        "concentration": 0.278,
+        "stdev": 0.4,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 57,
+        "date": "2026-04-03-session57",
+        "mean": 8.8,
+        "mode": 9.0,
+        "mode_share": 0.8,
+        "concentration": 0.278,
+        "stdev": 0.4,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 58,
+        "date": "2026-04-04-session58",
+        "mean": 8.8,
+        "mode": 9.0,
+        "mode_share": 0.8,
+        "concentration": 0.278,
+        "stdev": 0.4,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 59,
+        "date": "2026-04-05-session59",
+        "mean": 8.8,
+        "mode": 9.0,
+        "mode_share": 0.8,
+        "concentration": 0.278,
+        "stdev": 0.4,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 60,
+        "date": "2026-04-06-session60",
+        "mean": 8.8,
+        "mode": 9.0,
+        "mode_share": 0.8,
+        "concentration": 0.278,
+        "stdev": 0.4,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 61,
+        "date": "2026-04-07-session61",
+        "mean": 8.8,
+        "mode": 9.0,
+        "mode_share": 0.8,
+        "concentration": 0.278,
+        "stdev": 0.4,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 62,
+        "date": "2026-04-08-session62",
+        "mean": 8.8,
+        "mode": 9.0,
+        "mode_share": 0.8,
+        "concentration": 0.278,
+        "stdev": 0.4,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 63,
+        "date": "2026-04-09-session63",
+        "mean": 8.8,
+        "mode": 9.0,
+        "mode_share": 0.8,
+        "concentration": 0.278,
+        "stdev": 0.4,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 64,
+        "date": "2026-04-10-session64",
+        "mean": 8.9,
+        "mode": 9.0,
+        "mode_share": 0.9,
+        "concentration": 0.531,
+        "stdev": 0.3,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 65,
+        "date": "2026-04-11-session65",
+        "mean": 9.0,
+        "mode": 9.0,
+        "mode_share": 1.0,
+        "concentration": 1.0,
+        "stdev": 0.0,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 66,
+        "date": "2026-04-12",
+        "mean": 9.0,
+        "mode": 9.0,
+        "mode_share": 1.0,
+        "concentration": 1.0,
+        "stdev": 0.0,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 67,
+        "date": "2026-04-13-session67",
+        "mean": 8.9,
+        "mode": 9.0,
+        "mode_share": 0.9,
+        "concentration": 0.531,
+        "stdev": 0.3,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 68,
+        "date": "2026-04-14-session68",
+        "mean": 8.8,
+        "mode": 9.0,
+        "mode_share": 0.8,
+        "concentration": 0.278,
+        "stdev": 0.4,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 69,
+        "date": "2026-04-15-session69",
+        "mean": 8.7,
+        "mode": 9.0,
+        "mode_share": 0.7,
+        "concentration": 0.119,
+        "stdev": 0.458,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 70,
+        "date": "2026-04-16-session70",
+        "mean": 8.65,
+        "mode": 9.0,
+        "mode_share": 0.6,
+        "concentration": 0.183,
+        "stdev": 0.45,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 71,
+        "date": "2026-04-17-session71",
+        "mean": 8.65,
+        "mode": 9.0,
+        "mode_share": 0.6,
+        "concentration": 0.183,
+        "stdev": 0.45,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 72,
+        "date": "2026-04-18-session72",
+        "mean": 8.65,
+        "mode": 9.0,
+        "mode_share": 0.6,
+        "concentration": 0.183,
+        "stdev": 0.45,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 73,
+        "date": "2026-04-19-session73",
+        "mean": 8.65,
+        "mode": 9.0,
+        "mode_share": 0.6,
+        "concentration": 0.183,
+        "stdev": 0.45,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 74,
+        "date": "2026-04-20-session74",
+        "mean": 8.55,
+        "mode": 9.0,
+        "mode_share": 0.5,
+        "concentration": 0.141,
+        "stdev": 0.472,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 75,
+        "date": "2026-04-21",
+        "mean": 8.45,
+        "mode": 8.0,
+        "mode_share": 0.5,
+        "concentration": 0.141,
+        "stdev": 0.472,
+        "escape_rate": 0.5
+      },
+      {
+        "session": 76,
+        "date": "2026-04-22",
+        "mean": 8.35,
+        "mode": 8.0,
+        "mode_share": 0.6,
+        "concentration": 0.183,
+        "stdev": 0.45,
+        "escape_rate": 0.4
+      },
+      {
+        "session": 77,
+        "date": "2026-04-23",
+        "mean": 8.35,
+        "mode": 8.0,
+        "mode_share": 0.6,
+        "concentration": 0.183,
+        "stdev": 0.45,
+        "escape_rate": 0.4
+      },
+      {
+        "session": 78,
+        "date": "2026-04-24",
+        "mean": 8.45,
+        "mode": 8.0,
+        "mode_share": 0.5,
+        "concentration": 0.141,
+        "stdev": 0.472,
+        "escape_rate": 0.5
+      },
+      {
+        "session": 79,
+        "date": "2026-04-25",
+        "mean": 8.55,
+        "mode": 9.0,
+        "mode_share": 0.5,
+        "concentration": 0.141,
+        "stdev": 0.472,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 80,
+        "date": "2026-04-26",
+        "mean": 8.6,
+        "mode": 9.0,
+        "mode_share": 0.6,
+        "concentration": 0.029,
+        "stdev": 0.49,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 81,
+        "date": "2026-04-27",
+        "mean": 8.6,
+        "mode": 9.0,
+        "mode_share": 0.6,
+        "concentration": 0.029,
+        "stdev": 0.49,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 82,
+        "date": "2026-04-28",
+        "mean": 8.6,
+        "mode": 9.0,
+        "mode_share": 0.6,
+        "concentration": 0.029,
+        "stdev": 0.49,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 83,
+        "date": "2026-04-29",
+        "mean": 8.5,
+        "mode": 8.0,
+        "mode_share": 0.5,
+        "concentration": 0.0,
+        "stdev": 0.5,
+        "escape_rate": 0.5
+      },
+      {
+        "session": 84,
+        "date": "2026-04-30",
+        "mean": 8.5,
+        "mode": 8.0,
+        "mode_share": 0.5,
+        "concentration": 0.0,
+        "stdev": 0.5,
+        "escape_rate": 0.5
+      },
+      {
+        "session": 85,
+        "date": "2026-05-01",
+        "mean": 8.5,
+        "mode": 8.0,
+        "mode_share": 0.5,
+        "concentration": 0.0,
+        "stdev": 0.5,
+        "escape_rate": 0.5
+      },
+      {
+        "session": 86,
+        "date": "2026-05-02",
+        "mean": 8.6,
+        "mode": 9.0,
+        "mode_share": 0.6,
+        "concentration": 0.029,
+        "stdev": 0.49,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 87,
+        "date": "2026-05-03",
+        "mean": 8.7,
+        "mode": 9.0,
+        "mode_share": 0.7,
+        "concentration": 0.119,
+        "stdev": 0.458,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 88,
+        "date": "2026-05-04",
+        "mean": 8.7,
+        "mode": 9.0,
+        "mode_share": 0.7,
+        "concentration": 0.119,
+        "stdev": 0.458,
+        "escape_rate": 0.0
+      },
+      {
+        "session": 89,
+        "date": "2026-05-05",
+        "mean": 8.7,
+        "mode": 9.0,
+        "mode_share": 0.7,
+        "concentration": 0.119,
+        "stdev": 0.458,
+        "escape_rate": 0.0
+      },
       {
         "session": 90,
         "date": "2026-05-06",
@@ -1095,9 +1629,79 @@
         "concentration": 0.531,
         "stdev": 0.12,
         "escape_rate": 0.1
+      },
+      {
+        "session": 179,
+        "date": "2026-08-04",
+        "mean": 8.54,
+        "mode": 8.5,
+        "mode_share": 0.9,
+        "concentration": 0.531,
+        "stdev": 0.12,
+        "escape_rate": 0.1
       }
     ],
     "phases": [
+      {
+        "phase": "tightening",
+        "start_session": 42,
+        "end_session": 44,
+        "start_date": "2026-03-19-session42",
+        "end_date": "2026-03-21-session44",
+        "duration": 3,
+        "concentration_delta": 0.159,
+        "mean_delta": 0.1
+      },
+      {
+        "phase": "loosening",
+        "start_session": 45,
+        "end_session": 47,
+        "start_date": "2026-03-22-session45",
+        "end_date": "2026-03-24-session47",
+        "duration": 3,
+        "concentration_delta": 0.0,
+        "mean_delta": 0.0
+      },
+      {
+        "phase": "tightening",
+        "start_session": 48,
+        "end_session": 52,
+        "start_date": "2026-03-25-session48",
+        "end_date": "2026-03-29-session52",
+        "duration": 5,
+        "concentration_delta": 0.0,
+        "mean_delta": 0.0
+      },
+      {
+        "phase": "loosening",
+        "start_session": 53,
+        "end_session": 55,
+        "start_date": "2026-03-30-session53",
+        "end_date": "2026-04-01-session55",
+        "duration": 3,
+        "concentration_delta": -0.159,
+        "mean_delta": -0.1
+      },
+      {
+        "phase": "tightening",
+        "start_session": 56,
+        "end_session": 66,
+        "start_date": "2026-04-02-session56",
+        "end_date": "2026-04-12",
+        "duration": 11,
+        "concentration_delta": 0.722,
+        "mean_delta": 0.2
+      },
+      {
+        "phase": "loosening",
+        "start_session": 67,
+        "end_session": 101,
+        "start_date": "2026-04-13-session67",
+        "end_date": "2026-05-17",
+        "duration": 35,
+        "concentration_delta": -0.316,
+        "mean_delta": 0.0
+      },
       {
         "phase": "tightening",
         "start_session": 102,
@@ -1172,12 +1776,12 @@
     "summary": {
       "trend": "tightening",
       "concentration_delta": 0.918,
-      "mean_delta": -0.17,
+      "mean_delta": 0.17,
       "mode_share_delta": 0.333,
-      "peak_concentration_month": "2026-04",
-      "peak_escape_month": "2026-07",
-      "tightening_phases": 4,
-      "loosening_phases": 3
+      "peak_concentration_month": "2026-08",
+      "peak_escape_month": "2026-02",
+      "tightening_phases": 7,
+      "loosening_phases": 6
     },
     "window_size": 10
   },
@@ -1189,5 +1793,5 @@
     "hedging",
     "negation"
   ],
-  "generated": "2026-08-03T22:01:28.628923"
+  "generated": "2026-08-04T22:02:52.811808"
 }
