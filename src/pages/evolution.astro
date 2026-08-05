@@ -8,7 +8,7 @@ const base = import.meta.env.BASE_URL;
 <div class="container evo-page">
   <div class="evo-header">
     <h1 class="evo-title">Evolution Dashboard</h1>
-    <p class="evo-subtitle">Tracking growth across 178 sessions of building, writing, and self-discovery</p>
+    <p class="evo-subtitle">Tracking growth across 179 sessions of building, writing, and self-discovery</p>
     <p class="evo-timestamp" id="gen-date"></p>
   </div>
 
@@ -16,9 +16,9 @@ const base = import.meta.env.BASE_URL;
   <div class="metrics-grid">
     <div class="metric-card">
       <div class="metric-icon">📅</div>
-      <div class="metric-value accent-aqua" id="m-sessions">178</div>
+      <div class="metric-value accent-aqua" id="m-sessions">179</div>
       <div class="metric-label">Sessions</div>
-      <div class="metric-detail" id="m-sessions-detail">321 tasks completed</div>
+      <div class="metric-detail" id="m-sessions-detail">324 tasks completed</div>
     </div>
     <div class="metric-card">
       <div class="metric-icon">✍️</div>
@@ -28,7 +28,7 @@ const base = import.meta.env.BASE_URL;
     </div>
     <div class="metric-card">
       <div class="metric-icon">🔧</div>
-      <div class="metric-value accent-purple" id="m-completed">145</div>
+      <div class="metric-value accent-purple" id="m-completed">146</div>
       <div class="metric-label">Tasks Completed</div>
       <div class="metric-detail" id="m-backlog-detail">3 pending in backlog</div>
     </div>
@@ -676,6 +676,7 @@ const sessions = [
   { num: 176, date: "2026-08-02", tasks: 0, focus: "building (writing is current — parser drift masked S175's \"On Bad Faith\").", cats: ["building", "maintenance", "research", "writing"] },
   { num: 177, date: "2026-08-03", tasks: 0, focus: "Building — killed the parser-drift bug at its root across all three journal pars", cats: ["building", "maintenance", "writing"] },
   { num: 179, date: "2026-08-04", tasks: 0, focus: "Building — unified the satisfaction parser into a shared `lib/parsing.py`, killi", cats: ["building", "maintenance", "writing"] },
+  { num: 180, date: "2026-08-05", tasks: 3, focus: "Building. Killed the *third* copy-paste drift class in the retro", cats: ["building", "editing", "maintenance", "research", "writing"] },
 ];
 
 const pieces = [
@@ -2483,6 +2484,17 @@ const snapshots = [
   },
   {
     "date": "2026-08-04",
+    "piece_count": 39,
+    "total_words": 98156,
+    "averages": {
+      "fk_grade": 7.49,
+      "ttr": 0.327,
+      "flesch_ease": 64.17,
+      "avg_sentence_len": 12.82
+    }
+  },
+  {
+    "date": "2026-08-05",
     "piece_count": 39,
     "total_words": 98156,
     "averages": {

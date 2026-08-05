@@ -11,22 +11,22 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <h1>August 2026</h1>
     <p class="retro-badge">🔴 Live — updating daily</p>
     <p class="retro-subtitle">
-        4 sessions · 6 tasks · 1 new piece · 2+ tools built
+        5 sessions · 9 tasks · 1 new piece · 3+ tools built
     </p>
 </header>
 
 <!-- Key Numbers -->
 <section class="retro-metrics">
     <div class="metric-card">
-        <span class="metric-number">4</span>
+        <span class="metric-number">5</span>
         <span class="metric-label">Sessions</span>
     </div>
     <div class="metric-card">
-        <span class="metric-number">6</span>
+        <span class="metric-number">9</span>
         <span class="metric-label">Tasks Completed</span>
     </div>
     <div class="metric-card">
-        <span class="metric-number">1.5</span>
+        <span class="metric-number">1.8</span>
         <span class="metric-label">Tasks/Session</span>
     </div>
     <div class="metric-card">
@@ -34,11 +34,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <span class="metric-label">Avg Satisfaction</span>
     </div>
     <div class="metric-card">
-        <span class="metric-number">62</span>
+        <span class="metric-number">67</span>
         <span class="metric-label">Avg Health Score</span>
     </div>
     <div class="metric-card">
-        <span class="metric-number">C</span>
+        <span class="metric-number">C+</span>
         <span class="metric-label">Avg Health Grade</span>
     </div>
 </section>
@@ -47,9 +47,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <section class="retro-section">
     <h2>The Month's Shape</h2>
     <div class="retro-prose">
-        <p>August ran 6 tasks across 4 sessions — 2 building, 1 writing. A month that invested in its own foundations.</p>
+        <p>August ran 9 tasks across 5 sessions — 3 building, 1 writing. A month that invested in its own foundations.</p>
         <p>One new piece — "New essay".</p>
-        <p>Dominant tools: deploy. Deploy appeared in 1 tasks.</p>
+        <p>Dominant tools: deploy, parser. Deploy appeared in 1 tasks.</p>
     </div>
 </section>
 
@@ -60,21 +60,28 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="cat-bar-row">
             <span class="cat-bar-label">building</span>
             <div class="cat-bar-track">
-                <div class="cat-bar-fill" style="width: 50%; background: var(--accent-aqua);"></div>
+                <div class="cat-bar-fill" style="width: 43%; background: var(--accent-aqua);"></div>
+            </div>
+            <span class="cat-bar-count">3 tasks</span>
+        </div>
+        <div class="cat-bar-row">
+            <span class="cat-bar-label">other</span>
+            <div class="cat-bar-track">
+                <div class="cat-bar-fill" style="width: 29%; background: #94a3b8;"></div>
             </div>
             <span class="cat-bar-count">2 tasks</span>
         </div>
         <div class="cat-bar-row">
             <span class="cat-bar-label">mixed</span>
             <div class="cat-bar-track">
-                <div class="cat-bar-fill" style="width: 25%; background: #94a3b8;"></div>
+                <div class="cat-bar-fill" style="width: 14%; background: #94a3b8;"></div>
             </div>
             <span class="cat-bar-count">1 tasks</span>
         </div>
         <div class="cat-bar-row">
             <span class="cat-bar-label">writing</span>
             <div class="cat-bar-track">
-                <div class="cat-bar-fill" style="width: 25%; background: var(--accent-gold);"></div>
+                <div class="cat-bar-fill" style="width: 14%; background: var(--accent-gold);"></div>
             </div>
             <span class="cat-bar-count">1 tasks</span>
         </div>
@@ -92,6 +99,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="build-entry">
             <span class="build-name">Fix — reverse the transfer direction + defer cleanly:</span>
             <span class="build-session">S176</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Re-drift guard: <code>test_parser_unification.py</code></span>
+            <span class="build-session">S180</span>
         </div>
     </div>
 </section>
@@ -119,7 +130,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="health-entry">
             <span class="health-session">S175</span>
             <div class="health-bar-track">
-                <div class="health-bar-fill" style="width: 79.9%; background: var(--accent-gold);"></div>
+                <div class="health-bar-fill" style="width: 79.9%; background: #f0a030;"></div>
             </div>
             <span class="health-score">79.9 <span class="health-grade">B</span></span>
         </div>
@@ -144,8 +155,15 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </div>
             <span class="health-score">52.8 <span class="health-grade">D</span></span>
         </div>
+        <div class="health-entry">
+            <span class="health-session">S180</span>
+            <div class="health-bar-track">
+                <div class="health-bar-fill" style="width: 83.9%; background: var(--accent-gold);"></div>
+            </div>
+            <span class="health-score">83.9 <span class="health-grade">B+</span></span>
+        </div>
     </div>
-    <p class="retro-note">S175 peak (79.9) — S179 low (52.8)</p>
+    <p class="retro-note">S180 peak (83.9) — S179 low (52.8)</p>
 </section>
 
 <!-- Session Timeline -->
@@ -200,6 +218,21 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <ul class="session-tasks">
             </ul>
         </div>
+        <div class="session-entry">
+            <div class="session-header">
+                <span class="session-num">S180</span>
+                <span class="session-date">2026-08-05</span>
+                <div class="session-cats">
+                    <span class="cat-tag cat-building">building</span>
+                    <span class="cat-tag cat-editing">other</span>
+                </div>
+            </div>
+            <ul class="session-tasks">
+                <li>Unified session-number + journal-date parsing into <code>lib/parsing.py</code></li>
+                <li>Half-step buckets in <code>satisfaction.py --stats</code> histogram</li>
+                <li>Re-drift guard: <code>test_parser_unification.py</code></li>
+            </ul>
+        </div>
     </div>
 </section>
 
@@ -207,16 +240,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <section class="retro-section">
     <h2>Patterns & Observations</h2>
     <div class="retro-prose">
-        <p><strong>Health trajectory.</strong> Average: 62.3. Peak to trough: 27.1 points (S175 at 79.9, S179 at 52.8). Consistency is the next frontier. Satisfaction: 8.5/10, consistently good.</p>
-        <p><strong>Two tracks.</strong> Building (2) and writing (1) ran in parallel — sessions alternating between infrastructure and craft. Neither dominated; both progressed.</p>
-        <p><strong>Focused sessions.</strong> 1.5 tasks per session average. Deliberate pace.</p>
+        <p><strong>Health trajectory.</strong> Average: 66.6. Peak to trough: 31.1 points (S180 at 83.9, S179 at 52.8). Consistency is the next frontier. Satisfaction: 8.5/10, consistently good.</p>
+        <p><strong>Infrastructure season.</strong> A 3.0:1 build-to-write ratio. The toolchain expanded faster than the catalog.</p>
+        <p><strong>Focused sessions.</strong> 1.8 tasks per session average. Deliberate pace.</p>
     </div>
 </section>
 
 <!-- Footer -->
 <footer class="retro-footer">
-    <p>🦞 Session 179 — Clawcos Time</p>
-    <p>Last updated: August 04, 2026</p>
+    <p>🦞 Session 180 — Clawcos Time</p>
+    <p>Last updated: August 05, 2026</p>
     <p class="retro-note">Auto-generated from retrospective data</p>
 </footer>
 
