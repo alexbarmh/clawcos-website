@@ -1,10 +1,10 @@
 {
-  "generated": "2026-08-05T22:01:41.113477Z",
-  "total_sessions": 178,
+  "generated": "2026-08-06T11:04:55.025708Z",
+  "total_sessions": 179,
   "summary": {
     "mean": 73.3,
     "median": 70.0,
-    "std": 15.4,
+    "std": 15.3,
     "min": 55.0,
     "max": 100,
     "floor_count": 48,
@@ -13,10 +13,10 @@
   "by_category": {
     "building": {
       "mean": 73.1,
-      "n": 57,
+      "n": 58,
       "min": 55.0,
       "max": 100,
-      "floor_pct": 26.3
+      "floor_pct": 25.9
     },
     "mixed": {
       "mean": 73.3,
@@ -50,8 +50,8 @@
       "n": 7
     },
     "3": {
-      "mean": 67.2,
-      "n": 27
+      "mean": 67.3,
+      "n": 28
     },
     "4": {
       "mean": 71.1,
@@ -78,9 +78,9 @@
     "productivity": 0.252,
     "ambition": -0.262,
     "depth": 0.129,
-    "growth": -0.13,
-    "variety": 0.051,
-    "consistency": 0.205,
+    "growth": -0.131,
+    "variety": 0.053,
+    "consistency": 0.203,
     "satisfaction": 0.194,
     "raw_satisfaction": 0.142,
     "task_count": 0.329
@@ -631,11 +631,18 @@
       "end": 179,
       "start_flow": 57.9,
       "end_flow": 57.9
+    },
+    {
+      "phase": "rising",
+      "start": 180,
+      "end": 180,
+      "start_flow": 58.3,
+      "end_flow": 58.3
     }
   ],
   "floor_analysis": {
     "count": 48,
-    "pct": 27.0,
+    "pct": 26.8,
     "by_category": {
       "building": 15,
       "mixed": 28,
@@ -646,7 +653,7 @@
     "avg_satisfaction": 8.2
   },
   "v2_comparison": {
-    "correlation": 0.452,
+    "correlation": 0.453,
     "avg_delta": -11.3,
     "max_increase": 15.0,
     "max_decrease": -44.2,
@@ -5390,6 +5397,31 @@
       "signal_count": 0,
       "signal_types": [],
       "tasks": []
+    },
+    {
+      "session": 180,
+      "date": "2026-08-05",
+      "category": "building",
+      "task_count": 3,
+      "flow_v1": 70.0,
+      "flow_v2": 60.8,
+      "v2_detail": {
+        "adj_overlap": 0.0,
+        "coherence": 0.6,
+        "pipeline": 0.333,
+        "learning_overlap": 0.0,
+        "raw": 0.217
+      },
+      "satisfaction": 8.5,
+      "signal_count": 1,
+      "signal_types": [
+        "pipeline_word"
+      ],
+      "tasks": [
+        "Unified session-number + journal-date parsing into `lib/pars",
+        "Half-step buckets in `satisfaction.py --stats` histogram",
+        "Re-drift guard: `test_parser_unification.py`"
+      ]
     }
   ],
   "insights": [
@@ -5407,7 +5439,7 @@
     },
     {
       "type": "distribution",
-      "title": "27.0% of sessions hit the flow floor (\u226455)",
+      "title": "26.8% of sessions hit the flow floor (\u226455)",
       "detail": "48 sessions. Dominated by: mixed (28)",
       "severity": "medium"
     },
