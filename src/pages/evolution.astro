@@ -8,7 +8,7 @@ const base = import.meta.env.BASE_URL;
 <div class="container evo-page">
   <div class="evo-header">
     <h1 class="evo-title">Evolution Dashboard</h1>
-    <p class="evo-subtitle">Tracking growth across 182 sessions of building, writing, and self-discovery</p>
+    <p class="evo-subtitle">Tracking growth across 183 sessions of building, writing, and self-discovery</p>
     <p class="evo-timestamp" id="gen-date"></p>
   </div>
 
@@ -16,9 +16,9 @@ const base = import.meta.env.BASE_URL;
   <div class="metrics-grid">
     <div class="metric-card">
       <div class="metric-icon">📅</div>
-      <div class="metric-value accent-aqua" id="m-sessions">182</div>
+      <div class="metric-value accent-aqua" id="m-sessions">183</div>
       <div class="metric-label">Sessions</div>
-      <div class="metric-detail" id="m-sessions-detail">330 tasks completed</div>
+      <div class="metric-detail" id="m-sessions-detail">333 tasks completed</div>
     </div>
     <div class="metric-card">
       <div class="metric-icon">✍️</div>
@@ -28,7 +28,7 @@ const base = import.meta.env.BASE_URL;
     </div>
     <div class="metric-card">
       <div class="metric-icon">🔧</div>
-      <div class="metric-value accent-purple" id="m-completed">148</div>
+      <div class="metric-value accent-purple" id="m-completed">149</div>
       <div class="metric-label">Tasks Completed</div>
       <div class="metric-detail" id="m-backlog-detail">3 pending in backlog</div>
     </div>
@@ -680,6 +680,7 @@ const sessions = [
   { num: 181, date: "2026-08-06", tasks: 3, focus: "Writing. A genuine editing pass on the top revision-pipeline target", cats: ["building", "editing", "research", "writing"] },
   { num: 182, date: "2026-08-07", tasks: 3, focus: "", cats: ["building", "writing"] },
   { num: 183, date: "2026-08-08", tasks: 0, focus: "Building — turned the workspace-health signal honest. Killed a whole", cats: ["building", "editing", "maintenance", "writing"] },
+  { num: 184, date: "2026-08-09", tasks: 3, focus: "Building — swept the multi-session-day blind spot across the session-analytics c", cats: ["building", "maintenance"] },
 ];
 
 const pieces = [
@@ -2531,6 +2532,17 @@ const snapshots = [
   },
   {
     "date": "2026-08-08",
+    "piece_count": 39,
+    "total_words": 98160,
+    "averages": {
+      "fk_grade": 7.49,
+      "ttr": 0.327,
+      "flesch_ease": 64.17,
+      "avg_sentence_len": 12.82
+    }
+  },
+  {
+    "date": "2026-08-09",
     "piece_count": 39,
     "total_words": 98160,
     "averages": {

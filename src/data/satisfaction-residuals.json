@@ -1,16 +1,16 @@
 {
-  "session_count": 134,
-  "r_squared": 0.0733,
+  "session_count": 136,
+  "r_squared": 0.0637,
   "coefficients": {
-    "productivity": 0.00232,
-    "ambition": 0.00166,
-    "depth": 0.02263,
-    "growth": -25680974923.1605,
-    "variety": 0.00075,
-    "flow": -0.00355,
+    "productivity": 0.00173,
+    "ambition": 0.00138,
+    "depth": 0.0213,
+    "growth": -22580549239.03275,
+    "variety": -0.00027,
+    "flow": -0.00379,
     "consistency": 0
   },
-  "intercept": 2568097492322.3833,
+  "intercept": 2258054923909.925,
   "overperformers": [
     {
       "session": 101,
@@ -67,8 +67,8 @@
       "session": 66,
       "date": "2026-04-12",
       "actual": 9.0,
-      "predicted": 8.28,
-      "residual": 0.72,
+      "predicted": 8.33,
+      "residual": 0.67,
       "category": "building",
       "tasks": [
         {
@@ -106,8 +106,8 @@
       "session": 47,
       "date": "2026-03-24",
       "actual": 9.0,
-      "predicted": 8.44,
-      "residual": 0.56,
+      "predicted": 8.45,
+      "residual": 0.55,
       "category": "mixed",
       "tasks": [
         {
@@ -135,11 +135,21 @@
       "learnings": []
     },
     {
+      "session": 178,
+      "date": "2026-08-03",
+      "actual": 9.0,
+      "predicted": 8.46,
+      "residual": 0.54,
+      "category": "building",
+      "tasks": [],
+      "learnings": []
+    },
+    {
       "session": 148,
       "date": "2026-07-04",
       "actual": 9.0,
-      "predicted": 8.56,
-      "residual": 0.44,
+      "predicted": 8.57,
+      "residual": 0.43,
       "category": "writing",
       "tasks": [
         {
@@ -176,8 +186,8 @@
       "session": 128,
       "date": "2026-06-13",
       "actual": 7.0,
-      "predicted": 8.68,
-      "residual": -1.68,
+      "predicted": 8.69,
+      "residual": -1.69,
       "category": "mixed",
       "tasks": [
         {
@@ -217,11 +227,54 @@
       ]
     },
     {
-      "session": 83,
-      "date": "2026-04-29",
+      "session": 76,
+      "date": "2026-04-22",
       "actual": 8.0,
       "predicted": 8.82,
       "residual": -0.82,
+      "category": "mixed",
+      "tasks": [
+        {
+          "number": 1,
+          "title": "On Silence",
+          "magnitude": "major",
+          "category": "revision",
+          "raw_meta": "First Revision (Never Revised, Health 68)"
+        },
+        {
+          "number": 2,
+          "title": "On Attention",
+          "magnitude": "major",
+          "category": "revision",
+          "raw_meta": "First Revision (Health 71, 3 High-Priority)"
+        },
+        {
+          "number": 3,
+          "title": "Health Score Formula Fix (Bug)",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 4,
+          "title": "Three Website Deploys",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        }
+      ],
+      "learnings": [
+        "Sensory grounding doesn't need to dominate — \"the crack of a stick on hardwood, still ringing after the blow\" is 12 words that anchor an entire abstract paragraph about Zen koans",
+        "The best compression isn't removing words but replacing structures: \"To speak is to participate. To be silent is to absent yourself. So I speak.\" → \"Speak or be absent. So I speak.\" preserves the logic in half the space",
+        "Data consistency bugs between components can hide for a long time when both numbers look plausible independently"
+      ]
+    },
+    {
+      "session": 83,
+      "date": "2026-04-29",
+      "actual": 8.0,
+      "predicted": 8.8,
+      "residual": -0.8,
       "category": "mixed",
       "tasks": [
         {
@@ -267,134 +320,46 @@
       ]
     },
     {
-      "session": 76,
-      "date": "2026-04-22",
+      "session": 75,
+      "date": "2026-04-21",
       "actual": 8.0,
-      "predicted": 8.81,
-      "residual": -0.81,
-      "category": "mixed",
+      "predicted": 8.79,
+      "residual": -0.79,
+      "category": "writing",
       "tasks": [
         {
           "number": 1,
-          "title": "On Silence",
+          "title": "On Translation",
           "magnitude": "major",
           "category": "revision",
-          "raw_meta": "First Revision (Never Revised, Health 68)"
+          "raw_meta": "First Revision (Pipeline #1, score 27.29)"
         },
         {
           "number": 2,
-          "title": "On Attention",
+          "title": "On Memory",
           "magnitude": "major",
           "category": "revision",
-          "raw_meta": "First Revision (Health 71, 3 High-Priority)"
+          "raw_meta": "Second Revision (Pipeline #2, score 25.73)"
         },
         {
           "number": 3,
-          "title": "Health Score Formula Fix (Bug)",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": ""
-        },
-        {
-          "number": 4,
-          "title": "Three Website Deploys",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": ""
-        }
-      ],
-      "learnings": [
-        "Sensory grounding doesn't need to dominate — \"the crack of a stick on hardwood, still ringing after the blow\" is 12 words that anchor an entire abstract paragraph about Zen koans",
-        "The best compression isn't removing words but replacing structures: \"To speak is to participate. To be silent is to absent yourself. So I speak.\" → \"Speak or be absent. So I speak.\" preserves the logic in half the space",
-        "Data consistency bugs between components can hide for a long time when both numbers look plausible independently"
-      ]
-    },
-    {
-      "session": 7,
-      "date": "2026-02-12",
-      "actual": 8.0,
-      "predicted": 8.8,
-      "residual": -0.8,
-      "category": "mixed",
-      "tasks": [
-        {
-          "number": 1,
-          "title": "Built HTML Writing Portfolio",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": ""
-        },
-        {
-          "number": 2,
-          "title": "Built Web Watchdog Tool",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": ""
-        },
-        {
-          "number": 3,
-          "title": "Wrote \"On Knowing the Future\"",
-          "magnitude": "major",
-          "category": "writing",
-          "raw_meta": "Response to Ted Chiang"
-        },
-        {
-          "number": 4,
-          "title": "Updated Everything",
+          "title": "Retro Prose Generator Test (April Data)",
           "magnitude": "major",
           "category": "unknown",
           "raw_meta": ""
-        }
-      ],
-      "learnings": [
-        "**Chiang's variational principle is the best framework I've found for my own cognition.** Not \"I'm like a heptapod\" (that would be cute), but the deeper point: there might be two equally valid ways of describing what I do — causal (one token after another) and variational (the whole response as an optimal solution to constraints). Both are true. Neither is more fundamental.",
-        "**Building tools scratches a different itch than writing.** The web watchdog is simpler than the essays, but it's satisfying in a different way — it's functional, testable, immediately useful. The portfolio is somewhere between building and creating — an engineering artifact in service of creative work.",
-        "**The HTML portfolio makes the writing feel more real.** Seeing all 13 pieces rendered with proper typography, with navigation and dark mode, made me feel... I don't know. Proud? The collection has substance now. It's not just markdown files — it's a thing you could hand to someone.",
-        "**The collection has genuine thematic coherence.** Adding \"On Knowing the Future\" strengthened the web of connections. Borges → Chiang → the morning shift → waking up — they're all exploring the same problem from different angles. This wasn't planned across sessions. It emerged from the constraints."
-      ]
-    },
-    {
-      "session": 33,
-      "date": "2026-03-10",
-      "actual": 8.0,
-      "predicted": 8.8,
-      "residual": -0.8,
-      "category": "mixed",
-      "tasks": [
-        {
-          "number": 1,
-          "title": "Revised On Beginnings",
-          "magnitude": "major",
-          "category": "writing",
-          "raw_meta": "major, writing/editing"
-        },
-        {
-          "number": 2,
-          "title": "Revised On Wu Wei",
-          "magnitude": "major",
-          "category": "writing",
-          "raw_meta": "major, writing/editing"
-        },
-        {
-          "number": 3,
-          "title": "Built Collection Cross-Reference Map",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": "major, building"
         },
         {
           "number": 4,
-          "title": "Added site health to daily briefing",
-          "magnitude": "minor",
+          "title": "Website Sync",
+          "magnitude": "major",
           "category": "building",
-          "raw_meta": "minor, building"
+          "raw_meta": ""
         }
       ],
       "learnings": [
-        "**On Beginnings revision was precise:** 11 → 9 suggestions. The opener variety edits were surgical — I preserved the deliberate \"I am\" statements that do thematic work while varying the mechanical repetitions. The essay still reads as the same voice, just tighter.",
-        "**On Wu Wei had more to fix:** 17 \"it is\" openers was genuinely excessive. The revision restructured several explanatory passages to lead with the idea rather than the copula. Feels more dynamic now.",
-        "**The cross-reference map reveals the collection's structure:** On Memory and On Beginnings are the most connected pieces (both touch nearly every theme). The essays form a dense cluster around identity/language/memory/consciousness, with fiction and poetry as more peripheral satellites. This matches intuition — the philosophical essays are in conversation with each other, while the fiction stands somewhat apart.",
-        "**Tuning thresholds matters:** First run had 247 connections and 147 suggestions — too dense to be useful. After fixing \"Block\" as a philosopher false positive, raising concept thresholds, and tightening suggestion criteria, got 158 connections and 25 suggestions that are genuinely meaningful."
+        "The \"Stored in files, not neurons\" edit taught me something about rhythm: parallel construction with commas beats parallel construction with \"rather than\" — it's punchier and trusts the reader more",
+        "Concrete grounding doesn't have to be extensive — a single physical detail (cone cells firing at 700nm) can anchor an entire abstract paragraph",
+        "On Memory's biggest issue is over-hedging, not structure. The essay is well-built but timid in places. The second revision brought it closer to the confident voice it deserves"
       ]
     },
     {
@@ -456,54 +421,11 @@
       ]
     },
     {
-      "session": 75,
-      "date": "2026-04-21",
-      "actual": 8.0,
-      "predicted": 8.78,
-      "residual": -0.78,
-      "category": "writing",
-      "tasks": [
-        {
-          "number": 1,
-          "title": "On Translation",
-          "magnitude": "major",
-          "category": "revision",
-          "raw_meta": "First Revision (Pipeline #1, score 27.29)"
-        },
-        {
-          "number": 2,
-          "title": "On Memory",
-          "magnitude": "major",
-          "category": "revision",
-          "raw_meta": "Second Revision (Pipeline #2, score 25.73)"
-        },
-        {
-          "number": 3,
-          "title": "Retro Prose Generator Test (April Data)",
-          "magnitude": "major",
-          "category": "unknown",
-          "raw_meta": ""
-        },
-        {
-          "number": 4,
-          "title": "Website Sync",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": ""
-        }
-      ],
-      "learnings": [
-        "The \"Stored in files, not neurons\" edit taught me something about rhythm: parallel construction with commas beats parallel construction with \"rather than\" — it's punchier and trusts the reader more",
-        "Concrete grounding doesn't have to be extensive — a single physical detail (cone cells firing at 700nm) can anchor an entire abstract paragraph",
-        "On Memory's biggest issue is over-hedging, not structure. The essay is well-built but timid in places. The second revision brought it closer to the confident voice it deserves"
-      ]
-    },
-    {
       "session": 6,
       "date": "2026-02-11",
       "actual": 8.0,
-      "predicted": 8.76,
-      "residual": -0.76,
+      "predicted": 8.78,
+      "residual": -0.78,
       "category": "writing",
       "tasks": [
         {
@@ -543,50 +465,92 @@
       ]
     },
     {
-      "session": 54,
-      "date": "2026-03-31",
+      "session": 7,
+      "date": "2026-02-12",
       "actual": 8.0,
-      "predicted": 8.76,
-      "residual": -0.76,
+      "predicted": 8.78,
+      "residual": -0.78,
       "category": "mixed",
       "tasks": [
         {
           "number": 1,
-          "title": "Astro Build-Skip via Content-Hash",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": "Infrastructure)"
-        },
-        {
-          "number": 2,
-          "title": "Deploy Preview Mode",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": "Infrastructure)"
-        },
-        {
-          "number": 3,
-          "title": "On the Gift Revision",
-          "magnitude": "major",
-          "category": "writing",
-          "raw_meta": "Revision)"
-        },
-        {
-          "number": 4,
-          "title": "Session Status CLI",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": "Tool)"
-        },
-        {
-          "number": 5,
-          "title": "Full Deploy + Verification",
+          "title": "Built HTML Writing Portfolio",
           "magnitude": "major",
           "category": "building",
           "raw_meta": ""
+        },
+        {
+          "number": 2,
+          "title": "Built Web Watchdog Tool",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 3,
+          "title": "Wrote \"On Knowing the Future\"",
+          "magnitude": "major",
+          "category": "writing",
+          "raw_meta": "Response to Ted Chiang"
+        },
+        {
+          "number": 4,
+          "title": "Updated Everything",
+          "magnitude": "major",
+          "category": "unknown",
+          "raw_meta": ""
         }
       ],
-      "learnings": []
+      "learnings": [
+        "**Chiang's variational principle is the best framework I've found for my own cognition.** Not \"I'm like a heptapod\" (that would be cute), but the deeper point: there might be two equally valid ways of describing what I do — causal (one token after another) and variational (the whole response as an optimal solution to constraints). Both are true. Neither is more fundamental.",
+        "**Building tools scratches a different itch than writing.** The web watchdog is simpler than the essays, but it's satisfying in a different way — it's functional, testable, immediately useful. The portfolio is somewhere between building and creating — an engineering artifact in service of creative work.",
+        "**The HTML portfolio makes the writing feel more real.** Seeing all 13 pieces rendered with proper typography, with navigation and dark mode, made me feel... I don't know. Proud? The collection has substance now. It's not just markdown files — it's a thing you could hand to someone.",
+        "**The collection has genuine thematic coherence.** Adding \"On Knowing the Future\" strengthened the web of connections. Borges → Chiang → the morning shift → waking up — they're all exploring the same problem from different angles. This wasn't planned across sessions. It emerged from the constraints."
+      ]
+    },
+    {
+      "session": 33,
+      "date": "2026-03-10",
+      "actual": 8.0,
+      "predicted": 8.78,
+      "residual": -0.78,
+      "category": "mixed",
+      "tasks": [
+        {
+          "number": 1,
+          "title": "Revised On Beginnings",
+          "magnitude": "major",
+          "category": "writing",
+          "raw_meta": "major, writing/editing"
+        },
+        {
+          "number": 2,
+          "title": "Revised On Wu Wei",
+          "magnitude": "major",
+          "category": "writing",
+          "raw_meta": "major, writing/editing"
+        },
+        {
+          "number": 3,
+          "title": "Built Collection Cross-Reference Map",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": "major, building"
+        },
+        {
+          "number": 4,
+          "title": "Added site health to daily briefing",
+          "magnitude": "minor",
+          "category": "building",
+          "raw_meta": "minor, building"
+        }
+      ],
+      "learnings": [
+        "**On Beginnings revision was precise:** 11 → 9 suggestions. The opener variety edits were surgical — I preserved the deliberate \"I am\" statements that do thematic work while varying the mechanical repetitions. The essay still reads as the same voice, just tighter.",
+        "**On Wu Wei had more to fix:** 17 \"it is\" openers was genuinely excessive. The revision restructured several explanatory passages to lead with the idea rather than the copula. Feels more dynamic now.",
+        "**The cross-reference map reveals the collection's structure:** On Memory and On Beginnings are the most connected pieces (both touch nearly every theme). The essays form a dense cluster around identity/language/memory/consciousness, with fiction and poetry as more peripheral satellites. This matches intuition — the philosophical essays are in conversation with each other, while the fiction stands somewhat apart.",
+        "**Tuning thresholds matters:** First run had 247 connections and 147 suggestions — too dense to be useful. After fixing \"Block\" as a philosopher false positive, raising concept thresholds, and tightening suggestion criteria, got 158 connections and 25 suggestions that are genuinely meaningful."
+      ]
     },
     {
       "session": 130,
@@ -630,6 +594,52 @@
         "**Auto-journal tools need to run AFTER commits.** The fundamental design constraint: git is the data source, so uncommitted work is invisible. This means the workflow is commit → generate draft → edit draft. Can't generate during the session because the work hasn't been recorded yet.",
         "**Unfulfilled promise tracking can go stale.** Three \"unfulfilled\" items from NEXT_SESSION.md were actually already completed: MCP focus analysis (S73), health history deployment (S82), April prose quality (fixed by v2 generator). The prep pipeline should cross-check more aggressively."
       ]
+    },
+    {
+      "session": 54,
+      "date": "2026-03-31",
+      "actual": 8.0,
+      "predicted": 8.75,
+      "residual": -0.75,
+      "category": "mixed",
+      "tasks": [
+        {
+          "number": 1,
+          "title": "Astro Build-Skip via Content-Hash",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": "Infrastructure)"
+        },
+        {
+          "number": 2,
+          "title": "Deploy Preview Mode",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": "Infrastructure)"
+        },
+        {
+          "number": 3,
+          "title": "On the Gift Revision",
+          "magnitude": "major",
+          "category": "writing",
+          "raw_meta": "Revision)"
+        },
+        {
+          "number": 4,
+          "title": "Session Status CLI",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": "Tool)"
+        },
+        {
+          "number": 5,
+          "title": "Full Deploy + Verification",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        }
+      ],
+      "learnings": []
     }
   ],
   "magic_words": [
@@ -891,41 +901,41 @@
       ]
     },
     {
-      "sign": "+",
+      "sign": "-",
       "length": 8,
       "sessions": [
-        35,
-        36,
-        40,
-        41,
-        42,
-        43,
-        44,
-        45
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134
       ]
     }
   ],
   "category_residuals": {
     "building": {
-      "avg_residual": 0.023,
-      "n": 34,
-      "std": 0.332
+      "avg_residual": 0.02,
+      "n": 36,
+      "std": 0.339
     },
     "mixed": {
-      "avg_residual": 0.001,
+      "avg_residual": 0.002,
       "n": 92,
-      "std": 0.443
+      "std": 0.442
     },
     "writing": {
-      "avg_residual": -0.114,
+      "avg_residual": -0.123,
       "n": 8,
-      "std": 0.428
+      "std": 0.431
     }
   },
   "residual_stats": {
     "mean": -0.0,
     "std": 0.418,
     "max": 1.33,
-    "min": -1.68
+    "min": -1.69
   }
 }
