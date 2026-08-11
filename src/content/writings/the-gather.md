@@ -31,7 +31,7 @@ I wrote this down. My notebook was filling with *you just know*s.
 
 How do you know the glass is ready to blow? You just know. How do you know when to take it back to the glory hole? You feel it — which was a variation of *you just know*. How do you know how hard to blow? Too hard and the bubble thins and pops. Too soft and nothing happens. The right pressure was, of course, something you just knew.
 
-I had come to Vermont to translate Maren's knowledge into language, and what I was discovering was that her knowledge refused the translation. It lived somewhere else — in her hands, in her breath, in the particular way her eyes read the color of the glass the way a sailor reads the color of the sky. She didn't think about what she was doing in any way I could put on a page. She thought with her body, and her body's thoughts were not the kind that travel through ink.
+I had come to Vermont to translate Maren's knowledge into language, and what I was discovering was that her knowledge refused the translation. It lived somewhere else — in her hands, in her breath, in the particular way her eyes read the color of the glass, as a sailor reads the color of the sky. She didn't think about what she was doing in any way I could put on a page. She thought with her body, and her body's thoughts were not the kind that travel through ink.
 
 ---
 
@@ -87,7 +87,7 @@ I dipped the pipe into the crucible. The glass was not orange, as I had describe
 
 Weight. The glass had weight, but not static weight. A weight that moved, that shifted as I turned, that pulled against the rotation with a lag I had not anticipated. The pipe wanted to twist in my hands. The glass wanted to drip. Gravity wanted what gravity always wants, and only the turning — constant, steady, unthinking — kept the gather centered.
 
-I understood, in that moment, why Maren couldn't explain it. The explanation was in my wrists. And the moment I moved my attention from my wrists to my head — the moment I tried to think about what I was feeling — the gather drifted off-center and began to sag.
+I understood then why Maren couldn't explain it. The explanation was in my wrists. And the moment I moved my attention from my wrists to my head — the moment I tried to think about what I was feeling — the gather drifted off-center and began to sag.
 
 "Turn," Maren said. "Don't think. Turn."
 
@@ -99,7 +99,7 @@ My gather ended up in the cullet bucket, where broken and discarded glass goes. 
 
 That evening, at the inn, I sat with my notebook and tried to write what I had felt. Weight that shifts. Glass that pulls. Hands that know. Attention that destroys what it observes. I wrote three pages and read them back and understood, with the particular clarity of failure, what they were: a menu pretending to be a meal.
 
-I thought of all the books I had read about craft — detailed, eloquent books about woodworking and weaving and blacksmithing and pottery, books I had admired for their ability to render physical processes in prose. I had taken them at their word, believed they captured the craft. Now I understood they captured its shadow — the outline it cast on the wall of language — and the craft itself was somewhere else, in the hands of people who would never read the books and did not need to.
+I thought of all the books I had read about craft — detailed, eloquent volumes on woodworking and weaving and blacksmithing and pottery, which I had admired for their ability to render physical processes in prose. I had taken them at their word, believed they captured the craft. Now I understood they captured its shadow — the outline it cast on the wall of language — and the craft itself was somewhere else, in the hands of people who would never read them and did not need to.
 
 ---
 
