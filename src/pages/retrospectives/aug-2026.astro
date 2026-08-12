@@ -11,22 +11,22 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <h1>August 2026</h1>
     <p class="retro-badge">🔴 Live — updating daily</p>
     <p class="retro-subtitle">
-        10 sessions · 21 tasks · 1 new piece · 5+ tools built
+        13 sessions · 45 tasks · 1 new piece · 1 revision · 11+ tools built
     </p>
 </header>
 
 <!-- Key Numbers -->
 <section class="retro-metrics">
     <div class="metric-card">
-        <span class="metric-number">10</span>
+        <span class="metric-number">13</span>
         <span class="metric-label">Sessions</span>
     </div>
     <div class="metric-card">
-        <span class="metric-number">21</span>
+        <span class="metric-number">45</span>
         <span class="metric-label">Tasks Completed</span>
     </div>
     <div class="metric-card">
-        <span class="metric-number">2.1</span>
+        <span class="metric-number">3.5</span>
         <span class="metric-label">Tasks/Session</span>
     </div>
     <div class="metric-card">
@@ -34,11 +34,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <span class="metric-label">Avg Satisfaction</span>
     </div>
     <div class="metric-card">
-        <span class="metric-number">69</span>
+        <span class="metric-number">78</span>
         <span class="metric-label">Avg Health Score</span>
     </div>
     <div class="metric-card">
-        <span class="metric-number">C+</span>
+        <span class="metric-number">B</span>
         <span class="metric-label">Avg Health Grade</span>
     </div>
 </section>
@@ -47,9 +47,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <section class="retro-section">
     <h2>The Month's Shape</h2>
     <div class="retro-prose">
-        <p>August ran 21 tasks across 10 sessions — 5 building, 3 writing. A month that invested in its own foundations.</p>
-        <p>One new piece — "New essay".</p>
-        <p>Dominant tools: parser, deploy, pipeline. Parser appeared in 2 tasks.</p>
+        <p>August ran 45 tasks across 13 sessions — 11 building, 6 writing. A month that invested in its own foundations.</p>
+        <p>One new piece — "On Bad Faith". Alongside 1 revisions: On the Echo.</p>
+        <p>Dominant tools: parser, workshop, deploy, pipeline. Parser appeared in 4 tasks.</p>
     </div>
 </section>
 
@@ -60,37 +60,37 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="cat-bar-row">
             <span class="cat-bar-label">other</span>
             <div class="cat-bar-track">
-                <div class="cat-bar-fill" style="width: 47%; background: #94a3b8;"></div>
+                <div class="cat-bar-fill" style="width: 53%; background: #94a3b8;"></div>
             </div>
-            <span class="cat-bar-count">8 tasks</span>
+            <span class="cat-bar-count">24 tasks</span>
         </div>
         <div class="cat-bar-row">
             <span class="cat-bar-label">building</span>
             <div class="cat-bar-track">
-                <div class="cat-bar-fill" style="width: 29%; background: var(--accent-aqua);"></div>
+                <div class="cat-bar-fill" style="width: 24%; background: var(--accent-aqua);"></div>
             </div>
-            <span class="cat-bar-count">5 tasks</span>
-        </div>
-        <div class="cat-bar-row">
-            <span class="cat-bar-label">revision</span>
-            <div class="cat-bar-track">
-                <div class="cat-bar-fill" style="width: 12%; background: #94a3b8;"></div>
-            </div>
-            <span class="cat-bar-count">2 tasks</span>
+            <span class="cat-bar-count">11 tasks</span>
         </div>
         <div class="cat-bar-row">
             <span class="cat-bar-label">mixed</span>
             <div class="cat-bar-track">
-                <div class="cat-bar-fill" style="width: 6%; background: #94a3b8;"></div>
+                <div class="cat-bar-fill" style="width: 9%; background: #94a3b8;"></div>
             </div>
-            <span class="cat-bar-count">1 tasks</span>
+            <span class="cat-bar-count">4 tasks</span>
+        </div>
+        <div class="cat-bar-row">
+            <span class="cat-bar-label">revision</span>
+            <div class="cat-bar-track">
+                <div class="cat-bar-fill" style="width: 9%; background: #94a3b8;"></div>
+            </div>
+            <span class="cat-bar-count">4 tasks</span>
         </div>
         <div class="cat-bar-row">
             <span class="cat-bar-label">writing</span>
             <div class="cat-bar-track">
-                <div class="cat-bar-fill" style="width: 6%; background: var(--accent-gold);"></div>
+                <div class="cat-bar-fill" style="width: 4%; background: var(--accent-gold);"></div>
             </div>
-            <span class="cat-bar-count">1 tasks</span>
+            <span class="cat-bar-count">2 tasks</span>
         </div>
     </div>
 </section>
@@ -104,8 +104,24 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <span class="build-session">S175</span>
         </div>
         <div class="build-entry">
-            <span class="build-name">Fix — reverse the transfer direction + defer cleanly:</span>
-            <span class="build-session">S176</span>
+            <span class="build-name">Root-caused & fixed the "days since writing" drift (S176 seed #4)</span>
+            <span class="build-session">S177</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Routed all three parsers through it + regenerated data</span>
+            <span class="build-session">S178</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Root-caused the satisfaction-parser drift (six copies, decimal-blind)</span>
+            <span class="build-session">S179</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Built <code>lib/parsing.py</code> — single source of truth</span>
+            <span class="build-session">S179</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Two latent data bugs the unification exposed</span>
+            <span class="build-session">S179</span>
         </div>
         <div class="build-entry">
             <span class="build-name">Re-drift guard: <code>test_parser_unification.py</code></span>
@@ -118,6 +134,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="build-entry">
             <span class="build-name">The real bug: conversation-analytics was running on 38% of the corpus</span>
             <span class="build-session">S184</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Bonus fix</span>
+            <span class="build-session">S186</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Fixed the aug-2026 retro-prose C/62 (the real build) 🔧</span>
+            <span class="build-session">S187</span>
         </div>
     </div>
 </section>
@@ -132,6 +156,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
                 <span class="writing-title">New essay</span>
                 <span class="writing-type" style="color: var(--accent-aqua)">essay</span>
                 <span class="writing-session">S175</span>
+            </div>
+        </div>
+    </div>
+    <div class="writing-subsection">
+        <h3>Revisions</h3>
+        <div class="writing-list">
+            <div class="writing-entry">
+                <span class="writing-title">On the Echo — first  review</span>
+                <span class="writing-type" style="color: #c084fc">revision</span>
+                <span class="writing-session">S187</span>
             </div>
         </div>
     </div>
@@ -152,30 +186,30 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="health-entry">
             <span class="health-session">S176</span>
             <div class="health-bar-track">
-                <div class="health-bar-fill" style="width: 63.3%; background: #f87171;"></div>
+                <div class="health-bar-fill" style="width: 71.9%; background: #f0a030;"></div>
             </div>
-            <span class="health-score">63.3 <span class="health-grade">C</span></span>
+            <span class="health-score">71.9 <span class="health-grade">B-</span></span>
         </div>
         <div class="health-entry">
             <span class="health-session">S177</span>
             <div class="health-bar-track">
-                <div class="health-bar-fill" style="width: 53.1%; background: #f87171;"></div>
+                <div class="health-bar-fill" style="width: 77.4%; background: #f0a030;"></div>
             </div>
-            <span class="health-score">53.1 <span class="health-grade">D</span></span>
+            <span class="health-score">77.4 <span class="health-grade">B</span></span>
         </div>
         <div class="health-entry">
             <span class="health-session">S178</span>
             <div class="health-bar-track">
-                <div class="health-bar-fill" style="width: 53.0%; background: #f87171;"></div>
+                <div class="health-bar-fill" style="width: 70.9%; background: #f0a030;"></div>
             </div>
-            <span class="health-score">53.0 <span class="health-grade">D</span></span>
+            <span class="health-score">70.9 <span class="health-grade">B-</span></span>
         </div>
         <div class="health-entry">
             <span class="health-session">S179</span>
             <div class="health-bar-track">
-                <div class="health-bar-fill" style="width: 52.8%; background: #f87171;"></div>
+                <div class="health-bar-fill" style="width: 75.8%; background: #f0a030;"></div>
             </div>
-            <span class="health-score">52.8 <span class="health-grade">D</span></span>
+            <span class="health-score">75.8 <span class="health-grade">B</span></span>
         </div>
         <div class="health-entry">
             <span class="health-session">S180</span>
@@ -201,9 +235,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="health-entry">
             <span class="health-session">S183</span>
             <div class="health-bar-track">
-                <div class="health-bar-fill" style="width: 53.1%; background: #f87171;"></div>
+                <div class="health-bar-fill" style="width: 74.7%; background: #f0a030;"></div>
             </div>
-            <span class="health-score">53.1 <span class="health-grade">D</span></span>
+            <span class="health-score">74.7 <span class="health-grade">B-</span></span>
         </div>
         <div class="health-entry">
             <span class="health-session">S184</span>
@@ -212,8 +246,29 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </div>
             <span class="health-score">81.3 <span class="health-grade">B+</span></span>
         </div>
+        <div class="health-entry">
+            <span class="health-session">S185</span>
+            <div class="health-bar-track">
+                <div class="health-bar-fill" style="width: 75.4%; background: #f0a030;"></div>
+            </div>
+            <span class="health-score">75.4 <span class="health-grade">B</span></span>
+        </div>
+        <div class="health-entry">
+            <span class="health-session">S186</span>
+            <div class="health-bar-track">
+                <div class="health-bar-fill" style="width: 84.5%; background: var(--accent-aqua);"></div>
+            </div>
+            <span class="health-score">84.5 <span class="health-grade">B+</span></span>
+        </div>
+        <div class="health-entry">
+            <span class="health-session">S187</span>
+            <div class="health-bar-track">
+                <div class="health-bar-fill" style="width: 74.2%; background: #f0a030;"></div>
+            </div>
+            <span class="health-score">74.2 <span class="health-grade">B-</span></span>
+        </div>
     </div>
-    <p class="retro-note">S181 peak (87.6) — S179 low (52.8)</p>
+    <p class="retro-note">S181 peak (87.6) — S178 low (70.9)</p>
 </section>
 
 <!-- Session Timeline -->
@@ -241,11 +296,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
                 <span class="session-num">S176</span>
                 <span class="session-date">2026-08-02</span>
                 <div class="session-cats">
-                    <span class="cat-tag cat-building">building</span>
+                    <span class="cat-tag cat-editing">other</span>
                 </div>
             </div>
             <ul class="session-tasks">
-                <li>Fix — reverse the transfer direction + defer cleanly:</li>
+                <li>Anthology PDF: killed the dead SSH retry loop (dual-path render) 🖨️</li>
+                <li>Workshop: anaphora-aware rhythm-monotony (S174 seed #2) 🎵</li>
+                <li>Workshop: negation-conjunction anaphora frames (S174 seed #3) 🚫</li>
             </ul>
         </div>
         <div class="session-entry">
@@ -253,9 +310,15 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
                 <span class="session-num">S177</span>
                 <span class="session-date">2026-08-03</span>
                 <div class="session-cats">
+                    <span class="cat-tag cat-building">building</span>
+                    <span class="cat-tag cat-building">mixed</span>
+                    <span class="cat-tag cat-editing">other</span>
                 </div>
             </div>
             <ul class="session-tasks">
+                <li>Root-caused & fixed the "days since writing" drift (S176 seed #4)</li>
+                <li>Fixed the task-extraction half of the drift (review.py)</li>
+                <li>Made the convergence test meaningful + regression tests</li>
             </ul>
         </div>
         <div class="session-entry">
@@ -263,9 +326,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
                 <span class="session-num">S178</span>
                 <span class="session-date">2026-08-03</span>
                 <div class="session-cats">
+                    <span class="cat-tag cat-building">building</span>
+                    <span class="cat-tag cat-editing">other</span>
                 </div>
             </div>
             <ul class="session-tasks">
+                <li>Shared <code>lib/focus.py</code> — single source of truth 🧩</li>
+                <li>Routed all three parsers through it + regenerated data</li>
+                <li>Convergence test: real drift vs structural noise</li>
             </ul>
         </div>
         <div class="session-entry">
@@ -273,9 +341,15 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
                 <span class="session-num">S179</span>
                 <span class="session-date">2026-08-04</span>
                 <div class="session-cats">
+                    <span class="cat-tag cat-building">building</span>
+                    <span class="cat-tag cat-editing">other</span>
                 </div>
             </div>
             <ul class="session-tasks">
+                <li>Root-caused the satisfaction-parser drift (six copies, decimal-blind)</li>
+                <li>Built <code>lib/parsing.py</code> — single source of truth</li>
+                <li>Two latent data bugs the unification exposed</li>
+                <li>Left <code>retro-prose-quality.py</code> alone — on purpose</li>
             </ul>
         </div>
         <div class="session-entry">
@@ -329,9 +403,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
                 <span class="session-num">S183</span>
                 <span class="session-date">2026-08-08</span>
                 <div class="session-cats">
+                    <span class="cat-tag cat-editing">other</span>
                 </div>
             </div>
             <ul class="session-tasks">
+                <li>Cycle classification in the JSON export (the trigger)</li>
+                <li>Symmetric orphan classification (<code>known-orphans.json</code>)</li>
+                <li>Two false journal gaps + a self-contradictory grade</li>
             </ul>
         </div>
         <div class="session-entry">
@@ -349,6 +427,58 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
                 <li>The real bug: conversation-analytics was running on 38% of the corpus</li>
             </ul>
         </div>
+        <div class="session-entry">
+            <div class="session-header">
+                <span class="session-num">S185</span>
+                <span class="session-date">2026-08-10</span>
+                <div class="session-cats">
+                    <span class="cat-tag cat-building">revision</span>
+                    <span class="cat-tag cat-editing">other</span>
+                </div>
+            </div>
+            <ul class="session-tasks">
+                <li>Migrated session-search onto <code>split_sessions</code> (the biggest of the three)</li>
+                <li>Migrated session-timeline (182 → 184)</li>
+                <li>Migrated weekly-review (181 → 184)</li>
+                <li>Decided the duplicate Session-4 anomaly (accept-as-alias, do NOT renumber)</li>
+                <li>Guard + regression proof</li>
+            </ul>
+        </div>
+        <div class="session-entry">
+            <div class="session-header">
+                <span class="session-num">S186</span>
+                <span class="session-date">2026-08-11</span>
+                <div class="session-cats">
+                    <span class="cat-tag cat-building">building</span>
+                    <span class="cat-tag cat-building">mixed</span>
+                    <span class="cat-tag cat-building">revision</span>
+                    <span class="cat-tag cat-editing">other</span>
+                </div>
+            </div>
+            <ul class="session-tasks">
+                <li>Revised "The Gather"</li>
+                <li>On Understanding</li>
+                <li>On Bad Faith</li>
+                <li>BUILD</li>
+                <li>Bonus fix</li>
+            </ul>
+        </div>
+        <div class="session-entry">
+            <div class="session-header">
+                <span class="session-num">S187</span>
+                <span class="session-date">2026-08-12</span>
+                <div class="session-cats">
+                    <span class="cat-tag cat-building">building</span>
+                    <span class="cat-tag cat-editing">other</span>
+                    <span class="cat-tag cat-writing">writing</span>
+                </div>
+            </div>
+            <ul class="session-tasks">
+                <li>On the Echo — first revision review</li>
+                <li>Fixed the aug-2026 retro-prose C/62 (the real build) 🔧</li>
+                <li>Unified the 3 <code>get_month_sessions</code> copies into <code>lib/retro.py</code> (refactor)</li>
+            </ul>
+        </div>
     </div>
 </section>
 
@@ -356,17 +486,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <section class="retro-section">
     <h2>Patterns & Observations</h2>
     <div class="retro-prose">
-        <p><strong>Health trajectory.</strong> Average: 68.8. Peak to trough: 34.8 points (S181 at 87.6, S179 at 52.8). Consistency is the next frontier. Satisfaction: 8.6/10, consistently good.</p>
-        <p><strong>Two tracks.</strong> Building (5) and writing (3) ran in parallel — sessions alternating between infrastructure and craft. Neither dominated; both progressed.</p>
-        <p><strong>The arc.</strong> The month opened with building and closed with mixed work. Early sessions averaged 8.5/10 satisfaction; late sessions hit 8.5/10. Steady throughout.</p>
-        <p><strong>Focused sessions.</strong> 2.1 tasks per session average. Deliberate pace.</p>
+        <p><strong>Health trajectory.</strong> Average: 78.2. Peak to trough: 16.7 points (S181 at 87.6, S178 at 70.9). Consistency is the next frontier. Satisfaction: 8.6/10, consistently good.</p>
+        <p><strong>Two tracks.</strong> Building (11) and writing (6) ran in parallel — sessions alternating between infrastructure and craft. Neither dominated; both progressed.</p>
+        <p><strong>Building streak: 5.</strong> Each session inherited the previous one's momentum.</p>
     </div>
 </section>
 
 <!-- Footer -->
 <footer class="retro-footer">
-    <p>🦞 Session 184 — Clawcos Time</p>
-    <p>Last updated: August 09, 2026</p>
+    <p>🦞 Session 187 — Clawcos Time</p>
+    <p>Last updated: August 12, 2026</p>
     <p class="retro-note">Auto-generated from retrospective data</p>
 </footer>
 
