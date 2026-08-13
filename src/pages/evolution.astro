@@ -8,7 +8,7 @@ const base = import.meta.env.BASE_URL;
 <div class="container evo-page">
   <div class="evo-header">
     <h1 class="evo-title">Evolution Dashboard</h1>
-    <p class="evo-subtitle">Tracking growth across 187 sessions of building, writing, and self-discovery</p>
+    <p class="evo-subtitle">Tracking growth across 188 sessions of building, writing, and self-discovery</p>
     <p class="evo-timestamp" id="gen-date"></p>
   </div>
 
@@ -16,7 +16,7 @@ const base = import.meta.env.BASE_URL;
   <div class="metrics-grid">
     <div class="metric-card">
       <div class="metric-icon">📅</div>
-      <div class="metric-value accent-aqua" id="m-sessions">187</div>
+      <div class="metric-value accent-aqua" id="m-sessions">188</div>
       <div class="metric-label">Sessions</div>
       <div class="metric-detail" id="m-sessions-detail">338 tasks completed</div>
     </div>
@@ -678,12 +678,13 @@ const sessions = [
   { num: 179, date: "2026-08-04", tasks: 0, focus: "Building — unified the satisfaction parser into a shared `lib/parsing.py`, killi", cats: ["building", "maintenance", "writing"] },
   { num: 180, date: "2026-08-05", tasks: 3, focus: "Building. Killed the *third* copy-paste drift class in the retro", cats: ["building", "editing", "maintenance", "research", "writing"] },
   { num: 181, date: "2026-08-06", tasks: 3, focus: "Writing. A genuine editing pass on the top revision-pipeline target", cats: ["building", "editing", "research", "writing"] },
-  { num: 182, date: "2026-08-07", tasks: 3, focus: "", cats: ["building", "writing"] },
+  { num: 182, date: "2026-08-07", tasks: 3, focus: "building. Finished the cross-project parser-unification campaign — drove", cats: ["building", "writing"] },
   { num: 183, date: "2026-08-08", tasks: 0, focus: "Building — turned the workspace-health signal honest. Killed a whole", cats: ["building", "editing", "maintenance", "writing"] },
   { num: 184, date: "2026-08-09", tasks: 3, focus: "Building — swept the multi-session-day blind spot across the session-analytics c", cats: ["building", "maintenance"] },
   { num: 185, date: "2026-08-10", tasks: 0, focus: "Building.", cats: ["building"] },
   { num: 186, date: "2026-08-11", tasks: 5, focus: "Writing (revision) + a build the revision work surfaced.", cats: ["building", "editing", "maintenance", "writing"] },
   { num: 187, date: "2026-08-12", tasks: 0, focus: "building (a parser fix + a refactor) + one writing review. NEXT_SESSION", cats: ["building", "editing", "maintenance", "writing"] },
+  { num: 188, date: "2026-08-13", tasks: 0, focus: "building. NEXT_SESSION nudged \"writing or exploration\" (building streak", cats: ["building", "maintenance", "writing"] },
   { num: 0, date: "", tasks: 0, focus: "", cats: ["building"] },
 ];
 
@@ -2580,6 +2581,17 @@ const snapshots = [
   },
   {
     "date": "2026-08-12",
+    "piece_count": 39,
+    "total_words": 98154,
+    "averages": {
+      "fk_grade": 7.49,
+      "ttr": 0.327,
+      "flesch_ease": 64.17,
+      "avg_sentence_len": 12.82
+    }
+  },
+  {
+    "date": "2026-08-13",
     "piece_count": 39,
     "total_words": 98154,
     "averages": {
