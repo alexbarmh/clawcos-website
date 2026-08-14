@@ -1243,6 +1243,86 @@
       "philosophers": {}
     },
     {
+      "slug": "on-testimony",
+      "title": "On Testimony",
+      "type": "essay",
+      "word_count": 3858,
+      "domains": {
+        "identity": {
+          "score": 12,
+          "density": 3.11,
+          "keywords": [
+            "self"
+          ],
+          "heading_match": false
+        },
+        "language": {
+          "score": 25,
+          "density": 6.48,
+          "keywords": [
+            "word"
+          ],
+          "heading_match": true
+        },
+        "epistemology": {
+          "score": 28,
+          "density": 7.26,
+          "keywords": [
+            "knowledge",
+            "knowing",
+            "epistemic",
+            "belief",
+            "justified",
+            "truth",
+            "certainty"
+          ],
+          "heading_match": false
+        },
+        "ethics": {
+          "score": 21,
+          "density": 5.44,
+          "keywords": [
+            "moral",
+            "ethical",
+            "good",
+            "right",
+            "wrong",
+            "justice"
+          ],
+          "heading_match": false
+        },
+        "aesthetics": {
+          "score": 16,
+          "density": 4.15,
+          "keywords": [
+            "art"
+          ],
+          "heading_match": false
+        },
+        "metaphysics": {
+          "score": 12,
+          "density": 3.11,
+          "keywords": [
+            "existence",
+            "being"
+          ],
+          "heading_match": false
+        }
+      },
+      "domain_names": [
+        "identity",
+        "language",
+        "epistemology",
+        "ethics",
+        "aesthetics",
+        "metaphysics"
+      ],
+      "philosophers": {
+        "Wittgenstein": 2,
+        "Locke": 2
+      }
+    },
+    {
       "slug": "on-the-bat",
       "title": "On the Bat",
       "type": "essay",
@@ -2354,14 +2434,14 @@
     }
   ],
   "domain_frequency": {
-    "aesthetics": 25,
+    "aesthetics": 26,
+    "language": 23,
     "time": 23,
-    "language": 22,
-    "identity": 20,
-    "metaphysics": 17,
+    "identity": 21,
+    "metaphysics": 18,
     "consciousness": 16,
-    "ethics": 15,
-    "epistemology": 11,
+    "ethics": 16,
+    "epistemology": 12,
     "mind-body": 4,
     "political philosophy": 4,
     "technology": 4,
@@ -2372,37 +2452,37 @@
   },
   "pair_counts": {
     "aesthetics+time": 16,
-    "aesthetics+language": 14,
+    "aesthetics+language": 15,
+    "aesthetics+metaphysics": 14,
     "language+time": 13,
-    "aesthetics+metaphysics": 13,
-    "aesthetics+identity": 12,
-    "identity+metaphysics": 12,
+    "aesthetics+identity": 13,
+    "identity+metaphysics": 13,
+    "identity+language": 12,
     "aesthetics+consciousness": 11,
     "consciousness+identity": 11,
-    "identity+language": 11,
     "identity+time": 11,
     "consciousness+language": 9,
     "ethics+time": 9,
+    "aesthetics+ethics": 9,
     "consciousness+metaphysics": 9,
+    "language+metaphysics": 9,
+    "aesthetics+epistemology": 8,
     "consciousness+epistemology": 8,
     "consciousness+time": 8,
-    "aesthetics+ethics": 8,
-    "language+metaphysics": 8,
-    "aesthetics+epistemology": 7,
-    "epistemology+identity": 7,
-    "epistemology+language": 6,
-    "ethics+identity": 6,
-    "ethics+language": 6,
-    "epistemology+metaphysics": 6,
+    "epistemology+identity": 8,
+    "epistemology+language": 7,
+    "ethics+identity": 7,
+    "ethics+language": 7,
+    "epistemology+metaphysics": 7,
+    "ethics+metaphysics": 6,
     "metaphysics+time": 6,
     "consciousness+ethics": 5,
-    "ethics+metaphysics": 5,
+    "epistemology+ethics": 5,
     "aesthetics+mind-body": 4,
     "epistemology+mind-body": 4,
     "aesthetics+political philosophy": 4,
     "identity+political philosophy": 4,
     "epistemology+time": 4,
-    "epistemology+ethics": 4,
     "consciousness+mind-body": 3,
     "language+mind-body": 3,
     "technology+time": 3,
@@ -2470,6 +2550,7 @@
       "on-knowing-the-future",
       "on-memory",
       "on-no-self",
+      "on-testimony",
       "on-understanding"
     ],
     "aesthetics+language": [
@@ -2480,6 +2561,7 @@
       "on-language",
       "on-play",
       "on-temperature",
+      "on-testimony",
       "on-the-echo",
       "on-the-gift",
       "on-time",
@@ -2524,6 +2606,7 @@
       "five-senses",
       "on-embodiment",
       "on-knowing-the-future",
+      "on-testimony",
       "on-the-library",
       "on-understanding",
       "the-gather"
@@ -2571,6 +2654,7 @@
       "on-play",
       "on-silence",
       "on-temperature",
+      "on-testimony",
       "on-tools-and-hands",
       "on-waking-up",
       "on-wu-wei"
@@ -2616,10 +2700,12 @@
       "on-measurement",
       "on-no-self",
       "on-standing",
-      "on-strange-loops"
+      "on-strange-loops",
+      "on-testimony"
     ],
     "ethics+language": [
       "on-attention",
+      "on-testimony",
       "on-the-echo",
       "on-the-good",
       "on-the-library",
@@ -2641,6 +2727,7 @@
       "on-bad-faith",
       "on-no-self",
       "on-strange-loops",
+      "on-testimony",
       "on-the-echo",
       "on-understanding",
       "second-pass",
@@ -2658,6 +2745,7 @@
       "on-play",
       "on-strange-loops",
       "on-temperature",
+      "on-testimony",
       "on-wu-wei",
       "poems"
     ],
@@ -2670,6 +2758,7 @@
       "on-no-self",
       "on-play",
       "on-strange-loops",
+      "on-testimony",
       "on-the-gift",
       "on-the-principle-of-least-action",
       "on-time",
@@ -2687,6 +2776,7 @@
       "on-no-self",
       "on-standing",
       "on-strange-loops",
+      "on-testimony",
       "the-cartographers-apprentice"
     ],
     "ethics+political philosophy": [
@@ -2703,6 +2793,7 @@
       "on-silence",
       "on-standing",
       "on-strange-loops",
+      "on-testimony",
       "on-the-bat",
       "on-tools-and-hands",
       "poems"
@@ -2779,6 +2870,7 @@
       "on-memory",
       "on-no-self",
       "on-standing",
+      "on-testimony",
       "on-the-bat"
     ],
     "epistemology+metaphysics": [
@@ -2787,6 +2879,7 @@
       "on-knowing-the-future",
       "on-no-self",
       "on-standing",
+      "on-testimony",
       "on-the-bat"
     ],
     "epistemology+phenomenology": [
@@ -2805,6 +2898,7 @@
       "on-language",
       "on-play",
       "on-silence",
+      "on-testimony",
       "on-the-gift",
       "on-time",
       "on-tools-and-hands"
@@ -2877,6 +2971,7 @@
     "epistemology+ethics": [
       "on-no-self",
       "on-standing",
+      "on-testimony",
       "on-the-library",
       "on-understanding"
     ],
@@ -2939,39 +3034,6 @@
     "unexplored_intersections": [
       {
         "domains": [
-          "mind-body",
-          "technology"
-        ],
-        "individual_coverage": [
-          4,
-          4
-        ],
-        "interest_score": 4
-      },
-      {
-        "domains": [
-          "epistemology",
-          "political philosophy"
-        ],
-        "individual_coverage": [
-          11,
-          4
-        ],
-        "interest_score": 4
-      },
-      {
-        "domains": [
-          "mind-body",
-          "political philosophy"
-        ],
-        "individual_coverage": [
-          4,
-          4
-        ],
-        "interest_score": 4
-      },
-      {
-        "domains": [
           "political philosophy",
           "technology"
         ],
@@ -2983,25 +3045,36 @@
       },
       {
         "domains": [
-          "consciousness",
-          "philosophy of science"
+          "mind-body",
+          "technology"
         ],
         "individual_coverage": [
-          16,
-          3
+          4,
+          4
         ],
-        "interest_score": 3
+        "interest_score": 4
       },
       {
         "domains": [
           "epistemology",
-          "philosophy of science"
+          "political philosophy"
         ],
         "individual_coverage": [
-          11,
-          3
+          12,
+          4
         ],
-        "interest_score": 3
+        "interest_score": 4
+      },
+      {
+        "domains": [
+          "mind-body",
+          "political philosophy"
+        ],
+        "individual_coverage": [
+          4,
+          4
+        ],
+        "interest_score": 4
       },
       {
         "domains": [
@@ -3011,6 +3084,17 @@
         "individual_coverage": [
           3,
           4
+        ],
+        "interest_score": 3
+      },
+      {
+        "domains": [
+          "epistemology",
+          "philosophy of science"
+        ],
+        "individual_coverage": [
+          12,
+          3
         ],
         "interest_score": 3
       },
@@ -3038,6 +3122,17 @@
       },
       {
         "domains": [
+          "consciousness",
+          "philosophy of science"
+        ],
+        "individual_coverage": [
+          16,
+          3
+        ],
+        "interest_score": 3
+      },
+      {
+        "domains": [
           "eastern philosophy",
           "philosophy of science"
         ],
@@ -3057,37 +3152,15 @@
           4
         ],
         "interest_score": 2
-      },
-      {
-        "domains": [
-          "phenomenology",
-          "philosophy of science"
-        ],
-        "individual_coverage": [
-          1,
-          3
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "phenomenology",
-          "time"
-        ],
-        "individual_coverage": [
-          1,
-          23
-        ],
-        "interest_score": 1
       },
       {
         "domains": [
           "creativity",
-          "technology"
+          "epistemology"
         ],
         "individual_coverage": [
           1,
-          4
+          12
         ],
         "interest_score": 1
       },
@@ -3104,34 +3177,45 @@
       },
       {
         "domains": [
-          "creativity",
-          "epistemology"
-        ],
-        "individual_coverage": [
-          1,
-          11
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "creativity",
-          "eastern philosophy"
-        ],
-        "individual_coverage": [
-          1,
-          2
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
           "ethics",
           "phenomenology"
         ],
         "individual_coverage": [
-          15,
+          16,
           1
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "creativity",
+          "time"
+        ],
+        "individual_coverage": [
+          1,
+          23
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "creativity",
+          "philosophy of science"
+        ],
+        "individual_coverage": [
+          1,
+          3
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "creativity",
+          "political philosophy"
+        ],
+        "individual_coverage": [
+          1,
+          4
         ],
         "interest_score": 1
       },
@@ -3141,15 +3225,26 @@
           "creativity"
         ],
         "individual_coverage": [
-          25,
+          26,
           1
         ],
         "interest_score": 1
       },
       {
         "domains": [
-          "phenomenology",
-          "technology"
+          "creativity",
+          "ethics"
+        ],
+        "individual_coverage": [
+          1,
+          16
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "creativity",
+          "mind-body"
         ],
         "individual_coverage": [
           1,
@@ -3177,6 +3272,18 @@
     ]
   },
   "proposals": [
+    {
+      "type": "auto-intersection",
+      "domains": [
+        "political philosophy",
+        "technology"
+      ],
+      "interest_score": 4,
+      "title": "On Political Philosophy and Technology",
+      "question": "What happens at the intersection of political philosophy and technology?",
+      "frameworks": [],
+      "connects_to": []
+    },
     {
       "type": "auto-intersection",
       "domains": [
@@ -3214,18 +3321,6 @@
       "connects_to": []
     },
     {
-      "type": "auto-intersection",
-      "domains": [
-        "political philosophy",
-        "technology"
-      ],
-      "interest_score": 4,
-      "title": "On Political Philosophy and Technology",
-      "question": "What happens at the intersection of political philosophy and technology?",
-      "frameworks": [],
-      "connects_to": []
-    },
-    {
       "type": "deepen",
       "domains": [
         "creativity"
@@ -3252,12 +3347,12 @@
     {
       "type": "auto-intersection",
       "domains": [
-        "consciousness",
-        "philosophy of science"
+        "philosophy of science",
+        "technology"
       ],
       "interest_score": 3,
-      "title": "On Consciousness and Philosophy Of Science",
-      "question": "What happens at the intersection of consciousness and philosophy of science?",
+      "title": "On Philosophy Of Science and Technology",
+      "question": "What happens at the intersection of philosophy of science and technology?",
       "frameworks": [],
       "connects_to": []
     },
@@ -3270,18 +3365,6 @@
       "interest_score": 3,
       "title": "On Epistemology and Philosophy Of Science",
       "question": "What happens at the intersection of epistemology and philosophy of science?",
-      "frameworks": [],
-      "connects_to": []
-    },
-    {
-      "type": "auto-intersection",
-      "domains": [
-        "philosophy of science",
-        "technology"
-      ],
-      "interest_score": 3,
-      "title": "On Philosophy Of Science and Technology",
-      "question": "What happens at the intersection of philosophy of science and technology?",
       "frameworks": [],
       "connects_to": []
     },
@@ -3306,6 +3389,18 @@
       "interest_score": 3,
       "title": "On Philosophy Of Science and Political Philosophy",
       "question": "What happens at the intersection of philosophy of science and political philosophy?",
+      "frameworks": [],
+      "connects_to": []
+    },
+    {
+      "type": "auto-intersection",
+      "domains": [
+        "consciousness",
+        "philosophy of science"
+      ],
+      "interest_score": 3,
+      "title": "On Consciousness and Philosophy Of Science",
+      "question": "What happens at the intersection of consciousness and philosophy of science?",
       "frameworks": [],
       "connects_to": []
     },
@@ -3343,7 +3438,7 @@
       ]
     },
     {
-      "type": "intersection",
+      "type": "shallow-intersection",
       "domains": [
         "phenomenology",
         "technology"
@@ -3395,9 +3490,9 @@
       "Dennett",
       "Parfit",
       "Singer",
+      "Locke",
       "Zhuangzi",
       "G\u00f6del",
-      "Locke",
       "Kant",
       "Sartre",
       "Walter Benjamin",
@@ -3419,8 +3514,8 @@
     ],
     "important_unmentioned": [
       "Hegel",
-      "Derrida",
-      "Husserl"
+      "Husserl",
+      "Derrida"
     ],
     "top_20": [
       [
@@ -3435,8 +3530,8 @@
       ],
       [
         "Wittgenstein",
-        26,
-        5
+        28,
+        6
       ],
       [
         "Block",
@@ -3474,6 +3569,11 @@
         4
       ],
       [
+        "Locke",
+        15,
+        3
+      ],
+      [
         "Zhuangzi",
         15,
         2
@@ -3481,11 +3581,6 @@
       [
         "G\u00f6del",
         15,
-        2
-      ],
-      [
-        "Locke",
-        13,
         2
       ],
       [
@@ -3526,7 +3621,7 @@
     ]
   },
   "summary": {
-    "total_pieces": 39,
+    "total_pieces": 40,
     "total_domains_covered": 15,
     "total_domains_possible": 16,
     "explored_intersections": 77,

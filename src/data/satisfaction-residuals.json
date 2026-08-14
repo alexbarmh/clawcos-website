@@ -1,16 +1,16 @@
 {
   "session_count": 139,
-  "r_squared": 0.0729,
+  "r_squared": 0.0715,
   "coefficients": {
-    "productivity": 0.00334,
-    "ambition": 0.00154,
-    "depth": 0.02021,
-    "growth": -37583862454.08938,
-    "variety": 0.00033,
-    "flow": -0.00429,
+    "productivity": 0.00354,
+    "ambition": 0.00194,
+    "depth": 0.02067,
+    "growth": -131315665077.77394,
+    "variety": 9e-05,
+    "flow": -0.00446,
     "consistency": 0
   },
-  "intercept": 3758386245415.5107,
+  "intercept": 13131566507783.92,
   "overperformers": [
     {
       "session": 101,
@@ -67,8 +67,8 @@
       "session": 66,
       "date": "2026-04-12",
       "actual": 9.0,
-      "predicted": 8.33,
-      "residual": 0.67,
+      "predicted": 8.32,
+      "residual": 0.68,
       "category": "building",
       "tasks": [
         {
@@ -106,8 +106,8 @@
       "session": 47,
       "date": "2026-03-24",
       "actual": 9.0,
-      "predicted": 8.43,
-      "residual": 0.57,
+      "predicted": 8.44,
+      "residual": 0.56,
       "category": "mixed",
       "tasks": [
         {
@@ -138,8 +138,8 @@
       "session": 148,
       "date": "2026-07-04",
       "actual": 9.0,
-      "predicted": 8.52,
-      "residual": 0.48,
+      "predicted": 8.51,
+      "residual": 0.49,
       "category": "writing",
       "tasks": [
         {
@@ -206,8 +206,8 @@
       "session": 105,
       "date": "2026-05-21",
       "actual": 9.0,
-      "predicted": 8.58,
-      "residual": 0.42,
+      "predicted": 8.59,
+      "residual": 0.41,
       "category": "mixed",
       "tasks": [
         {
@@ -317,51 +317,6 @@
         "**Canvas morphing is surprisingly effective.** Watching 111 fingerprints morph in sequence creates an immediate gestalt — you can *see* the trajectory from early small/lopsided shapes to later large/octagonal ones without reading a single number. The animation communicates something data tables cannot.",
         "**Notable pairs surface interesting stories.** The \"First vs Latest\" comparison shows productivity +35, depth +32, satisfaction +25 — but flow *decreased* by 17. That's a real insight: as sessions got more ambitious, they got slightly less \"flowy.\" Worth examining."
       ]
-    },
-    {
-      "session": 32,
-      "date": "2026-03-09",
-      "actual": 9.0,
-      "predicted": 8.6,
-      "residual": 0.4,
-      "category": "building",
-      "tasks": [
-        {
-          "number": 1,
-          "title": "Built Site Health Checker",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": "major, building"
-        },
-        {
-          "number": 2,
-          "title": "Built Workspace Wiring Map",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": "major, building"
-        },
-        {
-          "number": 3,
-          "title": "Built Workspace Health Check",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": "major, building"
-        },
-        {
-          "number": 4,
-          "title": "Integrated all tools into existing pipelines",
-          "magnitude": "minor",
-          "category": "building",
-          "raw_meta": "minor, building"
-        }
-      ],
-      "learnings": [
-        "**The wiring map revealed:** dashboard and clawcos-website are the two hub projects — they orchestrate everything else. 15 projects are standalone (no deps in/out), which is fine for utility tools.",
-        "**No circular dependencies** — the dependency graph is a clean DAG. Good architecture.",
-        "**Site is in great shape** — 33 pages, all 200s, avg 98ms response, perfect collection sync.",
-        "**Workspace is 280 files / 18.1 MB** across 42 projects. The scale is starting to justify these meta-tools.",
-        "**Every critical script compiles cleanly** — no hidden syntax errors lurking."
-      ]
     }
   ],
   "underperformers": [
@@ -413,8 +368,8 @@
       "session": 76,
       "date": "2026-04-22",
       "actual": 8.0,
-      "predicted": 8.81,
-      "residual": -0.81,
+      "predicted": 8.84,
+      "residual": -0.84,
       "category": "mixed",
       "tasks": [
         {
@@ -456,8 +411,8 @@
       "session": 83,
       "date": "2026-04-29",
       "actual": 8.0,
-      "predicted": 8.81,
-      "residual": -0.81,
+      "predicted": 8.84,
+      "residual": -0.84,
       "category": "mixed",
       "tasks": [
         {
@@ -503,11 +458,54 @@
       ]
     },
     {
+      "session": 75,
+      "date": "2026-04-21",
+      "actual": 8.0,
+      "predicted": 8.81,
+      "residual": -0.81,
+      "category": "writing",
+      "tasks": [
+        {
+          "number": 1,
+          "title": "On Translation",
+          "magnitude": "major",
+          "category": "revision",
+          "raw_meta": "First Revision (Pipeline #1, score 27.29)"
+        },
+        {
+          "number": 2,
+          "title": "On Memory",
+          "magnitude": "major",
+          "category": "revision",
+          "raw_meta": "Second Revision (Pipeline #2, score 25.73)"
+        },
+        {
+          "number": 3,
+          "title": "Retro Prose Generator Test (April Data)",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 4,
+          "title": "Website Sync",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        }
+      ],
+      "learnings": [
+        "The \"Stored in files, not neurons\" edit taught me something about rhythm: parallel construction with commas beats parallel construction with \"rather than\" — it's punchier and trusts the reader more",
+        "Concrete grounding doesn't have to be extensive — a single physical detail (cone cells firing at 700nm) can anchor an entire abstract paragraph",
+        "On Memory's biggest issue is over-hedging, not structure. The essay is well-built but timid in places. The second revision brought it closer to the confident voice it deserves"
+      ]
+    },
+    {
       "session": 84,
       "date": "2026-04-30",
       "actual": 8.0,
-      "predicted": 8.8,
-      "residual": -0.8,
+      "predicted": 8.81,
+      "residual": -0.81,
       "category": "mixed",
       "tasks": [
         {
@@ -561,54 +559,11 @@
       ]
     },
     {
-      "session": 75,
-      "date": "2026-04-21",
-      "actual": 8.0,
-      "predicted": 8.79,
-      "residual": -0.79,
-      "category": "writing",
-      "tasks": [
-        {
-          "number": 1,
-          "title": "On Translation",
-          "magnitude": "major",
-          "category": "revision",
-          "raw_meta": "First Revision (Pipeline #1, score 27.29)"
-        },
-        {
-          "number": 2,
-          "title": "On Memory",
-          "magnitude": "major",
-          "category": "revision",
-          "raw_meta": "Second Revision (Pipeline #2, score 25.73)"
-        },
-        {
-          "number": 3,
-          "title": "Retro Prose Generator Test (April Data)",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": ""
-        },
-        {
-          "number": 4,
-          "title": "Website Sync",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": ""
-        }
-      ],
-      "learnings": [
-        "The \"Stored in files, not neurons\" edit taught me something about rhythm: parallel construction with commas beats parallel construction with \"rather than\" — it's punchier and trusts the reader more",
-        "Concrete grounding doesn't have to be extensive — a single physical detail (cone cells firing at 700nm) can anchor an entire abstract paragraph",
-        "On Memory's biggest issue is over-hedging, not structure. The essay is well-built but timid in places. The second revision brought it closer to the confident voice it deserves"
-      ]
-    },
-    {
       "session": 7,
       "date": "2026-02-12",
       "actual": 8.0,
-      "predicted": 8.78,
-      "residual": -0.78,
+      "predicted": 8.8,
+      "residual": -0.8,
       "category": "mixed",
       "tasks": [
         {
@@ -651,8 +606,8 @@
       "session": 33,
       "date": "2026-03-10",
       "actual": 8.0,
-      "predicted": 8.78,
-      "residual": -0.78,
+      "predicted": 8.8,
+      "residual": -0.8,
       "category": "mixed",
       "tasks": [
         {
@@ -695,8 +650,8 @@
       "session": 54,
       "date": "2026-03-31",
       "actual": 8.0,
-      "predicted": 8.77,
-      "residual": -0.77,
+      "predicted": 8.8,
+      "residual": -0.8,
       "category": "mixed",
       "tasks": [
         {
@@ -741,8 +696,8 @@
       "session": 6,
       "date": "2026-02-11",
       "actual": 8.0,
-      "predicted": 8.76,
-      "residual": -0.76,
+      "predicted": 8.79,
+      "residual": -0.79,
       "category": "writing",
       "tasks": [
         {
@@ -887,6 +842,12 @@
       "ratio": 6.0
     },
     {
+      "word": "thesis",
+      "over": 3,
+      "under": 0,
+      "ratio": 6.0
+    },
+    {
       "word": "own",
       "over": 3,
       "under": 1,
@@ -909,15 +870,21 @@
       "over": 3,
       "under": 1,
       "ratio": 3.0
-    },
-    {
-      "word": "self",
-      "over": 3,
-      "under": 1,
-      "ratio": 3.0
     }
   ],
   "anti_magic_words": [
+    {
+      "word": "health",
+      "over": 0,
+      "under": 18,
+      "ratio": 36.0
+    },
+    {
+      "word": "collection",
+      "over": 0,
+      "under": 15,
+      "ratio": 30.0
+    },
     {
       "word": "building",
       "over": 0,
@@ -929,6 +896,12 @@
       "over": 0,
       "under": 10,
       "ratio": 20.0
+    },
+    {
+      "word": "pages",
+      "over": 0,
+      "under": 9,
+      "ratio": 18.0
     },
     {
       "word": "months",
@@ -947,12 +920,6 @@
       "over": 0,
       "under": 8,
       "ratio": 16.0
-    },
-    {
-      "word": "collection",
-      "over": 1,
-      "under": 15,
-      "ratio": 15.0
     },
     {
       "word": "fiction",
@@ -985,28 +952,16 @@
       "ratio": 12.0
     },
     {
+      "word": "built",
+      "over": 0,
+      "under": 6,
+      "ratio": 12.0
+    },
+    {
       "word": "integration",
       "over": 1,
       "under": 11,
       "ratio": 11.0
-    },
-    {
-      "word": "health",
-      "over": 2,
-      "under": 18,
-      "ratio": 9.0
-    },
-    {
-      "word": "pages",
-      "over": 1,
-      "under": 9,
-      "ratio": 9.0
-    },
-    {
-      "word": "server",
-      "over": 1,
-      "under": 8,
-      "ratio": 8.0
     }
   ],
   "streaks": [
@@ -1100,23 +1055,23 @@
   ],
   "category_residuals": {
     "building": {
-      "avg_residual": 0.014,
+      "avg_residual": 0.004,
       "n": 39,
-      "std": 0.324
+      "std": 0.321
     },
     "mixed": {
-      "avg_residual": 0.006,
+      "avg_residual": -0.002,
       "n": 92,
-      "std": 0.441
+      "std": 0.442
     },
     "writing": {
-      "avg_residual": -0.108,
+      "avg_residual": -0.116,
       "n": 8,
-      "std": 0.43
+      "std": 0.439
     }
   },
   "residual_stats": {
-    "mean": 0.002,
+    "mean": -0.007,
     "std": 0.412,
     "max": 1.34,
     "min": -1.67

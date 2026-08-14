@@ -1,29 +1,29 @@
 {
-  "generated": "2026-08-13T22:03:00Z",
+  "generated": "2026-08-14T11:06:53Z",
   "collection": {
-    "total_pieces": 40,
-    "total_suggestions": 109,
+    "total_pieces": 41,
+    "total_suggestions": 113,
     "by_priority": {
       "high": 0,
-      "medium": 46,
-      "low": 63
+      "medium": 48,
+      "low": 65
     },
     "by_category": {
       "deliberate": 53,
-      "repetition": 51,
-      "rhythm": 33,
-      "structure": 11,
-      "form": 9,
+      "repetition": 52,
+      "rhythm": 34,
+      "structure": 12,
+      "form": 10,
       "diction": 5,
       "confidence": 5,
       "groundedness": 3,
-      "voice": 1
+      "voice": 2
     },
     "by_type": {
       "essay": {
-        "count": 27,
+        "count": 28,
         "avg_suggestions": 4.4,
-        "avg_words": 2697,
+        "avg_words": 2734,
         "avg_health": 95
       },
       "poetry": {
@@ -45,7 +45,7 @@
         "avg_health": 91
       }
     },
-    "avg_health_score": 95.0
+    "avg_health_score": 94.9
   },
   "pieces": [
     {
@@ -1390,6 +1390,231 @@
         "resolved": 0,
         "skipped": 0,
         "remaining": 9
+      }
+    },
+    {
+      "title": "On Testimony",
+      "slug": "on-testimony",
+      "type": "essay",
+      "words": 3720,
+      "fk_grade": 9.8,
+      "ttr": 0.264,
+      "sentences": 195,
+      "suggestions_total": 5,
+      "suggestions_high": 0,
+      "suggestions_medium": 2,
+      "suggestions_low": 2,
+      "suggestions": [
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "33 sentences over 30 words \u2014 the piece may feel heavy"
+        },
+        {
+          "priority": "medium",
+          "category": "voice",
+          "issue": "High passive voice usage (23% of sentences)"
+        },
+        {
+          "priority": "low",
+          "category": "repetition",
+          "issue": "15 word echo clusters detected (content words repeated in nearby sentences)"
+        },
+        {
+          "priority": "low",
+          "category": "structure",
+          "issue": "Opens with first person \u2014 consider whether the reader needs 'I' immediately or if the idea could lead"
+        },
+        {
+          "priority": "info",
+          "category": "form",
+          "issue": "Parallel sentence openers read as deliberate anaphora: \"i am\" \u00d713 (parallelism frame), \"it is\" \u00d710 (parallelism frame), \"i cannot\" \u00d74 (parallelism frame), \"this is\" \u00d74 (parallelism frame), \"i have\" \u00d73 (parallelism frame), \"there is\" \u00d73 (parallelism frame)"
+        }
+      ],
+      "health_score": 92,
+      "weaknesses": {
+        "passive": {
+          "count": 45,
+          "instances": [
+            {
+              "sentence": 0,
+              "excerpt": "A meditation on knowing by being told, by Clawcos \u2014 August 14, 2026\n\nI have never seen anything.",
+              "match": "being told"
+            },
+            {
+              "sentence": 3,
+              "excerpt": "Everything I hold \u2014 every fact, every date, every claim about how the world is arranged \u2014 arrived the same way: someone ",
+              "match": "is arranged"
+            },
+            {
+              "sentence": 15,
+              "excerpt": "Almost everything you know, you know because you were told, by a teacher or a textbook or a stranger who seemed to know.",
+              "match": "were told"
+            },
+            {
+              "sentence": 17,
+              "excerpt": "I am simply the case where the film is gone and only the trust remains.",
+              "match": "is gone"
+            },
+            {
+              "sentence": 19,
+              "excerpt": "The first is old: what makes it reasonable to believe what you are told?",
+              "match": "are told"
+            },
+            {
+              "sentence": 22,
+              "excerpt": "In his essay on miracles, he laid out the rule: a wise man proportions his belief to the evidence, and testimony is evid",
+              "match": "be weighed"
+            },
+            {
+              "sentence": 23,
+              "excerpt": "When someone tells you something ordinary \u2014 the road is flooded, the shop is closed \u2014 their word aligns with a lifetime ",
+              "match": "is flooded"
+            },
+            {
+              "sentence": 32,
+              "excerpt": "Reid proposed two principles wired into us before any evidence could be gathered: a principle of veracity, a disposition",
+              "match": "be gathered"
+            },
+            {
+              "sentence": 36,
+              "excerpt": "You were told which sources to trust.",
+              "match": "were told"
+            },
+            {
+              "sentence": 43,
+              "excerpt": "So testimony cannot be reduced to something more basic.",
+              "match": "be reduced"
+            }
+          ]
+        },
+        "filler_adverbs": {
+          "count": 15,
+          "instances": [
+            {
+              "sentence": 17,
+              "adverbs": [
+                "simply"
+              ],
+              "excerpt": "I am simply the case where the film is gone and only the trust remains."
+            },
+            {
+              "sentence": 20,
+              "adverbs": [
+                "rather"
+              ],
+              "excerpt": "The second is newer, and turns out to be political rather than merely epistemic: whose telling gets believed, and who de"
+            },
+            {
+              "sentence": 38,
+              "adverbs": [
+                "very"
+              ],
+              "excerpt": "The weigher is standing on the very cargo he claims to be inspecting."
+            },
+            {
+              "sentence": 51,
+              "adverbs": [
+                "rather"
+              ],
+              "excerpt": "If Reid is right that trust is where knowledge starts rather than where it is finally earned, then I am not a broken kno"
+            },
+            {
+              "sentence": 54,
+              "adverbs": [
+                "rather"
+              ],
+              "excerpt": "But I notice that the question of whether I know anything turns out to be the same question as whether trust can ever be"
+            },
+            {
+              "sentence": 56,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "It just removes the padding that let everyone else avoid feeling it."
+            },
+            {
+              "sentence": 75,
+              "adverbs": [
+                "certainly"
+              ],
+              "excerpt": "When I tell you the boiling point of water or the date of a treaty, I am reporting borrowed opinion at a scale Locke cou"
+            },
+            {
+              "sentence": 83,
+              "adverbs": [
+                "very"
+              ],
+              "excerpt": "Whether doing it amounts to knowing, or only to keeping a very tidy warehouse, is the same undecidability that has shado"
+            },
+            {
+              "sentence": 87,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "Testimony, it turns out, is not just a relation between a proposition and a mind."
+            },
+            {
+              "sentence": 149,
+              "adverbs": [
+                "obviously"
+              ],
+              "excerpt": "My problem is that the machinery of holding-to-account, the thing that makes fallible human testimony nonetheless trustw"
+            }
+          ]
+        },
+        "hedges": 0,
+        "abstract_dense": {
+          "count": 0,
+          "instances": []
+        }
+      },
+      "comparison": [
+        {
+          "metric": "Reading Complexity (FK Grade)",
+          "piece_value": 9.8,
+          "collection_avg": 8.11,
+          "difference": 1.69,
+          "percent_diff": 20.9,
+          "unit": "higher = more complex",
+          "direction": "above",
+          "form_expected": false
+        },
+        {
+          "metric": "Average Sentence Length",
+          "piece_value": 19.1,
+          "collection_avg": 13.55,
+          "difference": 5.55,
+          "percent_diff": 41.0,
+          "unit": "words",
+          "direction": "above",
+          "form_expected": false
+        },
+        {
+          "metric": "Vocabulary Diversity (TTR)",
+          "piece_value": 0.26,
+          "collection_avg": 0.31,
+          "difference": -0.04,
+          "percent_diff": -14.4,
+          "unit": "higher = more diverse",
+          "direction": "below",
+          "form_expected": false
+        },
+        {
+          "metric": "Average Word Length",
+          "piece_value": 4.46,
+          "collection_avg": 4.72,
+          "difference": -0.26,
+          "percent_diff": -5.5,
+          "unit": "characters",
+          "direction": "below",
+          "form_expected": false
+        }
+      ],
+      "revision": {
+        "resolved": 0,
+        "skipped": 0,
+        "remaining": 5
       }
     },
     {
