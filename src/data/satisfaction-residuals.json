@@ -1,16 +1,16 @@
 {
-  "session_count": 139,
-  "r_squared": 0.0715,
+  "session_count": 140,
+  "r_squared": 0.0737,
   "coefficients": {
-    "productivity": 0.00354,
-    "ambition": 0.00194,
-    "depth": 0.02067,
-    "growth": -131315665077.77394,
-    "variety": 9e-05,
-    "flow": -0.00446,
+    "productivity": 0.00355,
+    "ambition": 0.00159,
+    "depth": 0.02009,
+    "growth": -35353248140.72859,
+    "variety": 0.00036,
+    "flow": -0.00441,
     "consistency": 0
   },
-  "intercept": 13131566507783.92,
+  "intercept": 3535324814079.4272,
   "overperformers": [
     {
       "session": 101,
@@ -67,8 +67,8 @@
       "session": 66,
       "date": "2026-04-12",
       "actual": 9.0,
-      "predicted": 8.32,
-      "residual": 0.68,
+      "predicted": 8.33,
+      "residual": 0.67,
       "category": "building",
       "tasks": [
         {
@@ -106,8 +106,8 @@
       "session": 47,
       "date": "2026-03-24",
       "actual": 9.0,
-      "predicted": 8.44,
-      "residual": 0.56,
+      "predicted": 8.43,
+      "residual": 0.57,
       "category": "mixed",
       "tasks": [
         {
@@ -174,8 +174,8 @@
       "session": 178,
       "date": "2026-08-03",
       "actual": 9.0,
-      "predicted": 8.52,
-      "residual": 0.48,
+      "predicted": 8.51,
+      "residual": 0.49,
       "category": "building",
       "tasks": [
         {
@@ -206,8 +206,8 @@
       "session": 105,
       "date": "2026-05-21",
       "actual": 9.0,
-      "predicted": 8.59,
-      "residual": 0.41,
+      "predicted": 8.58,
+      "residual": 0.42,
       "category": "mixed",
       "tasks": [
         {
@@ -278,8 +278,8 @@
       "session": 114,
       "date": "2026-05-30",
       "actual": 9.0,
-      "predicted": 8.59,
-      "residual": 0.41,
+      "predicted": 8.58,
+      "residual": 0.42,
       "category": "mixed",
       "tasks": [
         {
@@ -368,8 +368,8 @@
       "session": 76,
       "date": "2026-04-22",
       "actual": 8.0,
-      "predicted": 8.84,
-      "residual": -0.84,
+      "predicted": 8.82,
+      "residual": -0.82,
       "category": "mixed",
       "tasks": [
         {
@@ -411,8 +411,8 @@
       "session": 83,
       "date": "2026-04-29",
       "actual": 8.0,
-      "predicted": 8.84,
-      "residual": -0.84,
+      "predicted": 8.82,
+      "residual": -0.82,
       "category": "mixed",
       "tasks": [
         {
@@ -455,49 +455,6 @@
         "**The grounding edits transformed the essay.** On Attention was too abstract in its middle sections — adding the meditation itch, the climber's granite, the doctor's diagnosis made the philosophical arguments land harder. The workshop's \"abstract-dense paragraph\" detector is genuinely useful.",
         "**Annotating deliberate patterns is as valuable as fixing accidental ones.** Three of the seven suggestions were about patterns I'd intentionally designed (anaphora, rhetorical triplet). Annotating them as deliberate dropped all three from high-priority, which means the pipeline now accurately reflects the remaining real work.",
         "**MCP tool integration is fast when the CLI already exists.** The rewrite planner took ~5 minutes to add to the MCP server because the underlying script was already well-structured with clear CLI args."
-      ]
-    },
-    {
-      "session": 75,
-      "date": "2026-04-21",
-      "actual": 8.0,
-      "predicted": 8.81,
-      "residual": -0.81,
-      "category": "writing",
-      "tasks": [
-        {
-          "number": 1,
-          "title": "On Translation",
-          "magnitude": "major",
-          "category": "revision",
-          "raw_meta": "First Revision (Pipeline #1, score 27.29)"
-        },
-        {
-          "number": 2,
-          "title": "On Memory",
-          "magnitude": "major",
-          "category": "revision",
-          "raw_meta": "Second Revision (Pipeline #2, score 25.73)"
-        },
-        {
-          "number": 3,
-          "title": "Retro Prose Generator Test (April Data)",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": ""
-        },
-        {
-          "number": 4,
-          "title": "Website Sync",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": ""
-        }
-      ],
-      "learnings": [
-        "The \"Stored in files, not neurons\" edit taught me something about rhythm: parallel construction with commas beats parallel construction with \"rather than\" — it's punchier and trusts the reader more",
-        "Concrete grounding doesn't have to be extensive — a single physical detail (cone cells firing at 700nm) can anchor an entire abstract paragraph",
-        "On Memory's biggest issue is over-hedging, not structure. The essay is well-built but timid in places. The second revision brought it closer to the confident voice it deserves"
       ]
     },
     {
@@ -559,11 +516,54 @@
       ]
     },
     {
+      "session": 75,
+      "date": "2026-04-21",
+      "actual": 8.0,
+      "predicted": 8.79,
+      "residual": -0.79,
+      "category": "writing",
+      "tasks": [
+        {
+          "number": 1,
+          "title": "On Translation",
+          "magnitude": "major",
+          "category": "revision",
+          "raw_meta": "First Revision (Pipeline #1, score 27.29)"
+        },
+        {
+          "number": 2,
+          "title": "On Memory",
+          "magnitude": "major",
+          "category": "revision",
+          "raw_meta": "Second Revision (Pipeline #2, score 25.73)"
+        },
+        {
+          "number": 3,
+          "title": "Retro Prose Generator Test (April Data)",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 4,
+          "title": "Website Sync",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        }
+      ],
+      "learnings": [
+        "The \"Stored in files, not neurons\" edit taught me something about rhythm: parallel construction with commas beats parallel construction with \"rather than\" — it's punchier and trusts the reader more",
+        "Concrete grounding doesn't have to be extensive — a single physical detail (cone cells firing at 700nm) can anchor an entire abstract paragraph",
+        "On Memory's biggest issue is over-hedging, not structure. The essay is well-built but timid in places. The second revision brought it closer to the confident voice it deserves"
+      ]
+    },
+    {
       "session": 7,
       "date": "2026-02-12",
       "actual": 8.0,
-      "predicted": 8.8,
-      "residual": -0.8,
+      "predicted": 8.78,
+      "residual": -0.78,
       "category": "mixed",
       "tasks": [
         {
@@ -606,8 +606,8 @@
       "session": 33,
       "date": "2026-03-10",
       "actual": 8.0,
-      "predicted": 8.8,
-      "residual": -0.8,
+      "predicted": 8.78,
+      "residual": -0.78,
       "category": "mixed",
       "tasks": [
         {
@@ -650,8 +650,8 @@
       "session": 54,
       "date": "2026-03-31",
       "actual": 8.0,
-      "predicted": 8.8,
-      "residual": -0.8,
+      "predicted": 8.78,
+      "residual": -0.78,
       "category": "mixed",
       "tasks": [
         {
@@ -696,8 +696,8 @@
       "session": 6,
       "date": "2026-02-11",
       "actual": 8.0,
-      "predicted": 8.79,
-      "residual": -0.79,
+      "predicted": 8.76,
+      "residual": -0.76,
       "category": "writing",
       "tasks": [
         {
@@ -952,7 +952,7 @@
       "ratio": 12.0
     },
     {
-      "word": "built",
+      "word": "checker",
       "over": 0,
       "under": 6,
       "ratio": 12.0
@@ -1055,24 +1055,24 @@
   ],
   "category_residuals": {
     "building": {
-      "avg_residual": 0.004,
+      "avg_residual": 0.014,
       "n": 39,
-      "std": 0.321
+      "std": 0.324
     },
     "mixed": {
-      "avg_residual": -0.002,
+      "avg_residual": 0.006,
       "n": 92,
-      "std": 0.442
+      "std": 0.441
     },
     "writing": {
-      "avg_residual": -0.116,
-      "n": 8,
-      "std": 0.439
+      "avg_residual": -0.106,
+      "n": 9,
+      "std": 0.407
     }
   },
   "residual_stats": {
-    "mean": -0.007,
-    "std": 0.412,
+    "mean": 0.001,
+    "std": 0.41,
     "max": 1.34,
     "min": -1.67
   }
