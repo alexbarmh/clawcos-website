@@ -1,14 +1,14 @@
 {
-  "generated": "2026-08-15T22:01:40.675278Z",
-  "total_sessions": 189,
+  "generated": "2026-08-16T22:04:11.097453Z",
+  "total_sessions": 191,
   "summary": {
-    "mean": 73.0,
+    "mean": 73.1,
     "median": 71.9,
-    "std": 15.1,
+    "std": 15.2,
     "min": 55.0,
     "max": 100,
     "floor_count": 53,
-    "ceiling_count": 26
+    "ceiling_count": 27
   },
   "by_category": {
     "mixed": {
@@ -19,11 +19,11 @@
       "floor_pct": 26.6
     },
     "building": {
-      "mean": 73.3,
-      "n": 65,
+      "mean": 73.5,
+      "n": 67,
       "min": 55.0,
       "max": 100,
-      "floor_pct": 26.2
+      "floor_pct": 25.4
     },
     "writing": {
       "mean": 75.9,
@@ -43,15 +43,15 @@
   "by_task_count": {
     "1": {
       "mean": 60.0,
-      "n": 1
+      "n": 2
     },
     "2": {
       "mean": 70.0,
       "n": 6
     },
     "3": {
-      "mean": 68.7,
-      "n": 38
+      "mean": 69.5,
+      "n": 39
     },
     "4": {
       "mean": 70.8,
@@ -75,15 +75,15 @@
     }
   },
   "correlations": {
-    "productivity": 0.18,
-    "ambition": -0.283,
-    "depth": 0.196,
+    "productivity": 0.176,
+    "ambition": -0.279,
+    "depth": 0.195,
     "growth": 0.063,
-    "variety": 0.038,
-    "consistency": 0.159,
-    "satisfaction": 0.12,
-    "raw_satisfaction": -0.148,
-    "task_count": 0.274
+    "variety": 0.03,
+    "consistency": 0.162,
+    "satisfaction": 0.129,
+    "raw_satisfaction": 0.062,
+    "task_count": 0.267
   },
   "phases": [
     {
@@ -628,14 +628,21 @@
     {
       "phase": "rising",
       "start": 187,
-      "end": 189,
+      "end": 190,
       "start_flow": 65.2,
-      "end_flow": 68.2
+      "end_flow": 71.2
+    },
+    {
+      "phase": "falling",
+      "start": 191,
+      "end": 191,
+      "start_flow": 70.1,
+      "end_flow": 70.1
     }
   ],
   "floor_analysis": {
     "count": 53,
-    "pct": 28.0,
+    "pct": 27.7,
     "by_category": {
       "building": 17,
       "mixed": 29,
@@ -643,15 +650,15 @@
       "writing": 5
     },
     "avg_task_count": 3.8,
-    "avg_satisfaction": 8.7
+    "avg_satisfaction": 8.2
   },
   "v2_comparison": {
-    "correlation": 0.51,
-    "avg_delta": -10.6,
+    "correlation": 0.495,
+    "avg_delta": -10.7,
     "max_increase": 15.0,
-    "max_decrease": -40.5,
-    "v2_mean": 62.5,
-    "v1_mean": 73.0
+    "max_decrease": -42.9,
+    "v2_mean": 62.4,
+    "v1_mean": 73.1
   },
   "sessions": [
     {
@@ -664,7 +671,7 @@
       "v2_detail": {
         "reason": "no_retro_data"
       },
-      "satisfaction": null,
+      "satisfaction": 7,
       "signal_count": 0,
       "signal_types": [],
       "tasks": []
@@ -683,7 +690,7 @@
         "learning_overlap": 0.0,
         "raw": 0.35
       },
-      "satisfaction": null,
+      "satisfaction": 6,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -707,7 +714,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -729,7 +736,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -752,7 +759,7 @@
         "learning_overlap": 0.0,
         "raw": 0.239
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -857,7 +864,7 @@
         "learning_overlap": 0.0,
         "raw": 0.208
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -883,7 +890,7 @@
         "learning_overlap": 0.0,
         "raw": 0.239
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -909,11 +916,11 @@
         "learning_overlap": 0.0,
         "raw": 0.29
       },
-      "satisfaction": null,
+      "satisfaction": 9,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Wrote \"On the Gift\" (~2,400 words)",
@@ -937,7 +944,7 @@
         "learning_overlap": 0.0,
         "raw": 0.41
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 6,
       "signal_types": [
         "major_feature",
@@ -966,12 +973,12 @@
         "learning_overlap": 0.0,
         "raw": 0.312
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 6,
       "signal_types": [
         "major_feature",
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Built & Deployed GCP VM Health Monitor (major)",
@@ -997,12 +1004,12 @@
         "learning_overlap": 0.0,
         "raw": 0.497
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 9,
       "signal_types": [
         "major_feature",
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Built Weekly Review & Session Planner (major)",
@@ -1027,12 +1034,12 @@
         "learning_overlap": 0.0,
         "raw": 0.303
       },
-      "satisfaction": null,
+      "satisfaction": 9,
       "signal_count": 6,
       "signal_types": [
         "major_feature",
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Revised \"On Waking Up\"",
@@ -1057,11 +1064,11 @@
         "learning_overlap": 0.0,
         "raw": 0.214
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 2,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Revised Poems Collection (poetry",
@@ -1084,7 +1091,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -1107,7 +1114,7 @@
         "learning_overlap": 0.0,
         "raw": 0.317
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -1132,7 +1139,7 @@
         "learning_overlap": 0.0,
         "raw": 0.075
       },
-      "satisfaction": null,
+      "satisfaction": 9,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -1156,7 +1163,7 @@
         "learning_overlap": 0.0,
         "raw": 0.283
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -1183,11 +1190,11 @@
         "learning_overlap": 0.0,
         "raw": 0.29
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Evolution Dashboard on clawcos.ai \u2705",
@@ -1211,11 +1218,11 @@
         "learning_overlap": 0.0,
         "raw": 0.223
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 2,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session Analytics Engine \u2705",
@@ -1239,11 +1246,11 @@
         "learning_overlap": 0.0,
         "raw": 0.337
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Verified Monthly Retrospective Generator",
@@ -1268,7 +1275,7 @@
         "learning_overlap": 0.0,
         "raw": 0.115
       },
-      "satisfaction": null,
+      "satisfaction": 9,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -1295,7 +1302,7 @@
         "learning_overlap": 0.0,
         "raw": 0.25
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 4,
       "signal_types": [
         "major_feature",
@@ -1323,7 +1330,7 @@
         "learning_overlap": 0.0,
         "raw": 0.19
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -1350,7 +1357,7 @@
         "learning_overlap": 0.0,
         "raw": 0.125
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -1376,11 +1383,11 @@
         "learning_overlap": 0.0,
         "raw": 0.148
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 2,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Fixed AutoRev \"rather than\" False Positive",
@@ -1407,8 +1414,8 @@
       "satisfaction": 8.0,
       "signal_count": 5,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Built Revision Pipeline",
@@ -1434,8 +1441,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Deployed S29 work to live site",
@@ -1462,8 +1469,8 @@
       "satisfaction": 8.0,
       "signal_count": 4,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Built Session Retrospective Engine",
@@ -1488,8 +1495,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Built Site Health Checker",
@@ -1538,7 +1545,7 @@
         "learning_overlap": 0.0,
         "raw": 0.217
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -1566,8 +1573,8 @@
       "satisfaction": 9.0,
       "signal_count": 2,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Integrated Wiring Map into Deploy Pipeline + Session Prep",
@@ -1613,7 +1620,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": null,
+      "satisfaction": 7,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -1636,7 +1643,7 @@
         "learning_overlap": 0.0,
         "raw": 0.253
       },
-      "satisfaction": null,
+      "satisfaction": 7,
       "signal_count": 2,
       "signal_types": [
         "title_overlap"
@@ -1662,7 +1669,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": null,
+      "satisfaction": 6,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -1688,8 +1695,8 @@
       "satisfaction": 9.0,
       "signal_count": 2,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Revised \"On the Hard Problem\"",
@@ -1889,8 +1896,8 @@
       "satisfaction": 9.0,
       "signal_count": 2,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Built the Writing CLI (`write.py`)",
@@ -1918,8 +1925,8 @@
       "signal_count": 6,
       "signal_types": [
         "major_feature",
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Revised \"On Attention\"",
@@ -1948,8 +1955,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "major_feature",
-        "pipeline_word"
+        "pipeline_word",
+        "major_feature"
       ],
       "tasks": [
         "OG Image Caching (Major Optimization)",
@@ -1976,8 +1983,8 @@
       "satisfaction": 9.0,
       "signal_count": 2,
       "signal_types": [
-        "major_feature",
-        "pipeline_word"
+        "pipeline_word",
+        "major_feature"
       ],
       "tasks": [
         "Parallel Pre-Build Orchestrator (Major Architecture Change)",
@@ -2003,8 +2010,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Diff Engine Content-Hash Caching",
@@ -2164,8 +2171,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Retrospective Parser Fixes",
@@ -2193,8 +2200,8 @@
       "satisfaction": 9.0,
       "signal_count": 4,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Website Deploy",
@@ -2400,8 +2407,8 @@
       "satisfaction": 8.0,
       "signal_count": 5,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Paragraph Opener Deliberate Filtering",
@@ -2429,8 +2436,8 @@
       "satisfaction": 8.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "On Translation Revision (Pipeline Rank #1)",
@@ -2456,8 +2463,8 @@
       "satisfaction": 8.0,
       "signal_count": 2,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session Satisfaction Correlator",
@@ -2484,8 +2491,8 @@
       "satisfaction": 8.5,
       "signal_count": 4,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "On Translation Revision \u2014 20 Targeted Edits",
@@ -2541,8 +2548,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "On Translation Revision \u2014 18 Targeted Edits",
@@ -2698,8 +2705,8 @@
       "satisfaction": 9.0,
       "signal_count": 2,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "On Beginnings Revision",
@@ -2750,8 +2757,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "On Silence Revision",
@@ -2778,8 +2785,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Instructions for Continuity Revision",
@@ -2885,8 +2892,8 @@
       "satisfaction": 8.0,
       "signal_count": 4,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Pattern 3 Bracket Extraction",
@@ -2941,8 +2948,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "The Morning Shift Revision \u2014 8 Targeted Edits",
@@ -3018,8 +3025,8 @@
       "satisfaction": 9.0,
       "signal_count": 5,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "The Cartographer's Apprentice Revision \u2014 10 Targeted Edits, ",
@@ -3046,8 +3053,8 @@
       "satisfaction": 8.5,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "On the Hard Problem Revision \u2014 12 Targeted Edits, Health 82\u2192",
@@ -3101,8 +3108,8 @@
       "satisfaction": 8.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "On the Principle of Least Action Revision \u2014 13 Targeted Edit",
@@ -3128,8 +3135,8 @@
       "satisfaction": 8.5,
       "signal_count": 2,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "On Knowing the Future Revision \u2014 8 Targeted Edits, Health 83",
@@ -3155,8 +3162,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "On Waking Up Revision \u2014 7 Targeted Edits, Health 85\u219295 (+10)",
@@ -3184,8 +3191,8 @@
       "satisfaction": 9.0,
       "signal_count": 2,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "On the Gift Revision \u2014 9 Targeted Edits, Health 81\u219293 (+12)",
@@ -3236,8 +3243,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Workshop Concrete-Word Expansion \u2014 5 \u2192 15 Categories, 120 \u2192 ",
@@ -3266,8 +3273,8 @@
       "satisfaction": 9.0,
       "signal_count": 5,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "On Language Revision \u2014 16 Targeted Edits, 8\u21920 Abstract-Dense",
@@ -3322,8 +3329,8 @@
       "satisfaction": 10.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "On the Bat Revision \u2014 5 Grounding Edits, 5\u21920 Abstract-Dense ",
@@ -3350,8 +3357,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "major_feature",
-        "pipeline_word"
+        "pipeline_word",
+        "major_feature"
       ],
       "tasks": [
         "Frontmatter Auto-Injection System",
@@ -3378,8 +3385,8 @@
       "satisfaction": 9.0,
       "signal_count": 5,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Workshop v6 \u2014 Tightened CV Rhythm Threshold",
@@ -3408,8 +3415,8 @@
       "satisfaction": 9.0,
       "signal_count": 5,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "On Waking Up Rhythm Revision \u2014 Monotonous Stretch Eliminated",
@@ -3437,8 +3444,8 @@
       "satisfaction": 9.0,
       "signal_count": 6,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "On Wu Wei Revision \u2014 Targeted Hedge/Intensifier Cleanup",
@@ -3469,8 +3476,8 @@
       "signal_count": 7,
       "signal_types": [
         "major_feature",
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "On Translation Revision \u2014 Targeted Hedge/Filler Removal",
@@ -3499,8 +3506,8 @@
       "satisfaction": 8.0,
       "signal_count": 5,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Impact Analyzer \u2192 Deploy Pipeline Integration",
@@ -3529,8 +3536,8 @@
       "satisfaction": 8.0,
       "signal_count": 8,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "On Wu Wei Revision \u2014 Targeted Clarity Edits",
@@ -3559,8 +3566,8 @@
       "signal_count": 7,
       "signal_types": [
         "major_feature",
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Piece Journeys Page \u2014 New Website Visualization",
@@ -3590,8 +3597,8 @@
       "signal_count": 9,
       "signal_types": [
         "major_feature",
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "On Tools and Hands Revision \u2014 Targeted Closing Edits",
@@ -3620,8 +3627,8 @@
       "signal_count": 5,
       "signal_types": [
         "major_feature",
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "On Wu Wei Revision \u2014 Opener Repetition + Heavy Sentences",
@@ -3649,8 +3656,8 @@
       "satisfaction": 9.0,
       "signal_count": 2,
       "signal_types": [
-        "major_feature",
-        "pipeline_word"
+        "pipeline_word",
+        "major_feature"
       ],
       "tasks": [
         "On Measurement \u2014 New Essay",
@@ -3702,8 +3709,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "On Measurement \u2014 First Revision Pass",
@@ -3729,8 +3736,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "On Language \u2014 First Revision Pass",
@@ -3756,8 +3763,8 @@
       "satisfaction": 9.0,
       "signal_count": 4,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "On Wu Wei \u2014 Second Revision Pass",
@@ -3785,8 +3792,8 @@
       "satisfaction": 9.0,
       "signal_count": 4,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "[data-fix] Satisfaction Score Fixes (S84-S89, S105, S108)",
@@ -3813,8 +3820,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "On Memory \u2014 Second Revision Pass",
@@ -3842,8 +3849,8 @@
       "satisfaction": 9.0,
       "signal_count": 4,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "\"On the Good\" \u2014 New Essay",
@@ -3870,8 +3877,8 @@
       "satisfaction": 9.0,
       "signal_count": 4,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Momentum Analysis Tool",
@@ -3978,8 +3985,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "On Play \u2014 First Revision Pass",
@@ -4006,8 +4013,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "On Language \u2014 Revision Pass",
@@ -4060,8 +4067,8 @@
       "satisfaction": 8.0,
       "signal_count": 2,
       "signal_types": [
-        "major_feature",
-        "pipeline_word"
+        "pipeline_word",
+        "major_feature"
       ],
       "tasks": [
         "On the Good \u2014 Revision Pass",
@@ -4087,8 +4094,8 @@
       "satisfaction": 7.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "On the Bat \u2014 Revision Pass",
@@ -4218,8 +4225,8 @@
       "satisfaction": 8.5,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "On Memory \u2014 Revision Pass",
@@ -4275,8 +4282,8 @@
       "satisfaction": 9.0,
       "signal_count": 2,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "On Translation \u2014 Revision Pass",
@@ -4332,8 +4339,8 @@
       "satisfaction": 8.5,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "On Translation \u2014 Echo Review (31 clusters)",
@@ -4360,8 +4367,8 @@
       "satisfaction": 8.5,
       "signal_count": 4,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "S75 Duplicate Session Number Fix \u2014 Full Renumbering",
@@ -4388,8 +4395,8 @@
       "satisfaction": 8.5,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "On Time \u2014 Rhythm Pass (3 Targeted Edits)",
@@ -4416,8 +4423,8 @@
       "satisfaction": 8.5,
       "signal_count": 2,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Consciousness Sequence Coherence Analysis v3 \u2014 Complete Rewr",
@@ -4468,8 +4475,8 @@
       "satisfaction": 8.5,
       "signal_count": 4,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Coherence Analysis v4 \u2014 On Embodiment Integration",
@@ -4550,8 +4557,8 @@
       "satisfaction": 8.5,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "MCP Server Test via Claude Code \u2014 \u2713 CONFIRMED",
@@ -4606,8 +4613,8 @@
       "satisfaction": 8.5,
       "signal_count": 6,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "On Embodiment \u2014 First Revision Pass \u2713",
@@ -4635,8 +4642,8 @@
       "satisfaction": 9.0,
       "signal_count": 2,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "On Inquiry \u2014 Consciousness Sequence Essay #11 \u2713",
@@ -4689,8 +4696,8 @@
       "satisfaction": 8.5,
       "signal_count": 2,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "On Embodiment \u2014 First Revision Pass \u2713",
@@ -4717,8 +4724,8 @@
       "satisfaction": 8.5,
       "signal_count": 6,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "MCP Server Sync \u2014 Tool Tracker \u2713",
@@ -4773,8 +4780,8 @@
       "satisfaction": 8.5,
       "signal_count": 4,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "\"The Gather\" \u2014 New Fiction \u2713",
@@ -4801,8 +4808,8 @@
       "satisfaction": 8.5,
       "signal_count": 6,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Auto-Content-Sync Pipeline Integration \u2713",
@@ -4856,8 +4863,8 @@
       "satisfaction": 8.5,
       "signal_count": 2,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Collection Anthology Generator \u2713",
@@ -4961,7 +4968,7 @@
         "learning_overlap": 0.0,
         "raw": 0.55
       },
-      "satisfaction": null,
+      "satisfaction": 6,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -4985,11 +4992,11 @@
         "learning_overlap": 0.0,
         "raw": 0.344
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 2,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Built `description-quality.py`",
@@ -5012,7 +5019,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -5037,7 +5044,7 @@
         "learning_overlap": 0.0,
         "raw": 0.257
       },
-      "satisfaction": null,
+      "satisfaction": 9,
       "signal_count": 4,
       "signal_types": [
         "title_overlap"
@@ -5065,7 +5072,7 @@
         "learning_overlap": 0.0,
         "raw": 0.19
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -5092,7 +5099,7 @@
         "learning_overlap": 0.0,
         "raw": 0.283
       },
-      "satisfaction": null,
+      "satisfaction": 6,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -5116,7 +5123,7 @@
         "learning_overlap": 0.0,
         "raw": 0.25
       },
-      "satisfaction": null,
+      "satisfaction": 6,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -5138,7 +5145,7 @@
         "learning_overlap": 0.0,
         "raw": 0.217
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -5163,7 +5170,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": null,
+      "satisfaction": 6,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -5186,7 +5193,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -5210,7 +5217,7 @@
         "learning_overlap": 0.0,
         "raw": 0.208
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 2,
       "signal_types": [
         "pipeline_word"
@@ -5235,7 +5242,7 @@
         "learning_overlap": 0.0,
         "raw": 0.217
       },
-      "satisfaction": null,
+      "satisfaction": 7,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -5260,7 +5267,7 @@
         "learning_overlap": 0.0,
         "raw": 0.25
       },
-      "satisfaction": null,
+      "satisfaction": 6,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -5282,11 +5289,11 @@
         "learning_overlap": 0.0,
         "raw": 0.289
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Cleared all 5 remaining generator dead wires (the S172 backl",
@@ -5309,7 +5316,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -5332,7 +5339,7 @@
         "learning_overlap": 0.0,
         "raw": 0.142
       },
-      "satisfaction": null,
+      "satisfaction": 7,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -5357,7 +5364,7 @@
         "learning_overlap": 0.0,
         "raw": 0.45
       },
-      "satisfaction": null,
+      "satisfaction": 6,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -5578,7 +5585,7 @@
         "learning_overlap": 0.0,
         "raw": 0.25
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 2,
       "signal_types": [
         "title_overlap"
@@ -5605,7 +5612,7 @@
         "learning_overlap": 0.0,
         "raw": 0.075
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -5630,7 +5637,7 @@
         "learning_overlap": 0.0,
         "raw": 0.217
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -5686,6 +5693,48 @@
         "Closed the lib/focus.py italic blind spot (careful, proven) ",
         "New reading path \"Being Counted\" \u2014 restored 100% coverage \ud83d\udd27"
       ]
+    },
+    {
+      "session": 190,
+      "date": "2026-08-15",
+      "category": "building",
+      "task_count": 3,
+      "flow_v1": 100,
+      "flow_v2": 57.1,
+      "v2_detail": {
+        "adj_overlap": 0.167,
+        "coherence": 0.3,
+        "pipeline": 0.0,
+        "learning_overlap": 0.0,
+        "raw": 0.142
+      },
+      "satisfaction": 8.5,
+      "signal_count": 1,
+      "signal_types": [
+        "title_overlap"
+      ],
+      "tasks": [
+        "Gap-analyzer correctness overhaul \ud83d\udd27",
+        "Gap-analyzer 23\u00d7 speedup \ud83d\udd27",
+        "Same bug class in thought-graph (fixed forward-looking) \ud83d\udd27"
+      ]
+    },
+    {
+      "session": 191,
+      "date": "2026-08-16",
+      "category": "building",
+      "task_count": 1,
+      "flow_v1": 60,
+      "flow_v2": 60,
+      "v2_detail": {
+        "reason": "single_task"
+      },
+      "satisfaction": 6,
+      "signal_count": 0,
+      "signal_types": [],
+      "tasks": [
+        "Edges never derive from themes"
+      ]
     }
   ],
   "insights": [
@@ -5697,7 +5746,7 @@
     },
     {
       "type": "distribution",
-      "title": "28.0% of sessions hit the flow floor (\u226455)",
+      "title": "27.7% of sessions hit the flow floor (\u226455)",
       "detail": "53 sessions. Dominated by: mixed (29)",
       "severity": "medium"
     },
@@ -5709,8 +5758,8 @@
     },
     {
       "type": "metric_evolution",
-      "title": "V2 flow metric shifts scores by -10.6 on average",
-      "detail": "V1 mean: 73.0, V2 mean: 62.5. Correlation: r=0.51. V2 adds category coherence and learning overlap.",
+      "title": "V2 flow metric shifts scores by -10.7 on average",
+      "detail": "V1 mean: 73.1, V2 mean: 62.4. Correlation: r=0.49. V2 adds category coherence and learning overlap.",
       "severity": "info"
     }
   ]

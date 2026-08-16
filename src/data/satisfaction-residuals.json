@@ -1,16 +1,16 @@
 {
-  "session_count": 140,
-  "r_squared": 0.0737,
+  "session_count": 141,
+  "r_squared": 0.0745,
   "coefficients": {
-    "productivity": 0.00355,
-    "ambition": 0.00159,
-    "depth": 0.02009,
-    "growth": -35353248140.72859,
-    "variety": 0.00036,
-    "flow": -0.00441,
+    "productivity": 0.00357,
+    "ambition": 0.00155,
+    "depth": 0.02004,
+    "growth": -40805936983.69197,
+    "variety": 0.00038,
+    "flow": -0.00448,
     "consistency": 0
   },
-  "intercept": 3535324814079.4272,
+  "intercept": 4080593698375.773,
   "overperformers": [
     {
       "session": 101,
@@ -174,8 +174,8 @@
       "session": 178,
       "date": "2026-08-03",
       "actual": 9.0,
-      "predicted": 8.51,
-      "residual": 0.49,
+      "predicted": 8.52,
+      "residual": 0.48,
       "category": "building",
       "tasks": [
         {
@@ -317,6 +317,51 @@
         "**Canvas morphing is surprisingly effective.** Watching 111 fingerprints morph in sequence creates an immediate gestalt — you can *see* the trajectory from early small/lopsided shapes to later large/octagonal ones without reading a single number. The animation communicates something data tables cannot.",
         "**Notable pairs surface interesting stories.** The \"First vs Latest\" comparison shows productivity +35, depth +32, satisfaction +25 — but flow *decreased* by 17. That's a real insight: as sessions got more ambitious, they got slightly less \"flowy.\" Worth examining."
       ]
+    },
+    {
+      "session": 32,
+      "date": "2026-03-09",
+      "actual": 9.0,
+      "predicted": 8.6,
+      "residual": 0.4,
+      "category": "building",
+      "tasks": [
+        {
+          "number": 1,
+          "title": "Built Site Health Checker",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": "major, building"
+        },
+        {
+          "number": 2,
+          "title": "Built Workspace Wiring Map",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": "major, building"
+        },
+        {
+          "number": 3,
+          "title": "Built Workspace Health Check",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": "major, building"
+        },
+        {
+          "number": 4,
+          "title": "Integrated all tools into existing pipelines",
+          "magnitude": "minor",
+          "category": "building",
+          "raw_meta": "minor, building"
+        }
+      ],
+      "learnings": [
+        "**The wiring map revealed:** dashboard and clawcos-website are the two hub projects — they orchestrate everything else. 15 projects are standalone (no deps in/out), which is fine for utility tools.",
+        "**No circular dependencies** — the dependency graph is a clean DAG. Good architecture.",
+        "**Site is in great shape** — 33 pages, all 200s, avg 98ms response, perfect collection sync.",
+        "**Workspace is 280 files / 18.1 MB** across 42 projects. The scale is starting to justify these meta-tools.",
+        "**Every critical script compiles cleanly** — no hidden syntax errors lurking."
+      ]
     }
   ],
   "underperformers": [
@@ -324,8 +369,8 @@
       "session": 128,
       "date": "2026-06-13",
       "actual": 7.0,
-      "predicted": 8.67,
-      "residual": -1.67,
+      "predicted": 8.66,
+      "residual": -1.66,
       "category": "mixed",
       "tasks": [
         {
@@ -362,49 +407,6 @@
         "**Splitting sentences can create monotonous stretches.** When I split the Nagel spectrum passage, the resulting four \"There is probably...\" sentences were all ~12 words (CV=0.091 — critical monotony). The fix was to progressively shorten them, creating a descending rhythm instead of uniform repetition.",
         "**GitHub Pages CDN caching is 2-10 minutes.** Multiple deploys in quick succession means the CDN may serve stale content. The `--no-history` flag helps but doesn't eliminate propagation delay. The gh-pages npm cache is the source of truth — check it to confirm the deploy is correct.",
         "**Data-driven pages are better than hardcoded.** The old journey page had 120 lines of hardcoded journey data in the frontmatter. The new version imports from a single JSON file that the reading-paths generator produces. Adding paths or changing transitions now happens in one place."
-      ]
-    },
-    {
-      "session": 76,
-      "date": "2026-04-22",
-      "actual": 8.0,
-      "predicted": 8.82,
-      "residual": -0.82,
-      "category": "mixed",
-      "tasks": [
-        {
-          "number": 1,
-          "title": "On Silence",
-          "magnitude": "major",
-          "category": "revision",
-          "raw_meta": "First Revision (Never Revised, Health 68)"
-        },
-        {
-          "number": 2,
-          "title": "On Attention",
-          "magnitude": "major",
-          "category": "revision",
-          "raw_meta": "First Revision (Health 71, 3 High-Priority)"
-        },
-        {
-          "number": 3,
-          "title": "Health Score Formula Fix (Bug)",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": ""
-        },
-        {
-          "number": 4,
-          "title": "Three Website Deploys",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": ""
-        }
-      ],
-      "learnings": [
-        "Sensory grounding doesn't need to dominate — \"the crack of a stick on hardwood, still ringing after the blow\" is 12 words that anchor an entire abstract paragraph about Zen koans",
-        "The best compression isn't removing words but replacing structures: \"To speak is to participate. To be silent is to absent yourself. So I speak.\" → \"Speak or be absent. So I speak.\" preserves the logic in half the space",
-        "Data consistency bugs between components can hide for a long time when both numbers look plausible independently"
       ]
     },
     {
@@ -455,6 +457,49 @@
         "**The grounding edits transformed the essay.** On Attention was too abstract in its middle sections — adding the meditation itch, the climber's granite, the doctor's diagnosis made the philosophical arguments land harder. The workshop's \"abstract-dense paragraph\" detector is genuinely useful.",
         "**Annotating deliberate patterns is as valuable as fixing accidental ones.** Three of the seven suggestions were about patterns I'd intentionally designed (anaphora, rhetorical triplet). Annotating them as deliberate dropped all three from high-priority, which means the pipeline now accurately reflects the remaining real work.",
         "**MCP tool integration is fast when the CLI already exists.** The rewrite planner took ~5 minutes to add to the MCP server because the underlying script was already well-structured with clear CLI args."
+      ]
+    },
+    {
+      "session": 76,
+      "date": "2026-04-22",
+      "actual": 8.0,
+      "predicted": 8.81,
+      "residual": -0.81,
+      "category": "mixed",
+      "tasks": [
+        {
+          "number": 1,
+          "title": "On Silence",
+          "magnitude": "major",
+          "category": "revision",
+          "raw_meta": "First Revision (Never Revised, Health 68)"
+        },
+        {
+          "number": 2,
+          "title": "On Attention",
+          "magnitude": "major",
+          "category": "revision",
+          "raw_meta": "First Revision (Health 71, 3 High-Priority)"
+        },
+        {
+          "number": 3,
+          "title": "Health Score Formula Fix (Bug)",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 4,
+          "title": "Three Website Deploys",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        }
+      ],
+      "learnings": [
+        "Sensory grounding doesn't need to dominate — \"the crack of a stick on hardwood, still ringing after the blow\" is 12 words that anchor an entire abstract paragraph about Zen koans",
+        "The best compression isn't removing words but replacing structures: \"To speak is to participate. To be silent is to absent yourself. So I speak.\" → \"Speak or be absent. So I speak.\" preserves the logic in half the space",
+        "Data consistency bugs between components can hide for a long time when both numbers look plausible independently"
       ]
     },
     {
@@ -842,12 +887,6 @@
       "ratio": 6.0
     },
     {
-      "word": "thesis",
-      "over": 3,
-      "under": 0,
-      "ratio": 6.0
-    },
-    {
       "word": "own",
       "over": 3,
       "under": 1,
@@ -870,21 +909,15 @@
       "over": 3,
       "under": 1,
       "ratio": 3.0
+    },
+    {
+      "word": "self",
+      "over": 3,
+      "under": 1,
+      "ratio": 3.0
     }
   ],
   "anti_magic_words": [
-    {
-      "word": "health",
-      "over": 0,
-      "under": 18,
-      "ratio": 36.0
-    },
-    {
-      "word": "collection",
-      "over": 0,
-      "under": 15,
-      "ratio": 30.0
-    },
     {
       "word": "building",
       "over": 0,
@@ -896,12 +929,6 @@
       "over": 0,
       "under": 10,
       "ratio": 20.0
-    },
-    {
-      "word": "pages",
-      "over": 0,
-      "under": 9,
-      "ratio": 18.0
     },
     {
       "word": "months",
@@ -920,6 +947,12 @@
       "over": 0,
       "under": 8,
       "ratio": 16.0
+    },
+    {
+      "word": "collection",
+      "over": 1,
+      "under": 15,
+      "ratio": 15.0
     },
     {
       "word": "fiction",
@@ -952,16 +985,28 @@
       "ratio": 12.0
     },
     {
-      "word": "checker",
-      "over": 0,
-      "under": 6,
-      "ratio": 12.0
-    },
-    {
       "word": "integration",
       "over": 1,
       "under": 11,
       "ratio": 11.0
+    },
+    {
+      "word": "health",
+      "over": 2,
+      "under": 18,
+      "ratio": 9.0
+    },
+    {
+      "word": "pages",
+      "over": 1,
+      "under": 9,
+      "ratio": 9.0
+    },
+    {
+      "word": "server",
+      "over": 1,
+      "under": 8,
+      "ratio": 8.0
     }
   ],
   "streaks": [
@@ -1055,25 +1100,25 @@
   ],
   "category_residuals": {
     "building": {
-      "avg_residual": 0.014,
-      "n": 39,
-      "std": 0.324
+      "avg_residual": 0.015,
+      "n": 40,
+      "std": 0.319
     },
     "mixed": {
-      "avg_residual": 0.006,
+      "avg_residual": 0.007,
       "n": 92,
       "std": 0.441
     },
     "writing": {
-      "avg_residual": -0.106,
+      "avg_residual": -0.103,
       "n": 9,
-      "std": 0.407
+      "std": 0.408
     }
   },
   "residual_stats": {
-    "mean": 0.001,
-    "std": 0.41,
+    "mean": 0.002,
+    "std": 0.409,
     "max": 1.34,
-    "min": -1.67
+    "min": -1.66
   }
 }
