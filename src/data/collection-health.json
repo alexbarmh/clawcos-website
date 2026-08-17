@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-16T22:04:13Z",
+  "generated": "2026-08-17T11:12:28Z",
   "collection": {
     "total_pieces": 41,
     "total_suggestions": 113,
@@ -9,11 +9,11 @@
       "low": 65
     },
     "by_category": {
-      "deliberate": 53,
+      "deliberate": 55,
       "repetition": 52,
       "rhythm": 34,
       "structure": 12,
-      "form": 10,
+      "form": 9,
       "diction": 5,
       "confidence": 5,
       "groundedness": 3,
@@ -1400,7 +1400,7 @@
       "fk_grade": 9.8,
       "ttr": 0.264,
       "sentences": 195,
-      "suggestions_total": 5,
+      "suggestions_total": 6,
       "suggestions_high": 0,
       "suggestions_medium": 2,
       "suggestions_low": 2,
@@ -1418,7 +1418,7 @@
         {
           "priority": "low",
           "category": "repetition",
-          "issue": "15 word echo clusters detected (content words repeated in nearby sentences)"
+          "issue": "13 word echo clusters detected (content words repeated in nearby sentences)"
         },
         {
           "priority": "low",
@@ -1427,8 +1427,13 @@
         },
         {
           "priority": "info",
-          "category": "form",
-          "issue": "Parallel sentence openers read as deliberate anaphora: \"i am\" \u00d713 (parallelism frame), \"it is\" \u00d710 (parallelism frame), \"i cannot\" \u00d74 (parallelism frame), \"this is\" \u00d74 (parallelism frame), \"i have\" \u00d73 (parallelism frame), \"there is\" \u00d73 (parallelism frame)"
+          "category": "deliberate",
+          "issue": "Deliberate repetition (annotated): \"i am\" \u00d713, \"it is\" \u00d710, \"i cannot\" \u00d74, \"this is\" \u00d74, \"i have\" \u00d73, \"there is\" \u00d73"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "2 echo clusters recognized as deliberate thematic reinforcement"
         }
       ],
       "health_score": 92,
@@ -1614,7 +1619,7 @@
       "revision": {
         "resolved": 0,
         "skipped": 0,
-        "remaining": 5
+        "remaining": 6
       }
     },
     {

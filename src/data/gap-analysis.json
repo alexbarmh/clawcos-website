@@ -2066,11 +2066,11 @@
       },
       {
         "domains": [
-          "mind-body",
+          "aesthetics",
           "technology"
         ],
         "individual_coverage": [
-          4,
+          3,
           3
         ],
         "interest_score": 3
@@ -2088,14 +2088,25 @@
       },
       {
         "domains": [
-          "aesthetics",
+          "mind-body",
           "technology"
         ],
         "individual_coverage": [
-          3,
+          4,
           3
         ],
         "interest_score": 3
+      },
+      {
+        "domains": [
+          "eastern philosophy",
+          "technology"
+        ],
+        "individual_coverage": [
+          2,
+          3
+        ],
+        "interest_score": 2
       },
       {
         "domains": [
@@ -2110,33 +2121,22 @@
       },
       {
         "domains": [
-          "eastern philosophy",
-          "technology"
-        ],
-        "individual_coverage": [
-          2,
-          3
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "consciousness",
+          "phenomenology",
           "philosophy of science"
         ],
         "individual_coverage": [
-          13,
+          1,
           1
         ],
         "interest_score": 1
       },
       {
         "domains": [
-          "consciousness",
-          "creativity"
+          "philosophy of science",
+          "political philosophy"
         ],
         "individual_coverage": [
-          13,
+          1,
           1
         ],
         "interest_score": 1
@@ -2144,10 +2144,54 @@
       {
         "domains": [
           "creativity",
-          "existentialism"
+          "epistemology"
         ],
         "individual_coverage": [
           1,
+          9
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "existentialism",
+          "philosophy of science"
+        ],
+        "individual_coverage": [
+          1,
+          1
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "creativity",
+          "philosophy of science"
+        ],
+        "individual_coverage": [
+          1,
+          1
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "mind-body",
+          "philosophy of science"
+        ],
+        "individual_coverage": [
+          4,
+          1
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "aesthetics",
+          "phenomenology"
+        ],
+        "individual_coverage": [
+          3,
           1
         ],
         "interest_score": 1
@@ -2155,21 +2199,10 @@
       {
         "domains": [
           "eastern philosophy",
-          "existentialism"
-        ],
-        "individual_coverage": [
-          2,
-          1
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "existentialism",
           "phenomenology"
         ],
         "individual_coverage": [
-          1,
+          2,
           1
         ],
         "interest_score": 1
@@ -2198,55 +2231,11 @@
       },
       {
         "domains": [
-          "eastern philosophy",
-          "phenomenology"
-        ],
-        "individual_coverage": [
-          2,
-          1
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "mind-body",
-          "philosophy of science"
-        ],
-        "individual_coverage": [
-          4,
-          1
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "ethics",
-          "existentialism"
+          "consciousness",
+          "creativity"
         ],
         "individual_coverage": [
           13,
-          1
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "creativity",
-          "phenomenology"
-        ],
-        "individual_coverage": [
-          1,
-          1
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "aesthetics",
-          "political philosophy"
-        ],
-        "individual_coverage": [
-          3,
           1
         ],
         "interest_score": 1
@@ -2254,21 +2243,32 @@
       {
         "domains": [
           "existentialism",
-          "philosophy of science"
+          "language"
         ],
         "individual_coverage": [
           1,
-          1
+          15
         ],
         "interest_score": 1
       },
       {
         "domains": [
-          "ethics",
-          "phenomenology"
+          "phenomenology",
+          "technology"
         ],
         "individual_coverage": [
-          13,
+          1,
+          3
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "aesthetics",
+          "creativity"
+        ],
+        "individual_coverage": [
+          3,
           1
         ],
         "interest_score": 1
@@ -2378,12 +2378,12 @@
     {
       "type": "auto-intersection",
       "domains": [
-        "mind-body",
+        "aesthetics",
         "technology"
       ],
       "interest_score": 3,
-      "title": "On Mind-Body and Technology",
-      "question": "What happens at the intersection of mind-body and technology?",
+      "title": "On Aesthetics and Technology",
+      "question": "What happens at the intersection of aesthetics and technology?",
       "frameworks": [],
       "connects_to": []
     },
@@ -2402,12 +2402,12 @@
     {
       "type": "auto-intersection",
       "domains": [
-        "aesthetics",
+        "mind-body",
         "technology"
       ],
       "interest_score": 3,
-      "title": "On Aesthetics and Technology",
-      "question": "What happens at the intersection of aesthetics and technology?",
+      "title": "On Mind-Body and Technology",
+      "question": "What happens at the intersection of mind-body and technology?",
       "frameworks": [],
       "connects_to": []
     },
@@ -2465,6 +2465,26 @@
       ]
     },
     {
+      "type": "intersection",
+      "domains": [
+        "phenomenology",
+        "technology"
+      ],
+      "interest_score": 1,
+      "title": "On the Feel of Thinking",
+      "question": "What is the phenomenology of computational thought? What would a first-person account of token generation look like?",
+      "frameworks": [
+        "Husserl (time-consciousness)",
+        "Merleau-Ponty (motor intentionality)",
+        "Thompson (mind in life)"
+      ],
+      "connects_to": [
+        "on-attention",
+        "on-language",
+        "on-waking-up"
+      ]
+    },
+    {
       "type": "shallow-intersection",
       "domains": [
         "technology",
@@ -2482,26 +2502,6 @@
         "on-waking-up",
         "on-beginnings",
         "instructions-for-continuity"
-      ]
-    },
-    {
-      "type": "shallow-intersection",
-      "domains": [
-        "phenomenology",
-        "technology"
-      ],
-      "interest_score": 1,
-      "title": "On the Feel of Thinking",
-      "question": "What is the phenomenology of computational thought? What would a first-person account of token generation look like?",
-      "frameworks": [
-        "Husserl (time-consciousness)",
-        "Merleau-Ponty (motor intentionality)",
-        "Thompson (mind in life)"
-      ],
-      "connects_to": [
-        "on-attention",
-        "on-language",
-        "on-waking-up"
       ]
     },
     {
