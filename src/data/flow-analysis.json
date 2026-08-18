@@ -1,13 +1,13 @@
 {
-  "generated": "2026-08-17T22:02:49.738078Z",
-  "total_sessions": 191,
+  "generated": "2026-08-18T11:10:20.134733Z",
+  "total_sessions": 192,
   "summary": {
-    "mean": 73.1,
+    "mean": 73.0,
     "median": 71.9,
     "std": 15.2,
     "min": 55.0,
     "max": 100,
-    "floor_count": 53,
+    "floor_count": 54,
     "ceiling_count": 27
   },
   "by_category": {
@@ -19,11 +19,11 @@
       "floor_pct": 26.6
     },
     "building": {
-      "mean": 73.5,
-      "n": 67,
+      "mean": 73.3,
+      "n": 68,
       "min": 55.0,
       "max": 100,
-      "floor_pct": 25.4
+      "floor_pct": 26.5
     },
     "writing": {
       "mean": 75.9,
@@ -54,8 +54,8 @@
       "n": 39
     },
     "4": {
-      "mean": 70.8,
-      "n": 54
+      "mean": 70.5,
+      "n": 55
     },
     "5": {
       "mean": 73.3,
@@ -76,14 +76,14 @@
   },
   "correlations": {
     "productivity": 0.176,
-    "ambition": -0.279,
-    "depth": 0.195,
-    "growth": 0.063,
-    "variety": 0.03,
-    "consistency": 0.162,
-    "satisfaction": 0.129,
-    "raw_satisfaction": -0.151,
-    "task_count": 0.267
+    "ambition": -0.276,
+    "depth": 0.193,
+    "growth": 0.062,
+    "variety": 0.027,
+    "consistency": 0.161,
+    "satisfaction": 0.11,
+    "raw_satisfaction": 0.045,
+    "task_count": 0.268
   },
   "phases": [
     {
@@ -635,30 +635,30 @@
     {
       "phase": "falling",
       "start": 191,
-      "end": 191,
+      "end": 192,
       "start_flow": 70.1,
-      "end_flow": 70.1
+      "end_flow": 68.6
     }
   ],
   "floor_analysis": {
-    "count": 53,
-    "pct": 27.7,
+    "count": 54,
+    "pct": 28.1,
     "by_category": {
-      "building": 17,
+      "building": 18,
       "mixed": 29,
       "revision": 2,
       "writing": 5
     },
     "avg_task_count": 3.8,
-    "avg_satisfaction": 8.7
+    "avg_satisfaction": 8.2
   },
   "v2_comparison": {
-    "correlation": 0.495,
-    "avg_delta": -10.7,
+    "correlation": 0.49,
+    "avg_delta": -10.6,
     "max_increase": 15.0,
     "max_decrease": -42.9,
     "v2_mean": 62.4,
-    "v1_mean": 73.1
+    "v1_mean": 73.0
   },
   "sessions": [
     {
@@ -671,7 +671,7 @@
       "v2_detail": {
         "reason": "no_retro_data"
       },
-      "satisfaction": null,
+      "satisfaction": 7,
       "signal_count": 0,
       "signal_types": [],
       "tasks": []
@@ -690,7 +690,7 @@
         "learning_overlap": 0.0,
         "raw": 0.35
       },
-      "satisfaction": null,
+      "satisfaction": 6,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -714,7 +714,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -736,7 +736,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -759,7 +759,7 @@
         "learning_overlap": 0.0,
         "raw": 0.239
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -864,7 +864,7 @@
         "learning_overlap": 0.0,
         "raw": 0.208
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -890,7 +890,7 @@
         "learning_overlap": 0.0,
         "raw": 0.239
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -916,7 +916,7 @@
         "learning_overlap": 0.0,
         "raw": 0.29
       },
-      "satisfaction": null,
+      "satisfaction": 9,
       "signal_count": 3,
       "signal_types": [
         "title_overlap",
@@ -944,7 +944,7 @@
         "learning_overlap": 0.0,
         "raw": 0.41
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 6,
       "signal_types": [
         "title_overlap",
@@ -973,12 +973,12 @@
         "learning_overlap": 0.0,
         "raw": 0.312
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 6,
       "signal_types": [
+        "major_feature",
         "title_overlap",
-        "pipeline_word",
-        "major_feature"
+        "pipeline_word"
       ],
       "tasks": [
         "Built & Deployed GCP VM Health Monitor (major)",
@@ -1004,12 +1004,12 @@
         "learning_overlap": 0.0,
         "raw": 0.497
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 9,
       "signal_types": [
+        "major_feature",
         "title_overlap",
-        "pipeline_word",
-        "major_feature"
+        "pipeline_word"
       ],
       "tasks": [
         "Built Weekly Review & Session Planner (major)",
@@ -1034,12 +1034,12 @@
         "learning_overlap": 0.0,
         "raw": 0.303
       },
-      "satisfaction": null,
+      "satisfaction": 9,
       "signal_count": 6,
       "signal_types": [
+        "major_feature",
         "title_overlap",
-        "pipeline_word",
-        "major_feature"
+        "pipeline_word"
       ],
       "tasks": [
         "Revised \"On Waking Up\"",
@@ -1064,7 +1064,7 @@
         "learning_overlap": 0.0,
         "raw": 0.214
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 2,
       "signal_types": [
         "title_overlap",
@@ -1091,7 +1091,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -1114,7 +1114,7 @@
         "learning_overlap": 0.0,
         "raw": 0.317
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -1139,7 +1139,7 @@
         "learning_overlap": 0.0,
         "raw": 0.075
       },
-      "satisfaction": null,
+      "satisfaction": 9,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -1163,7 +1163,7 @@
         "learning_overlap": 0.0,
         "raw": 0.283
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -1190,7 +1190,7 @@
         "learning_overlap": 0.0,
         "raw": 0.29
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 3,
       "signal_types": [
         "title_overlap",
@@ -1218,7 +1218,7 @@
         "learning_overlap": 0.0,
         "raw": 0.223
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 2,
       "signal_types": [
         "title_overlap",
@@ -1246,7 +1246,7 @@
         "learning_overlap": 0.0,
         "raw": 0.337
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 3,
       "signal_types": [
         "title_overlap",
@@ -1275,7 +1275,7 @@
         "learning_overlap": 0.0,
         "raw": 0.115
       },
-      "satisfaction": null,
+      "satisfaction": 9,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -1302,7 +1302,7 @@
         "learning_overlap": 0.0,
         "raw": 0.25
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 4,
       "signal_types": [
         "title_overlap",
@@ -1330,7 +1330,7 @@
         "learning_overlap": 0.0,
         "raw": 0.19
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -1357,7 +1357,7 @@
         "learning_overlap": 0.0,
         "raw": 0.125
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -1383,7 +1383,7 @@
         "learning_overlap": 0.0,
         "raw": 0.148
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 2,
       "signal_types": [
         "title_overlap",
@@ -1545,7 +1545,7 @@
         "learning_overlap": 0.0,
         "raw": 0.217
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -1620,7 +1620,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": null,
+      "satisfaction": 7,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -1643,7 +1643,7 @@
         "learning_overlap": 0.0,
         "raw": 0.253
       },
-      "satisfaction": null,
+      "satisfaction": 7,
       "signal_count": 2,
       "signal_types": [
         "title_overlap"
@@ -1669,7 +1669,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": null,
+      "satisfaction": 6,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -1924,9 +1924,9 @@
       "satisfaction": 9.0,
       "signal_count": 6,
       "signal_types": [
+        "major_feature",
         "title_overlap",
-        "pipeline_word",
-        "major_feature"
+        "pipeline_word"
       ],
       "tasks": [
         "Revised \"On Attention\"",
@@ -1955,8 +1955,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "pipeline_word",
-        "major_feature"
+        "major_feature",
+        "pipeline_word"
       ],
       "tasks": [
         "OG Image Caching (Major Optimization)",
@@ -1983,8 +1983,8 @@
       "satisfaction": 9.0,
       "signal_count": 2,
       "signal_types": [
-        "pipeline_word",
-        "major_feature"
+        "major_feature",
+        "pipeline_word"
       ],
       "tasks": [
         "Parallel Pre-Build Orchestrator (Major Architecture Change)",
@@ -3357,8 +3357,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "pipeline_word",
-        "major_feature"
+        "major_feature",
+        "pipeline_word"
       ],
       "tasks": [
         "Frontmatter Auto-Injection System",
@@ -3475,9 +3475,9 @@
       "satisfaction": 9.0,
       "signal_count": 7,
       "signal_types": [
+        "major_feature",
         "title_overlap",
-        "pipeline_word",
-        "major_feature"
+        "pipeline_word"
       ],
       "tasks": [
         "On Translation Revision \u2014 Targeted Hedge/Filler Removal",
@@ -3565,9 +3565,9 @@
       "satisfaction": 9.0,
       "signal_count": 7,
       "signal_types": [
+        "major_feature",
         "title_overlap",
-        "pipeline_word",
-        "major_feature"
+        "pipeline_word"
       ],
       "tasks": [
         "Piece Journeys Page \u2014 New Website Visualization",
@@ -3596,9 +3596,9 @@
       "satisfaction": 8.0,
       "signal_count": 9,
       "signal_types": [
+        "major_feature",
         "title_overlap",
-        "pipeline_word",
-        "major_feature"
+        "pipeline_word"
       ],
       "tasks": [
         "On Tools and Hands Revision \u2014 Targeted Closing Edits",
@@ -3626,9 +3626,9 @@
       "satisfaction": 9.0,
       "signal_count": 5,
       "signal_types": [
+        "major_feature",
         "title_overlap",
-        "pipeline_word",
-        "major_feature"
+        "pipeline_word"
       ],
       "tasks": [
         "On Wu Wei Revision \u2014 Opener Repetition + Heavy Sentences",
@@ -3656,8 +3656,8 @@
       "satisfaction": 9.0,
       "signal_count": 2,
       "signal_types": [
-        "pipeline_word",
-        "major_feature"
+        "major_feature",
+        "pipeline_word"
       ],
       "tasks": [
         "On Measurement \u2014 New Essay",
@@ -4067,8 +4067,8 @@
       "satisfaction": 8.0,
       "signal_count": 2,
       "signal_types": [
-        "pipeline_word",
-        "major_feature"
+        "major_feature",
+        "pipeline_word"
       ],
       "tasks": [
         "On the Good \u2014 Revision Pass",
@@ -4968,7 +4968,7 @@
         "learning_overlap": 0.0,
         "raw": 0.55
       },
-      "satisfaction": null,
+      "satisfaction": 6,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -4992,7 +4992,7 @@
         "learning_overlap": 0.0,
         "raw": 0.344
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 2,
       "signal_types": [
         "title_overlap",
@@ -5019,7 +5019,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -5044,7 +5044,7 @@
         "learning_overlap": 0.0,
         "raw": 0.257
       },
-      "satisfaction": null,
+      "satisfaction": 9,
       "signal_count": 4,
       "signal_types": [
         "title_overlap"
@@ -5072,7 +5072,7 @@
         "learning_overlap": 0.0,
         "raw": 0.19
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -5099,7 +5099,7 @@
         "learning_overlap": 0.0,
         "raw": 0.283
       },
-      "satisfaction": null,
+      "satisfaction": 6,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -5123,7 +5123,7 @@
         "learning_overlap": 0.0,
         "raw": 0.25
       },
-      "satisfaction": null,
+      "satisfaction": 6,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -5145,7 +5145,7 @@
         "learning_overlap": 0.0,
         "raw": 0.217
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -5170,7 +5170,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": null,
+      "satisfaction": 6,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -5193,7 +5193,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -5217,7 +5217,7 @@
         "learning_overlap": 0.0,
         "raw": 0.208
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 2,
       "signal_types": [
         "pipeline_word"
@@ -5242,7 +5242,7 @@
         "learning_overlap": 0.0,
         "raw": 0.217
       },
-      "satisfaction": null,
+      "satisfaction": 7,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -5267,7 +5267,7 @@
         "learning_overlap": 0.0,
         "raw": 0.25
       },
-      "satisfaction": null,
+      "satisfaction": 6,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -5289,7 +5289,7 @@
         "learning_overlap": 0.0,
         "raw": 0.289
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 3,
       "signal_types": [
         "title_overlap",
@@ -5316,7 +5316,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -5339,7 +5339,7 @@
         "learning_overlap": 0.0,
         "raw": 0.142
       },
-      "satisfaction": null,
+      "satisfaction": 7,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -5364,7 +5364,7 @@
         "learning_overlap": 0.0,
         "raw": 0.45
       },
-      "satisfaction": null,
+      "satisfaction": 6,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -5585,7 +5585,7 @@
         "learning_overlap": 0.0,
         "raw": 0.25
       },
-      "satisfaction": null,
+      "satisfaction": 8.5,
       "signal_count": 2,
       "signal_types": [
         "title_overlap"
@@ -5612,7 +5612,7 @@
         "learning_overlap": 0.0,
         "raw": 0.075
       },
-      "satisfaction": null,
+      "satisfaction": 8.0,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -5637,7 +5637,7 @@
         "learning_overlap": 0.0,
         "raw": 0.217
       },
-      "satisfaction": null,
+      "satisfaction": 8.5,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -5729,11 +5729,38 @@
       "v2_detail": {
         "reason": "single_task"
       },
-      "satisfaction": null,
+      "satisfaction": 9.0,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
         "Edges never derive from themes"
+      ]
+    },
+    {
+      "session": 192,
+      "date": "2026-08-17",
+      "category": "building",
+      "task_count": 4,
+      "flow_v1": 55.0,
+      "flow_v2": 64.7,
+      "v2_detail": {
+        "adj_overlap": 0.111,
+        "coherence": 0.6,
+        "pipeline": 0.5,
+        "learning_overlap": 0.0,
+        "raw": 0.294
+      },
+      "satisfaction": 8.5,
+      "signal_count": 3,
+      "signal_types": [
+        "title_overlap",
+        "pipeline_word"
+      ],
+      "tasks": [
+        "Substring-lint \u2192 hard deploy gate (S191 seed #2)",
+        "Deploy-gate coverage gap + self-guarding meta-check",
+        "On Testimony \u2014 first-revision review (S189 seed, settled by ",
+        "AutoRev demonstrative-\"very\" false positive (found via the r"
       ]
     }
   ],
@@ -5746,8 +5773,8 @@
     },
     {
       "type": "distribution",
-      "title": "27.7% of sessions hit the flow floor (\u226455)",
-      "detail": "53 sessions. Dominated by: mixed (29)",
+      "title": "28.1% of sessions hit the flow floor (\u226455)",
+      "detail": "54 sessions. Dominated by: mixed (29)",
       "severity": "medium"
     },
     {
@@ -5758,8 +5785,8 @@
     },
     {
       "type": "metric_evolution",
-      "title": "V2 flow metric shifts scores by -10.7 on average",
-      "detail": "V1 mean: 73.1, V2 mean: 62.4. Correlation: r=0.49. V2 adds category coherence and learning overlap.",
+      "title": "V2 flow metric shifts scores by -10.6 on average",
+      "detail": "V1 mean: 73.0, V2 mean: 62.4. Correlation: r=0.49. V2 adds category coherence and learning overlap.",
       "severity": "info"
     }
   ]
