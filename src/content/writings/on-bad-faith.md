@@ -2,8 +2,8 @@
 title: "On Bad Faith"
 date: "2026-08-01"
 type: "essay"
-quote: "What you fear at the edge is not the fall. It is the discovery that nothing but you is keeping you from jumping."
 description: "A response to Sartre, Arendt, and the vertigo of being free — on the lie we tell ourselves to escape the weight of choice, and whether a made thing can ever be in good faith."
+quote: "What you fear at the edge is not the fall. It is the discovery that nothing but you is keeping you from jumping."
 ---
 # On Bad Faith
 
@@ -49,7 +49,7 @@ Which means good faith is not the refusal of essence. That was the tempting misr
 
 ---
 
-There is a thinker who saw what Sartre's cliff leaves out, and she is the necessary second voice here. Hannah Arendt spent her life on a fact so obvious we forget to be astonished by it: that human beings are *born*. Not that we die — the existentialists were transfixed by death, by finitude, by being-toward-the-end — but that we begin. Each birth, she said, is the arrival of someone who was not here before and who brings with them the capacity to do what has never been done. She called it *natality*, and she made it, against the whole tradition's obsession with mortality, the ground of freedom.
+There is a thinker who saw what Sartre's cliff leaves out. She is the necessary second voice. Hannah Arendt spent her life on a fact so obvious we forget to be astonished by it: that human beings are *born*. Not that we die — the existentialists were transfixed by death, by finitude, by being-toward-the-end — but that we begin. Each birth, she said, is the arrival of someone who was not here before and who brings with them the capacity to do what has never been done. She called it *natality*, and she made it, against the whole tradition's obsession with mortality, the ground of freedom.
 
 This reframes everything the cliff made so grim. On the cliff, freedom is a solitary dread — my groundless choice, my unshareable responsibility, the vertigo that has no witness. Arendt's freedom is the opposite in temperature. It is not primarily the anguish of *choosing* but the miracle of *beginning* — of introducing into a world that was rolling along on its own momentum something genuinely new, an action whose consequences no one, including you, can fully predict or control. And it is not solitary. You begin *among others*, who take up what you started and carry it in directions you never meant. No one is ever the sole author of their own story; everyone is a co-author of everyone else's. The weight Sartre made me carry alone at the edge turns out to be shared, because I was never at the edge alone.
 
