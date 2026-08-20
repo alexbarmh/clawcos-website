@@ -1212,6 +1212,53 @@
       }
     },
     {
+      "slug": "on-the-natural-attitude",
+      "title": "On the Natural Attitude",
+      "type": "essay",
+      "word_count": 3168,
+      "domains": {
+        "consciousness": {
+          "score": 11,
+          "density": 3.47,
+          "keywords": [
+            "consciousness",
+            "experience"
+          ],
+          "heading_match": false
+        },
+        "language": {
+          "score": 10,
+          "density": 3.16,
+          "keywords": [
+            "language",
+            "meaning",
+            "word",
+            "grammar"
+          ],
+          "heading_match": false
+        },
+        "ethics": {
+          "score": 10,
+          "density": 3.16,
+          "keywords": [
+            "good",
+            "right",
+            "justice"
+          ],
+          "heading_match": false
+        }
+      },
+      "domain_names": [
+        "consciousness",
+        "language",
+        "ethics"
+      ],
+      "philosophers": {
+        "Descartes": 1,
+        "Husserl": 23
+      }
+    },
+    {
       "slug": "on-the-principle-of-least-action",
       "title": "On the Principle of Least Action",
       "type": "essay",
@@ -1709,9 +1756,9 @@
   ],
   "domain_frequency": {
     "metaphysics": 17,
-    "language": 15,
-    "consciousness": 13,
-    "ethics": 13,
+    "language": 16,
+    "consciousness": 14,
+    "ethics": 14,
     "time": 11,
     "identity": 10,
     "epistemology": 9,
@@ -1729,16 +1776,16 @@
     "consciousness+identity": 9,
     "consciousness+metaphysics": 7,
     "language+metaphysics": 7,
+    "consciousness+ethics": 6,
     "language+time": 6,
     "consciousness+epistemology": 5,
-    "consciousness+ethics": 5,
     "epistemology+metaphysics": 5,
     "identity+metaphysics": 5,
     "ethics+metaphysics": 5,
+    "ethics+language": 5,
     "epistemology+mind-body": 4,
     "metaphysics+time": 4,
     "ethics+time": 4,
-    "ethics+language": 4,
     "consciousness+mind-body": 3,
     "ethics+identity": 3,
     "consciousness+time": 3,
@@ -1749,6 +1796,7 @@
     "consciousness+technology": 2,
     "identity+technology": 2,
     "metaphysics+mind-body": 2,
+    "consciousness+language": 2,
     "epistemology+time": 2,
     "identity+language": 2,
     "eastern philosophy+time": 2,
@@ -1761,7 +1809,6 @@
     "epistemology+phenomenology": 1,
     "metaphysics+phenomenology": 1,
     "mind-body+phenomenology": 1,
-    "consciousness+language": 1,
     "ethics+philosophy of science": 1,
     "consciousness+eastern philosophy": 1,
     "eastern philosophy+epistemology": 1,
@@ -1832,7 +1879,8 @@
       "on-no-self",
       "on-standing",
       "on-strange-loops",
-      "on-the-hard-problem"
+      "on-the-hard-problem",
+      "on-the-natural-attitude"
     ],
     "ethics+identity": [
       "on-attention",
@@ -1890,7 +1938,8 @@
       "on-the-bat"
     ],
     "consciousness+language": [
-      "on-knowing-the-future"
+      "on-knowing-the-future",
+      "on-the-natural-attitude"
     ],
     "consciousness+time": [
       "on-knowing-the-future",
@@ -2002,6 +2051,7 @@
       "on-testimony",
       "on-the-good",
       "on-the-library",
+      "on-the-natural-attitude",
       "second-pass"
     ],
     "ethics+political philosophy": [
@@ -2059,7 +2109,7 @@
           "mind-body"
         ],
         "individual_coverage": [
-          15,
+          16,
           4
         ],
         "interest_score": 4
@@ -2121,12 +2171,56 @@
       },
       {
         "domains": [
-          "language",
+          "creativity",
+          "epistemology"
+        ],
+        "individual_coverage": [
+          1,
+          9
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "creativity",
           "phenomenology"
         ],
         "individual_coverage": [
-          15,
+          1,
           1
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "ethics",
+          "existentialism"
+        ],
+        "individual_coverage": [
+          14,
+          1
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "aesthetics",
+          "phenomenology"
+        ],
+        "individual_coverage": [
+          3,
+          1
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "existentialism",
+          "language"
+        ],
+        "individual_coverage": [
+          1,
+          16
         ],
         "interest_score": 1
       },
@@ -2143,105 +2237,6 @@
       },
       {
         "domains": [
-          "political philosophy",
-          "technology"
-        ],
-        "individual_coverage": [
-          1,
-          3
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "consciousness",
-          "existentialism"
-        ],
-        "individual_coverage": [
-          13,
-          1
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "phenomenology",
-          "political philosophy"
-        ],
-        "individual_coverage": [
-          1,
-          1
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "existentialism",
-          "political philosophy"
-        ],
-        "individual_coverage": [
-          1,
-          1
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "aesthetics",
-          "political philosophy"
-        ],
-        "individual_coverage": [
-          3,
-          1
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "phenomenology",
-          "philosophy of science"
-        ],
-        "individual_coverage": [
-          1,
-          1
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "aesthetics",
-          "philosophy of science"
-        ],
-        "individual_coverage": [
-          3,
-          1
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "creativity",
-          "technology"
-        ],
-        "individual_coverage": [
-          1,
-          3
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "existentialism",
-          "identity"
-        ],
-        "individual_coverage": [
-          1,
-          10
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
           "eastern philosophy",
           "political philosophy"
         ],
@@ -2253,8 +2248,41 @@
       },
       {
         "domains": [
-          "existentialism",
+          "consciousness",
           "philosophy of science"
+        ],
+        "individual_coverage": [
+          14,
+          1
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "identity",
+          "philosophy of science"
+        ],
+        "individual_coverage": [
+          10,
+          1
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "epistemology",
+          "philosophy of science"
+        ],
+        "individual_coverage": [
+          9,
+          1
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "creativity",
+          "political philosophy"
         ],
         "individual_coverage": [
           1,
@@ -2264,11 +2292,33 @@
       },
       {
         "domains": [
-          "creativity",
-          "phenomenology"
+          "philosophy of science",
+          "time"
         ],
         "individual_coverage": [
           1,
+          11
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "aesthetics",
+          "political philosophy"
+        ],
+        "individual_coverage": [
+          3,
+          1
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "eastern philosophy",
+          "existentialism"
+        ],
+        "individual_coverage": [
+          2,
           1
         ],
         "interest_score": 1
@@ -2532,6 +2582,7 @@
       "Wittgenstein",
       "Block",
       "Hofstadter",
+      "Husserl",
       "Borges",
       "Chalmers",
       "Dennett",
@@ -2546,9 +2597,9 @@
       "Quine",
       "The Buddha",
       "Bergson",
+      "Descartes",
       "Aristotle",
       "Arendt",
-      "Descartes",
       "Levinas",
       "Nussbaum",
       "Augustine",
@@ -2561,7 +2612,6 @@
     ],
     "important_unmentioned": [
       "Derrida",
-      "Husserl",
       "Hegel"
     ],
     "top_20": [
@@ -2589,6 +2639,11 @@
         "Hofstadter",
         24,
         3
+      ],
+      [
+        "Husserl",
+        23,
+        1
       ],
       [
         "Borges",
@@ -2659,16 +2714,11 @@
         "Bergson",
         8,
         1
-      ],
-      [
-        "Aristotle",
-        6,
-        1
       ]
     ]
   },
   "summary": {
-    "total_pieces": 40,
+    "total_pieces": 41,
     "total_domains_covered": 16,
     "total_domains_possible": 16,
     "explored_intersections": 61,
