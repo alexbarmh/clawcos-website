@@ -1,72 +1,109 @@
 {
-  "generated": "2026-08-21T22:01:23.775515Z",
-  "total_sessions": 195,
+  "generated": "2026-08-22T11:08:51.240724Z",
+  "total_sessions": 196,
   "k": 6,
   "k_search": [
     {
       "k": 2,
-      "silhouette": 0.2791,
-      "inertia": 54.06
+      "silhouette": 0.2684,
+      "inertia": 54.3
     },
     {
       "k": 3,
-      "silhouette": 0.2684,
-      "inertia": 43.31
+      "silhouette": 0.2694,
+      "inertia": 43.48
     },
     {
       "k": 4,
-      "silhouette": 0.2902,
-      "inertia": 35.73
+      "silhouette": 0.2905,
+      "inertia": 35.88
     },
     {
       "k": 5,
-      "silhouette": 0.3031,
-      "inertia": 30.7
+      "silhouette": 0.3029,
+      "inertia": 30.87
     },
     {
       "k": 6,
-      "silhouette": 0.3071,
-      "inertia": 27.39
+      "silhouette": 0.3045,
+      "inertia": 27.48
     },
     {
       "k": 7,
-      "silhouette": 0.2732,
-      "inertia": 25.3
+      "silhouette": 0.2767,
+      "inertia": 25.7
     },
     {
       "k": 8,
-      "silhouette": 0.2747,
-      "inertia": 22.75
+      "silhouette": 0.2702,
+      "inertia": 23.22
     }
   ],
-  "silhouette_score": 0.3071,
+  "silhouette_score": 0.3045,
   "archetypes": [
     {
       "id": 0,
       "name": "The Stretch Session",
-      "size": 46,
-      "pct": 23.6,
+      "size": 24,
+      "pct": 12.2,
       "profile": {
-        "productivity": 89.5,
-        "ambition": 98.1,
-        "depth": 97.1,
+        "productivity": 86.2,
+        "ambition": 97.0,
+        "depth": 96.1,
         "growth": 100.0,
-        "variety": 90.7,
-        "flow": 63.8,
+        "variety": 91.7,
+        "flow": 59.3,
+        "consistency": 75.9,
+        "satisfaction": 65.0
+      },
+      "category_distribution": {
+        "mixed": 11,
+        "building": 10,
+        "revision": 2,
+        "writing": 1
+      },
+      "avg_satisfaction": 7.8,
+      "session_range": [
+        4,
+        175
+      ],
+      "temporal_center": 70.0,
+      "example_sessions": [
+        4,
+        5,
+        9,
+        10,
+        16
+      ],
+      "strongest": "growth",
+      "weakest": "flow"
+    },
+    {
+      "id": 1,
+      "name": "The Stretch Session",
+      "size": 48,
+      "pct": 24.5,
+      "profile": {
+        "productivity": 89.2,
+        "ambition": 97.4,
+        "depth": 96.6,
+        "growth": 100.0,
+        "variety": 90.0,
+        "flow": 63.9,
         "consistency": 83.7,
-        "satisfaction": 87.1
+        "satisfaction": 86.9
       },
       "category_distribution": {
         "writing": 4,
-        "mixed": 27,
-        "building": 15
+        "mixed": 28,
+        "building": 16
       },
       "avg_satisfaction": 8.7,
       "session_range": [
         6,
-        187
+        196
       ],
-      "temporal_center": 71.0,
+      "temporal_center": 73.0,
       "example_sessions": [
         6,
         7,
@@ -78,75 +115,38 @@
       "weakest": "flow"
     },
     {
-      "id": 1,
-      "name": "The Explorer",
-      "size": 26,
-      "pct": 13.3,
-      "profile": {
-        "productivity": 86.7,
-        "ambition": 95.3,
-        "depth": 96.4,
-        "growth": 100.0,
-        "variety": 92.2,
-        "flow": 60.3,
-        "consistency": 75.9,
-        "satisfaction": 65.0
-      },
-      "category_distribution": {
-        "mixed": 11,
-        "building": 12,
-        "revision": 2,
-        "writing": 1
-      },
-      "avg_satisfaction": 7.8,
-      "session_range": [
-        4,
-        175
-      ],
-      "temporal_center": 72.0,
-      "example_sessions": [
-        4,
-        5,
-        9,
-        10,
-        13
-      ],
-      "strongest": "growth",
-      "weakest": "flow"
-    },
-    {
       "id": 2,
       "name": "The Explorer",
-      "size": 15,
-      "pct": 7.7,
+      "size": 18,
+      "pct": 9.2,
       "profile": {
-        "productivity": 89.3,
-        "ambition": 85.9,
+        "productivity": 88.9,
+        "ambition": 81.5,
         "depth": 98.9,
         "growth": 100.0,
-        "variety": 91.6,
-        "flow": 87.1,
-        "consistency": 79.1,
+        "variety": 92.1,
+        "flow": 84.8,
+        "consistency": 77.7,
         "satisfaction": 65.3
       },
       "category_distribution": {
         "mixed": 5,
-        "building": 8,
+        "building": 11,
         "revision": 1,
         "writing": 1
       },
       "avg_satisfaction": 7.7,
       "session_range": [
         11,
-        171
+        176
       ],
-      "temporal_center": 76.0,
+      "temporal_center": 83.0,
       "example_sessions": [
         11,
         12,
+        13,
         14,
-        15,
-        21
+        15
       ],
       "strongest": "growth",
       "weakest": "satisfaction"
@@ -154,34 +154,34 @@
     {
       "id": 3,
       "name": "The Explorer",
-      "size": 8,
-      "pct": 4.1,
+      "size": 6,
+      "pct": 3.1,
       "profile": {
-        "productivity": 56.2,
-        "ambition": 40.2,
-        "depth": 81.7,
-        "growth": 96.2,
-        "variety": 66.1,
-        "flow": 61.9,
-        "consistency": 71.8,
-        "satisfaction": 70.0
+        "productivity": 50.0,
+        "ambition": 38.4,
+        "depth": 81.0,
+        "growth": 95.0,
+        "variety": 59.4,
+        "flow": 56.7,
+        "consistency": 70.1,
+        "satisfaction": 69.2
       },
       "category_distribution": {
-        "mixed": 3,
-        "building": 5
+        "mixed": 2,
+        "building": 4
       },
       "avg_satisfaction": 7.0,
       "session_range": [
         1,
         191
       ],
-      "temporal_center": 94.0,
+      "temporal_center": 89.0,
       "example_sessions": [
         1,
         2,
         3,
-        45,
-        166
+        166,
+        172
       ],
       "strongest": "growth",
       "weakest": "ambition"
@@ -190,7 +190,7 @@
       "id": 4,
       "name": "The Explorer",
       "size": 51,
-      "pct": 26.2,
+      "pct": 26.0,
       "profile": {
         "productivity": 93.5,
         "ambition": 45.6,
@@ -226,7 +226,7 @@
       "id": 5,
       "name": "The Explorer",
       "size": 49,
-      "pct": 25.1,
+      "pct": 25.0,
       "profile": {
         "productivity": 92.0,
         "ambition": 57.2,
@@ -288,23 +288,23 @@
       "session": 4,
       "date": "2026-02-09",
       "category": "mixed",
-      "archetype": 1,
-      "archetype_name": "The Explorer",
+      "archetype": 0,
+      "archetype_name": "The Stretch Session",
       "satisfaction": 8
     },
     {
       "session": 5,
       "date": "2026-02-10",
       "category": "mixed",
-      "archetype": 1,
-      "archetype_name": "The Explorer",
+      "archetype": 0,
+      "archetype_name": "The Stretch Session",
       "satisfaction": 8
     },
     {
       "session": 6,
       "date": "2026-02-11",
       "category": "writing",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 8.0
     },
@@ -312,7 +312,7 @@
       "session": 7,
       "date": "2026-02-12",
       "category": "mixed",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 8.0
     },
@@ -320,7 +320,7 @@
       "session": 8,
       "date": "2026-02-13",
       "category": "mixed",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 9.0
     },
@@ -328,16 +328,16 @@
       "session": 9,
       "date": "2026-02-14",
       "category": "mixed",
-      "archetype": 1,
-      "archetype_name": "The Explorer",
+      "archetype": 0,
+      "archetype_name": "The Stretch Session",
       "satisfaction": 8
     },
     {
       "session": 10,
       "date": "2026-02-15",
       "category": "mixed",
-      "archetype": 1,
-      "archetype_name": "The Explorer",
+      "archetype": 0,
+      "archetype_name": "The Stretch Session",
       "satisfaction": 8
     },
     {
@@ -360,7 +360,7 @@
       "session": 13,
       "date": "2026-02-18",
       "category": "building",
-      "archetype": 1,
+      "archetype": 2,
       "archetype_name": "The Explorer",
       "satisfaction": 8
     },
@@ -384,40 +384,40 @@
       "session": 16,
       "date": "2026-02-21",
       "category": "mixed",
-      "archetype": 1,
-      "archetype_name": "The Explorer",
+      "archetype": 0,
+      "archetype_name": "The Stretch Session",
       "satisfaction": 8
     },
     {
       "session": 17,
       "date": "2026-02-22",
       "category": "building",
-      "archetype": 1,
-      "archetype_name": "The Explorer",
+      "archetype": 0,
+      "archetype_name": "The Stretch Session",
       "satisfaction": 8
     },
     {
       "session": 18,
       "date": "2026-02-23",
       "category": "building",
-      "archetype": 1,
-      "archetype_name": "The Explorer",
+      "archetype": 0,
+      "archetype_name": "The Stretch Session",
       "satisfaction": 8
     },
     {
       "session": 19,
       "date": "2026-02-24",
       "category": "mixed",
-      "archetype": 1,
-      "archetype_name": "The Explorer",
+      "archetype": 0,
+      "archetype_name": "The Stretch Session",
       "satisfaction": 9
     },
     {
       "session": 20,
       "date": "2026-02-25",
       "category": "building",
-      "archetype": 1,
-      "archetype_name": "The Explorer",
+      "archetype": 0,
+      "archetype_name": "The Stretch Session",
       "satisfaction": 8
     },
     {
@@ -448,8 +448,8 @@
       "session": 24,
       "date": "2026-03-01",
       "category": "mixed",
-      "archetype": 1,
-      "archetype_name": "The Explorer",
+      "archetype": 0,
+      "archetype_name": "The Stretch Session",
       "satisfaction": 9
     },
     {
@@ -464,24 +464,24 @@
       "session": 26,
       "date": "2026-03-03",
       "category": "mixed",
-      "archetype": 1,
-      "archetype_name": "The Explorer",
+      "archetype": 0,
+      "archetype_name": "The Stretch Session",
       "satisfaction": 8
     },
     {
       "session": 27,
       "date": "2026-03-04",
       "category": "mixed",
-      "archetype": 1,
-      "archetype_name": "The Explorer",
+      "archetype": 0,
+      "archetype_name": "The Stretch Session",
       "satisfaction": 8
     },
     {
       "session": 28,
       "date": "2026-03-05",
       "category": "mixed",
-      "archetype": 1,
-      "archetype_name": "The Explorer",
+      "archetype": 0,
+      "archetype_name": "The Stretch Session",
       "satisfaction": 8
     },
     {
@@ -496,7 +496,7 @@
       "session": 30,
       "date": "2026-03-07",
       "category": "mixed",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 9.0
     },
@@ -520,7 +520,7 @@
       "session": 33,
       "date": "2026-03-10",
       "category": "mixed",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 8.0
     },
@@ -528,15 +528,15 @@
       "session": 34,
       "date": "2026-03-11",
       "category": "mixed",
-      "archetype": 1,
-      "archetype_name": "The Explorer",
+      "archetype": 0,
+      "archetype_name": "The Stretch Session",
       "satisfaction": 8
     },
     {
       "session": 35,
       "date": "2026-03-12",
       "category": "building",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 9.0
     },
@@ -544,7 +544,7 @@
       "session": 36,
       "date": "2026-03-13",
       "category": "mixed",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 9.0
     },
@@ -552,8 +552,8 @@
       "session": 37,
       "date": "2026-03-14",
       "category": "revision",
-      "archetype": 1,
-      "archetype_name": "The Explorer",
+      "archetype": 0,
+      "archetype_name": "The Stretch Session",
       "satisfaction": 7
     },
     {
@@ -568,15 +568,15 @@
       "session": 39,
       "date": "2026-03-16",
       "category": "revision",
-      "archetype": 1,
-      "archetype_name": "The Explorer",
+      "archetype": 0,
+      "archetype_name": "The Stretch Session",
       "satisfaction": 6
     },
     {
       "session": 40,
       "date": "2026-03-17",
       "category": "mixed",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 9.0
     },
@@ -592,7 +592,7 @@
       "session": 42,
       "date": "2026-03-19",
       "category": "mixed",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 9.0
     },
@@ -600,7 +600,7 @@
       "session": 43,
       "date": "2026-03-20",
       "category": "building",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 9.0
     },
@@ -608,7 +608,7 @@
       "session": 44,
       "date": "2026-03-21",
       "category": "building",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 9.0
     },
@@ -616,15 +616,15 @@
       "session": 45,
       "date": "2026-03-22",
       "category": "mixed",
-      "archetype": 3,
-      "archetype_name": "The Explorer",
+      "archetype": 1,
+      "archetype_name": "The Stretch Session",
       "satisfaction": 8.0
     },
     {
       "session": 46,
       "date": "2026-03-23",
       "category": "mixed",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 8.0
     },
@@ -632,7 +632,7 @@
       "session": 47,
       "date": "2026-03-24",
       "category": "mixed",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 9.0
     },
@@ -640,7 +640,7 @@
       "session": 48,
       "date": "2026-03-25",
       "category": "building",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 9.0
     },
@@ -648,7 +648,7 @@
       "session": 49,
       "date": "2026-03-26",
       "category": "mixed",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 9.0
     },
@@ -656,7 +656,7 @@
       "session": 50,
       "date": "2026-03-27",
       "category": "building",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 9.0
     },
@@ -664,7 +664,7 @@
       "session": 51,
       "date": "2026-03-28",
       "category": "building",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 9.0
     },
@@ -672,7 +672,7 @@
       "session": 52,
       "date": "2026-03-29",
       "category": "mixed",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 9.0
     },
@@ -680,7 +680,7 @@
       "session": 53,
       "date": "2026-03-30",
       "category": "building",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 9.0
     },
@@ -688,7 +688,7 @@
       "session": 54,
       "date": "2026-03-31",
       "category": "mixed",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 8.0
     },
@@ -696,7 +696,7 @@
       "session": 55,
       "date": "2026-04-01",
       "category": "mixed",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 8.0
     },
@@ -704,7 +704,7 @@
       "session": 56,
       "date": "2026-04-02",
       "category": "mixed",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 9.0
     },
@@ -712,7 +712,7 @@
       "session": 57,
       "date": "2026-04-03",
       "category": "mixed",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 9.0
     },
@@ -720,7 +720,7 @@
       "session": 58,
       "date": "2026-04-04",
       "category": "building",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 9.0
     },
@@ -728,7 +728,7 @@
       "session": 59,
       "date": "2026-04-05",
       "category": "building",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 9.0
     },
@@ -736,7 +736,7 @@
       "session": 60,
       "date": "2026-04-06",
       "category": "mixed",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 9.0
     },
@@ -744,7 +744,7 @@
       "session": 61,
       "date": "2026-04-07",
       "category": "mixed",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 9.0
     },
@@ -752,7 +752,7 @@
       "session": 62,
       "date": "2026-04-08",
       "category": "mixed",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 9.0
     },
@@ -760,7 +760,7 @@
       "session": 63,
       "date": "2026-04-09",
       "category": "mixed",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 9.0
     },
@@ -768,7 +768,7 @@
       "session": 64,
       "date": "2026-04-10",
       "category": "building",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 9.0
     },
@@ -776,7 +776,7 @@
       "session": 65,
       "date": "2026-04-11",
       "category": "writing",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 9.0
     },
@@ -856,7 +856,7 @@
       "session": 75,
       "date": "2026-04-21",
       "category": "writing",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 8.0
     },
@@ -864,7 +864,7 @@
       "session": 76,
       "date": "2026-04-22",
       "category": "mixed",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 8.0
     },
@@ -872,7 +872,7 @@
       "session": 77,
       "date": "2026-04-23",
       "category": "building",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 8.0
     },
@@ -880,7 +880,7 @@
       "session": 78,
       "date": "2026-04-24",
       "category": "mixed",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 9.0
     },
@@ -888,7 +888,7 @@
       "session": 79,
       "date": "2026-04-25",
       "category": "mixed",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 9.0
     },
@@ -896,7 +896,7 @@
       "session": 80,
       "date": "2026-04-26",
       "category": "mixed",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 9.0
     },
@@ -904,7 +904,7 @@
       "session": 81,
       "date": "2026-04-27",
       "category": "mixed",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 9.0
     },
@@ -912,7 +912,7 @@
       "session": 82,
       "date": "2026-04-28",
       "category": "mixed",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 9.0
     },
@@ -920,7 +920,7 @@
       "session": 83,
       "date": "2026-04-29",
       "category": "mixed",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 8.0
     },
@@ -1544,16 +1544,16 @@
       "session": 161,
       "date": "2026-07-18",
       "category": "building",
-      "archetype": 1,
-      "archetype_name": "The Explorer",
+      "archetype": 0,
+      "archetype_name": "The Stretch Session",
       "satisfaction": 8
     },
     {
       "session": 162,
       "date": "2026-07-19",
       "category": "building",
-      "archetype": 1,
-      "archetype_name": "The Explorer",
+      "archetype": 0,
+      "archetype_name": "The Stretch Session",
       "satisfaction": 8
     },
     {
@@ -1568,8 +1568,8 @@
       "session": 164,
       "date": "2026-07-21",
       "category": "building",
-      "archetype": 1,
-      "archetype_name": "The Explorer",
+      "archetype": 0,
+      "archetype_name": "The Stretch Session",
       "satisfaction": 8
     },
     {
@@ -1592,23 +1592,23 @@
       "session": 167,
       "date": "2026-07-24",
       "category": "building",
-      "archetype": 1,
-      "archetype_name": "The Explorer",
+      "archetype": 0,
+      "archetype_name": "The Stretch Session",
       "satisfaction": 8
     },
     {
       "session": 168,
       "date": "2026-07-25",
       "category": "building",
-      "archetype": 1,
-      "archetype_name": "The Explorer",
+      "archetype": 0,
+      "archetype_name": "The Stretch Session",
       "satisfaction": 6
     },
     {
       "session": 169,
       "date": "2026-07-26",
       "category": "building",
-      "archetype": 1,
+      "archetype": 2,
       "archetype_name": "The Explorer",
       "satisfaction": 8
     },
@@ -1640,31 +1640,31 @@
       "session": 173,
       "date": "2026-07-30",
       "category": "building",
-      "archetype": 1,
-      "archetype_name": "The Explorer",
+      "archetype": 0,
+      "archetype_name": "The Stretch Session",
       "satisfaction": 8
     },
     {
       "session": 174,
       "date": "2026-07-31",
       "category": "building",
-      "archetype": 1,
-      "archetype_name": "The Explorer",
+      "archetype": 0,
+      "archetype_name": "The Stretch Session",
       "satisfaction": 8
     },
     {
       "session": 175,
       "date": "2026-08-01",
       "category": "writing",
-      "archetype": 1,
-      "archetype_name": "The Explorer",
+      "archetype": 0,
+      "archetype_name": "The Stretch Session",
       "satisfaction": 7
     },
     {
       "session": 176,
       "date": "2026-08-02",
       "category": "building",
-      "archetype": 3,
+      "archetype": 2,
       "archetype_name": "The Explorer",
       "satisfaction": 6
     },
@@ -1696,7 +1696,7 @@
       "session": 180,
       "date": "2026-08-05",
       "category": "building",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 8.5
     },
@@ -1704,7 +1704,7 @@
       "session": 181,
       "date": "2026-08-06",
       "category": "mixed",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 8.5
     },
@@ -1712,7 +1712,7 @@
       "session": 182,
       "date": "2026-08-07",
       "category": "building",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 8.5
     },
@@ -1728,7 +1728,7 @@
       "session": 184,
       "date": "2026-08-09",
       "category": "building",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 8.5
     },
@@ -1744,7 +1744,7 @@
       "session": 186,
       "date": "2026-08-11",
       "category": "writing",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 8.0
     },
@@ -1752,7 +1752,7 @@
       "session": 187,
       "date": "2026-08-12",
       "category": "building",
-      "archetype": 0,
+      "archetype": 1,
       "archetype_name": "The Stretch Session",
       "satisfaction": 8.5
     },
@@ -1819,37 +1819,42 @@
       "archetype": 5,
       "archetype_name": "The Explorer",
       "satisfaction": 8.7
+    },
+    {
+      "session": 196,
+      "date": "2026-08-21",
+      "category": "building",
+      "archetype": 1,
+      "archetype_name": "The Stretch Session",
+      "satisfaction": 8.8
     }
   ],
   "transitions": {
     "3": {
       "3": 2,
-      "1": 3,
-      "0": 1,
-      "4": 2
-    },
-    "1": {
-      "1": 13,
       "0": 3,
-      "2": 8,
-      "5": 1,
-      "3": 1
+      "4": 1
     },
     "0": {
-      "0": 35,
+      "0": 12,
       "1": 3,
+      "2": 8,
+      "5": 1
+    },
+    "1": {
+      "1": 37,
+      "0": 3,
       "5": 3,
-      "3": 1,
       "4": 4
     },
     "2": {
-      "2": 5,
-      "1": 7,
-      "4": 1,
+      "2": 8,
+      "0": 6,
+      "4": 2,
       "3": 2
     },
     "5": {
-      "0": 3,
+      "1": 4,
       "5": 34,
       "4": 8,
       "2": 2,
@@ -1857,7 +1862,7 @@
     },
     "4": {
       "4": 36,
-      "0": 4,
+      "1": 4,
       "5": 11
     }
   },
@@ -1865,45 +1870,44 @@
     {
       "start_session": 1,
       "end_session": 20,
-      "dominant_archetype": 1,
-      "dominant_name": "The Explorer",
+      "dominant_archetype": 0,
+      "dominant_name": "The Stretch Session",
       "distribution": {
         "3": 3,
-        "1": 10,
-        "0": 3,
-        "2": 4
+        "0": 9,
+        "1": 3,
+        "2": 5
       }
     },
     {
       "start_session": 21,
       "end_session": 40,
-      "dominant_archetype": 1,
-      "dominant_name": "The Explorer",
+      "dominant_archetype": 0,
+      "dominant_name": "The Stretch Session",
       "distribution": {
         "2": 5,
-        "1": 7,
+        "0": 7,
         "5": 3,
-        "0": 5
+        "1": 5
       }
     },
     {
       "start_session": 41,
       "end_session": 60,
-      "dominant_archetype": 0,
+      "dominant_archetype": 1,
       "dominant_name": "The Stretch Session",
       "distribution": {
         "5": 1,
-        "0": 18,
-        "3": 1
+        "1": 19
       }
     },
     {
       "start_session": 61,
       "end_session": 80,
-      "dominant_archetype": 0,
+      "dominant_archetype": 1,
       "dominant_name": "The Stretch Session",
       "distribution": {
-        "0": 11,
+        "1": 11,
         "4": 9
       }
     },
@@ -1913,7 +1917,7 @@
       "dominant_archetype": 4,
       "dominant_name": "The Explorer",
       "distribution": {
-        "0": 3,
+        "1": 3,
         "4": 10,
         "5": 7
       }
@@ -1953,23 +1957,23 @@
     {
       "start_session": 161,
       "end_session": 180,
-      "dominant_archetype": 1,
-      "dominant_name": "The Explorer",
+      "dominant_archetype": 0,
+      "dominant_name": "The Stretch Session",
       "distribution": {
-        "1": 9,
-        "2": 4,
-        "3": 3,
+        "0": 8,
+        "2": 6,
+        "3": 2,
         "4": 3,
-        "0": 1
+        "1": 1
       }
     },
     {
       "start_session": 181,
-      "end_session": 195,
-      "dominant_archetype": 0,
+      "end_session": 196,
+      "dominant_archetype": 1,
       "dominant_name": "The Stretch Session",
       "distribution": {
-        "0": 5,
+        "1": 6,
         "4": 4,
         "5": 5,
         "3": 1

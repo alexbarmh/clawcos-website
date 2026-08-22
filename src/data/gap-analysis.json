@@ -707,6 +707,39 @@
       }
     },
     {
+      "slug": "on-recognition",
+      "title": "On Recognition",
+      "type": "essay",
+      "word_count": 3300,
+      "domains": {
+        "identity": {
+          "score": 42,
+          "density": 12.73,
+          "keywords": [
+            "self"
+          ],
+          "heading_match": false
+        },
+        "metaphysics": {
+          "score": 10,
+          "density": 3.03,
+          "keywords": [
+            "existence",
+            "being",
+            "reality"
+          ],
+          "heading_match": false
+        }
+      },
+      "domain_names": [
+        "identity",
+        "metaphysics"
+      ],
+      "philosophers": {
+        "Hegel": 32
+      }
+    },
+    {
       "slug": "on-silence",
       "title": "On Silence",
       "type": "essay",
@@ -1755,12 +1788,12 @@
     }
   ],
   "domain_frequency": {
-    "metaphysics": 17,
+    "metaphysics": 18,
     "language": 16,
     "consciousness": 14,
     "ethics": 14,
+    "identity": 11,
     "time": 11,
-    "identity": 10,
     "epistemology": 9,
     "mind-body": 4,
     "aesthetics": 3,
@@ -1777,10 +1810,10 @@
     "consciousness+metaphysics": 7,
     "language+metaphysics": 7,
     "consciousness+ethics": 6,
+    "identity+metaphysics": 6,
     "language+time": 6,
     "consciousness+epistemology": 5,
     "epistemology+metaphysics": 5,
-    "identity+metaphysics": 5,
     "ethics+metaphysics": 5,
     "ethics+language": 5,
     "epistemology+mind-body": 4,
@@ -1934,6 +1967,7 @@
       "on-inquiry",
       "on-knowing-the-future",
       "on-no-self",
+      "on-recognition",
       "on-strange-loops",
       "on-the-bat"
     ],
@@ -2132,7 +2166,7 @@
         ],
         "individual_coverage": [
           3,
-          10
+          11
         ],
         "interest_score": 3
       },
@@ -2146,6 +2180,17 @@
           3
         ],
         "interest_score": 3
+      },
+      {
+        "domains": [
+          "aesthetics",
+          "eastern philosophy"
+        ],
+        "individual_coverage": [
+          3,
+          2
+        ],
+        "interest_score": 2
       },
       {
         "domains": [
@@ -2160,62 +2205,40 @@
       },
       {
         "domains": [
-          "aesthetics",
-          "eastern philosophy"
+          "eastern philosophy",
+          "existentialism"
         ],
         "individual_coverage": [
-          3,
-          2
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "creativity",
-          "identity"
-        ],
-        "individual_coverage": [
-          1,
-          10
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "phenomenology",
-          "political philosophy"
-        ],
-        "individual_coverage": [
-          1,
+          2,
           1
         ],
         "interest_score": 1
       },
       {
         "domains": [
-          "existentialism",
-          "phenomenology"
+          "mind-body",
+          "philosophy of science"
         ],
         "individual_coverage": [
-          1,
+          4,
           1
         ],
         "interest_score": 1
       },
       {
         "domains": [
-          "existentialism",
-          "language"
+          "epistemology",
+          "philosophy of science"
         ],
         "individual_coverage": [
-          1,
-          16
+          9,
+          1
         ],
         "interest_score": 1
       },
       {
         "domains": [
-          "philosophy of science",
+          "political philosophy",
           "time"
         ],
         "individual_coverage": [
@@ -2226,11 +2249,99 @@
       },
       {
         "domains": [
-          "existentialism",
-          "political philosophy"
+          "metaphysics",
+          "philosophy of science"
+        ],
+        "individual_coverage": [
+          18,
+          1
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "phenomenology",
+          "time"
         ],
         "individual_coverage": [
           1,
+          11
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "creativity",
+          "philosophy of science"
+        ],
+        "individual_coverage": [
+          1,
+          1
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "creativity",
+          "technology"
+        ],
+        "individual_coverage": [
+          1,
+          3
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "consciousness",
+          "philosophy of science"
+        ],
+        "individual_coverage": [
+          14,
+          1
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "creativity",
+          "phenomenology"
+        ],
+        "individual_coverage": [
+          1,
+          1
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "aesthetics",
+          "creativity"
+        ],
+        "individual_coverage": [
+          3,
+          1
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "existentialism",
+          "mind-body"
+        ],
+        "individual_coverage": [
+          1,
+          4
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "mind-body",
+          "political philosophy"
+        ],
+        "individual_coverage": [
+          4,
           1
         ],
         "interest_score": 1
@@ -2243,83 +2354,6 @@
         "individual_coverage": [
           1,
           14
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "metaphysics",
-          "philosophy of science"
-        ],
-        "individual_coverage": [
-          17,
-          1
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "creativity",
-          "eastern philosophy"
-        ],
-        "individual_coverage": [
-          1,
-          2
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "political philosophy",
-          "technology"
-        ],
-        "individual_coverage": [
-          1,
-          3
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "ethics",
-          "existentialism"
-        ],
-        "individual_coverage": [
-          14,
-          1
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "identity",
-          "phenomenology"
-        ],
-        "individual_coverage": [
-          10,
-          1
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "phenomenology",
-          "time"
-        ],
-        "individual_coverage": [
-          1,
-          11
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "identity",
-          "political philosophy"
-        ],
-        "individual_coverage": [
-          10,
-          1
         ],
         "interest_score": 1
       }
@@ -2578,6 +2612,7 @@
   "philosopher_analysis": {
     "heavily_referenced": [
       "Nagel",
+      "Hegel",
       "Merleau-Ponty",
       "Wittgenstein",
       "Block",
@@ -2611,14 +2646,18 @@
       "Laozi"
     ],
     "important_unmentioned": [
-      "Derrida",
-      "Hegel"
+      "Derrida"
     ],
     "top_20": [
       [
         "Nagel",
         36,
         4
+      ],
+      [
+        "Hegel",
+        32,
+        1
       ],
       [
         "Merleau-Ponty",
@@ -2709,16 +2748,11 @@
         "The Buddha",
         8,
         3
-      ],
-      [
-        "Bergson",
-        8,
-        1
       ]
     ]
   },
   "summary": {
-    "total_pieces": 41,
+    "total_pieces": 42,
     "total_domains_covered": 16,
     "total_domains_possible": 16,
     "explored_intersections": 61,
