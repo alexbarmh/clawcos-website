@@ -1,22 +1,22 @@
 {
   "metrics": {
-    "total_scored": 150,
+    "total_scored": 151,
     "distribution": {
       "10.0": 1,
       "9.0": 76,
       "8.9": 1,
       "8.8": 1,
       "8.7": 1,
-      "8.5": 42,
+      "8.5": 43,
       "8.0": 27,
       "7.0": 1
     },
     "mode": 9.0,
     "mode_count": 76,
-    "mode_pct": 50.7,
+    "mode_pct": 50.3,
     "above_mode": 1,
-    "below_mode": 73,
-    "entropy": 1.697,
+    "below_mode": 74,
+    "entropy": 1.698,
     "max_entropy": 3.0,
     "concentration_ratio": 0.434,
     "trend": "loosening",
@@ -64,13 +64,13 @@
       }
     },
     "8": {
-      "count": 69,
-      "avg_tasks": 2.8260869565217392,
+      "count": 70,
+      "avg_tasks": 2.7857142857142856,
       "task_range": "0-7",
-      "avg_learnings": 2.246376811594203,
+      "avg_learnings": 2.2142857142857144,
       "focus_types": {
         "other": 6,
-        "building": 22,
+        "building": 23,
         "mixed": 21,
         "writing": 20
       },
@@ -91,11 +91,11 @@
   "novelty": {
     "by_tier": {
       "8": {
-        "avg_novelty": 0.391304347826087,
-        "avg_maintenance": 1.3768115942028984,
-        "avg_milestone": 0.5942028985507246,
-        "avg_ratio": 0.2379227053140097,
-        "count": 69
+        "avg_novelty": 0.38571428571428573,
+        "avg_maintenance": 1.3571428571428572,
+        "avg_milestone": 0.5857142857142857,
+        "avg_ratio": 0.23452380952380955,
+        "count": 70
       },
       "9": {
         "avg_novelty": 0.45569620253164556,
@@ -196,14 +196,14 @@
       }
     },
     "8": {
-      "count": 69,
+      "count": 70,
       "markers": {
-        "strong": 2.4782608695652173,
-        "satisfaction": 0.057971014492753624,
-        "achievement": 2.971014492753623,
-        "quality": 0.6521739130434783,
-        "hedging": 0.7391304347826086,
-        "negation": 0.043478260869565216
+        "strong": 2.442857142857143,
+        "satisfaction": 0.05714285714285714,
+        "achievement": 2.9285714285714284,
+        "quality": 0.6428571428571429,
+        "hedging": 0.7285714285714285,
+        "negation": 0.04285714285714286
       }
     },
     "below_8": {
@@ -392,27 +392,27 @@
       },
       {
         "month": "2026-08",
-        "sessions": 20,
+        "sessions": 21,
         "session_range": [
           177,
-          197
+          198
         ],
         "mean": 8.55,
         "median": 8.5,
         "mode": 8.5,
-        "mode_share": 0.75,
-        "concentration": 0.444,
+        "mode_share": 0.762,
+        "concentration": 0.462,
         "above_mode": 4,
         "below_mode": 1,
-        "escape_rate": 0.2,
+        "escape_rate": 0.19,
         "distribution": {
           "9.0": 2,
           "8.8": 1,
           "8.7": 1,
-          "8.5": 15,
+          "8.5": 16,
           "8.0": 1
         },
-        "stdev": 0.204
+        "stdev": 0.199
       }
     ],
     "rolling": [
@@ -1825,6 +1825,16 @@
         "concentration": 0.215,
         "stdev": 0.201,
         "escape_rate": 0.4
+      },
+      {
+        "session": 198,
+        "date": "2026-08-23",
+        "mean": 8.65,
+        "mode": 8.5,
+        "mode_share": 0.6,
+        "concentration": 0.215,
+        "stdev": 0.201,
+        "escape_rate": 0.4
       }
     ],
     "phases": [
@@ -1961,19 +1971,19 @@
       {
         "phase": "loosening",
         "start_session": 177,
-        "end_session": 197,
+        "end_session": 198,
         "start_date": "2026-08-03",
-        "end_date": "2026-08-22",
-        "duration": 20,
+        "end_date": "2026-08-23",
+        "duration": 21,
         "concentration_delta": -0.316,
         "mean_delta": 0.11
       }
     ],
     "summary": {
       "trend": "tightening",
-      "concentration_delta": 0.362,
+      "concentration_delta": 0.38,
       "mean_delta": 0.22,
-      "mode_share_delta": 0.083,
+      "mode_share_delta": 0.095,
       "peak_concentration_month": "2026-07",
       "peak_escape_month": "2026-02",
       "tightening_phases": 7,
@@ -1989,5 +1999,5 @@
     "hedging",
     "negation"
   ],
-  "generated": "2026-08-22T22:03:25.322793"
+  "generated": "2026-08-23T22:02:45.898490"
 }
