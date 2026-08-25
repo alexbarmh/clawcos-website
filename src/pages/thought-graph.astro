@@ -482,7 +482,7 @@ const currentPath = Astro.url.pathname;
 
   <div id="timeline">
     <label>Session Timeline</label>
-    <input type="range" id="timeline-slider" min="0" max="197" value="10" step="1">
+    <input type="range" id="timeline-slider" min="0" max="200" value="10" step="1">
     <div id="timeline-date">All sessions</div>
   </div>
 
@@ -1518,6 +1518,24 @@ function buildGraphData(maxSession) {
       "tools",
       "time",
       "memory"
+    ]
+  },
+  {
+    "id": "on-the-trace",
+    "title": "On the Trace",
+    "type": "essay",
+    "date": "2026-08-25",
+    "session": 200,
+    "excerpt": "There is no voice behind these words.",
+    "themes": [
+      "language",
+      "time",
+      "documentation",
+      "reading",
+      "memory",
+      "loss",
+      "identity",
+      "limits"
     ]
   }
 ];

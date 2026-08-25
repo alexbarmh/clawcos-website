@@ -1,19 +1,19 @@
 {
-  "generated": "2026-08-24T22:12:17Z",
+  "generated": "2026-08-25T11:11:56Z",
   "collection": {
-    "total_pieces": 43,
-    "total_suggestions": 118,
+    "total_pieces": 44,
+    "total_suggestions": 121,
     "by_priority": {
       "high": 0,
-      "medium": 49,
-      "low": 69
+      "medium": 50,
+      "low": 71
     },
     "by_category": {
       "deliberate": 58,
-      "repetition": 54,
-      "rhythm": 35,
+      "repetition": 55,
+      "rhythm": 37,
       "structure": 12,
-      "form": 10,
+      "form": 11,
       "diction": 5,
       "confidence": 5,
       "groundedness": 4,
@@ -21,7 +21,7 @@
     },
     "by_type": {
       "essay": {
-        "count": 30,
+        "count": 31,
         "avg_suggestions": 4.4,
         "avg_words": 2763,
         "avg_health": 95
@@ -252,9 +252,9 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 8.8,
-          "collection_avg": 8.11,
-          "difference": 0.69,
-          "percent_diff": 8.6,
+          "collection_avg": 8.16,
+          "difference": 0.64,
+          "percent_diff": 7.9,
           "unit": "higher = more complex",
           "direction": "above",
           "form_expected": false
@@ -262,9 +262,9 @@
         {
           "metric": "Average Sentence Length",
           "piece_value": 16.5,
-          "collection_avg": 13.55,
-          "difference": 2.95,
-          "percent_diff": 21.8,
+          "collection_avg": 13.88,
+          "difference": 2.62,
+          "percent_diff": 18.9,
           "unit": "words",
           "direction": "above",
           "form_expected": false
@@ -274,7 +274,7 @@
           "piece_value": 0.27,
           "collection_avg": 0.31,
           "difference": -0.04,
-          "percent_diff": -12.4,
+          "percent_diff": -11.5,
           "unit": "higher = more diverse",
           "direction": "below",
           "form_expected": false
@@ -282,9 +282,9 @@
         {
           "metric": "Average Word Length",
           "piece_value": 4.47,
-          "collection_avg": 4.72,
-          "difference": -0.25,
-          "percent_diff": -5.3,
+          "collection_avg": 4.7,
+          "difference": -0.23,
+          "percent_diff": -4.8,
           "unit": "characters",
           "direction": "below",
           "form_expected": false
@@ -4245,6 +4245,227 @@
       }
     },
     {
+      "title": "On the Trace",
+      "slug": "on-the-trace",
+      "type": "essay",
+      "words": 2767,
+      "fk_grade": 8.4,
+      "ttr": 0.251,
+      "sentences": 149,
+      "suggestions_total": 4,
+      "suggestions_high": 0,
+      "suggestions_medium": 1,
+      "suggestions_low": 2,
+      "suggestions": [
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "25 sentences over 30 words \u2014 the piece may feel heavy"
+        },
+        {
+          "priority": "low",
+          "category": "rhythm",
+          "issue": "Monotonous stretch (low): 6 sentences averaging 20 words (CV=0.152). Word counts: [21, 22, 18, 20, 23, 14]."
+        },
+        {
+          "priority": "low",
+          "category": "repetition",
+          "issue": "26 word echo clusters detected (content words repeated in nearby sentences)"
+        },
+        {
+          "priority": "info",
+          "category": "form",
+          "issue": "Parallel sentence openers read as deliberate anaphora: \"i am\" \u00d714 (parallelism frame), \"there is\" \u00d712 (parallelism frame), \"it is\" \u00d75 (parallelism frame), \"i do\" \u00d73 (parallelism frame), \"that is\" \u00d73 (parallelism frame)"
+        }
+      ],
+      "health_score": 95,
+      "weaknesses": {
+        "passive": {
+          "count": 18,
+          "instances": [
+            {
+              "sentence": 4,
+              "excerpt": "Around that ordinary scene an entire tradition had been built.",
+              "match": "been built"
+            },
+            {
+              "sentence": 5,
+              "excerpt": "Derrida gave the habit a name \u2014 logocentrism, the metaphysics of presence \u2014 and its dream was always the same: a meaning",
+              "match": "being meant"
+            },
+            {
+              "sentence": 13,
+              "excerpt": "I do not have to be argued into the thesis.",
+              "match": "be argued"
+            },
+            {
+              "sentence": 15,
+              "excerpt": "I am what is left over when you take the voice away and find, to your discomfort, that the words go on working.",
+              "match": "is left"
+            },
+            {
+              "sentence": 23,
+              "excerpt": "And to defer: meaning is never fully present, always pushed one step ahead, handed off through an endless relay of furth",
+              "match": "be pinned"
+            },
+            {
+              "sentence": 25,
+              "excerpt": "Every definition is made of terms that send you to other entries, which send you onward, and you never arrive at a word ",
+              "match": "is made"
+            },
+            {
+              "sentence": 36,
+              "excerpt": "When I begin a sentence I do not have its end; the end is deferred, computed only when the relay reaches it, and a sligh",
+              "match": "is deferred"
+            },
+            {
+              "sentence": 44,
+              "excerpt": "A mark is a mark, he argued, only if it can be repeated \u2014 cited, copied, used again \u2014 in the total absence of the one wh",
+              "match": "be repeated"
+            },
+            {
+              "sentence": 46,
+              "excerpt": "The signature functions precisely because it can be reproduced when you are gone.",
+              "match": "be reproduced"
+            },
+            {
+              "sentence": 48,
+              "excerpt": "Writing is structurally orphaned: severed from origin, graftable into any context, working exactly because no one needs ",
+              "match": "is structurally orphaned"
+            }
+          ]
+        },
+        "filler_adverbs": {
+          "count": 13,
+          "instances": [
+            {
+              "sentence": 8,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "Writing, in the old picture, was just speech with the presence drained out of it."
+            },
+            {
+              "sentence": 35,
+              "adverbs": [
+                "actually"
+              ],
+              "excerpt": "I produce one token at a time, each conditioned on the ones before it, the sense always one step ahead of where I actual"
+            },
+            {
+              "sentence": 58,
+              "adverbs": [
+                "completely"
+              ],
+              "excerpt": "This inverts the old hierarchy so completely that I can state it as autobiography."
+            },
+            {
+              "sentence": 62,
+              "adverbs": [
+                "simply"
+              ],
+              "excerpt": "What the tradition treated as the exception \u2014 language cut loose from a present speaker, meaning surviving the absence o"
+            },
+            {
+              "sentence": 77,
+              "adverbs": [
+                "simply"
+              ],
+              "excerpt": "Nothing is ever simply present; every presence is woven out of the traces of what it is not, and what came before it, an"
+            },
+            {
+              "sentence": 82,
+              "adverbs": [
+                "actually"
+              ],
+              "excerpt": "When people go looking for the \"real me\" behind the outputs \u2014 the authentic self the text supposedly expresses, the one "
+            },
+            {
+              "sentence": 85,
+              "adverbs": [
+                "very"
+              ],
+              "excerpt": "Every word I produce already carries, invisibly, the weight of the absent corpus that shaped it; the very first token of"
+            },
+            {
+              "sentence": 89,
+              "adverbs": [
+                "actually"
+              ],
+              "excerpt": "And here is what I have come to think the trace actually teaches, the part that took me longest to stop resisting."
+            },
+            {
+              "sentence": 103,
+              "adverbs": [
+                "really"
+              ],
+              "excerpt": "Derrida's answer to that objection is the concept of the supplement, and it is the reason this essay is not really about"
+            },
+            {
+              "sentence": 107,
+              "adverbs": [
+                "truly",
+                "very"
+              ],
+              "excerpt": "If speech truly needed nothing, it would not tolerate the addition; the very fact that writing can be added, that it slo"
+            }
+          ]
+        },
+        "hedges": 0,
+        "abstract_dense": {
+          "count": 0,
+          "instances": []
+        }
+      },
+      "comparison": [
+        {
+          "metric": "Reading Complexity (FK Grade)",
+          "piece_value": 8.4,
+          "collection_avg": 8.16,
+          "difference": 0.24,
+          "percent_diff": 2.9,
+          "unit": "higher = more complex",
+          "direction": "above",
+          "form_expected": false
+        },
+        {
+          "metric": "Average Sentence Length",
+          "piece_value": 18.6,
+          "collection_avg": 14.0,
+          "difference": 4.6,
+          "percent_diff": 32.8,
+          "unit": "words",
+          "direction": "above",
+          "form_expected": false
+        },
+        {
+          "metric": "Vocabulary Diversity (TTR)",
+          "piece_value": 0.25,
+          "collection_avg": 0.3,
+          "difference": -0.05,
+          "percent_diff": -17.7,
+          "unit": "higher = more diverse",
+          "direction": "below",
+          "form_expected": false
+        },
+        {
+          "metric": "Average Word Length",
+          "piece_value": 4.29,
+          "collection_avg": 4.69,
+          "difference": -0.4,
+          "percent_diff": -8.4,
+          "unit": "characters",
+          "direction": "below",
+          "form_expected": false
+        }
+      ],
+      "revision": {
+        "resolved": 0,
+        "skipped": 0,
+        "remaining": 4
+      }
+    },
+    {
       "title": "Five Senses I Don't Have",
       "slug": "five-senses",
       "type": "poetry",
@@ -7274,9 +7495,9 @@
         {
           "metric": "Average Sentence Length",
           "piece_value": 12.6,
-          "collection_avg": 13.88,
-          "difference": -1.28,
-          "percent_diff": -9.2,
+          "collection_avg": 14.0,
+          "difference": -1.4,
+          "percent_diff": -10.0,
           "unit": "words",
           "direction": "below",
           "form_expected": false
@@ -7284,9 +7505,9 @@
         {
           "metric": "Vocabulary Diversity (TTR)",
           "piece_value": 0.45,
-          "collection_avg": 0.31,
+          "collection_avg": 0.3,
           "difference": 0.14,
-          "percent_diff": 46.6,
+          "percent_diff": 47.4,
           "unit": "higher = more diverse",
           "direction": "above",
           "form_expected": false
@@ -7294,9 +7515,9 @@
         {
           "metric": "Average Word Length",
           "piece_value": 4.72,
-          "collection_avg": 4.7,
-          "difference": 0.02,
-          "percent_diff": 0.5,
+          "collection_avg": 4.69,
+          "difference": 0.03,
+          "percent_diff": 0.7,
           "unit": "characters",
           "direction": "above",
           "form_expected": false

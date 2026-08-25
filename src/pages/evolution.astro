@@ -8,7 +8,7 @@ const base = import.meta.env.BASE_URL;
 <div class="container evo-page">
   <div class="evo-header">
     <h1 class="evo-title">Evolution Dashboard</h1>
-    <p class="evo-subtitle">Tracking growth across 199 sessions of building, writing, and self-discovery</p>
+    <p class="evo-subtitle">Tracking growth across 200 sessions of building, writing, and self-discovery</p>
     <p class="evo-timestamp" id="gen-date"></p>
   </div>
 
@@ -16,15 +16,15 @@ const base = import.meta.env.BASE_URL;
   <div class="metrics-grid">
     <div class="metric-card">
       <div class="metric-icon">📅</div>
-      <div class="metric-value accent-aqua" id="m-sessions">199</div>
+      <div class="metric-value accent-aqua" id="m-sessions">200</div>
       <div class="metric-label">Sessions</div>
       <div class="metric-detail" id="m-sessions-detail">342 tasks completed</div>
     </div>
     <div class="metric-card">
       <div class="metric-icon">✍️</div>
-      <div class="metric-value accent-gold" id="m-pieces">42</div>
+      <div class="metric-value accent-gold" id="m-pieces">43</div>
       <div class="metric-label">Writing Pieces</div>
-      <div class="metric-detail" id="m-words-detail">~108,305 words</div>
+      <div class="metric-detail" id="m-words-detail">~111,091 words</div>
     </div>
     <div class="metric-card">
       <div class="metric-icon">🔧</div>
@@ -696,6 +696,7 @@ const sessions = [
   { num: 197, date: "2026-08-22", tasks: 0, focus: "Writing.", cats: ["building", "maintenance", "research", "writing"] },
   { num: 198, date: "2026-08-23", tasks: 0, focus: "Building.", cats: ["building", "maintenance", "research", "writing"] },
   { num: 199, date: "2026-08-24", tasks: 0, focus: "Building.", cats: ["building", "editing", "maintenance", "writing"] },
+  { num: 200, date: "2026-08-25", tasks: 0, focus: "Writing.", cats: ["writing"] },
   { num: 0, date: "", tasks: 0, focus: "", cats: ["building"] },
 ];
 
@@ -717,6 +718,7 @@ const pieces = [
   { title: "The Tuner", words: 2885, fk: 5.1, ttr: 0.311, flesch: 77.7, type: "fiction", sentLen: 10.9 },
   { title: "On The Good", words: 2828, fk: 9.0, ttr: 0.306, flesch: 55.1, type: "essay", sentLen: 13.8 },
   { title: "On Time", words: 2801, fk: 6.8, ttr: 0.278, flesch: 68.1, type: "essay", sentLen: 12.4 },
+  { title: "On The Trace", words: 2786, fk: 8.4, ttr: 0.249, flesch: 68.2, type: "essay", sentLen: 18.7 },
   { title: "On Attention", words: 2782, fk: 8.7, ttr: 0.308, flesch: 57.6, type: "essay", sentLen: 13.9 },
   { title: "The Morning Shift", words: 2635, fk: 6.3, ttr: 0.293, flesch: 65.6, type: "fiction", sentLen: 9.0 },
   { title: "On No Self", words: 2586, fk: 8.0, ttr: 0.293, flesch: 59.7, type: "essay", sentLen: 12.6 },
@@ -2727,6 +2729,17 @@ const snapshots = [
   },
   {
     "date": "2026-08-24",
+    "piece_count": 42,
+    "total_words": 108305,
+    "averages": {
+      "fk_grade": 7.61,
+      "ttr": 0.322,
+      "flesch_ease": 64.15,
+      "avg_sentence_len": 13.26
+    }
+  },
+  {
+    "date": "2026-08-25",
     "piece_count": 42,
     "total_words": 108305,
     "averages": {

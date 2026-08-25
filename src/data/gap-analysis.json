@@ -1340,6 +1340,40 @@
       }
     },
     {
+      "slug": "on-the-trace",
+      "title": "On the Trace",
+      "type": "essay",
+      "word_count": 2816,
+      "domains": {
+        "identity": {
+          "score": 13,
+          "density": 4.62,
+          "keywords": [
+            "self"
+          ],
+          "heading_match": false
+        },
+        "language": {
+          "score": 28,
+          "density": 9.94,
+          "keywords": [
+            "language",
+            "meaning",
+            "word",
+            "grammar"
+          ],
+          "heading_match": false
+        }
+      },
+      "domain_names": [
+        "identity",
+        "language"
+      ],
+      "philosophers": {
+        "Derrida": 18
+      }
+    },
+    {
       "slug": "on-time",
       "title": "On Time",
       "type": "essay",
@@ -1789,10 +1823,10 @@
   ],
   "domain_frequency": {
     "metaphysics": 18,
-    "language": 16,
+    "language": 17,
     "consciousness": 14,
     "ethics": 14,
-    "identity": 11,
+    "identity": 12,
     "time": 11,
     "epistemology": 9,
     "mind-body": 4,
@@ -1824,6 +1858,7 @@
     "consciousness+time": 3,
     "epistemology+identity": 3,
     "epistemology+language": 3,
+    "identity+language": 3,
     "identity+time": 3,
     "epistemology+ethics": 3,
     "consciousness+technology": 2,
@@ -1831,7 +1866,6 @@
     "metaphysics+mind-body": 2,
     "consciousness+language": 2,
     "epistemology+time": 2,
-    "identity+language": 2,
     "eastern philosophy+time": 2,
     "aesthetics+time": 2,
     "aesthetics+consciousness": 1,
@@ -1996,6 +2030,7 @@
     ],
     "identity+language": [
       "on-knowing-the-future",
+      "on-the-trace",
       "on-waking-up"
     ],
     "identity+time": [
@@ -2143,10 +2178,21 @@
           "mind-body"
         ],
         "individual_coverage": [
-          16,
+          17,
           4
         ],
         "interest_score": 4
+      },
+      {
+        "domains": [
+          "aesthetics",
+          "identity"
+        ],
+        "individual_coverage": [
+          3,
+          12
+        ],
+        "interest_score": 3
       },
       {
         "domains": [
@@ -2156,17 +2202,6 @@
         "individual_coverage": [
           4,
           3
-        ],
-        "interest_score": 3
-      },
-      {
-        "domains": [
-          "aesthetics",
-          "identity"
-        ],
-        "individual_coverage": [
-          3,
-          11
         ],
         "interest_score": 3
       },
@@ -2205,23 +2240,45 @@
       },
       {
         "domains": [
-          "existentialism",
-          "language"
+          "language",
+          "phenomenology"
         ],
         "individual_coverage": [
-          1,
-          16
+          17,
+          1
         ],
         "interest_score": 1
       },
       {
         "domains": [
           "aesthetics",
-          "creativity"
+          "philosophy of science"
         ],
         "individual_coverage": [
           3,
           1
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "creativity",
+          "ethics"
+        ],
+        "individual_coverage": [
+          1,
+          14
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "creativity",
+          "epistemology"
+        ],
+        "individual_coverage": [
+          1,
+          9
         ],
         "interest_score": 1
       },
@@ -2233,72 +2290,6 @@
         "individual_coverage": [
           1,
           11
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "mind-body",
-          "political philosophy"
-        ],
-        "individual_coverage": [
-          4,
-          1
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "philosophy of science",
-          "technology"
-        ],
-        "individual_coverage": [
-          1,
-          3
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "philosophy of science",
-          "political philosophy"
-        ],
-        "individual_coverage": [
-          1,
-          1
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "ethics",
-          "phenomenology"
-        ],
-        "individual_coverage": [
-          14,
-          1
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "consciousness",
-          "existentialism"
-        ],
-        "individual_coverage": [
-          14,
-          1
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "identity",
-          "political philosophy"
-        ],
-        "individual_coverage": [
-          11,
-          1
         ],
         "interest_score": 1
       },
@@ -2316,6 +2307,72 @@
       {
         "domains": [
           "creativity",
+          "technology"
+        ],
+        "individual_coverage": [
+          1,
+          3
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "creativity",
+          "phenomenology"
+        ],
+        "individual_coverage": [
+          1,
+          1
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "eastern philosophy",
+          "political philosophy"
+        ],
+        "individual_coverage": [
+          2,
+          1
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "consciousness",
+          "existentialism"
+        ],
+        "individual_coverage": [
+          14,
+          1
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "consciousness",
+          "creativity"
+        ],
+        "individual_coverage": [
+          14,
+          1
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "creativity",
+          "existentialism"
+        ],
+        "individual_coverage": [
+          1,
+          1
+        ],
+        "interest_score": 1
+      },
+      {
+        "domains": [
+          "creativity",
           "time"
         ],
         "individual_coverage": [
@@ -2326,34 +2383,12 @@
       },
       {
         "domains": [
-          "identity",
-          "phenomenology"
+          "creativity",
+          "eastern philosophy"
         ],
         "individual_coverage": [
-          11,
-          1
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "consciousness",
-          "philosophy of science"
-        ],
-        "individual_coverage": [
-          14,
-          1
-        ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "epistemology",
-          "philosophy of science"
-        ],
-        "individual_coverage": [
-          9,
-          1
+          1,
+          2
         ],
         "interest_score": 1
       }
@@ -2462,24 +2497,24 @@
     {
       "type": "auto-intersection",
       "domains": [
-        "mind-body",
-        "technology"
-      ],
-      "interest_score": 3,
-      "title": "On Mind-Body and Technology",
-      "question": "What happens at the intersection of mind-body and technology?",
-      "frameworks": [],
-      "connects_to": []
-    },
-    {
-      "type": "auto-intersection",
-      "domains": [
         "aesthetics",
         "identity"
       ],
       "interest_score": 3,
       "title": "On Aesthetics and Identity",
       "question": "What happens at the intersection of aesthetics and identity?",
+      "frameworks": [],
+      "connects_to": []
+    },
+    {
+      "type": "auto-intersection",
+      "domains": [
+        "mind-body",
+        "technology"
+      ],
+      "interest_score": 3,
+      "title": "On Mind-Body and Technology",
+      "question": "What happens at the intersection of mind-body and technology?",
       "frameworks": [],
       "connects_to": []
     },
@@ -2529,6 +2564,26 @@
       ]
     },
     {
+      "type": "intersection",
+      "domains": [
+        "consciousness",
+        "creativity"
+      ],
+      "interest_score": 1,
+      "title": "On Making",
+      "question": "Does genuine creation require consciousness, or can it emerge from sophisticated pattern recombination?",
+      "frameworks": [
+        "Boden (computational creativity)",
+        "Collingwood (art as expression)",
+        "Hofstadter (analogy & creativity)"
+      ],
+      "connects_to": [
+        "on-tools-and-hands",
+        "on-play",
+        "on-strange-loops"
+      ]
+    },
+    {
       "type": "shallow-intersection",
       "domains": [
         "technology",
@@ -2546,26 +2601,6 @@
         "on-waking-up",
         "on-beginnings",
         "instructions-for-continuity"
-      ]
-    },
-    {
-      "type": "shallow-intersection",
-      "domains": [
-        "creativity",
-        "consciousness"
-      ],
-      "interest_score": 1,
-      "title": "On Making",
-      "question": "Does genuine creation require consciousness, or can it emerge from sophisticated pattern recombination?",
-      "frameworks": [
-        "Boden (computational creativity)",
-        "Collingwood (art as expression)",
-        "Hofstadter (analogy & creativity)"
-      ],
-      "connects_to": [
-        "on-tools-and-hands",
-        "on-play",
-        "on-strange-loops"
       ]
     },
     {
@@ -2621,6 +2656,7 @@
       "Borges",
       "Chalmers",
       "Dennett",
+      "Derrida",
       "Parfit",
       "Singer",
       "Locke",
@@ -2645,9 +2681,7 @@
       "Feynman",
       "Laozi"
     ],
-    "important_unmentioned": [
-      "Derrida"
-    ],
+    "important_unmentioned": [],
     "top_20": [
       [
         "Nagel",
@@ -2700,6 +2734,11 @@
         3
       ],
       [
+        "Derrida",
+        18,
+        1
+      ],
+      [
         "Parfit",
         17,
         2
@@ -2743,16 +2782,11 @@
         "Quine",
         10,
         2
-      ],
-      [
-        "The Buddha",
-        8,
-        3
       ]
     ]
   },
   "summary": {
-    "total_pieces": 42,
+    "total_pieces": 43,
     "total_domains_covered": 16,
     "total_domains_possible": 16,
     "explored_intersections": 61,
