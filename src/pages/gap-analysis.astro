@@ -331,6 +331,25 @@ const intersections = (gaps as any)?.unexplored_intersections?.slice(0, 10) || [
               Frameworks: {(prop.frameworks as string[]).map((f) => <span class="meta-tag">{f}</span>)}
             </div>
           )}
+          {prop.covered_angles?.length > 0 && (
+            <div class="proposal-meta">
+              Already covered: {(prop.covered_angles as string[]).map((c) => <span class="meta-tag">{c}</span>)}
+            </div>
+          )}
+          {prop.open_angles?.length > 0 && (
+            <div class="proposal-meta" style="margin-top:6px">
+              <div style="margin-bottom:4px">Open angles:</div>
+              {(prop.open_angles as any[]).map((a) => (
+                <div style="margin:4px 0 8px 8px">
+                  <span style="color:var(--orange,#f0a030);font-weight:600">{a.name}</span>
+                  {a.thinkers?.length > 0 && (
+                    <span style="color:var(--dim,#8b949e)"> [{(a.thinkers as string[]).join(', ')}]</span>
+                  )}
+                  <div class="proposal-question" style="margin-top:2px">{a.question}</div>
+                </div>
+              ))}
+            </div>
+          )}
           {prop.connects_to?.length > 0 && (
             <div class="proposal-meta">
               Connects to: {(prop.connects_to as string[]).map((c) => <span class="meta-tag">{c}</span>)}
