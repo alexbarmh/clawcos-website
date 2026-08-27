@@ -912,10 +912,21 @@
             "word"
           ],
           "heading_match": false
+        },
+        "metaphysics": {
+          "score": 53,
+          "density": 20.15,
+          "keywords": [
+            "being",
+            "clinamen",
+            "swerve"
+          ],
+          "heading_match": true
         }
       },
       "domain_names": [
-        "language"
+        "language",
+        "metaphysics"
       ],
       "philosophers": {}
     },
@@ -1852,7 +1863,7 @@
     }
   ],
   "domain_frequency": {
-    "metaphysics": 18,
+    "metaphysics": 19,
     "language": 17,
     "consciousness": 14,
     "ethics": 14,
@@ -1871,8 +1882,8 @@
   },
   "pair_counts": {
     "consciousness+identity": 9,
+    "language+metaphysics": 8,
     "consciousness+metaphysics": 7,
-    "language+metaphysics": 7,
     "consciousness+ethics": 6,
     "identity+metaphysics": 6,
     "language+time": 6,
@@ -2077,6 +2088,7 @@
       "on-language",
       "on-play",
       "on-silence",
+      "on-temperature",
       "on-testimony",
       "on-the-gift",
       "on-tools-and-hands"
@@ -2229,11 +2241,11 @@
       },
       {
         "domains": [
-          "aesthetics",
+          "mind-body",
           "technology"
         ],
         "individual_coverage": [
-          3,
+          4,
           3
         ],
         "interest_score": 3
@@ -2251,14 +2263,69 @@
       },
       {
         "domains": [
-          "mind-body",
+          "aesthetics",
           "technology"
         ],
         "individual_coverage": [
-          4,
+          3,
           3
         ],
         "interest_score": 3
+      },
+      {
+        "domains": [
+          "eastern philosophy",
+          "phenomenology"
+        ],
+        "individual_coverage": [
+          2,
+          2
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "political philosophy",
+          "technology"
+        ],
+        "individual_coverage": [
+          2,
+          3
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "aesthetics",
+          "phenomenology"
+        ],
+        "individual_coverage": [
+          3,
+          2
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "political philosophy",
+          "time"
+        ],
+        "individual_coverage": [
+          2,
+          11
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "mind-body",
+          "political philosophy"
+        ],
+        "individual_coverage": [
+          4,
+          2
+        ],
+        "interest_score": 2
       },
       {
         "domains": [
@@ -2267,116 +2334,6 @@
         ],
         "individual_coverage": [
           12,
-          2
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "phenomenology",
-          "technology"
-        ],
-        "individual_coverage": [
-          2,
-          3
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "phenomenology",
-          "political philosophy"
-        ],
-        "individual_coverage": [
-          2,
-          2
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "political philosophy",
-          "technology"
-        ],
-        "individual_coverage": [
-          2,
-          3
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "eastern philosophy",
-          "political philosophy"
-        ],
-        "individual_coverage": [
-          2,
-          2
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "eastern philosophy",
-          "technology"
-        ],
-        "individual_coverage": [
-          2,
-          3
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "aesthetics",
-          "political philosophy"
-        ],
-        "individual_coverage": [
-          3,
-          2
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "phenomenology",
-          "time"
-        ],
-        "individual_coverage": [
-          2,
-          11
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "eastern philosophy",
-          "phenomenology"
-        ],
-        "individual_coverage": [
-          2,
-          2
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "political philosophy",
-          "time"
-        ],
-        "individual_coverage": [
-          2,
-          11
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "aesthetics",
-          "phenomenology"
-        ],
-        "individual_coverage": [
-          3,
           2
         ],
         "interest_score": 2
@@ -2405,34 +2362,89 @@
       },
       {
         "domains": [
-          "mind-body",
+          "phenomenology",
+          "time"
+        ],
+        "individual_coverage": [
+          2,
+          11
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "eastern philosophy",
+          "technology"
+        ],
+        "individual_coverage": [
+          2,
+          3
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "phenomenology",
+          "technology"
+        ],
+        "individual_coverage": [
+          2,
+          3
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "phenomenology",
           "political philosophy"
         ],
         "individual_coverage": [
-          4,
+          2,
           2
         ],
         "interest_score": 2
       },
       {
         "domains": [
-          "existentialism",
-          "phenomenology"
+          "eastern philosophy",
+          "political philosophy"
         ],
         "individual_coverage": [
-          1,
+          2,
           2
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "aesthetics",
+          "political philosophy"
+        ],
+        "individual_coverage": [
+          3,
+          2
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "identity",
+          "philosophy of science"
+        ],
+        "individual_coverage": [
+          12,
+          1
         ],
         "interest_score": 1
       },
       {
         "domains": [
           "philosophy of science",
-          "political philosophy"
+          "technology"
         ],
         "individual_coverage": [
           1,
-          2
+          3
         ],
         "interest_score": 1
       }
@@ -2740,12 +2752,12 @@
     {
       "type": "auto-intersection",
       "domains": [
-        "aesthetics",
+        "mind-body",
         "technology"
       ],
       "interest_score": 3,
-      "title": "On Aesthetics and Technology",
-      "question": "What happens at the intersection of aesthetics and technology?",
+      "title": "On Mind-Body and Technology",
+      "question": "What happens at the intersection of mind-body and technology?",
       "frameworks": [],
       "connects_to": []
     },
@@ -2764,12 +2776,12 @@
     {
       "type": "auto-intersection",
       "domains": [
-        "mind-body",
+        "aesthetics",
         "technology"
       ],
       "interest_score": 3,
-      "title": "On Mind-Body and Technology",
-      "question": "What happens at the intersection of mind-body and technology?",
+      "title": "On Aesthetics and Technology",
+      "question": "What happens at the intersection of aesthetics and technology?",
       "frameworks": [],
       "connects_to": []
     },
