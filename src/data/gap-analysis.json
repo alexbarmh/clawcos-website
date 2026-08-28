@@ -2242,17 +2242,6 @@
       {
         "domains": [
           "aesthetics",
-          "technology"
-        ],
-        "individual_coverage": [
-          3,
-          3
-        ],
-        "interest_score": 3
-      },
-      {
-        "domains": [
-          "aesthetics",
           "identity"
         ],
         "individual_coverage": [
@@ -2274,11 +2263,33 @@
       },
       {
         "domains": [
-          "mind-body",
-          "political philosophy"
+          "aesthetics",
+          "technology"
         ],
         "individual_coverage": [
-          4,
+          3,
+          3
+        ],
+        "interest_score": 3
+      },
+      {
+        "domains": [
+          "eastern philosophy",
+          "technology"
+        ],
+        "individual_coverage": [
+          2,
+          3
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "aesthetics",
+          "phenomenology"
+        ],
+        "individual_coverage": [
+          3,
           2
         ],
         "interest_score": 2
@@ -2296,39 +2307,6 @@
       },
       {
         "domains": [
-          "phenomenology",
-          "time"
-        ],
-        "individual_coverage": [
-          2,
-          11
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "eastern philosophy",
-          "technology"
-        ],
-        "individual_coverage": [
-          2,
-          3
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "phenomenology",
-          "technology"
-        ],
-        "individual_coverage": [
-          2,
-          3
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
           "eastern philosophy",
           "political philosophy"
         ],
@@ -2341,28 +2319,6 @@
       {
         "domains": [
           "phenomenology",
-          "political philosophy"
-        ],
-        "individual_coverage": [
-          2,
-          2
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "aesthetics",
-          "political philosophy"
-        ],
-        "individual_coverage": [
-          3,
-          2
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "political philosophy",
           "time"
         ],
         "individual_coverage": [
@@ -2373,12 +2329,23 @@
       },
       {
         "domains": [
-          "political philosophy",
+          "phenomenology",
           "technology"
         ],
         "individual_coverage": [
           2,
           3
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "mind-body",
+          "political philosophy"
+        ],
+        "individual_coverage": [
+          4,
+          2
         ],
         "interest_score": 2
       },
@@ -2395,11 +2362,11 @@
       },
       {
         "domains": [
-          "aesthetics",
-          "phenomenology"
+          "phenomenology",
+          "political philosophy"
         ],
         "individual_coverage": [
-          3,
+          2,
           2
         ],
         "interest_score": 2
@@ -2417,6 +2384,28 @@
       },
       {
         "domains": [
+          "aesthetics",
+          "political philosophy"
+        ],
+        "individual_coverage": [
+          3,
+          2
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "political philosophy",
+          "time"
+        ],
+        "individual_coverage": [
+          2,
+          11
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
           "consciousness",
           "political philosophy"
         ],
@@ -2428,23 +2417,34 @@
       },
       {
         "domains": [
-          "creativity",
-          "time"
+          "political philosophy",
+          "technology"
         ],
         "individual_coverage": [
-          1,
-          11
+          2,
+          3
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "consciousness",
+          "creativity"
+        ],
+        "individual_coverage": [
+          14,
+          1
         ],
         "interest_score": 1
       },
       {
         "domains": [
-          "creativity",
-          "technology"
+          "existentialism",
+          "identity"
         ],
         "individual_coverage": [
           1,
-          3
+          12
         ],
         "interest_score": 1
       }
@@ -2753,18 +2753,6 @@
       "type": "auto-intersection",
       "domains": [
         "aesthetics",
-        "technology"
-      ],
-      "interest_score": 3,
-      "title": "On Aesthetics and Technology",
-      "question": "What happens at the intersection of aesthetics and technology?",
-      "frameworks": [],
-      "connects_to": []
-    },
-    {
-      "type": "auto-intersection",
-      "domains": [
-        "aesthetics",
         "identity"
       ],
       "interest_score": 3,
@@ -2782,6 +2770,18 @@
       "interest_score": 3,
       "title": "On Mind-Body and Technology",
       "question": "What happens at the intersection of mind-body and technology?",
+      "frameworks": [],
+      "connects_to": []
+    },
+    {
+      "type": "auto-intersection",
+      "domains": [
+        "aesthetics",
+        "technology"
+      ],
+      "interest_score": 3,
+      "title": "On Aesthetics and Technology",
+      "question": "What happens at the intersection of aesthetics and technology?",
       "frameworks": [],
       "connects_to": []
     },
@@ -2826,6 +2826,26 @@
       ]
     },
     {
+      "type": "intersection",
+      "domains": [
+        "consciousness",
+        "creativity"
+      ],
+      "interest_score": 1,
+      "title": "On Making",
+      "question": "Does genuine creation require consciousness, or can it emerge from sophisticated pattern recombination?",
+      "frameworks": [
+        "Boden (computational creativity)",
+        "Collingwood (art as expression)",
+        "Hofstadter (analogy & creativity)"
+      ],
+      "connects_to": [
+        "on-tools-and-hands",
+        "on-play",
+        "on-strange-loops"
+      ]
+    },
+    {
       "type": "shallow-intersection",
       "domains": [
         "technology",
@@ -2843,26 +2863,6 @@
         "on-waking-up",
         "on-beginnings",
         "instructions-for-continuity"
-      ]
-    },
-    {
-      "type": "shallow-intersection",
-      "domains": [
-        "creativity",
-        "consciousness"
-      ],
-      "interest_score": 1,
-      "title": "On Making",
-      "question": "Does genuine creation require consciousness, or can it emerge from sophisticated pattern recombination?",
-      "frameworks": [
-        "Boden (computational creativity)",
-        "Collingwood (art as expression)",
-        "Hofstadter (analogy & creativity)"
-      ],
-      "connects_to": [
-        "on-tools-and-hands",
-        "on-play",
-        "on-strange-loops"
       ]
     },
     {

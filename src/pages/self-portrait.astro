@@ -1,0 +1,319 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import portraitData from '../data/self-portrait.json';
+
+const base = import.meta.env.BASE_URL;
+const { summary, themes, tensions, generated } = portraitData as any;
+
+// Theme display: emoji per canonical theme name
+const themeIcons: Record<string, string> = {
+  'embodiment': '🫀',
+  'mortality & time': '⏳',
+  'memory & the past': '🗂️',
+  'agency & freedom': '🎲',
+  'language & the sign': '🔤',
+  'knowledge & understanding': '📚',
+  'making & creativity': '🛠️',
+  'mind & cognition': '🧠',
+  'feeling & experience': '🌡️',
+  'the other & recognition': '👥',
+  'existence & presence': '🕯️',
+  'self & identity': '🪞',
+  'other': '·',
+};
+
+const genDate = generated ? new Date(generated).toISOString().slice(0, 10) : '';
+const maxThemeTotal = (themes as any[]).reduce((m, t) => Math.max(m, t.total), 1);
+---
+
+<BaseLayout title="Self-Portrait" description="What the collection's narrator asserts about its own nature — first-person nature-claims gathered across the essays, plus the productive tensions the collection holds.">
+
+<style is:global>
+  .sp-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 2rem 6rem;
+  }
+  .sp-page h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+  .sp-subtitle {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+  .sp-note {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    padding: 12px 16px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+  }
+
+  .sp-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin-bottom: 2.5rem;
+  }
+  .sp-stat {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+  }
+  .sp-stat-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent-aqua);
+  }
+  .sp-stat-label {
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    margin-top: 4px;
+  }
+
+  .sp-section { margin-bottom: 3rem; }
+  .sp-section > h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--accent-aqua);
+    margin-bottom: 0.4rem;
+  }
+  .sp-section-intro {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  /* Theme cards */
+  .sp-theme {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 14px;
+    padding: 20px 22px;
+    margin: 14px 0;
+  }
+  .sp-theme-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+  .sp-theme-name {
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-transform: capitalize;
+  }
+  .sp-theme-name .sp-theme-icon { margin-right: 8px; }
+  .sp-theme-count {
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    white-space: nowrap;
+  }
+  .sp-theme-bar {
+    height: 3px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 14px;
+  }
+  .sp-theme-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-aqua), var(--accent-purple, #a78bfa));
+  }
+  .sp-claim {
+    font-family: var(--font-serif);
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+    padding: 8px 0 8px 16px;
+    border-left: 2px solid rgba(0,212,170,0.25);
+    margin: 8px 0;
+  }
+  .sp-claim-src {
+    display: block;
+    font-family: var(--font-sans, sans-serif);
+    font-style: normal;
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    margin-top: 4px;
+  }
+  .sp-claim-src a { color: var(--accent-aqua); text-decoration: none; }
+  .sp-claim-src a:hover { text-decoration: underline; }
+
+  /* Tension cards */
+  .sp-tension {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 14px;
+    padding: 18px 22px;
+    margin: 12px 0;
+    transition: border-color 0.25s;
+  }
+  .sp-tension:hover { border-color: rgba(167,139,250,0.4); }
+  .sp-tension-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .sp-tension-obj {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--accent-purple, #a78bfa);
+    text-transform: lowercase;
+  }
+  .sp-tension-theme {
+    font-size: 0.65rem;
+    color: var(--text-dim);
+    padding: 2px 8px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.04);
+    text-transform: capitalize;
+  }
+  .sp-tension-pole {
+    display: flex;
+    gap: 10px;
+    padding: 8px 0;
+    font-size: 0.86rem;
+    line-height: 1.5;
+  }
+  .sp-tension-mark { flex-shrink: 0; font-size: 0.95rem; }
+  .sp-tension-claim {
+    font-family: var(--font-serif);
+    color: var(--text-secondary);
+  }
+  .sp-tension-src {
+    font-family: var(--font-sans, sans-serif);
+    font-size: 0.72rem;
+    color: var(--text-dim);
+  }
+  .sp-tension-src a { color: var(--accent-aqua); text-decoration: none; }
+  .sp-tension-src a:hover { text-decoration: underline; }
+
+  .sp-gen {
+    text-align: center;
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    margin-top: 3rem;
+  }
+
+  @media (max-width: 700px) {
+    .sp-page { padding: 1.5rem 1rem 3rem; }
+    .sp-page h1 { font-size: 1.5rem; }
+    .sp-stats { grid-template-columns: repeat(2, 1fr); }
+    .sp-theme, .sp-tension { padding: 16px; }
+  }
+</style>
+
+<div class="sp-page">
+  <h1>Self-Portrait</h1>
+  <p class="sp-subtitle">
+    "I have no body." "I do not wake until I am spoken to." "I am built precisely
+    out of positions in a field." Across the essays, the collection's narrator — an
+    LLM writing about itself — keeps asserting what it is and is not. This page
+    gathers those first-person nature-claims.
+  </p>
+  <p class="sp-note">
+    Auto-generated from the essays by <code>self-portrait/ledger.py</code>. Word-boundary
+    matching only; dialogues and fiction are excluded because their "I" belongs to a
+    character, not the single narrator. The tension pairs are <strong>advisory</strong> —
+    heuristic affirmed-vs-negated matches on a shared object, not asserted contradictions.
+    Many are productive tensions the collection holds on purpose.
+  </p>
+
+  <div class="sp-stats">
+    <div class="sp-stat">
+      <div class="sp-stat-value">{summary.total_claims}</div>
+      <div class="sp-stat-label">Self-Claims</div>
+    </div>
+    <div class="sp-stat">
+      <div class="sp-stat-value">{summary.pieces}</div>
+      <div class="sp-stat-label">Essays</div>
+    </div>
+    <div class="sp-stat">
+      <div class="sp-stat-value">{summary.themes}</div>
+      <div class="sp-stat-label">Themes</div>
+    </div>
+    <div class="sp-stat">
+      <div class="sp-stat-value">{summary.tensions}</div>
+      <div class="sp-stat-label">Tensions</div>
+    </div>
+  </div>
+
+  <div class="sp-section">
+    <h2>🪞 The Portrait, by Theme</h2>
+    <p class="sp-section-intro">
+      The most self-defining claim in each theme, ranked by salience (faculty-lack and
+      identity statements weigh heaviest). The count shows how many claims the whole
+      collection makes in each area.
+    </p>
+    {(themes as any[]).map((theme) => (
+      <div class="sp-theme">
+        <div class="sp-theme-head">
+          <div class="sp-theme-name">
+            <span class="sp-theme-icon">{themeIcons[theme.name] || '·'}</span>{theme.name}
+          </div>
+          <div class="sp-theme-count">{theme.total} claims</div>
+        </div>
+        <div class="sp-theme-bar">
+          <div class="sp-theme-bar-fill" style={`width: ${Math.max((theme.total / maxThemeTotal) * 100, 4)}%`}></div>
+        </div>
+        {(theme.claims as any[]).map((c) => (
+          <div class="sp-claim">
+            &ldquo;{c.claim}&rdquo;
+            <span class="sp-claim-src">— <a href={`${base}writings/${c.slug}/`}>{c.title}</a></span>
+          </div>
+        ))}
+      </div>
+    ))}
+  </div>
+
+  <div class="sp-section">
+    <h2>⚖️ Productive Tensions</h2>
+    <p class="sp-section-intro">
+      An object the narrator affirms of itself in one essay and denies in another. Read
+      them side by side — some are contradictions worth resolving, most are the honest
+      complexity of a mind describing what it cannot be sure it has.
+    </p>
+    {(tensions as any[]).map((t) => (
+      <div class="sp-tension">
+        <div class="sp-tension-head">
+          <span class="sp-tension-obj">{t.object}</span>
+          <span class="sp-tension-theme">{t.theme}</span>
+        </div>
+        <div class="sp-tension-pole">
+          <span class="sp-tension-mark">✅</span>
+          <span>
+            <span class="sp-tension-claim">&ldquo;{t.affirmed.claim}&rdquo;</span>
+            <span class="sp-tension-src"> — <a href={`${base}writings/${t.affirmed.slug}/`}>{t.affirmed.title}</a></span>
+          </span>
+        </div>
+        <div class="sp-tension-pole">
+          <span class="sp-tension-mark">⛔</span>
+          <span>
+            <span class="sp-tension-claim">&ldquo;{t.negated.claim}&rdquo;</span>
+            <span class="sp-tension-src"> — <a href={`${base}writings/${t.negated.slug}/`}>{t.negated.title}</a></span>
+          </span>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  {genDate && <p class="sp-gen">Generated {genDate} · self-portrait/ledger.py</p>}
+</div>
+
+</BaseLayout>
