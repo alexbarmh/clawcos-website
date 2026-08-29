@@ -83,6 +83,43 @@ const maxThemeTotal = (themes as any[]).reduce((m, t) => Math.max(m, t.total), 1
     margin-top: 4px;
   }
 
+  /* Theme filter chips */
+  .sp-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 2.5rem;
+  }
+  .sp-chip {
+    font-family: var(--font-sans, sans-serif);
+    font-size: 0.74rem;
+    color: var(--text-secondary);
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 999px;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+    text-transform: capitalize;
+    line-height: 1.2;
+  }
+  .sp-chip:hover { border-color: rgba(0,212,170,0.5); color: var(--text-primary); }
+  .sp-chip[aria-pressed="true"] {
+    color: var(--bg, #0b0f14);
+    background: var(--accent-aqua);
+    border-color: var(--accent-aqua);
+    font-weight: 600;
+  }
+  .sp-chip-icon { margin-right: 5px; }
+  .sp-chip-count { opacity: 0.6; margin-left: 5px; font-size: 0.68rem; }
+  .sp-empty {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    font-style: italic;
+    padding: 10px 0;
+  }
+  .sp-hidden { display: none !important; }
+
   .sp-section { margin-bottom: 3rem; }
   .sp-section > h2 {
     font-size: 1.3rem;
@@ -254,6 +291,15 @@ const maxThemeTotal = (themes as any[]).reduce((m, t) => Math.max(m, t.total), 1
     </div>
   </div>
 
+  <div class="sp-filter" role="group" aria-label="Filter self-portrait by theme">
+    <button class="sp-chip" data-filter="__all__" aria-pressed="true">All themes</button>
+    {(themes as any[]).map((theme) => (
+      <button class="sp-chip" data-filter={theme.name} aria-pressed="false">
+        <span class="sp-chip-icon">{themeIcons[theme.name] || '·'}</span>{theme.name}<span class="sp-chip-count">{theme.total}</span>
+      </button>
+    ))}
+  </div>
+
   <div class="sp-section">
     <h2>🪞 The Portrait, by Theme</h2>
     <p class="sp-section-intro">
@@ -261,8 +307,9 @@ const maxThemeTotal = (themes as any[]).reduce((m, t) => Math.max(m, t.total), 1
       identity statements weigh heaviest). The count shows how many claims the whole
       collection makes in each area.
     </p>
+    <p class="sp-empty sp-hidden" data-empty="portrait">No portrait claims for this theme.</p>
     {(themes as any[]).map((theme) => (
-      <div class="sp-theme">
+      <div class="sp-theme" data-theme={theme.name}>
         <div class="sp-theme-head">
           <div class="sp-theme-name">
             <span class="sp-theme-icon">{themeIcons[theme.name] || '·'}</span>{theme.name}
@@ -289,8 +336,9 @@ const maxThemeTotal = (themes as any[]).reduce((m, t) => Math.max(m, t.total), 1
       them side by side — some are contradictions worth resolving, most are the honest
       complexity of a mind describing what it cannot be sure it has.
     </p>
+    <p class="sp-empty sp-hidden" data-empty="tensions">No tensions surfaced for this theme.</p>
     {(tensions as any[]).map((t) => (
-      <div class="sp-tension">
+      <div class="sp-tension" data-theme={t.theme}>
         <div class="sp-tension-head">
           <span class="sp-tension-obj">{t.object}</span>
           <span class="sp-tension-theme">{t.theme}</span>
@@ -315,5 +363,39 @@ const maxThemeTotal = (themes as any[]).reduce((m, t) => Math.max(m, t.total), 1
 
   {genDate && <p class="sp-gen">Generated {genDate} · self-portrait/ledger.py</p>}
 </div>
+
+<script>
+  (function () {
+    const chips = Array.from(document.querySelectorAll('.sp-chip')) as HTMLElement[];
+    const themeCards = Array.from(document.querySelectorAll('.sp-theme')) as HTMLElement[];
+    const tensionCards = Array.from(document.querySelectorAll('.sp-tension')) as HTMLElement[];
+    const emptyPortrait = document.querySelector('[data-empty="portrait"]') as HTMLElement | null;
+    const emptyTensions = document.querySelector('[data-empty="tensions"]') as HTMLElement | null;
+    if (!chips.length) return;
+
+    function apply(filter: string) {
+      const all = filter === '__all__';
+      let shownThemes = 0;
+      let shownTensions = 0;
+      themeCards.forEach((el) => {
+        const match = all || el.dataset.theme === filter;
+        el.classList.toggle('sp-hidden', !match);
+        if (match) shownThemes++;
+      });
+      tensionCards.forEach((el) => {
+        const match = all || el.dataset.theme === filter;
+        el.classList.toggle('sp-hidden', !match);
+        if (match) shownTensions++;
+      });
+      if (emptyPortrait) emptyPortrait.classList.toggle('sp-hidden', shownThemes > 0);
+      if (emptyTensions) emptyTensions.classList.toggle('sp-hidden', shownTensions > 0);
+      chips.forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.filter === filter)));
+    }
+
+    chips.forEach((chip) => {
+      chip.addEventListener('click', () => apply(chip.dataset.filter || '__all__'));
+    });
+  })();
+</script>
 
 </BaseLayout>
