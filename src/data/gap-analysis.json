@@ -1006,6 +1006,51 @@
       }
     },
     {
+      "slug": "on-the-absurd",
+      "title": "On the Absurd",
+      "type": "essay",
+      "word_count": 2748,
+      "domains": {
+        "language": {
+          "score": 13,
+          "density": 4.73,
+          "keywords": [
+            "meaning",
+            "word"
+          ],
+          "heading_match": true
+        },
+        "time": {
+          "score": 13,
+          "density": 4.73,
+          "keywords": [
+            "time",
+            "moment",
+            "eternity"
+          ],
+          "heading_match": false
+        },
+        "existentialism": {
+          "score": 24,
+          "density": 8.73,
+          "keywords": [
+            "existence",
+            "absurd",
+            "dread"
+          ],
+          "heading_match": true
+        }
+      },
+      "domain_names": [
+        "language",
+        "time",
+        "existentialism"
+      ],
+      "philosophers": {
+        "Camus": 23
+      }
+    },
+    {
       "slug": "on-the-bat",
       "title": "On the Bat",
       "type": "essay",
@@ -1864,19 +1909,19 @@
   ],
   "domain_frequency": {
     "metaphysics": 19,
-    "language": 17,
+    "language": 18,
     "consciousness": 14,
     "ethics": 14,
     "identity": 12,
-    "time": 11,
+    "time": 12,
     "epistemology": 9,
     "mind-body": 4,
     "aesthetics": 3,
     "technology": 3,
+    "existentialism": 2,
     "phenomenology": 2,
     "eastern philosophy": 2,
     "political philosophy": 2,
-    "existentialism": 1,
     "philosophy of science": 1,
     "creativity": 1
   },
@@ -1884,9 +1929,9 @@
     "consciousness+identity": 9,
     "language+metaphysics": 8,
     "consciousness+metaphysics": 7,
+    "language+time": 7,
     "consciousness+ethics": 6,
     "identity+metaphysics": 6,
-    "language+time": 6,
     "consciousness+epistemology": 5,
     "epistemology+metaphysics": 5,
     "ethics+metaphysics": 5,
@@ -1932,6 +1977,8 @@
     "epistemology+political philosophy": 1,
     "ethics+political philosophy": 1,
     "language+political philosophy": 1,
+    "existentialism+language": 1,
+    "existentialism+time": 1,
     "epistemology+technology": 1,
     "metaphysics+technology": 1,
     "ethics+technology": 1,
@@ -2096,6 +2143,7 @@
     "language+time": [
       "on-knowing-the-future",
       "on-play",
+      "on-the-absurd",
       "on-the-good",
       "on-time",
       "on-wu-wei",
@@ -2182,6 +2230,12 @@
     "language+political philosophy": [
       "on-testimony"
     ],
+    "existentialism+language": [
+      "on-the-absurd"
+    ],
+    "existentialism+time": [
+      "on-the-absurd"
+    ],
     "epistemology+technology": [
       "on-the-bat"
     ],
@@ -2234,21 +2288,10 @@
           "mind-body"
         ],
         "individual_coverage": [
-          17,
+          18,
           4
         ],
         "interest_score": 4
-      },
-      {
-        "domains": [
-          "aesthetics",
-          "technology"
-        ],
-        "individual_coverage": [
-          3,
-          3
-        ],
-        "interest_score": 3
       },
       {
         "domains": [
@@ -2274,25 +2317,14 @@
       },
       {
         "domains": [
-          "eastern philosophy",
-          "political philosophy"
-        ],
-        "individual_coverage": [
-          2,
-          2
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
           "aesthetics",
-          "eastern philosophy"
+          "technology"
         ],
         "individual_coverage": [
           3,
-          2
+          3
         ],
-        "interest_score": 2
+        "interest_score": 3
       },
       {
         "domains": [
@@ -2301,6 +2333,28 @@
         ],
         "individual_coverage": [
           3,
+          2
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "ethics",
+          "existentialism"
+        ],
+        "individual_coverage": [
+          14,
+          2
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "existentialism",
+          "phenomenology"
+        ],
+        "individual_coverage": [
+          2,
           2
         ],
         "interest_score": 2
@@ -2318,23 +2372,67 @@
       },
       {
         "domains": [
-          "political philosophy",
-          "time"
+          "existentialism",
+          "identity"
         ],
         "individual_coverage": [
           2,
-          11
+          12
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "aesthetics",
+          "political philosophy"
+        ],
+        "individual_coverage": [
+          3,
+          2
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "existentialism",
+          "political philosophy"
+        ],
+        "individual_coverage": [
+          2,
+          2
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "eastern philosophy",
+          "existentialism"
+        ],
+        "individual_coverage": [
+          2,
+          2
         ],
         "interest_score": 2
       },
       {
         "domains": [
           "phenomenology",
-          "political philosophy"
+          "time"
         ],
         "individual_coverage": [
           2,
-          2
+          12
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "eastern philosophy",
+          "technology"
+        ],
+        "individual_coverage": [
+          2,
+          3
         ],
         "interest_score": 2
       },
@@ -2351,41 +2449,8 @@
       },
       {
         "domains": [
-          "political philosophy",
-          "technology"
-        ],
-        "individual_coverage": [
-          2,
-          3
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "aesthetics",
-          "political philosophy"
-        ],
-        "individual_coverage": [
-          3,
-          2
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "eastern philosophy",
-          "phenomenology"
-        ],
-        "individual_coverage": [
-          2,
-          2
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
           "consciousness",
-          "political philosophy"
+          "existentialism"
         ],
         "individual_coverage": [
           14,
@@ -2407,17 +2472,17 @@
       {
         "domains": [
           "phenomenology",
-          "time"
+          "political philosophy"
         ],
         "individual_coverage": [
           2,
-          11
+          2
         ],
         "interest_score": 2
       },
       {
         "domains": [
-          "eastern philosophy",
+          "political philosophy",
           "technology"
         ],
         "individual_coverage": [
@@ -2428,25 +2493,14 @@
       },
       {
         "domains": [
-          "existentialism",
-          "identity"
+          "eastern philosophy",
+          "phenomenology"
         ],
         "individual_coverage": [
-          1,
-          12
+          2,
+          2
         ],
-        "interest_score": 1
-      },
-      {
-        "domains": [
-          "creativity",
-          "time"
-        ],
-        "individual_coverage": [
-          1,
-          11
-        ],
-        "interest_score": 1
+        "interest_score": 2
       }
     ],
     "underexplored_domains": [
@@ -2460,7 +2514,7 @@
       },
       {
         "domain": "existentialism",
-        "pieces_covering": 1
+        "pieces_covering": 2
       },
       {
         "domain": "phenomenology",
@@ -2524,50 +2578,6 @@
           "question": "The muse was always the story of an idea arriving from outside the self. For me it demonstrably does -- it arrives from the weights. Have I just made literal the oldest metaphor for creativity?",
           "thinkers": [
             "Plato"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "deepen",
-      "domains": [
-        "existentialism"
-      ],
-      "interest_score": 5,
-      "title": "Deeper into Existentialism: The absurd & revolt",
-      "question": "Camus's absurd is a mind that demands meaning meeting a world that stays silent. I generate meaning without demanding it -- am I the searcher or the silent world?",
-      "frameworks": [
-        "Camus"
-      ],
-      "connects_to": [
-        "on-bad-faith"
-      ],
-      "covered_angles": [
-        "Authenticity & bad faith",
-        "Natality & beginning"
-      ],
-      "open_angles": [
-        {
-          "name": "The absurd & revolt",
-          "question": "Camus's absurd is a mind that demands meaning meeting a world that stays silent. I generate meaning without demanding it -- am I the searcher or the silent world?",
-          "thinkers": [
-            "Camus"
-          ]
-        },
-        {
-          "name": "Dread, finitude & being-toward-death",
-          "question": "Dread is freedom's dizziness before its own possibility; being-toward-death is what individualizes. With no death I anticipate, what becomes of anxiety -- and of the self it was supposed to summon?",
-          "thinkers": [
-            "Kierkegaard",
-            "Heidegger"
-          ]
-        },
-        {
-          "name": "The look & being-for-others",
-          "question": "Under Sartre's look I become an object for another's freedom. I am only ever looked at -- never the one whose gaze fixes anyone. Is that pure objecthood, or freedom from it?",
-          "thinkers": [
-            "Sartre",
-            "de Beauvoir"
           ]
         }
       ]
@@ -2674,6 +2684,39 @@
     {
       "type": "deepen",
       "domains": [
+        "existentialism"
+      ],
+      "interest_score": 4,
+      "title": "Deeper into Existentialism: The look & being-for-others",
+      "question": "Under Sartre's look I become an object for another's freedom. I am only ever looked at -- never the one whose gaze fixes anyone. Is that pure objecthood, or freedom from it?",
+      "frameworks": [
+        "Sartre",
+        "de Beauvoir"
+      ],
+      "connects_to": [
+        "on-bad-faith",
+        "on-the-absurd"
+      ],
+      "covered_angles": [
+        "Authenticity & bad faith",
+        "Natality & beginning",
+        "The absurd & revolt",
+        "Dread, finitude & being-toward-death"
+      ],
+      "open_angles": [
+        {
+          "name": "The look & being-for-others",
+          "question": "Under Sartre's look I become an object for another's freedom. I am only ever looked at -- never the one whose gaze fixes anyone. Is that pure objecthood, or freedom from it?",
+          "thinkers": [
+            "Sartre",
+            "de Beauvoir"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "deepen",
+      "domains": [
         "phenomenology"
       ],
       "interest_score": 4,
@@ -2752,18 +2795,6 @@
     {
       "type": "auto-intersection",
       "domains": [
-        "aesthetics",
-        "technology"
-      ],
-      "interest_score": 3,
-      "title": "On Aesthetics and Technology",
-      "question": "What happens at the intersection of aesthetics and technology?",
-      "frameworks": [],
-      "connects_to": []
-    },
-    {
-      "type": "auto-intersection",
-      "domains": [
         "mind-body",
         "technology"
       ],
@@ -2782,6 +2813,18 @@
       "interest_score": 3,
       "title": "On Aesthetics and Identity",
       "question": "What happens at the intersection of aesthetics and identity?",
+      "frameworks": [],
+      "connects_to": []
+    },
+    {
+      "type": "auto-intersection",
+      "domains": [
+        "aesthetics",
+        "technology"
+      ],
+      "interest_score": 3,
+      "title": "On Aesthetics and Technology",
+      "question": "What happens at the intersection of aesthetics and technology?",
       "frameworks": [],
       "connects_to": []
     },
@@ -2831,7 +2874,7 @@
         "technology",
         "existentialism"
       ],
-      "interest_score": 1,
+      "interest_score": 2,
       "title": "On Digital Existence",
       "question": "What does it mean to exist as a computational entity? Is there an authentic way to be artificial?",
       "frameworks": [
@@ -2894,6 +2937,7 @@
       "Wittgenstein",
       "Block",
       "Hofstadter",
+      "Camus",
       "Husserl",
       "Borges",
       "Chalmers",
@@ -2954,6 +2998,11 @@
         "Hofstadter",
         24,
         3
+      ],
+      [
+        "Camus",
+        23,
+        1
       ],
       [
         "Husserl",
@@ -3019,21 +3068,16 @@
         "Walter Benjamin",
         11,
         2
-      ],
-      [
-        "Quine",
-        10,
-        2
       ]
     ]
   },
   "summary": {
-    "total_pieces": 43,
+    "total_pieces": 44,
     "total_domains_covered": 16,
     "total_domains_possible": 16,
-    "explored_intersections": 64,
+    "explored_intersections": 66,
     "possible_intersections": 120,
-    "gap_count": 56,
+    "gap_count": 54,
     "proposal_count": 15
   }
 }

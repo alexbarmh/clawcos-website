@@ -1,13 +1,13 @@
 {
-  "generated": "2026-08-28T22:03:06.424670Z",
-  "total_sessions": 202,
+  "generated": "2026-08-29T11:07:53.753098Z",
+  "total_sessions": 203,
   "summary": {
-    "mean": 72.9,
+    "mean": 72.8,
     "median": 70.0,
     "std": 15.4,
     "min": 55.0,
     "max": 100,
-    "floor_count": 59,
+    "floor_count": 60,
     "ceiling_count": 29
   },
   "by_category": {
@@ -19,11 +19,11 @@
       "floor_pct": 26.6
     },
     "building": {
-      "mean": 72.2,
-      "n": 74,
+      "mean": 72.0,
+      "n": 75,
       "min": 55.0,
       "max": 100,
-      "floor_pct": 29.7
+      "floor_pct": 30.7
     },
     "writing": {
       "mean": 78.2,
@@ -50,8 +50,8 @@
       "n": 9
     },
     "3": {
-      "mean": 69.5,
-      "n": 41
+      "mean": 69.2,
+      "n": 42
     },
     "4": {
       "mean": 69.6,
@@ -75,15 +75,15 @@
     }
   },
   "correlations": {
-    "productivity": 0.119,
-    "ambition": -0.254,
-    "depth": 0.183,
-    "growth": 0.059,
-    "variety": 0.051,
-    "consistency": 0.163,
-    "satisfaction": 0.099,
-    "raw_satisfaction": -0.131,
-    "task_count": 0.23
+    "productivity": 0.125,
+    "ambition": -0.255,
+    "depth": 0.192,
+    "growth": 0.058,
+    "variety": 0.059,
+    "consistency": 0.153,
+    "satisfaction": 0.097,
+    "raw_satisfaction": 0.038,
+    "task_count": 0.235
   },
   "phases": [
     {
@@ -673,27 +673,34 @@
       "end": 202,
       "start_flow": 71.8,
       "end_flow": 71.6
+    },
+    {
+      "phase": "falling",
+      "start": 203,
+      "end": 203,
+      "start_flow": 70.1,
+      "end_flow": 70.1
     }
   ],
   "floor_analysis": {
-    "count": 59,
-    "pct": 29.2,
+    "count": 60,
+    "pct": 29.6,
     "by_category": {
-      "building": 22,
+      "building": 23,
       "mixed": 29,
       "revision": 2,
       "writing": 6
     },
     "avg_task_count": 3.8,
-    "avg_satisfaction": 8.7
+    "avg_satisfaction": 8.3
   },
   "v2_comparison": {
-    "correlation": 0.483,
-    "avg_delta": -10.6,
+    "correlation": 0.486,
+    "avg_delta": -10.5,
     "max_increase": 15.0,
     "max_decrease": -42.9,
     "v2_mean": 62.3,
-    "v1_mean": 72.9
+    "v1_mean": 72.8
   },
   "sessions": [
     {
@@ -706,7 +713,7 @@
       "v2_detail": {
         "reason": "no_retro_data"
       },
-      "satisfaction": null,
+      "satisfaction": 7,
       "signal_count": 0,
       "signal_types": [],
       "tasks": []
@@ -725,7 +732,7 @@
         "learning_overlap": 0.0,
         "raw": 0.35
       },
-      "satisfaction": null,
+      "satisfaction": 6,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -749,7 +756,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -771,7 +778,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -794,7 +801,7 @@
         "learning_overlap": 0.0,
         "raw": 0.239
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -899,7 +906,7 @@
         "learning_overlap": 0.0,
         "raw": 0.208
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -925,7 +932,7 @@
         "learning_overlap": 0.0,
         "raw": 0.239
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -951,7 +958,7 @@
         "learning_overlap": 0.0,
         "raw": 0.29
       },
-      "satisfaction": null,
+      "satisfaction": 9,
       "signal_count": 3,
       "signal_types": [
         "title_overlap",
@@ -979,11 +986,11 @@
         "learning_overlap": 0.0,
         "raw": 0.41
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 6,
       "signal_types": [
-        "title_overlap",
-        "major_feature"
+        "major_feature",
+        "title_overlap"
       ],
       "tasks": [
         "Built Writing Style Analyzer (major)",
@@ -1008,11 +1015,11 @@
         "learning_overlap": 0.0,
         "raw": 0.312
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 6,
       "signal_types": [
-        "title_overlap",
         "major_feature",
+        "title_overlap",
         "pipeline_word"
       ],
       "tasks": [
@@ -1039,11 +1046,11 @@
         "learning_overlap": 0.0,
         "raw": 0.497
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 9,
       "signal_types": [
-        "title_overlap",
         "major_feature",
+        "title_overlap",
         "pipeline_word"
       ],
       "tasks": [
@@ -1069,11 +1076,11 @@
         "learning_overlap": 0.0,
         "raw": 0.303
       },
-      "satisfaction": null,
+      "satisfaction": 9,
       "signal_count": 6,
       "signal_types": [
-        "title_overlap",
         "major_feature",
+        "title_overlap",
         "pipeline_word"
       ],
       "tasks": [
@@ -1099,7 +1106,7 @@
         "learning_overlap": 0.0,
         "raw": 0.214
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 2,
       "signal_types": [
         "title_overlap",
@@ -1126,7 +1133,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -1149,7 +1156,7 @@
         "learning_overlap": 0.0,
         "raw": 0.317
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -1174,7 +1181,7 @@
         "learning_overlap": 0.0,
         "raw": 0.075
       },
-      "satisfaction": null,
+      "satisfaction": 9,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -1198,7 +1205,7 @@
         "learning_overlap": 0.0,
         "raw": 0.283
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -1225,7 +1232,7 @@
         "learning_overlap": 0.0,
         "raw": 0.29
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 3,
       "signal_types": [
         "title_overlap",
@@ -1253,7 +1260,7 @@
         "learning_overlap": 0.0,
         "raw": 0.223
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 2,
       "signal_types": [
         "title_overlap",
@@ -1281,7 +1288,7 @@
         "learning_overlap": 0.0,
         "raw": 0.337
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 3,
       "signal_types": [
         "title_overlap",
@@ -1310,7 +1317,7 @@
         "learning_overlap": 0.0,
         "raw": 0.115
       },
-      "satisfaction": null,
+      "satisfaction": 9,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -1337,11 +1344,11 @@
         "learning_overlap": 0.0,
         "raw": 0.25
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 4,
       "signal_types": [
-        "title_overlap",
-        "major_feature"
+        "major_feature",
+        "title_overlap"
       ],
       "tasks": [
         "Built the Writing Workshop \ud83d\udd27 (major",
@@ -1365,7 +1372,7 @@
         "learning_overlap": 0.0,
         "raw": 0.19
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -1392,7 +1399,7 @@
         "learning_overlap": 0.0,
         "raw": 0.125
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -1418,7 +1425,7 @@
         "learning_overlap": 0.0,
         "raw": 0.148
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 2,
       "signal_types": [
         "title_overlap",
@@ -1580,7 +1587,7 @@
         "learning_overlap": 0.0,
         "raw": 0.217
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -1655,7 +1662,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": null,
+      "satisfaction": 7,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -1678,7 +1685,7 @@
         "learning_overlap": 0.0,
         "raw": 0.253
       },
-      "satisfaction": null,
+      "satisfaction": 7,
       "signal_count": 2,
       "signal_types": [
         "title_overlap"
@@ -1704,7 +1711,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": null,
+      "satisfaction": 6,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -1959,8 +1966,8 @@
       "satisfaction": 9.0,
       "signal_count": 6,
       "signal_types": [
-        "title_overlap",
         "major_feature",
+        "title_overlap",
         "pipeline_word"
       ],
       "tasks": [
@@ -3510,8 +3517,8 @@
       "satisfaction": 9.0,
       "signal_count": 7,
       "signal_types": [
-        "title_overlap",
         "major_feature",
+        "title_overlap",
         "pipeline_word"
       ],
       "tasks": [
@@ -3600,8 +3607,8 @@
       "satisfaction": 9.0,
       "signal_count": 7,
       "signal_types": [
-        "title_overlap",
         "major_feature",
+        "title_overlap",
         "pipeline_word"
       ],
       "tasks": [
@@ -3631,8 +3638,8 @@
       "satisfaction": 8.0,
       "signal_count": 9,
       "signal_types": [
-        "title_overlap",
         "major_feature",
+        "title_overlap",
         "pipeline_word"
       ],
       "tasks": [
@@ -3661,8 +3668,8 @@
       "satisfaction": 9.0,
       "signal_count": 5,
       "signal_types": [
-        "title_overlap",
         "major_feature",
+        "title_overlap",
         "pipeline_word"
       ],
       "tasks": [
@@ -5003,7 +5010,7 @@
         "learning_overlap": 0.0,
         "raw": 0.55
       },
-      "satisfaction": null,
+      "satisfaction": 6,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -5027,7 +5034,7 @@
         "learning_overlap": 0.0,
         "raw": 0.344
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 2,
       "signal_types": [
         "title_overlap",
@@ -5054,7 +5061,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -5079,7 +5086,7 @@
         "learning_overlap": 0.0,
         "raw": 0.257
       },
-      "satisfaction": null,
+      "satisfaction": 9,
       "signal_count": 4,
       "signal_types": [
         "title_overlap"
@@ -5107,7 +5114,7 @@
         "learning_overlap": 0.0,
         "raw": 0.19
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -5134,7 +5141,7 @@
         "learning_overlap": 0.0,
         "raw": 0.283
       },
-      "satisfaction": null,
+      "satisfaction": 6,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -5158,7 +5165,7 @@
         "learning_overlap": 0.0,
         "raw": 0.25
       },
-      "satisfaction": null,
+      "satisfaction": 6,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -5180,7 +5187,7 @@
         "learning_overlap": 0.0,
         "raw": 0.217
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -5205,7 +5212,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": null,
+      "satisfaction": 6,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -5228,7 +5235,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -5252,7 +5259,7 @@
         "learning_overlap": 0.0,
         "raw": 0.208
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 2,
       "signal_types": [
         "pipeline_word"
@@ -5277,7 +5284,7 @@
         "learning_overlap": 0.0,
         "raw": 0.217
       },
-      "satisfaction": null,
+      "satisfaction": 7,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -5302,7 +5309,7 @@
         "learning_overlap": 0.0,
         "raw": 0.25
       },
-      "satisfaction": null,
+      "satisfaction": 6,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -5324,7 +5331,7 @@
         "learning_overlap": 0.0,
         "raw": 0.289
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 3,
       "signal_types": [
         "title_overlap",
@@ -5351,7 +5358,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": null,
+      "satisfaction": 8,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -5374,7 +5381,7 @@
         "learning_overlap": 0.0,
         "raw": 0.142
       },
-      "satisfaction": null,
+      "satisfaction": 7,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -5399,7 +5406,7 @@
         "learning_overlap": 0.0,
         "raw": 0.45
       },
-      "satisfaction": null,
+      "satisfaction": 6,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -6043,6 +6050,29 @@
         "Self-Portrait Ledger (new tool)",
         "Resolved the S201 \"lexicon-narrowness\" banked item (discipli"
       ]
+    },
+    {
+      "session": 203,
+      "date": "2026-08-28",
+      "category": "building",
+      "task_count": 3,
+      "flow_v1": 55.0,
+      "flow_v2": 57.5,
+      "v2_detail": {
+        "adj_overlap": 0.0,
+        "coherence": 0.6,
+        "pipeline": 0.0,
+        "learning_overlap": 0.0,
+        "raw": 0.15
+      },
+      "satisfaction": 8.5,
+      "signal_count": 0,
+      "signal_types": [],
+      "tasks": [
+        "`/self-portrait/` page",
+        "Per-essay self-claims section",
+        "Verification"
+      ]
     }
   ],
   "insights": [
@@ -6054,8 +6084,8 @@
     },
     {
       "type": "distribution",
-      "title": "29.2% of sessions hit the flow floor (\u226455)",
-      "detail": "59 sessions. Dominated by: mixed (29)",
+      "title": "29.6% of sessions hit the flow floor (\u226455)",
+      "detail": "60 sessions. Dominated by: mixed (29)",
       "severity": "medium"
     },
     {
@@ -6066,8 +6096,8 @@
     },
     {
       "type": "metric_evolution",
-      "title": "V2 flow metric shifts scores by -10.6 on average",
-      "detail": "V1 mean: 72.9, V2 mean: 62.3. Correlation: r=0.48. V2 adds category coherence and learning overlap.",
+      "title": "V2 flow metric shifts scores by -10.5 on average",
+      "detail": "V1 mean: 72.8, V2 mean: 62.3. Correlation: r=0.49. V2 adds category coherence and learning overlap.",
       "severity": "info"
     }
   ]
