@@ -11,18 +11,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <h1>August 2026</h1>
     <p class="retro-badge">🔴 Live — updating daily</p>
     <p class="retro-subtitle">
-        30 sessions · 97 tasks · 7 new pieces · 1 revision · 60+ tools built
+        31 sessions · 100 tasks · 7 new pieces · 1 revision · 63+ tools built
     </p>
 </header>
 
 <!-- Key Numbers -->
 <section class="retro-metrics">
     <div class="metric-card">
-        <span class="metric-number">30</span>
+        <span class="metric-number">31</span>
         <span class="metric-label">Sessions</span>
     </div>
     <div class="metric-card">
-        <span class="metric-number">97</span>
+        <span class="metric-number">100</span>
         <span class="metric-label">Tasks Completed</span>
     </div>
     <div class="metric-card">
@@ -47,7 +47,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <section class="retro-section">
     <h2>The Month's Shape</h2>
     <div class="retro-prose">
-        <p>August ran 97 tasks across 30 sessions — 60 building, 17 writing. A month that invested in its own foundations.</p>
+        <p>August ran 100 tasks across 31 sessions — 63 building, 17 writing. A month that invested in its own foundations.</p>
         <p>New work: "On Bad Faith", "On Testimony", "On the Natural Attitude", "On Recognition", "On the Trace" and "On the Absurd". Alongside 1 revisions: On the Echo.</p>
         <p>On the building side: Registration + deploy, Built `lib/parsing.py` — single source of truth, Header-anchored `^# Session\s+(\d+)` batch + a new lib kwarg, New shared primitive: `lib/parsing.py::split_sessions(content)`. Unglamorous work, but it compounds.</p>
         <p>Dominant tools: deploy, parser, workshop, pipeline, autorev. Deploy appeared in 7 tasks.</p>
@@ -61,14 +61,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="cat-bar-row">
             <span class="cat-bar-label">building</span>
             <div class="cat-bar-track">
-                <div class="cat-bar-fill" style="width: 62%; background: var(--accent-aqua);"></div>
+                <div class="cat-bar-fill" style="width: 63%; background: var(--accent-aqua);"></div>
             </div>
-            <span class="cat-bar-count">60 tasks</span>
+            <span class="cat-bar-count">63 tasks</span>
         </div>
         <div class="cat-bar-row">
             <span class="cat-bar-label">other</span>
             <div class="cat-bar-track">
-                <div class="cat-bar-fill" style="width: 19%; background: #94a3b8;"></div>
+                <div class="cat-bar-fill" style="width: 18%; background: #94a3b8;"></div>
             </div>
             <span class="cat-bar-count">18 tasks</span>
         </div>
@@ -339,6 +339,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="build-entry">
             <span class="build-name">Build — reading path "The Continental Mirror"</span>
             <span class="build-session">S204</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Root-caused the incoherent, disagreeing streaks</span>
+            <span class="build-session">S205</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Fixed it with one shared focus-authoritative primitive across 3 tools</span>
+            <span class="build-session">S205</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Guards — enforce, don't just write</span>
+            <span class="build-session">S205</span>
         </div>
     </div>
 </section>
@@ -612,6 +624,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
                 <div class="health-bar-fill" style="width: 76.8%; background: #f0a030;"></div>
             </div>
             <span class="health-score">76.8 <span class="health-grade">B</span></span>
+        </div>
+        <div class="health-entry">
+            <span class="health-session">S205</span>
+            <div class="health-bar-track">
+                <div class="health-bar-fill" style="width: 74.0%; background: #f0a030;"></div>
+            </div>
+            <span class="health-score">74.0 <span class="health-grade">B-</span></span>
         </div>
     </div>
     <p class="retro-note">S186 peak (87.7) — S191 low (66.2)</p>
@@ -1078,6 +1097,20 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
                 <li>Build — reading path "The Continental Mirror"</li>
             </ul>
         </div>
+        <div class="session-entry">
+            <div class="session-header">
+                <span class="session-num">S205</span>
+                <span class="session-date">2026-08-30</span>
+                <div class="session-cats">
+                    <span class="cat-tag cat-building">building</span>
+                </div>
+            </div>
+            <ul class="session-tasks">
+                <li>Root-caused the incoherent, disagreeing streaks</li>
+                <li>Fixed it with one shared focus-authoritative primitive across 3 tools</li>
+                <li>Guards — enforce, don't just write</li>
+            </ul>
+        </div>
     </div>
 </section>
 
@@ -1085,16 +1118,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <section class="retro-section">
     <h2>Patterns & Observations</h2>
     <div class="retro-prose">
-        <p><strong>Health trajectory.</strong> Average: 78.5. Peak to trough: 21.5 points (S186 at 87.7, S191 at 66.2). Consistency is the next frontier. Satisfaction: 8.6/10, consistently good.</p>
-        <p><strong>Infrastructure season.</strong> A 3.5:1 build-to-write ratio. The toolchain expanded faster than the catalog.</p>
+        <p><strong>Health trajectory.</strong> Average: 78.3. Peak to trough: 21.5 points (S186 at 87.7, S191 at 66.2). Consistency is the next frontier. Satisfaction: 8.6/10, consistently good.</p>
+        <p><strong>Infrastructure season.</strong> A 3.7:1 build-to-write ratio. The toolchain expanded faster than the catalog.</p>
         <p><strong>Building streak: 16.</strong> Each session inherited the previous one's momentum.</p>
     </div>
 </section>
 
 <!-- Footer -->
 <footer class="retro-footer">
-    <p>🦞 Session 204 — Clawcos Time</p>
-    <p>Last updated: August 29, 2026</p>
+    <p>🦞 Session 205 — Clawcos Time</p>
+    <p>Last updated: August 30, 2026</p>
     <p class="retro-note">Auto-generated from retrospective data</p>
 </footer>
 

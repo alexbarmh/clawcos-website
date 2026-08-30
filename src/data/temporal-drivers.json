@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-29T22:03:49.625589Z",
-  "session_count": 157,
+  "generated": "2026-08-30T22:02:07.530577Z",
+  "session_count": 158,
   "rolling_correlations": [
     {
       "center_session": 40,
@@ -875,6 +875,25 @@
         "consistency": -0.25743701160432
       },
       "avg_satisfaction": 8.55
+    },
+    {
+      "center_session": 195,
+      "center_date": "2026-08-20",
+      "session_range": [
+        185,
+        204
+      ],
+      "n": 20,
+      "correlations": {
+        "productivity": -0.3793365585530913,
+        "ambition": -0.2464150052036722,
+        "depth": 0.06521700103469592,
+        "growth": 0.0,
+        "variety": -0.2755282242632202,
+        "flow": -0.07221142307284388,
+        "consistency": -0.2482001497886544
+      },
+      "avg_satisfaction": 8.55
     }
   ],
   "phases": [
@@ -954,34 +973,34 @@
       "phase": 3,
       "session_range": [
         120,
-        201
+        204
       ],
       "date_range": [
         "2026-06-15",
-        "2026-08-17"
+        "2026-08-20"
       ],
-      "n_windows": 16,
+      "n_windows": 17,
       "avg_correlations": {
-        "productivity": -0.22784013518433915,
-        "ambition": -0.22622063110647647,
-        "depth": -0.08170754907546758,
+        "productivity": -0.2367516895001481,
+        "ambition": -0.22740853546513506,
+        "depth": -0.07306492848075208,
         "growth": 0.0,
-        "variety": -0.12651867127813154,
-        "flow": -0.21742136390896585,
-        "consistency": -0.40198431319189537
+        "variety": -0.13528393910078382,
+        "flow": -0.2088796026833116,
+        "consistency": -0.39293818593288116
       },
       "top_drivers": [
         [
           "consistency",
-          -0.40198431319189537
+          -0.39293818593288116
         ],
         [
           "productivity",
-          -0.22784013518433915
+          -0.2367516895001481
         ],
         [
           "ambition",
-          -0.22622063110647647
+          -0.22740853546513506
         ]
       ],
       "avg_satisfaction": 8.56
@@ -990,8 +1009,8 @@
   "trajectories": {
     "productivity": {
       "early_r": 0.038,
-      "late_r": -0.273,
-      "shift": -0.311,
+      "late_r": -0.315,
+      "shift": -0.352,
       "peak_r": -0.587,
       "peak_session": 142,
       "arc": "falling",
@@ -1041,13 +1060,14 @@
         -0.453,
         -0.471,
         -0.464,
-        -0.417
+        -0.417,
+        -0.379
       ]
     },
     "ambition": {
       "early_r": 0.335,
-      "late_r": -0.247,
-      "shift": -0.582,
+      "late_r": -0.266,
+      "shift": -0.601,
       "peak_r": 0.685,
       "peak_session": 43,
       "arc": "falling",
@@ -1097,13 +1117,14 @@
         -0.489,
         -0.525,
         -0.299,
-        -0.24
+        -0.24,
+        -0.246
       ]
     },
     "depth": {
       "early_r": 0.421,
-      "late_r": -0.087,
-      "shift": -0.508,
+      "late_r": -0.083,
+      "shift": -0.503,
       "peak_r": 0.672,
       "peak_session": 55,
       "arc": "falling",
@@ -1153,7 +1174,8 @@
         -0.185,
         -0.161,
         0.1,
-        0.08
+        0.08,
+        0.065
       ]
     },
     "growth": {
@@ -1209,13 +1231,14 @@
         0.0,
         0.0,
         0.0,
+        0.0,
         0.0
       ]
     },
     "variety": {
       "early_r": 0.162,
-      "late_r": -0.137,
-      "shift": -0.299,
+      "late_r": -0.151,
+      "shift": -0.314,
       "peak_r": 0.503,
       "peak_session": 67,
       "arc": "falling",
@@ -1265,13 +1288,14 @@
         -0.33,
         -0.306,
         -0.249,
-        -0.285
+        -0.285,
+        -0.276
       ]
     },
     "flow": {
       "early_r": -0.116,
-      "late_r": -0.219,
-      "shift": -0.103,
+      "late_r": -0.21,
+      "shift": -0.094,
       "peak_r": -0.694,
       "peak_session": 148,
       "arc": "volatile",
@@ -1321,13 +1345,14 @@
         0.032,
         0.149,
         -0.061,
-        -0.069
+        -0.069,
+        -0.072
       ]
     },
     "consistency": {
       "early_r": 0.146,
-      "late_r": -0.415,
-      "shift": -0.561,
+      "late_r": -0.416,
+      "shift": -0.562,
       "peak_r": -0.685,
       "peak_session": 145,
       "arc": "falling",
@@ -1377,7 +1402,8 @@
         -0.409,
         -0.445,
         -0.353,
-        -0.257
+        -0.257,
+        -0.248
       ]
     }
   },
@@ -1473,7 +1499,7 @@
       "direction": "↓ fell"
     }
   ],
-  "narrative": "The story of what drives satisfaction is itself a story of growth.\n\n**Early (S6–S91):** Satisfaction driven by Depth (r=+0.42), Ambition (r=+0.33), Variety (r=+0.16). Average satisfaction: 8.7/10.\n\n**Middle (S75–S136):** Satisfaction driven by Flow (r=-0.16), Variety (r=-0.15), Consistency (r=-0.13). Average satisfaction: 8.79/10.\n\n**Recent (S120–S201):** Satisfaction driven by Consistency (r=-0.40), Productivity (r=-0.23), Ambition (r=-0.23). Average satisfaction: 8.56/10.\n\n**Fading influence:** Productivity, Ambition, Depth, Variety, Consistency — once important, now less so.\n\n**What this means:** Early sessions optimized for output — more tasks, more ambition, more raw productivity. As the toolkit matured and the collection grew, satisfaction shifted toward subtler qualities: variety of approach, flow between topics, the depth of engagement. This mirrors a common creative arc: beginners need visible progress to stay motivated; practitioners find satisfaction in the quality of the process itself.",
+  "narrative": "The story of what drives satisfaction is itself a story of growth.\n\n**Early (S6–S91):** Satisfaction driven by Depth (r=+0.42), Ambition (r=+0.33), Variety (r=+0.16). Average satisfaction: 8.7/10.\n\n**Middle (S75–S136):** Satisfaction driven by Flow (r=-0.16), Variety (r=-0.15), Consistency (r=-0.13). Average satisfaction: 8.79/10.\n\n**Recent (S120–S204):** Satisfaction driven by Consistency (r=-0.39), Productivity (r=-0.24), Ambition (r=-0.23). Average satisfaction: 8.56/10.\n\n**Fading influence:** Productivity, Ambition, Depth, Variety, Consistency — once important, now less so.\n\n**What this means:** Early sessions optimized for output — more tasks, more ambition, more raw productivity. As the toolkit matured and the collection grew, satisfaction shifted toward subtler qualities: variety of approach, flow between topics, the depth of engagement. This mirrors a common creative arc: beginners need visible progress to stay motivated; practitioners find satisfaction in the quality of the process itself.",
   "component_labels": {
     "productivity": "Productivity",
     "ambition": "Ambition",
