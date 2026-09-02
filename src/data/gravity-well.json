@@ -1,28 +1,28 @@
 {
   "metrics": {
-    "total_scored": 160,
+    "total_scored": 161,
     "distribution": {
       "10.0": 1,
       "9.0": 76,
       "8.9": 1,
       "8.8": 1,
       "8.7": 1,
-      "8.5": 52,
+      "8.5": 53,
       "8.0": 27,
       "7.0": 1
     },
     "mode": 9.0,
     "mode_count": 76,
-    "mode_pct": 47.5,
+    "mode_pct": 47.2,
     "above_mode": 1,
-    "below_mode": 83,
+    "below_mode": 84,
     "entropy": 1.699,
     "max_entropy": 3.0,
     "concentration_ratio": 0.434,
     "trend": "loosening",
     "trend_delta": -0.55,
     "mean": 8.66,
-    "median": 8.7
+    "median": 8.5
   },
   "structural": {
     "10": {
@@ -64,13 +64,13 @@
       }
     },
     "8": {
-      "count": 79,
-      "avg_tasks": 2.4683544303797467,
+      "count": 80,
+      "avg_tasks": 2.4375,
       "task_range": "0-7",
-      "avg_learnings": 2.1139240506329116,
+      "avg_learnings": 2.125,
       "focus_types": {
         "other": 6,
-        "building": 30,
+        "building": 31,
         "mixed": 21,
         "writing": 22
       },
@@ -91,11 +91,11 @@
   "novelty": {
     "by_tier": {
       "8": {
-        "avg_novelty": 0.3924050632911392,
-        "avg_maintenance": 1.2784810126582278,
-        "avg_milestone": 0.5189873417721519,
-        "avg_ratio": 0.25843881856540085,
-        "count": 79
+        "avg_novelty": 0.3875,
+        "avg_maintenance": 1.2875,
+        "avg_milestone": 0.5125,
+        "avg_ratio": 0.25520833333333337,
+        "count": 80
       },
       "9": {
         "avg_novelty": 0.45569620253164556,
@@ -196,14 +196,14 @@
       }
     },
     "8": {
-      "count": 79,
+      "count": 80,
       "markers": {
-        "strong": 2.2658227848101267,
-        "satisfaction": 0.06329113924050633,
-        "achievement": 2.6962025316455698,
-        "quality": 0.5949367088607594,
-        "hedging": 0.6455696202531646,
-        "negation": 0.0379746835443038
+        "strong": 2.275,
+        "satisfaction": 0.0625,
+        "achievement": 2.675,
+        "quality": 0.5875,
+        "hedging": 0.6375,
+        "negation": 0.0375
       }
     },
     "below_8": {
@@ -416,10 +416,10 @@
       },
       {
         "month": "2026-09",
-        "sessions": 1,
+        "sessions": 2,
         "session_range": [
           207,
-          207
+          208
         ],
         "mean": 8.5,
         "median": 8.5,
@@ -430,7 +430,7 @@
         "below_mode": 0,
         "escape_rate": 0.0,
         "distribution": {
-          "8.5": 1
+          "8.5": 2
         },
         "stdev": 0.0
       }
@@ -1945,6 +1945,16 @@
         "concentration": 1.0,
         "stdev": 0.0,
         "escape_rate": 0.0
+      },
+      {
+        "session": 208,
+        "date": "2026-09-02",
+        "mean": 8.5,
+        "mode": 8.5,
+        "mode_share": 1.0,
+        "concentration": 1.0,
+        "stdev": 0.0,
+        "escape_rate": 0.0
       }
     ],
     "phases": [
@@ -2091,10 +2101,10 @@
       {
         "phase": "tightening",
         "start_session": 205,
-        "end_session": 207,
+        "end_session": 208,
         "start_date": "2026-08-30",
-        "end_date": "2026-09-01",
-        "duration": 3,
+        "end_date": "2026-09-02",
+        "duration": 4,
         "concentration_delta": 0.582,
         "mean_delta": -0.08
       }
@@ -2119,5 +2129,5 @@
     "hedging",
     "negation"
   ],
-  "generated": "2026-09-01T22:03:32.640453"
+  "generated": "2026-09-02T22:05:04.880160"
 }

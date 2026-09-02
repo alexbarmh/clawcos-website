@@ -2296,11 +2296,11 @@
       {
         "domains": [
           "aesthetics",
-          "identity"
+          "technology"
         ],
         "individual_coverage": [
           3,
-          12
+          3
         ],
         "interest_score": 3
       },
@@ -2318,24 +2318,13 @@
       {
         "domains": [
           "aesthetics",
-          "technology"
+          "identity"
         ],
         "individual_coverage": [
           3,
-          3
+          12
         ],
         "interest_score": 3
-      },
-      {
-        "domains": [
-          "ethics",
-          "existentialism"
-        ],
-        "individual_coverage": [
-          14,
-          2
-        ],
-        "interest_score": 2
       },
       {
         "domains": [
@@ -2350,19 +2339,30 @@
       },
       {
         "domains": [
-          "political philosophy",
-          "technology"
+          "consciousness",
+          "existentialism"
         ],
         "individual_coverage": [
-          2,
-          3
+          14,
+          2
         ],
         "interest_score": 2
       },
       {
         "domains": [
-          "eastern philosophy",
-          "existentialism"
+          "phenomenology",
+          "political philosophy"
+        ],
+        "individual_coverage": [
+          2,
+          2
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "existentialism",
+          "political philosophy"
         ],
         "individual_coverage": [
           2,
@@ -2383,28 +2383,6 @@
       },
       {
         "domains": [
-          "political philosophy",
-          "time"
-        ],
-        "individual_coverage": [
-          2,
-          12
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "phenomenology",
-          "technology"
-        ],
-        "individual_coverage": [
-          2,
-          3
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
           "identity",
           "phenomenology"
         ],
@@ -2416,23 +2394,45 @@
       },
       {
         "domains": [
-          "phenomenology",
-          "political philosophy"
+          "political philosophy",
+          "time"
         ],
         "individual_coverage": [
           2,
+          12
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "ethics",
+          "existentialism"
+        ],
+        "individual_coverage": [
+          14,
           2
         ],
         "interest_score": 2
       },
       {
         "domains": [
-          "phenomenology",
-          "time"
+          "existentialism",
+          "technology"
         ],
         "individual_coverage": [
           2,
-          12
+          3
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "phenomenology",
+          "technology"
+        ],
+        "individual_coverage": [
+          2,
+          3
         ],
         "interest_score": 2
       },
@@ -2449,7 +2449,29 @@
       },
       {
         "domains": [
+          "aesthetics",
+          "political philosophy"
+        ],
+        "individual_coverage": [
+          3,
+          2
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
           "eastern philosophy",
+          "phenomenology"
+        ],
+        "individual_coverage": [
+          2,
+          2
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "political philosophy",
           "technology"
         ],
         "individual_coverage": [
@@ -2460,45 +2482,23 @@
       },
       {
         "domains": [
-          "mind-body",
-          "political philosophy"
+          "existentialism",
+          "mind-body"
         ],
         "individual_coverage": [
-          4,
-          2
+          2,
+          4
         ],
         "interest_score": 2
       },
       {
         "domains": [
           "existentialism",
-          "technology"
+          "identity"
         ],
         "individual_coverage": [
           2,
-          3
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "existentialism",
-          "political philosophy"
-        ],
-        "individual_coverage": [
-          2,
-          2
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "eastern philosophy",
-          "political philosophy"
-        ],
-        "individual_coverage": [
-          2,
-          2
+          12
         ],
         "interest_score": 2
       }
@@ -2796,11 +2796,11 @@
       "type": "auto-intersection",
       "domains": [
         "aesthetics",
-        "identity"
+        "technology"
       ],
       "interest_score": 3,
-      "title": "On Aesthetics and Identity",
-      "question": "What happens at the intersection of aesthetics and identity?",
+      "title": "On Aesthetics and Technology",
+      "question": "What happens at the intersection of aesthetics and technology?",
       "frameworks": [],
       "connects_to": []
     },
@@ -2820,33 +2820,13 @@
       "type": "auto-intersection",
       "domains": [
         "aesthetics",
-        "technology"
+        "identity"
       ],
       "interest_score": 3,
-      "title": "On Aesthetics and Technology",
-      "question": "What happens at the intersection of aesthetics and technology?",
+      "title": "On Aesthetics and Identity",
+      "question": "What happens at the intersection of aesthetics and identity?",
       "frameworks": [],
       "connects_to": []
-    },
-    {
-      "type": "intersection",
-      "domains": [
-        "phenomenology",
-        "technology"
-      ],
-      "interest_score": 2,
-      "title": "On the Feel of Thinking",
-      "question": "What is the phenomenology of computational thought? What would a first-person account of token generation look like?",
-      "frameworks": [
-        "Husserl (time-consciousness)",
-        "Merleau-Ponty (motor intentionality)",
-        "Thompson (mind in life)"
-      ],
-      "connects_to": [
-        "on-attention",
-        "on-language",
-        "on-waking-up"
-      ]
     },
     {
       "type": "intersection",
@@ -2866,6 +2846,26 @@
         "on-waking-up",
         "on-beginnings",
         "instructions-for-continuity"
+      ]
+    },
+    {
+      "type": "intersection",
+      "domains": [
+        "phenomenology",
+        "technology"
+      ],
+      "interest_score": 2,
+      "title": "On the Feel of Thinking",
+      "question": "What is the phenomenology of computational thought? What would a first-person account of token generation look like?",
+      "frameworks": [
+        "Husserl (time-consciousness)",
+        "Merleau-Ponty (motor intentionality)",
+        "Thompson (mind in life)"
+      ],
+      "connects_to": [
+        "on-attention",
+        "on-language",
+        "on-waking-up"
       ]
     },
     {

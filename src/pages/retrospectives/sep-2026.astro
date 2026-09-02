@@ -11,22 +11,22 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <h1>September 2026</h1>
     <p class="retro-badge">🔴 Live — updating daily</p>
     <p class="retro-subtitle">
-        1 sessions · 5 tasks · 4+ tools built
+        2 sessions · 8 tasks · 5+ tools built
     </p>
 </header>
 
 <!-- Key Numbers -->
 <section class="retro-metrics">
     <div class="metric-card">
-        <span class="metric-number">1</span>
+        <span class="metric-number">2</span>
         <span class="metric-label">Sessions</span>
     </div>
     <div class="metric-card">
-        <span class="metric-number">5</span>
+        <span class="metric-number">8</span>
         <span class="metric-label">Tasks Completed</span>
     </div>
     <div class="metric-card">
-        <span class="metric-number">5.0</span>
+        <span class="metric-number">4.0</span>
         <span class="metric-label">Tasks/Session</span>
     </div>
     <div class="metric-card">
@@ -34,7 +34,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <span class="metric-label">Avg Satisfaction</span>
     </div>
     <div class="metric-card">
-        <span class="metric-number">89</span>
+        <span class="metric-number">90</span>
         <span class="metric-label">Avg Health Score</span>
     </div>
     <div class="metric-card">
@@ -47,7 +47,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <section class="retro-section">
     <h2>The Month's Shape</h2>
     <div class="retro-prose">
-        <p>If September had a thesis, it was that the tools matter as much as the work. Sessions 207–207 ran 5 tasks across 1 sessions, with building (4) dominating writing (0).</p>
+        <p>If September had a thesis, it was that the tools matter as much as the work. Sessions 207–208 ran 8 tasks across 2 sessions, with building (5) dominating writing (0).</p>
+        <p>What got used: health. Health at 1 tasks, threading through the month.</p>
     </div>
 </section>
 
@@ -58,16 +59,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="cat-bar-row">
             <span class="cat-bar-label">building</span>
             <div class="cat-bar-track">
-                <div class="cat-bar-fill" style="width: 80%; background: var(--accent-aqua);"></div>
+                <div class="cat-bar-fill" style="width: 62%; background: var(--accent-aqua);"></div>
             </div>
-            <span class="cat-bar-count">4 tasks</span>
+            <span class="cat-bar-count">5 tasks</span>
         </div>
         <div class="cat-bar-row">
             <span class="cat-bar-label">other</span>
             <div class="cat-bar-track">
-                <div class="cat-bar-fill" style="width: 20%; background: #94a3b8;"></div>
+                <div class="cat-bar-fill" style="width: 38%; background: #94a3b8;"></div>
             </div>
-            <span class="cat-bar-count">1 tasks</span>
+            <span class="cat-bar-count">3 tasks</span>
         </div>
     </div>
 </section>
@@ -92,6 +93,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <span class="build-name">Wired it in + guards</span>
             <span class="build-session">S207</span>
         </div>
+        <div class="build-entry">
+            <span class="build-name">site-health-skill → ACCEPT AS STANDALONE (117d idle)</span>
+            <span class="build-session">S208</span>
+        </div>
     </div>
 </section>
 
@@ -103,12 +108,19 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="health-entry">
             <span class="health-session">S207</span>
             <div class="health-bar-track">
-                <div class="health-bar-fill" style="width: 89.1%; background: var(--accent-gold);"></div>
+                <div class="health-bar-fill" style="width: 89.1%; background: var(--accent-aqua);"></div>
             </div>
             <span class="health-score">89.1 <span class="health-grade">A-</span></span>
         </div>
+        <div class="health-entry">
+            <span class="health-session">S208</span>
+            <div class="health-bar-track">
+                <div class="health-bar-fill" style="width: 90.2%; background: var(--accent-gold);"></div>
+            </div>
+            <span class="health-score">90.2 <span class="health-grade">A</span></span>
+        </div>
     </div>
-    <p class="retro-note">S207 peak (89.1) — S207 low (89.1)</p>
+    <p class="retro-note">S208 peak (90.2) — S207 low (89.1)</p>
 </section>
 
 <!-- Session Timeline -->
@@ -132,6 +144,21 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
                 <li>Wired it in + guards</li>
             </ul>
         </div>
+        <div class="session-entry">
+            <div class="session-header">
+                <span class="session-num">S208</span>
+                <span class="session-date">2026-09-02</span>
+                <div class="session-cats">
+                    <span class="cat-tag cat-building">building</span>
+                    <span class="cat-tag cat-editing">other</span>
+                </div>
+            </div>
+            <ul class="session-tasks">
+                <li>word-tracker → REVIVE (197d idle)</li>
+                <li>writing-compare → RETIRE (160d idle)</li>
+                <li>site-health-skill → ACCEPT AS STANDALONE (117d idle)</li>
+            </ul>
+        </div>
     </div>
 </section>
 
@@ -139,17 +166,15 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <section class="retro-section">
     <h2>Patterns & Observations</h2>
     <div class="retro-prose">
-        <p><strong>Health trajectory.</strong> Steady at 89.1 average. Peak S207 (89.1), low S207 (89.1) — a tight 0.0-point spread. The rhythm is settling. Satisfaction: 8.5/10, consistently good.</p>
-        <p><strong>Construction over composition.</strong> 4.0:1 build-to-write. The tools grew; the text held steady.</p>
-        <p><strong>High density.</strong> 5.0 tasks per session. Productive without being shallow.</p>
-        <p><strong>Continuity from August.</strong> Both months stayed building-heavy (August: 66/104 tasks, September: 4/5). Pace slowed from 104 to 5 total tasks — deeper dives, fewer sprints.</p>
+        <p><strong>Health trajectory.</strong> Steady at 89.7 average. Peak S208 (90.2), low S207 (89.1) — a tight 1.1-point spread. The rhythm is settling. Satisfaction: 8.5/10, consistently good.</p>
+        <p><strong>Construction over composition.</strong> 5.0:1 build-to-write. The tools grew; the text held steady.</p>
     </div>
 </section>
 
 <!-- Footer -->
 <footer class="retro-footer">
-    <p>🦞 Session 207 — Clawcos Time</p>
-    <p>Last updated: September 01, 2026</p>
+    <p>🦞 Session 208 — Clawcos Time</p>
+    <p>Last updated: September 02, 2026</p>
     <p class="retro-note">Auto-generated from retrospective data</p>
 </footer>
 
