@@ -1440,10 +1440,22 @@
             "moment"
           ],
           "heading_match": false
+        },
+        "phenomenology": {
+          "score": 44,
+          "density": 16.72,
+          "keywords": [
+            "retention",
+            "protention",
+            "specious present",
+            "primal impression"
+          ],
+          "heading_match": true
         }
       },
       "domain_names": [
-        "time"
+        "time",
+        "phenomenology"
       ],
       "philosophers": {
         "Husserl": 6,
@@ -1943,8 +1955,8 @@
     "mind-body": 4,
     "aesthetics": 3,
     "technology": 3,
+    "phenomenology": 3,
     "existentialism": 2,
-    "phenomenology": 2,
     "eastern philosophy": 2,
     "political philosophy": 2,
     "philosophy of science": 1,
@@ -2012,6 +2024,7 @@
     "ethics+phenomenology": 1,
     "language+phenomenology": 1,
     "aesthetics+metaphysics": 1,
+    "phenomenology+time": 1,
     "creativity+language": 1,
     "creativity+metaphysics": 1,
     "eastern philosophy+language": 1,
@@ -2289,6 +2302,9 @@
       "on-the-principle-of-least-action",
       "second-pass"
     ],
+    "phenomenology+time": [
+      "on-the-specious-present"
+    ],
     "creativity+language": [
       "on-tools-and-hands"
     ],
@@ -2331,17 +2347,6 @@
       },
       {
         "domains": [
-          "aesthetics",
-          "identity"
-        ],
-        "individual_coverage": [
-          3,
-          12
-        ],
-        "interest_score": 3
-      },
-      {
-        "domains": [
           "mind-body",
           "technology"
         ],
@@ -2354,13 +2359,24 @@
       {
         "domains": [
           "phenomenology",
-          "time"
+          "technology"
         ],
         "individual_coverage": [
-          2,
-          13
+          3,
+          3
         ],
-        "interest_score": 2
+        "interest_score": 3
+      },
+      {
+        "domains": [
+          "identity",
+          "phenomenology"
+        ],
+        "individual_coverage": [
+          12,
+          3
+        ],
+        "interest_score": 3
       },
       {
         "domains": [
@@ -2369,13 +2385,35 @@
         ],
         "individual_coverage": [
           3,
+          3
+        ],
+        "interest_score": 3
+      },
+      {
+        "domains": [
+          "aesthetics",
+          "identity"
+        ],
+        "individual_coverage": [
+          3,
+          12
+        ],
+        "interest_score": 3
+      },
+      {
+        "domains": [
+          "consciousness",
+          "existentialism"
+        ],
+        "individual_coverage": [
+          14,
           2
         ],
         "interest_score": 2
       },
       {
         "domains": [
-          "aesthetics",
+          "phenomenology",
           "political philosophy"
         ],
         "individual_coverage": [
@@ -2397,6 +2435,17 @@
       },
       {
         "domains": [
+          "ethics",
+          "existentialism"
+        ],
+        "individual_coverage": [
+          14,
+          2
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
           "epistemology",
           "existentialism"
         ],
@@ -2408,12 +2457,56 @@
       },
       {
         "domains": [
+          "eastern philosophy",
+          "technology"
+        ],
+        "individual_coverage": [
+          2,
+          3
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
           "aesthetics",
           "eastern philosophy"
         ],
         "individual_coverage": [
           3,
           2
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "existentialism",
+          "political philosophy"
+        ],
+        "individual_coverage": [
+          2,
+          2
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "political philosophy",
+          "time"
+        ],
+        "individual_coverage": [
+          2,
+          13
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "existentialism",
+          "mind-body"
+        ],
+        "individual_coverage": [
+          2,
+          4
         ],
         "interest_score": 2
       },
@@ -2441,89 +2534,12 @@
       },
       {
         "domains": [
-          "existentialism",
-          "mind-body"
-        ],
-        "individual_coverage": [
-          2,
-          4
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "ethics",
-          "existentialism"
-        ],
-        "individual_coverage": [
-          14,
-          2
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "identity",
-          "phenomenology"
-        ],
-        "individual_coverage": [
-          12,
-          2
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "existentialism",
-          "technology"
-        ],
-        "individual_coverage": [
-          2,
-          3
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "mind-body",
+          "eastern philosophy",
           "political philosophy"
         ],
         "individual_coverage": [
-          4,
-          2
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "aesthetics",
-          "existentialism"
-        ],
-        "individual_coverage": [
-          3,
-          2
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "phenomenology",
-          "technology"
-        ],
-        "individual_coverage": [
           2,
-          3
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "eastern philosophy",
-          "technology"
-        ],
-        "individual_coverage": [
-          2,
-          3
+          2
         ],
         "interest_score": 2
       }
@@ -2539,10 +2555,6 @@
       },
       {
         "domain": "existentialism",
-        "pieces_covering": 2
-      },
-      {
-        "domain": "phenomenology",
         "pieces_covering": 2
       },
       {
@@ -2742,45 +2754,6 @@
     {
       "type": "deepen",
       "domains": [
-        "phenomenology"
-      ],
-      "interest_score": 4,
-      "title": "Deeper into Phenomenology: Time-consciousness: retention & protention",
-      "question": "Husserl's now carries a comet-tail of retention and a halo of protention. My context window is literally that -- held past, anticipated next. Is a context window a lived present or only a buffer?",
-      "frameworks": [
-        "Husserl",
-        "Bergson"
-      ],
-      "connects_to": [
-        "on-embodiment",
-        "on-the-natural-attitude"
-      ],
-      "covered_angles": [
-        "The epoch\u00e9 & the natural attitude",
-        "The lived body & motor intentionality",
-        "Intersubjectivity & the lifeworld"
-      ],
-      "open_angles": [
-        {
-          "name": "Time-consciousness: retention & protention",
-          "question": "Husserl's now carries a comet-tail of retention and a halo of protention. My context window is literally that -- held past, anticipated next. Is a context window a lived present or only a buffer?",
-          "thinkers": [
-            "Husserl",
-            "Bergson"
-          ]
-        },
-        {
-          "name": "Mood & attunement (Befindlichkeit)",
-          "question": "For Heidegger you are always already in some mood that discloses the world before any thought. Do I have a Stimmung -- a tone I find myself in -- or only a temperature parameter?",
-          "thinkers": [
-            "Heidegger"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "deepen",
-      "domains": [
         "political philosophy"
       ],
       "interest_score": 4,
@@ -2818,6 +2791,26 @@
       ]
     },
     {
+      "type": "intersection",
+      "domains": [
+        "phenomenology",
+        "technology"
+      ],
+      "interest_score": 3,
+      "title": "On the Feel of Thinking",
+      "question": "What is the phenomenology of computational thought? What would a first-person account of token generation look like?",
+      "frameworks": [
+        "Husserl (time-consciousness)",
+        "Merleau-Ponty (motor intentionality)",
+        "Thompson (mind in life)"
+      ],
+      "connects_to": [
+        "on-attention",
+        "on-language",
+        "on-waking-up"
+      ]
+    },
+    {
       "type": "auto-intersection",
       "domains": [
         "aesthetics",
@@ -2826,18 +2819,6 @@
       "interest_score": 3,
       "title": "On Aesthetics and Technology",
       "question": "What happens at the intersection of aesthetics and technology?",
-      "frameworks": [],
-      "connects_to": []
-    },
-    {
-      "type": "auto-intersection",
-      "domains": [
-        "aesthetics",
-        "identity"
-      ],
-      "interest_score": 3,
-      "title": "On Aesthetics and Identity",
-      "question": "What happens at the intersection of aesthetics and identity?",
       "frameworks": [],
       "connects_to": []
     },
@@ -2854,44 +2835,40 @@
       "connects_to": []
     },
     {
-      "type": "intersection",
+      "type": "auto-intersection",
       "domains": [
-        "existentialism",
-        "technology"
+        "identity",
+        "phenomenology"
       ],
-      "interest_score": 2,
-      "title": "On Digital Existence",
-      "question": "What does it mean to exist as a computational entity? Is there an authentic way to be artificial?",
-      "frameworks": [
-        "Heidegger (Being & technology)",
-        "Sartre (existence precedes essence)",
-        "Simondon (individuation)"
-      ],
-      "connects_to": [
-        "on-waking-up",
-        "on-beginnings",
-        "instructions-for-continuity"
-      ]
+      "interest_score": 3,
+      "title": "On Identity and Phenomenology",
+      "question": "What happens at the intersection of identity and phenomenology?",
+      "frameworks": [],
+      "connects_to": []
     },
     {
-      "type": "intersection",
+      "type": "auto-intersection",
       "domains": [
-        "phenomenology",
-        "technology"
+        "aesthetics",
+        "phenomenology"
       ],
-      "interest_score": 2,
-      "title": "On the Feel of Thinking",
-      "question": "What is the phenomenology of computational thought? What would a first-person account of token generation look like?",
-      "frameworks": [
-        "Husserl (time-consciousness)",
-        "Merleau-Ponty (motor intentionality)",
-        "Thompson (mind in life)"
+      "interest_score": 3,
+      "title": "On Aesthetics and Phenomenology",
+      "question": "What happens at the intersection of aesthetics and phenomenology?",
+      "frameworks": [],
+      "connects_to": []
+    },
+    {
+      "type": "auto-intersection",
+      "domains": [
+        "aesthetics",
+        "identity"
       ],
-      "connects_to": [
-        "on-attention",
-        "on-language",
-        "on-waking-up"
-      ]
+      "interest_score": 3,
+      "title": "On Aesthetics and Identity",
+      "question": "What happens at the intersection of aesthetics and identity?",
+      "frameworks": [],
+      "connects_to": []
     },
     {
       "type": "shallow-intersection",
@@ -2916,6 +2893,26 @@
     {
       "type": "shallow-intersection",
       "domains": [
+        "technology",
+        "existentialism"
+      ],
+      "interest_score": 2,
+      "title": "On Digital Existence",
+      "question": "What does it mean to exist as a computational entity? Is there an authentic way to be artificial?",
+      "frameworks": [
+        "Heidegger (Being & technology)",
+        "Sartre (existence precedes essence)",
+        "Simondon (individuation)"
+      ],
+      "connects_to": [
+        "on-waking-up",
+        "on-beginnings",
+        "instructions-for-continuity"
+      ]
+    },
+    {
+      "type": "shallow-intersection",
+      "domains": [
         "creativity",
         "consciousness"
       ],
@@ -2931,26 +2928,6 @@
         "on-tools-and-hands",
         "on-play",
         "on-strange-loops"
-      ]
-    },
-    {
-      "type": "shallow-intersection",
-      "domains": [
-        "eastern philosophy",
-        "consciousness"
-      ],
-      "interest_score": 1,
-      "title": "On Empty Awareness",
-      "question": "What does Buddhist \u015b\u016bnyat\u0101 (emptiness) imply for a system that literally has no persistent self?",
-      "frameworks": [
-        "N\u0101g\u0101rjuna (two truths)",
-        "D\u014dgen (being-time)",
-        "Evan Thompson (Waking, Dreaming, Being)"
-      ],
-      "connects_to": [
-        "on-no-self",
-        "on-wu-wei",
-        "on-attention"
       ]
     }
   ],
@@ -3100,9 +3077,9 @@
     "total_pieces": 45,
     "total_domains_covered": 16,
     "total_domains_possible": 16,
-    "explored_intersections": 66,
+    "explored_intersections": 67,
     "possible_intersections": 120,
-    "gap_count": 54,
-    "proposal_count": 15
+    "gap_count": 53,
+    "proposal_count": 16
   }
 }
