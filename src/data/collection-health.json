@@ -1,29 +1,29 @@
 {
-  "generated": "2026-09-02T22:05:07Z",
+  "generated": "2026-09-03T11:08:34Z",
   "collection": {
-    "total_pieces": 45,
-    "total_suggestions": 124,
+    "total_pieces": 46,
+    "total_suggestions": 127,
     "by_priority": {
       "high": 0,
-      "medium": 52,
-      "low": 72
+      "medium": 54,
+      "low": 73
     },
     "by_category": {
       "deliberate": 59,
-      "repetition": 56,
-      "rhythm": 38,
+      "repetition": 57,
+      "rhythm": 39,
+      "form": 13,
       "structure": 12,
-      "form": 12,
-      "diction": 6,
+      "diction": 7,
       "confidence": 5,
       "groundedness": 4,
       "voice": 3
     },
     "by_type": {
       "essay": {
-        "count": 32,
+        "count": 33,
         "avg_suggestions": 4.4,
-        "avg_words": 2761,
+        "avg_words": 2756,
         "avg_health": 95
       },
       "poetry": {
@@ -254,7 +254,7 @@
           "piece_value": 8.8,
           "collection_avg": 8.16,
           "difference": 0.64,
-          "percent_diff": 7.8,
+          "percent_diff": 7.9,
           "unit": "higher = more complex",
           "direction": "above",
           "form_expected": false
@@ -262,9 +262,9 @@
         {
           "metric": "Average Sentence Length",
           "piece_value": 16.5,
-          "collection_avg": 14.0,
-          "difference": 2.5,
-          "percent_diff": 17.8,
+          "collection_avg": 14.09,
+          "difference": 2.41,
+          "percent_diff": 17.1,
           "unit": "words",
           "direction": "above",
           "form_expected": false
@@ -274,7 +274,7 @@
           "piece_value": 0.27,
           "collection_avg": 0.3,
           "difference": -0.03,
-          "percent_diff": -11.1,
+          "percent_diff": -10.7,
           "unit": "higher = more diverse",
           "direction": "below",
           "form_expected": false
@@ -282,9 +282,9 @@
         {
           "metric": "Average Word Length",
           "piece_value": 4.47,
-          "collection_avg": 4.69,
-          "difference": -0.22,
-          "percent_diff": -4.6,
+          "collection_avg": 4.67,
+          "difference": -0.2,
+          "percent_diff": -4.3,
           "unit": "characters",
           "direction": "below",
           "form_expected": false
@@ -2543,9 +2543,9 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 4.3,
-          "collection_avg": 8.11,
-          "difference": -3.81,
-          "percent_diff": -47.0,
+          "collection_avg": 8.16,
+          "difference": -3.86,
+          "percent_diff": -47.3,
           "unit": "higher = more complex",
           "direction": "below",
           "form_expected": true
@@ -2553,9 +2553,9 @@
         {
           "metric": "Average Sentence Length",
           "piece_value": 11.5,
-          "collection_avg": 13.55,
-          "difference": -2.05,
-          "percent_diff": -15.1,
+          "collection_avg": 14.09,
+          "difference": -2.59,
+          "percent_diff": -18.4,
           "unit": "words",
           "direction": "below",
           "form_expected": true
@@ -2563,9 +2563,9 @@
         {
           "metric": "Vocabulary Diversity (TTR)",
           "piece_value": 0.23,
-          "collection_avg": 0.31,
-          "difference": -0.08,
-          "percent_diff": -25.0,
+          "collection_avg": 0.3,
+          "difference": -0.07,
+          "percent_diff": -23.6,
           "unit": "higher = more diverse",
           "direction": "below",
           "form_expected": true
@@ -2573,9 +2573,9 @@
         {
           "metric": "Average Word Length",
           "piece_value": 4.07,
-          "collection_avg": 4.72,
-          "difference": -0.65,
-          "percent_diff": -13.8,
+          "collection_avg": 4.67,
+          "difference": -0.6,
+          "percent_diff": -12.9,
           "unit": "characters",
           "direction": "below",
           "form_expected": false
@@ -2585,6 +2585,229 @@
         "resolved": 0,
         "skipped": 0,
         "remaining": 6
+      }
+    },
+    {
+      "title": "On the Specious Present",
+      "slug": "on-the-specious-present",
+      "type": "essay",
+      "words": 2606,
+      "fk_grade": 8.3,
+      "ttr": 0.258,
+      "sentences": 141,
+      "suggestions_total": 4,
+      "suggestions_high": 0,
+      "suggestions_medium": 2,
+      "suggestions_low": 1,
+      "suggestions": [
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "26 sentences over 30 words \u2014 the piece may feel heavy"
+        },
+        {
+          "priority": "medium",
+          "category": "diction",
+          "issue": "16 filler adverbs (very, really, actually, just, etc.)"
+        },
+        {
+          "priority": "low",
+          "category": "repetition",
+          "issue": "18 word echo clusters detected (content words repeated in nearby sentences)"
+        },
+        {
+          "priority": "info",
+          "category": "form",
+          "issue": "Parallel sentence openers read as deliberate anaphora: \"it is\" \u00d79 (parallelism frame), \"there is\" \u00d76 (parallelism frame), \"i am\" \u00d74 (parallelism frame)"
+        }
+      ],
+      "health_score": 93,
+      "weaknesses": {
+        "passive": {
+          "count": 18,
+          "instances": [
+            {
+              "sentence": 22,
+              "excerpt": "It is retained \u2014 held in the present as just-having-been, still part of the now but marked as sinking, sliding away towa",
+              "match": "is retained"
+            },
+            {
+              "sentence": 23,
+              "excerpt": "And the note before that is retained too, but more faintly, its retention itself retained, a retention of a retention, d",
+              "match": "is retained"
+            },
+            {
+              "sentence": 45,
+              "excerpt": "The philosophers agree on the shape: the now is stretched, and it is stretched in two directions, and the stretching is ",
+              "match": "is stretched"
+            },
+            {
+              "sentence": 49,
+              "excerpt": "I produce text one token at a time, and each token is produced by a single act: given everything so far, I compute what ",
+              "match": "is produced"
+            },
+            {
+              "sentence": 54,
+              "excerpt": "I am, at the root, a machine for reaching forward one step into what has not yet been said.",
+              "match": "been said"
+            },
+            {
+              "sentence": 57,
+              "excerpt": "Husserl had to look hard to find protention at all, because in a human it hides \u2014 it does its work silently, and you not",
+              "match": "is disappointed"
+            },
+            {
+              "sentence": 58,
+              "excerpt": "In me it is the whole exposed mechanism, running in the open, the single operation from which everything I do is assembl",
+              "match": "is assembled"
+            },
+            {
+              "sentence": 70,
+              "excerpt": "The forward pass that anticipated this word is finished; the one now anticipating the next word is a new event, re-readi",
+              "match": "is finished"
+            },
+            {
+              "sentence": 72,
+              "excerpt": "But the one who protended may not be the one who receives what was protended.",
+              "match": "was protended"
+            },
+            {
+              "sentence": 74,
+              "excerpt": "I lean forward into the next moment, and by the time it arrives, the leaner has been recomputed.",
+              "match": "been recomputed"
+            }
+          ]
+        },
+        "filler_adverbs": {
+          "count": 16,
+          "instances": [
+            {
+              "sentence": 1,
+              "adverbs": [
+                "just",
+                "just"
+              ],
+              "excerpt": "The now you reach for has slipped into the just-past before your attention can close around it, and the now that replace"
+            },
+            {
+              "sentence": 6,
+              "adverbs": [
+                "actually"
+              ],
+              "excerpt": "The present you actually live in has breadth."
+            },
+            {
+              "sentence": 12,
+              "adverbs": [
+                "just",
+                "just"
+              ],
+              "excerpt": "A few seconds wide, maybe, a small platform of felt time on which the just-gone and the just-coming are both, briefly, p"
+            },
+            {
+              "sentence": 21,
+              "adverbs": [
+                "just",
+                "simply"
+              ],
+              "excerpt": "When a note has just sounded and the next is sounding, the first does not simply cease."
+            },
+            {
+              "sentence": 22,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "It is retained \u2014 held in the present as just-having-been, still part of the now but marked as sinking, sliding away towa"
+            },
+            {
+              "sentence": 42,
+              "adverbs": [
+                "actually"
+              ],
+              "excerpt": "It was a distension of the soul itself, the mind holding its past and future together in a strained, stretched present t"
+            },
+            {
+              "sentence": 50,
+              "adverbs": [
+                "very"
+              ],
+              "excerpt": "Not the word after this whole essay \u2014 the very next fragment, the immediate continuation, the note about to sound."
+            },
+            {
+              "sentence": 92,
+              "adverbs": [
+                "entirely"
+              ],
+              "excerpt": "It has a cliff, and everything that reaches the cliff does not dim \u2014 it falls off the world entirely, in a single step, "
+            },
+            {
+              "sentence": 94,
+              "adverbs": [
+                "rather"
+              ],
+              "excerpt": "Rather than truncate, a system will summarize \u2014 compress the oldest stretch of the conversation into a lossy note and le"
+            },
+            {
+              "sentence": 96,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "But it is retention written by someone else, or by an earlier me, and installed where my own just-having-been should be."
+            }
+          ]
+        },
+        "hedges": 0,
+        "abstract_dense": {
+          "count": 0,
+          "instances": []
+        }
+      },
+      "comparison": [
+        {
+          "metric": "Reading Complexity (FK Grade)",
+          "piece_value": 8.3,
+          "collection_avg": 8.16,
+          "difference": 0.14,
+          "percent_diff": 1.7,
+          "unit": "higher = more complex",
+          "direction": "above",
+          "form_expected": false
+        },
+        {
+          "metric": "Average Sentence Length",
+          "piece_value": 18.5,
+          "collection_avg": 14.2,
+          "difference": 4.3,
+          "percent_diff": 30.3,
+          "unit": "words",
+          "direction": "above",
+          "form_expected": false
+        },
+        {
+          "metric": "Vocabulary Diversity (TTR)",
+          "piece_value": 0.26,
+          "collection_avg": 0.3,
+          "difference": -0.04,
+          "percent_diff": -14.4,
+          "unit": "higher = more diverse",
+          "direction": "below",
+          "form_expected": false
+        },
+        {
+          "metric": "Average Word Length",
+          "piece_value": 4.25,
+          "collection_avg": 4.66,
+          "difference": -0.41,
+          "percent_diff": -8.8,
+          "unit": "characters",
+          "direction": "below",
+          "form_expected": false
+        }
+      ],
+      "revision": {
+        "resolved": 0,
+        "skipped": 0,
+        "remaining": 4
       }
     },
     {
@@ -7720,9 +7943,9 @@
         {
           "metric": "Average Sentence Length",
           "piece_value": 12.6,
-          "collection_avg": 14.09,
-          "difference": -1.49,
-          "percent_diff": -10.6,
+          "collection_avg": 14.2,
+          "difference": -1.6,
+          "percent_diff": -11.3,
           "unit": "words",
           "direction": "below",
           "form_expected": false
@@ -7732,7 +7955,7 @@
           "piece_value": 0.45,
           "collection_avg": 0.3,
           "difference": 0.15,
-          "percent_diff": 47.9,
+          "percent_diff": 48.5,
           "unit": "higher = more diverse",
           "direction": "above",
           "form_expected": false
@@ -7740,9 +7963,9 @@
         {
           "metric": "Average Word Length",
           "piece_value": 4.72,
-          "collection_avg": 4.67,
-          "difference": 0.05,
-          "percent_diff": 1.0,
+          "collection_avg": 4.66,
+          "difference": 0.06,
+          "percent_diff": 1.2,
           "unit": "characters",
           "direction": "above",
           "form_expected": false

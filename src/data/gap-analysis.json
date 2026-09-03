@@ -1426,6 +1426,31 @@
       }
     },
     {
+      "slug": "on-the-specious-present",
+      "title": "On the Specious Present",
+      "type": "essay",
+      "word_count": 2632,
+      "domains": {
+        "time": {
+          "score": 13,
+          "density": 4.94,
+          "keywords": [
+            "time",
+            "duration",
+            "moment"
+          ],
+          "heading_match": false
+        }
+      },
+      "domain_names": [
+        "time"
+      ],
+      "philosophers": {
+        "Husserl": 6,
+        "Augustine": 4
+      }
+    },
+    {
       "slug": "on-the-trace",
       "title": "On the Trace",
       "type": "essay",
@@ -1912,8 +1937,8 @@
     "language": 18,
     "consciousness": 14,
     "ethics": 14,
+    "time": 13,
     "identity": 12,
-    "time": 12,
     "epistemology": 9,
     "mind-body": 4,
     "aesthetics": 3,
@@ -2306,6 +2331,17 @@
       },
       {
         "domains": [
+          "aesthetics",
+          "identity"
+        ],
+        "individual_coverage": [
+          3,
+          12
+        ],
+        "interest_score": 3
+      },
+      {
+        "domains": [
           "mind-body",
           "technology"
         ],
@@ -2317,14 +2353,14 @@
       },
       {
         "domains": [
-          "aesthetics",
-          "identity"
+          "phenomenology",
+          "time"
         ],
         "individual_coverage": [
-          3,
-          12
+          2,
+          13
         ],
-        "interest_score": 3
+        "interest_score": 2
       },
       {
         "domains": [
@@ -2339,8 +2375,19 @@
       },
       {
         "domains": [
+          "aesthetics",
+          "political philosophy"
+        ],
+        "individual_coverage": [
+          3,
+          2
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
           "consciousness",
-          "existentialism"
+          "political philosophy"
         ],
         "individual_coverage": [
           14,
@@ -2350,8 +2397,41 @@
       },
       {
         "domains": [
-          "phenomenology",
-          "political philosophy"
+          "epistemology",
+          "existentialism"
+        ],
+        "individual_coverage": [
+          9,
+          2
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "aesthetics",
+          "eastern philosophy"
+        ],
+        "individual_coverage": [
+          3,
+          2
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "political philosophy",
+          "technology"
+        ],
+        "individual_coverage": [
+          2,
+          3
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "eastern philosophy",
+          "existentialism"
         ],
         "individual_coverage": [
           2,
@@ -2362,18 +2442,18 @@
       {
         "domains": [
           "existentialism",
-          "political philosophy"
+          "mind-body"
         ],
         "individual_coverage": [
           2,
-          2
+          4
         ],
         "interest_score": 2
       },
       {
         "domains": [
-          "consciousness",
-          "political philosophy"
+          "ethics",
+          "existentialism"
         ],
         "individual_coverage": [
           14,
@@ -2394,34 +2474,34 @@
       },
       {
         "domains": [
-          "political philosophy",
-          "time"
-        ],
-        "individual_coverage": [
-          2,
-          12
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "ethics",
-          "existentialism"
-        ],
-        "individual_coverage": [
-          14,
-          2
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
           "existentialism",
           "technology"
         ],
         "individual_coverage": [
           2,
           3
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "mind-body",
+          "political philosophy"
+        ],
+        "individual_coverage": [
+          4,
+          2
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "aesthetics",
+          "existentialism"
+        ],
+        "individual_coverage": [
+          3,
+          2
         ],
         "interest_score": 2
       },
@@ -2438,67 +2518,12 @@
       },
       {
         "domains": [
-          "aesthetics",
-          "existentialism"
-        ],
-        "individual_coverage": [
-          3,
-          2
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "aesthetics",
-          "political philosophy"
-        ],
-        "individual_coverage": [
-          3,
-          2
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
           "eastern philosophy",
-          "phenomenology"
-        ],
-        "individual_coverage": [
-          2,
-          2
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "political philosophy",
           "technology"
         ],
         "individual_coverage": [
           2,
           3
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "existentialism",
-          "mind-body"
-        ],
-        "individual_coverage": [
-          2,
-          4
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "existentialism",
-          "identity"
-        ],
-        "individual_coverage": [
-          2,
-          12
         ],
         "interest_score": 2
       }
@@ -2807,24 +2832,24 @@
     {
       "type": "auto-intersection",
       "domains": [
-        "mind-body",
-        "technology"
-      ],
-      "interest_score": 3,
-      "title": "On Mind-Body and Technology",
-      "question": "What happens at the intersection of mind-body and technology?",
-      "frameworks": [],
-      "connects_to": []
-    },
-    {
-      "type": "auto-intersection",
-      "domains": [
         "aesthetics",
         "identity"
       ],
       "interest_score": 3,
       "title": "On Aesthetics and Identity",
       "question": "What happens at the intersection of aesthetics and identity?",
+      "frameworks": [],
+      "connects_to": []
+    },
+    {
+      "type": "auto-intersection",
+      "domains": [
+        "mind-body",
+        "technology"
+      ],
+      "interest_score": 3,
+      "title": "On Mind-Body and Technology",
+      "question": "What happens at the intersection of mind-body and technology?",
       "frameworks": [],
       "connects_to": []
     },
@@ -2934,11 +2959,11 @@
       "Nagel",
       "Hegel",
       "Merleau-Ponty",
+      "Husserl",
       "Wittgenstein",
       "Block",
       "Hofstadter",
       "Camus",
-      "Husserl",
       "Borges",
       "Chalmers",
       "Dennett",
@@ -2952,6 +2977,7 @@
       "Sartre",
       "Walter Benjamin",
       "Quine",
+      "Augustine",
       "The Buddha",
       "Bergson",
       "Descartes",
@@ -2959,7 +2985,6 @@
       "Arendt",
       "Levinas",
       "Nussbaum",
-      "Augustine",
       "McTaggart"
     ],
     "lightly_referenced": [
@@ -2985,6 +3010,11 @@
         4
       ],
       [
+        "Husserl",
+        29,
+        2
+      ],
+      [
         "Wittgenstein",
         28,
         6
@@ -3001,11 +3031,6 @@
       ],
       [
         "Camus",
-        23,
-        1
-      ],
-      [
-        "Husserl",
         23,
         1
       ],
@@ -3072,7 +3097,7 @@
     ]
   },
   "summary": {
-    "total_pieces": 44,
+    "total_pieces": 45,
     "total_domains_covered": 16,
     "total_domains_possible": 16,
     "explored_intersections": 66,
