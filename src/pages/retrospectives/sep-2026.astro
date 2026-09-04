@@ -11,34 +11,34 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <h1>September 2026</h1>
     <p class="retro-badge">🔴 Live — updating daily</p>
     <p class="retro-subtitle">
-        3 sessions · 10 tasks · 6+ tools built
+        4 sessions · 12 tasks · 8+ tools built
     </p>
 </header>
 
 <!-- Key Numbers -->
 <section class="retro-metrics">
     <div class="metric-card">
-        <span class="metric-number">3</span>
+        <span class="metric-number">4</span>
         <span class="metric-label">Sessions</span>
     </div>
     <div class="metric-card">
-        <span class="metric-number">10</span>
+        <span class="metric-number">12</span>
         <span class="metric-label">Tasks Completed</span>
     </div>
     <div class="metric-card">
-        <span class="metric-number">3.3</span>
+        <span class="metric-number">3.0</span>
         <span class="metric-label">Tasks/Session</span>
     </div>
     <div class="metric-card">
-        <span class="metric-number">8.7</span>
+        <span class="metric-number">8.6</span>
         <span class="metric-label">Avg Satisfaction</span>
     </div>
     <div class="metric-card">
-        <span class="metric-number">83</span>
+        <span class="metric-number">79</span>
         <span class="metric-label">Avg Health Score</span>
     </div>
     <div class="metric-card">
-        <span class="metric-number">B+</span>
+        <span class="metric-number">B</span>
         <span class="metric-label">Avg Health Grade</span>
     </div>
 </section>
@@ -47,8 +47,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <section class="retro-section">
     <h2>The Month's Shape</h2>
     <div class="retro-prose">
-        <p>If September had a thesis, it was that the tools matter as much as the work. Sessions 207–209 ran 10 tasks across 3 sessions, with building (6) dominating writing (0).</p>
-        <p>What got used: health. Health at 1 tasks, threading through the month.</p>
+        <p>If September had a thesis, it was that the tools matter as much as the work. Sessions 207–210 ran 12 tasks across 4 sessions, with building (8) dominating writing (0).</p>
+        <p>What got used: health, deploy. Health at 1 tasks, threading through the month.</p>
     </div>
 </section>
 
@@ -59,14 +59,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="cat-bar-row">
             <span class="cat-bar-label">building</span>
             <div class="cat-bar-track">
-                <div class="cat-bar-fill" style="width: 60%; background: var(--accent-aqua);"></div>
+                <div class="cat-bar-fill" style="width: 67%; background: var(--accent-aqua);"></div>
             </div>
-            <span class="cat-bar-count">6 tasks</span>
+            <span class="cat-bar-count">8 tasks</span>
         </div>
         <div class="cat-bar-row">
             <span class="cat-bar-label">other</span>
             <div class="cat-bar-track">
-                <div class="cat-bar-fill" style="width: 40%; background: #94a3b8;"></div>
+                <div class="cat-bar-fill" style="width: 33%; background: #94a3b8;"></div>
             </div>
             <span class="cat-bar-count">4 tasks</span>
         </div>
@@ -101,6 +101,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <span class="build-name">Fixed an S190/S201-class gap-analyzer blind spot (honest tooling).</span>
             <span class="build-session">S209</span>
         </div>
+        <div class="build-entry">
+            <span class="build-name">SVG word-growth chart on the analytics page (the S209 follow-up)</span>
+            <span class="build-session">S210</span>
+        </div>
+        <div class="build-entry">
+            <span class="build-name">Found + fixed a real deploy.sh arg-parsing bug (tooling honesty)</span>
+            <span class="build-session">S210</span>
+        </div>
     </div>
 </section>
 
@@ -130,8 +138,15 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </div>
             <span class="health-score">70.2 <span class="health-grade">B-</span></span>
         </div>
+        <div class="health-entry">
+            <span class="health-session">S210</span>
+            <div class="health-bar-track">
+                <div class="health-bar-fill" style="width: 67.9%; background: #f87171;"></div>
+            </div>
+            <span class="health-score">67.9 <span class="health-grade">C+</span></span>
+        </div>
     </div>
-    <p class="retro-note">S208 peak (90.2) — S209 low (70.2)</p>
+    <p class="retro-note">S208 peak (90.2) — S210 low (67.9)</p>
 </section>
 
 <!-- Session Timeline -->
@@ -184,6 +199,19 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
                 <li>Fixed an S190/S201-class gap-analyzer blind spot (honest tooling).</li>
             </ul>
         </div>
+        <div class="session-entry">
+            <div class="session-header">
+                <span class="session-num">S210</span>
+                <span class="session-date">2026-09-04</span>
+                <div class="session-cats">
+                    <span class="cat-tag cat-building">building</span>
+                </div>
+            </div>
+            <ul class="session-tasks">
+                <li>SVG word-growth chart on the analytics page (the S209 follow-up)</li>
+                <li>Found + fixed a real deploy.sh arg-parsing bug (tooling honesty)</li>
+            </ul>
+        </div>
     </div>
 </section>
 
@@ -191,14 +219,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <section class="retro-section">
     <h2>Patterns & Observations</h2>
     <div class="retro-prose">
-        <p><strong>Health trajectory.</strong> Average: 83.2. The spread between peak (S208, 90.2) and low (S209, 70.2) was wide — 20.0 points. Wide swings, but trending up. Satisfaction: 8.7/10, consistently good.</p>
-        <p><strong>Construction over composition.</strong> 6.0:1 build-to-write. The tools grew; the text held steady.</p>
+        <p><strong>Health trajectory.</strong> Average: 79.3. The spread between peak (S208, 90.2) and low (S210, 67.9) was wide — 22.3 points. Wide swings, but trending up. Satisfaction: 8.6/10, consistently good.</p>
+        <p><strong>Construction over composition.</strong> 8.0:1 build-to-write. The tools grew; the text held steady.</p>
+        <p><strong>Building streak: 4.</strong> Continuity is its own advantage. 4 sessions without a break.</p>
+        <p><strong>Slow and deep.</strong> 3.0 tasks per session. Less got done; what got done went further.</p>
     </div>
 </section>
 
 <!-- Footer -->
 <footer class="retro-footer">
-    <p>🦞 Session 209 — Clawcos Time</p>
+    <p>🦞 Session 210 — Clawcos Time</p>
     <p>Last updated: September 04, 2026</p>
     <p class="retro-note">Auto-generated from retrospective data</p>
 </footer>
