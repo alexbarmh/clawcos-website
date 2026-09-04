@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import wordGrowth from '../data/word-growth.json';
 const base = import.meta.env.BASE_URL;
 ---
 
@@ -102,6 +103,13 @@ const base = import.meta.env.BASE_URL;
       </div>
     </div>
     <div id="type-bars" class="type-bars"></div>
+
+    <h3 class="subsection-title">Collection Growth</h3>
+    <p class="section-desc">Total words across the writing collection over time — from the first snapshot to now.</p>
+    <div class="chart-container">
+      <svg id="word-growth-chart" width="100%" height="160" viewBox="0 0 700 160"></svg>
+    </div>
+    <p class="growth-caption" id="word-growth-caption"></p>
   </section>
 
   <!-- Projections -->
@@ -160,7 +168,7 @@ const base = import.meta.env.BASE_URL;
 
 </BaseLayout>
 
-<script define:vars={{ }}>
+<script define:vars={{ wordGrowth }}>
 // ─── Embedded Data (patched by update-website.py) ────────────────────
 const DATA = {
   productivity: {
@@ -265,6 +273,66 @@ function renderRollingChart() {
     <polyline fill="none" stroke="var(--accent-aqua)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" points="${avgPoints}"/>
     <text x="${W - P}" y="${P - 8}" fill="var(--text-dim)" font-size="9" text-anchor="end" font-family="var(--font-sans)">— rolling avg &nbsp; — raw tasks</text>
   `;
+}
+
+function renderWordGrowth() {
+  const svg = document.getElementById('word-growth-chart');
+  if (!svg) return;
+  const gd = (typeof wordGrowth !== 'undefined') ? wordGrowth : null;
+  const pts = (gd && gd.points) || [];
+  if (pts.length < 2) { svg.style.display = 'none'; return; }
+
+  const W = 700, H = 160, PL = 46, PR = 12, PT = 14, PB = 22;
+  const vals = pts.map(p => p.words);
+  const min = 0;
+  const max = Math.max(...vals);
+  const range = max - min || 1;
+  const n = pts.length;
+
+  function x(i) { return PL + (i / (n - 1)) * (W - PL - PR); }
+  function y(v) { return PT + (H - PT - PB) - ((v - min) / range) * (H - PT - PB); }
+
+  const linePts = pts.map((p, i) => `${x(i).toFixed(1)},${y(p.words).toFixed(1)}`).join(' ');
+  // Closed area path under the line for the gradient fill.
+  const area = `M ${x(0).toFixed(1)},${y(vals[0]).toFixed(1)} `
+    + pts.map((p, i) => `L ${x(i).toFixed(1)},${y(p.words).toFixed(1)}`).join(' ')
+    + ` L ${x(n - 1).toFixed(1)},${y(0).toFixed(1)} L ${x(0).toFixed(1)},${y(0).toFixed(1)} Z`;
+
+  // Y-axis gridlines / labels (0, mid, max).
+  const yTicks = [0, max / 2, max].map(v => {
+    const yy = y(v);
+    const lbl = v >= 1000 ? (v / 1000).toFixed(0) + 'k' : v.toFixed(0);
+    return `<line x1="${PL}" y1="${yy.toFixed(1)}" x2="${W - PR}" y2="${yy.toFixed(1)}" stroke="var(--text-dim)" stroke-width="1" stroke-opacity="0.12"/>`
+      + `<text x="${PL - 6}" y="${(yy + 3).toFixed(1)}" fill="var(--text-dim)" font-size="9" text-anchor="end" font-family="var(--font-sans)">${lbl}</text>`;
+  }).join('');
+
+  // X-axis endpoint date labels.
+  const fmt = d => { const [Y, M] = d.split('-'); const mo = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][parseInt(M,10)-1]; return `${mo} ${Y.slice(2)}`; };
+  const xLabels = `<text x="${x(0).toFixed(1)}" y="${H - 6}" fill="var(--text-dim)" font-size="9" text-anchor="start" font-family="var(--font-sans)">${fmt(pts[0].date)}</text>`
+    + `<text x="${x(n - 1).toFixed(1)}" y="${H - 6}" fill="var(--text-dim)" font-size="9" text-anchor="end" font-family="var(--font-sans)">${fmt(pts[n-1].date)}</text>`;
+
+  const lastX = x(n - 1), lastY = y(vals[n - 1]);
+  svg.innerHTML = `
+    <defs>
+      <linearGradient id="wg-fill" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="var(--accent-gold)" stop-opacity="0.35"/>
+        <stop offset="100%" stop-color="var(--accent-gold)" stop-opacity="0.02"/>
+      </linearGradient>
+    </defs>
+    ${yTicks}
+    <path d="${area}" fill="url(#wg-fill)" stroke="none"/>
+    <polyline fill="none" stroke="var(--accent-gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" points="${linePts}"/>
+    <circle cx="${lastX.toFixed(1)}" cy="${lastY.toFixed(1)}" r="3.5" fill="var(--accent-gold)"/>
+    ${xLabels}
+  `;
+
+  const cap = document.getElementById('word-growth-caption');
+  if (cap) {
+    const first = gd.first ?? vals[0], latest = gd.latest ?? vals[n - 1];
+    const delta = gd.delta ?? (latest - first);
+    cap.textContent = `${first.toLocaleString()} → ${latest.toLocaleString()} words `
+      + `(${delta >= 0 ? '+' : ''}${delta.toLocaleString()} across ${n} snapshots)`;
+  }
 }
 
 function renderCatEvolution() {
@@ -410,6 +478,7 @@ function renderAll() {
   
   renderWeekdayGrid();
   renderRollingChart();
+  renderWordGrowth();
   renderCatEvolution();
   renderProjections();
   renderTypeBars();
@@ -576,6 +645,12 @@ document.addEventListener('DOMContentLoaded', renderAll);
   width: 100%;
   overflow-x: auto;
   margin: var(--space-md) 0;
+}
+.growth-caption {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-top: calc(-1 * var(--space-xs));
 }
 
 /* Category Evolution Bars */

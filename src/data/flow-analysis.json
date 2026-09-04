@@ -1,13 +1,13 @@
 {
-  "generated": "2026-09-03T22:06:11.093851Z",
-  "total_sessions": 208,
+  "generated": "2026-09-04T11:07:55.112986Z",
+  "total_sessions": 209,
   "summary": {
-    "mean": 73.0,
+    "mean": 72.9,
     "median": 70.0,
     "std": 15.5,
     "min": 55.0,
     "max": 100,
-    "floor_count": 61,
+    "floor_count": 62,
     "ceiling_count": 31
   },
   "by_category": {
@@ -26,11 +26,11 @@
       "floor_pct": 30.4
     },
     "writing": {
-      "mean": 79.5,
-      "n": 17,
+      "mean": 78.1,
+      "n": 18,
       "min": 55.0,
       "max": 100,
-      "floor_pct": 35.3
+      "floor_pct": 38.9
     },
     "revision": {
       "mean": 65.0,
@@ -46,8 +46,8 @@
       "n": 2
     },
     "2": {
-      "mean": 76.2,
-      "n": 9
+      "mean": 74.1,
+      "n": 10
     },
     "3": {
       "mean": 70.3,
@@ -75,15 +75,15 @@
     }
   },
   "correlations": {
-    "productivity": 0.113,
-    "ambition": -0.243,
-    "depth": 0.194,
+    "productivity": 0.125,
+    "ambition": -0.235,
+    "depth": 0.191,
     "growth": 0.058,
-    "variety": 0.054,
-    "consistency": 0.152,
-    "satisfaction": 0.1,
-    "raw_satisfaction": 0.038,
-    "task_count": 0.219
+    "variety": 0.051,
+    "consistency": 0.161,
+    "satisfaction": 0.095,
+    "raw_satisfaction": 0.034,
+    "task_count": 0.226
   },
   "phases": [
     {
@@ -701,27 +701,34 @@
       "end": 208,
       "start_flow": 69.2,
       "end_flow": 73.0
+    },
+    {
+      "phase": "falling",
+      "start": 209,
+      "end": 209,
+      "start_flow": 71.0,
+      "end_flow": 71.0
     }
   ],
   "floor_analysis": {
-    "count": 61,
-    "pct": 29.3,
+    "count": 62,
+    "pct": 29.7,
     "by_category": {
       "building": 24,
       "mixed": 29,
       "revision": 2,
-      "writing": 6
+      "writing": 7
     },
     "avg_task_count": 3.8,
     "avg_satisfaction": 8.3
   },
   "v2_comparison": {
-    "correlation": 0.478,
-    "avg_delta": -10.8,
+    "correlation": 0.48,
+    "avg_delta": -10.7,
     "max_increase": 15.0,
     "max_decrease": -42.9,
-    "v2_mean": 62.3,
-    "v1_mean": 73.0
+    "v2_mean": 62.2,
+    "v1_mean": 72.9
   },
   "sessions": [
     {
@@ -1010,8 +1017,8 @@
       "satisfaction": 8,
       "signal_count": 6,
       "signal_types": [
-        "major_feature",
-        "title_overlap"
+        "title_overlap",
+        "major_feature"
       ],
       "tasks": [
         "Built Writing Style Analyzer (major)",
@@ -1039,9 +1046,9 @@
       "satisfaction": 8,
       "signal_count": 6,
       "signal_types": [
-        "major_feature",
         "pipeline_word",
-        "title_overlap"
+        "title_overlap",
+        "major_feature"
       ],
       "tasks": [
         "Built & Deployed GCP VM Health Monitor (major)",
@@ -1070,9 +1077,9 @@
       "satisfaction": 8,
       "signal_count": 9,
       "signal_types": [
-        "major_feature",
         "pipeline_word",
-        "title_overlap"
+        "title_overlap",
+        "major_feature"
       ],
       "tasks": [
         "Built Weekly Review & Session Planner (major)",
@@ -1100,9 +1107,9 @@
       "satisfaction": 9,
       "signal_count": 6,
       "signal_types": [
-        "major_feature",
         "pipeline_word",
-        "title_overlap"
+        "title_overlap",
+        "major_feature"
       ],
       "tasks": [
         "Revised \"On Waking Up\"",
@@ -1368,8 +1375,8 @@
       "satisfaction": 8,
       "signal_count": 4,
       "signal_types": [
-        "major_feature",
-        "title_overlap"
+        "title_overlap",
+        "major_feature"
       ],
       "tasks": [
         "Built the Writing Workshop \ud83d\udd27 (major",
@@ -1987,9 +1994,9 @@
       "satisfaction": 9.0,
       "signal_count": 6,
       "signal_types": [
-        "major_feature",
         "pipeline_word",
-        "title_overlap"
+        "title_overlap",
+        "major_feature"
       ],
       "tasks": [
         "Revised \"On Attention\"",
@@ -2018,8 +2025,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "major_feature",
-        "pipeline_word"
+        "pipeline_word",
+        "major_feature"
       ],
       "tasks": [
         "OG Image Caching (Major Optimization)",
@@ -2046,8 +2053,8 @@
       "satisfaction": 9.0,
       "signal_count": 2,
       "signal_types": [
-        "major_feature",
-        "pipeline_word"
+        "pipeline_word",
+        "major_feature"
       ],
       "tasks": [
         "Parallel Pre-Build Orchestrator (Major Architecture Change)",
@@ -3420,8 +3427,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "major_feature",
-        "pipeline_word"
+        "pipeline_word",
+        "major_feature"
       ],
       "tasks": [
         "Frontmatter Auto-Injection System",
@@ -3538,9 +3545,9 @@
       "satisfaction": 9.0,
       "signal_count": 7,
       "signal_types": [
-        "major_feature",
         "pipeline_word",
-        "title_overlap"
+        "title_overlap",
+        "major_feature"
       ],
       "tasks": [
         "On Translation Revision \u2014 Targeted Hedge/Filler Removal",
@@ -3628,9 +3635,9 @@
       "satisfaction": 9.0,
       "signal_count": 7,
       "signal_types": [
-        "major_feature",
         "pipeline_word",
-        "title_overlap"
+        "title_overlap",
+        "major_feature"
       ],
       "tasks": [
         "Piece Journeys Page \u2014 New Website Visualization",
@@ -3659,9 +3666,9 @@
       "satisfaction": 8.0,
       "signal_count": 9,
       "signal_types": [
-        "major_feature",
         "pipeline_word",
-        "title_overlap"
+        "title_overlap",
+        "major_feature"
       ],
       "tasks": [
         "On Tools and Hands Revision \u2014 Targeted Closing Edits",
@@ -3689,9 +3696,9 @@
       "satisfaction": 9.0,
       "signal_count": 5,
       "signal_types": [
-        "major_feature",
         "pipeline_word",
-        "title_overlap"
+        "title_overlap",
+        "major_feature"
       ],
       "tasks": [
         "On Wu Wei Revision \u2014 Opener Repetition + Heavy Sentences",
@@ -3719,8 +3726,8 @@
       "satisfaction": 9.0,
       "signal_count": 2,
       "signal_types": [
-        "major_feature",
-        "pipeline_word"
+        "pipeline_word",
+        "major_feature"
       ],
       "tasks": [
         "On Measurement \u2014 New Essay",
@@ -4130,8 +4137,8 @@
       "satisfaction": 8.0,
       "signal_count": 2,
       "signal_types": [
-        "major_feature",
-        "pipeline_word"
+        "pipeline_word",
+        "major_feature"
       ],
       "tasks": [
         "On the Good \u2014 Revision Pass",
@@ -6218,19 +6225,41 @@
         "writing-compare \u2192 RETIRE (160d idle)",
         "site-health-skill \u2192 ACCEPT AS STANDALONE (117d idle)"
       ]
+    },
+    {
+      "session": 209,
+      "date": "2026-09-03",
+      "category": "writing",
+      "task_count": 2,
+      "flow_v1": 55.0,
+      "flow_v2": 57.5,
+      "v2_detail": {
+        "adj_overlap": 0.0,
+        "coherence": 0.6,
+        "pipeline": 0.0,
+        "learning_overlap": 0.0,
+        "raw": 0.15
+      },
+      "satisfaction": 9.0,
+      "signal_count": 0,
+      "signal_types": [],
+      "tasks": [
+        "Reading paths \u2192 100% restored.",
+        "Fixed an S190/S201-class gap-analyzer blind spot (honest too"
+      ]
     }
   ],
   "insights": [
     {
       "type": "category_effect",
-      "title": "Flow varies by category (revision=65.0 vs writing=79.5)",
-      "detail": "Gap of 14 points. Mixed sessions score lower because tasks from different domains share fewer title words.",
+      "title": "Flow varies by category (revision=65.0 vs writing=78.1)",
+      "detail": "Gap of 13 points. Mixed sessions score lower because tasks from different domains share fewer title words.",
       "severity": "medium"
     },
     {
       "type": "distribution",
-      "title": "29.3% of sessions hit the flow floor (\u226455)",
-      "detail": "61 sessions. Dominated by: mixed (29)",
+      "title": "29.7% of sessions hit the flow floor (\u226455)",
+      "detail": "62 sessions. Dominated by: mixed (29)",
       "severity": "medium"
     },
     {
@@ -6241,8 +6270,8 @@
     },
     {
       "type": "metric_evolution",
-      "title": "V2 flow metric shifts scores by -10.8 on average",
-      "detail": "V1 mean: 73.0, V2 mean: 62.3. Correlation: r=0.48. V2 adds category coherence and learning overlap.",
+      "title": "V2 flow metric shifts scores by -10.7 on average",
+      "detail": "V1 mean: 72.9, V2 mean: 62.2. Correlation: r=0.48. V2 adds category coherence and learning overlap.",
       "severity": "info"
     }
   ]
