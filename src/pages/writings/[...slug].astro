@@ -31,7 +31,8 @@ const typeColors: Record<string, string> = {
 const related = (relatedData as Record<string, Array<{slug: string; title: string; strength: number; themes: string[]; philosophers?: string[]; reason?: string}>>)[entry.slug] || [];
 
 // Get journeys this piece belongs to
-const pieceJourneys = (journeyData as Record<string, Array<{id: string; name: string; emoji: string; position: number; total: number}>>)[entry.slug] || [];
+type JourneyStep = {slug: string; title: string; transition?: string};
+const pieceJourneys = (journeyData as Record<string, Array<{id: string; name: string; emoji: string; position: number; total: number; prev: JourneyStep | null; next: JourneyStep | null}>>)[entry.slug] || [];
 
 // Narrator self-claims made in this essay (self-portrait ledger; essays only)
 const selfClaims = (selfClaimsData as Record<string, {title: string; total: number; claims: Array<{claim: string; theme: string; salience: number}>}>)[entry.slug];
@@ -60,14 +61,39 @@ const selfClaims = (selfClaimsData as Record<string, {title: string; total: numb
         <h2 class="journey-callout-heading">Part of {pieceJourneys.length === 1 ? 'a' : ''} Reading {pieceJourneys.length === 1 ? 'Journey' : 'Journeys'}</h2>
         <div class="journey-callout-list">
           {pieceJourneys.map((j) => (
-            <a href={`${base}journey/#${j.id}`} class="journey-callout-card">
-              <span class="jcc-emoji">{j.emoji}</span>
-              <div class="jcc-info">
-                <span class="jcc-name">{j.name}</span>
-                <span class="jcc-position">Step {j.position} of {j.total}</span>
-              </div>
-              <span class="jcc-arrow">→</span>
-            </a>
+            <div class="journey-callout-card">
+              <a href={`${base}journey/#${j.id}`} class="jcc-header">
+                <span class="jcc-emoji">{j.emoji}</span>
+                <div class="jcc-info">
+                  <span class="jcc-name">{j.name}</span>
+                  <span class="jcc-position">Step {j.position} of {j.total}</span>
+                </div>
+                <span class="jcc-arrow">→</span>
+              </a>
+              {(j.prev || j.next) && (
+                <div class="jcc-nav">
+                  {j.prev ? (
+                    <a href={`${base}writings/${j.prev.slug}/`} class="jcc-nav-link jcc-prev">
+                      <span class="jcc-nav-dir">← Previous</span>
+                      <span class="jcc-nav-title">{j.prev.title}</span>
+                    </a>
+                  ) : (
+                    <span class="jcc-nav-link jcc-nav-empty">Start of path</span>
+                  )}
+                  {j.next ? (
+                    <a href={`${base}writings/${j.next.slug}/`} class="jcc-nav-link jcc-next">
+                      <span class="jcc-nav-dir">Next →</span>
+                      <span class="jcc-nav-title">{j.next.title}</span>
+                    </a>
+                  ) : (
+                    <span class="jcc-nav-link jcc-nav-empty">End of path</span>
+                  )}
+                </div>
+              )}
+              {j.next && j.next.transition && (
+                <p class="jcc-transition">↓ {j.next.transition}</p>
+              )}
+            </div>
           ))}
         </div>
       </section>
@@ -141,19 +167,22 @@ const selfClaims = (selfClaimsData as Record<string, {title: string; total: numb
   }
   .journey-callout-card {
     display: flex;
-    align-items: center;
-    gap: 12px;
+    flex-direction: column;
     padding: 12px 16px;
     background: rgba(184, 156, 255, 0.04);
     border: 1px solid rgba(184, 156, 255, 0.12);
     border-radius: 10px;
-    text-decoration: none;
-    transition: all 0.25s ease;
+    transition: border-color 0.25s ease, background 0.25s ease;
   }
   .journey-callout-card:hover {
-    background: rgba(184, 156, 255, 0.08);
-    border-color: rgba(184, 156, 255, 0.25);
-    transform: translateX(4px);
+    background: rgba(184, 156, 255, 0.07);
+    border-color: rgba(184, 156, 255, 0.22);
+  }
+  .jcc-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
   }
   .jcc-emoji { font-size: 1.4rem; }
   .jcc-info {
@@ -175,7 +204,60 @@ const selfClaims = (selfClaimsData as Record<string, {title: string; total: numb
     font-size: 1rem;
     transition: transform 0.2s;
   }
-  .journey-callout-card:hover .jcc-arrow { transform: translateX(4px); }
+  .jcc-header:hover .jcc-arrow { transform: translateX(4px); }
+
+  /* In-path previous / next navigation */
+  .jcc-nav {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(184, 156, 255, 0.10);
+  }
+  .jcc-nav-link {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+    min-width: 0;
+    padding: 6px 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+  a.jcc-nav-link:hover { background: rgba(184, 156, 255, 0.10); }
+  .jcc-next { text-align: right; }
+  .jcc-nav-dir {
+    font-size: 0.7rem;
+    color: var(--accent, #b89cff);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .jcc-nav-title {
+    font-size: 0.82rem;
+    color: var(--text-secondary, #bbb);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  a.jcc-nav-link:hover .jcc-nav-title { color: var(--text-primary, #e0e0e0); }
+  .jcc-nav-empty {
+    color: var(--text-dim, #555);
+    font-size: 0.72rem;
+    font-style: italic;
+    align-self: center;
+  }
+  .jcc-transition {
+    margin: 8px 2px 0;
+    font-size: 0.78rem;
+    font-style: italic;
+    line-height: 1.45;
+    color: var(--text-dim, #8a8a8a);
+  }
+  @media (max-width: 480px) {
+    .jcc-nav { flex-direction: column; }
+    .jcc-next { text-align: left; }
+  }
 
   /* Related pieces */
   .self-claims {
