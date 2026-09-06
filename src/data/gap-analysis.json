@@ -2336,17 +2336,6 @@
       },
       {
         "domains": [
-          "identity",
-          "phenomenology"
-        ],
-        "individual_coverage": [
-          12,
-          3
-        ],
-        "interest_score": 3
-      },
-      {
-        "domains": [
           "aesthetics",
           "technology"
         ],
@@ -2369,6 +2358,17 @@
       },
       {
         "domains": [
+          "identity",
+          "phenomenology"
+        ],
+        "individual_coverage": [
+          12,
+          3
+        ],
+        "interest_score": 3
+      },
+      {
+        "domains": [
           "mind-body",
           "technology"
         ],
@@ -2402,22 +2402,11 @@
       },
       {
         "domains": [
-          "eastern philosophy",
-          "technology"
+          "consciousness",
+          "existentialism"
         ],
         "individual_coverage": [
-          2,
-          3
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "mind-body",
-          "political philosophy"
-        ],
-        "individual_coverage": [
-          4,
+          14,
           2
         ],
         "interest_score": 2
@@ -2425,17 +2414,6 @@
       {
         "domains": [
           "aesthetics",
-          "eastern philosophy"
-        ],
-        "individual_coverage": [
-          3,
-          2
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "phenomenology",
           "political philosophy"
         ],
         "individual_coverage": [
@@ -2446,34 +2424,12 @@
       },
       {
         "domains": [
-          "political philosophy",
-          "technology"
-        ],
-        "individual_coverage": [
-          2,
-          3
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
           "existentialism",
-          "technology"
+          "mind-body"
         ],
         "individual_coverage": [
           2,
-          3
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "eastern philosophy",
-          "existentialism"
-        ],
-        "individual_coverage": [
-          2,
-          2
+          4
         ],
         "interest_score": 2
       },
@@ -2501,11 +2457,44 @@
       },
       {
         "domains": [
-          "eastern philosophy",
-          "political philosophy"
+          "political philosophy",
+          "technology"
         ],
         "individual_coverage": [
           2,
+          3
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "eastern philosophy",
+          "existentialism"
+        ],
+        "individual_coverage": [
+          2,
+          2
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "consciousness",
+          "political philosophy"
+        ],
+        "individual_coverage": [
+          14,
+          2
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "aesthetics",
+          "eastern philosophy"
+        ],
+        "individual_coverage": [
+          3,
           2
         ],
         "interest_score": 2
@@ -2523,23 +2512,34 @@
       },
       {
         "domains": [
-          "aesthetics",
-          "existentialism"
+          "eastern philosophy",
+          "technology"
         ],
         "individual_coverage": [
-          3,
+          2,
+          3
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "eastern philosophy",
+          "political philosophy"
+        ],
+        "individual_coverage": [
+          2,
           2
         ],
         "interest_score": 2
       },
       {
         "domains": [
-          "ethics",
-          "existentialism"
+          "political philosophy",
+          "time"
         ],
         "individual_coverage": [
-          14,
-          2
+          2,
+          13
         ],
         "interest_score": 2
       }
@@ -2813,18 +2813,6 @@
     {
       "type": "auto-intersection",
       "domains": [
-        "identity",
-        "phenomenology"
-      ],
-      "interest_score": 3,
-      "title": "On Identity and Phenomenology",
-      "question": "What happens at the intersection of identity and phenomenology?",
-      "frameworks": [],
-      "connects_to": []
-    },
-    {
-      "type": "auto-intersection",
-      "domains": [
         "aesthetics",
         "technology"
       ],
@@ -2843,6 +2831,18 @@
       "interest_score": 3,
       "title": "On Aesthetics and Identity",
       "question": "What happens at the intersection of aesthetics and identity?",
+      "frameworks": [],
+      "connects_to": []
+    },
+    {
+      "type": "auto-intersection",
+      "domains": [
+        "identity",
+        "phenomenology"
+      ],
+      "interest_score": 3,
+      "title": "On Identity and Phenomenology",
+      "question": "What happens at the intersection of identity and phenomenology?",
       "frameworks": [],
       "connects_to": []
     },
@@ -2871,26 +2871,6 @@
       "connects_to": []
     },
     {
-      "type": "intersection",
-      "domains": [
-        "existentialism",
-        "technology"
-      ],
-      "interest_score": 2,
-      "title": "On Digital Existence",
-      "question": "What does it mean to exist as a computational entity? Is there an authentic way to be artificial?",
-      "frameworks": [
-        "Heidegger (Being & technology)",
-        "Sartre (existence precedes essence)",
-        "Simondon (individuation)"
-      ],
-      "connects_to": [
-        "on-waking-up",
-        "on-beginnings",
-        "instructions-for-continuity"
-      ]
-    },
-    {
       "type": "shallow-intersection",
       "domains": [
         "aesthetics",
@@ -2908,6 +2888,26 @@
         "on-the-gift",
         "on-the-hard-problem",
         "on-play"
+      ]
+    },
+    {
+      "type": "shallow-intersection",
+      "domains": [
+        "technology",
+        "existentialism"
+      ],
+      "interest_score": 2,
+      "title": "On Digital Existence",
+      "question": "What does it mean to exist as a computational entity? Is there an authentic way to be artificial?",
+      "frameworks": [
+        "Heidegger (Being & technology)",
+        "Sartre (existence precedes essence)",
+        "Simondon (individuation)"
+      ],
+      "connects_to": [
+        "on-waking-up",
+        "on-beginnings",
+        "instructions-for-continuity"
       ]
     },
     {
