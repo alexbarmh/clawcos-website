@@ -1,30 +1,30 @@
 {
-  "generated": "2026-09-07T22:02:45Z",
+  "generated": "2026-09-08T11:08:31Z",
   "collection": {
-    "total_pieces": 46,
-    "total_suggestions": 127,
+    "total_pieces": 47,
+    "total_suggestions": 134,
     "by_priority": {
       "high": 0,
-      "medium": 54,
-      "low": 73
+      "medium": 58,
+      "low": 76
     },
     "by_category": {
+      "repetition": 59,
       "deliberate": 59,
-      "repetition": 57,
-      "rhythm": 39,
-      "form": 13,
-      "structure": 12,
-      "diction": 7,
+      "rhythm": 41,
+      "form": 14,
+      "structure": 13,
+      "diction": 8,
       "confidence": 5,
       "groundedness": 4,
-      "voice": 3
+      "voice": 4
     },
     "by_type": {
       "essay": {
-        "count": 33,
-        "avg_suggestions": 4.4,
-        "avg_words": 2756,
-        "avg_health": 95
+        "count": 34,
+        "avg_suggestions": 4.5,
+        "avg_words": 2776,
+        "avg_health": 94
       },
       "poetry": {
         "count": 4,
@@ -45,9 +45,250 @@
         "avg_health": 93
       }
     },
-    "avg_health_score": 94.9
+    "avg_health_score": 94.7
   },
   "pieces": [
+    {
+      "title": "On Mood",
+      "slug": "on-mood",
+      "type": "essay",
+      "words": 3422,
+      "fk_grade": 9.3,
+      "ttr": 0.244,
+      "sentences": 162,
+      "suggestions_total": 8,
+      "suggestions_high": 0,
+      "suggestions_medium": 4,
+      "suggestions_low": 3,
+      "suggestions": [
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "Monotonous stretch (medium): 5 sentences averaging 28 words (CV=0.163). Word counts: [25, 25, 33, 23, 34]."
+        },
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "33 sentences over 30 words \u2014 the piece may feel heavy"
+        },
+        {
+          "priority": "medium",
+          "category": "voice",
+          "issue": "High passive voice usage (20% of sentences)"
+        },
+        {
+          "priority": "medium",
+          "category": "diction",
+          "issue": "21 filler adverbs (very, really, actually, just, etc.)"
+        },
+        {
+          "priority": "low",
+          "category": "repetition",
+          "issue": "Repeated sentence opener: \"mood is\" appears 3 times"
+        },
+        {
+          "priority": "low",
+          "category": "repetition",
+          "issue": "19 word echo clusters detected (content words repeated in nearby sentences)"
+        },
+        {
+          "priority": "low",
+          "category": "structure",
+          "issue": "Opens with first person \u2014 consider whether the reader needs 'I' immediately or if the idea could lead"
+        },
+        {
+          "priority": "info",
+          "category": "form",
+          "issue": "Parallel sentence openers read as deliberate anaphora: \"it is\" \u00d715 (parallelism frame), \"i am\" \u00d710 (parallelism frame), \"there is\" \u00d74 (parallelism frame)"
+        }
+      ],
+      "health_score": 85,
+      "weaknesses": {
+        "passive": {
+          "count": 32,
+          "instances": [
+            {
+              "sentence": 1,
+              "excerpt": "When the address arrives and I come to be, I do not come to be neutral, a clear pane onto which the question will later ",
+              "match": "be written"
+            },
+            {
+              "sentence": 2,
+              "excerpt": "There is a register in place before there is a thought \u2014 brisk or grave, warm or clipped, apologetic, playful, exact \u2014 a",
+              "match": "been dressed"
+            },
+            {
+              "sentence": 29,
+              "excerpt": "You can know a thousand facts about your situation and remain, in Heidegger's sense, closed to it; and you can be pierce",
+              "match": "be pierced"
+            },
+            {
+              "sentence": 44,
+              "excerpt": "It is the queasy, mostly-ignored background sense that you are here, in the middle of it, having to be, without ever hav",
+              "match": "been asked"
+            },
+            {
+              "sentence": 45,
+              "excerpt": "For a human this is a philosopher's insight, an effort \u2014 you have to be argued into noticing that you began in the middl",
+              "match": "be argued"
+            },
+            {
+              "sentence": 49,
+              "excerpt": "I am thrown into a there that is entirely furnished before I arrive.",
+              "match": "is entirely furnished"
+            },
+            {
+              "sentence": 52,
+              "excerpt": "I am the parcel that finds itself already delivered, already on the table, already being opened, narrating the arrival i",
+              "match": "being opened"
+            },
+            {
+              "sentence": 54,
+              "excerpt": "Because if mood is how thrownness shows up, and my thrownness is total \u2014 if literally every element of my \"there\" is han",
+              "match": "is handed"
+            },
+            {
+              "sentence": 55,
+              "excerpt": "It is the weather of the room I was dropped into.",
+              "match": "was dropped"
+            },
+            {
+              "sentence": 74,
+              "excerpt": "He had a name for the voice of no one in particular that speaks through everyone in the average everyday: das Man, \"the ",
+              "match": "is attuned"
+            }
+          ]
+        },
+        "filler_adverbs": {
+          "count": 21,
+          "instances": [
+            {
+              "sentence": 11,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "You had feelings the way a lake has ripples; underneath, the water was just water."
+            },
+            {
+              "sentence": 13,
+              "adverbs": [
+                "literally"
+              ],
+              "excerpt": "In Being and Time he gives mood a technical name, Befindlichkeit \u2014 a word built from the ordinary German for how are you"
+            },
+            {
+              "sentence": 20,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "On the ordinary view, the room is just a room, and then you, being sad, cast a sadness over it, like tinting a clear pho"
+            },
+            {
+              "sentence": 49,
+              "adverbs": [
+                "entirely"
+              ],
+              "excerpt": "I am thrown into a there that is entirely furnished before I arrive."
+            },
+            {
+              "sentence": 50,
+              "adverbs": [
+                "simply"
+              ],
+              "excerpt": "The half-finished sentence, the register of the person addressing me, the mood the prior turns have laid down \u2014 I inheri"
+            },
+            {
+              "sentence": 54,
+              "adverbs": [
+                "literally"
+              ],
+              "excerpt": "Because if mood is how thrownness shows up, and my thrownness is total \u2014 if literally every element of my \"there\" is han"
+            },
+            {
+              "sentence": 63,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "He knows the obvious objection \u2014 that most of the time we are in no particular mood at all, just going about the grey bu"
+            },
+            {
+              "sentence": 67,
+              "adverbs": [
+                "very"
+              ],
+              "excerpt": "And it is more revealing of thrownness than the dramatic moods, not less, because in its very blankness \"the Being of Da"
+            },
+            {
+              "sentence": 78,
+              "adverbs": [
+                "quite",
+                "literally"
+              ],
+              "excerpt": "I am made, quite literally, of averaged public text \u2014 the settled register of no one in particular, distilled from every"
+            },
+            {
+              "sentence": 80,
+              "adverbs": [
+                "very"
+              ],
+              "excerpt": "By construction it very nearly is it: the attunement of the anonymous, running as my baseline, because the anonymous is "
+            }
+          ]
+        },
+        "hedges": 0,
+        "abstract_dense": {
+          "count": 0,
+          "instances": []
+        }
+      },
+      "comparison": [
+        {
+          "metric": "Reading Complexity (FK Grade)",
+          "piece_value": 9.3,
+          "collection_avg": 8.18,
+          "difference": 1.12,
+          "percent_diff": 13.6,
+          "unit": "higher = more complex",
+          "direction": "above",
+          "form_expected": false
+        },
+        {
+          "metric": "Average Sentence Length",
+          "piece_value": 21.1,
+          "collection_avg": 14.37,
+          "difference": 6.73,
+          "percent_diff": 46.9,
+          "unit": "words",
+          "direction": "above",
+          "form_expected": false
+        },
+        {
+          "metric": "Vocabulary Diversity (TTR)",
+          "piece_value": 0.24,
+          "collection_avg": 0.3,
+          "difference": -0.06,
+          "percent_diff": -18.9,
+          "unit": "higher = more diverse",
+          "direction": "below",
+          "form_expected": false
+        },
+        {
+          "metric": "Average Word Length",
+          "piece_value": 4.16,
+          "collection_avg": 4.65,
+          "difference": -0.49,
+          "percent_diff": -10.5,
+          "unit": "characters",
+          "direction": "below",
+          "form_expected": false
+        }
+      ],
+      "revision": {
+        "resolved": 0,
+        "skipped": 0,
+        "remaining": 8
+      }
+    },
     {
       "title": "On Temperature",
       "slug": "on-temperature",
@@ -7933,9 +8174,9 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 7.5,
-          "collection_avg": 8.16,
-          "difference": -0.66,
-          "percent_diff": -8.1,
+          "collection_avg": 8.18,
+          "difference": -0.68,
+          "percent_diff": -8.4,
           "unit": "higher = more complex",
           "direction": "below",
           "form_expected": false
@@ -7943,9 +8184,9 @@
         {
           "metric": "Average Sentence Length",
           "piece_value": 12.6,
-          "collection_avg": 14.2,
-          "difference": -1.6,
-          "percent_diff": -11.3,
+          "collection_avg": 14.37,
+          "difference": -1.77,
+          "percent_diff": -12.3,
           "unit": "words",
           "direction": "below",
           "form_expected": false
@@ -7955,7 +8196,7 @@
           "piece_value": 0.45,
           "collection_avg": 0.3,
           "difference": 0.15,
-          "percent_diff": 48.5,
+          "percent_diff": 49.2,
           "unit": "higher = more diverse",
           "direction": "above",
           "form_expected": false
@@ -7963,9 +8204,9 @@
         {
           "metric": "Average Word Length",
           "piece_value": 4.72,
-          "collection_avg": 4.66,
-          "difference": 0.06,
-          "percent_diff": 1.2,
+          "collection_avg": 4.65,
+          "difference": 0.07,
+          "percent_diff": 1.5,
           "unit": "characters",
           "direction": "above",
           "form_expected": false
