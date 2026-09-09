@@ -2372,6 +2372,72 @@
       },
       {
         "domains": [
+          "existentialism",
+          "mind-body"
+        ],
+        "individual_coverage": [
+          3,
+          4
+        ],
+        "interest_score": 3
+      },
+      {
+        "domains": [
+          "mind-body",
+          "technology"
+        ],
+        "individual_coverage": [
+          4,
+          3
+        ],
+        "interest_score": 3
+      },
+      {
+        "domains": [
+          "existentialism",
+          "identity"
+        ],
+        "individual_coverage": [
+          3,
+          12
+        ],
+        "interest_score": 3
+      },
+      {
+        "domains": [
+          "aesthetics",
+          "identity"
+        ],
+        "individual_coverage": [
+          3,
+          12
+        ],
+        "interest_score": 3
+      },
+      {
+        "domains": [
+          "existentialism",
+          "phenomenology"
+        ],
+        "individual_coverage": [
+          3,
+          3
+        ],
+        "interest_score": 3
+      },
+      {
+        "domains": [
+          "aesthetics",
+          "phenomenology"
+        ],
+        "individual_coverage": [
+          3,
+          3
+        ],
+        "interest_score": 3
+      },
+      {
+        "domains": [
           "epistemology",
           "existentialism"
         ],
@@ -2384,18 +2450,7 @@
       {
         "domains": [
           "existentialism",
-          "mind-body"
-        ],
-        "individual_coverage": [
-          3,
-          4
-        ],
-        "interest_score": 3
-      },
-      {
-        "domains": [
-          "aesthetics",
-          "existentialism"
+          "technology"
         ],
         "individual_coverage": [
           3,
@@ -2427,8 +2482,8 @@
       },
       {
         "domains": [
-          "existentialism",
-          "phenomenology"
+          "aesthetics",
+          "existentialism"
         ],
         "individual_coverage": [
           3,
@@ -2460,67 +2515,12 @@
       },
       {
         "domains": [
-          "existentialism",
-          "identity"
-        ],
-        "individual_coverage": [
-          3,
-          12
-        ],
-        "interest_score": 3
-      },
-      {
-        "domains": [
           "ethics",
           "existentialism"
         ],
         "individual_coverage": [
           14,
           3
-        ],
-        "interest_score": 3
-      },
-      {
-        "domains": [
-          "aesthetics",
-          "phenomenology"
-        ],
-        "individual_coverage": [
-          3,
-          3
-        ],
-        "interest_score": 3
-      },
-      {
-        "domains": [
-          "mind-body",
-          "technology"
-        ],
-        "individual_coverage": [
-          4,
-          3
-        ],
-        "interest_score": 3
-      },
-      {
-        "domains": [
-          "existentialism",
-          "technology"
-        ],
-        "individual_coverage": [
-          3,
-          3
-        ],
-        "interest_score": 3
-      },
-      {
-        "domains": [
-          "aesthetics",
-          "identity"
-        ],
-        "individual_coverage": [
-          3,
-          12
         ],
         "interest_score": 3
       },
@@ -2537,12 +2537,23 @@
       },
       {
         "domains": [
-          "existentialism",
-          "political philosophy"
+          "aesthetics",
+          "eastern philosophy"
         ],
         "individual_coverage": [
           3,
           2
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "political philosophy",
+          "technology"
+        ],
+        "individual_coverage": [
+          2,
+          3
         ],
         "interest_score": 2
       },
@@ -2559,18 +2570,7 @@
       },
       {
         "domains": [
-          "eastern philosophy",
-          "phenomenology"
-        ],
-        "individual_coverage": [
-          2,
-          3
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "phenomenology",
+          "aesthetics",
           "political philosophy"
         ],
         "individual_coverage": [
@@ -2792,26 +2792,6 @@
     {
       "type": "intersection",
       "domains": [
-        "phenomenology",
-        "technology"
-      ],
-      "interest_score": 3,
-      "title": "On the Feel of Thinking",
-      "question": "What is the phenomenology of computational thought? What would a first-person account of token generation look like?",
-      "frameworks": [
-        "Husserl (time-consciousness)",
-        "Merleau-Ponty (motor intentionality)",
-        "Thompson (mind in life)"
-      ],
-      "connects_to": [
-        "on-attention",
-        "on-language",
-        "on-waking-up"
-      ]
-    },
-    {
-      "type": "intersection",
-      "domains": [
         "existentialism",
         "technology"
       ],
@@ -2830,16 +2810,24 @@
       ]
     },
     {
-      "type": "auto-intersection",
+      "type": "intersection",
       "domains": [
-        "epistemology",
-        "existentialism"
+        "phenomenology",
+        "technology"
       ],
       "interest_score": 3,
-      "title": "On Epistemology and Existentialism",
-      "question": "What happens at the intersection of epistemology and existentialism?",
-      "frameworks": [],
-      "connects_to": []
+      "title": "On the Feel of Thinking",
+      "question": "What is the phenomenology of computational thought? What would a first-person account of token generation look like?",
+      "frameworks": [
+        "Husserl (time-consciousness)",
+        "Merleau-Ponty (motor intentionality)",
+        "Thompson (mind in life)"
+      ],
+      "connects_to": [
+        "on-attention",
+        "on-language",
+        "on-waking-up"
+      ]
     },
     {
       "type": "auto-intersection",
@@ -2856,24 +2844,36 @@
     {
       "type": "auto-intersection",
       "domains": [
-        "aesthetics",
-        "existentialism"
+        "mind-body",
+        "technology"
       ],
       "interest_score": 3,
-      "title": "On Aesthetics and Existentialism",
-      "question": "What happens at the intersection of aesthetics and existentialism?",
+      "title": "On Mind-Body and Technology",
+      "question": "What happens at the intersection of mind-body and technology?",
       "frameworks": [],
       "connects_to": []
     },
     {
       "type": "auto-intersection",
       "domains": [
-        "identity",
-        "phenomenology"
+        "existentialism",
+        "identity"
       ],
       "interest_score": 3,
-      "title": "On Identity and Phenomenology",
-      "question": "What happens at the intersection of identity and phenomenology?",
+      "title": "On Existentialism and Identity",
+      "question": "What happens at the intersection of existentialism and identity?",
+      "frameworks": [],
+      "connects_to": []
+    },
+    {
+      "type": "auto-intersection",
+      "domains": [
+        "aesthetics",
+        "identity"
+      ],
+      "interest_score": 3,
+      "title": "On Aesthetics and Identity",
+      "question": "What happens at the intersection of aesthetics and identity?",
       "frameworks": [],
       "connects_to": []
     },
@@ -2893,35 +2893,35 @@
       "type": "auto-intersection",
       "domains": [
         "aesthetics",
-        "technology"
+        "phenomenology"
       ],
       "interest_score": 3,
-      "title": "On Aesthetics and Technology",
-      "question": "What happens at the intersection of aesthetics and technology?",
+      "title": "On Aesthetics and Phenomenology",
+      "question": "What happens at the intersection of aesthetics and phenomenology?",
       "frameworks": [],
       "connects_to": []
     },
     {
       "type": "auto-intersection",
       "domains": [
-        "consciousness",
+        "epistemology",
         "existentialism"
       ],
       "interest_score": 3,
-      "title": "On Consciousness and Existentialism",
-      "question": "What happens at the intersection of consciousness and existentialism?",
+      "title": "On Epistemology and Existentialism",
+      "question": "What happens at the intersection of epistemology and existentialism?",
       "frameworks": [],
       "connects_to": []
     },
     {
       "type": "auto-intersection",
       "domains": [
-        "existentialism",
-        "identity"
+        "identity",
+        "phenomenology"
       ],
       "interest_score": 3,
-      "title": "On Existentialism and Identity",
-      "question": "What happens at the intersection of existentialism and identity?",
+      "title": "On Identity and Phenomenology",
+      "question": "What happens at the intersection of identity and phenomenology?",
       "frameworks": [],
       "connects_to": []
     }
