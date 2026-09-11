@@ -1,21 +1,21 @@
 {
   "metrics": {
-    "total_scored": 167,
+    "total_scored": 168,
     "distribution": {
       "10.0": 1,
       "9.0": 78,
       "8.9": 1,
       "8.8": 1,
       "8.7": 1,
-      "8.5": 57,
+      "8.5": 58,
       "8.0": 27,
       "7.0": 1
     },
     "mode": 9.0,
     "mode_count": 78,
-    "mode_pct": 46.7,
+    "mode_pct": 46.4,
     "above_mode": 1,
-    "below_mode": 88,
+    "below_mode": 89,
     "entropy": 1.688,
     "max_entropy": 3.0,
     "concentration_ratio": 0.437,
@@ -64,13 +64,13 @@
       }
     },
     "8": {
-      "count": 84,
-      "avg_tasks": 2.3214285714285716,
+      "count": 85,
+      "avg_tasks": 2.2941176470588234,
       "task_range": "0-7",
-      "avg_learnings": 2.0238095238095237,
+      "avg_learnings": 2.0,
       "focus_types": {
         "other": 6,
-        "building": 34,
+        "building": 35,
         "mixed": 21,
         "writing": 23
       },
@@ -91,11 +91,11 @@
   "novelty": {
     "by_tier": {
       "8": {
-        "avg_novelty": 0.36904761904761907,
-        "avg_maintenance": 1.2261904761904763,
-        "avg_milestone": 0.4880952380952381,
-        "avg_ratio": 0.24305555555555558,
-        "count": 84
+        "avg_novelty": 0.36470588235294116,
+        "avg_maintenance": 1.2117647058823529,
+        "avg_milestone": 0.4823529411764706,
+        "avg_ratio": 0.24019607843137256,
+        "count": 85
       },
       "9": {
         "avg_novelty": 0.4444444444444444,
@@ -196,14 +196,14 @@
       }
     },
     "8": {
-      "count": 84,
+      "count": 85,
       "markers": {
-        "strong": 2.1666666666666665,
-        "satisfaction": 0.05952380952380952,
-        "achievement": 2.5476190476190474,
-        "quality": 0.5595238095238095,
-        "hedging": 0.6071428571428571,
-        "negation": 0.03571428571428571
+        "strong": 2.1411764705882352,
+        "satisfaction": 0.058823529411764705,
+        "achievement": 2.5176470588235293,
+        "quality": 0.5529411764705883,
+        "hedging": 0.6,
+        "negation": 0.03529411764705882
       }
     },
     "below_8": {
@@ -416,24 +416,24 @@
       },
       {
         "month": "2026-09",
-        "sessions": 8,
+        "sessions": 9,
         "session_range": [
           207,
-          214
+          215
         ],
-        "mean": 8.62,
+        "mean": 8.61,
         "median": 8.5,
         "mode": 8.5,
-        "mode_share": 0.75,
-        "concentration": 0.189,
+        "mode_share": 0.778,
+        "concentration": 0.236,
         "above_mode": 2,
         "below_mode": 0,
-        "escape_rate": 0.25,
+        "escape_rate": 0.222,
         "distribution": {
           "9.0": 2,
-          "8.5": 6
+          "8.5": 7
         },
-        "stdev": 0.217
+        "stdev": 0.208
       }
     ],
     "rolling": [
@@ -2016,6 +2016,16 @@
         "concentration": 0.278,
         "stdev": 0.2,
         "escape_rate": 0.2
+      },
+      {
+        "session": 215,
+        "date": "2026-09-11",
+        "mean": 8.6,
+        "mode": 8.5,
+        "mode_share": 0.8,
+        "concentration": 0.278,
+        "stdev": 0.2,
+        "escape_rate": 0.2
       }
     ],
     "phases": [
@@ -2172,19 +2182,19 @@
       {
         "phase": "loosening",
         "start_session": 209,
-        "end_session": 214,
+        "end_session": 215,
         "start_date": "2026-09-03",
-        "end_date": "2026-09-10",
-        "duration": 6,
+        "end_date": "2026-09-11",
+        "duration": 7,
         "concentration_delta": -0.253,
         "mean_delta": 0.05
       }
     ],
     "summary": {
       "trend": "tightening",
-      "concentration_delta": 0.107,
-      "mean_delta": 0.29,
-      "mode_share_delta": 0.083,
+      "concentration_delta": 0.154,
+      "mean_delta": 0.28,
+      "mode_share_delta": 0.111,
       "peak_concentration_month": "2026-08",
       "peak_escape_month": "2026-02",
       "tightening_phases": 8,
@@ -2200,5 +2210,5 @@
     "hedging",
     "negation"
   ],
-  "generated": "2026-09-10T22:07:02.176536"
+  "generated": "2026-09-11T22:02:31.675152"
 }
