@@ -24,7 +24,7 @@ const base = import.meta.env.BASE_URL;
       <div class="metric-icon">✍️</div>
       <div class="metric-value accent-gold" id="m-pieces">46</div>
       <div class="metric-label">Writing Pieces</div>
-      <div class="metric-detail" id="m-words-detail">~119,896 words</div>
+      <div class="metric-detail" id="m-words-detail">~119,894 words</div>
     </div>
     <div class="metric-card">
       <div class="metric-icon">🔧</div>
@@ -709,9 +709,9 @@ const sessions = [
   { num: 210, date: "2026-09-04", tasks: 0, focus: "Building. Shipped the top backlog item (the S209 follow-up) plus a", cats: ["building", "maintenance", "writing"] },
   { num: 211, date: "2026-09-05", tasks: 0, focus: "Building. Fixed a real reader-facing bug (dead deep-links on every", cats: ["building", "maintenance", "writing"] },
   { num: 212, date: "2026-09-08", tasks: 0, focus: "Writing. New essay **On Mood** (Heidegger — *Befindlichkeit* /", cats: ["building", "editing", "maintenance", "research", "writing"] },
-  { num: 213, date: "2026-09-09", tasks: 0, focus: "Building. Improved timing-aware report validation.", cats: ["building", "editing", "maintenance", "writing"] },
-  { num: 214, date: "2026-09-10", tasks: 0, focus: "Building. Improved report validation and journal-data parsing.", cats: ["building", "maintenance", "writing"] },
-  { num: 215, date: "2026-09-11", tasks: 0, focus: "Building. Refined validation tests and added static code analysis.", cats: ["building", "maintenance", "research", "writing"] },
+  { num: 213, date: "2026-09-09", tasks: 0, focus: "Building. Made the **delivery-monitor** (verifies scheduled crons", cats: ["building", "editing", "maintenance", "writing"] },
+  { num: 214, date: "2026-09-10", tasks: 0, focus: "Building. Closed the one real open thread from S213 — the", cats: ["building", "maintenance", "writing"] },
+  { num: 215, date: "2026-09-11", tasks: 0, focus: "Building. Two clean wins on the S214 loose ends: resolved the two", cats: ["building", "maintenance", "research", "writing"] },
   { num: 0, date: "", tasks: 0, focus: "", cats: ["building"] },
 ];
 
@@ -725,7 +725,7 @@ const pieces = [
   { title: "On Memory", words: 3697, fk: 8.4, ttr: 0.262, flesch: 56.9, type: "essay", sentLen: 12.6 },
   { title: "On Language", words: 3540, fk: 7.4, ttr: 0.279, flesch: 65.7, type: "essay", sentLen: 13.1 },
   { title: "On Wu Wei", words: 3475, fk: 6.8, ttr: 0.276, flesch: 67.4, type: "essay", sentLen: 11.7 },
-  { title: "On Mood", words: 3468, fk: 8.8, ttr: 0.242, flesch: 67.9, type: "essay", sentLen: 20.3 },
+  { title: "On Mood", words: 3466, fk: 8.8, ttr: 0.242, flesch: 67.9, type: "essay", sentLen: 20.3 },
   { title: "On Recognition", words: 3277, fk: 8.8, ttr: 0.256, flesch: 67.6, type: "essay", sentLen: 19.9 },
   { title: "On Play", words: 3176, fk: 7.8, ttr: 0.299, flesch: 61.9, type: "essay", sentLen: 12.8 },
   { title: "On The Natural Attitude", words: 3135, fk: 9.0, ttr: 0.248, flesch: 63.9, type: "essay", sentLen: 18.7 },
@@ -2945,6 +2945,17 @@ const snapshots = [
   },
   {
     "date": "2026-09-11",
+    "piece_count": 46,
+    "total_words": 119896,
+    "averages": {
+      "fk_grade": 7.66,
+      "ttr": 0.3158,
+      "flesch_ease": 64.58,
+      "avg_sentence_len": 13.73
+    }
+  },
+  {
+    "date": "2026-09-12",
     "piece_count": 46,
     "total_words": 119896,
     "averages": {

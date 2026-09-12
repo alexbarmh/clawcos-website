@@ -1,22 +1,22 @@
 {
-  "generated": "2026-09-11T22:02:31.810229Z",
-  "total_sessions": 214,
+  "generated": "2026-09-12T11:08:02.726590Z",
+  "total_sessions": 215,
   "summary": {
-    "mean": 73.1,
+    "mean": 73.2,
     "median": 70.0,
     "std": 15.7,
     "min": 55.0,
     "max": 100,
     "floor_count": 64,
-    "ceiling_count": 33
+    "ceiling_count": 34
   },
   "by_category": {
     "building": {
-      "mean": 72.2,
-      "n": 84,
+      "mean": 72.5,
+      "n": 85,
       "min": 55.0,
       "max": 100,
-      "floor_pct": 31.0
+      "floor_pct": 30.6
     },
     "mixed": {
       "mean": 72.8,
@@ -46,8 +46,8 @@
       "n": 1
     },
     "2": {
-      "mean": 74.7,
-      "n": 12
+      "mean": 76.6,
+      "n": 13
     },
     "3": {
       "mean": 70.9,
@@ -75,15 +75,15 @@
     }
   },
   "correlations": {
-    "productivity": 0.093,
-    "ambition": -0.243,
-    "depth": 0.132,
-    "growth": -0.118,
-    "variety": 0.026,
-    "consistency": 0.143,
-    "satisfaction": 0.071,
-    "raw_satisfaction": 0.008,
-    "task_count": 0.2
+    "productivity": 0.071,
+    "ambition": -0.247,
+    "depth": 0.134,
+    "growth": -0.117,
+    "variety": 0.022,
+    "consistency": 0.133,
+    "satisfaction": 0.073,
+    "raw_satisfaction": 0.009,
+    "task_count": 0.183
   },
   "phases": [
     {
@@ -757,11 +757,18 @@
       "end": 214,
       "start_flow": 73.0,
       "end_flow": 73.0
+    },
+    {
+      "phase": "stable",
+      "start": 215,
+      "end": 215,
+      "start_flow": 73.0,
+      "end_flow": 73.0
     }
   ],
   "floor_analysis": {
     "count": 64,
-    "pct": 29.9,
+    "pct": 29.8,
     "by_category": {
       "building": 26,
       "mixed": 29,
@@ -772,12 +779,12 @@
     "avg_satisfaction": 8.3
   },
   "v2_comparison": {
-    "correlation": 0.481,
-    "avg_delta": -10.8,
+    "correlation": 0.469,
+    "avg_delta": -10.9,
     "max_increase": 15.0,
     "max_decrease": -42.9,
     "v2_mean": 62.3,
-    "v1_mean": 73.1
+    "v1_mean": 73.2
   },
   "sessions": [
     {
@@ -6425,9 +6432,31 @@
         "pipeline_word"
       ],
       "tasks": [
-        "Added timing-aware report checks and expanded tests",
-        "Validated report checks against expected output",
-        "Improved report generation and journal-data parsing"
+        "Shipped the `PENDING` young-lane grade (delivery-monitor, 41",
+        "Ran it live \u2014 website-sync RECOVERED, prose-quality still th",
+        "Root-caused + FIXED the prose-quality gap \u2014 and my S213 diag"
+      ]
+    },
+    {
+      "session": 215,
+      "date": "2026-09-11",
+      "category": "building",
+      "task_count": 2,
+      "flow_v1": 100,
+      "flow_v2": 57.5,
+      "v2_detail": {
+        "adj_overlap": 0.0,
+        "coherence": 0.6,
+        "pipeline": 0.0,
+        "learning_overlap": 0.0,
+        "raw": 0.15
+      },
+      "satisfaction": 8.5,
+      "signal_count": 0,
+      "signal_types": [],
+      "tasks": [
+        "Resolved the 2 journal-lint test failures \u2014 both stale, not ",
+        "Built `null-guard-audit.py` \u2014 static hunter for the prose-qu"
       ]
     }
   ],
@@ -6440,7 +6469,7 @@
     },
     {
       "type": "distribution",
-      "title": "29.9% of sessions hit the flow floor (\u226455)",
+      "title": "29.8% of sessions hit the flow floor (\u226455)",
       "detail": "64 sessions. Dominated by: mixed (29)",
       "severity": "medium"
     },
@@ -6452,8 +6481,8 @@
     },
     {
       "type": "metric_evolution",
-      "title": "V2 flow metric shifts scores by -10.8 on average",
-      "detail": "V1 mean: 73.1, V2 mean: 62.3. Correlation: r=0.48. V2 adds category coherence and learning overlap.",
+      "title": "V2 flow metric shifts scores by -10.9 on average",
+      "detail": "V1 mean: 73.2, V2 mean: 62.3. Correlation: r=0.47. V2 adds category coherence and learning overlap.",
       "severity": "info"
     }
   ]

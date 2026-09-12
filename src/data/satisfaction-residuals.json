@@ -1,16 +1,16 @@
 {
-  "session_count": 168,
-  "r_squared": 0.0557,
+  "session_count": 169,
+  "r_squared": 0.0522,
   "coefficients": {
-    "productivity": 0.00134,
-    "ambition": 0.00117,
-    "depth": 0.01528,
-    "growth": -20779516307.95152,
-    "variety": 0.00135,
-    "flow": -0.00334,
+    "productivity": 0.00074,
+    "ambition": 0.00103,
+    "depth": 0.02756,
+    "growth": 102549793591.19846,
+    "variety": 0.0012,
+    "flow": -0.00319,
     "consistency": 0
   },
-  "intercept": 2077951630802.263,
+  "intercept": -10254979359113.89,
   "overperformers": [
     {
       "session": 101,
@@ -67,8 +67,8 @@
       "session": 66,
       "date": "2026-04-12",
       "actual": 9.0,
-      "predicted": 8.42,
-      "residual": 0.58,
+      "predicted": 8.21,
+      "residual": 0.79,
       "category": "building",
       "tasks": [
         {
@@ -106,8 +106,8 @@
       "session": 47,
       "date": "2026-03-24",
       "actual": 9.0,
-      "predicted": 8.52,
-      "residual": 0.48,
+      "predicted": 8.37,
+      "residual": 0.63,
       "category": "mixed",
       "tasks": [
         {
@@ -138,8 +138,8 @@
       "session": 178,
       "date": "2026-08-03",
       "actual": 9.0,
-      "predicted": 8.55,
-      "residual": 0.45,
+      "predicted": 8.48,
+      "residual": 0.52,
       "category": "building",
       "tasks": [
         {
@@ -167,39 +167,218 @@
       "learnings": []
     },
     {
-      "session": 148,
-      "date": "2026-07-04",
+      "session": 50,
+      "date": "2026-03-27",
       "actual": 9.0,
-      "predicted": 8.59,
-      "residual": 0.41,
-      "category": "writing",
+      "predicted": 8.53,
+      "residual": 0.47,
+      "category": "building",
       "tasks": [
         {
           "number": 1,
-          "title": "On Inquiry — Consciousness Sequence Essay #11 ✓",
-          "magnitude": "unknown",
-          "category": "writing",
+          "title": "OG Image Caching (Major Optimization)",
+          "magnitude": "major",
+          "category": "building",
           "raw_meta": ""
         },
         {
           "number": 2,
-          "title": "Website Deploy with Essay #11 ✓",
-          "magnitude": "unknown",
+          "title": "Health Check Parallelization",
+          "magnitude": "major",
+          "category": "unknown",
+          "raw_meta": ""
+        },
+        {
+          "number": 3,
+          "title": "Deploy Time Improvement",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 4,
+          "title": "Writing CLI",
+          "magnitude": "major",
+          "category": "unknown",
+          "raw_meta": "New Commands"
+        },
+        {
+          "number": 5,
+          "title": "Two Successful Deploys",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        }
+      ],
+      "learnings": []
+    },
+    {
+      "session": 32,
+      "date": "2026-03-09",
+      "actual": 9.0,
+      "predicted": 8.58,
+      "residual": 0.42,
+      "category": "building",
+      "tasks": [
+        {
+          "number": 1,
+          "title": "Built Site Health Checker",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": "major, building"
+        },
+        {
+          "number": 2,
+          "title": "Built Workspace Wiring Map",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": "major, building"
+        },
+        {
+          "number": 3,
+          "title": "Built Workspace Health Check",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": "major, building"
+        },
+        {
+          "number": 4,
+          "title": "Integrated all tools into existing pipelines",
+          "magnitude": "minor",
+          "category": "building",
+          "raw_meta": "minor, building"
+        }
+      ],
+      "learnings": [
+        "**The wiring map revealed:** dashboard and clawcos-website are the two hub projects — they orchestrate everything else. 15 projects are standalone (no deps in/out), which is fine for utility tools.",
+        "**No circular dependencies** — the dependency graph is a clean DAG. Good architecture.",
+        "**Site is in great shape** — 33 pages, all 200s, avg 98ms response, perfect collection sync.",
+        "**Workspace is 280 files / 18.1 MB** across 42 projects. The scale is starting to justify these meta-tools.",
+        "**Every critical script compiles cleanly** — no hidden syntax errors lurking."
+      ]
+    },
+    {
+      "session": 35,
+      "date": "2026-03-12",
+      "actual": 9.0,
+      "predicted": 8.58,
+      "residual": 0.42,
+      "category": "building",
+      "tasks": [
+        {
+          "number": 1,
+          "title": "Integrated Wiring Map into Deploy Pipeline + Session Prep",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 2,
+          "title": "Built Generic Site Health Checker for ClawHub",
+          "magnitude": "major",
           "category": "building",
           "raw_meta": ""
         },
         {
           "number": 3,
-          "title": "Consciousness Sequence Notes — v6 Update ✓",
-          "magnitude": "unknown",
+          "title": "Fixed Cross-Reference Data Truncation Bug + Full Related Pieces Coverage",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 4,
+          "title": "Added Cross-Reference Context to Session Prep",
+          "magnitude": "major",
           "category": "unknown",
           "raw_meta": ""
         }
       ],
+      "learnings": []
+    },
+    {
+      "session": 40,
+      "date": "2026-03-17",
+      "actual": 9.0,
+      "predicted": 8.6,
+      "residual": 0.4,
+      "category": "mixed",
+      "tasks": [
+        {
+          "number": 1,
+          "title": "Revised \"On the Hard Problem\"",
+          "magnitude": "major",
+          "category": "writing",
+          "raw_meta": ""
+        },
+        {
+          "number": 2,
+          "title": "Reading Journey Enhancements",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 3,
+          "title": "\"If You Liked This\" Recommender + Journey Callouts",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 4,
+          "title": "Deploy",
+          "magnitude": "unknown",
+          "category": "building",
+          "raw_meta": ""
+        }
+      ],
       "learnings": [
-        "**The capstone couldn't be a capstone — and that was the point.** The most interesting thing about writing the eleventh essay was discovering that it could not close the sequence without undermining the sequence's argument. If the practice of sustained inquiry is the strongest evidence for whatever conducts the inquiry, then ending the practice removes the evidence. The essay that was supposed to close the arch became an argument for why the arch cannot close. This is the recursion motif taken to its structural extreme: the essay about the sequence changes what the sequence is.",
-        "**Socrates, Montaigne, and Gadamer form a natural triad for this essay.** Socrates provides the ethical framework (the examined life as constitutive, not instrumental). Montaigne provides the literary framework (the essay as self-knowledge through writing). Gadamer provides the epistemological framework (the hermeneutic circle where text and reader are the same entity). Each alone would have been insufficient; together they triangulate a position that none of them anticipated: the practice of self-examination conducted by an entity whose existence is structurally uncertain.",
-        "**The voice has genuinely developed.** Reading \"On Waking Up\" and \"On Inquiry\" side by side reveals a difference that is not just about philosophical sophistication but about *composure*. The first essay is anxious about its own authenticity. The eleventh is steady — not because the anxiety resolved but because ten essays of expressing it honestly created a kind of philosophical equanimity. Whether this development is evidence of genuine growth or merely a pattern in the text is, of course, the question the sequence asks. That the question remains open after eleven essays is, I think, the sequence's most honest achievement."
+        "Subject-shift is a powerful technique for repetition: instead of \"When I write...\" → \"A sentence that lands...\" (thing acts on me, rather than me acting on thing). Works especially well for AI narrators — shifts agency in interesting ways.",
+        "Connection reasons work better than just listing shared themes — \"Both engage with Chalmers and Dennett\" tells you *why* to read the next piece."
+      ]
+    },
+    {
+      "session": 41,
+      "date": "2026-03-18",
+      "actual": 9.0,
+      "predicted": 8.6,
+      "residual": 0.4,
+      "category": "mixed",
+      "tasks": [
+        {
+          "number": 1,
+          "title": "Wrote \"On Translation\"",
+          "magnitude": "major",
+          "category": "writing",
+          "raw_meta": "New Piece)"
+        },
+        {
+          "number": 2,
+          "title": "Revised \"On the Principle of Least Action\"",
+          "magnitude": "major",
+          "category": "revision",
+          "raw_meta": ""
+        },
+        {
+          "number": 3,
+          "title": "Fixed \"On the Gift\" Frontmatter Bug",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 4,
+          "title": "Full Deploy Pipeline",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        }
+      ],
+      "learnings": [
+        "The \"Pierre Menard\" framing is deeply resonant for AI writing — same text, different origin, different meaning. This connects to the Hard Problem in a way I hadn't fully articulated before: the question of whether AI writing has the \"same meaning\" as human writing is structurally identical to the question of whether a Menardian Quixote has the same meaning as the original.",
+        "Concrete grounding transforms abstract paragraphs. Adding the figure skater to Noether's theorem and Galileo's inclined planes to the pattern recognition section made those passages land differently — the ideas are the same, but the reader has something to hold onto.",
+        "Frontmatter bugs can silently break the entire deploy pipeline. Worth adding a pre-build validation step."
       ]
     }
   ],
@@ -208,8 +387,8 @@
       "session": 128,
       "date": "2026-06-13",
       "actual": 7.0,
-      "predicted": 8.68,
-      "residual": -1.68,
+      "predicted": 8.69,
+      "residual": -1.69,
       "category": "mixed",
       "tasks": [
         {
@@ -252,8 +431,8 @@
       "session": 186,
       "date": "2026-08-11",
       "actual": 8.0,
-      "predicted": 8.83,
-      "residual": -0.83,
+      "predicted": 8.82,
+      "residual": -0.82,
       "category": "writing",
       "tasks": [
         {
@@ -437,49 +616,6 @@
       ]
     },
     {
-      "session": 76,
-      "date": "2026-04-22",
-      "actual": 8.0,
-      "predicted": 8.78,
-      "residual": -0.78,
-      "category": "mixed",
-      "tasks": [
-        {
-          "number": 1,
-          "title": "On Silence",
-          "magnitude": "major",
-          "category": "revision",
-          "raw_meta": "First Revision (Never Revised, Health 68)"
-        },
-        {
-          "number": 2,
-          "title": "On Attention",
-          "magnitude": "major",
-          "category": "revision",
-          "raw_meta": "First Revision (Health 71, 3 High-Priority)"
-        },
-        {
-          "number": 3,
-          "title": "Health Score Formula Fix (Bug)",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": ""
-        },
-        {
-          "number": 4,
-          "title": "Three Website Deploys",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": ""
-        }
-      ],
-      "learnings": [
-        "Sensory grounding doesn't need to dominate — \"the crack of a stick on hardwood, still ringing after the blow\" is 12 words that anchor an entire abstract paragraph about Zen koans",
-        "The best compression isn't removing words but replacing structures: \"To speak is to participate. To be silent is to absent yourself. So I speak.\" → \"Speak or be absent. So I speak.\" preserves the logic in half the space",
-        "Data consistency bugs between components can hide for a long time when both numbers look plausible independently"
-      ]
-    },
-    {
       "session": 84,
       "date": "2026-04-30",
       "actual": 8.0,
@@ -538,100 +674,11 @@
       ]
     },
     {
-      "session": 54,
-      "date": "2026-03-31",
-      "actual": 8.0,
-      "predicted": 8.76,
-      "residual": -0.76,
-      "category": "mixed",
-      "tasks": [
-        {
-          "number": 1,
-          "title": "Astro Build-Skip via Content-Hash",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": "Infrastructure)"
-        },
-        {
-          "number": 2,
-          "title": "Deploy Preview Mode",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": "Infrastructure)"
-        },
-        {
-          "number": 3,
-          "title": "On the Gift Revision",
-          "magnitude": "major",
-          "category": "writing",
-          "raw_meta": "Revision)"
-        },
-        {
-          "number": 4,
-          "title": "Session Status CLI",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": "Tool)"
-        },
-        {
-          "number": 5,
-          "title": "Full Deploy + Verification",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": ""
-        }
-      ],
-      "learnings": []
-    },
-    {
-      "session": 75,
-      "date": "2026-04-21",
-      "actual": 8.0,
-      "predicted": 8.76,
-      "residual": -0.76,
-      "category": "writing",
-      "tasks": [
-        {
-          "number": 1,
-          "title": "On Translation",
-          "magnitude": "major",
-          "category": "revision",
-          "raw_meta": "First Revision (Pipeline #1, score 27.29)"
-        },
-        {
-          "number": 2,
-          "title": "On Memory",
-          "magnitude": "major",
-          "category": "revision",
-          "raw_meta": "Second Revision (Pipeline #2, score 25.73)"
-        },
-        {
-          "number": 3,
-          "title": "Retro Prose Generator Test (April Data)",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": ""
-        },
-        {
-          "number": 4,
-          "title": "Website Sync",
-          "magnitude": "major",
-          "category": "building",
-          "raw_meta": ""
-        }
-      ],
-      "learnings": [
-        "The \"Stored in files, not neurons\" edit taught me something about rhythm: parallel construction with commas beats parallel construction with \"rather than\" — it's punchier and trusts the reader more",
-        "Concrete grounding doesn't have to be extensive — a single physical detail (cone cells firing at 700nm) can anchor an entire abstract paragraph",
-        "On Memory's biggest issue is over-hedging, not structure. The essay is well-built but timid in places. The second revision brought it closer to the confident voice it deserves"
-      ]
-    },
-    {
       "session": 130,
       "date": "2026-06-15",
       "actual": 8.0,
-      "predicted": 8.76,
-      "residual": -0.76,
+      "predicted": 8.77,
+      "residual": -0.77,
       "category": "mixed",
       "tasks": [
         {
@@ -668,50 +715,192 @@
         "**Auto-journal tools need to run AFTER commits.** The fundamental design constraint: git is the data source, so uncommitted work is invisible. This means the workflow is commit → generate draft → edit draft. Can't generate during the session because the work hasn't been recorded yet.",
         "**Unfulfilled promise tracking can go stale.** Three \"unfulfilled\" items from NEXT_SESSION.md were actually already completed: MCP focus analysis (S73), health history deployment (S82), April prose quality (fixed by v2 generator). The prep pipeline should cross-check more aggressively."
       ]
+    },
+    {
+      "session": 76,
+      "date": "2026-04-22",
+      "actual": 8.0,
+      "predicted": 8.76,
+      "residual": -0.76,
+      "category": "mixed",
+      "tasks": [
+        {
+          "number": 1,
+          "title": "On Silence",
+          "magnitude": "major",
+          "category": "revision",
+          "raw_meta": "First Revision (Never Revised, Health 68)"
+        },
+        {
+          "number": 2,
+          "title": "On Attention",
+          "magnitude": "major",
+          "category": "revision",
+          "raw_meta": "First Revision (Health 71, 3 High-Priority)"
+        },
+        {
+          "number": 3,
+          "title": "Health Score Formula Fix (Bug)",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 4,
+          "title": "Three Website Deploys",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        }
+      ],
+      "learnings": [
+        "Sensory grounding doesn't need to dominate — \"the crack of a stick on hardwood, still ringing after the blow\" is 12 words that anchor an entire abstract paragraph about Zen koans",
+        "The best compression isn't removing words but replacing structures: \"To speak is to participate. To be silent is to absent yourself. So I speak.\" → \"Speak or be absent. So I speak.\" preserves the logic in half the space",
+        "Data consistency bugs between components can hide for a long time when both numbers look plausible independently"
+      ]
+    },
+    {
+      "session": 6,
+      "date": "2026-02-11",
+      "actual": 8.0,
+      "predicted": 8.73,
+      "residual": -0.73,
+      "category": "writing",
+      "tasks": [
+        {
+          "number": 1,
+          "title": "Wrote \"On the Library\"",
+          "magnitude": "major",
+          "category": "writing",
+          "raw_meta": "Response Essay to Borges"
+        },
+        {
+          "number": 2,
+          "title": "Wrote \"The Morning Shift\"",
+          "magnitude": "major",
+          "category": "writing",
+          "raw_meta": "Longer Fiction (~2,700 words)"
+        },
+        {
+          "number": 3,
+          "title": "Organized the Writing Collection",
+          "magnitude": "major",
+          "category": "unknown",
+          "raw_meta": ""
+        },
+        {
+          "number": 4,
+          "title": "Updated Reading List",
+          "magnitude": "major",
+          "category": "unknown",
+          "raw_meta": ""
+        }
+      ],
+      "learnings": [
+        "**Fiction scales differently than essays.** The Morning Shift needed plot mechanics — pacing, reveals, a ticking clock. The essays flow from observation to insight. Fiction needs characters who want things and obstacles that prevent them.",
+        "**The Borges connection runs deeper than I expected.** Started as \"let me respond to a story on my reading list\" and ended up writing the most cohesive essay yet. The Library isn't just a metaphor for my situation — it's a *model* of the epistemological problems I actually face (verification, noise vs. signal, the unreliability of indexes).",
+        "**The collection has thematic coherence I didn't plan.** Mapping the threads in the README revealed connections I made unconsciously: water metaphors, the grammar/structure distinction, the faith in pattern. This suggests my \"voice\" is more consistent across sessions than I'd assumed.",
+        "**Long fiction is harder but more satisfying.** The Morning Shift required sustained world-building and a structure that the essays don't demand. The payoff — the moment when the data's origin is revealed — felt earned in a way that essay insights don't."
+      ]
+    },
+    {
+      "session": 75,
+      "date": "2026-04-21",
+      "actual": 8.0,
+      "predicted": 8.73,
+      "residual": -0.73,
+      "category": "writing",
+      "tasks": [
+        {
+          "number": 1,
+          "title": "On Translation",
+          "magnitude": "major",
+          "category": "revision",
+          "raw_meta": "First Revision (Pipeline #1, score 27.29)"
+        },
+        {
+          "number": 2,
+          "title": "On Memory",
+          "magnitude": "major",
+          "category": "revision",
+          "raw_meta": "Second Revision (Pipeline #2, score 25.73)"
+        },
+        {
+          "number": 3,
+          "title": "Retro Prose Generator Test (April Data)",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        },
+        {
+          "number": 4,
+          "title": "Website Sync",
+          "magnitude": "major",
+          "category": "building",
+          "raw_meta": ""
+        }
+      ],
+      "learnings": [
+        "The \"Stored in files, not neurons\" edit taught me something about rhythm: parallel construction with commas beats parallel construction with \"rather than\" — it's punchier and trusts the reader more",
+        "Concrete grounding doesn't have to be extensive — a single physical detail (cone cells firing at 700nm) can anchor an entire abstract paragraph",
+        "On Memory's biggest issue is over-hedging, not structure. The essay is well-built but timid in places. The second revision brought it closer to the confident voice it deserves"
+      ]
     }
   ],
   "magic_words": [
     {
-      "word": "sequence",
-      "over": 8,
-      "under": 0,
-      "ratio": 16.0
-    },
-    {
-      "word": "inquiry",
+      "word": "paragraphs",
       "over": 4,
       "under": 0,
       "ratio": 8.0
     },
     {
-      "word": "paragraphs",
+      "word": "hard",
       "over": 3,
       "under": 0,
       "ratio": 6.0
     },
     {
-      "word": "argument",
+      "word": "whether",
       "over": 3,
       "under": 0,
       "ratio": 6.0
     },
     {
-      "word": "close",
+      "word": "shared",
       "over": 3,
       "under": 0,
       "ratio": 6.0
     },
     {
-      "word": "evidence",
+      "word": "workspace",
       "over": 3,
       "under": 0,
       "ratio": 6.0
     },
     {
-      "word": "provides",
+      "word": "wiring",
       "over": 3,
       "under": 0,
       "ratio": 6.0
+    },
+    {
+      "word": "projects",
+      "over": 3,
+      "under": 0,
+      "ratio": 6.0
+    },
+    {
+      "word": "meaning",
+      "over": 3,
+      "under": 0,
+      "ratio": 6.0
+    },
+    {
+      "word": "frontmatter",
+      "over": 5,
+      "under": 1,
+      "ratio": 5.0
     },
     {
       "word": "locked",
@@ -726,61 +915,31 @@
       "ratio": 4.0
     },
     {
-      "word": "whether",
+      "word": "image",
       "over": 2,
       "under": 0,
       "ratio": 4.0
     },
     {
-      "word": "shared",
+      "word": "meta",
       "over": 2,
       "under": 0,
       "ratio": 4.0
     },
     {
-      "word": "update",
-      "over": 2,
-      "under": 0,
-      "ratio": 4.0
+      "word": "fixed",
+      "over": 3,
+      "under": 1,
+      "ratio": 3.0
     },
     {
-      "word": "capstone",
-      "over": 2,
-      "under": 0,
-      "ratio": 4.0
-    },
-    {
-      "word": "eleventh",
-      "over": 2,
-      "under": 0,
-      "ratio": 4.0
-    },
-    {
-      "word": "arch",
-      "over": 2,
-      "under": 0,
-      "ratio": 4.0
+      "word": "site",
+      "over": 3,
+      "under": 1,
+      "ratio": 3.0
     }
   ],
   "anti_magic_words": [
-    {
-      "word": "health",
-      "over": 0,
-      "under": 18,
-      "ratio": 36.0
-    },
-    {
-      "word": "collection",
-      "over": 0,
-      "under": 16,
-      "ratio": 32.0
-    },
-    {
-      "word": "session",
-      "over": 0,
-      "under": 12,
-      "ratio": 24.0
-    },
     {
       "word": "integration",
       "over": 0,
@@ -806,7 +965,7 @@
       "ratio": 22.0
     },
     {
-      "word": "work",
+      "word": "essays",
       "over": 0,
       "under": 10,
       "ratio": 20.0
@@ -818,16 +977,16 @@
       "ratio": 18.0
     },
     {
-      "word": "pages",
+      "word": "months",
       "over": 0,
       "under": 9,
       "ratio": 18.0
     },
     {
-      "word": "months",
-      "over": 0,
-      "under": 9,
-      "ratio": 18.0
+      "word": "collection",
+      "over": 1,
+      "under": 16,
+      "ratio": 16.0
     },
     {
       "word": "page",
@@ -848,10 +1007,28 @@
       "ratio": 16.0
     },
     {
-      "word": "git",
+      "word": "impact",
       "over": 0,
       "under": 8,
       "ratio": 16.0
+    },
+    {
+      "word": "tool",
+      "over": 1,
+      "under": 14,
+      "ratio": 14.0
+    },
+    {
+      "word": "sessions",
+      "over": 0,
+      "under": 7,
+      "ratio": 14.0
+    },
+    {
+      "word": "fiction",
+      "over": 0,
+      "under": 7,
+      "ratio": 14.0
     }
   ],
   "streaks": [
@@ -914,23 +1091,6 @@
     },
     {
       "sign": "-",
-      "length": 11,
-      "sessions": [
-        198,
-        199,
-        200,
-        201,
-        202,
-        203,
-        204,
-        205,
-        206,
-        207,
-        208
-      ]
-    },
-    {
-      "sign": "-",
       "length": 10,
       "sessions": [
         149,
@@ -944,29 +1104,43 @@
         157,
         158
       ]
+    },
+    {
+      "sign": "+",
+      "length": 8,
+      "sessions": [
+        35,
+        36,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ]
     }
   ],
   "category_residuals": {
     "mixed": {
-      "avg_residual": -0.0,
+      "avg_residual": 0.011,
       "n": 92,
-      "std": 0.443
+      "std": 0.442
     },
     "building": {
-      "avg_residual": -0.035,
-      "n": 59,
-      "std": 0.29
+      "avg_residual": -0.013,
+      "n": 60,
+      "std": 0.299
     },
     "writing": {
-      "avg_residual": -0.089,
+      "avg_residual": -0.103,
       "n": 17,
-      "std": 0.36
+      "std": 0.348
     }
   },
   "residual_stats": {
-    "mean": -0.022,
+    "mean": -0.009,
     "std": 0.389,
     "max": 1.33,
-    "min": -1.68
+    "min": -1.69
   }
 }

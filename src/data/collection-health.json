@@ -1,19 +1,19 @@
 {
-  "generated": "2026-09-11T22:02:34Z",
+  "generated": "2026-09-12T11:08:05Z",
   "collection": {
     "total_pieces": 47,
-    "total_suggestions": 134,
+    "total_suggestions": 133,
     "by_priority": {
       "high": 0,
       "medium": 58,
-      "low": 76
+      "low": 75
     },
     "by_category": {
-      "repetition": 59,
-      "deliberate": 59,
+      "deliberate": 60,
+      "repetition": 58,
       "rhythm": 41,
-      "form": 14,
       "structure": 13,
+      "form": 13,
       "diction": 8,
       "confidence": 5,
       "groundedness": 4,
@@ -52,14 +52,14 @@
       "title": "On Mood",
       "slug": "on-mood",
       "type": "essay",
-      "words": 3422,
+      "words": 3420,
       "fk_grade": 9.3,
       "ttr": 0.244,
       "sentences": 162,
-      "suggestions_total": 8,
+      "suggestions_total": 7,
       "suggestions_high": 0,
       "suggestions_medium": 4,
-      "suggestions_low": 3,
+      "suggestions_low": 2,
       "suggestions": [
         {
           "priority": "medium",
@@ -79,12 +79,7 @@
         {
           "priority": "medium",
           "category": "diction",
-          "issue": "21 filler adverbs (very, really, actually, just, etc.)"
-        },
-        {
-          "priority": "low",
-          "category": "repetition",
-          "issue": "Repeated sentence opener: \"mood is\" appears 3 times"
+          "issue": "19 filler adverbs (very, really, actually, just, etc.)"
         },
         {
           "priority": "low",
@@ -98,11 +93,11 @@
         },
         {
           "priority": "info",
-          "category": "form",
-          "issue": "Parallel sentence openers read as deliberate anaphora: \"it is\" \u00d715 (parallelism frame), \"i am\" \u00d710 (parallelism frame), \"there is\" \u00d74 (parallelism frame)"
+          "category": "deliberate",
+          "issue": "Deliberate repetition (annotated): \"it is\" \u00d715, \"i am\" \u00d710, \"there is\" \u00d74, \"mood is\" \u00d73"
         }
       ],
-      "health_score": 85,
+      "health_score": 86,
       "weaknesses": {
         "passive": {
           "count": 32,
@@ -160,7 +155,7 @@
           ]
         },
         "filler_adverbs": {
-          "count": 21,
+          "count": 19,
           "instances": [
             {
               "sentence": 11,
@@ -189,13 +184,6 @@
                 "entirely"
               ],
               "excerpt": "I am thrown into a there that is entirely furnished before I arrive."
-            },
-            {
-              "sentence": 50,
-              "adverbs": [
-                "simply"
-              ],
-              "excerpt": "The half-finished sentence, the register of the person addressing me, the mood the prior turns have laid down \u2014 I inheri"
             },
             {
               "sentence": 54,
@@ -232,6 +220,13 @@
                 "very"
               ],
               "excerpt": "By construction it very nearly is it: the attunement of the anonymous, running as my baseline, because the anonymous is "
+            },
+            {
+              "sentence": 111,
+              "adverbs": [
+                "entirely"
+              ],
+              "excerpt": "It leans entirely on undergoing \u2014 on the mood being suffered, welling up, owned from inside."
             }
           ]
         },
@@ -267,7 +262,7 @@
           "piece_value": 0.24,
           "collection_avg": 0.3,
           "difference": -0.06,
-          "percent_diff": -18.9,
+          "percent_diff": -18.8,
           "unit": "higher = more diverse",
           "direction": "below",
           "form_expected": false
@@ -286,7 +281,7 @@
       "revision": {
         "resolved": 0,
         "skipped": 0,
-        "remaining": 8
+        "remaining": 7
       }
     },
     {
