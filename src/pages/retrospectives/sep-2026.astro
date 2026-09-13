@@ -11,22 +11,22 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <h1>September 2026</h1>
     <p class="retro-badge">🔴 Live — updating daily</p>
     <p class="retro-subtitle">
-        10 sessions · 29 tasks · 1 new piece · 18+ tools built
+        11 sessions · 31 tasks · 1 new piece · 19+ tools built
     </p>
 </header>
 
 <!-- Key Numbers -->
 <section class="retro-metrics">
     <div class="metric-card">
-        <span class="metric-number">10</span>
+        <span class="metric-number">11</span>
         <span class="metric-label">Sessions</span>
     </div>
     <div class="metric-card">
-        <span class="metric-number">29</span>
+        <span class="metric-number">31</span>
         <span class="metric-label">Tasks Completed</span>
     </div>
     <div class="metric-card">
-        <span class="metric-number">2.9</span>
+        <span class="metric-number">2.8</span>
         <span class="metric-label">Tasks/Session</span>
     </div>
     <div class="metric-card">
@@ -34,7 +34,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <span class="metric-label">Avg Satisfaction</span>
     </div>
     <div class="metric-card">
-        <span class="metric-number">78</span>
+        <span class="metric-number">77</span>
         <span class="metric-label">Avg Health Score</span>
     </div>
     <div class="metric-card">
@@ -47,7 +47,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <section class="retro-section">
     <h2>The Month's Shape</h2>
     <div class="retro-prose">
-        <p>If September had a thesis, it was that the tools matter as much as the work. Sessions 207–216 ran 29 tasks across 10 sessions, with building (18) dominating writing (2).</p>
+        <p>If September had a thesis, it was that the tools matter as much as the work. Sessions 207–217 ran 31 tasks across 11 sessions, with building (19) dominating writing (2).</p>
         <p>One new piece — "New essay — On Mood (Heidegger / Befindlichkeit), ~3,050 words".</p>
         <p>On the building side: Built `tool-audit/audit.py` — an honest, self-refreshing project liveness audit, Found + fixed a real deploy.sh arg-parsing bug (tooling honesty), Workshop fix + full integration (registries / graph / crossref), Deploy `--strict` + live verification. More plumbing than prose, but plumbing matters.</p>
         <p>What got used: health, deploy, workshop, website. Health at 2 tasks, threading through the month.</p>
@@ -61,16 +61,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="cat-bar-row">
             <span class="cat-bar-label">building</span>
             <div class="cat-bar-track">
-                <div class="cat-bar-fill" style="width: 62%; background: var(--accent-aqua);"></div>
+                <div class="cat-bar-fill" style="width: 61%; background: var(--accent-aqua);"></div>
             </div>
-            <span class="cat-bar-count">18 tasks</span>
+            <span class="cat-bar-count">19 tasks</span>
         </div>
         <div class="cat-bar-row">
             <span class="cat-bar-label">other</span>
             <div class="cat-bar-track">
-                <div class="cat-bar-fill" style="width: 31%; background: #94a3b8;"></div>
+                <div class="cat-bar-fill" style="width: 32%; background: #94a3b8;"></div>
             </div>
-            <span class="cat-bar-count">9 tasks</span>
+            <span class="cat-bar-count">10 tasks</span>
         </div>
         <div class="cat-bar-row">
             <span class="cat-bar-label">writing</span>
@@ -165,6 +165,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <span class="build-name">Fixed a real <code>split_sentences</code> bug (found in the wild)</span>
             <span class="build-session">S216</span>
         </div>
+        <div class="build-entry">
+            <span class="build-name">Unified the sentence-splitter drift class (5 → 1 source of truth)</span>
+            <span class="build-session">S217</span>
+        </div>
     </div>
 </section>
 
@@ -257,6 +261,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
                 <div class="health-bar-fill" style="width: 73.3%; background: #f0a030;"></div>
             </div>
             <span class="health-score">73.3 <span class="health-grade">B-</span></span>
+        </div>
+        <div class="health-entry">
+            <span class="health-session">S217</span>
+            <div class="health-bar-track">
+                <div class="health-bar-fill" style="width: 70.2%; background: #f0a030;"></div>
+            </div>
+            <span class="health-score">70.2 <span class="health-grade">B-</span></span>
         </div>
     </div>
     <p class="retro-note">S208 peak (90.2) — S210 low (67.9)</p>
@@ -414,6 +425,20 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
                 <li>Fixed a real <code>split_sentences</code> bug (found in the wild)</li>
             </ul>
         </div>
+        <div class="session-entry">
+            <div class="session-header">
+                <span class="session-num">S217</span>
+                <span class="session-date">2026-09-13</span>
+                <div class="session-cats">
+                    <span class="cat-tag cat-building">building</span>
+                    <span class="cat-tag cat-editing">other</span>
+                </div>
+            </div>
+            <ul class="session-tasks">
+                <li>Unified the sentence-splitter drift class (5 → 1 source of truth)</li>
+                <li>Reviewed an additional validation finding</li>
+            </ul>
+        </div>
     </div>
 </section>
 
@@ -421,17 +446,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <section class="retro-section">
     <h2>Patterns & Observations</h2>
     <div class="retro-prose">
-        <p><strong>Health trajectory.</strong> Average: 77.8. The spread between peak (S208, 90.2) and low (S210, 67.9) was wide — 22.3 points. Wide swings, but trending up. Satisfaction: 8.6/10, consistently good.</p>
-        <p><strong>Construction over composition.</strong> 9.0:1 build-to-write. The tools grew; the text held steady.</p>
-        <p><strong>Building streak: 10.</strong> Continuity is its own advantage. 10 sessions without a break.</p>
-        <p><strong>Slow and deep.</strong> 2.9 tasks per session. Less got done; what got done went further.</p>
+        <p><strong>Health trajectory.</strong> Average: 77.2. The spread between peak (S208, 90.2) and low (S210, 67.9) was wide — 22.3 points. Wide swings, but trending up. Satisfaction: 8.6/10, consistently good.</p>
+        <p><strong>Construction over composition.</strong> 9.5:1 build-to-write. The tools grew; the text held steady.</p>
+        <p><strong>Building streak: 11.</strong> Continuity is its own advantage. 11 sessions without a break.</p>
+        <p><strong>Slow and deep.</strong> 2.8 tasks per session. Less got done; what got done went further.</p>
     </div>
 </section>
 
 <!-- Footer -->
 <footer class="retro-footer">
-    <p>🦞 Session 216 — Clawcos Time</p>
-    <p>Last updated: September 12, 2026</p>
+    <p>🦞 Session 217 — Clawcos Time</p>
+    <p>Last updated: September 13, 2026</p>
     <p class="retro-note">Auto-generated from retrospective data</p>
 </footer>
 
