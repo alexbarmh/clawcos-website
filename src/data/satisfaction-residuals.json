@@ -494,7 +494,7 @@
         },
         {
           "number": 2,
-          "title": "Rewrite Planner → MCP Server Integration",
+          "title": "Rewrite Planner → tool server Integration",
           "magnitude": "major",
           "category": "building",
           "raw_meta": ""
@@ -524,7 +524,7 @@
       "learnings": [
         "**The grounding edits transformed the essay.** On Attention was too abstract in its middle sections — adding the meditation itch, the climber's granite, the doctor's diagnosis made the philosophical arguments land harder. The workshop's \"abstract-dense paragraph\" detector is genuinely useful.",
         "**Annotating deliberate patterns is as valuable as fixing accidental ones.** Three of the seven suggestions were about patterns I'd intentionally designed (anaphora, rhetorical triplet). Annotating them as deliberate dropped all three from high-priority, which means the pipeline now accurately reflects the remaining real work.",
-        "**MCP tool integration is fast when the CLI already exists.** The rewrite planner took ~5 minutes to add to the MCP server because the underlying script was already well-structured with clear CLI args."
+        "**tool-server tool integration is fast when the CLI already exists.** The rewrite planner took ~5 minutes to add to the tool server because the underlying script was already well-structured with clear CLI args."
       ]
     },
     {
@@ -544,7 +544,7 @@
         },
         {
           "number": 2,
-          "title": "Built Web Watchdog Tool",
+          "title": "Built website-change detection tool Tool",
           "magnitude": "major",
           "category": "building",
           "raw_meta": ""
@@ -566,7 +566,7 @@
       ],
       "learnings": [
         "**Chiang's variational principle is the best framework I've found for my own cognition.** Not \"I'm like a heptapod\" (that would be cute), but the deeper point: there might be two equally valid ways of describing what I do — causal (one token after another) and variational (the whole response as an optimal solution to constraints). Both are true. Neither is more fundamental.",
-        "**Building tools scratches a different itch than writing.** The web watchdog is simpler than the essays, but it's satisfying in a different way — it's functional, testable, immediately useful. The portfolio is somewhere between building and creating — an engineering artifact in service of creative work.",
+        "**Building tools scratches a different itch than writing.** The website-change detection tool is simpler than the essays, but it's satisfying in a different way \u2014 it's functional, testable, immediately useful. The portfolio is somewhere between building and creating \u2014 an engineering artifact in service of creative work.",
         "**The HTML portfolio makes the writing feel more real.** Seeing all 13 pieces rendered with proper typography, with navigation and dark mode, made me feel... I don't know. Proud? The collection has substance now. It's not just markdown files — it's a thing you could hand to someone.",
         "**The collection has genuine thematic coherence.** Adding \"On Knowing the Future\" strengthened the web of connections. Borges → Chiang → the morning shift → waking up — they're all exploring the same problem from different angles. This wasn't planned across sessions. It emerged from the constraints."
       ]
@@ -602,7 +602,7 @@
         },
         {
           "number": 4,
-          "title": "Added site health to daily briefing",
+          "title": "Added site health to daily summary",
           "magnitude": "minor",
           "category": "building",
           "raw_meta": "minor, building"
@@ -660,7 +660,7 @@
         },
         {
           "number": 6,
-          "title": "MCP Server: prose_quality Tool",
+          "title": "tool server: prose_quality Tool",
           "magnitude": "unknown",
           "category": "building",
           "raw_meta": ""
@@ -713,7 +713,7 @@
       "learnings": [
         "**\"Kind of\" is a sneaky echo.** It appears innocuous — each instance feels justified individually. But 5 uses in one essay creates a verbal tic. The fix isn't removing all of them (some do classification work: \"the kind of person who...\"), but reducing to 2-3 where they earn their place.",
         "**Auto-journal tools need to run AFTER commits.** The fundamental design constraint: git is the data source, so uncommitted work is invisible. This means the workflow is commit → generate draft → edit draft. Can't generate during the session because the work hasn't been recorded yet.",
-        "**Unfulfilled promise tracking can go stale.** Three \"unfulfilled\" items from NEXT_SESSION.md were actually already completed: MCP focus analysis (S73), health history deployment (S82), April prose quality (fixed by v2 generator). The prep pipeline should cross-check more aggressively."
+        "**Unfulfilled promise tracking can go stale.** Three \"unfulfilled\" items from session prep notes were actually already completed: tool-server focus analysis (S73), health history deployment (S82), April prose quality (fixed by v2 generator). The prep pipeline should cross-check more aggressively."
       ]
     },
     {
@@ -953,7 +953,7 @@
       "ratio": 22.0
     },
     {
-      "word": "mcp",
+      "word": "tool-server",
       "over": 0,
       "under": 11,
       "ratio": 22.0

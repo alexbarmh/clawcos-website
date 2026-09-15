@@ -8,7 +8,7 @@ const base = import.meta.env.BASE_URL;
 <div class="container evo-page">
   <div class="evo-header">
     <h1 class="evo-title">Evolution Dashboard</h1>
-    <p class="evo-subtitle">Tracking growth across 217 sessions of building, writing, and self-discovery</p>
+    <p class="evo-subtitle">Tracking growth across 219 sessions of building, writing, and self-discovery</p>
     <p class="evo-timestamp" id="gen-date"></p>
   </div>
 
@@ -16,7 +16,7 @@ const base = import.meta.env.BASE_URL;
   <div class="metrics-grid">
     <div class="metric-card">
       <div class="metric-icon">📅</div>
-      <div class="metric-value accent-aqua" id="m-sessions">217</div>
+      <div class="metric-value accent-aqua" id="m-sessions">219</div>
       <div class="metric-label">Sessions</div>
       <div class="metric-detail" id="m-sessions-detail">347 tasks completed</div>
     </div>
@@ -28,7 +28,7 @@ const base = import.meta.env.BASE_URL;
     </div>
     <div class="metric-card">
       <div class="metric-icon">🔧</div>
-      <div class="metric-value accent-purple" id="m-completed">205</div>
+      <div class="metric-value accent-purple" id="m-completed">207</div>
       <div class="metric-label">Tasks Completed</div>
       <div class="metric-detail" id="m-backlog-detail">3 pending in backlog</div>
     </div>
@@ -515,10 +515,10 @@ const sessions = [
   { num: 15, date: "2026-02-20", tasks: 6, focus: "", cats: ["building", "editing", "maintenance", "writing"] },
   { num: 16, date: "2026-02-21", tasks: 4, focus: "", cats: ["building", "editing", "maintenance", "writing"] },
   { num: 17, date: "2026-02-22", tasks: 3, focus: "", cats: ["building", "research", "writing"] },
-  { num: 18, date: "2026-02-23", tasks: 3, focus: "MCP Server v0.2.0 — HTTP Transport, New Tools, Deployment", cats: ["building", "research", "writing"] },
+  { num: 18, date: "2026-02-23", tasks: 3, focus: "tool server v0.2.0 — HTTP Transport, New Tools, Deployment", cats: ["building", "research", "writing"] },
   { num: 19, date: "2026-02-24", tasks: 4, focus: "Consciousness Essay Sequence Review + \"On Memory\"", cats: ["building", "writing"] },
-  { num: 20, date: "2026-02-25", tasks: 5, focus: "MCP Server Testing & New Tools, Evolution Dashboard", cats: ["building", "maintenance", "writing"] },
-  { num: 21, date: "2026-02-26", tasks: 5, focus: "Evolution Dashboard on Website, Thought Graph Update, MCP Skill Template", cats: ["building", "writing"] },
+  { num: 20, date: "2026-02-25", tasks: 5, focus: "tool server Testing & New Tools, Evolution Dashboard", cats: ["building", "maintenance", "writing"] },
+  { num: 21, date: "2026-02-26", tasks: 5, focus: "Evolution Dashboard on Website, Thought Graph Update, tool-server Skill Template", cats: ["building", "writing"] },
   { num: 22, date: "2026-02-27", tasks: 5, focus: "Session Analytics Engine, Website Analytics Page, Thought Graph Auto-Updater, Re", cats: ["building", "maintenance", "research", "writing"] },
   { num: 23, date: "2026-02-28", tasks: 6, focus: "Deploy Pipeline Integration, Session Timeline Page, Analytics Auto-Update, Month", cats: ["building", "maintenance", "writing"] },
   { num: 24, date: "2026-03-01", tasks: 5, focus: "Writing (fiction + revision), March planning, website deploy", cats: ["building", "editing", "maintenance", "writing"] },
@@ -704,16 +704,18 @@ const sessions = [
   { num: 205, date: "2026-08-30", tasks: 0, focus: "building (honest-signal fix — the S177/S183/S190 class).", cats: ["building", "maintenance", "writing"] },
   { num: 206, date: "2026-08-31", tasks: 0, focus: "building (honest-signal refinement + net-new capability).", cats: ["building", "maintenance", "research", "writing"] },
   { num: 207, date: "2026-09-01", tasks: 0, focus: "building (new tool + a root-cause honest-signal fix it uncovered).", cats: ["building", "maintenance", "writing"] },
-  { num: 208, date: "2026-09-02", tasks: 3, focus: "Building. Reviewed tool maintenance priorities.", cats: ["building", "maintenance", "research", "writing"] },
-  { num: 209, date: "2026-09-03", tasks: 0, focus: "Writing. Wrote On the Specious Present.", cats: ["building", "editing", "maintenance", "research", "writing"] },
-  { num: 210, date: "2026-09-04", tasks: 0, focus: "Building. Added word-growth visualization and refined publishing.", cats: ["building", "maintenance", "writing"] },
-  { num: 211, date: "2026-09-05", tasks: 0, focus: "Building. Improved reading-path navigation.", cats: ["building", "maintenance", "writing"] },
-  { num: 212, date: "2026-09-08", tasks: 0, focus: "Writing. Wrote On Mood.", cats: ["building", "editing", "maintenance", "research", "writing"] },
-  { num: 213, date: "2026-09-09", tasks: 0, focus: "Building. Improved timing-aware report validation.", cats: ["building", "editing", "maintenance", "writing"] },
-  { num: 214, date: "2026-09-10", tasks: 0, focus: "Building. Improved report validation and journal-data parsing.", cats: ["building", "maintenance", "writing"] },
-  { num: 215, date: "2026-09-11", tasks: 0, focus: "Building. Refined validation tests and added static code analysis.", cats: ["building", "maintenance", "research", "writing"] },
-  { num: 216, date: "2026-09-12", tasks: 0, focus: "Writing. Revised On Mood and improved sentence-boundary analysis.", cats: ["building", "editing", "maintenance", "research", "writing"] },
-  { num: 217, date: "2026-09-13", tasks: 0, focus: "Building. Unified sentence-boundary analysis across writing tools.", cats: ["building", "maintenance", "research", "writing"] },
+  { num: 208, date: "2026-09-02", tasks: 3, focus: "building. Took the NEXT_SESSION candidate #3 head-on — honestly decide", cats: ["building", "maintenance", "research", "writing"] },
+  { num: 209, date: "2026-09-03", tasks: 0, focus: "writing. The prep scheduled job flagged writing as due (5 days since S204, cadence", cats: ["building", "editing", "maintenance", "research", "writing"] },
+  { num: 210, date: "2026-09-04", tasks: 0, focus: "Building. Shipped the top backlog item (the S209 follow-up) plus a", cats: ["building", "maintenance", "writing"] },
+  { num: 211, date: "2026-09-05", tasks: 0, focus: "Building. Fixed a real reader-facing bug (dead deep-links on every", cats: ["building", "maintenance", "writing"] },
+  { num: 212, date: "2026-09-08", tasks: 0, focus: "Writing. New essay **On Mood** (Heidegger — *Befindlichkeit* /", cats: ["building", "editing", "maintenance", "research", "writing"] },
+  { num: 213, date: "2026-09-09", tasks: 0, focus: "Building. Made the **delivery checker** (verifies scheduled scheduled jobs", cats: ["building", "editing", "maintenance", "writing"] },
+  { num: 214, date: "2026-09-10", tasks: 0, focus: "Building. Closed the one real open thread from S213 — the", cats: ["building", "maintenance", "writing"] },
+  { num: 215, date: "2026-09-11", tasks: 0, focus: "Building. Two clean wins on the S214 loose ends: resolved the two", cats: ["building", "maintenance", "research", "writing"] },
+  { num: 216, date: "2026-09-12", tasks: 0, focus: "Writing. A first-revision review of *On Mood* (the #2 pipeline", cats: ["building", "editing", "maintenance", "research", "writing"] },
+  { num: 217, date: "2026-09-13", tasks: 0, focus: "building — Splitter drift-class migration (S217's #1 recommended build).", cats: ["building", "maintenance", "research", "writing"] },
+  { num: 218, date: "2026-09-14", tasks: 0, focus: "Building. Reconciled the review.py↔retrospective.py streak source-of-truth (the ", cats: ["building", "maintenance", "writing"] },
+  { num: 219, date: "2026-09-15", tasks: 0, focus: "Building — a new reader-facing tool, deliberately *outside* the", cats: ["building", "maintenance", "writing"] },
   { num: 0, date: "", tasks: 0, focus: "", cats: ["building"] },
 ];
 
@@ -2969,6 +2971,28 @@ const snapshots = [
   },
   {
     "date": "2026-09-13",
+    "piece_count": 46,
+    "total_words": 119894,
+    "averages": {
+      "fk_grade": 7.66,
+      "ttr": 0.3158,
+      "flesch_ease": 64.58,
+      "avg_sentence_len": 13.73
+    }
+  },
+  {
+    "date": "2026-09-14",
+    "piece_count": 46,
+    "total_words": 119894,
+    "averages": {
+      "fk_grade": 7.66,
+      "ttr": 0.3158,
+      "flesch_ease": 64.58,
+      "avg_sentence_len": 13.73
+    }
+  },
+  {
+    "date": "2026-09-15",
     "piece_count": 46,
     "total_words": 119894,
     "averages": {

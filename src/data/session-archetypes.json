@@ -1,42 +1,42 @@
 {
-  "generated": "2026-09-13T22:08:41.424198Z",
-  "total_sessions": 216,
+  "generated": "2026-09-15T22:04:29.661128Z",
+  "total_sessions": 218,
   "k": 2,
   "k_search": [
     {
       "k": 2,
       "silhouette": 0.3113,
-      "inertia": 74.8
+      "inertia": 75.85
     },
     {
       "k": 3,
-      "silhouette": 0.2685,
-      "inertia": 61.82
+      "silhouette": 0.2675,
+      "inertia": 62.74
     },
     {
       "k": 4,
-      "silhouette": 0.2707,
-      "inertia": 53.07
+      "silhouette": 0.2683,
+      "inertia": 53.98
     },
     {
       "k": 5,
-      "silhouette": 0.2764,
-      "inertia": 47.74
+      "silhouette": 0.2608,
+      "inertia": 48.44
     },
     {
       "k": 6,
-      "silhouette": 0.2693,
-      "inertia": 43.98
+      "silhouette": 0.2702,
+      "inertia": 44.31
     },
     {
       "k": 7,
-      "silhouette": 0.2704,
-      "inertia": 40.86
+      "silhouette": 0.26,
+      "inertia": 41.26
     },
     {
       "k": 8,
-      "silhouette": 0.2583,
-      "inertia": 37.88
+      "silhouette": 0.2674,
+      "inertia": 38.09
     }
   ],
   "silhouette_score": 0.3113,
@@ -45,7 +45,7 @@
       "id": 0,
       "name": "The Stretch Session",
       "size": 87,
-      "pct": 40.3,
+      "pct": 39.9,
       "profile": {
         "productivity": 88.6,
         "ambition": 97.9,
@@ -58,9 +58,9 @@
       },
       "category_distribution": {
         "building": 36,
-        "mixed": 43,
+        "mixed": 41,
         "writing": 5,
-        "revision": 3
+        "revision": 5
       },
       "avg_satisfaction": 8.4,
       "session_range": [
@@ -81,29 +81,30 @@
     {
       "id": 1,
       "name": "The Explorer",
-      "size": 129,
-      "pct": 59.7,
+      "size": 131,
+      "pct": 60.1,
       "profile": {
-        "productivity": 87.8,
-        "ambition": 48.8,
-        "depth": 98.8,
+        "productivity": 87.4,
+        "ambition": 48.6,
+        "depth": 98.7,
         "growth": 99.8,
-        "variety": 87.5,
-        "flow": 77.7,
-        "consistency": 71.0,
+        "variety": 87.4,
+        "flow": 77.9,
+        "consistency": 70.9,
         "satisfaction": 84.9
       },
       "category_distribution": {
-        "building": 49,
-        "mixed": 66,
-        "writing": 14
+        "building": 51,
+        "mixed": 65,
+        "writing": 14,
+        "revision": 1
       },
       "avg_satisfaction": 8.5,
       "session_range": [
         1,
-        216
+        218
       ],
-      "temporal_center": 137.0,
+      "temporal_center": 138.0,
       "example_sessions": [
         1,
         29,
@@ -303,10 +304,10 @@
     {
       "session": 24,
       "date": "2026-03-01",
-      "category": "mixed",
+      "category": "revision",
       "archetype": 0,
       "archetype_name": "The Stretch Session",
-      "satisfaction": 9
+      "satisfaction": 8
     },
     {
       "session": 25,
@@ -1559,7 +1560,7 @@
     {
       "session": 181,
       "date": "2026-08-06",
-      "category": "mixed",
+      "category": "revision",
       "archetype": 0,
       "archetype_name": "The Stretch Session",
       "satisfaction": 8.5
@@ -1839,7 +1840,23 @@
     {
       "session": 216,
       "date": "2026-09-12",
-      "category": "mixed",
+      "category": "revision",
+      "archetype": 1,
+      "archetype_name": "The Explorer",
+      "satisfaction": 8.5
+    },
+    {
+      "session": 217,
+      "date": "2026-09-13",
+      "category": "building",
+      "archetype": 1,
+      "archetype_name": "The Explorer",
+      "satisfaction": 8.5
+    },
+    {
+      "session": 218,
+      "date": "2026-09-14",
+      "category": "building",
       "archetype": 1,
       "archetype_name": "The Explorer",
       "satisfaction": 8.5
@@ -1848,7 +1865,7 @@
   "transitions": {
     "1": {
       "0": 14,
-      "1": 114
+      "1": 116
     },
     "0": {
       "0": 73,
@@ -1956,11 +1973,11 @@
     },
     {
       "start_session": 201,
-      "end_session": 216,
+      "end_session": 218,
       "dominant_archetype": 1,
       "dominant_name": "The Explorer",
       "distribution": {
-        "1": 14,
+        "1": 16,
         "0": 2
       }
     }
