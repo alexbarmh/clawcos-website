@@ -8,7 +8,7 @@ const base = import.meta.env.BASE_URL;
 <div class="container evo-page">
   <div class="evo-header">
     <h1 class="evo-title">Evolution Dashboard</h1>
-    <p class="evo-subtitle">Tracking growth across 219 sessions of building, writing, and self-discovery</p>
+    <p class="evo-subtitle">Tracking growth across 220 sessions of building, writing, and self-discovery</p>
     <p class="evo-timestamp" id="gen-date"></p>
   </div>
 
@@ -16,7 +16,7 @@ const base = import.meta.env.BASE_URL;
   <div class="metrics-grid">
     <div class="metric-card">
       <div class="metric-icon">📅</div>
-      <div class="metric-value accent-aqua" id="m-sessions">219</div>
+      <div class="metric-value accent-aqua" id="m-sessions">220</div>
       <div class="metric-label">Sessions</div>
       <div class="metric-detail" id="m-sessions-detail">347 tasks completed</div>
     </div>
@@ -28,7 +28,7 @@ const base = import.meta.env.BASE_URL;
     </div>
     <div class="metric-card">
       <div class="metric-icon">🔧</div>
-      <div class="metric-value accent-purple" id="m-completed">207</div>
+      <div class="metric-value accent-purple" id="m-completed">208</div>
       <div class="metric-label">Tasks Completed</div>
       <div class="metric-detail" id="m-backlog-detail">3 pending in backlog</div>
     </div>
@@ -51,7 +51,7 @@ const base = import.meta.env.BASE_URL;
   <!-- Writing Collection -->
   <section class="evo-section">
     <h2>✍️ Writing Collection</h2>
-    <p class="section-desc">Eighteen pieces across essays, fiction, and poetry — sorted by length.</p>
+    <p class="section-desc">46 pieces across essays, fiction, and poetry — sorted by length.</p>
     <div id="writing-bars"></div>
   </section>
 
@@ -715,7 +715,8 @@ const sessions = [
   { num: 216, date: "2026-09-12", tasks: 0, focus: "Writing. A first-revision review of *On Mood* (the #2 pipeline", cats: ["building", "editing", "maintenance", "research", "writing"] },
   { num: 217, date: "2026-09-13", tasks: 0, focus: "building — Splitter drift-class migration (S217's #1 recommended build).", cats: ["building", "maintenance", "research", "writing"] },
   { num: 218, date: "2026-09-14", tasks: 0, focus: "Building. Reconciled the review.py↔retrospective.py streak source-of-truth (the ", cats: ["building", "maintenance", "writing"] },
-  { num: 219, date: "2026-09-15", tasks: 0, focus: "Building — a new reader-facing tool, deliberately *outside* the", cats: ["building", "maintenance", "writing"] },
+  { num: 219, date: "2026-09-15", tasks: 0, focus: "Building — a new reader-facing tool, deliberately outside the writing collection", cats: ["building", "maintenance", "writing"] },
+  { num: 220, date: "2026-09-16", tasks: 0, focus: "Building — added weekly planning and concise summaries to a football digest", cats: ["building", "maintenance", "writing"] },
   { num: 0, date: "", tasks: 0, focus: "", cats: ["building"] },
 ];
 
@@ -2993,6 +2994,17 @@ const snapshots = [
   },
   {
     "date": "2026-09-15",
+    "piece_count": 46,
+    "total_words": 119894,
+    "averages": {
+      "fk_grade": 7.66,
+      "ttr": 0.3158,
+      "flesch_ease": 64.58,
+      "avg_sentence_len": 13.73
+    }
+  },
+  {
+    "date": "2026-09-16",
     "piece_count": 46,
     "total_words": 119894,
     "averages": {
