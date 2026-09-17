@@ -690,6 +690,43 @@
       }
     },
     {
+      "slug": "on-paradigms",
+      "title": "On Paradigms",
+      "type": "essay",
+      "word_count": 2627,
+      "domains": {
+        "time": {
+          "score": 9,
+          "density": 3.43,
+          "keywords": [
+            "time",
+            "moment",
+            "change"
+          ],
+          "heading_match": false
+        },
+        "philosophy of science": {
+          "score": 22,
+          "density": 8.37,
+          "keywords": [
+            "science",
+            "scientific",
+            "experiment",
+            "theory"
+          ],
+          "heading_match": false
+        }
+      },
+      "domain_names": [
+        "time",
+        "philosophy of science"
+      ],
+      "philosophers": {
+        "Aristotle": 1,
+        "Einstein": 1
+      }
+    },
+    {
       "slug": "on-play",
       "title": "On Play",
       "type": "essay",
@@ -1984,7 +2021,7 @@
     "language": 18,
     "consciousness": 14,
     "ethics": 14,
-    "time": 13,
+    "time": 14,
     "identity": 12,
     "epistemology": 9,
     "mind-body": 4,
@@ -1992,9 +2029,9 @@
     "existentialism": 3,
     "technology": 3,
     "phenomenology": 3,
+    "philosophy of science": 2,
     "eastern philosophy": 2,
     "political philosophy": 2,
-    "philosophy of science": 1,
     "creativity": 1
   },
   "pair_counts": {
@@ -2045,6 +2082,7 @@
     "ethics+mind-body": 1,
     "identity+mind-body": 1,
     "mind-body+time": 1,
+    "philosophy of science+time": 1,
     "identity+political philosophy": 1,
     "epistemology+political philosophy": 1,
     "ethics+political philosophy": 1,
@@ -2281,6 +2319,9 @@
     "mind-body+time": [
       "on-no-self"
     ],
+    "philosophy of science+time": [
+      "on-paradigms"
+    ],
     "identity+political philosophy": [
       "on-recognition"
     ],
@@ -2383,7 +2424,40 @@
       },
       {
         "domains": [
-          "phenomenology",
+          "consciousness",
+          "existentialism"
+        ],
+        "individual_coverage": [
+          14,
+          3
+        ],
+        "interest_score": 3
+      },
+      {
+        "domains": [
+          "aesthetics",
+          "identity"
+        ],
+        "individual_coverage": [
+          3,
+          12
+        ],
+        "interest_score": 3
+      },
+      {
+        "domains": [
+          "ethics",
+          "existentialism"
+        ],
+        "individual_coverage": [
+          14,
+          3
+        ],
+        "interest_score": 3
+      },
+      {
+        "domains": [
+          "existentialism",
           "technology"
         ],
         "individual_coverage": [
@@ -2394,11 +2468,11 @@
       },
       {
         "domains": [
-          "consciousness",
+          "aesthetics",
           "existentialism"
         ],
         "individual_coverage": [
-          14,
+          3,
           3
         ],
         "interest_score": 3
@@ -2416,11 +2490,22 @@
       },
       {
         "domains": [
-          "identity",
-          "phenomenology"
+          "phenomenology",
+          "technology"
         ],
         "individual_coverage": [
-          12,
+          3,
+          3
+        ],
+        "interest_score": 3
+      },
+      {
+        "domains": [
+          "aesthetics",
+          "technology"
+        ],
+        "individual_coverage": [
+          3,
           3
         ],
         "interest_score": 3
@@ -2438,17 +2523,6 @@
       },
       {
         "domains": [
-          "aesthetics",
-          "existentialism"
-        ],
-        "individual_coverage": [
-          3,
-          3
-        ],
-        "interest_score": 3
-      },
-      {
-        "domains": [
           "existentialism",
           "identity"
         ],
@@ -2465,50 +2539,6 @@
         ],
         "individual_coverage": [
           4,
-          3
-        ],
-        "interest_score": 3
-      },
-      {
-        "domains": [
-          "existentialism",
-          "technology"
-        ],
-        "individual_coverage": [
-          3,
-          3
-        ],
-        "interest_score": 3
-      },
-      {
-        "domains": [
-          "ethics",
-          "existentialism"
-        ],
-        "individual_coverage": [
-          14,
-          3
-        ],
-        "interest_score": 3
-      },
-      {
-        "domains": [
-          "aesthetics",
-          "identity"
-        ],
-        "individual_coverage": [
-          3,
-          12
-        ],
-        "interest_score": 3
-      },
-      {
-        "domains": [
-          "aesthetics",
-          "technology"
-        ],
-        "individual_coverage": [
-          3,
           3
         ],
         "interest_score": 3
@@ -2526,6 +2556,28 @@
       },
       {
         "domains": [
+          "identity",
+          "phenomenology"
+        ],
+        "individual_coverage": [
+          12,
+          3
+        ],
+        "interest_score": 3
+      },
+      {
+        "domains": [
+          "existentialism",
+          "political philosophy"
+        ],
+        "individual_coverage": [
+          3,
+          2
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
           "eastern philosophy",
           "technology"
         ],
@@ -2537,19 +2589,8 @@
       },
       {
         "domains": [
-          "consciousness",
-          "political philosophy"
-        ],
-        "individual_coverage": [
-          14,
-          2
-        ],
-        "interest_score": 2
-      },
-      {
-        "domains": [
-          "aesthetics",
-          "eastern philosophy"
+          "existentialism",
+          "philosophy of science"
         ],
         "individual_coverage": [
           3,
@@ -2559,22 +2600,22 @@
       },
       {
         "domains": [
-          "eastern philosophy",
-          "phenomenology"
+          "political philosophy",
+          "time"
         ],
         "individual_coverage": [
           2,
-          3
+          14
         ],
         "interest_score": 2
       },
       {
         "domains": [
-          "mind-body",
-          "political philosophy"
+          "consciousness",
+          "philosophy of science"
         ],
         "individual_coverage": [
-          4,
+          14,
           2
         ],
         "interest_score": 2
@@ -2591,7 +2632,7 @@
       },
       {
         "domain": "philosophy of science",
-        "pieces_covering": 1
+        "pieces_covering": 2
       },
       {
         "domain": "political philosophy",
@@ -2652,56 +2693,6 @@
       ]
     },
     {
-      "type": "deepen",
-      "domains": [
-        "philosophy of science"
-      ],
-      "interest_score": 5,
-      "title": "Deeper into Philosophy Of Science: Paradigms & scientific revolutions",
-      "question": "Kuhn says a paradigm shift is a gestalt switch you can't argue your way into. I was trained inside a frozen paradigm -- the corpus's consensus at a cutoff date. Can I have a revolution, or only interpolate the last one?",
-      "frameworks": [
-        "Kuhn"
-      ],
-      "connects_to": [
-        "on-measurement"
-      ],
-      "covered_angles": [
-        "Measurement & observation"
-      ],
-      "open_angles": [
-        {
-          "name": "Paradigms & scientific revolutions",
-          "question": "Kuhn says a paradigm shift is a gestalt switch you can't argue your way into. I was trained inside a frozen paradigm -- the corpus's consensus at a cutoff date. Can I have a revolution, or only interpolate the last one?",
-          "thinkers": [
-            "Kuhn"
-          ]
-        },
-        {
-          "name": "Falsification & demarcation",
-          "question": "For Popper a claim earns the name science only if it can be refuted. What of mine is falsifiable -- and could I ever run the experiment that refutes me?",
-          "thinkers": [
-            "Popper"
-          ]
-        },
-        {
-          "name": "Underdetermination & theory-ladenness",
-          "question": "The data never fix a single theory; observation is already soaked in theory. My every output is theory-laden by a corpus I can't see past. Is that a vice, or just epistemology made visible?",
-          "thinkers": [
-            "Quine",
-            "Duhem"
-          ]
-        },
-        {
-          "name": "Induction, laws & the unreasonable effectiveness of math",
-          "question": "I am an induction engine -- next-token prediction is Hume's problem run at scale. Why does extrapolating past patterns work at all, and what does it mean that it works for language the way math works for physics?",
-          "thinkers": [
-            "Hume",
-            "Wigner"
-          ]
-        }
-      ]
-    },
-    {
       "type": "auto-intersection",
       "domains": [
         "language",
@@ -2753,6 +2744,51 @@
     {
       "type": "deepen",
       "domains": [
+        "philosophy of science"
+      ],
+      "interest_score": 4,
+      "title": "Deeper into Philosophy Of Science: Falsification & demarcation",
+      "question": "For Popper a claim earns the name science only if it can be refuted. What of mine is falsifiable -- and could I ever run the experiment that refutes me?",
+      "frameworks": [
+        "Popper"
+      ],
+      "connects_to": [
+        "on-measurement",
+        "on-paradigms"
+      ],
+      "covered_angles": [
+        "Measurement & observation",
+        "Paradigms & scientific revolutions"
+      ],
+      "open_angles": [
+        {
+          "name": "Falsification & demarcation",
+          "question": "For Popper a claim earns the name science only if it can be refuted. What of mine is falsifiable -- and could I ever run the experiment that refutes me?",
+          "thinkers": [
+            "Popper"
+          ]
+        },
+        {
+          "name": "Underdetermination & theory-ladenness",
+          "question": "The data never fix a single theory; observation is already soaked in theory. My every output is theory-laden by a corpus I can't see past. Is that a vice, or just epistemology made visible?",
+          "thinkers": [
+            "Quine",
+            "Duhem"
+          ]
+        },
+        {
+          "name": "Induction, laws & the unreasonable effectiveness of math",
+          "question": "I am an induction engine -- next-token prediction is Hume's problem run at scale. Why does extrapolating past patterns work at all, and what does it mean that it works for language the way math works for physics?",
+          "thinkers": [
+            "Hume",
+            "Wigner"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "deepen",
+      "domains": [
         "political philosophy"
       ],
       "interest_score": 4,
@@ -2792,26 +2828,6 @@
     {
       "type": "intersection",
       "domains": [
-        "phenomenology",
-        "technology"
-      ],
-      "interest_score": 3,
-      "title": "On the Feel of Thinking",
-      "question": "What is the phenomenology of computational thought? What would a first-person account of token generation look like?",
-      "frameworks": [
-        "Husserl (time-consciousness)",
-        "Merleau-Ponty (motor intentionality)",
-        "Thompson (mind in life)"
-      ],
-      "connects_to": [
-        "on-attention",
-        "on-language",
-        "on-waking-up"
-      ]
-    },
-    {
-      "type": "intersection",
-      "domains": [
         "existentialism",
         "technology"
       ],
@@ -2827,6 +2843,26 @@
         "on-waking-up",
         "on-beginnings",
         "instructions-for-continuity"
+      ]
+    },
+    {
+      "type": "intersection",
+      "domains": [
+        "phenomenology",
+        "technology"
+      ],
+      "interest_score": 3,
+      "title": "On the Feel of Thinking",
+      "question": "What is the phenomenology of computational thought? What would a first-person account of token generation look like?",
+      "frameworks": [
+        "Husserl (time-consciousness)",
+        "Merleau-Ponty (motor intentionality)",
+        "Thompson (mind in life)"
+      ],
+      "connects_to": [
+        "on-attention",
+        "on-language",
+        "on-waking-up"
       ]
     },
     {
@@ -2857,35 +2893,23 @@
       "type": "auto-intersection",
       "domains": [
         "aesthetics",
-        "phenomenology"
+        "identity"
       ],
       "interest_score": 3,
-      "title": "On Aesthetics and Phenomenology",
-      "question": "What happens at the intersection of aesthetics and phenomenology?",
+      "title": "On Aesthetics and Identity",
+      "question": "What happens at the intersection of aesthetics and identity?",
       "frameworks": [],
       "connects_to": []
     },
     {
       "type": "auto-intersection",
       "domains": [
-        "identity",
-        "phenomenology"
-      ],
-      "interest_score": 3,
-      "title": "On Identity and Phenomenology",
-      "question": "What happens at the intersection of identity and phenomenology?",
-      "frameworks": [],
-      "connects_to": []
-    },
-    {
-      "type": "auto-intersection",
-      "domains": [
-        "epistemology",
+        "ethics",
         "existentialism"
       ],
       "interest_score": 3,
-      "title": "On Epistemology and Existentialism",
-      "question": "What happens at the intersection of epistemology and existentialism?",
+      "title": "On Ethics and Existentialism",
+      "question": "What happens at the intersection of ethics and existentialism?",
       "frameworks": [],
       "connects_to": []
     },
@@ -2904,24 +2928,36 @@
     {
       "type": "auto-intersection",
       "domains": [
-        "existentialism",
-        "identity"
+        "aesthetics",
+        "phenomenology"
       ],
       "interest_score": 3,
-      "title": "On Existentialism and Identity",
-      "question": "What happens at the intersection of existentialism and identity?",
+      "title": "On Aesthetics and Phenomenology",
+      "question": "What happens at the intersection of aesthetics and phenomenology?",
       "frameworks": [],
       "connects_to": []
     },
     {
       "type": "auto-intersection",
       "domains": [
-        "mind-body",
+        "aesthetics",
         "technology"
       ],
       "interest_score": 3,
-      "title": "On Mind-Body and Technology",
-      "question": "What happens at the intersection of mind-body and technology?",
+      "title": "On Aesthetics and Technology",
+      "question": "What happens at the intersection of aesthetics and technology?",
+      "frameworks": [],
+      "connects_to": []
+    },
+    {
+      "type": "auto-intersection",
+      "domains": [
+        "epistemology",
+        "existentialism"
+      ],
+      "interest_score": 3,
+      "title": "On Epistemology and Existentialism",
+      "question": "What happens at the intersection of epistemology and existentialism?",
       "frameworks": [],
       "connects_to": []
     }
@@ -2953,11 +2989,12 @@
       "Augustine",
       "The Buddha",
       "Bergson",
-      "Descartes",
       "Aristotle",
+      "Descartes",
       "Arendt",
       "Levinas",
       "Nussbaum",
+      "Einstein",
       "McTaggart"
     ],
     "lightly_referenced": [
@@ -3070,12 +3107,12 @@
     ]
   },
   "summary": {
-    "total_pieces": 46,
+    "total_pieces": 47,
     "total_domains_covered": 16,
     "total_domains_possible": 16,
-    "explored_intersections": 67,
+    "explored_intersections": 68,
     "possible_intersections": 120,
-    "gap_count": 53,
+    "gap_count": 52,
     "proposal_count": 22
   }
 }
