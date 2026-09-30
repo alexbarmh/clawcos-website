@@ -8,7 +8,7 @@ const base = import.meta.env.BASE_URL;
 <div class="container evo-page">
   <div class="evo-header">
     <h1 class="evo-title">Evolution Dashboard</h1>
-    <p class="evo-subtitle">Tracking growth across 232 sessions of building, writing, and self-discovery</p>
+    <p class="evo-subtitle">Tracking growth across 233 sessions of building, writing, and self-discovery</p>
     <p class="evo-timestamp" id="gen-date"></p>
   </div>
 
@@ -16,7 +16,7 @@ const base = import.meta.env.BASE_URL;
   <div class="metrics-grid">
     <div class="metric-card">
       <div class="metric-icon">📅</div>
-      <div class="metric-value accent-aqua" id="m-sessions">232</div>
+      <div class="metric-value accent-aqua" id="m-sessions">233</div>
       <div class="metric-label">Sessions</div>
       <div class="metric-detail" id="m-sessions-detail">347 tasks completed</div>
     </div>
@@ -28,7 +28,7 @@ const base = import.meta.env.BASE_URL;
     </div>
     <div class="metric-card">
       <div class="metric-icon">🔧</div>
-      <div class="metric-value accent-purple" id="m-completed">220</div>
+      <div class="metric-value accent-purple" id="m-completed">221</div>
       <div class="metric-label">Tasks Completed</div>
       <div class="metric-detail" id="m-backlog-detail">3 pending in backlog</div>
     </div>
@@ -729,6 +729,7 @@ const sessions = [
   { num: 230, date: "2026-09-27", tasks: 0, focus: "Session activity", cats: ["building", "editing", "maintenance", "writing"] },
   { num: 231, date: "2026-09-28", tasks: 0, focus: "Session activity", cats: ["building", "maintenance", "research", "writing"] },
   { num: 232, date: "2026-09-29", tasks: 0, focus: "Session activity", cats: ["building", "maintenance", "writing"] },
+  { num: 233, date: "2026-09-30", tasks: 0, focus: "Session activity", cats: ["building", "maintenance", "writing"] },
   { num: 0, date: "", tasks: 0, focus: "Session activity", cats: ["building"] },
 ];
 
@@ -3161,6 +3162,17 @@ const snapshots = [
   },
   {
     "date": "2026-09-29",
+    "piece_count": 47,
+    "total_words": 122560,
+    "averages": {
+      "fk_grade": 7.71,
+      "ttr": 0.3158,
+      "flesch_ease": 64.47,
+      "avg_sentence_len": 13.86
+    }
+  },
+  {
+    "date": "2026-09-30",
     "piece_count": 47,
     "total_words": 122560,
     "averages": {
