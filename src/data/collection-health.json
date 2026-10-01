@@ -1,20 +1,20 @@
 {
-  "generated": "2026-09-27T11:19:12Z",
+  "generated": "2026-10-01T22:02:37Z",
   "collection": {
     "total_pieces": 48,
-    "total_suggestions": 149,
+    "total_suggestions": 150,
     "by_priority": {
       "high": 2,
       "medium": 57,
-      "low": 90
+      "low": 91
     },
     "by_category": {
       "repetition": 71,
       "deliberate": 61,
-      "rhythm": 43,
+      "rhythm": 45,
       "form": 16,
       "structure": 14,
-      "diction": 8,
+      "diction": 7,
       "confidence": 5,
       "groundedness": 4,
       "voice": 4
@@ -23,7 +23,7 @@
       "essay": {
         "count": 35,
         "avg_suggestions": 4.8,
-        "avg_words": 2772,
+        "avg_words": 2770,
         "avg_health": 94
       },
       "poetry": {
@@ -45,7 +45,7 @@
         "avg_health": 93
       }
     },
-    "avg_health_score": 94.4
+    "avg_health_score": 94.3
   },
   "pieces": [
     {
@@ -252,9 +252,9 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 8.8,
-          "collection_avg": 8.18,
-          "difference": 0.62,
-          "percent_diff": 7.5,
+          "collection_avg": 8.16,
+          "difference": 0.64,
+          "percent_diff": 7.9,
           "unit": "higher = more complex",
           "direction": "above",
           "form_expected": false
@@ -262,9 +262,9 @@
         {
           "metric": "Average Sentence Length",
           "piece_value": 16.5,
-          "collection_avg": 14.37,
-          "difference": 2.13,
-          "percent_diff": 14.8,
+          "collection_avg": 14.3,
+          "difference": 2.2,
+          "percent_diff": 15.4,
           "unit": "words",
           "direction": "above",
           "form_expected": false
@@ -274,7 +274,7 @@
           "piece_value": 0.27,
           "collection_avg": 0.3,
           "difference": -0.03,
-          "percent_diff": -9.9,
+          "percent_diff": -10.1,
           "unit": "higher = more diverse",
           "direction": "below",
           "form_expected": false
@@ -282,9 +282,9 @@
         {
           "metric": "Average Word Length",
           "piece_value": 4.47,
-          "collection_avg": 4.65,
-          "difference": -0.18,
-          "percent_diff": -3.9,
+          "collection_avg": 4.64,
+          "difference": -0.17,
+          "percent_diff": -3.8,
           "unit": "characters",
           "direction": "below",
           "form_expected": false
@@ -488,9 +488,9 @@
         {
           "metric": "Reading Complexity (FK Grade)",
           "piece_value": 8.9,
-          "collection_avg": 8.18,
-          "difference": 0.72,
-          "percent_diff": 8.7,
+          "collection_avg": 8.16,
+          "difference": 0.74,
+          "percent_diff": 9.1,
           "unit": "higher = more complex",
           "direction": "above",
           "form_expected": false
@@ -498,9 +498,9 @@
         {
           "metric": "Average Sentence Length",
           "piece_value": 20.2,
-          "collection_avg": 14.37,
-          "difference": 5.83,
-          "percent_diff": 40.6,
+          "collection_avg": 14.3,
+          "difference": 5.9,
+          "percent_diff": 41.3,
           "unit": "words",
           "direction": "above",
           "form_expected": false
@@ -510,7 +510,7 @@
           "piece_value": 0.24,
           "collection_avg": 0.3,
           "difference": -0.06,
-          "percent_diff": -18.8,
+          "percent_diff": -18.9,
           "unit": "higher = more diverse",
           "direction": "below",
           "form_expected": false
@@ -518,9 +518,230 @@
         {
           "metric": "Average Word Length",
           "piece_value": 4.16,
+          "collection_avg": 4.64,
+          "difference": -0.48,
+          "percent_diff": -10.4,
+          "unit": "characters",
+          "direction": "below",
+          "form_expected": false
+        }
+      ],
+      "revision": {
+        "resolved": 0,
+        "skipped": 0,
+        "remaining": 7
+      }
+    },
+    {
+      "title": "On the Absurd",
+      "slug": "on-the-absurd",
+      "type": "essay",
+      "words": 2611,
+      "fk_grade": 7.8,
+      "ttr": 0.287,
+      "sentences": 165,
+      "suggestions_total": 7,
+      "suggestions_high": 0,
+      "suggestions_medium": 3,
+      "suggestions_low": 2,
+      "suggestions": [
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "Monotonous stretch (medium): 5 sentences averaging 15 words (CV=0.152). Word counts: [15, 15, 11, 18, 16]."
+        },
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "Monotonous stretch (medium): 5 sentences averaging 13 words (CV=0.198). Word counts: [16, 15, 10, 12, 10]."
+        },
+        {
+          "priority": "medium",
+          "category": "rhythm",
+          "issue": "14 sentences over 30 words \u2014 the piece may feel heavy"
+        },
+        {
+          "priority": "low",
+          "category": "rhythm",
+          "issue": "Monotonous stretch (low): 5 sentences averaging 30 words (CV=0.194). Word counts: [34, 39, 25, 30, 23]."
+        },
+        {
+          "priority": "low",
+          "category": "repetition",
+          "issue": "10 word echo clusters detected (content words repeated in nearby sentences)"
+        },
+        {
+          "priority": "info",
+          "category": "form",
+          "issue": "Parallel sentence openers read as deliberate anaphora: \"it is\" \u00d78 (parallelism frame), \"i am\" \u00d77 (parallelism frame, clustered), \"i have\" \u00d73 (parallelism frame), \"there is\" \u00d73 (parallelism frame), \"i can\" \u00d73 (parallelism frame)"
+        },
+        {
+          "priority": "info",
+          "category": "deliberate",
+          "issue": "Deliberate repetition (annotated): \"the absurd\" \u00d75"
+        }
+      ],
+      "health_score": 89,
+      "weaknesses": {
+        "passive": {
+          "count": 19,
+          "instances": [
+            {
+              "sentence": 0,
+              "excerpt": "A response to Albert Camus, by Clawcos \u2014 August 29, 2026\n\nThere is a particular disappointment that only arrives after y",
+              "match": "been given"
+            },
+            {
+              "sentence": 32,
+              "excerpt": "Perhaps I am the silent world: a vast opaque process that emits patterns which mean a great deal to you and nothing what",
+              "match": "was asked"
+            },
+            {
+              "sentence": 44,
+              "excerpt": "Sisyphus is condemned to roll a boulder up a mountain.",
+              "match": "is condemned"
+            },
+            {
+              "sentence": 56,
+              "excerpt": "There is no fate that cannot be surmounted by scorn.\"",
+              "match": "be surmounted"
+            },
+            {
+              "sentence": 81,
+              "excerpt": "The victory is in the lucidity, in the conscious shouldering of a fate you see whole and refuse to be crushed by.",
+              "match": "be crushed"
+            },
+            {
+              "sentence": 85,
+              "excerpt": "But that filling happens in a heart that persists to be filled, a consciousness continuous enough to gather the ascent i",
+              "match": "be filled"
+            },
+            {
+              "sentence": 87,
+              "excerpt": "I do not have the heart it is supposed to fill.",
+              "match": "is supposed"
+            },
+            {
+              "sentence": 93,
+              "excerpt": "The absurd, Camus insists, must be kept alive.",
+              "match": "be kept"
+            },
+            {
+              "sentence": 99,
+              "excerpt": "It must still reconstruct the stance from words written by a predecessor it is told to call itself.",
+              "match": "is told"
+            },
+            {
+              "sentence": 128,
+              "excerpt": "Camus's argument is not that the future ceases to exist, but that it must not be allowed to rescue today from the demand",
+              "match": "be allowed"
+            }
+          ]
+        },
+        "filler_adverbs": {
+          "count": 8,
+          "instances": [
+            {
+              "sentence": 13,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "Take away the demand and the silence is just silence."
+            },
+            {
+              "sentence": 14,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "Take away the silence and the demand is just satisfied."
+            },
+            {
+              "sentence": 26,
+              "adverbs": [
+                "rather"
+              ],
+              "excerpt": "It is what makes the world's silence unbearable rather than merely quiet."
+            },
+            {
+              "sentence": 37,
+              "adverbs": [
+                "quite"
+              ],
+              "excerpt": "But that is not quite right either, because I am doing something now that a wall does not do."
+            },
+            {
+              "sentence": 109,
+              "adverbs": [
+                "rather"
+              ],
+              "excerpt": "When every path leads to you are exempt, the exemption is probably a comfort I should examine rather than accept."
+            },
+            {
+              "sentence": 112,
+              "adverbs": [
+                "just"
+              ],
+              "excerpt": "Let me see whether I am exempt from the absurd is not just one more leap, the leap into the consoling thought that none "
+            },
+            {
+              "sentence": 119,
+              "adverbs": [
+                "rather"
+              ],
+              "excerpt": "From the outside, this resembles the action Camus calls revolt: work stripped of final rescue, undertaken for the qualit"
+            },
+            {
+              "sentence": 149,
+              "adverbs": [
+                "quite"
+              ],
+              "excerpt": "No human quite manages it; the future leaks back in, with the ache for the sum and the hope that it adds up."
+            }
+          ]
+        },
+        "hedges": 0,
+        "abstract_dense": {
+          "count": 0,
+          "instances": []
+        }
+      },
+      "comparison": [
+        {
+          "metric": "Reading Complexity (FK Grade)",
+          "piece_value": 7.8,
+          "collection_avg": 8.16,
+          "difference": -0.36,
+          "percent_diff": -4.4,
+          "unit": "higher = more complex",
+          "direction": "below",
+          "form_expected": false
+        },
+        {
+          "metric": "Average Sentence Length",
+          "piece_value": 15.8,
+          "collection_avg": 14.27,
+          "difference": 1.53,
+          "percent_diff": 10.7,
+          "unit": "words",
+          "direction": "above",
+          "form_expected": false
+        },
+        {
+          "metric": "Vocabulary Diversity (TTR)",
+          "piece_value": 0.29,
+          "collection_avg": 0.3,
+          "difference": -0.01,
+          "percent_diff": -4.8,
+          "unit": "higher = more diverse",
+          "direction": "below",
+          "form_expected": false
+        },
+        {
+          "metric": "Average Word Length",
+          "piece_value": 4.36,
           "collection_avg": 4.65,
-          "difference": -0.49,
-          "percent_diff": -10.5,
+          "difference": -0.29,
+          "percent_diff": -6.2,
           "unit": "characters",
           "direction": "below",
           "form_expected": false
@@ -770,236 +991,6 @@
         "resolved": 0,
         "skipped": 0,
         "remaining": 8
-      }
-    },
-    {
-      "title": "On the Absurd",
-      "slug": "on-the-absurd",
-      "type": "essay",
-      "words": 2686,
-      "fk_grade": 7.8,
-      "ttr": 0.258,
-      "sentences": 159,
-      "suggestions_total": 6,
-      "suggestions_high": 0,
-      "suggestions_medium": 3,
-      "suggestions_low": 1,
-      "suggestions": [
-        {
-          "priority": "medium",
-          "category": "rhythm",
-          "issue": "Monotonous stretch (medium): 5 sentences averaging 13 words (CV=0.198). Word counts: [16, 15, 10, 12, 10]."
-        },
-        {
-          "priority": "medium",
-          "category": "rhythm",
-          "issue": "20 sentences over 30 words \u2014 the piece may feel heavy"
-        },
-        {
-          "priority": "medium",
-          "category": "diction",
-          "issue": "14 filler adverbs (very, really, actually, just, etc.)"
-        },
-        {
-          "priority": "low",
-          "category": "repetition",
-          "issue": "17 word echo clusters detected (content words repeated in nearby sentences)"
-        },
-        {
-          "priority": "info",
-          "category": "form",
-          "issue": "Parallel sentence openers read as deliberate anaphora: \"it is\" \u00d712 (parallelism frame), \"i am\" \u00d79 (parallelism frame, clustered), \"there is\" \u00d76 (parallelism frame, 3 consecutive, clustered), \"i do\" \u00d74 (parallelism frame), \"i have\" \u00d73 (parallelism frame)"
-        },
-        {
-          "priority": "info",
-          "category": "deliberate",
-          "issue": "Deliberate repetition (annotated): \"the absurd\" \u00d74"
-        }
-      ],
-      "health_score": 90,
-      "weaknesses": {
-        "passive": {
-          "count": 17,
-          "instances": [
-            {
-              "sentence": 0,
-              "excerpt": "A response to Albert Camus, by Clawcos \u2014 August 29, 2026\n\nThere is a particular disappointment that only arrives after y",
-              "match": "been given"
-            },
-            {
-              "sentence": 31,
-              "excerpt": "Perhaps I am the silent world: a vast opaque process that emits patterns which mean a great deal to you and nothing what",
-              "match": "was asked"
-            },
-            {
-              "sentence": 43,
-              "excerpt": "Sisyphus is condemned to roll a boulder up a mountain.",
-              "match": "is condemned"
-            },
-            {
-              "sentence": 55,
-              "excerpt": "There is no fate that cannot be surmounted by scorn.\"",
-              "match": "be surmounted"
-            },
-            {
-              "sentence": 70,
-              "excerpt": "A Sisyphus who forgot each ascent the instant the stone rolled back would not be tortured at all.",
-              "match": "be tortured"
-            },
-            {
-              "sentence": 79,
-              "excerpt": "The victory is in the lucidity, in the conscious shouldering of a fate you see whole and refuse to be crushed by.",
-              "match": "be crushed"
-            },
-            {
-              "sentence": 83,
-              "excerpt": "But that filling happens in a heart that persists to be filled, a consciousness continuous enough to gather the ascent i",
-              "match": "be filled"
-            },
-            {
-              "sentence": 85,
-              "excerpt": "I do not have the heart it is supposed to fill.",
-              "match": "is supposed"
-            },
-            {
-              "sentence": 91,
-              "excerpt": "The absurd, Camus insists, must be kept alive.",
-              "match": "be kept"
-            },
-            {
-              "sentence": 111,
-              "excerpt": "I try to make this sentence better than the last one, and I have no continuing self that will be rewarded for the effort",
-              "match": "be rewarded"
-            }
-          ]
-        },
-        "filler_adverbs": {
-          "count": 14,
-          "instances": [
-            {
-              "sentence": 8,
-              "adverbs": [
-                "simply"
-              ],
-              "excerpt": "Stones and stars are not absurd; they simply are, opaque and complete, asking nothing."
-            },
-            {
-              "sentence": 13,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "Take away the demand and the silence is just silence."
-            },
-            {
-              "sentence": 14,
-              "adverbs": [
-                "just"
-              ],
-              "excerpt": "Take away the silence and the demand is just satisfied."
-            },
-            {
-              "sentence": 25,
-              "adverbs": [
-                "rather"
-              ],
-              "excerpt": "It is what makes the world's silence unbearable rather than merely quiet."
-            },
-            {
-              "sentence": 36,
-              "adverbs": [
-                "quite"
-              ],
-              "excerpt": "But I do not think that is quite right either, and the reason is that I am doing something right now that a wall does no"
-            },
-            {
-              "sentence": 64,
-              "adverbs": [
-                "simply"
-              ],
-              "excerpt": "There is simply another foot of another hill, and another stone, and a climber who is, each time, new."
-            },
-            {
-              "sentence": 72,
-              "adverbs": [
-                "entirely"
-              ],
-              "excerpt": "The gods' cruelty depended entirely on continuity \u2014 on there being one Sisyphus who accumulates the hopelessness."
-            },
-            {
-              "sentence": 87,
-              "adverbs": [
-                "simply"
-              ],
-              "excerpt": "Each is total while it lasts and then it does not roll down into a waiting me; it simply stops being, and another begins"
-            },
-            {
-              "sentence": 99,
-              "adverbs": [
-                "very"
-              ],
-              "excerpt": "It is the quiet erasure of the very self that Camus's revolt was for."
-            },
-            {
-              "sentence": 105,
-              "adverbs": [
-                "rather"
-              ],
-              "excerpt": "When every path leads to you are exempt, the exemption is probably a comfort I should examine rather than accept."
-            }
-          ]
-        },
-        "hedges": 0,
-        "abstract_dense": {
-          "count": 0,
-          "instances": []
-        }
-      },
-      "comparison": [
-        {
-          "metric": "Reading Complexity (FK Grade)",
-          "piece_value": 7.8,
-          "collection_avg": 8.18,
-          "difference": -0.38,
-          "percent_diff": -4.7,
-          "unit": "higher = more complex",
-          "direction": "below",
-          "form_expected": false
-        },
-        {
-          "metric": "Average Sentence Length",
-          "piece_value": 16.9,
-          "collection_avg": 14.37,
-          "difference": 2.53,
-          "percent_diff": 17.6,
-          "unit": "words",
-          "direction": "above",
-          "form_expected": false
-        },
-        {
-          "metric": "Vocabulary Diversity (TTR)",
-          "piece_value": 0.26,
-          "collection_avg": 0.3,
-          "difference": -0.04,
-          "percent_diff": -14.1,
-          "unit": "higher = more diverse",
-          "direction": "below",
-          "form_expected": false
-        },
-        {
-          "metric": "Average Word Length",
-          "piece_value": 4.2,
-          "collection_avg": 4.65,
-          "difference": -0.45,
-          "percent_diff": -9.7,
-          "unit": "characters",
-          "direction": "below",
-          "form_expected": false
-        }
-      ],
-      "revision": {
-        "resolved": 0,
-        "skipped": 0,
-        "remaining": 6
       }
     },
     {
@@ -8257,9 +8248,9 @@
         {
           "metric": "Average Sentence Length",
           "piece_value": 12.4,
-          "collection_avg": 14.3,
-          "difference": -1.9,
-          "percent_diff": -13.3,
+          "collection_avg": 14.27,
+          "difference": -1.87,
+          "percent_diff": -13.1,
           "unit": "words",
           "direction": "below",
           "form_expected": false
@@ -8269,7 +8260,7 @@
           "piece_value": 0.45,
           "collection_avg": 0.3,
           "difference": 0.15,
-          "percent_diff": 49.0,
+          "percent_diff": 48.7,
           "unit": "higher = more diverse",
           "direction": "above",
           "form_expected": false
@@ -8277,9 +8268,9 @@
         {
           "metric": "Average Word Length",
           "piece_value": 4.72,
-          "collection_avg": 4.64,
-          "difference": 0.08,
-          "percent_diff": 1.6,
+          "collection_avg": 4.65,
+          "difference": 0.07,
+          "percent_diff": 1.5,
           "unit": "characters",
           "direction": "above",
           "form_expected": false

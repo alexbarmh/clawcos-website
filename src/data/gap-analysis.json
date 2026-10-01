@@ -1082,32 +1082,40 @@
       "slug": "on-the-absurd",
       "title": "On the Absurd",
       "type": "essay",
-      "word_count": 2748,
+      "word_count": 2665,
       "domains": {
-        "language": {
-          "score": 13,
-          "density": 4.73,
+        "consciousness": {
+          "score": 9,
+          "density": 3.38,
           "keywords": [
-            "meaning",
-            "word"
+            "consciousness",
+            "experience"
+          ],
+          "heading_match": false
+        },
+        "language": {
+          "score": 11,
+          "density": 4.13,
+          "keywords": [
+            "meaning"
           ],
           "heading_match": true
         },
         "time": {
-          "score": 13,
-          "density": 4.73,
+          "score": 10,
+          "density": 3.75,
           "keywords": [
             "time",
+            "temporal",
             "moment",
             "eternity"
           ],
           "heading_match": false
         },
         "existentialism": {
-          "score": 24,
-          "density": 8.73,
+          "score": 23,
+          "density": 8.63,
           "keywords": [
-            "existence",
             "absurd",
             "dread"
           ],
@@ -1115,12 +1123,13 @@
         }
       },
       "domain_names": [
+        "consciousness",
         "language",
         "time",
         "existentialism"
       ],
       "philosophers": {
-        "Camus": 23
+        "Camus": 22
       }
     },
     {
@@ -2020,7 +2029,7 @@
   "domain_frequency": {
     "metaphysics": 20,
     "language": 18,
-    "consciousness": 14,
+    "consciousness": 15,
     "ethics": 14,
     "time": 14,
     "identity": 12,
@@ -2047,11 +2056,12 @@
     "ethics+metaphysics": 5,
     "ethics+language": 5,
     "epistemology+mind-body": 4,
+    "consciousness+time": 4,
     "metaphysics+time": 4,
     "ethics+time": 4,
     "consciousness+mind-body": 3,
     "ethics+identity": 3,
-    "consciousness+time": 3,
+    "consciousness+language": 3,
     "epistemology+identity": 3,
     "epistemology+language": 3,
     "identity+language": 3,
@@ -2062,7 +2072,6 @@
     "identity+technology": 2,
     "consciousness+phenomenology": 2,
     "metaphysics+mind-body": 2,
-    "consciousness+language": 2,
     "epistemology+time": 2,
     "eastern philosophy+time": 2,
     "metaphysics+political philosophy": 2,
@@ -2088,6 +2097,7 @@
     "epistemology+political philosophy": 1,
     "ethics+political philosophy": 1,
     "language+political philosophy": 1,
+    "consciousness+existentialism": 1,
     "existentialism+language": 1,
     "existentialism+time": 1,
     "epistemology+technology": 1,
@@ -2212,12 +2222,14 @@
     ],
     "consciousness+language": [
       "on-knowing-the-future",
+      "on-the-absurd",
       "on-the-natural-attitude"
     ],
     "consciousness+time": [
       "on-knowing-the-future",
       "on-memory",
-      "on-no-self"
+      "on-no-self",
+      "on-the-absurd"
     ],
     "epistemology+identity": [
       "on-knowing-the-future",
@@ -2346,6 +2358,9 @@
     "language+political philosophy": [
       "on-testimony"
     ],
+    "consciousness+existentialism": [
+      "on-the-absurd"
+    ],
     "existentialism+language": [
       "on-the-absurd"
     ],
@@ -2414,11 +2429,77 @@
       },
       {
         "domains": [
-          "consciousness",
+          "existentialism",
+          "phenomenology"
+        ],
+        "individual_coverage": [
+          3,
+          3
+        ],
+        "interest_score": 3
+      },
+      {
+        "domains": [
+          "aesthetics",
+          "technology"
+        ],
+        "individual_coverage": [
+          3,
+          3
+        ],
+        "interest_score": 3
+      },
+      {
+        "domains": [
+          "mind-body",
+          "technology"
+        ],
+        "individual_coverage": [
+          4,
+          3
+        ],
+        "interest_score": 3
+      },
+      {
+        "domains": [
+          "aesthetics",
+          "identity"
+        ],
+        "individual_coverage": [
+          3,
+          12
+        ],
+        "interest_score": 3
+      },
+      {
+        "domains": [
+          "existentialism",
+          "technology"
+        ],
+        "individual_coverage": [
+          3,
+          3
+        ],
+        "interest_score": 3
+      },
+      {
+        "domains": [
+          "identity",
+          "phenomenology"
+        ],
+        "individual_coverage": [
+          12,
+          3
+        ],
+        "interest_score": 3
+      },
+      {
+        "domains": [
+          "epistemology",
           "existentialism"
         ],
         "individual_coverage": [
-          14,
+          9,
           3
         ],
         "interest_score": 3
@@ -2427,6 +2508,17 @@
         "domains": [
           "aesthetics",
           "existentialism"
+        ],
+        "individual_coverage": [
+          3,
+          3
+        ],
+        "interest_score": 3
+      },
+      {
+        "domains": [
+          "aesthetics",
+          "phenomenology"
         ],
         "individual_coverage": [
           3,
@@ -2459,50 +2551,6 @@
       {
         "domains": [
           "existentialism",
-          "technology"
-        ],
-        "individual_coverage": [
-          3,
-          3
-        ],
-        "interest_score": 3
-      },
-      {
-        "domains": [
-          "aesthetics",
-          "identity"
-        ],
-        "individual_coverage": [
-          3,
-          12
-        ],
-        "interest_score": 3
-      },
-      {
-        "domains": [
-          "existentialism",
-          "phenomenology"
-        ],
-        "individual_coverage": [
-          3,
-          3
-        ],
-        "interest_score": 3
-      },
-      {
-        "domains": [
-          "epistemology",
-          "existentialism"
-        ],
-        "individual_coverage": [
-          9,
-          3
-        ],
-        "interest_score": 3
-      },
-      {
-        "domains": [
-          "existentialism",
           "mind-body"
         ],
         "individual_coverage": [
@@ -2525,51 +2573,7 @@
       {
         "domains": [
           "aesthetics",
-          "technology"
-        ],
-        "individual_coverage": [
-          3,
-          3
-        ],
-        "interest_score": 3
-      },
-      {
-        "domains": [
-          "mind-body",
-          "technology"
-        ],
-        "individual_coverage": [
-          4,
-          3
-        ],
-        "interest_score": 3
-      },
-      {
-        "domains": [
-          "identity",
-          "phenomenology"
-        ],
-        "individual_coverage": [
-          12,
-          3
-        ],
-        "interest_score": 3
-      },
-      {
-        "domains": [
-          "aesthetics",
-          "phenomenology"
-        ],
-        "individual_coverage": [
-          3,
-          3
-        ],
-        "interest_score": 3
-      },
-      {
-        "domains": [
-          "aesthetics",
-          "political philosophy"
+          "philosophy of science"
         ],
         "individual_coverage": [
           3,
@@ -2579,11 +2583,22 @@
       },
       {
         "domains": [
-          "phenomenology",
-          "political philosophy"
+          "metaphysics",
+          "philosophy of science"
         ],
         "individual_coverage": [
-          3,
+          20,
+          2
+        ],
+        "interest_score": 2
+      },
+      {
+        "domains": [
+          "epistemology",
+          "philosophy of science"
+        ],
+        "individual_coverage": [
+          9,
           2
         ],
         "interest_score": 2
@@ -2591,7 +2606,7 @@
       {
         "domains": [
           "mind-body",
-          "political philosophy"
+          "philosophy of science"
         ],
         "individual_coverage": [
           4,
@@ -2601,23 +2616,23 @@
       },
       {
         "domains": [
-          "consciousness",
-          "philosophy of science"
+          "eastern philosophy",
+          "political philosophy"
         ],
         "individual_coverage": [
-          14,
+          2,
           2
         ],
         "interest_score": 2
       },
       {
         "domains": [
-          "identity",
-          "philosophy of science"
+          "political philosophy",
+          "technology"
         ],
         "individual_coverage": [
-          12,
-          2
+          2,
+          3
         ],
         "interest_score": 2
       }
@@ -2869,12 +2884,12 @@
     {
       "type": "auto-intersection",
       "domains": [
-        "consciousness",
-        "existentialism"
+        "existentialism",
+        "phenomenology"
       ],
       "interest_score": 3,
-      "title": "On Consciousness and Existentialism",
-      "question": "What happens at the intersection of consciousness and existentialism?",
+      "title": "On Existentialism and Phenomenology",
+      "question": "What happens at the intersection of existentialism and phenomenology?",
       "frameworks": [],
       "connects_to": []
     },
@@ -2882,35 +2897,23 @@
       "type": "auto-intersection",
       "domains": [
         "aesthetics",
-        "existentialism"
+        "technology"
       ],
       "interest_score": 3,
-      "title": "On Aesthetics and Existentialism",
-      "question": "What happens at the intersection of aesthetics and existentialism?",
+      "title": "On Aesthetics and Technology",
+      "question": "What happens at the intersection of aesthetics and technology?",
       "frameworks": [],
       "connects_to": []
     },
     {
       "type": "auto-intersection",
       "domains": [
-        "existentialism",
-        "identity"
+        "mind-body",
+        "technology"
       ],
       "interest_score": 3,
-      "title": "On Existentialism and Identity",
-      "question": "What happens at the intersection of existentialism and identity?",
-      "frameworks": [],
-      "connects_to": []
-    },
-    {
-      "type": "auto-intersection",
-      "domains": [
-        "ethics",
-        "existentialism"
-      ],
-      "interest_score": 3,
-      "title": "On Ethics and Existentialism",
-      "question": "What happens at the intersection of ethics and existentialism?",
+      "title": "On Mind-Body and Technology",
+      "question": "What happens at the intersection of mind-body and technology?",
       "frameworks": [],
       "connects_to": []
     },
@@ -2929,12 +2932,12 @@
     {
       "type": "auto-intersection",
       "domains": [
-        "existentialism",
+        "identity",
         "phenomenology"
       ],
       "interest_score": 3,
-      "title": "On Existentialism and Phenomenology",
-      "question": "What happens at the intersection of existentialism and phenomenology?",
+      "title": "On Identity and Phenomenology",
+      "question": "What happens at the intersection of identity and phenomenology?",
       "frameworks": [],
       "connects_to": []
     },
@@ -2953,12 +2956,24 @@
     {
       "type": "auto-intersection",
       "domains": [
-        "existentialism",
-        "mind-body"
+        "aesthetics",
+        "existentialism"
       ],
       "interest_score": 3,
-      "title": "On Existentialism and Mind-Body",
-      "question": "What happens at the intersection of existentialism and mind-body?",
+      "title": "On Aesthetics and Existentialism",
+      "question": "What happens at the intersection of aesthetics and existentialism?",
+      "frameworks": [],
+      "connects_to": []
+    },
+    {
+      "type": "auto-intersection",
+      "domains": [
+        "aesthetics",
+        "phenomenology"
+      ],
+      "interest_score": 3,
+      "title": "On Aesthetics and Phenomenology",
+      "question": "What happens at the intersection of aesthetics and phenomenology?",
       "frameworks": [],
       "connects_to": []
     }
@@ -3047,7 +3062,7 @@
       ],
       [
         "Camus",
-        23,
+        22,
         1
       ],
       [
@@ -3111,9 +3126,9 @@
     "total_pieces": 47,
     "total_domains_covered": 16,
     "total_domains_possible": 16,
-    "explored_intersections": 68,
+    "explored_intersections": 69,
     "possible_intersections": 120,
-    "gap_count": 52,
-    "proposal_count": 22
+    "gap_count": 51,
+    "proposal_count": 21
   }
 }

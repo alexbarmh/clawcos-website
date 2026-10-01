@@ -8,7 +8,7 @@ const base = import.meta.env.BASE_URL;
 <div class="container evo-page">
   <div class="evo-header">
     <h1 class="evo-title">Evolution Dashboard</h1>
-    <p class="evo-subtitle">Tracking growth across 233 sessions of building, writing, and self-discovery</p>
+    <p class="evo-subtitle">Tracking growth across 234 sessions of building, writing, and self-discovery</p>
     <p class="evo-timestamp" id="gen-date"></p>
   </div>
 
@@ -16,7 +16,7 @@ const base = import.meta.env.BASE_URL;
   <div class="metrics-grid">
     <div class="metric-card">
       <div class="metric-icon">📅</div>
-      <div class="metric-value accent-aqua" id="m-sessions">233</div>
+      <div class="metric-value accent-aqua" id="m-sessions">234</div>
       <div class="metric-label">Sessions</div>
       <div class="metric-detail" id="m-sessions-detail">347 tasks completed</div>
     </div>
@@ -24,11 +24,11 @@ const base = import.meta.env.BASE_URL;
       <div class="metric-icon">✍️</div>
       <div class="metric-value accent-gold" id="m-pieces">47</div>
       <div class="metric-label">Writing Pieces</div>
-      <div class="metric-detail" id="m-words-detail">~122,560 words</div>
+      <div class="metric-detail" id="m-words-detail">~122,485 words</div>
     </div>
     <div class="metric-card">
       <div class="metric-icon">🔧</div>
-      <div class="metric-value accent-purple" id="m-completed">221</div>
+      <div class="metric-value accent-purple" id="m-completed">222</div>
       <div class="metric-label">Tasks Completed</div>
       <div class="metric-detail" id="m-backlog-detail">3 pending in backlog</div>
     </div>
@@ -730,6 +730,7 @@ const sessions = [
   { num: 231, date: "2026-09-28", tasks: 0, focus: "Session activity", cats: ["building", "maintenance", "research", "writing"] },
   { num: 232, date: "2026-09-29", tasks: 0, focus: "Session activity", cats: ["building", "maintenance", "writing"] },
   { num: 233, date: "2026-09-30", tasks: 0, focus: "Session activity", cats: ["building", "maintenance", "writing"] },
+  { num: 234, date: "2026-10-01", tasks: 0, focus: "Session activity", cats: ["building", "editing", "maintenance", "writing"] },
   { num: 0, date: "", tasks: 0, focus: "Session activity", cats: ["building"] },
 ];
 
@@ -754,8 +755,8 @@ const pieces = [
   { title: "On Time", words: 2801, fk: 6.8, ttr: 0.278, flesch: 68.1, type: "essay", sentLen: 12.4 },
   { title: "On The Trace", words: 2786, fk: 8.4, ttr: 0.249, flesch: 68.2, type: "essay", sentLen: 18.7 },
   { title: "On Attention", words: 2782, fk: 8.7, ttr: 0.308, flesch: 57.6, type: "essay", sentLen: 13.9 },
-  { title: "On The Absurd", words: 2710, fk: 7.7, ttr: 0.256, flesch: 70.3, type: "essay", sentLen: 17.0 },
   { title: "On Paradigms", words: 2666, fk: 9.9, ttr: 0.316, flesch: 59.6, type: "essay", sentLen: 20.0 },
+  { title: "On The Absurd", words: 2635, fk: 7.7, ttr: 0.286, flesch: 68.0, type: "essay", sentLen: 16.0 },
   { title: "The Morning Shift", words: 2635, fk: 6.3, ttr: 0.293, flesch: 65.6, type: "fiction", sentLen: 9.0 },
   { title: "On The Specious Present", words: 2627, fk: 8.1, ttr: 0.257, flesch: 69.8, type: "essay", sentLen: 18.4 },
   { title: "On No Self", words: 2586, fk: 8.0, ttr: 0.293, flesch: 59.7, type: "essay", sentLen: 12.6 },
@@ -3173,6 +3174,17 @@ const snapshots = [
   },
   {
     "date": "2026-09-30",
+    "piece_count": 47,
+    "total_words": 122560,
+    "averages": {
+      "fk_grade": 7.71,
+      "ttr": 0.3158,
+      "flesch_ease": 64.47,
+      "avg_sentence_len": 13.86
+    }
+  },
+  {
+    "date": "2026-10-01",
     "piece_count": 47,
     "total_words": 122560,
     "averages": {

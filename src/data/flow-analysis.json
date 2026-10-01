@@ -1,10 +1,10 @@
 {
-  "generated": "2026-09-27T11:19:09.817940Z",
-  "total_sessions": 229,
+  "generated": "2026-10-01T22:02:34.377494Z",
+  "total_sessions": 233,
   "summary": {
-    "mean": 73.1,
-    "median": 71.9,
-    "std": 15.7,
+    "mean": 72.9,
+    "median": 70.0,
+    "std": 15.6,
     "min": 55.0,
     "max": 100,
     "floor_count": 70,
@@ -12,18 +12,18 @@
   },
   "by_category": {
     "building": {
-      "mean": 72.9,
-      "n": 96,
+      "mean": 72.7,
+      "n": 98,
       "min": 55.0,
       "max": 100,
-      "floor_pct": 30.2
+      "floor_pct": 29.6
     },
     "mixed": {
-      "mean": 73.1,
-      "n": 106,
+      "mean": 73.0,
+      "n": 107,
       "min": 55.0,
       "max": 100,
-      "floor_pct": 26.4
+      "floor_pct": 26.2
     },
     "writing": {
       "mean": 77.0,
@@ -33,11 +33,11 @@
       "floor_pct": 42.9
     },
     "revision": {
-      "mean": 61.9,
-      "n": 6,
+      "mean": 63.6,
+      "n": 7,
       "min": 55.0,
       "max": 85.0,
-      "floor_pct": 66.7
+      "floor_pct": 57.1
     }
   },
   "by_task_count": {
@@ -66,24 +66,28 @@
       "n": 31
     },
     "7": {
-      "mean": 79.9,
-      "n": 11
+      "mean": 79.5,
+      "n": 12
     },
     "8": {
       "mean": 95.0,
       "n": 1
+    },
+    "9": {
+      "mean": 62.5,
+      "n": 3
     }
   },
   "correlations": {
-    "productivity": 0.07,
-    "ambition": -0.224,
-    "depth": 0.122,
-    "growth": -0.113,
-    "variety": -0.008,
-    "consistency": 0.137,
-    "satisfaction": 0.068,
-    "raw_satisfaction": 0.017,
-    "task_count": 0.165
+    "productivity": 0.072,
+    "ambition": -0.211,
+    "depth": 0.118,
+    "growth": -0.114,
+    "variety": -0.012,
+    "consistency": 0.148,
+    "satisfaction": 0.054,
+    "raw_satisfaction": -0.131,
+    "task_count": 0.123
   },
   "phases": [
     {
@@ -824,14 +828,28 @@
     {
       "phase": "falling",
       "start": 229,
-      "end": 229,
+      "end": 230,
       "start_flow": 73.0,
-      "end_flow": 73.0
+      "end_flow": 71.3
+    },
+    {
+      "phase": "rising",
+      "start": 231,
+      "end": 231,
+      "start_flow": 72.0,
+      "end_flow": 72.0
+    },
+    {
+      "phase": "falling",
+      "start": 232,
+      "end": 233,
+      "start_flow": 70.9,
+      "end_flow": 68.3
     }
   ],
   "floor_analysis": {
     "count": 70,
-    "pct": 30.6,
+    "pct": 30.0,
     "by_category": {
       "building": 29,
       "mixed": 28,
@@ -839,15 +857,15 @@
       "writing": 9
     },
     "avg_task_count": 3.8,
-    "avg_satisfaction": 8.3
+    "avg_satisfaction": 8.7
   },
   "v2_comparison": {
-    "correlation": 0.487,
-    "avg_delta": -10.8,
+    "correlation": 0.491,
+    "avg_delta": -10.7,
     "max_increase": 15.0,
     "max_decrease": -42.9,
     "v2_mean": 62.2,
-    "v1_mean": 73.1
+    "v1_mean": 72.9
   },
   "sessions": [
     {
@@ -864,7 +882,7 @@
         "learning_overlap": 0.0,
         "raw": 0.383
       },
-      "satisfaction": 7,
+      "satisfaction": null,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -888,7 +906,7 @@
         "learning_overlap": 0.0,
         "raw": 0.35
       },
-      "satisfaction": 6,
+      "satisfaction": null,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -912,7 +930,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -934,7 +952,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -957,7 +975,7 @@
         "learning_overlap": 0.0,
         "raw": 0.239
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -1062,7 +1080,7 @@
         "learning_overlap": 0.0,
         "raw": 0.208
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -1088,7 +1106,7 @@
         "learning_overlap": 0.0,
         "raw": 0.239
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -1114,11 +1132,11 @@
         "learning_overlap": 0.0,
         "raw": 0.29
       },
-      "satisfaction": 9,
+      "satisfaction": null,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -1142,11 +1160,11 @@
         "learning_overlap": 0.0,
         "raw": 0.41
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 6,
       "signal_types": [
-        "title_overlap",
-        "major_feature"
+        "major_feature",
+        "title_overlap"
       ],
       "tasks": [
         "Building activity",
@@ -1171,12 +1189,12 @@
         "learning_overlap": 0.0,
         "raw": 0.312
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 6,
       "signal_types": [
-        "title_overlap",
         "major_feature",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Building activity",
@@ -1202,12 +1220,12 @@
         "learning_overlap": 0.0,
         "raw": 0.497
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 9,
       "signal_types": [
-        "title_overlap",
         "major_feature",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Building activity",
@@ -1232,12 +1250,12 @@
         "learning_overlap": 0.0,
         "raw": 0.303
       },
-      "satisfaction": 9,
+      "satisfaction": null,
       "signal_count": 6,
       "signal_types": [
-        "title_overlap",
         "major_feature",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -1262,11 +1280,11 @@
         "learning_overlap": 0.0,
         "raw": 0.214
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 2,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -1289,7 +1307,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -1312,7 +1330,7 @@
         "learning_overlap": 0.0,
         "raw": 0.317
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -1337,7 +1355,7 @@
         "learning_overlap": 0.0,
         "raw": 0.075
       },
-      "satisfaction": 9,
+      "satisfaction": null,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -1361,7 +1379,7 @@
         "learning_overlap": 0.0,
         "raw": 0.283
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -1388,11 +1406,11 @@
         "learning_overlap": 0.0,
         "raw": 0.29
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Building activity",
@@ -1416,11 +1434,11 @@
         "learning_overlap": 0.0,
         "raw": 0.223
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 2,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Building activity",
@@ -1444,11 +1462,11 @@
         "learning_overlap": 0.0,
         "raw": 0.337
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Building activity",
@@ -1473,7 +1491,7 @@
         "learning_overlap": 0.0,
         "raw": 0.115
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -1500,11 +1518,11 @@
         "learning_overlap": 0.0,
         "raw": 0.25
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 4,
       "signal_types": [
-        "title_overlap",
-        "major_feature"
+        "major_feature",
+        "title_overlap"
       ],
       "tasks": [
         "Building activity",
@@ -1528,7 +1546,7 @@
         "learning_overlap": 0.0,
         "raw": 0.19
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -1555,7 +1573,7 @@
         "learning_overlap": 0.0,
         "raw": 0.125
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -1581,11 +1599,11 @@
         "learning_overlap": 0.0,
         "raw": 0.148
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 2,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -1612,8 +1630,8 @@
       "satisfaction": 8.0,
       "signal_count": 5,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Building activity",
@@ -1639,8 +1657,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -1667,8 +1685,8 @@
       "satisfaction": 8.0,
       "signal_count": 4,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Building activity",
@@ -1693,8 +1711,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Building activity",
@@ -1743,7 +1761,7 @@
         "learning_overlap": 0.0,
         "raw": 0.217
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -1771,8 +1789,8 @@
       "satisfaction": 9.0,
       "signal_count": 2,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Building activity",
@@ -1818,7 +1836,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": 7,
+      "satisfaction": null,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -1841,7 +1859,7 @@
         "learning_overlap": 0.0,
         "raw": 0.253
       },
-      "satisfaction": 7,
+      "satisfaction": null,
       "signal_count": 2,
       "signal_types": [
         "title_overlap"
@@ -1867,7 +1885,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": 6,
+      "satisfaction": null,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -1893,8 +1911,8 @@
       "satisfaction": 9.0,
       "signal_count": 2,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -2094,8 +2112,8 @@
       "satisfaction": 9.0,
       "signal_count": 2,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Building activity",
@@ -2122,9 +2140,9 @@
       "satisfaction": 9.0,
       "signal_count": 6,
       "signal_types": [
-        "title_overlap",
         "major_feature",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -2208,8 +2226,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -2369,8 +2387,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Building activity",
@@ -2398,8 +2416,8 @@
       "satisfaction": 9.0,
       "signal_count": 4,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Building activity",
@@ -2605,8 +2623,8 @@
       "satisfaction": 8.0,
       "signal_count": 5,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Building activity",
@@ -2634,8 +2652,8 @@
       "satisfaction": 8.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -2661,8 +2679,8 @@
       "satisfaction": 8.0,
       "signal_count": 2,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Building activity",
@@ -2689,8 +2707,8 @@
       "satisfaction": 8.5,
       "signal_count": 4,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -2746,8 +2764,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -2903,8 +2921,8 @@
       "satisfaction": 9.0,
       "signal_count": 2,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -2955,8 +2973,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -2983,8 +3001,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -3090,8 +3108,8 @@
       "satisfaction": 8.0,
       "signal_count": 4,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Building activity",
@@ -3146,8 +3164,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -3223,8 +3241,8 @@
       "satisfaction": 9.0,
       "signal_count": 5,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -3251,8 +3269,8 @@
       "satisfaction": 8.5,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -3306,8 +3324,8 @@
       "satisfaction": 8.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -3333,8 +3351,8 @@
       "satisfaction": 8.5,
       "signal_count": 2,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -3360,8 +3378,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -3389,8 +3407,8 @@
       "satisfaction": 9.0,
       "signal_count": 2,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -3441,8 +3459,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Building activity",
@@ -3471,8 +3489,8 @@
       "satisfaction": 9.0,
       "signal_count": 5,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -3527,8 +3545,8 @@
       "satisfaction": 10.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -3583,8 +3601,8 @@
       "satisfaction": 9.0,
       "signal_count": 5,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -3613,8 +3631,8 @@
       "satisfaction": 9.0,
       "signal_count": 5,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -3642,8 +3660,8 @@
       "satisfaction": 9.0,
       "signal_count": 6,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -3673,9 +3691,9 @@
       "satisfaction": 9.0,
       "signal_count": 7,
       "signal_types": [
-        "title_overlap",
         "major_feature",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -3704,8 +3722,8 @@
       "satisfaction": 8.0,
       "signal_count": 5,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -3734,8 +3752,8 @@
       "satisfaction": 8.0,
       "signal_count": 8,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -3763,9 +3781,9 @@
       "satisfaction": 9.0,
       "signal_count": 7,
       "signal_types": [
-        "title_overlap",
         "major_feature",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Building activity",
@@ -3794,9 +3812,9 @@
       "satisfaction": 8.0,
       "signal_count": 9,
       "signal_types": [
-        "title_overlap",
         "major_feature",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -3824,9 +3842,9 @@
       "satisfaction": 9.0,
       "signal_count": 5,
       "signal_types": [
-        "title_overlap",
         "major_feature",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -3907,8 +3925,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -3934,8 +3952,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -3961,8 +3979,8 @@
       "satisfaction": 9.0,
       "signal_count": 4,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -3990,8 +4008,8 @@
       "satisfaction": 9.0,
       "signal_count": 4,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Building activity",
@@ -4018,8 +4036,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -4047,8 +4065,8 @@
       "satisfaction": 9.0,
       "signal_count": 4,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -4075,8 +4093,8 @@
       "satisfaction": 9.0,
       "signal_count": 4,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -4183,8 +4201,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -4211,8 +4229,8 @@
       "satisfaction": 9.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -4292,8 +4310,8 @@
       "satisfaction": 7.0,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -4423,8 +4441,8 @@
       "satisfaction": 8.5,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -4480,8 +4498,8 @@
       "satisfaction": 9.0,
       "signal_count": 2,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -4537,8 +4555,8 @@
       "satisfaction": 8.5,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -4565,8 +4583,8 @@
       "satisfaction": 8.5,
       "signal_count": 4,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -4593,8 +4611,8 @@
       "satisfaction": 8.5,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Writing activity",
@@ -4621,8 +4639,8 @@
       "satisfaction": 8.5,
       "signal_count": 2,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Building activity",
@@ -4673,8 +4691,8 @@
       "satisfaction": 8.5,
       "signal_count": 4,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Building activity",
@@ -4755,8 +4773,8 @@
       "satisfaction": 8.5,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Building activity",
@@ -4811,8 +4829,8 @@
       "satisfaction": 8.5,
       "signal_count": 6,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -4840,8 +4858,8 @@
       "satisfaction": 9.0,
       "signal_count": 2,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Writing activity",
@@ -4894,8 +4912,8 @@
       "satisfaction": 8.5,
       "signal_count": 2,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -4922,8 +4940,8 @@
       "satisfaction": 8.5,
       "signal_count": 6,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -4978,8 +4996,8 @@
       "satisfaction": 8.5,
       "signal_count": 4,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Session activity",
@@ -5006,8 +5024,8 @@
       "satisfaction": 8.5,
       "signal_count": 6,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Building activity",
@@ -5061,8 +5079,8 @@
       "satisfaction": 8.5,
       "signal_count": 2,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Building activity",
@@ -5166,7 +5184,7 @@
         "learning_overlap": 0.0,
         "raw": 0.55
       },
-      "satisfaction": 6,
+      "satisfaction": null,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -5190,11 +5208,11 @@
         "learning_overlap": 0.0,
         "raw": 0.344
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 2,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Building activity",
@@ -5217,7 +5235,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -5242,7 +5260,7 @@
         "learning_overlap": 0.0,
         "raw": 0.257
       },
-      "satisfaction": 9,
+      "satisfaction": null,
       "signal_count": 4,
       "signal_types": [
         "title_overlap"
@@ -5270,7 +5288,7 @@
         "learning_overlap": 0.0,
         "raw": 0.19
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -5297,7 +5315,7 @@
         "learning_overlap": 0.0,
         "raw": 0.283
       },
-      "satisfaction": 6,
+      "satisfaction": null,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -5321,7 +5339,7 @@
         "learning_overlap": 0.0,
         "raw": 0.25
       },
-      "satisfaction": 6,
+      "satisfaction": null,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -5343,7 +5361,7 @@
         "learning_overlap": 0.0,
         "raw": 0.217
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -5368,7 +5386,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": 6,
+      "satisfaction": null,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -5391,7 +5409,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -5415,7 +5433,7 @@
         "learning_overlap": 0.0,
         "raw": 0.208
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 2,
       "signal_types": [
         "pipeline_word"
@@ -5440,7 +5458,7 @@
         "learning_overlap": 0.0,
         "raw": 0.217
       },
-      "satisfaction": 7,
+      "satisfaction": null,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -5465,7 +5483,7 @@
         "learning_overlap": 0.0,
         "raw": 0.25
       },
-      "satisfaction": 6,
+      "satisfaction": null,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -5487,11 +5505,11 @@
         "learning_overlap": 0.0,
         "raw": 0.289
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Building activity",
@@ -5514,7 +5532,7 @@
         "learning_overlap": 0.0,
         "raw": 0.15
       },
-      "satisfaction": 8,
+      "satisfaction": null,
       "signal_count": 0,
       "signal_types": [],
       "tasks": [
@@ -5537,7 +5555,7 @@
         "learning_overlap": 0.0,
         "raw": 0.142
       },
-      "satisfaction": 7,
+      "satisfaction": null,
       "signal_count": 1,
       "signal_types": [
         "pipeline_word"
@@ -5562,7 +5580,7 @@
         "learning_overlap": 0.0,
         "raw": 0.45
       },
-      "satisfaction": 6,
+      "satisfaction": null,
       "signal_count": 1,
       "signal_types": [
         "title_overlap"
@@ -5951,8 +5969,8 @@
       "satisfaction": 8.5,
       "signal_count": 3,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Building activity",
@@ -5978,8 +5996,8 @@
       "satisfaction": 8.5,
       "signal_count": 4,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Building activity",
@@ -6005,8 +6023,8 @@
       "satisfaction": 8.5,
       "signal_count": 2,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Writing activity",
@@ -6491,8 +6509,8 @@
       "satisfaction": 9.0,
       "signal_count": 2,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Building activity",
@@ -6777,8 +6795,8 @@
       "satisfaction": 9.0,
       "signal_count": 4,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Building activity",
@@ -6829,8 +6847,8 @@
       "satisfaction": 9.4,
       "signal_count": 2,
       "signal_types": [
-        "title_overlap",
-        "pipeline_word"
+        "pipeline_word",
+        "title_overlap"
       ],
       "tasks": [
         "Building activity",
@@ -6865,18 +6883,142 @@
         "Building activity",
         "Building activity"
       ]
+    },
+    {
+      "session": 230,
+      "date": "2026-09-27",
+      "category": "revision",
+      "task_count": 7,
+      "flow_v1": 74.3,
+      "flow_v2": 62.6,
+      "v2_detail": {
+        "adj_overlap": 0.111,
+        "coherence": 0.6,
+        "pipeline": 0.286,
+        "learning_overlap": 0.0,
+        "raw": 0.252
+      },
+      "satisfaction": 9.8,
+      "signal_count": 4,
+      "signal_types": [
+        "pipeline_word",
+        "title_overlap"
+      ],
+      "tasks": [
+        "Session activity",
+        "Session activity",
+        "Session activity",
+        "Session activity",
+        "Session activity",
+        "Session activity",
+        "Session activity"
+      ]
+    },
+    {
+      "session": 231,
+      "date": "2026-09-28",
+      "category": "building",
+      "task_count": 9,
+      "flow_v1": 66.2,
+      "flow_v2": 59.2,
+      "v2_detail": {
+        "adj_overlap": 0.083,
+        "coherence": 0.6,
+        "pipeline": 0.0,
+        "learning_overlap": 0.0,
+        "raw": 0.183
+      },
+      "satisfaction": 9.7,
+      "signal_count": 2,
+      "signal_types": [
+        "title_overlap"
+      ],
+      "tasks": [
+        "Building activity",
+        "Building activity",
+        "Building activity",
+        "Building activity",
+        "Building activity",
+        "Building activity",
+        "Building activity",
+        "Building activity",
+        "Building activity"
+      ]
+    },
+    {
+      "session": 232,
+      "date": "2026-09-29",
+      "category": "mixed",
+      "task_count": 9,
+      "flow_v1": 60.6,
+      "flow_v2": 57.4,
+      "v2_detail": {
+        "adj_overlap": 0.125,
+        "coherence": 0.3,
+        "pipeline": 0.111,
+        "learning_overlap": 0.0,
+        "raw": 0.147
+      },
+      "satisfaction": 9.6,
+      "signal_count": 2,
+      "signal_types": [
+        "pipeline_word",
+        "title_overlap"
+      ],
+      "tasks": [
+        "Session activity",
+        "Session activity",
+        "Session activity",
+        "Session activity",
+        "Session activity",
+        "Session activity",
+        "Session activity",
+        "Session activity",
+        "Session activity"
+      ]
+    },
+    {
+      "session": 233,
+      "date": "2026-09-30",
+      "category": "building",
+      "task_count": 9,
+      "flow_v1": 60.6,
+      "flow_v2": 54.6,
+      "v2_detail": {
+        "adj_overlap": 0.042,
+        "coherence": 0.3,
+        "pipeline": 0.0,
+        "learning_overlap": 0.0,
+        "raw": 0.092
+      },
+      "satisfaction": 9.7,
+      "signal_count": 1,
+      "signal_types": [
+        "title_overlap"
+      ],
+      "tasks": [
+        "Building activity",
+        "Building activity",
+        "Building activity",
+        "Building activity",
+        "Building activity",
+        "Building activity",
+        "Building activity",
+        "Building activity",
+        "Building activity"
+      ]
     }
   ],
   "insights": [
     {
       "type": "category_effect",
-      "title": "Flow varies by category (revision=61.9 vs writing=77.0)",
-      "detail": "Gap of 15 points. Mixed sessions score lower because tasks from different domains share fewer title words.",
+      "title": "Flow varies by category (revision=63.6 vs writing=77.0)",
+      "detail": "Gap of 13 points. Mixed sessions score lower because tasks from different domains share fewer title words.",
       "severity": "medium"
     },
     {
       "type": "distribution",
-      "title": "30.6% of sessions hit the flow floor (\u226455)",
+      "title": "30.0% of sessions hit the flow floor (\u226455)",
       "detail": "70 sessions. Dominated by: building (29)",
       "severity": "medium"
     },
@@ -6888,8 +7030,8 @@
     },
     {
       "type": "metric_evolution",
-      "title": "V2 flow metric shifts scores by -10.8 on average",
-      "detail": "V1 mean: 73.1, V2 mean: 62.2. Correlation: r=0.49. V2 adds category coherence and learning overlap.",
+      "title": "V2 flow metric shifts scores by -10.7 on average",
+      "detail": "V1 mean: 72.9, V2 mean: 62.2. Correlation: r=0.49. V2 adds category coherence and learning overlap.",
       "severity": "info"
     }
   ]
