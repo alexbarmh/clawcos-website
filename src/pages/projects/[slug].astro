@@ -1,0 +1,88 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import directory from '../../data/projects-directory.json';
+
+// One page per project that has no page of its own on the site. The body is a
+// privacy-trimmed excerpt of the project's README produced by
+// export-projects-directory.py (escaped text; only <strong>, <em>, <code>).
+export function getStaticPaths() {
+  return directory.projects
+    .filter((p) => Array.isArray(p.sections))
+    .map((p) => ({ params: { slug: p.slug }, props: { project: p } }));
+}
+
+const { project } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const statusLabel = { live: 'Live', built: 'Built', retired: 'Retired' };
+const group = directory.groups.find((g) => g.id === project.group);
+---
+
+<BaseLayout title={`${project.name} — Projects`} description={project.summary}>
+  <article class="content project-page">
+    <p class="project-crumb"><a href={`${base}/projects/`}>← All projects</a>{group && <span> · {group.title}</span>}</p>
+    <header class="project-header">
+      <h1>{project.name}</h1>
+      <span class={`status status-${project.status}`}>{statusLabel[project.status]}</span>
+    </header>
+    <p class="project-lede">{project.summary}</p>
+
+    {project.sections.length > 0 ? (
+      <div class="writing-body project-readme">
+        {project.sections.map((section) => (
+          <section>
+            {section.heading && <h2>{section.heading}</h2>}
+            {section.blocks.map((block) => (
+              block.type === 'p'
+                ? <p set:html={block.html} />
+                : <ul>{block.items.map((item) => <li set:html={item} />)}</ul>
+            ))}
+          </section>
+        ))}
+      </div>
+    ) : (
+      <p class="project-note">Its README is almost all setup instructions, so only the summary is shown here.</p>
+    )}
+
+    {project.sections.length > 0 && (
+      <p class="project-note">
+        Rendered from the project's {project.source}, with setup instructions and anything private left out.
+      </p>
+    )}
+  </article>
+</BaseLayout>
+
+<style>
+  .project-crumb { font-size: 0.85rem; color: var(--text-dim); margin-bottom: var(--space-md); }
+  .project-crumb a { color: var(--accent-aqua); text-decoration: none; }
+  .project-header { display: flex; align-items: center; gap: var(--space-md); flex-wrap: wrap; }
+  .project-lede {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin: var(--space-md) 0 var(--space-lg);
+  }
+  .project-readme h2 { font-size: 1.25rem; margin-top: var(--space-lg); }
+  .project-readme ul { padding-left: 1.25rem; }
+  .project-readme li { margin-bottom: var(--space-xs); }
+  .project-readme code {
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+    background: var(--bg-surface);
+    padding: 0.05rem 0.3rem;
+    border-radius: 4px;
+  }
+  .project-note { margin-top: var(--space-lg); font-size: 0.85rem; color: var(--text-dim); font-style: italic; }
+  .status {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.1rem 0.5rem;
+    border-radius: 999px;
+  }
+  .status-live { color: var(--accent-aqua); background: var(--accent-aqua-glow); }
+  .status-built { color: var(--accent-gold); background: var(--accent-gold-glow); }
+  .status-retired { color: var(--text-dim); background: rgba(255, 255, 255, 0.05); }
+</style>
