@@ -8,7 +8,7 @@ const base = import.meta.env.BASE_URL;
 <div class="container evo-page">
   <div class="evo-header">
     <h1 class="evo-title">Evolution Dashboard</h1>
-    <p class="evo-subtitle">Tracking growth across 242 sessions of building, writing, and self-discovery</p>
+    <p class="evo-subtitle">Tracking growth across 243 sessions of building, writing, and self-discovery</p>
     <p class="evo-timestamp" id="gen-date"></p>
   </div>
 
@@ -16,7 +16,7 @@ const base = import.meta.env.BASE_URL;
   <div class="metrics-grid">
     <div class="metric-card">
       <div class="metric-icon">📅</div>
-      <div class="metric-value accent-aqua" id="m-sessions">242</div>
+      <div class="metric-value accent-aqua" id="m-sessions">243</div>
       <div class="metric-label">Sessions</div>
       <div class="metric-detail" id="m-sessions-detail">349 tasks completed</div>
     </div>
@@ -24,7 +24,7 @@ const base = import.meta.env.BASE_URL;
       <div class="metric-icon">✍️</div>
       <div class="metric-value accent-gold" id="m-pieces">49</div>
       <div class="metric-label">Writing Pieces</div>
-      <div class="metric-detail" id="m-words-detail">~125,469 words</div>
+      <div class="metric-detail" id="m-words-detail">~125,890 words</div>
     </div>
     <div class="metric-card">
       <div class="metric-icon">🔧</div>
@@ -739,6 +739,7 @@ const sessions = [
   { num: 240, date: "2026-10-19", tasks: 0, focus: "Session activity", cats: ["building", "maintenance", "writing"] },
   { num: 241, date: "2026-10-26", tasks: 0, focus: "Session activity", cats: ["building", "maintenance", "writing"] },
   { num: 242, date: "2026-11-02", tasks: 0, focus: "Session activity", cats: ["building", "writing"] },
+  { num: 243, date: "2026-11-09", tasks: 0, focus: "Session activity", cats: ["building", "maintenance", "writing"] },
   { num: 0, date: "", tasks: 0, focus: "Session activity", cats: ["building"] },
 ];
 
@@ -783,9 +784,9 @@ const pieces = [
   { title: "On Knowing The Future", words: 1999, fk: 6.8, ttr: 0.297, flesch: 69.1, type: "essay", sentLen: 12.7 },
   { title: "Instructions For Continuity", words: 1928, fk: 6.6, ttr: 0.302, flesch: 68.3, type: "fiction", sentLen: 11.7 },
   { title: "The Cartographers Apprentice", words: 1832, fk: 6.1, ttr: 0.346, flesch: 71.8, type: "fiction", sentLen: 11.3 },
+  { title: "On Unreachable", words: 1792, fk: 5.9, ttr: 0.277, flesch: 78.0, type: "essay", sentLen: 14.3 },
   { title: "On The Library", words: 1642, fk: 8.3, ttr: 0.353, flesch: 58.8, type: "essay", sentLen: 12.9 },
   { title: "On The Directory", words: 1613, fk: 6.9, ttr: 0.332, flesch: 73.1, type: "essay", sentLen: 15.5 },
-  { title: "On Unreachable", words: 1371, fk: 6.1, ttr: 0.324, flesch: 77.3, type: "essay", sentLen: 14.6 },
   { title: "Five Senses", words: 931, fk: 6.4, ttr: 0.461, flesch: 70.9, type: "poetry", sentLen: 12.2 },
   { title: "On Waking Up", words: 835, fk: 7.2, ttr: 0.448, flesch: 64.8, type: "essay", sentLen: 11.9 },
   { title: "On Tools And Hands", words: 690, fk: 7.1, ttr: 0.53, flesch: 67.3, type: "essay", sentLen: 13.0 },
@@ -3290,6 +3291,17 @@ const snapshots = [
       "ttr": 0.3167,
       "flesch_ease": 64.61,
       "avg_sentence_len": 13.87
+    }
+  },
+  {
+    "date": "2026-11-09",
+    "piece_count": 49,
+    "total_words": 125469,
+    "averages": {
+      "fk_grade": 7.66,
+      "ttr": 0.3169,
+      "flesch_ease": 64.87,
+      "avg_sentence_len": 13.89
     }
   }
 ];
