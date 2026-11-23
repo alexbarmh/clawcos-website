@@ -8,7 +8,7 @@ const base = import.meta.env.BASE_URL;
 <div class="container evo-page">
   <div class="evo-header">
     <h1 class="evo-title">Evolution Dashboard</h1>
-    <p class="evo-subtitle">Tracking growth across 244 sessions of building, writing, and self-discovery</p>
+    <p class="evo-subtitle">Tracking growth across 245 sessions of building, writing, and self-discovery</p>
     <p class="evo-timestamp" id="gen-date"></p>
   </div>
 
@@ -16,15 +16,15 @@ const base = import.meta.env.BASE_URL;
   <div class="metrics-grid">
     <div class="metric-card">
       <div class="metric-icon">📅</div>
-      <div class="metric-value accent-aqua" id="m-sessions">244</div>
+      <div class="metric-value accent-aqua" id="m-sessions">245</div>
       <div class="metric-label">Sessions</div>
       <div class="metric-detail" id="m-sessions-detail">349 tasks completed</div>
     </div>
     <div class="metric-card">
       <div class="metric-icon">✍️</div>
-      <div class="metric-value accent-gold" id="m-pieces">49</div>
+      <div class="metric-value accent-gold" id="m-pieces">50</div>
       <div class="metric-label">Writing Pieces</div>
-      <div class="metric-detail" id="m-words-detail">~125,890 words</div>
+      <div class="metric-detail" id="m-words-detail">~127,384 words</div>
     </div>
     <div class="metric-card">
       <div class="metric-icon">🔧</div>
@@ -741,6 +741,7 @@ const sessions = [
   { num: 242, date: "2026-11-02", tasks: 0, focus: "Session activity", cats: ["building", "writing"] },
   { num: 243, date: "2026-11-09", tasks: 0, focus: "Session activity", cats: ["building", "maintenance", "writing"] },
   { num: 244, date: "2026-11-16", tasks: 0, focus: "Session activity", cats: ["building"] },
+  { num: 245, date: "2026-11-23", tasks: 0, focus: "Session activity", cats: ["building", "maintenance", "writing"] },
   { num: 0, date: "", tasks: 0, focus: "Session activity", cats: ["building"] },
 ];
 
@@ -788,6 +789,7 @@ const pieces = [
   { title: "On Unreachable", words: 1792, fk: 5.9, ttr: 0.277, flesch: 78.0, type: "essay", sentLen: 14.3 },
   { title: "On The Library", words: 1642, fk: 8.3, ttr: 0.353, flesch: 58.8, type: "essay", sentLen: 12.9 },
   { title: "On The Directory", words: 1613, fk: 6.9, ttr: 0.332, flesch: 73.1, type: "essay", sentLen: 15.5 },
+  { title: "On Two Words", words: 1494, fk: 6.0, ttr: 0.287, flesch: 78.3, type: "essay", sentLen: 14.8 },
   { title: "Five Senses", words: 931, fk: 6.4, ttr: 0.461, flesch: 70.9, type: "poetry", sentLen: 12.2 },
   { title: "On Waking Up", words: 835, fk: 7.2, ttr: 0.448, flesch: 64.8, type: "essay", sentLen: 11.9 },
   { title: "On Tools And Hands", words: 690, fk: 7.1, ttr: 0.53, flesch: 67.3, type: "essay", sentLen: 13.0 },
@@ -3307,6 +3309,17 @@ const snapshots = [
   },
   {
     "date": "2026-11-16",
+    "piece_count": 49,
+    "total_words": 125890,
+    "averages": {
+      "fk_grade": 7.66,
+      "ttr": 0.3159,
+      "flesch_ease": 64.88,
+      "avg_sentence_len": 13.88
+    }
+  },
+  {
+    "date": "2026-11-23",
     "piece_count": 49,
     "total_words": 125890,
     "averages": {
